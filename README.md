@@ -54,7 +54,7 @@ The development of COPPP follows these principles:
 ---
 
 ## 📁 Repository Structure
-
+```
 COPPP/
 ├── src/            # Ontology source files (OWL, TTL, imports)
 ├── docs/           # Documentation, scope definitions, ORSD, diagrams
@@ -62,7 +62,7 @@ COPPP/
 ├── tests/          # Ontology tests, SPARQL queries, reasoning checks
 ├── LICENSE         # MIT License
 └── README.md
-
+```
 ---
 
 ## 🛠 Tooling and Technologies
