@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COPPP — Class Reference</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<style>
+  :root{--accent:#1e3a5f;--accent2:#2563eb;--border:#dee2e6;--muted:#6c757d;--light:#f8fafc;}
+  body{font-family:'Georgia',serif;background:#fff;color:#1a1a1a;font-size:15px;}
+  a{color:var(--accent2);}
+  .doc-nav{background:var(--accent);color:white;padding:.6rem 0;
+           font-family:system-ui,sans-serif;font-size:.85rem;}
+  .doc-nav a{color:rgba(255,255,255,.75);text-decoration:none;}
+  .doc-nav a:hover{color:white;}
+  .doc-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%);
+            color:white;padding:2rem 2rem 1.75rem;border-radius:10px;margin-bottom:2rem;}
+  .onto-title{font-family:system-ui,sans-serif;font-size:2.6rem;font-weight:800;letter-spacing:-.04em;}
+  .onto-subtitle{font-size:1.1rem;color:rgba(255,255,255,.6);font-weight:300;}
+  .onto-iri{font-family:monospace;font-size:.82rem;color:rgba(255,255,255,.5);margin-top:.5rem;}
+  .hero-pill{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+             border-radius:20px;font-size:.72rem;font-family:monospace;padding:.2rem .7rem;color:rgba(255,255,255,.75);}
+  .hero-stat{font-family:system-ui,sans-serif;text-align:center;}
+  .hero-stat .val{font-size:2rem;font-weight:800;line-height:1;}
+  .hero-stat .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;
+                  color:rgba(255,255,255,.5);margin-top:.2rem;}
+  .index-table th{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;
+                  text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+                  background:var(--light);border-bottom:2px solid var(--border);}
+  .index-table td{font-size:.875rem;vertical-align:middle;border-bottom:1px solid var(--border);}
+  .class-link{font-family:system-ui,sans-serif;font-weight:600;color:var(--accent2);text-decoration:none;}
+  .class-link:hover{text-decoration:underline;}
+  .bfo-pill{font-size:.68rem;font-family:monospace;background:#eff6ff;border:1px solid #bfdbfe;
+            border-radius:4px;padding:.1rem .4rem;color:#1d4ed8;}
+  .mode-pill{font-size:.68rem;font-family:system-ui,sans-serif;font-weight:600;text-transform:uppercase;
+             letter-spacing:.05em;border-radius:4px;padding:.1rem .45rem;}
+  .mode-equivalent{background:#dcfce7;color:#166534;}
+  .mode-necessary{background:#fef3c7;color:#92400e;}
+  .mode-mixed{background:#f3e8ff;color:#6b21a8;}
+  .bfo-section{margin-bottom:3rem;}
+  .bfo-section-header{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;
+                      text-transform:uppercase;letter-spacing:.1em;color:var(--muted);
+                      border-bottom:2px solid var(--border);padding-bottom:.5rem;margin-bottom:1.5rem;
+                      display:flex;align-items:center;justify-content:space-between;}
+  .count-badge{background:var(--light);border:1px solid var(--border);border-radius:20px;
+               padding:.15rem .6rem;font-size:.68rem;font-weight:600;color:var(--muted);}
+  .class-card{border:1px solid var(--border);border-radius:8px;margin-bottom:1.5rem;overflow:hidden;}
+  .class-card-header{padding:.85rem 1.1rem .7rem;background:var(--light);border-bottom:1px solid var(--border);
+                     display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;}
+  .class-card-name{font-family:system-ui,sans-serif;font-size:1.1rem;font-weight:700;color:var(--accent);}
+  .class-card-name a{color:var(--accent);text-decoration:none;}
+  .class-card-name a:hover{color:var(--accent2);text-decoration:underline;}
+  .class-iri{font-family:monospace;font-size:.72rem;color:var(--muted);}
+  .class-card-body{padding:.85rem 1.1rem;display:flex;gap:1.5rem;align-items:flex-start;}
+  .class-def{font-size:.9rem;color:#374151;line-height:1.6;font-style:italic;margin-bottom:.6rem;}
+  .class-meta{display:flex;flex-wrap:wrap;gap:.75rem;font-family:system-ui,sans-serif;font-size:.8rem;}
+  .meta-item{color:var(--muted);}
+  .meta-item strong{color:#374151;}
+  .rel-card{border:1px solid var(--border);border-radius:6px;margin-bottom:.75rem;overflow:hidden;}
+  .rel-card-header{padding:.6rem .9rem;background:var(--light);border-bottom:1px solid var(--border);
+                   display:flex;align-items:center;gap:.75rem;}
+  .rel-name{font-family:monospace;font-size:.95rem;font-weight:700;color:var(--accent);}
+  .rel-type-pill{font-size:.65rem;font-family:system-ui,sans-serif;font-weight:700;text-transform:uppercase;
+                 letter-spacing:.05em;border-radius:4px;padding:.1rem .45rem;background:#ede9fe;color:#5b21b6;}
+  .rel-card-body{padding:.6rem .9rem;font-family:system-ui,sans-serif;font-size:.83rem;}
+  .rel-meta{display:flex;flex-wrap:wrap;gap:1rem;color:var(--muted);}
+  .rel-meta strong{color:#374151;}
+  .toc-sticky{position:sticky;top:1rem;}
+  .toc-link{display:block;font-family:system-ui,sans-serif;font-size:.82rem;color:var(--accent);
+            text-decoration:none;padding:.2rem .5rem;border-left:2px solid var(--border);margin-bottom:.15rem;}
+  .toc-link:hover{color:var(--accent2);border-left-color:var(--accent2);}
+  .toc-header{font-family:system-ui,sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;
+              letter-spacing:.1em;color:var(--muted);margin-bottom:.5rem;}
+  /* Per-class page */
+  .ph-hero{border-bottom:3px solid var(--accent);padding:2rem 0 1.5rem;margin-bottom:2rem;}
+  .ph-class-name{font-size:2.4rem;font-weight:700;letter-spacing:-.03em;
+                 font-family:system-ui,sans-serif;color:var(--accent);}
+  .ph-class-iri{font-family:monospace;font-size:.85rem;color:var(--muted);word-break:break-all;}
+  .status-pill{font-size:.72rem;font-family:system-ui,sans-serif;font-weight:600;padding:.2rem .7rem;
+               border-radius:20px;text-transform:uppercase;letter-spacing:.06em;}
+  .status-validated{background:#dcfce7;color:#166534;}
+  .status-exported{background:#f3e8ff;color:#6b21a8;}
+  .status-reviewed{background:#dbeafe;color:#1e40af;}
+  .status-proposed{background:#fef3c7;color:#92400e;}
+  .doc-section{margin-bottom:2.5rem;}
+  .doc-section-title{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;
+                     letter-spacing:.1em;color:var(--muted);border-bottom:1px solid var(--border);
+                     padding-bottom:.4rem;margin-bottom:1rem;}
+  .nl-def{font-size:1.08rem;font-style:italic;color:#1a1a1a;border-left:4px solid var(--accent2);
+          padding:.6rem 1rem;margin-bottom:.75rem;background:#f8faff;}
+  .nl-def .lang-tag{font-size:.7rem;font-family:monospace;font-style:normal;color:var(--muted);margin-bottom:.2rem;}
+  .axiom-block{background:#f8f9fa;border:1px solid var(--border);border-radius:6px;
+               padding:.9rem 1rem;margin-bottom:.75rem;font-size:.88rem;}
+  .axiom-label{font-family:system-ui,sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;
+               letter-spacing:.08em;color:var(--muted);margin-bottom:.3rem;}
+  .owl-block{background:#1e293b;color:#e2e8f0;border-radius:8px;padding:1rem 1.2rem;
+             font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:.78rem;
+             line-height:1.7;overflow-x:auto;white-space:pre;}
+  .fol-line{font-family:monospace;font-size:.85rem;line-height:1.9;display:block;}
+  .fol-label{font-family:system-ui,sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;
+             letter-spacing:.06em;color:var(--muted);margin-right:.5rem;}
+  .step-block{border:1px solid var(--border);border-radius:8px;margin-bottom:1rem;overflow:hidden;}
+  .step-block-header{display:flex;align-items:center;gap:.6rem;padding:.65rem 1rem;
+                     font-family:system-ui,sans-serif;font-weight:600;font-size:.9rem;}
+  .step-num{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;
+            justify-content:center;color:white;font-size:.7rem;font-weight:700;flex-shrink:0;}
+  .step-1 .step-block-header{background:color-mix(in srgb,#2563eb 8%,white);border-bottom:2px solid #2563eb;}
+  .step-1 .step-num{background:#2563eb;}
+  .step-2 .step-block-header{background:color-mix(in srgb,#7c3aed 8%,white);border-bottom:2px solid #7c3aed;}
+  .step-2 .step-num{background:#7c3aed;}
+  .step-3 .step-block-header{background:color-mix(in srgb,#d97706 8%,white);border-bottom:2px solid #d97706;}
+  .step-3 .step-num{background:#d97706;}
+  .step-4 .step-block-header{background:color-mix(in srgb,#059669 8%,white);border-bottom:2px solid #059669;}
+  .step-4 .step-num{background:#059669;}
+  .step-body{padding:.9rem 1rem;}
+  .decision-value{font-family:monospace;font-size:.9rem;background:#f1f5f9;padding:.15rem .5rem;
+                  border-radius:4px;font-weight:600;}
+  .rationale{margin-top:.6rem;font-size:.88rem;color:#374151;border-left:3px solid var(--border);padding-left:.75rem;}
+  .disjoint-pill{display:inline-block;font-family:monospace;font-size:.8rem;padding:.2rem .6rem;
+                 border-radius:4px;background:#fee2e2;color:#991b1b;margin:.15rem;}
+  .parts-table{width:100%;font-size:.85rem;border-collapse:collapse;}
+  .parts-table th{background:#f8f9fa;font-family:system-ui,sans-serif;font-size:.72rem;text-transform:uppercase;
+                  letter-spacing:.05em;padding:.4rem .7rem;border:1px solid var(--border);font-weight:600;color:var(--muted);}
+  .parts-table td{padding:.4rem .7rem;border:1px solid var(--border);font-family:monospace;}
+  .sig-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;}
+  .sig-cell{border:1px solid var(--border);border-radius:6px;padding:.65rem .8rem;}
+  .sig-cell-label{font-family:system-ui,sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;
+                  letter-spacing:.08em;color:var(--muted);margin-bottom:.3rem;}
+  .bfo-badge{display:inline-block;font-family:monospace;font-size:.75rem;padding:.15rem .5rem;
+             border-radius:4px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;}
+  .meta-table{font-size:.8rem;font-family:system-ui,sans-serif;}
+  .meta-table td:first-child{color:var(--muted);padding-right:1rem;white-space:nowrap;}
+  .meta-table td{padding:.2rem 0;vertical-align:top;}
+  /* Source definitions */
+  .source-card{border:1px solid var(--border);border-radius:8px;margin-bottom:.75rem;overflow:hidden;}
+  .source-card-header{display:flex;justify-content:space-between;align-items:center;padding:.5rem .9rem;
+                      background:#f8f9fa;border-bottom:1px solid var(--border);font-family:system-ui,sans-serif;}
+  .source-card-body{padding:.75rem .9rem;font-size:.88rem;}
+  @media (min-width:992px){.sidebar-sticky{position:sticky;top:1rem;}}
+  @media print{.doc-nav,.no-print{display:none!important;}body{font-size:13px;}}
+</style>
+
+</head>
+<body>
+<nav class="doc-nav">
+  <div class="container-fluid px-4 d-flex gap-3">
+    <a href="index.html">COPPP</a>
+    <span style="opacity:.4">·</span>
+    <a href="https://www.inf.ufrgs.br/ontologies/coppp">INF/UFRGS Ontologies</a>
+  </div>
+</nav>
+<div class="container-fluid px-4 py-4" style="max-width:1200px;">
+
+<div class="d-flex justify-content-between align-items-center mb-3 no-print"
+     style="font-size:.83rem;">
+  <span class="text-muted" style="font-family:system-ui,sans-serif;">
+    Class Reference · Version 2026-04-13
+  </span>
+</div>
+
+<div class="doc-hero">
+  <div class="row align-items-end g-3">
+    <div class="col-lg-8">
+      <div class="onto-title">COPPP</div>
+      <div class="onto-subtitle">Core Ontology of Petroleum Production Plants</div>
+      <div class="onto-iri">https://www.inf.ufrgs.br/ontologies/coppp</div>
+      <div class="mt-3 d-flex gap-2 flex-wrap">
+        <span class="hero-pill">Class Reference</span>
+        <span class="hero-pill">OWL 2 DL · BFO 2020 · IOF-Core</span>
+        <span class="hero-pill">2026-04-13</span>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="row g-2">
+        <div class="col-4">
+          <div class="hero-stat"><div class="val">1</div><div class="lbl">Classes</div></div>
+        </div>
+        <div class="col-4">
+          <div class="hero-stat"><div class="val">0</div><div class="lbl">Relations</div></div>
+        </div>
+        <div class="col-4">
+          <div class="hero-stat"><div class="val">7</div><div class="lbl">Axioms</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div style="padding-bottom:2rem;"><div class="row g-4"><div class="col-lg-2 d-none d-lg-block"><div class="toc-sticky"><div class="toc-header">Contents</div><a href="#class-index" class="toc-link">Class Index</a>
+<a href="#bfo-materialartifact" class="toc-link">MaterialArtifact <span style="color:#94a3b8;font-size:.7rem;">(1)</span></a>
+</div></div><div class="col-lg-10"><div id="class-index" class="mb-5"><h5 style="font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:1rem;">Class Index</h5><table class="table index-table table-sm"><thead><tr><th>Class</th><th>Genus</th><th>BFO Root</th><th>Axiom mode</th></tr></thead><tbody><tr><td><a href="classes/COPPP_0000001.html" class="class-link">Valve</a> <code style="font-size:.68rem;color:var(--muted);">COPPP_0000001</code></td><td style='font-family:monospace;font-size:.8rem;color:#374151;'>MaterialArtifact</td><td><span class="bfo-pill">MaterialArtifact</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
+</tbody></table></div>
+<div id="bfo-materialartifact" class="bfo-section">
+  <div class="bfo-section-header">
+    <span>MaterialArtifact</span>
+    <span class="count-badge">1 class</span>
+  </div>
+  
+<div class="class-card" id="cls-4">
+  <div class="class-card-header">
+    <div>
+      <div class="class-card-name">
+        <a href="classes/COPPP_0000001.html">Valve</a>
+      </div>
+      <span class="class-iri">https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001</span>
+    </div>
+    <div class="d-flex gap-2 align-items-center flex-shrink-0">
+      <span class="mode-pill mode-necessary">necessary</span>
+      <a href="classes/COPPP_0000001.html" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem;padding:.2rem .6rem;">Full doc →</a>
+    </div>
+  </div>
+  <div class="class-card-body">
+    <div style="flex:1;min-width:0;">
+      <div class="class-def">A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.</div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> MaterialArtifact</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div><div class="meta-item"><strong>Necessary parts:</strong> ValveBody, FlowControlElement, Seat</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">Pump, Compressor, Turbine</span></div></div>
+    </div>
+  </div>
+</div>
+</div></div></div></div>
+
+</div>
+</body>
+</html>
