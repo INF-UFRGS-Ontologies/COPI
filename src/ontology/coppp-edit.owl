@@ -1,446 +1,107 @@
 Prefix(:=<https://www.inf.ufrgs.br/ontologies/coppp.owl#>)
-Prefix(bfo:=<http://purl.obolibrary.org/obo/BFO_>)
-Prefix(dce:=<http://purl.org/dc/elements/1.1/>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
 Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
-Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
-Prefix(coppp:=<https://www.inf.ufrgs.br/ontologies/COPPP_>)
+Prefix(dce:=<http://purl.org/dc/elements/1.1/>)
 Prefix(dcterms:=<http://purl.org/dc/terms/>)
-Prefix(geocore:=<https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_>)
+Prefix(skos:=<http://www.w3.org/2004/02/skos/core#>)
+Prefix(bfo:=<http://purl.obolibrary.org/obo/BFO_>)
 Prefix(iof-core:=<https://spec.industrialontologies.org/ontology/construct/>)
-
+Prefix(iof-av:=<https://spec.industrialontologies.org/ontology/annotation/>)
+Prefix(coppp:=<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_>)
 
 Ontology(<https://www.inf.ufrgs.br/ontologies/coppp.owl>
+<https://www.inf.ufrgs.br/ontologies/coppp.owl/2026-04-13>
+
 Import(<http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl>)
 Import(<https://spec.industrialontologies.org/ontology/202502/core/Core/>)
-Import(<https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore.owl>)
-Annotation(dcterms:description "A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle."@en)
+
+Annotation(dcterms:title "Core Ontology of Petroleum Production Plants (COPPP)"@en)
+Annotation(dcterms:title "Ontologia Central de Plantas de Produção de Petróleo (COPPP)"@pt)
+Annotation(dcterms:description "BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants."@en)
 Annotation(dcterms:license <https://opensource.org/license/mit>)
-Annotation(dcterms:title "Core Ontology of Petroleum Production Plants")
-Annotation(<http://www.w3.org/2004/02/skos/core#scopeNote> "Haroldo (09/02/26): Separar função de processo na delimitação de escopo (ex: equipamento que transporta vs produção)"@pt-br)
-Annotation(<http://www.w3.org/2004/02/skos/core#scopeNote> "Material artifacts (bfo:material_entity) that
-* (i) are part of a petroleum production plant, and
-* (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, containment or offloading of material or energy."@en)
-Annotation(<http://www.w3.org/2004/02/skos/core#scopeNote> "Régis (09/02/26): Escopo: poços, instalações submarinas, instalações de topside responsáveis pelo processamento primário (separação, enquadramento dos fluidos em certas condições especificadas, processamento do gás, do óleo e da água), produção, injeção, controle, monitoramento, medição"@pt-br)
+Annotation(owl:versionInfo "2026-04-13")
+Annotation(dcterms:contributor "Cauã Antunes")
+Annotation(dcterms:contributor "Haroldo Rojas")
+Annotation(dcterms:contributor "Rafael Petry")
+Annotation(dcterms:contributor "Régis Romeu")
+Annotation(dcterms:contributor "Mara Abel")
+Annotation(skos:scopeNote "Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy."@en)
+Annotation(skos:scopeNote "COPPP provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPPP is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en)
+Annotation(skos:scopeNote "Escopo: poços, instalações submarinas, instalações de topside responsáveis pelo processamento primário (separação, enquadramento dos fluidos em certas condições especificadas, processamento do gás, do óleo e da água), produção, injeção, controle, monitoramento, medição."@pt-br)
+
+############################
+#   Declarations
+############################
 
 Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000002>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000004>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000005>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000006>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000007>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000008>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000009>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000010>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000011>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000012>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000013>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000014>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000015>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000016>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000017>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000018>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000019>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000020>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000021>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000022>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000023>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000024>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000025>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000026>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000027>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000028>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000029>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000030>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000031>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000032>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000033>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000034>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000035>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000036>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000037>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000038>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000039>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000040>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000041>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000042>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000043>))
-Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000044>))
-Declaration(AnnotationProperty(dcterms:description))
-Declaration(AnnotationProperty(dcterms:license))
-Declaration(AnnotationProperty(dcterms:title))
+Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/FlowControlFunction>))
+Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/FlowControlProcess>))
+Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/ValveBody>))
+Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/FlowControlElement>))
+Declaration(Class(<https://www.inf.ufrgs.br/ontologies/coppp/Seat>))
 Declaration(AnnotationProperty(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000045>))
 Declaration(AnnotationProperty(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000046>))
 Declaration(AnnotationProperty(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000047>))
 Declaration(AnnotationProperty(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000048>))
 Declaration(AnnotationProperty(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000049>))
+
 ############################
 #   Annotation Properties
 ############################
 
-# Annotation Property: dcterms:description (description)
-
-AnnotationAssertion(rdfs:label dcterms:description "description")
-
-# Annotation Property: dcterms:license (license)
-
-AnnotationAssertion(rdfs:label dcterms:license "license")
-
-# Annotation Property: dcterms:title (title)
-
-AnnotationAssertion(rdfs:label dcterms:title "title")
-
-# Annotation Property: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000045> (iso15926Reference)
-
 AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000045> "iso15926Reference"@en)
-
-# Annotation Property: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000046> (iso14224Reference)
-
 AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000046> "iso14224Reference"@en)
-
-# Annotation Property: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000047> (cfihosReference)
-
 AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000047> "cfihosReference"@en)
-
-# Annotation Property: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000048> (dexpiReference)
-
 AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000048> "dexpiReference"@en)
-
-# Annotation Property: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000049> (poscCeaserReference)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000049> "poscCeaserReference"@en)
-
-
-
+AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000049> "poscCaesarReference"@en)
 
 ############################
 #   Classes
 ############################
 
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> (pump)
+# Class: <https://www.inf.ufrgs.br/ontologies/coppp/FlowControlFunction> (flow control function)
+
+AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/FlowControlFunction> "flow control function"@en)
+AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/FlowControlFunction> "A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams."@en)
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/FlowControlFunction> <https://spec.industrialontologies.org/ontology/construct/DesignedFunction>)
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/FlowControlFunction> ObjectAllValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000054> <https://www.inf.ufrgs.br/ontologies/coppp/FlowControlProcess>))
+
+# Class: <https://www.inf.ufrgs.br/ontologies/coppp/FlowControlProcess> (flow control process)
+
+AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/FlowControlProcess> "flow control process"@en)
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/FlowControlProcess> <https://spec.industrialontologies.org/ontology/construct/PlannedProcess>)
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/FlowControlProcess> ObjectSomeValuesFrom(<https://spec.industrialontologies.org/ontology/construct/hasInput> <https://www.inf.ufrgs.br/ontologies/coppp/FluidPortion>))
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/FlowControlProcess> ObjectSomeValuesFrom(<https://spec.industrialontologies.org/ontology/construct/hasOutput> <https://www.inf.ufrgs.br/ontologies/coppp/FluidPortion>))
+
+# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> (valve)
+
+AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "valve"@en)
+AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams."@en)
+AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "Uma válvula é um artefato material que possui uma função de controle de fluxo para permitir, obstruir, regular ou desviar correntes de fluido."@pt)
+AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/semiFormalNaturalLanguageAxiom> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "Every valve is a material artifact that has the function to control fluid flow by permitting, obstructing, regulating, or diverting fluid streams."@en)
+AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/firstOrderLogicAxiom> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "∀x(Valve(x) ↔ MaterialArtifact(x) ∧ ∃f(FlowControlFunction(f) ∧ bearerOf(x,f)))"@en)
+AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/isPrimitive> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "true"^^xsd:boolean)
+AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/primitiveRationale> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "Might be too restrictive to define as sufficient being a material artifact and having a flow control function."@en)
+AnnotationAssertion(skos:definition <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "[ISO 15926-4] A <VALVE> is a <FLUID REGULATOR> that can be used to control (i.e. permit, obstruct, regulate or divert) a fluid stream"@en)
+AnnotationAssertion(skos:definition <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "[CFIHOS] A fluid regulator that can be used to control (i.e. permit, obstruct, regulate or divert) a fluid stream."@en)
+AnnotationAssertion(skos:definition <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "[OnePetro] Any of several valves:  plug, gate, butterfly, needle, etc., used in oil field operations."@en)
+AnnotationAssertion(skos:definition <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "[POSC Caesar] A fluid regulator that can be used to control (i.e. permit, obstruct, regulate or divert) a fluid stream."@en)
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact>)
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> ObjectSomeValuesFrom(<https://spec.industrialontologies.org/ontology/construct/hasFunction> <https://www.inf.ufrgs.br/ontologies/coppp/FlowControlFunction>))
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> ObjectSomeValuesFrom(<https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> <https://www.inf.ufrgs.br/ontologies/coppp/ValveBody>))
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> ObjectSomeValuesFrom(<https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> <https://www.inf.ufrgs.br/ontologies/coppp/FlowControlElement>))
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> ObjectSomeValuesFrom(<https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> <https://www.inf.ufrgs.br/ontologies/coppp/Seat>))
+AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/ValveBody> "valve body"@en)
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/ValveBody> <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact>)
+AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/FlowControlElement> "flow control element"@en)
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/FlowControlElement> <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact>)
+AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/Seat> "seat"@en)
+SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/Seat> <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact>)
+DisjointClasses(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> <https://www.inf.ufrgs.br/ontologies/coppp/Pump>)
+DisjointClasses(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> <https://www.inf.ufrgs.br/ontologies/coppp/Compressor>)
+DisjointClasses(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> <https://www.inf.ufrgs.br/ontologies/coppp/Turbine>)
 
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "bomba"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "pump"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> "def. um iof:ArtefatoMaterial que tem a função de aumentar a pressão de um líquido através da transferência de energia mecânica."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> iof-core:MaterialArtifact)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> ObjectSomeValuesFrom(iof-core:hasFunction <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000023>))
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000002> (compressor)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000002> "compressor"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000002> "compressor"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000002> "def. um iof:ArtefatoMaterial que tem a função de aumentar a pressão de um gás ou vapor através da redução de seu volume."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000002> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003> (valve)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003> "valve"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003> "válvula"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003> "def. um iof:ArtefatoMaterial que tem a função de controlar, direcionar ou regular o fluxo de um fluido através da obstrução parcial ou total de uma passagem.")
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000004> (heat exchanger)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000004> "heat exchanger"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000004> "trocador de calor"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000004> "def. um iof:ArtefatoMaterial que tem a função de transferir energia térmica entre dois ou mais fluidos que se encontram em temperaturas diferentes."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000004> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000005> (vaso de pressão)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000005> "pressure vessel"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000005> "vaso de pressão"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000005> "def. um iof:ArtefatoMaterial que tem a função de conter e suportar fluidos sob pressão interna ou externa significativamente diferente da pressão atmosférica."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000005> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000006> (sensor)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000006> "sensor"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000006> "sensor"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000006> "def. um iof:ArtefatoMaterial que tem a função de detectar mudanças em grandezas físicas e converter esses estímulos em sinais processáveis."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000006> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000007> (centrifugal pump)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000007> "bomba centrífuga"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000007> "centrifugal pump"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000007> "def. a Pump that increases pressure by converting kinetic energy from a rotating impeller into hydrodynamic energy."@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000007> "def. uma Bomba que realiza sua função através da conversão de energia cinética rotacional em energia hidrodinâmica de um fluxo de líquido."@pt-br)
-AnnotationAssertion(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000049> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000007> "http://rds.posccaesar.org/ontology/plm/rdl/PCA_100004064"^^xsd:anyURI)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000007> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001>)
-DisjointClasses(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000007> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000008>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000008> (reciprocating pump)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000008> "bomba recíproca"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000008> "reciprocating pump"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000008> "def. uma Bomba que realiza sua função através do movimento alternado de um pistão ou diafragma para deslocar um volume fixo de líquido."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000008> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000009> (centrifugal compressor)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000009> "centrifugal compressor"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000009> "compressor centrífugo"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000009> "def. um Compressor que aumenta a pressão de um gás utilizando um rotor para acelerar o fluido e um difusor para converter velocidade em pressão."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000009> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000002>)
-DisjointClasses(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000009> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000010>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000010> (reciprocating compressor)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000010> "compressor recíproco"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000010> "reciprocating compressor"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000010> "def. um Compressor que utiliza um pistão acionado por um virabrequim para comprimir gases em um cilindro fechado."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000010> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000002>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000011> (gas turbine)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000011> "gas turbine"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000011> "turbina de gás"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000011> "def. um iof:ArtefatoMaterial que tem a função de converter a energia térmica da combustão de um gás em energia mecânica rotacional."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000011> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000012> (tanque de estocagem)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000012> "def. um iof:Artefato Material que tem a função de conter grandes volumes de líquidos ou gases em pressões próximas à atmosférica."@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000012> "storage tank"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000012> "tanque de estocagem"@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000012> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000013> (filter)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000013> "filter"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000013> "filtro"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000013> "def. um iof:ArtefatoMaterial que tem a função de separar partículas sólidas de um fluido através da passagem por um meio poroso."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000013> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000014> (trocador de calor de tubos e carcaça)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000014> "shell and tube heat exchanger"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000014> "trocador de calor de tubos e carcaça"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000014> "def. um Trocador de Calor que realiza a troca térmica através de um feixe de tubos contido dentro de uma carcaça cilíndrica."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000014> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000004>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000015> (válvula de retenção)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000015> "check valve"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000015> "válvula de retenção"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000015> "def. uma Válvula que permite o fluxo de fluido em apenas uma direção, prevenindo automaticamente o fluxo reverso."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000015> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000016> (válvula gaveta)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000016> "gate valve"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000016> "válvula gaveta"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000016> "def. uma Válvula que controla o fluxo através do movimento vertical de uma comporta plana ou em forma de cunha."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000016> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000017> (globe valve)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000017> "globe valve"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000017> "válvula globo"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000017> "def. uma Válvula que regula o fluxo através de um obturador móvel e um assento de anel fixo em um corpo geralmente esférico."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000017> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000018> (flange)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000018> "flange"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000018> "flange"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000018> "def. um iof:ArtefatoMaterial que tem a função de conectar mecanicamente seções de tubos, válvulas ou equipamentos, permitindo montagem e desmontagem."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000018> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000019> (electric motor)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000019> "electric motor"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000019> "motor elétrico"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000019> "def. um iof:Artefato Material que tem a função de converter energia elétrica em energia mecânica rotacional para acionar outros equipamentos."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000019> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000020> (transmissor de pressão)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000020> "pressure transmitter"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000020> "transmissor de pressão"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000020> "def. um Sensor que mede a pressão de um processo e transmite um sinal padronizado para um sistema de controle."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000020> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000006>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000021> (medidor de vazão)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000021> "flow meter"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000021> "medidor de vazão"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000021> "def. um Sensor que tem a função de quantificar a taxa de fluxo volumétrico ou mássico de um fluido em movimento."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000021> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000006>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000022> (transformador)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000022> "transformador"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000022> "transformer"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000022> "def. um iof:ArtefatoMaterial que tem a função de transferir energia elétrica entre circuitos através de indução eletromagnética, alterando os níveis de tensão."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000022> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000023> (pumping function)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000023> "pumping function"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000023> "função de bombear"@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000023> iof-core:DesignedFunction)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000024> (distillation column)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000024> "coluna de destilação"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000024> "distillation column"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000024> "def. um iof:ArtefatoMaterial que tem a função de separar misturas líquidas em frações componentes baseando-se em diferenças de volatilidade."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000024> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000025> (process column)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000025> "coluna de processamento"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000025> "process column"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000025> "def. um iof:ArtefatoMaterial que tem a função de facilitar a transferência de massa entre fases para a separação de misturas (ex: destilação)."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000025> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000026> (silo)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000026> "silo"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000026> "silo"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000026> "um iof:ArtefatoMaterial que tem a função de armazenar materiais sólidos a granel (particulados)."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000026> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000027> (cooling tower)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000027> "cooling tower"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000027> "torre de resfriamento"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000027> "um iof:ArtefatoMaterial que tem a função de extrair calor residual de um fluxo de água através da evaporação parcial em contato com o ar."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000027> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000028> (boiler)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000028> "boiler"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000028> "evaporador"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000028> "def. um iof:ArtefatoMaterial que tem a função de gerar vapor através da transferência de calor de uma fonte térmica para a água."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000028> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000029> (centrífuga)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000029> "centrifuge"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000029> "centrífuga"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000029> "def. um iof:Artefato Material que utiliza a força centrífuga para acelerar a separação de substâncias de diferentes densidades."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000029> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000030> (misturador estático)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000030> "misturador estático"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000030> "static mixer"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000030> "def. um iof:ArtefatoMaterial que tem a função de homogeneizar misturas através de elementos internos fixos que induzem turbulência no fluxo."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000030> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000031> (válvula bola)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000031> "ball valve"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000031> "válvula bola"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000031> "def. uma Válvula que realiza a sua função através da rotação de uma esfera perfurada que permite ou bloqueia a passagem do fluido."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000031> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000032> (válvula borboleta)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000032> "butterfly valve"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000032> "válvula borboleta"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000032> "def. uma Válvula que regula o fluxo através da rotação de um disco posicionado no centro do tubo, atuando como um eixo."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000032> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000033> (válvula de segurança)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000033> "safety valve"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000033> "válvula de segurança"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000033> "def. uma Válvula que tem a função de libertar automaticamente a pressão de um sistema quando esta excede um limite pré-determinado."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000033> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000034> (pipe)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000034> "pipe"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000034> "tubo"@pt-br)
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000034> "cano"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000034> "def. um iof:ArtefatoMaterial que consiste num conduto cilíndrico oco destinado ao transporte e contenção de fluidos sob pressão."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000034> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000035> (pipe fitting)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000035> "conexão"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000035> "pipe fitting"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000035> "def. um iof:ArtefatoMaterial que tem a função de unir secções de tubagem ou alterar a direção, diâmetro ou ramificação de um fluxo."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000035> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000036> (pipe tee)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000036> "pipe tee"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000036> "tê de tubulação"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000036> "def. uma Conexão que permite a ramificação de um fluxo principal numa direção perpendicular (formato em \"T\")."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000036> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000035>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000037> (redutor de tubulação)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000037> "pipe reducer"@en)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000037> "redutor de tubulação"@pt-br)
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000037> "redutor"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000037> "def. uma Conexão que tem a função de conectar tubagens de diferentes diâmetros nominais para ajustar a velocidade ou pressão do fluxo."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000037> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000035>)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000038> (flow nozzle)
-
-AnnotationAssertion(rdfs:comment <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000038> "É um elemento primário de medição. Diferente da placa de orifício, o bocal de vazão possui uma entrada arredondada que guia o fluido, sendo mais resistente à erosão e ideal para fluxos de alta velocidade ou vapor."@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000038> "bocal de vazão"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000038> "flow nozzle"@en)
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000038> "bocal"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000038> "def. um iof:ArtefatoMaterial que tem a função de criar uma restrição de fluxo para medir a taxa de escoamento através do diferencial de pressão."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000038> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000039> (flame arrestor)
-
-AnnotationAssertion(rdfs:comment <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000039> "Um dispositivo de segurança essencial. Ele utiliza uma malha metálica ou canais estreitos para dissipar o calor da chama abaixo da temperatura de ignição do gás, impedindo que uma explosão ou fogo retorne para o tanque ou para a linha de suprimento."@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000039> "corta-chamas"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000039> "flame arrestor"@en)
-AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000039> "supressor de chamas"@pt-br)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000039> "def. um iof:ArtefatoMaterial que tem a função de impedir a propagação de chamas através de uma linha de gás ou vapor."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000039> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000040> (purgador de vapor)
-
-AnnotationAssertion(rdfs:comment <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000040> "O termo \"purgador\" vem da ideia de \"purgar\" ou eliminar o que é indesejado (o condensado) para manter a eficiência térmica do sistema e evitar o golpe de aríete (water hammer) nas tubulações."@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000040> "purgador de vapor"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000040> "steam trap"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000040> "def. um iof:ArtefatoMaterial que tem a função de descarregar condensado e gases não condensáveis de uma linha de vapor sem permitir a fuga do vapor."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000040> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000041> (transmissor)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000041> "transmissor"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000041> "transmitter"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000041> "def. um iof:ArtefatoMaterial que tem a função de converter o sinal bruto de um elemento de medição num sinal de saída normalizado (ex: 4-20mA ou digital)."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000041> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000042> (atuador)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000042> "atuador"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000042> "controlled actuator"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000042> "def. um iof:ArtefatoMaterial que fornece a força necessária para mover um mecanismo de válvula ou outro elemento final de controlo com base num sinal."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000042> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000043> (posicionador)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000043> "posicionador"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000043> "positioner"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000043> "def. um iof:ArtefatoMaterial que tem a função de garantir que a posição do atuador corresponde exatamente ao sinal de controlo recebido, compensando forças de fricção."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000043> iof-core:MaterialArtifact)
-
-# Class: <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000044> (frequency converter)
-
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000044> "conversor de frequência"@pt-br)
-AnnotationAssertion(rdfs:label <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000044> "frequency converter"@en)
-AnnotationAssertion(<https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000044> "def. um iof:ArtefatoMaterial que tem a função de controlar a velocidade de rotação de um motor elétrico através da variação da frequência da alimentação elétrica."@pt-br)
-SubClassOf(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000044> iof-core:MaterialArtifact)
-
-
-DisjointClasses(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000002> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000003> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000004> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000005> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000006>)
-DisjointClasses(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000015> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000016> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000017>)
-DisjointClasses(<https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000015> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000016> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000017> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000031> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000032> <https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000033>)
 )
