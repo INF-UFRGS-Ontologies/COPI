@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valve — COPPP</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<style>
+  :root{--accent:#1e3a5f;--accent2:#2563eb;--border:#dee2e6;--muted:#6c757d;--light:#f8fafc;}
+  body{font-family:'Georgia',serif;background:#fff;color:#1a1a1a;font-size:15px;}
+  a{color:var(--accent2);}
+  .doc-nav{background:var(--accent);color:white;padding:.6rem 0;
+           font-family:system-ui,sans-serif;font-size:.85rem;}
+  .doc-nav a{color:rgba(255,255,255,.75);text-decoration:none;}
+  .doc-nav a:hover{color:white;}
+  .doc-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%);
+            color:white;padding:2rem 2rem 1.75rem;border-radius:10px;margin-bottom:2rem;}
+  .onto-title{font-family:system-ui,sans-serif;font-size:2.6rem;font-weight:800;letter-spacing:-.04em;}
+  .onto-subtitle{font-size:1.1rem;color:rgba(255,255,255,.6);font-weight:300;}
+  .onto-iri{font-family:monospace;font-size:.82rem;color:rgba(255,255,255,.5);margin-top:.5rem;}
+  .hero-pill{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+             border-radius:20px;font-size:.72rem;font-family:monospace;padding:.2rem .7rem;color:rgba(255,255,255,.75);}
+  .hero-stat{font-family:system-ui,sans-serif;text-align:center;}
+  .hero-stat .val{font-size:2rem;font-weight:800;line-height:1;}
+  .hero-stat .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;
+                  color:rgba(255,255,255,.5);margin-top:.2rem;}
+  .index-table th{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;
+                  text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+                  background:var(--light);border-bottom:2px solid var(--border);}
+  .index-table td{font-size:.875rem;vertical-align:middle;border-bottom:1px solid var(--border);}
+  .class-link{font-family:system-ui,sans-serif;font-weight:600;color:var(--accent2);text-decoration:none;}
+  .class-link:hover{text-decoration:underline;}
+  .bfo-pill{font-size:.68rem;font-family:monospace;background:#eff6ff;border:1px solid #bfdbfe;
+            border-radius:4px;padding:.1rem .4rem;color:#1d4ed8;}
+  .mode-pill{font-size:.68rem;font-family:system-ui,sans-serif;font-weight:600;text-transform:uppercase;
+             letter-spacing:.05em;border-radius:4px;padding:.1rem .45rem;}
+  .mode-equivalent{background:#dcfce7;color:#166534;}
+  .mode-necessary{background:#fef3c7;color:#92400e;}
+  .mode-mixed{background:#f3e8ff;color:#6b21a8;}
+  .bfo-section{margin-bottom:3rem;}
+  .bfo-section-header{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;
+                      text-transform:uppercase;letter-spacing:.1em;color:var(--muted);
+                      border-bottom:2px solid var(--border);padding-bottom:.5rem;margin-bottom:1.5rem;
+                      display:flex;align-items:center;justify-content:space-between;}
+  .count-badge{background:var(--light);border:1px solid var(--border);border-radius:20px;
+               padding:.15rem .6rem;font-size:.68rem;font-weight:600;color:var(--muted);}
+  .class-card{border:1px solid var(--border);border-radius:8px;margin-bottom:1.5rem;overflow:hidden;}
+  .class-card-header{padding:.85rem 1.1rem .7rem;background:var(--light);border-bottom:1px solid var(--border);
+                     display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;}
+  .class-card-name{font-family:system-ui,sans-serif;font-size:1.1rem;font-weight:700;color:var(--accent);}
+  .class-card-name a{color:var(--accent);text-decoration:none;}
+  .class-card-name a:hover{color:var(--accent2);text-decoration:underline;}
+  .class-iri{font-family:monospace;font-size:.72rem;color:var(--muted);}
+  .class-card-body{padding:.85rem 1.1rem;display:flex;gap:1.5rem;align-items:flex-start;}
+  .class-def{font-size:.9rem;color:#374151;line-height:1.6;font-style:italic;margin-bottom:.6rem;}
+  .class-meta{display:flex;flex-wrap:wrap;gap:.75rem;font-family:system-ui,sans-serif;font-size:.8rem;}
+  .meta-item{color:var(--muted);}
+  .meta-item strong{color:#374151;}
+  .rel-card{border:1px solid var(--border);border-radius:6px;margin-bottom:.75rem;overflow:hidden;}
+  .rel-card-header{padding:.6rem .9rem;background:var(--light);border-bottom:1px solid var(--border);
+                   display:flex;align-items:center;gap:.75rem;}
+  .rel-name{font-family:monospace;font-size:.95rem;font-weight:700;color:var(--accent);}
+  .rel-type-pill{font-size:.65rem;font-family:system-ui,sans-serif;font-weight:700;text-transform:uppercase;
+                 letter-spacing:.05em;border-radius:4px;padding:.1rem .45rem;background:#ede9fe;color:#5b21b6;}
+  .rel-card-body{padding:.6rem .9rem;font-family:system-ui,sans-serif;font-size:.83rem;}
+  .rel-meta{display:flex;flex-wrap:wrap;gap:1rem;color:var(--muted);}
+  .rel-meta strong{color:#374151;}
+  .toc-sticky{position:sticky;top:1rem;}
+  .toc-link{display:block;font-family:system-ui,sans-serif;font-size:.82rem;color:var(--accent);
+            text-decoration:none;padding:.2rem .5rem;border-left:2px solid var(--border);margin-bottom:.15rem;}
+  .toc-link:hover{color:var(--accent2);border-left-color:var(--accent2);}
+  .toc-header{font-family:system-ui,sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;
+              letter-spacing:.1em;color:var(--muted);margin-bottom:.5rem;}
+  /* Per-class page */
+  .ph-hero{border-bottom:3px solid var(--accent);padding:2rem 0 1.5rem;margin-bottom:2rem;}
+  .ph-class-name{font-size:2.4rem;font-weight:700;letter-spacing:-.03em;
+                 font-family:system-ui,sans-serif;color:var(--accent);}
+  .ph-class-iri{font-family:monospace;font-size:.85rem;color:var(--muted);word-break:break-all;}
+  .status-pill{font-size:.72rem;font-family:system-ui,sans-serif;font-weight:600;padding:.2rem .7rem;
+               border-radius:20px;text-transform:uppercase;letter-spacing:.06em;}
+  .status-validated{background:#dcfce7;color:#166534;}
+  .status-exported{background:#f3e8ff;color:#6b21a8;}
+  .status-reviewed{background:#dbeafe;color:#1e40af;}
+  .status-proposed{background:#fef3c7;color:#92400e;}
+  .doc-section{margin-bottom:2.5rem;}
+  .doc-section-title{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;
+                     letter-spacing:.1em;color:var(--muted);border-bottom:1px solid var(--border);
+                     padding-bottom:.4rem;margin-bottom:1rem;}
+  .nl-def{font-size:1.08rem;font-style:italic;color:#1a1a1a;border-left:4px solid var(--accent2);
+          padding:.6rem 1rem;margin-bottom:.75rem;background:#f8faff;}
+  .nl-def .lang-tag{font-size:.7rem;font-family:monospace;font-style:normal;color:var(--muted);margin-bottom:.2rem;}
+  .axiom-block{background:#f8f9fa;border:1px solid var(--border);border-radius:6px;
+               padding:.9rem 1rem;margin-bottom:.75rem;font-size:.88rem;}
+  .axiom-label{font-family:system-ui,sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;
+               letter-spacing:.08em;color:var(--muted);margin-bottom:.3rem;}
+  .owl-block{background:#1e293b;color:#e2e8f0;border-radius:8px;padding:1rem 1.2rem;
+             font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:.78rem;
+             line-height:1.7;overflow-x:auto;white-space:pre;}
+  .fol-line{font-family:monospace;font-size:.85rem;line-height:1.9;display:block;}
+  .fol-label{font-family:system-ui,sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;
+             letter-spacing:.06em;color:var(--muted);margin-right:.5rem;}
+  .step-block{border:1px solid var(--border);border-radius:8px;margin-bottom:1rem;overflow:hidden;}
+  .step-block-header{display:flex;align-items:center;gap:.6rem;padding:.65rem 1rem;
+                     font-family:system-ui,sans-serif;font-weight:600;font-size:.9rem;}
+  .step-num{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;
+            justify-content:center;color:white;font-size:.7rem;font-weight:700;flex-shrink:0;}
+  .step-1 .step-block-header{background:color-mix(in srgb,#2563eb 8%,white);border-bottom:2px solid #2563eb;}
+  .step-1 .step-num{background:#2563eb;}
+  .step-2 .step-block-header{background:color-mix(in srgb,#7c3aed 8%,white);border-bottom:2px solid #7c3aed;}
+  .step-2 .step-num{background:#7c3aed;}
+  .step-3 .step-block-header{background:color-mix(in srgb,#d97706 8%,white);border-bottom:2px solid #d97706;}
+  .step-3 .step-num{background:#d97706;}
+  .step-4 .step-block-header{background:color-mix(in srgb,#059669 8%,white);border-bottom:2px solid #059669;}
+  .step-4 .step-num{background:#059669;}
+  .step-body{padding:.9rem 1rem;}
+  .decision-value{font-family:monospace;font-size:.9rem;background:#f1f5f9;padding:.15rem .5rem;
+                  border-radius:4px;font-weight:600;}
+  .rationale{margin-top:.6rem;font-size:.88rem;color:#374151;border-left:3px solid var(--border);padding-left:.75rem;}
+  .disjoint-pill{display:inline-block;font-family:monospace;font-size:.8rem;padding:.2rem .6rem;
+                 border-radius:4px;background:#fee2e2;color:#991b1b;margin:.15rem;}
+  .parts-table{width:100%;font-size:.85rem;border-collapse:collapse;}
+  .parts-table th{background:#f8f9fa;font-family:system-ui,sans-serif;font-size:.72rem;text-transform:uppercase;
+                  letter-spacing:.05em;padding:.4rem .7rem;border:1px solid var(--border);font-weight:600;color:var(--muted);}
+  .parts-table td{padding:.4rem .7rem;border:1px solid var(--border);font-family:monospace;}
+  .sig-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;}
+  .sig-cell{border:1px solid var(--border);border-radius:6px;padding:.65rem .8rem;}
+  .sig-cell-label{font-family:system-ui,sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;
+                  letter-spacing:.08em;color:var(--muted);margin-bottom:.3rem;}
+  .bfo-badge{display:inline-block;font-family:monospace;font-size:.75rem;padding:.15rem .5rem;
+             border-radius:4px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;}
+  .meta-table{font-size:.8rem;font-family:system-ui,sans-serif;}
+  .meta-table td:first-child{color:var(--muted);padding-right:1rem;white-space:nowrap;}
+  .meta-table td{padding:.2rem 0;vertical-align:top;}
+  /* Source definitions */
+  .source-card{border:1px solid var(--border);border-radius:8px;margin-bottom:.75rem;overflow:hidden;}
+  .source-card-header{display:flex;justify-content:space-between;align-items:center;padding:.5rem .9rem;
+                      background:#f8f9fa;border-bottom:1px solid var(--border);font-family:system-ui,sans-serif;}
+  .source-card-body{padding:.75rem .9rem;font-size:.88rem;}
+  @media (min-width:992px){.sidebar-sticky{position:sticky;top:1rem;}}
+  @media print{.doc-nav,.no-print{display:none!important;}body{font-size:13px;}}
+</style>
+
+</head>
+<body>
+<nav class="doc-nav">
+  <div class="container-fluid px-4 d-flex gap-3">
+    <a href="../index.html">COPPP</a>
+    <span style="opacity:.4">·</span>
+    <a href="https://www.inf.ufrgs.br/ontologies/coppp">INF/UFRGS Ontologies</a>
+  </div>
+</nav>
+<div class="container-fluid px-4 py-4" style="max-width:1200px;">
+
+<div class="d-flex justify-content-between align-items-center mb-3 no-print"
+     style="font-family:system-ui,sans-serif;font-size:.83rem;">
+  <div class="d-flex gap-2 align-items-center text-muted">
+    <a href="../index.html" class="text-muted text-decoration-none">← Class Reference</a>
+  </div>
+</div>
+
+<div style="max-width:1100px;">
+  <div class="row">
+    <div class="col-lg-8">
+
+      <div class="ph-hero">
+        <div class="d-flex align-items-center gap-2 mb-1">
+          <span class="status-pill status-validated">validated</span>
+          <span class="mode-pill mode-necessary">necessary</span>
+          <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPPP_0000001</code>
+        </div>
+        <div class="ph-class-name">Valve</div>
+        <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001</code></div>
+        <div class="mt-2" style="font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted);">
+          Generated on 2026-04-08
+        </div>
+      </div>
+
+      <div class="doc-section">
+        <div class="doc-section-title">Natural Language Definition</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Uma válvula é um artefato material que possui uma função de controle de fluxo para permitir, obstruir, regular ou desviar correntes de fluido.</div>
+      </div>
+
+      <div class="doc-section">
+        <div class="doc-section-title">Formal Axioms</div>
+        <div class="axiom-block"><div class="axiom-label">Semi-formal (Aristotelian)</div>Every valve is a material artifact that has the function to control fluid flow by permitting, obstructing, regulating, or diverting fluid streams.</div>
+        <div class="axiom-block">
+          <div class="axiom-label">First-Order Logic Theory</div>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (Valve(x) → MaterialArtifact(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (Valve(x) → ∃bearerOf.FlowControlFunction) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
+<span class="fol-line"><span class="fol-label">[Necessary part: ValveBody]</span>∀x (Valve(x) → ∃p (ValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+<span class="fol-line"><span class="fol-label">[Necessary part: FlowControlElement]</span>∀x (Valve(x) → ∃p (FlowControlElement(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+<span class="fol-line"><span class="fol-label">[Necessary part: Seat]</span>∀x (Valve(x) → ∃p (Seat(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((Valve(x) ∧ FlowControlFunction(f) ∧ bearerOf(x,f)) →
+      ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
+      ∃e (Participant(e) ∧ participatesIn(e,f)) ∧
+      processType(f,FlowControlWithoutEnergyAddition-Permits,Obstructs,Regulates,OrDivertsFluid)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+</div>
+        </div>
+        <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix coppp:    &lt;https://www.inf.ufrgs.br/ontologies/coppp#&gt; .
+@prefix :         &lt;https://www.inf.ufrgs.br/ontologies/coppp#&gt; .
+@prefix owl:      &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf:      &lt;http://www.w3.org/1999/02/22/rdf-syntax-ns#&gt; .
+@prefix rdfs:     &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd:      &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix bfo:      &lt;http://purl.obolibrary.org/obo/&gt; .
+@prefix iof-core: &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; .
+@prefix iof-av:   &lt;https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/&gt; .
+@prefix skos:     &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix qudt:     &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix dcterms:  &lt;http://purl.org/dc/terms/&gt; .
+@prefix foaf:     &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+### COPPP — Core Ontology of Petroleum Production Plants
+### Class module: Valve
+&lt;https://www.inf.ufrgs.br/ontologies/coppp&gt;
+    rdf:type owl:Ontology ;
+    dcterms:title &quot;Core Ontology of Petroleum Production Plants (COPPP)&quot;@en ;
+    dcterms:title &quot;Ontologia Central de Plantas de Produção de Petróleo (COPPP)&quot;@pt ;
+    dcterms:description &quot;BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants, developed using the four-step RDL enrichment method.&quot;@en ;
+    skos:scopeNote &quot;Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.&quot;@en ;
+    skos:scopeNote &quot;COPPP provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPPP is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
+    skos:scopeNote &quot;Escopo: poços, instalações submarinas, instalações de topside responsáveis pelo processamento primário (separação, enquadramento dos fluidos em certas condições especificadas, processamento do gás, do óleo e da água), produção, injeção, controle, monitoramento, medição.&quot;@pt-br ;
+    owl:versionInfo &quot;0.1.0-draft&quot; ;
+    owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
+    owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
+    dcterms:creator &lt;https://github.com/INF-UFRGS-Ontologies/coppp&gt; ;
+    dcterms:contributor &quot;Cauã Antunes&quot; ;
+    dcterms:contributor &quot;Haroldo Rojas&quot; ;
+    dcterms:contributor &quot;Rafael Petry&quot; ;
+    dcterms:contributor &quot;Régis Romeu&quot; ;
+    dcterms:contributor &quot;Mara Abel&quot; ;
+    dcterms:isPartOf &lt;https://inf.ufrgs.br/projetos/OntoKG&gt; ;
+    dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
+    dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
+    dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-04-13&quot;^^xsd:date .
+
+### Identity-giving function
+:FlowControlFunction rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:DesignedFunction ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
+        owl:allValuesFrom :FlowControlProcess
+    ] ;
+    rdfs:label &quot;flow control function&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.&quot;@en .
+
+### Process type
+:FlowControlProcess rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:PlannedProcess ;
+    rdfs:label &quot;flow control process&quot;@en .
+
+:FlowControlProcess
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasInput ;
+        owl:someValuesFrom :FluidPortion
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasOutput ;
+        owl:someValuesFrom :FluidPortion
+    ] .
+
+### Equipment universal: Valve
+:Valve rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasFunction ;  # MaterialArtifact/Assembly ⊑ Object
+        owl:someValuesFrom :FlowControlFunction
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasComponentPartAtAllTimes ;
+        owl:someValuesFrom :ValveBody
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasComponentPartAtAllTimes ;
+        owl:someValuesFrom :FlowControlElement
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasComponentPartAtAllTimes ;
+        owl:someValuesFrom :Seat
+    ] ;
+    rdfs:label &quot;valve&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma válvula é um artefato material que possui uma função de controle de fluxo para permitir, obstruir, regular ou desviar correntes de fluido.&quot;@pt ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every valve is a material artifact that has the function to control fluid flow by permitting, obstructing, regulating, or diverting fluid streams.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x(Valve(x) ↔ MaterialArtifact(x) ∧ ∃f(FlowControlFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
+    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
+    iof-av:primitiveRationale &quot;Might be too restrictive to define as sufficient being a material artifact and having a flow control function.&quot;@en ;
+    skos:definition &quot;[ISO 15926-4] A &lt;VALVE&gt; is a &lt;FLUID REGULATOR&gt; that can be used to control (i.e. permit, obstruct, regulate or divert) a fluid stream&quot;@en ;
+    skos:definition &quot;[CFIHOS] A fluid regulator that can be used to control (i.e. permit, obstruct, regulate or divert) a fluid stream.&quot;@en ;
+    skos:definition &quot;[OnePetro] Any of several valves:  plug, gate, butterfly, needle, etc., used in oil field operations.&quot;@en ;
+    skos:definition &quot;[POSC Caesar] A fluid regulator that can be used to control (i.e. permit, obstruct, regulate or divert) a fluid stream.&quot;@en .
+
+:ValveBody rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;valve body&quot;@en .
+
+:FlowControlElement rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;flow control element&quot;@en .
+
+:Seat rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;seat&quot;@en .
+
+# Disjointness: Valve and Pump
+[] rdf:type owl:AllDisjointClasses ;
+    owl:members ( :Valve :Pump ) .
+
+# Disjointness: Valve and Compressor
+[] rdf:type owl:AllDisjointClasses ;
+    owl:members ( :Valve :Compressor ) .
+
+# Disjointness: Valve and Turbine
+[] rdf:type owl:AllDisjointClasses ;
+    owl:members ( :Valve :Turbine ) .
+
+</div></div>
+      </div>
+
+      <div class="doc-section">
+        <div class="doc-section-title">Axiomatization Decision Log</div>
+        
+<div class="step-block step-1">
+  <div class="step-block-header">
+    <span class="step-num">1</span> Identity-Giving Function
+  </div>
+  <div class="step-body">
+    <div class="row g-3 mb-2">
+      <div class="col-sm-6">
+        <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Function class</div>
+        <span class="decision-value">FlowControlFunction</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ DesignedFunction</span>
+      </div>
+      <div class="col-sm-6">
+        <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
+        <span class="decision-value">FlowControlProcess</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
+      </div>
+    </div>
+    <div class="rationale">The identity-giving function is the ability to control fluid flow - to permit, obstruct, regulate or divert a fluid stream. This function is what makes a valve a valve regardless of its physical mechanism. Reusing the existing FlowControlFunction from already-enriched classes.</div>
+  </div>
+</div>
+<div class="step-block step-2">
+  <div class="step-block-header">
+    <span class="step-num">2</span> Genus Determination
+  </div>
+  <div class="step-body">
+    <div class="mb-2">
+      <span class="decision-value">MaterialArtifact</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
+    </div>
+    <div class="rationale">While &#x27;FLUID REGULATOR&#x27; appears in ISO 15926, this is too domain-specific and not yet enriched. Valve is a foundational equipment category in industrial ontologies. Each valve instance is a single causally unified object with a designed function, making it a MaterialArtifact. The parent candidates show MaterialArtifact as appropriate, and it is already enriched.</div>
+  </div>
+</div>
+<div class="step-block step-3">
+  <div class="step-block-header">
+    <span class="step-num">3</span> Differentia Specifica
+  </div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.FlowControlFunction</code></div><p style="font-size:.88rem;color:#374151;">An artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.</p><div class="rationale">The flow control function is the minimal differentiating condition. MaterialArtifact already provides the designed function constraint, so we specify the particular type of function that makes something a valve.</div></div>
+</div>
+<div class="step-block step-4">
+  <div class="step-block-header">
+    <span class="step-num">4</span> Necessary Parts
+  </div>
+  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>ValveBody</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr><tr><td>FlowControlElement</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr><tr><td>Seat</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">These three parts are universal to all valve types - the body provides containment, the flow control element performs the actual flow manipulation, and seats provide sealing capability.</div></div>
+</div>
+      </div>
+
+      
+<div class="doc-section">
+  <div class="doc-section-title">Process Participation Signature</div>
+  <div class="sig-grid">
+    <div class="sig-cell"><div class="sig-cell-label">Inputs</div><div style="font-size:.88rem;">{&#x27;constraints&#x27;: &#x27;any phase (gas, liquid, multiphase)&#x27;, &#x27;count&#x27;: 1, &#x27;type&#x27;: &#x27;FluidPortion&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label">Outputs</div><div style="font-size:.88rem;">{&#x27;constraints&#x27;: &#x27;same fluid with modified flow characteristics&#x27;, &#x27;count&#x27;: 1, &#x27;type&#x27;: &#x27;FluidPortion&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label">Transformation</div><div style="font-size:.88rem;">flow control without energy addition - permits, obstructs, regulates, or diverts fluid</div></div>
+  </div>
+  <div class="rationale mt-2">Valves are single-input, single-output devices that modify flow characteristics without adding energy to the fluid. The fluid composition remains unchanged, only flow parameters are controlled.</div>
+</div>
+      <div class="doc-section"><div class="doc-section-title">Disjoint With</div><div><span class="disjoint-pill">Pump</span> <span class="disjoint-pill">Compressor</span> <span class="disjoint-pill">Turbine</span></div><div class="rationale mt-2">These equipment types have incompatible process signatures - pumps and compressors add energy to fluids, turbines extract energy from fluids, while valves control flow without energy transfer.</div></div>
+      <div class="doc-section"><div class="doc-section-title">Metadata</div><table class="meta-table"><tbody><tr><td>COPPP ID</td><td>COPPP_0000001</td></tr><tr><td>IRI</td><td>https://www.inf.ufrgs.br/ontologies/coppp/COPPP_0000001</td></tr><tr><td>Status</td><td>validated</td></tr><tr><td>Axiom mode</td><td>necessary</td></tr><tr><td>Created</td><td>2026-04-08</td></tr><tr><td>Updated</td><td>2026-04-08</td></tr><tr><td>LLM model</td><td>claude-sonnet-4-20250514</td></tr><tr><td>Version</td><td>2026-04-13</td></tr></tbody></table></div>
+
+    </div>
+
+    <div class="col-lg-4">
+      <div class="sidebar-sticky mt-4 mt-lg-0">
+        <div class="card border-0 shadow-sm mb-3" style="border-radius:8px;">
+          <div class="card-header" style="font-family:system-ui,sans-serif;font-size:.72rem;
+               font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:#f8fafc;">
+            Quick facts
+          </div>
+          <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
+            <table class="meta-table">
+              <tr><td>Genus</td><td><strong>MaterialArtifact</strong></td></tr>
+              <tr><td>BFO root</td><td><span class="bfo-pill">MaterialArtifact</span></td></tr>
+              <tr><td>Axiom mode</td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
+              <tr><td>Function</td><td>FlowControlFunction</td></tr>
+              <tr><td>Process</td><td>FlowControlProcess</td></tr>
+              <tr><td>Parts</td><td>3</td></tr>
+            </table>
+          </div>
+        </div>
+        
+<div class="doc-section">
+  <div class="doc-section-title">
+    Source Definitions
+    <span style="float:right;font-variant-numeric:tabular-nums;font-weight:400;">4 sources</span>
+  </div>
+  
+<div class="source-card">
+  <div class="source-card-header">
+    <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#dbeafe;color:#1e40af;">ISO 15926-4</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">VALVE</span>
+  </div>
+  <div class="source-card-body">
+    <div style="color:#374151;font-size:.88rem;">A &lt;VALVE&gt; is a &lt;FLUID REGULATOR&gt; that can be used to control (i.e. permit, obstruct, regulate or divert) a fluid stream</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: VALVE · source_uri: https://standards.iso.org/iso/15926/-4/reference-data-item/VALVE · term_type: ClassOfFunctionalObject</div>
+  </div>
+</div>
+<div class="source-card">
+  <div class="source-card-header">
+    <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#dcfce7;color:#166534;">CFIHOS</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">valve</span>
+  </div>
+  <div class="source-card-body">
+    <div style="color:#374151;font-size:.88rem;">A fluid regulator that can be used to control (i.e. permit, obstruct, regulate or divert) a fluid stream.</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: CFIHOS-30000660 · term_type: AbstractTagAndEquipmentClass</div>
+  </div>
+</div>
+<div class="source-card">
+  <div class="source-card-header">
+    <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#f1f5f9;color:#374151;">ONEPETRO_GLOSSARY</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">Valve</span>
+  </div>
+  <div class="source-card-body">
+    <div style="color:#374151;font-size:.88rem;">Any of several valves:  plug, gate, butterfly, needle, etc., used in oil field operations.</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: valve · source_uri: https://onepetro.org/search-results?page=1&amp;q=valve</div>
+  </div>
+</div>
+<div class="source-card">
+  <div class="source-card-header">
+    <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#ede9fe;color:#5b21b6;">POSC Caesar</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">Valve</span>
+  </div>
+  <div class="source-card-body">
+    <div style="color:#374151;font-size:.88rem;">A fluid regulator that can be used to control (i.e. permit, obstruct, regulate or divert) a fluid stream.</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: PCA_100004125 · source_uri: http://rds.posccaesar.org/ontology/plm/rdl/PCA_100004125 · term_type: Class</div>
+  </div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
