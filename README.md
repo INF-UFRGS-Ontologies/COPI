@@ -1,100 +1,84 @@
-# COPPP — Core Ontology for Petroleum Production Plants
+# COPPP — Core Ontology of Petroleum Production Plants
 
-**COPPP** is a domain ontology focused on **Petroleum Production Plants**, designed as a **core semantic artifact** to support interoperability, reasoning, and data integration across heterogeneous industrial standards and data sources.
+**IRI:** `https://www.inf.ufrgs.br/ontologies/coppp`  
+**License:** [MIT](LICENSE)
 
-This repository is maintained under the scope of academic research at **UFRGS**, with a strong emphasis on **formal ontology engineering**, **semantic interoperability**, and **industrial applicability**.
-
----
-
-## 🎯 Scope and Motivation
-
-Industrial petroleum production environments rely on multiple overlapping standards and data models (e.g., ISO 15926, DEXPI, CFIHOS), each addressing specific viewpoints such as engineering design, operations, or asset management.
-
-COPPP aims to:
-
-- Provide a **precisely scoped core ontology** for petroleum production plants
-- Act as a **semantic bridge**, not a replacement, for existing standards
-- Enable **formal reasoning**, querying, and integration over heterogeneous data sources
-- Support both **virtualized** and **materialized** knowledge graph deployments
-
-COPPP is **not intended** to fully replicate or reimplement any existing industrial standard.
+COPPP is a domain-core ontology for petroleum production plants, developed as part of PhD research at [UFRGS](https://www.ufrgs.br). It provides a foundational semantic layer by specializing [BFO 2020](https://github.com/bfo-ontology/bfo-2020) and [IOF-Core](https://spec.industrialontologies.org/ontology/202601/core/Core/), and is designed to interoperate with major industrial standards throughout the asset lifecycle.
 
 ---
 
-## 🧩 Interoperability Targets
+## Scope
 
-COPPP is designed to be **correlatable and alignable** with the following standards and initiatives:
+COPPP covers:
 
-- **ISO 15926-4** — Reference Data Library (RDL)
-- **DEXPI** — Data Exchange in the Process Industry
-- **CFIHOS** — Capital Facilities Information Handover Specification
-- **POSC Caesar Association**
-- **IDO (Industrial Data Ontologies)**
-- **Energistics standards**
-- **PPDM (Professional Petroleum Data Management)**
+- Material entities composing petroleum production plants (equipment, assemblies, systems)
+- Functional locations used to organize and manage physical assets
+- Information artifacts describing assets, locations, and plant documentation
 
-Alignments are expected to be:
-- *partial*
-- *explicit*
-- *use-case driven*
+It explicitly excludes real-time control logic, numerical simulation models, and business process modeling beyond asset lifecycle representation.
 
 ---
 
-## 🧠 Ontology Design Principles
+## Standards alignment
 
-The development of COPPP follows these principles:
+COPPP is designed to be correlatable and alignable with:
 
-- **Strict domain scoping**
-- **Clear separation between core concepts and extensions**
-- **OWL 2 DL compliance**, enabling automated reasoning
-- **Minimal ontological commitment**, favoring reuse and alignment
-- **Compatibility with Ontology Development Kit (ODK)**
-- **Methodological grounding**, aligned with LOT (Linked Ontology Toolset)
+| Standard | Description |
+|---|---|
+| ISO 15926-4 | Reference Data Library (RDL) |
+| ISO 14224 | Reliability and maintenance of equipment |
+| CFIHOS | Capital Facilities Information Handover Specification |
+| DEXPI | Data Exchange in the Process Industry |
+| POSC Caesar RDL | Reference Data Library |
 
 ---
 
-## 📁 Repository Structure
+## Release artefacts
+
+Artefacts are published at `https://www.inf.ufrgs.br/ontologies/coppp/` and generated automatically on every push to `main` via GitHub Actions using [ODK](https://github.com/INCATools/ontology-development-kit).
+
+| File | Description |
+|---|---|
+| `coppp.owl` / `coppp.ttl` | Primary release (full) |
+| `coppp-base.owl` / `coppp-base.ttl` | Base artefact (no imports merged) |
+| `coppp-full.owl` / `coppp-full.ttl` | Full artefact (imports merged) |
+| `coppp-simple.owl` / `coppp-simple.ttl` | Simplified artefact |
+
+---
+
+## Repository structure
+
 ```
 COPPP/
-├── src/            # Ontology source files (OWL, TTL, imports)
-├── docs/           # Documentation, scope definitions, ORSD, diagrams
-├── requirements/   # Competency questions, requirements, constraints
-├── tests/          # Ontology tests, SPARQL queries, reasoning checks
-├── LICENSE         # MIT License
+├── src/ontology/       # Ontology source (OWL, imports, mirrors, Makefile)
+├── docs/               # Static HTML documentation, class pages
+├── requirements/       # ORSD, competency questions (cqs.csv)
+├── LICENSE
 └── README.md
 ```
----
-
-## 🛠 Tooling and Technologies
-
-- **OWL / RDF**
-- **SPARQL**
-- **Ontology Development Kit (ODK)**
-- **Reasoners** (e.g., HermiT, Pellet)
-- **Virtual Knowledge Graphs (Ontop)**
 
 ---
 
-## 📌 Intended Use Cases
+## Development
 
-- Semantic integration of industrial plant data
-- Knowledge graph construction (virtual or materialized)
-- Formal reasoning over plant structure and assets
-- Support for NLP-to-SPARQL and neuro-symbolic pipelines
-- Academic research in applied ontologies and semantic technologies
+This ontology is developed using the [Ontology Development Kit (ODK)](https://github.com/INCATools/ontology-development-kit) and follows the [LOT methodology](https://lot.linkeddata.es/).
 
----
+To regenerate release artefacts locally:
 
-## 📄 License
+```bash
+cd src/ontology
+./run.sh make prepare_release IMP=false PAT=false MIR=false COMP=false
+```
 
-This project is licensed under the **MIT License**.  
-See the [LICENSE](LICENSE) file for details.
+See [`src/ontology/README-editors.md`](src/ontology/README-editors.md) for editor setup instructions.
 
 ---
 
-## 📬 Contact and Attribution
+## Contributors
 
-This ontology is developed and maintained as part of academic research at **Universidade Federal do Rio Grande do Sul (UFRGS)**.
+- Nicolau Oyhenard dos Santos (author)
+- Haroldo Rojas
+- Mara Abel
+- Cauã Roca Antunes
 
-Contributions, discussions, and alignment proposals are welcome via issues and pull requests.
-
+Universidade Federal do Rio Grande do Sul (UFRGS) — Instituto de Informática
