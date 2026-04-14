@@ -3,6 +3,5 @@
   <group id="odk-managed-catalog" prefer="public">
     <uri name="https://www.inf.ufrgs.br/ontologies/coppp/imports/bfo_import.owl" uri="imports/bfo_import.owl"/>
     <uri name="https://www.inf.ufrgs.br/ontologies/coppp/imports/iof-core_import.owl" uri="imports/iof-core_import.owl"/>
-    <uri name="https://www.inf.ufrgs.br/ontologies/coppp/imports/geocore_import.owl" uri="imports/geocore_import.owl"/>
   </group>
 </catalog>
