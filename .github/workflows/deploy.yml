@@ -23,17 +23,6 @@ jobs:
           cd src/ontology
           make prepare_release IMP=false PAT=false MIR=false COMP=false
 
-      - name: Copy artefacts to repo root
-        run: |
-          cp src/ontology/coppp.owl .
-          cp src/ontology/coppp.ttl .
-          cp src/ontology/coppp-base.owl .
-          cp src/ontology/coppp-base.ttl .
-          cp src/ontology/coppp-full.owl .
-          cp src/ontology/coppp-full.ttl .
-          cp src/ontology/coppp-simple.owl .
-          cp src/ontology/coppp-simple.ttl .
-
       - name: Commit artefacts to repository
         run: |
           git config user.name "github-actions[bot]"
