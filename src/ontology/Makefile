@@ -187,7 +187,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  bfo iof-core geocore
+IMPORTS =  bfo iof-core
 
 IMPORT_ROOTS = $(patsubst %, $(IMPORTDIR)/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -461,14 +461,8 @@ mirror-bfo: | $(TMPDIR)
 .PHONY: mirror-iof-core
 .PRECIOUS: $(MIRRORDIR)/iof-core.owl
 mirror-iof-core: | $(TMPDIR)
-	$(ROBOT) convert -I https://spec.industrialontologies.org/ontology/202502/core/Core/ -o $(TMPDIR)/$@.owl
+	$(ROBOT) convert -I https://spec.industrialontologies.org/ontology/202601/core/Core/ -o $(TMPDIR)/$@.owl
 
-
-## ONTOLOGY: geocore
-.PHONY: mirror-geocore
-.PRECIOUS: $(MIRRORDIR)/geocore.owl
-mirror-geocore: | $(TMPDIR)
-	$(ROBOT) convert -I https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore.owl -o $(TMPDIR)/$@.owl
 
 
 $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
