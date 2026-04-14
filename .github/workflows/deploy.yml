@@ -1,0 +1,45 @@
+name: Deploy to UFRGS ontologies server
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: File transfer to ontologies website
+    runs-on: arc-runner
+
+    env:
+      ONTOLOGY: coppp
+      REMOTE_BASE_PATH: ../ontologies/public_html/
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare OWL file for upload
+        run: cp src/ontology/coppp-edit.owl coppp.owl
+
+      - name: Transfer HTML docs to coppp/ folder
+        uses: Dylan700/sftp-upload-action@latest
+        with:
+          server: 143.54.11.25
+          username: ontokg
+          password: ${{ secrets.FTP }}
+          port: 22
+          uploads: |
+            docs/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/
+
+      - name: Transfer OWL file to ontologies root
+        uses: Dylan700/sftp-upload-action@latest
+        with:
+          server: 143.54.11.25
+          username: ontokg
+          password: ${{ secrets.FTP }}
+          port: 22
+          uploads: |
+            ./ => ${{ env.REMOTE_BASE_PATH }}
+          ignore: |
+            !coppp.owl
