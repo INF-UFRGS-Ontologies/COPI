@@ -3,19 +3,34 @@
 **IRI:** `https://www.inf.ufrgs.br/ontologies/coppp`  
 **License:** [MIT](LICENSE)
 
-COPPP is a domain-core ontology for petroleum production plants, developed as part of PhD research at [UFRGS](https://www.ufrgs.br). It provides a foundational semantic layer by specializing [BFO 2020](https://github.com/bfo-ontology/bfo-2020) and [IOF-Core](https://spec.industrialontologies.org/ontology/202601/core/Core/), and is designed to interoperate with major industrial standards throughout the asset lifecycle.
+COPPP is a domain-core ontology for petroleum production plants. It provides a domain-level semantic backbone by specializing [BFO 2020](https://github.com/bfo-ontology/bfo-2020) and [IOF-Core](https://spec.industrialontologies.org/ontology/202601/core/Core/), supporting semantic interoperability across heterogeneous industrial standards and datasets.
 
 ---
 
 ## Scope
 
-COPPP covers:
+**In scope:**
 
-- Material entities composing petroleum production plants (equipment, assemblies, systems)
+- Material entities composing petroleum production plants
 - Functional locations used to organize and manage physical assets
 - Information artifacts describing assets, locations, and plant documentation
 
-It explicitly excludes real-time control logic, numerical simulation models, and business process modeling beyond asset lifecycle representation.
+**Out of scope:**
+
+- Real-time control logic
+- Numerical simulation models
+- Business process modeling beyond asset lifecycle representation
+
+---
+
+## Intended uses
+
+- Semantic integration of heterogeneous plant data sources
+- Support for querying asset hierarchies and functional locations
+- Alignment and comparison between industrial standards
+- Serving as a semantic foundation for domain-specific application ontologies
+
+**Intended end-users:** ontology engineers, asset integrity engineers, maintenance engineers, and industrial data integration specialists.
 
 ---
 
