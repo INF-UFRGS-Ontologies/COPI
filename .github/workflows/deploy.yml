@@ -1,4 +1,4 @@
-name: Deploy to UFRGS ontologies server
+name: Build release artefacts and deploy to UFRGS server
 
 on:
   workflow_dispatch:
@@ -7,8 +7,37 @@ on:
       - main
 
 jobs:
+  generate:
+    name: Generate ODK release artefacts
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate release artefacts
+        run: |
+          cd src/ontology
+          make prepare_release IMP=false PAT=false MIR=false COMP=false
+
+      - name: Upload release artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-artefacts
+          path: |
+            coppp.owl
+            coppp.ttl
+            coppp-base.owl
+            coppp-base.ttl
+            coppp-full.owl
+            coppp-full.ttl
+            coppp-simple.owl
+            coppp-simple.ttl
+
   deploy:
     name: File transfer to ontologies website
+    needs: generate
     runs-on: arc-runner
 
     env:
@@ -19,8 +48,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare OWL file for upload
-        run: cp src/ontology/coppp-edit.owl coppp.owl
+      - name: Download release artefacts
+        uses: actions/download-artifact@v4
+        with:
+          name: release-artefacts
 
       - name: Transfer HTML docs to coppp/ folder
         uses: Dylan700/sftp-upload-action@latest
@@ -32,7 +63,34 @@ jobs:
           uploads: |
             docs/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/
 
-      - name: Transfer OWL file to ontologies root
+      - name: Transfer requirements/ to coppp/requirements/
+        uses: Dylan700/sftp-upload-action@latest
+        with:
+          server: REDACTED
+          username: ontokg
+          password: ${{ secrets.FTP }}
+          port: 22
+          uploads: |
+            requirements/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/requirements/
+
+      - name: Transfer all OWL/TTL variants to coppp/ folder
+        uses: Dylan700/sftp-upload-action@latest
+        with:
+          server: REDACTED
+          username: ontokg
+          password: ${{ secrets.FTP }}
+          port: 22
+          uploads: |
+            ./ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/
+          ignore: |
+            !coppp-base.owl
+            !coppp-base.ttl
+            !coppp-full.owl
+            !coppp-full.ttl
+            !coppp-simple.owl
+            !coppp-simple.ttl
+
+      - name: Transfer primary coppp.owl to ontologies root
         uses: Dylan700/sftp-upload-action@latest
         with:
           server: REDACTED
@@ -43,3 +101,15 @@ jobs:
             ./ => ${{ env.REMOTE_BASE_PATH }}
           ignore: |
             !coppp.owl
+
+      - name: Transfer primary coppp.ttl to ontologies root
+        uses: Dylan700/sftp-upload-action@latest
+        with:
+          server: REDACTED
+          username: ontokg
+          password: ${{ secrets.FTP }}
+          port: 22
+          uploads: |
+            ./ => ${{ env.REMOTE_BASE_PATH }}
+          ignore: |
+            !coppp.ttl

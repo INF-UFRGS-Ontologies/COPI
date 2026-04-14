@@ -17,7 +17,7 @@ contributors:
 ## Configurações do Github ##
 github_org: INF-UFRGS-Ontologies
 repo: coppp
-git_main_branch: master
+git_main_branch: main
 
 ## Configurações do Pipeline ODK ##
 ci:
@@ -41,6 +41,4 @@ import_group:
     - id: bfo
       mirror_from: http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl
     - id: iof-core
-      mirror_from: https://spec.industrialontologies.org/ontology/202502/core/Core/    
-    - id: geocore
-      mirror_from: https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore.owl
+      mirror_from: https://spec.industrialontologies.org/ontology/202601/core/Core/
