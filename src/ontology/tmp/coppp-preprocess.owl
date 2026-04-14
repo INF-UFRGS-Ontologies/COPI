@@ -8,14 +8,12 @@ Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
 Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Prefix(coppp:=<https://www.inf.ufrgs.br/ontologies/COPPP_>)
 Prefix(dcterms:=<http://purl.org/dc/terms/>)
-Prefix(geocore:=<https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_>)
 Prefix(iof-core:=<https://spec.industrialontologies.org/ontology/construct/>)
 
 
 Ontology(<https://www.inf.ufrgs.br/ontologies/coppp.owl>
 Import(<http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl>)
-Import(<https://spec.industrialontologies.org/ontology/202502/core/Core/>)
-Import(<https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore.owl>)
+Import(<https://spec.industrialontologies.org/ontology/202601/core/Core/>)
 Annotation(dcterms:description "A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle.")
 Annotation(dcterms:license <https://opensource.org/license/mit>)
 Annotation(dcterms:title "Core Ontology of Petroleum Production Plants")

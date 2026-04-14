@@ -8,7 +8,6 @@ Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
 Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Prefix(coppp:=<https://www.inf.ufrgs.br/ontologies/COPPP_>)
 Prefix(dcterms:=<http://purl.org/dc/terms/>)
-Prefix(geocore:=<https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_>)
 Prefix(iof-core:=<https://spec.industrialontologies.org/ontology/construct/>)
 
 
