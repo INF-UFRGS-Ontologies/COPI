@@ -15,25 +15,32 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate release artefacts
         run: |
           cd src/ontology
           make prepare_release IMP=false PAT=false MIR=false COMP=false
 
-      - name: Upload release artefacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: release-artefacts
-          path: |
-            coppp.owl
-            coppp.ttl
-            coppp-base.owl
-            coppp-base.ttl
-            coppp-full.owl
-            coppp-full.ttl
-            coppp-simple.owl
-            coppp-simple.ttl
+      - name: Copy artefacts to repo root
+        run: |
+          cp src/ontology/coppp.owl .
+          cp src/ontology/coppp.ttl .
+          cp src/ontology/coppp-base.owl .
+          cp src/ontology/coppp-base.ttl .
+          cp src/ontology/coppp-full.owl .
+          cp src/ontology/coppp-full.ttl .
+          cp src/ontology/coppp-simple.owl .
+          cp src/ontology/coppp-simple.ttl .
+
+      - name: Commit artefacts to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add coppp.owl coppp.ttl coppp-base.owl coppp-base.ttl coppp-full.owl coppp-full.ttl coppp-simple.owl coppp-simple.ttl
+          git diff --cached --quiet || git commit -m "chore: update release artefacts [skip ci]"
+          git push
 
   deploy:
     name: File transfer to ontologies website
@@ -47,11 +54,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Download release artefacts
-        uses: actions/download-artifact@v4
         with:
-          name: release-artefacts
+          ref: main
 
       - name: Transfer HTML docs to coppp/ folder
         uses: Dylan700/sftp-upload-action@latest
@@ -63,7 +67,7 @@ jobs:
           uploads: |
             docs/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/
 
-      - name: Transfer all OWL/TTL variants to coppp/ folder
+      - name: Transfer OWL/TTL variants to coppp/ folder
         uses: Dylan700/sftp-upload-action@latest
         with:
           server: REDACTED
