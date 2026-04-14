@@ -1,27 +1,12 @@
-# Basic ODK workflow
-name: Docs
+# Docs deployment is handled by deploy.yml (SFTP to UFRGS server).
+# This file is kept as a placeholder to avoid ODK template drift.
+name: Docs (disabled)
 
-# Controls when the action will run. 
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-  push:
-    branches:
-      - master
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
-    name: Deploy docs
+  noop:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main
-        uses: actions/checkout@v4
-
-      - name: Deploy docs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CONFIG_FILE: mkdocs.yaml
-
+      - run: echo "Docs are deployed via deploy.yml on push to main."
