@@ -63,16 +63,6 @@ jobs:
           uploads: |
             docs/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/
 
-      - name: Transfer requirements/ to coppp/requirements/
-        uses: Dylan700/sftp-upload-action@latest
-        with:
-          server: REDACTED
-          username: ontokg
-          password: ${{ secrets.FTP }}
-          port: 22
-          uploads: |
-            requirements/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/requirements/
-
       - name: Transfer all OWL/TTL variants to coppp/ folder
         uses: Dylan700/sftp-upload-action@latest
         with:
