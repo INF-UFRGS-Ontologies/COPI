@@ -11,6 +11,7 @@ Prefix(bfo:=<http://purl.obolibrary.org/obo/BFO_>)
 Prefix(iof-core:=<https://spec.industrialontologies.org/ontology/construct/>)
 Prefix(iof-av:=<https://spec.industrialontologies.org/ontology/annotation/>)
 Prefix(copi:=<https://www.inf.ufrgs.br/ontologies/copi/COPI_>)
+Prefix(apv:=<http://inf.ufrgs.br/ontologies/apv#>)
 
 Ontology(<https://www.inf.ufrgs.br/ontologies/copi.owl>
 <https://www.inf.ufrgs.br/ontologies/copi.owl/2026-04-15>
@@ -31,6 +32,9 @@ Annotation(dcterms:contributor "Mara Abel")
 Annotation(skos:scopeNote "Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy."@en)
 Annotation(skos:scopeNote "COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en)
 Annotation(skos:scopeNote "Escopo: poços, instalações submarinas, instalações de topside responsáveis pelo processamento primário (separação, enquadramento dos fluidos em certas condições especificadas, processamento do gás, do óleo e da água), produção, injeção, controle, monitoramento, medição."@pt-br)
+Annotation(apv:GlobalMinLanguageCoverage "en")
+Annotation(apv:ClassURIFormationRule "https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)")
+Annotation(apv:ClassMinAnnotationCoverage "rdfs:label")
 
 ############################
 #   Declarations
