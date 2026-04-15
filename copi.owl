@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://www.inf.ufrgs.br/ontologies/coppp.owl#"
-     xml:base="https://www.inf.ufrgs.br/ontologies/coppp.owl"
+<rdf:RDF xmlns="https://www.inf.ufrgs.br/ontologies/copi.owl#"
+     xml:base="https://www.inf.ufrgs.br/ontologies/copi.owl"
      xmlns:bfo="http://purl.obolibrary.org/obo/BFO_"
      xmlns:dce="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -9,12 +9,12 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:coppp="https://www.inf.ufrgs.br/ontologies/COPPP_"
+     xmlns:copi="https://www.inf.ufrgs.br/ontologies/COPI_"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:iof-core="https://spec.industrialontologies.org/ontology/construct/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
-    <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/coppp.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/coppp/releases/2026-04-14/coppp.owl"/>
+    <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi.owl">
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-14/copi.owl"/>
         <dcterms:description>A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle.</dcterms:description>
         <dcterms:license rdf:resource="https://opensource.org/license/mit"/>
         <dcterms:title>Core Ontology of Petroleum Production Plants</dcterms:title>

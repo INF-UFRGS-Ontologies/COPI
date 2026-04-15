@@ -1,4 +1,4 @@
-@prefix : <https://www.inf.ufrgs.br/ontologies/coppp/coppp-simple.ttl#> .
+@prefix : <https://www.inf.ufrgs.br/ontologies/copi/copi-simple.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -7,10 +7,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix annotation: <https://spec.industrialontologies.org/ontology/annotation/> .
-@base <https://www.inf.ufrgs.br/ontologies/coppp/coppp-simple.ttl> .
+@base <https://www.inf.ufrgs.br/ontologies/copi/copi-simple.ttl> .
 
-<https://www.inf.ufrgs.br/ontologies/coppp/coppp-simple.ttl> rdf:type owl:Ontology ;
-                                                              owl:versionIRI <https://www.inf.ufrgs.br/ontologies/coppp/releases/2026-04-14/coppp-simple.ttl> ;
+<https://www.inf.ufrgs.br/ontologies/copi/copi-simple.ttl> rdf:type owl:Ontology ;
+                                                              owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-14/copi-simple.ttl> ;
                                                               terms:description "A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle." ;
                                                               terms:license <https://opensource.org/license/mit> ;
                                                               terms:title "Core Ontology of Petroleum Production Plants" ;
