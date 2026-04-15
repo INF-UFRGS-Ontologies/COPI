@@ -87,6 +87,8 @@ cd src/ontology
 
 See [`src/ontology/README-editors.md`](src/ontology/README-editors.md) for editor setup instructions.
 
+For a full description of the development and release pipeline — from editing classes in COPIeditor, through the automated GitHub Actions workflow, to IRI deployment on the UFRGS server — see **[`PIPELINE.md`](PIPELINE.md)**.
+
 ---
 
 ## Contributors
