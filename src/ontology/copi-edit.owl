@@ -13,7 +13,7 @@ Prefix(iof-av:=<https://spec.industrialontologies.org/ontology/annotation/>)
 Prefix(copi:=<https://www.inf.ufrgs.br/ontologies/copi/COPI_>)
 
 Ontology(<https://www.inf.ufrgs.br/ontologies/copi.owl>
-<https://www.inf.ufrgs.br/ontologies/copi.owl/2026-04-13>
+<https://www.inf.ufrgs.br/ontologies/copi.owl/2026-04-15>
 
 Import(<http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl>)
 Import(<https://spec.industrialontologies.org/ontology/202502/core/Core/>)
@@ -22,7 +22,7 @@ Annotation(dcterms:title "Core Ontology of Petroleum Installations (COPI)"@en)
 Annotation(dcterms:title "Ontologia Central de Plantas de Produção de Petróleo (COPI)"@pt)
 Annotation(dcterms:description "BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants."@en)
 Annotation(dcterms:license <https://opensource.org/license/mit>)
-Annotation(owl:versionInfo "2026-04-13")
+Annotation(owl:versionInfo "2026-04-15")
 Annotation(dcterms:contributor "Cauã Antunes")
 Annotation(dcterms:contributor "Haroldo Rojas")
 Annotation(dcterms:contributor "Rafael Petry")
