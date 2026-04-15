@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="copi-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>COPI — Class Reference</title>
+<title>&lt;span class=&quot;t-en&quot;&gt;COPI — Class Reference&lt;/span&gt;&lt;span class=&quot;t-pt&quot;&gt;COPI — Referência de Classes&lt;/span&gt;</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 <style>
@@ -139,15 +139,31 @@
   .source-card-body{padding:.75rem .9rem;font-size:.88rem;}
   @media (min-width:992px){.sidebar-sticky{position:sticky;top:1rem;}}
   @media print{.doc-nav,.no-print{display:none!important;}body{font-size:13px;}}
+  /* Language toggle */
+  html.lang-pt .t-en{display:none!important;}
+  html:not(.lang-pt) .t-pt{display:none!important;}
+  .lang-btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
+            color:rgba(255,255,255,.8);border-radius:4px;padding:.15rem .6rem;
+            font-family:system-ui,sans-serif;font-size:.75rem;font-weight:700;
+            letter-spacing:.06em;cursor:pointer;transition:background .15s;}
+  .lang-btn:hover{background:rgba(255,255,255,.22);color:white;}
+  .scope-note{font-size:.88rem;color:#374151;border-left:4px solid #f59e0b;
+              padding:.5rem .9rem;margin-bottom:.6rem;background:#fffbeb;border-radius:0 4px 4px 0;}
 </style>
 
 </head>
 <body>
 <nav class="doc-nav">
-  <div class="container-fluid px-4 d-flex gap-3">
-    <a href="index.html">COPI</a>
-    <span style="opacity:.4">·</span>
-    <a href="https://www.inf.ufrgs.br/ontologies/copi">INF/UFRGS Ontologies</a>
+  <div class="container-fluid px-4 d-flex align-items-center gap-3">
+    <a href="index.html" style="display:flex;align-items:center;text-decoration:none;color:rgba(255,255,255,.85);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="14 8 80 92" width="28" height="34" style="vertical-align:middle;margin-right:.35rem;flex-shrink:0;"><polygon points="54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31" fill="#0e2040"/><g stroke="#38bdf8" stroke-width="1" stroke-opacity="0.45" fill="none"><line x1="54" y1="27" x2="54" y2="54"/><line x1="77.4" y1="40.5" x2="54" y2="54"/><line x1="77.4" y1="67.5" x2="54" y2="54"/><line x1="54" y1="81" x2="54" y2="54"/><line x1="30.6" y1="67.5" x2="54" y2="54"/><line x1="30.6" y1="40.5" x2="54" y2="54"/></g><circle cx="54" cy="54" r="10" fill="#07101e" stroke="#2563eb" stroke-width="1.6"/><path d="M 54,45 C 60,48 60,52 60,53 A 6,6 0 0,1 48,53 C 48,52 48,48 54,45 Z" fill="#f59e0b"/><polygon points="54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31" fill="none" stroke="#2563eb" stroke-width="2" stroke-opacity="0.72"/></svg><strong>COPI</strong></a>
+    <span style="opacity:.3">·</span>
+    <a href="https://www.inf.ufrgs.br/ontologies/copi"><span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span></a>
+    <span style="opacity:.3">·</span>
+    <a href="https://github.com/INF-UFRGS-Ontologies/copi" target="_blank" rel="noopener"
+       style="color:rgba(255,255,255,.55);font-size:.8rem;">GitHub ↗</a>
+    <div style="margin-left:auto;">
+      <button class="lang-btn" id="lang-btn" title="Switch language / Mudar idioma">PT</button>
+    </div>
   </div>
 </nav>
 <div class="container-fluid px-4 py-4" style="max-width:1200px;">
@@ -155,42 +171,87 @@
 <div class="d-flex justify-content-between align-items-center mb-3 no-print"
      style="font-size:.83rem;">
   <span class="text-muted" style="font-family:system-ui,sans-serif;">
-    Class Reference · Version 2026-04-15
+    <span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span> · <span class="t-en">Version</span><span class="t-pt">Versão</span> 2026-04-15
   </span>
 </div>
 
 <div class="doc-hero">
   <div class="row align-items-end g-3">
     <div class="col-lg-8">
-      <div class="onto-title">COPI</div>
-      <div class="onto-subtitle">Core Ontology of Petroleum Installations</div>
+      <div style="display:flex;align-items:center;gap:1.1rem;margin-bottom:.8rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="14 8 80 92" width="52" height="64" style="flex-shrink:0;filter:drop-shadow(0 2px 8px rgba(0,0,0,.45));">
+          <polygon points="54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31" fill="#0a1628"/>
+          <g stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.5" fill="none">
+            <line x1="54" y1="27" x2="54" y2="54"/><line x1="77.4" y1="40.5" x2="54" y2="54"/>
+            <line x1="77.4" y1="67.5" x2="54" y2="54"/><line x1="54" y1="81" x2="54" y2="54"/>
+            <line x1="30.6" y1="67.5" x2="54" y2="54"/><line x1="30.6" y1="40.5" x2="54" y2="54"/>
+          </g>
+          <g stroke="#1d4ed8" stroke-width="0.7" stroke-opacity="0.28" fill="none">
+            <line x1="54" y1="27" x2="77.4" y2="40.5"/><line x1="77.4" y1="40.5" x2="77.4" y2="67.5"/>
+            <line x1="77.4" y1="67.5" x2="54" y2="81"/><line x1="54" y1="81" x2="30.6" y2="67.5"/>
+            <line x1="30.6" y1="67.5" x2="30.6" y2="40.5"/><line x1="30.6" y1="40.5" x2="54" y2="27"/>
+          </g>
+          <circle cx="54" cy="54" r="11" fill="#07101e" stroke="#2563eb" stroke-width="1.8"/>
+          <circle cx="54" cy="54" r="9" fill="none" stroke="#f59e0b" stroke-width="0.6" stroke-opacity="0.3"/>
+          <path d="M 54,44 C 61,47.5 61,52 61,53.5 A 7,7 0 0,1 47,53.5 C 47,52 47,47.5 54,44 Z" fill="#f59e0b"/>
+          <ellipse cx="51.5" cy="47.5" rx="2.2" ry="3.2" fill="white" opacity="0.22" transform="rotate(-20,51.5,47.5)"/>
+          <polygon points="54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-opacity="0.8"/>
+        </svg>
+        <div>
+          <div class="onto-title">COPI</div>
+          <div class="onto-subtitle"><span class="t-en">Core Ontology of Petroleum Installations</span><span class="t-pt">Ontologia Core de Instalações de Petróleo</span></div>
+        </div>
+      </div>
       <div class="onto-iri">https://www.inf.ufrgs.br/ontologies/copi</div>
       <div class="mt-3 d-flex gap-2 flex-wrap">
-        <span class="hero-pill">Class Reference</span>
+        <span class="hero-pill"><span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span></span>
         <span class="hero-pill">OWL 2 DL · BFO 2020 · IOF-Core</span>
         <span class="hero-pill">2026-04-15</span>
+        <a href="https://github.com/INF-UFRGS-Ontologies/copi" target="_blank" rel="noopener"
+           class="hero-pill" style="text-decoration:none;">GitHub ↗</a>
+      </div>
+      <div class="mt-3 d-flex gap-2 flex-wrap">
+        <a href="https://www.inf.ufrgs.br/ontologies/copi/copi.ttl" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.13);
+                  border:1px solid rgba(255,255,255,.3);color:white;border-radius:6px;
+                  padding:.35rem .85rem;font-family:system-ui,sans-serif;font-size:.8rem;
+                  font-weight:600;text-decoration:none;transition:background .15s;"
+           onmouseover="this.style.background='rgba(255,255,255,.22)'"
+           onmouseout="this.style.background='rgba(255,255,255,.13)'">
+          ↓ <span class="t-en">Download Turtle</span><span class="t-pt">Baixar Turtle</span>
+        </a>
+        <a href="https://www.inf.ufrgs.br/ontologies/copi/copi.owl" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.08);
+                  border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);border-radius:6px;
+                  padding:.35rem .85rem;font-family:system-ui,sans-serif;font-size:.8rem;
+                  font-weight:600;text-decoration:none;transition:background .15s;"
+           onmouseover="this.style.background='rgba(255,255,255,.16)'"
+           onmouseout="this.style.background='rgba(255,255,255,.08)'">
+          ↓ <span class="t-en">Download OWL</span><span class="t-pt">Baixar OWL</span>
+        </a>
       </div>
     </div>
     <div class="col-lg-4">
       <div class="row g-2">
         <div class="col-4">
-          <div class="hero-stat"><div class="val">1</div><div class="lbl">Classes</div></div>
+          <div class="hero-stat"><div class="val">1</div><div class="lbl"><span class="t-en">Classes</span><span class="t-pt">Classes</span></div></div>
         </div>
         <div class="col-4">
-          <div class="hero-stat"><div class="val">0</div><div class="lbl">Relations</div></div>
+          <div class="hero-stat"><div class="val">0</div><div class="lbl"><span class="t-en">Relations</span><span class="t-pt">Relações</span></div></div>
         </div>
         <div class="col-4">
-          <div class="hero-stat"><div class="val">7</div><div class="lbl">Axioms</div></div>
+          <div class="hero-stat"><div class="val">7</div><div class="lbl"><span class="t-en">Axioms</span><span class="t-pt">Axiomas</span></div></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<div class="doc-section mt-4" style="margin-bottom:2rem;"><div class="doc-section-title"><span class="t-en">Scope</span><span class="t-pt">Escopo</span></div><div class="scope-note t-en">Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.</div><div class="scope-note t-en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</div><div class="scope-note t-pt">Escopo: poços, instalações submarinas, instalações de topside responsáveis pelo processamento primário (separação, enquadramento dos fluidos em certas condições especificadas, processamento do gás, do óleo e da água), produção, injeção, controle, monitoramento, medição.</div></div>
 
-<div style="padding-bottom:2rem;"><div class="row g-4"><div class="col-lg-2 d-none d-lg-block"><div class="toc-sticky"><div class="toc-header">Contents</div><a href="#class-index" class="toc-link">Class Index</a>
+<div style="padding-bottom:2rem;"><div class="row g-4"><div class="col-lg-2 d-none d-lg-block"><div class="toc-sticky"><div class="toc-header">Contents</div><a href="#class-index" class="toc-link"><span class="t-en">Class Index</span><span class="t-pt">Índice de Classes</span></a>
 <a href="#bfo-materialartifact" class="toc-link">MaterialArtifact <span style="color:#94a3b8;font-size:.7rem;">(1)</span></a>
-</div></div><div class="col-lg-10"><div id="class-index" class="mb-5"><h5 style="font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:1rem;">Class Index</h5><table class="table index-table table-sm"><thead><tr><th>Class</th><th>Genus</th><th>BFO Root</th><th>Axiom mode</th></tr></thead><tbody><tr><td><a href="classes/COPI_0000001.html" class="class-link">Valve</a> <code style="font-size:.68rem;color:var(--muted);">COPI_0000001</code></td><td style='font-family:monospace;font-size:.8rem;color:#374151;'>MaterialArtifact</td><td><span class="bfo-pill">MaterialArtifact</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
+</div></div><div class="col-lg-10"><div id="class-index" class="mb-5"><h5 style="font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:1rem;"><span class="t-en">Class Index</span><span class="t-pt">Índice de Classes</span></h5><table class="table index-table table-sm"><thead><tr><th><span class="t-en">Class</span><span class="t-pt">Classe</span></th><th><span class="t-en">Genus</span><span class="t-pt">Gênero</span></th><th><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></th><th><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></th></tr></thead><tbody><tr><td><a href="classes/COPI_0000001.html" class="class-link">Valve</a> <code style="font-size:.68rem;color:var(--muted);">COPI_0000001</code></td><td style='font-family:monospace;font-size:.8rem;color:#374151;'>MaterialArtifact</td><td><span class="bfo-pill">MaterialArtifact</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
 </tbody></table></div>
 <div id="bfo-materialartifact" class="bfo-section">
   <div class="bfo-section-header">
@@ -213,7 +274,8 @@
   </div>
   <div class="class-card-body">
     <div style="flex:1;min-width:0;">
-      <div class="class-def">A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.</div>
+      <div class="class-def t-en">A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.</div>
+      <div class="class-def t-pt" style="border-left-color:#059669;">Uma válvula é um artefato material que possui uma função de controle de fluxo para permitir, obstruir, regular ou desviar correntes de fluido.</div>
       <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> MaterialArtifact</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div><div class="meta-item"><strong>Necessary parts:</strong> ValveBody, FlowControlElement, Seat</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">Pump, Compressor, Turbine</span></div></div>
     </div>
   </div>
@@ -221,5 +283,22 @@
 </div></div></div></div>
 
 </div>
+<script>
+(function(){
+  var root=document.getElementById('copi-root');
+  var btn=document.getElementById('lang-btn');
+  if(!btn)return;
+  function applyLang(pt){
+    if(pt){root.classList.add('lang-pt');root.lang='pt-BR';btn.textContent='EN';}
+    else{root.classList.remove('lang-pt');root.lang='en';btn.textContent='PT';}
+  }
+  try{applyLang(localStorage.getItem('copi-lang')==='pt');}catch(e){}
+  btn.addEventListener('click',function(){
+    var toPt=!root.classList.contains('lang-pt');
+    applyLang(toPt);
+    try{localStorage.setItem('copi-lang',toPt?'pt':'en');}catch(e){}
+  });
+})();
+</script>
 </body>
 </html>

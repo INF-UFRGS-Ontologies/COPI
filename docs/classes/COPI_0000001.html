@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="copi-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -139,15 +139,31 @@
   .source-card-body{padding:.75rem .9rem;font-size:.88rem;}
   @media (min-width:992px){.sidebar-sticky{position:sticky;top:1rem;}}
   @media print{.doc-nav,.no-print{display:none!important;}body{font-size:13px;}}
+  /* Language toggle */
+  html.lang-pt .t-en{display:none!important;}
+  html:not(.lang-pt) .t-pt{display:none!important;}
+  .lang-btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
+            color:rgba(255,255,255,.8);border-radius:4px;padding:.15rem .6rem;
+            font-family:system-ui,sans-serif;font-size:.75rem;font-weight:700;
+            letter-spacing:.06em;cursor:pointer;transition:background .15s;}
+  .lang-btn:hover{background:rgba(255,255,255,.22);color:white;}
+  .scope-note{font-size:.88rem;color:#374151;border-left:4px solid #f59e0b;
+              padding:.5rem .9rem;margin-bottom:.6rem;background:#fffbeb;border-radius:0 4px 4px 0;}
 </style>
 
 </head>
 <body>
 <nav class="doc-nav">
-  <div class="container-fluid px-4 d-flex gap-3">
-    <a href="../index.html">COPI</a>
-    <span style="opacity:.4">·</span>
-    <a href="https://www.inf.ufrgs.br/ontologies/copi">INF/UFRGS Ontologies</a>
+  <div class="container-fluid px-4 d-flex align-items-center gap-3">
+    <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;color:rgba(255,255,255,.85);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="14 8 80 92" width="28" height="34" style="vertical-align:middle;margin-right:.35rem;flex-shrink:0;"><polygon points="54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31" fill="#0e2040"/><g stroke="#38bdf8" stroke-width="1" stroke-opacity="0.45" fill="none"><line x1="54" y1="27" x2="54" y2="54"/><line x1="77.4" y1="40.5" x2="54" y2="54"/><line x1="77.4" y1="67.5" x2="54" y2="54"/><line x1="54" y1="81" x2="54" y2="54"/><line x1="30.6" y1="67.5" x2="54" y2="54"/><line x1="30.6" y1="40.5" x2="54" y2="54"/></g><circle cx="54" cy="54" r="10" fill="#07101e" stroke="#2563eb" stroke-width="1.6"/><path d="M 54,45 C 60,48 60,52 60,53 A 6,6 0 0,1 48,53 C 48,52 48,48 54,45 Z" fill="#f59e0b"/><polygon points="54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31" fill="none" stroke="#2563eb" stroke-width="2" stroke-opacity="0.72"/></svg><strong>COPI</strong></a>
+    <span style="opacity:.3">·</span>
+    <a href="https://www.inf.ufrgs.br/ontologies/copi"><span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span></a>
+    <span style="opacity:.3">·</span>
+    <a href="https://github.com/INF-UFRGS-Ontologies/copi" target="_blank" rel="noopener"
+       style="color:rgba(255,255,255,.55);font-size:.8rem;">GitHub ↗</a>
+    <div style="margin-left:auto;">
+      <button class="lang-btn" id="lang-btn" title="Switch language / Mudar idioma">PT</button>
+    </div>
   </div>
 </nav>
 <div class="container-fluid px-4 py-4" style="max-width:1200px;">
@@ -155,7 +171,7 @@
 <div class="d-flex justify-content-between align-items-center mb-3 no-print"
      style="font-family:system-ui,sans-serif;font-size:.83rem;">
   <div class="d-flex gap-2 align-items-center text-muted">
-    <a href="../index.html" class="text-muted text-decoration-none">← Class Reference</a>
+    <a href="../index.html" class="text-muted text-decoration-none">← <span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span></a>
   </div>
 </div>
 
@@ -175,22 +191,22 @@
             <div class="ph-class-name">Valve</div>
             <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001</code></div>
             <div class="mt-2" style="font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted);">
-              Generated on 2026-04-08
+              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-04-08
             </div>
           </div>
         </div>
       </div>
 
       <div class="doc-section">
-        <div class="doc-section-title">Natural Language Definition</div>
+        <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
         <div class="nl-def"><div class="lang-tag">EN</div>A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Uma válvula é um artefato material que possui uma função de controle de fluxo para permitir, obstruir, regular ou desviar correntes de fluido.</div>
       </div>
 
       <div class="doc-section">
-        <div class="doc-section-title">Formal Axioms</div>
-        <div class="axiom-block"><div class="axiom-label">Semi-formal (Aristotelian)</div>Every valve is a material artifact that has the function to control fluid flow by permitting, obstructing, regulating, or diverting fluid streams.</div>
+        <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every valve is a material artifact that has the function to control fluid flow by permitting, obstructing, regulating, or diverting fluid streams.</div>
         <div class="axiom-block">
-          <div class="axiom-label">First-Order Logic Theory</div>
+          <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
           <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (Valve(x) → MaterialArtifact(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (Valve(x) → ∃bearerOf.FlowControlFunction) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
 <span class="fol-line"><span class="fol-label">[Necessary part: ValveBody]</span>∀x (Valve(x) → ∃p (ValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
@@ -205,7 +221,7 @@
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi#&gt; .
 @prefix :         &lt;https://www.inf.ufrgs.br/ontologies/copi#&gt; .
 @prefix owl:      &lt;http://www.w3.org/2002/07/owl#&gt; .
-@prefix rdf:      &lt;http://www.w3.org/1999/02/22/rdf-syntax-ns#&gt; .
+@prefix rdf:      &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs:     &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd:      &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 @prefix bfo:      &lt;http://purl.obolibrary.org/obo/&gt; .
@@ -215,6 +231,7 @@
 @prefix qudt:     &lt;http://qudt.org/schema/qudt/&gt; .
 @prefix dcterms:  &lt;http://purl.org/dc/terms/&gt; .
 @prefix foaf:     &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix apv:      &lt;http://inf.ufrgs.br/ontologies/apv#&gt; .
 
 ### COPI — Core Ontology of Petroleum Installations
 ### Class module: Valve
@@ -239,7 +256,10 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-04-15&quot;^^xsd:date .
+    dcterms:modified &quot;2026-04-15&quot;^^xsd:date ;
+    apv:GlobalMinLanguageCoverage &quot;en pt&quot; ;
+    apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
+    apv:ClassMinAnnotationCoverage &quot;rdfs:label&quot; .
 
 ### Identity-giving function
 :FlowControlFunction rdf:type owl:Class ;
@@ -332,11 +352,11 @@
       </div>
 
       <div class="doc-section">
-        <div class="doc-section-title">Axiomatization Decision Log</div>
+        <div class="doc-section-title"><span class="t-en">Axiomatization Decision Log</span><span class="t-pt">Registro de Decisões</span></div>
         
 <div class="step-block step-1">
   <div class="step-block-header">
-    <span class="step-num">1</span> Identity-Giving Function
+    <span class="step-num">1</span> <span class="t-en">Identity-Giving Function</span><span class="t-pt">Função Identitária</span>
   </div>
   <div class="step-body">
     <div class="row g-3 mb-2">
@@ -356,7 +376,7 @@
 </div>
 <div class="step-block step-2">
   <div class="step-block-header">
-    <span class="step-num">2</span> Genus Determination
+    <span class="step-num">2</span> <span class="t-en">Genus Determination</span><span class="t-pt">Determinação do Gênero</span>
   </div>
   <div class="step-body">
     <div class="mb-2">
@@ -367,13 +387,13 @@
 </div>
 <div class="step-block step-3">
   <div class="step-block-header">
-    <span class="step-num">3</span> Differentia Specifica
+    <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
   <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.FlowControlFunction</code></div><p style="font-size:.88rem;color:#374151;">An artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.</p><div class="rationale">The flow control function is the minimal differentiating condition. MaterialArtifact already provides the designed function constraint, so we specify the particular type of function that makes something a valve.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
-    <span class="step-num">4</span> Necessary Parts
+    <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
   <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>ValveBody</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr><tr><td>FlowControlElement</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr><tr><td>Seat</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">These three parts are universal to all valve types - the body provides containment, the flow control element performs the actual flow manipulation, and seats provide sealing capability.</div></div>
 </div>
@@ -381,16 +401,16 @@
 
       
 <div class="doc-section">
-  <div class="doc-section-title">Process Participation Signature</div>
+  <div class="doc-section-title"><span class="t-en">Process Participation Signature</span><span class="t-pt">Assinatura de Participação em Processo</span></div>
   <div class="sig-grid">
-    <div class="sig-cell"><div class="sig-cell-label">Inputs</div><div style="font-size:.88rem;">{&#x27;constraints&#x27;: &#x27;any phase (gas, liquid, multiphase)&#x27;, &#x27;count&#x27;: 1, &#x27;type&#x27;: &#x27;FluidPortion&#x27;}</div></div>
-    <div class="sig-cell"><div class="sig-cell-label">Outputs</div><div style="font-size:.88rem;">{&#x27;constraints&#x27;: &#x27;same fluid with modified flow characteristics&#x27;, &#x27;count&#x27;: 1, &#x27;type&#x27;: &#x27;FluidPortion&#x27;}</div></div>
-    <div class="sig-cell"><div class="sig-cell-label">Transformation</div><div style="font-size:.88rem;">flow control without energy addition - permits, obstructs, regulates, or diverts fluid</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;constraints&#x27;: &#x27;any phase (gas, liquid, multiphase)&#x27;, &#x27;count&#x27;: 1, &#x27;type&#x27;: &#x27;FluidPortion&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;constraints&#x27;: &#x27;same fluid with modified flow characteristics&#x27;, &#x27;count&#x27;: 1, &#x27;type&#x27;: &#x27;FluidPortion&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">flow control without energy addition - permits, obstructs, regulates, or diverts fluid</div></div>
   </div>
   <div class="rationale mt-2">Valves are single-input, single-output devices that modify flow characteristics without adding energy to the fluid. The fluid composition remains unchanged, only flow parameters are controlled.</div>
 </div>
-      <div class="doc-section"><div class="doc-section-title">Disjoint With</div><div><span class="disjoint-pill">Pump</span> <span class="disjoint-pill">Compressor</span> <span class="disjoint-pill">Turbine</span></div><div class="rationale mt-2">These equipment types have incompatible process signatures - pumps and compressors add energy to fluids, turbines extract energy from fluids, while valves control flow without energy transfer.</div></div>
-      <div class="doc-section"><div class="doc-section-title">Metadata</div><table class="meta-table"><tbody><tr><td>COPI ID</td><td>COPI_0000001</td></tr><tr><td>IRI</td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001</td></tr><tr><td>Status</td><td>exported</td></tr><tr><td>Axiom mode</td><td>necessary</td></tr><tr><td>Created</td><td>2026-04-08</td></tr><tr><td>Updated</td><td>2026-04-13</td></tr><tr><td>LLM model</td><td>claude-sonnet-4-20250514</td></tr><tr><td>Version</td><td>2026-04-15</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">Pump</span> <span class="disjoint-pill">Compressor</span> <span class="disjoint-pill">Turbine</span></div><div class="rationale mt-2">These equipment types have incompatible process signatures - pumps and compressors add energy to fluids, turbines extract energy from fluids, while valves control flow without energy transfer.</div></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000001</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-04-13</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-04-15</td></tr></tbody></table></div>
 
     </div>
 
@@ -435,23 +455,23 @@
         <div class="card border-0 shadow-sm mb-3" style="border-radius:8px;">
           <div class="card-header" style="font-family:system-ui,sans-serif;font-size:.72rem;
                font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:#f8fafc;">
-            Quick facts
+            <span class="t-en">Quick facts</span><span class="t-pt">Dados rápidos</span>
           </div>
           <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
             <table class="meta-table">
-              <tr><td>Genus</td><td><strong>MaterialArtifact</strong></td></tr>
-              <tr><td>BFO root</td><td><span class="bfo-pill">MaterialArtifact</span></td></tr>
-              <tr><td>Axiom mode</td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
-              <tr><td>Function</td><td>FlowControlFunction</td></tr>
-              <tr><td>Process</td><td>FlowControlProcess</td></tr>
-              <tr><td>Parts</td><td>3</td></tr>
+              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>MaterialArtifact</strong></td></tr>
+              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">MaterialArtifact</span></td></tr>
+              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
+              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>FlowControlFunction</td></tr>
+              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>FlowControlProcess</td></tr>
+              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>3</td></tr>
             </table>
           </div>
         </div>
         
 <div class="doc-section">
   <div class="doc-section-title">
-    Source Definitions
+    <span class="t-en">Source Definitions</span><span class="t-pt">Definições nas Fontes</span>
     <span style="float:right;font-variant-numeric:tabular-nums;font-weight:400;">4 sources</span>
   </div>
   
@@ -510,5 +530,22 @@
 </div>
 
 </div>
+<script>
+(function(){
+  var root=document.getElementById('copi-root');
+  var btn=document.getElementById('lang-btn');
+  if(!btn)return;
+  function applyLang(pt){
+    if(pt){root.classList.add('lang-pt');root.lang='pt-BR';btn.textContent='EN';}
+    else{root.classList.remove('lang-pt');root.lang='en';btn.textContent='PT';}
+  }
+  try{applyLang(localStorage.getItem('copi-lang')==='pt');}catch(e){}
+  btn.addEventListener('click',function(){
+    var toPt=!root.classList.contains('lang-pt');
+    applyLang(toPt);
+    try{localStorage.setItem('copi-lang',toPt?'pt':'en');}catch(e){}
+  });
+})();
+</script>
 </body>
 </html>
