@@ -5,20 +5,20 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix copi: <https://www.inf.ufrgs.br/ontologies/COPI_> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix copi: <https://www.inf.ufrgs.br/ontologies/COPI_> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix iof-core: <https://spec.industrialontologies.org/ontology/construct/> .
 @prefix annotation: <https://spec.industrialontologies.org/ontology/annotation/> .
 @base <https://www.inf.ufrgs.br/ontologies/copi.ttl> .
 
 <https://www.inf.ufrgs.br/ontologies/copi.ttl> rdf:type owl:Ontology ;
-                                                 owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-14/copi.ttl> ;
-                                                 dcterms:description "A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle." ;
-                                                 dcterms:license <https://opensource.org/license/mit> ;
-                                                 dcterms:title "Core Ontology of Petroleum Production Plants" ;
-                                                 owl:versionInfo "2026-04-14" .
+                                                owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-15/copi.ttl> ;
+                                                dcterms:description "A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle." ;
+                                                dcterms:license <https://opensource.org/license/mit> ;
+                                                dcterms:title "Core Ontology of Petroleum Installations" ;
+                                                owl:versionInfo "2026-04-15" .
 
 #################################################################
 #    Annotation properties

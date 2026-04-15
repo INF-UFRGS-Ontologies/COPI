@@ -7,18 +7,18 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:copi="https://www.inf.ufrgs.br/ontologies/COPI_"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:copi="https://www.inf.ufrgs.br/ontologies/COPI_"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:iof-core="https://spec.industrialontologies.org/ontology/construct/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-14/copi.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-15/copi.owl"/>
         <dcterms:description>A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle.</dcterms:description>
         <dcterms:license rdf:resource="https://opensource.org/license/mit"/>
-        <dcterms:title>Core Ontology of Petroleum Production Plants</dcterms:title>
-        <owl:versionInfo>2026-04-14</owl:versionInfo>
+        <dcterms:title>Core Ontology of Petroleum Installations</dcterms:title>
+        <owl:versionInfo>2026-04-15</owl:versionInfo>
     </owl:Ontology>
     
 

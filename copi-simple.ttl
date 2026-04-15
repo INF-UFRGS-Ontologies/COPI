@@ -10,11 +10,11 @@
 @base <https://www.inf.ufrgs.br/ontologies/copi/copi-simple.ttl> .
 
 <https://www.inf.ufrgs.br/ontologies/copi/copi-simple.ttl> rdf:type owl:Ontology ;
-                                                              owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-14/copi-simple.ttl> ;
-                                                              terms:description "A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle." ;
-                                                              terms:license <https://opensource.org/license/mit> ;
-                                                              terms:title "Core Ontology of Petroleum Production Plants" ;
-                                                              owl:versionInfo "2026-04-14" .
+                                                            owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-15/copi-simple.ttl> ;
+                                                            terms:description "A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle." ;
+                                                            terms:license <https://opensource.org/license/mit> ;
+                                                            terms:title "Core Ontology of Petroleum Installations" ;
+                                                            owl:versionInfo "2026-04-15" .
 
 #################################################################
 #    Annotation properties
