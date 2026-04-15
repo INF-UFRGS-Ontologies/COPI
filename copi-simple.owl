@@ -10,11 +10,11 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-simple.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-14/copi-simple.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-15/copi-simple.owl"/>
         <terms:description>A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle.</terms:description>
         <terms:license rdf:resource="https://opensource.org/license/mit"/>
-        <terms:title>Core Ontology of Petroleum Production Plants</terms:title>
-        <owl:versionInfo>2026-04-14</owl:versionInfo>
+        <terms:title>Core Ontology of Petroleum Installations</terms:title>
+        <owl:versionInfo>2026-04-15</owl:versionInfo>
     </owl:Ontology>
     
 
