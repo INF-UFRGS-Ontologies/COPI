@@ -1,6 +1,6 @@
 ## Configurações Gerais ##
-id: coppp
-title: Core Ontology of Petroleum Production Plants
+id: copi
+title: Core Ontology of Petroleum Installations
 description: "A domain-core ontology for petroleum production plants developed using the LOT methodology 
   and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, 
   aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI 
@@ -16,7 +16,7 @@ contributors:
 
 ## Configurações do Github ##
 github_org: INF-UFRGS-Ontologies
-repo: coppp
+repo: copi
 git_main_branch: main
 
 ## Configurações do Pipeline ODK ##

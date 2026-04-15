@@ -1,4 +1,4 @@
-Prefix(:=<https://www.inf.ufrgs.br/ontologies/coppp/imports/iof-core_import.owl#>)
+Prefix(:=<https://www.inf.ufrgs.br/ontologies/copi/imports/iof-core_import.owl#>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
 Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
@@ -6,8 +6,8 @@ Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
 Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
-Ontology(<https://www.inf.ufrgs.br/ontologies/coppp/imports/iof-core_import.owl>
-<https://www.inf.ufrgs.br/ontologies/coppp/releases/2026-02-02/imports/iof-core_import.owl>
+Ontology(<https://www.inf.ufrgs.br/ontologies/copi/imports/iof-core_import.owl>
+<https://www.inf.ufrgs.br/ontologies/copi/releases/2026-02-02/imports/iof-core_import.owl>
 Annotation(<http://purl.org/dc/elements/1.1/source> <https://spec.industrialontologies.org/ontology/202502/core/Core/>)
 Annotation(owl:versionInfo "2026-02-02")
 
