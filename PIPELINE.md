@@ -105,7 +105,7 @@ The job then commits these artefacts back to `main` with `[skip ci]` (to avoid r
 
 ### Job 2 — `deploy` (runs on `arc-runner`, after `generate`)
 
-Transfers files to the UFRGS ontologies web server (`REDACTED`) via SFTP under the `ontokg` user. Four uploads happen:
+Transfers files to the UFRGS ontologies web server (host stored in the `DEPLOY_HOST` secret) via SFTP under the `ontokg` user. Four uploads happen:
 
 | Source | Destination on server | Resolves to |
 |---|---|---|
@@ -139,7 +139,8 @@ The following secrets must be configured in `INF-UFRGS-Ontologies/COPI` → Sett
 | Secret | Description |
 |---|---|
 | `GITHUB_TOKEN` | Automatically provided by GitHub Actions (no setup needed) |
-| `FTP` | Password for `ontokg@REDACTED` (UFRGS SFTP server) |
+| `DEPLOY_HOST` | Hostname or IP of the UFRGS SFTP server |
+| `FTP` | Password for the `ontokg` user on the SFTP server |
 
 ### Self-hosted runner
 
@@ -159,9 +160,9 @@ The following directories must exist on the UFRGS server before the first deploy
 │   └── releases/       ← created per-deploy by the workflow
 ```
 
-Run once to initialise:
+Run once to initialise (replace `$DEPLOY_HOST` with the actual server address):
 ```bash
-ssh ontokg@REDACTED
+ssh ontokg@$DEPLOY_HOST
 mkdir -p /home/www/ontologies/public_html/copi/docs/classes
 ```
 

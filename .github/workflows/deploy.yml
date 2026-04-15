@@ -67,7 +67,7 @@ jobs:
       - name: Transfer HTML docs to copi/ folder
         uses: Dylan700/sftp-upload-action@latest
         with:
-          server: REDACTED
+          server: ${{ secrets.DEPLOY_HOST }}
           username: ontokg
           password: ${{ secrets.FTP }}
           port: 22
@@ -77,7 +77,7 @@ jobs:
       - name: Transfer OWL/TTL variants to copi/ folder
         uses: Dylan700/sftp-upload-action@latest
         with:
-          server: REDACTED
+          server: ${{ secrets.DEPLOY_HOST }}
           username: ontokg
           password: ${{ secrets.FTP }}
           port: 22
@@ -94,7 +94,7 @@ jobs:
       - name: Transfer primary copi.owl to ontologies root
         uses: Dylan700/sftp-upload-action@latest
         with:
-          server: REDACTED
+          server: ${{ secrets.DEPLOY_HOST }}
           username: ontokg
           password: ${{ secrets.FTP }}
           port: 22
@@ -106,7 +106,7 @@ jobs:
       - name: Transfer primary copi.ttl to ontologies root
         uses: Dylan700/sftp-upload-action@latest
         with:
-          server: REDACTED
+          server: ${{ secrets.DEPLOY_HOST }}
           username: ontokg
           password: ${{ secrets.FTP }}
           port: 22
@@ -118,7 +118,7 @@ jobs:
       - name: Transfer versioned snapshot to copi/releases/
         uses: Dylan700/sftp-upload-action@latest
         with:
-          server: REDACTED
+          server: ${{ secrets.DEPLOY_HOST }}
           username: ontokg
           password: ${{ secrets.FTP }}
           port: 22
