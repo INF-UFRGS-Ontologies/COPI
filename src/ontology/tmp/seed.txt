@@ -2,5 +2,5 @@ http://purl.org/dc/terms/description
 http://purl.org/dc/terms/license
 http://purl.org/dc/terms/title
 https://opensource.org/license/mit
-https://www.inf.ufrgs.br/ontologies/coppp.owl
+https://www.inf.ufrgs.br/ontologies/copi.owl
 term

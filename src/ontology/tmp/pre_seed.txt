@@ -3,4 +3,4 @@ https://opensource.org/license/mit
 http://purl.org/dc/terms/description
 http://purl.org/dc/terms/title
 http://purl.org/dc/terms/license
-https://www.inf.ufrgs.br/ontologies/coppp.owl
+https://www.inf.ufrgs.br/ontologies/copi.owl
