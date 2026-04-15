@@ -1,24 +1,24 @@
 # Ontology Requirements Specification Document
 
-**COPPP – Core Ontology of Petroleum Production Plants**
+**COPI – Core Ontology of Petroleum Installations**
 
 **Author(s):** Nicolau Oyhenard dos Santos
 **Creation date:** 2026-02-02
-**Project(s) related:** COPPP Ontology, PhD Research Project
+**Project(s) related:** COPI Ontology, PhD Research Project
 
 ---
 
 ## 1. Purpose
 
-The purpose of the COPPP ontology is to provide a core ontology for petroleum production plants, supporting semantic interoperability across heterogeneous industrial standards and datasets.
+The purpose of the COPI ontology is to provide a core ontology for petroleum production plants, supporting semantic interoperability across heterogeneous industrial standards and datasets.
 
-COPPP aims to act as a domain-level semantic backbone, specializing BFO and IOF-Core, and enabling alignment with standards such as ISO 15926-4, ISO 14224, CFIHOS, and DEXPI.
+COPI aims to act as a domain-level semantic backbone, specializing BFO and IOF-Core, and enabling alignment with standards such as ISO 15926-4, ISO 14224, CFIHOS, and DEXPI.
 
 ---
 
 ## 2. Scope
 
-The scope of COPPP includes:
+The scope of COPI includes:
 * Material entities composing petroleum production plants;
 * Functional locations used to organize and manage physical assets;
 * Information artifacts describing assets, locations, and plant documentation.
@@ -32,7 +32,7 @@ The ontology explicitly excludes:
 
 ## 3. Implementation Language (optional)
 
-COPPP is implemented using **OWL 2 DL**, following best practices for ontology engineering and reasoning compatibility.
+COPI is implemented using **OWL 2 DL**, following best practices for ontology engineering and reasoning compatibility.
 
 ---
 
@@ -47,7 +47,7 @@ COPPP is implemented using **OWL 2 DL**, following best practices for ontology e
 
 ## 5. Intended Uses
 
-The intended uses of COPPP include:
+The intended uses of COPI include:
 * Semantic integration of heterogeneous plant data sources;
 * Support for querying asset hierarchies and functional locations;
 * Alignment and comparison between industrial standards;

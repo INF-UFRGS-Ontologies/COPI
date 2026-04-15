@@ -1,4 +1,4 @@
-These notes are for the EDITORS of coppp
+These notes are for the EDITORS of copi
 
 This project was created using the [ontology development kit](https://github.com/INCATools/ontology-development-kit). See the site for details.
 

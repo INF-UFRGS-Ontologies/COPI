@@ -11,12 +11,12 @@ Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 Prefix: idrange: <http://purl.obolibrary.org/obo/ro/idrange/>
 Prefix: owl: <http://www.w3.org/2002/07/owl#>
 
-Ontology: <https://www.inf.ufrgs.br/ontologies/coppp/coppp-idranges.owl>
+Ontology: <https://www.inf.ufrgs.br/ontologies/copi/copi-idranges.owl>
 
 
 Annotations: 
-    idsfor: "COPPP",
-    idprefix: "https://www.inf.ufrgs.br/ontologies/COPPP_",
+    idsfor: "COPI",
+    idprefix: "https://www.inf.ufrgs.br/ontologies/COPI_",
     iddigits: 7
 
 AnnotationProperty: idprefix:

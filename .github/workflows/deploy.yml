@@ -27,7 +27,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add coppp.owl coppp.ttl coppp-base.owl coppp-base.ttl coppp-full.owl coppp-full.ttl coppp-simple.owl coppp-simple.ttl
+          git add copi.owl copi.ttl copi-base.owl copi-base.ttl copi-full.owl copi-full.ttl copi-simple.owl copi-simple.ttl
           git diff --cached --quiet || git commit -m "chore: update release artefacts [skip ci]"
           git push
 
@@ -37,7 +37,7 @@ jobs:
     runs-on: arc-runner
 
     env:
-      ONTOLOGY: coppp
+      ONTOLOGY: copi
       REMOTE_BASE_PATH: ../ontologies/public_html/
 
     steps:
@@ -46,7 +46,7 @@ jobs:
         with:
           ref: main
 
-      - name: Transfer HTML docs to coppp/ folder
+      - name: Transfer HTML docs to copi/ folder
         uses: Dylan700/sftp-upload-action@latest
         with:
           server: REDACTED
@@ -56,7 +56,7 @@ jobs:
           uploads: |
             docs/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/
 
-      - name: Transfer OWL/TTL variants to coppp/ folder
+      - name: Transfer OWL/TTL variants to copi/ folder
         uses: Dylan700/sftp-upload-action@latest
         with:
           server: REDACTED
@@ -66,14 +66,14 @@ jobs:
           uploads: |
             ./ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/
           ignore: |
-            !coppp-base.owl
-            !coppp-base.ttl
-            !coppp-full.owl
-            !coppp-full.ttl
-            !coppp-simple.owl
-            !coppp-simple.ttl
+            !copi-base.owl
+            !copi-base.ttl
+            !copi-full.owl
+            !copi-full.ttl
+            !copi-simple.owl
+            !copi-simple.ttl
 
-      - name: Transfer primary coppp.owl to ontologies root
+      - name: Transfer primary copi.owl to ontologies root
         uses: Dylan700/sftp-upload-action@latest
         with:
           server: REDACTED
@@ -83,9 +83,9 @@ jobs:
           uploads: |
             ./ => ${{ env.REMOTE_BASE_PATH }}
           ignore: |
-            !coppp.owl
+            !copi.owl
 
-      - name: Transfer primary coppp.ttl to ontologies root
+      - name: Transfer primary copi.ttl to ontologies root
         uses: Dylan700/sftp-upload-action@latest
         with:
           server: REDACTED
@@ -95,4 +95,4 @@ jobs:
           uploads: |
             ./ => ${{ env.REMOTE_BASE_PATH }}
           ignore: |
-            !coppp.ttl
+            !copi.ttl

@@ -1,9 +1,9 @@
-# COPPP — Core Ontology of Petroleum Production Plants
+# COPI — Core Ontology of Petroleum Installations
 
-**IRI:** `https://www.inf.ufrgs.br/ontologies/coppp`  
+**IRI:** `https://www.inf.ufrgs.br/ontologies/copi`  
 **License:** [MIT](LICENSE)
 
-COPPP is a domain-core ontology for petroleum production plants. It provides a domain-level semantic backbone by specializing [BFO 2020](https://github.com/bfo-ontology/bfo-2020) and [IOF-Core](https://spec.industrialontologies.org/ontology/202601/core/Core/), supporting semantic interoperability across heterogeneous industrial standards and datasets.
+COPI is a domain-core ontology for petroleum production plants. It provides a domain-level semantic backbone by specializing [BFO 2020](https://github.com/bfo-ontology/bfo-2020) and [IOF-Core](https://spec.industrialontologies.org/ontology/202601/core/Core/), supporting semantic interoperability across heterogeneous industrial standards and datasets.
 
 ---
 
@@ -36,7 +36,7 @@ COPPP is a domain-core ontology for petroleum production plants. It provides a d
 
 ## Standards alignment
 
-COPPP is designed to be correlatable and alignable with:
+COPI is designed to be correlatable and alignable with:
 
 | Standard | Description |
 |---|---|
@@ -50,21 +50,21 @@ COPPP is designed to be correlatable and alignable with:
 
 ## Release artefacts
 
-Artefacts are published at `https://www.inf.ufrgs.br/ontologies/coppp/` and generated automatically on every push to `main` via GitHub Actions using [ODK](https://github.com/INCATools/ontology-development-kit).
+Artefacts are published at `https://www.inf.ufrgs.br/ontologies/copi/` and generated automatically on every push to `main` via GitHub Actions using [ODK](https://github.com/INCATools/ontology-development-kit).
 
 | File | Description |
 |---|---|
-| `coppp.owl` / `coppp.ttl` | Primary release (full) |
-| `coppp-base.owl` / `coppp-base.ttl` | Base artefact (no imports merged) |
-| `coppp-full.owl` / `coppp-full.ttl` | Full artefact (imports merged) |
-| `coppp-simple.owl` / `coppp-simple.ttl` | Simplified artefact |
+| `copi.owl` / `copi.ttl` | Primary release (full) |
+| `copi-base.owl` / `copi-base.ttl` | Base artefact (no imports merged) |
+| `copi-full.owl` / `copi-full.ttl` | Full artefact (imports merged) |
+| `copi-simple.owl` / `copi-simple.ttl` | Simplified artefact |
 
 ---
 
 ## Repository structure
 
 ```
-COPPP/
+COPI/
 ├── src/ontology/       # Ontology source (OWL, imports, mirrors, Makefile)
 ├── docs/               # Static HTML documentation, class pages
 ├── requirements/       # ORSD, competency questions (cqs.csv)
