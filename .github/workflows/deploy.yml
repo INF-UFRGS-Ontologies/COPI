@@ -49,7 +49,7 @@ jobs:
   deploy:
     name: File transfer to ontologies website
     needs: generate
-    runs-on: arc-runner
+    runs-on: arc-runner-copi
 
     env:
       ONTOLOGY: copi
