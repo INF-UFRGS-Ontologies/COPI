@@ -7,17 +7,29 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:copi="https://www.inf.ufrgs.br/ontologies/COPI_"
+     xmlns:copi="https://www.inf.ufrgs.br/ontologies/copi/COPI_"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:iof-av="https://spec.industrialontologies.org/ontology/annotation/"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:iof-core="https://spec.industrialontologies.org/ontology/construct/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-base.owl">
         <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-27/copi-base.owl"/>
         <dce:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
-        <dcterms:description>A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle.</dcterms:description>
+        <dcterms:contributor>Cauã Antunes</dcterms:contributor>
+        <dcterms:contributor>Haroldo Rojas</dcterms:contributor>
+        <dcterms:contributor>Mara Abel</dcterms:contributor>
+        <dcterms:contributor>Rafael Petry</dcterms:contributor>
+        <dcterms:contributor>Régis Romeu</dcterms:contributor>
+        <dcterms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants.</dcterms:description>
         <dcterms:license rdf:resource="https://opensource.org/license/mit"/>
-        <dcterms:title>Core Ontology of Petroleum Installations</dcterms:title>
+        <dcterms:title xml:lang="en">Core Ontology of Petroleum Installations (COPI)</dcterms:title>
+        <dcterms:title xml:lang="pt">Ontologia Central de Plantas de Produção de Petróleo (COPI)</dcterms:title>
         <owl:versionInfo>2026-04-27</owl:versionInfo>
+        <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
+        <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
+        <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
+        <skos:scopeNote xml:lang="en">Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.</skos:scopeNote>
     </owl:Ontology>
     
 
@@ -39,6 +51,12 @@
     
 
 
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
     <!-- http://purl.org/dc/terms/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
@@ -54,6 +72,12 @@
     <!-- http://purl.org/dc/terms/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote"/>
 </rdf:RDF>
 
 

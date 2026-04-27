@@ -1,20 +1,32 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://www.inf.ufrgs.br/ontologies/copi/copi-simple.owl#"
      xml:base="https://www.inf.ufrgs.br/ontologies/copi/copi-simple.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:copi="https://www.inf.ufrgs.br/ontologies/copi/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-simple.owl">
         <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-27/copi-simple.owl"/>
-        <terms:description>A domain-core ontology for petroleum production plants developed using the LOT methodology and ODK framework. It provides a foundational semantic layer specializing BFO and IOF-Core, aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI to support interoperability throughout the asset lifecycle.</terms:description>
+        <terms:contributor>Cauã Antunes</terms:contributor>
+        <terms:contributor>Haroldo Rojas</terms:contributor>
+        <terms:contributor>Mara Abel</terms:contributor>
+        <terms:contributor>Rafael Petry</terms:contributor>
+        <terms:contributor>Régis Romeu</terms:contributor>
+        <terms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants.</terms:description>
         <terms:license rdf:resource="https://opensource.org/license/mit"/>
-        <terms:title>Core Ontology of Petroleum Installations</terms:title>
+        <terms:title xml:lang="en">Core Ontology of Petroleum Installations (COPI)</terms:title>
+        <terms:title xml:lang="pt">Ontologia Central de Plantas de Produção de Petróleo (COPI)</terms:title>
         <owl:versionInfo>2026-04-27</owl:versionInfo>
+        <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
+        <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
+        <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
+        <skos:scopeNote xml:lang="en">Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.</skos:scopeNote>
     </owl:Ontology>
     
 
@@ -30,11 +42,26 @@
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/contributor"/>
+        <rdfs:label xml:lang="en-us">contributor</rdfs:label>
+        <skos:definition xml:lang="en-us">entity responsible for making contributions to the resource</skos:definition>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.org/dc/terms/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/description"/>
-        <rdfs:label>description</rdfs:label>
         <rdfs:label xml:lang="en-us">description</rdfs:label>
         <skos:definition xml:lang="en-us">account of the resource</skos:definition>
         <annotation:usageNote>This annotation is used to describe an artifact such as a vocabulary, ontology, or ontology module.</annotation:usageNote>
@@ -46,7 +73,6 @@
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/license"/>
-        <rdfs:label>license</rdfs:label>
         <rdfs:label xml:lang="en-us">license</rdfs:label>
         <skos:definition xml:lang="en-us">legal document giving official permission to do something with the resource</skos:definition>
     </owl:AnnotationProperty>
@@ -57,7 +83,6 @@
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/title"/>
-        <rdfs:label>title</rdfs:label>
         <rdfs:label xml:lang="en-us">title</rdfs:label>
         <skos:definition xml:lang="en-us">name given to the resource</skos:definition>
         <annotation:usageNote>Used for formal title of an artifact (but not individual elements such as classes or properties).</annotation:usageNote>
@@ -65,15 +90,248 @@
     
 
 
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
     <!-- http://www.w3.org/2004/02/skos/core#definition -->
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en-us">definition</rdfs:label>
+        <skos:definition xml:lang="en-us">statement or formal explanation of the meaning of a concept</skos:definition>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en-us">scope note</rdfs:label>
+        <skos:definition xml:lang="en-us">note that helps to clarify the meaning and/or the use of a concept</skos:definition>
+        <annotation:usageNote xml:lang="en-us">Use of this annotation is optional, but recommended if it will help a user understand the scope and/or context for usage of the concept.</annotation:usageNote>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/annotation/adaptedFrom -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/adaptedFrom"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/annotation/explanatoryNote -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/explanatoryNote"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/annotation/firstOrderLogicAxiom -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/firstOrderLogicAxiom">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en-us">first-order logic axiom</rdfs:label>
+        <skos:definition xml:lang="en-us">logic axiom annotation written in first order logic</skos:definition>
+        <annotation:usageNote xml:lang="en-us">First-order logic axioms MAY be provided if the term is primitive (&apos;is primitive&apos; is true ) or non-primitive. A construct MAY include more than one first-order logic axiom annotation.</annotation:usageNote>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/annotation/isPrimitive -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/isPrimitive">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en-us">is primitive</rdfs:label>
+        <skos:definition xml:lang="en-us">boolean flag indicating that necessary and sufficient conditions are not provided</skos:definition>
+        <annotation:usageNote xml:lang="en-us">&apos;is primitive&apos; must be present if the term does not have necessary and sufficient conditions and the value of the annotation must be set to true. When &apos;is primitive&apos; is set to true, a value for a &apos;primitive rationale&apos; annotation must also be provided.</annotation:usageNote>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en-us">natural language definition</rdfs:label>
+        <skos:definition xml:lang="en-us">definition written in plain text for human understanding</skos:definition>
+        <annotation:usageNote xml:lang="en-us">This annotation is Required for each non-primitive or non-axiomatic class of an IOF (OWL or Common Logic) ontology. 
+ - It is optional for primitive (aka axiomatic) classes since such the Elucidation annotation is required and will satisfy the role of a natural language definition.
+ - It is optional, but recommended, for relations when the intent of a relation may be misunderstood.
+ - There should be at most one.
+ - This natural language definition should be subject matter expert friendly and consistent with any formal definition or elucidation.
+ - Natural language definitions should use class and relation names with following caveats:
+ a) Relations – For those relations whose label (i.e. local identifier) consist of multiple terms hyphenate the terms of the label: e.g. &apos;hasPlan&apos; would be written as &apos;has-plan&apos;
+ b) Classes – For classes whose label has multiple distinct terms, e.g, ManufacturingOperationSpecification, separate the terms but bound them with apostrophe marks: &apos;Manufacturing Operation Specification&apos;.</annotation:usageNote>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/annotation/primitiveRationale -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/primitiveRationale">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en-us">primitive rationale</rdfs:label>
+        <skos:definition xml:lang="en-us">reason why necessary and sufficient conditions could not be provided</skos:definition>
+        <annotation:usageNote xml:lang="en-us">When &apos;is primitive&apos; is set to true, a value for &apos;primitive rationale&apos; must be provided. The rationale should indicate what is missing if additional work is required to define necessary and sufficient conditions.</annotation:usageNote>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/annotation/semiFormalNaturalLanguageAxiom -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/semiFormalNaturalLanguageAxiom">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en-us">semi-formal natural language axiom</rdfs:label>
+        <skos:definition xml:lang="en-us">logic axiom expressed in natural language</skos:definition>
+        <annotation:usageNote xml:lang="en-us">Semi-formal natural language axioms MAY be provided if the term is primitive (is primitive is true). A construct MAY include more than one semi-formal natural language axiom annotation.</annotation:usageNote>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/annotation/synonym -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/synonym"/>
     
 
 
     <!-- https://spec.industrialontologies.org/ontology/annotation/usageNote -->
 
     <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/usageNote"/>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000045 -->
+
+    <owl:AnnotationProperty rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000045">
+        <rdfs:label xml:lang="en">iso15926Reference</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000046 -->
+
+    <owl:AnnotationProperty rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000046">
+        <rdfs:label xml:lang="en">iso14224Reference</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000047 -->
+
+    <owl:AnnotationProperty rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000047">
+        <rdfs:label xml:lang="en">cfihosReference</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000048 -->
+
+    <owl:AnnotationProperty rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000048">
+        <rdfs:label xml:lang="en">dexpiReference</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000049 -->
+
+    <owl:AnnotationProperty rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000049">
+        <rdfs:label xml:lang="en">poscCaesarReference</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000054 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000054">
+        <dc:identifier>206-BFO</dc:identifier>
+        <rdfs:label xml:lang="en">has realization</rdfs:label>
+        <skos:altLabel xml:lang="en">realized in</skos:altLabel>
+        <skos:definition xml:lang="en">b has realization c =Def c realizes b</skos:definition>
+        <skos:example xml:lang="en">As for realizes</skos:example>
+        <skos:prefLabel xml:lang="en">has realization</skos:prefLabel>
+        <annotation:synonym xml:lang="en-us">realized in</annotation:synonym>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes -->
+
+    <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://spec.industrialontologies.org/ontology/core/Core/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en-us">has component part at all times</rdfs:label>
+        <skos:example xml:lang="en-us">car has component part a chasy; a bioractor has component part a stainless steel vessel</skos:example>
+        <annotation:firstOrderLogicAxiom>hasComponentPartAtAllTimes(x,y) → (MaterialEntity(x) ∧ ¬(FiatObjectPart(x))) ∧ (MaterialEntity(y) ∧ ¬(FiatObjectPart(y))) ∧ hasProperContinuantPartAtAllTimes(x,y)</annotation:firstOrderLogicAxiom>
+        <annotation:naturalLanguageDefinition xml:lang="en-us">relation from a material entity to another material entity that it has as a proper part at all times it exists</annotation:naturalLanguageDefinition>
+        <annotation:semiFormalNaturalLanguageAxiom>x has component part at all times y holds when x is a &apos;material entity&apos; that is not a &apos;fiat object part&apos; and y is a &apos;material entity&apos; that is not a &apos;fiat object part&apos; and x &apos;has proper continuant part at all times&apos; y</annotation:semiFormalNaturalLanguageAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/construct/hasFunction -->
+
+    <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/construct/hasFunction">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://spec.industrialontologies.org/ontology/core/Core/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en-us">has function</rdfs:label>
+        <skos:example xml:lang="en-us">this enzyme has function this catalysis function (more colloquially: this enzyme has this catalysis function)</skos:example>
+        <annotation:adaptedFrom>http://purl.obolibrary.org/obo/RO_0000085</annotation:adaptedFrom>
+        <annotation:explanatoryNote xml:lang="en-us">A bearer can have many functions, and its functions can exist for different periods of time, but none of its functions can exist when the bearer does not exist. A function need not be realized at all the times that the function exists.</annotation:explanatoryNote>
+        <annotation:firstOrderLogicAxiom>hasFunction(x,y) → IndependentContinuant(x) ∧ Function(y) ∧ bearerOf(x,y)</annotation:firstOrderLogicAxiom>
+        <annotation:naturalLanguageDefinition xml:lang="en-us">relation from an independent continuant (the bearer) to a function, in which the function specifically depends on the bearer for its existence</annotation:naturalLanguageDefinition>
+        <annotation:semiFormalNaturalLanguageAxiom>x has function y holds when x is a &apos;independent continuant&apos; and y is a &apos;function&apos; and x is &apos;bearer of&apos; y</annotation:semiFormalNaturalLanguageAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/construct/hasInput -->
+
+    <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/construct/hasInput">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://spec.industrialontologies.org/ontology/core/Core/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en-us">has input</rdfs:label>
+        <skos:example xml:lang="en-us">machine learning execution process has input a dataset;fermentation process has input growth medium; additive manufacturing process has input metal powder;</skos:example>
+        <annotation:adaptedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology</annotation:adaptedFrom>
+        <annotation:naturalLanguageDefinition xml:lang="en-us">relation from a process to someone or something physical or digital (continuant) that is a necessary precondition for the process to start</annotation:naturalLanguageDefinition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/construct/hasOutput -->
+
+    <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/construct/hasOutput">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://spec.industrialontologies.org/ontology/core/Core/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en-us">has output</rdfs:label>
+        <skos:example xml:lang="en-us">chemical manufacturing process has output a wastestream; toluene manufacturing process has output a certain quantity of toluene; car manufacturing process has output a car</skos:example>
+        <annotation:adaptedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology</annotation:adaptedFrom>
+        <annotation:explanatoryNote>By introducing the condition that it must exist at the end of the process materials that only transitively exist during the process (e.g., reaction intermediary) are excluded from being considered the output.</annotation:explanatoryNote>
+        <annotation:naturalLanguageDefinition xml:lang="en-us">relation from a process to someone or something physical or digital (continuant) that participates in the process such that it is generated or modified during the process, and that it exists at the end of the process</annotation:naturalLanguageDefinition>
+    </owl:ObjectProperty>
 </rdf:RDF>
 
 
