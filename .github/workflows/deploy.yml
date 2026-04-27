@@ -21,6 +21,7 @@ jobs:
       - name: Generate release artefacts
         run: |
           cd src/ontology
+          rm -rf tmp/
           make prepare_release IMP=false PAT=false MIR=false COMP=false
 
       - name: Commit artefacts to repository
