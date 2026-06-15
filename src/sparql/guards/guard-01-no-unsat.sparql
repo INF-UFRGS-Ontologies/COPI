@@ -1,0 +1,11 @@
+# Guard 01: No unsatisfiable COPI classes
+# Violation: any COPI class that the reasoner has classified as subclass of owl:Nothing
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX copi: <https://www.inf.ufrgs.br/ontologies/copi/>
+
+SELECT ?class WHERE {
+  ?class rdfs:subClassOf owl:Nothing .
+  FILTER(?class != owl:Nothing)
+  FILTER(STRSTARTS(str(?class), "https://www.inf.ufrgs.br/ontologies/copi/"))
+}

@@ -1,0 +1,13 @@
+# Guard 06: ProcessControlledFlowFunction must be entailed ⊑ FlowControlFunction
+# Violation: PCFF exists but NOT subClassOf* FCF
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX copi: <https://www.inf.ufrgs.br/ontologies/copi/>
+
+SELECT ?x WHERE {
+  BIND(copi:ProcessControlledFlowFunction AS ?x)
+  ?x a owl:Class .
+  FILTER NOT EXISTS {
+    ?x rdfs:subClassOf* copi:FlowControlFunction .
+  }
+}
