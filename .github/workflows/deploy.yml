@@ -72,7 +72,10 @@ jobs:
       # Deleting them produces 404, which is honest; a 301 redirect is not possible
       # without shell access to configure Apache. Dylan700/sftp-upload-action has no
       # chmod support, so we use lftp (SFTP-native chmod/rm, no shell required).
-      # set cmd:fail-exit false makes the step idempotent once the files are gone.
+      # set cmd:fail-exit false + glob makes this idempotent: silent no-op once gone.
+      - name: Ensure lftp is available
+        run: command -v lftp >/dev/null 2>&1 || sudo apt-get install -y -q lftp
+
       - name: Remove stale root OWL/TTL (pre-migration orphans → 404)
         env:
           SFTP_PASS: ${{ secrets.FTP }}
@@ -83,14 +86,7 @@ jobs:
             set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no';
             set cmd:fail-exit false;
             cd ../ontologies/public_html;
-            rm copi.owl;
-            rm copi.ttl;
-            rm copi-base.owl;
-            rm copi-base.ttl;
-            rm copi-full.owl;
-            rm copi-full.ttl;
-            rm copi-simple.owl;
-            rm copi-simple.ttl;
+            glob rm copi.owl copi.ttl copi-base.owl copi-base.ttl copi-full.owl copi-full.ttl copi-simple.owl copi-simple.ttl;
             quit"
 
       - name: Transfer HTML docs to copi/ folder
@@ -144,9 +140,15 @@ jobs:
       # Dylan700/sftp-upload-action has no file-mode parameter (confirmed: inputs are
       # server, username, password, key, passphrase, port, dry-run, uploads, ignore,
       # ignore-from, delete — no chmod). Files land with permission 600 (owner-only),
-      # which Apache cannot read, causing 403. Fix: lftp chmod 644 over SFTP.
-      # Covers both copi/ root files and the versioned snapshot under releases/DATE/.
-      - name: Fix file permissions (chmod 644 OWL/TTL via SFTP)
+      # which Apache cannot read, causing 403. Fix: lftp chmod over SFTP.
+      #
+      # Strategy (no hardcoded filenames or dates):
+      #   - glob chmod 644 *.owl *.ttl  → all OWL/TTL in copi/ root (skips docs/ HTML)
+      #   - chmod 755 releases           → releases/ dir traversal
+      #   - chmod 755 releases/${RELEASE_DATE} → date subdir (dynamic from env)
+      #   - glob chmod 644 in date subdir → all OWL/TTL in the snapshot (no fixed list)
+      # RELEASE_DATE is expanded by bash before lftp sees the string; not hardcoded.
+      - name: Fix file permissions (chmod 644 OWL/TTL, 755 dirs via SFTP)
         env:
           SFTP_PASS: ${{ secrets.FTP }}
           SFTP_HOST: ${{ secrets.DEPLOY_HOST }}
@@ -155,21 +157,11 @@ jobs:
             set net:timeout 30;
             set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no';
             cd ../ontologies/public_html/copi;
-            chmod 644 copi.owl;
-            chmod 644 copi.ttl;
-            chmod 644 copi-base.owl;
-            chmod 644 copi-base.ttl;
-            chmod 644 copi-full.owl;
-            chmod 644 copi-full.ttl;
-            chmod 644 copi-simple.owl;
-            chmod 644 copi-simple.ttl;
-            cd releases/${{ env.RELEASE_DATE }};
-            chmod 644 copi.owl;
-            chmod 644 copi.ttl;
-            chmod 644 copi-base.owl;
-            chmod 644 copi-base.ttl;
-            chmod 644 copi-full.owl;
-            chmod 644 copi-full.ttl;
-            chmod 644 copi-simple.owl;
-            chmod 644 copi-simple.ttl;
+            glob chmod 644 *.owl;
+            glob chmod 644 *.ttl;
+            chmod 755 releases;
+            chmod 755 releases/${RELEASE_DATE};
+            cd releases/${RELEASE_DATE};
+            glob chmod 644 *.owl;
+            glob chmod 644 *.ttl;
             quit"
