@@ -41,4 +41,11 @@ import_group:
     - id: bfo
       mirror_from: http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl
     - id: iof-core
-      mirror_from: https://spec.industrialontologies.org/ontology/202601/core/Core/
+      mirror_from: https://spec.industrialontologies.org/ontology/202602/core/Core/
+
+## Componentes editoriais (ODR-015 phase 1)
+components:
+  products:
+    - filename: copi-core.ttl
+    - filename: copi-vocab.ttl
+    - filename: copi-enriched.owl

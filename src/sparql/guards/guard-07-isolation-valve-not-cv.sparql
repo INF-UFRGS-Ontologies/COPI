@@ -1,0 +1,12 @@
+# Guard 07: IsolationValve (if declared) must NOT be entailed ⊑ ControlValve
+# (IsolationValve is a non-regulating type; it should be a sibling, not a subtype)
+# Violation: IsolationValve IS subClassOf* ControlValve
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX copi: <https://www.inf.ufrgs.br/ontologies/copi/>
+
+SELECT ?x WHERE {
+  BIND(copi:IsolationValve AS ?x)
+  ?x a owl:Class .
+  ?x rdfs:subClassOf* copi:ControlValve .
+}

@@ -1,0 +1,15 @@
+# Guard 10: SignalTransmissionProcess must be entailed ⊑ iof-constr:PlannedProcess
+# (SignalTransmissionProcess ⊑ MeasurementProcess ⊑ PlannedProcess)
+# Violation: STP is NOT subClassOf* PlannedProcess
+PREFIX owl:        <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX copi:       <https://www.inf.ufrgs.br/ontologies/copi/>
+PREFIX iof-constr: <https://spec.industrialontologies.org/ontology/construct/>
+
+SELECT ?x WHERE {
+  BIND(copi:SignalTransmissionProcess AS ?x)
+  ?x a owl:Class .
+  FILTER NOT EXISTS {
+    ?x rdfs:subClassOf* iof-constr:PlannedProcess .
+  }
+}
