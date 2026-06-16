@@ -8,10 +8,13 @@
 # once ControlValve is introduced (ODR-015 Phase 2, ODR-008).
 #
 # Phase 2 acceptance criterion (guards 02 + 04):
-# After declaring ControlValve, run a NEGATIVE test: define ControlValve with
-# only hasFunction (no hasComponentPartAtAllTimes parts) so the reasoner does NOT
-# infer iof-constr:Assembly. Guard 04 must FAIL (return ≥1 violation row).
-# If 04 fails correctly, both 02 and 04 are confirmed non-vacuous.
+# After declaring ControlValve, run a NEGATIVE test: in a scratch copy of
+# copi-enriched.owl, REMOVE the asserted `copi:ControlValve rdfs:subClassOf
+# iof-constr:Assembly` triple, reason under HermiT, and confirm that guard 04
+# returns ≥1 violation row. iof:Assembly is primitive in COPI's scope — no
+# sufficient conditions exist, so the reasoner never infers Assembly from parts
+# alone. The only path to ControlValve ⊑ Assembly is the explicit assertion.
+# If guard 04 fails under that test, both 02 and 04 are confirmed non-vacuous.
 PREFIX owl:  <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX copi: <https://www.inf.ufrgs.br/ontologies/copi/>

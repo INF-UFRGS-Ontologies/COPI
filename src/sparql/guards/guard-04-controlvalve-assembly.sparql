@@ -3,9 +3,10 @@
 # Violation: ControlValve exists but is NOT a subClassOf* Assembly
 #
 # DORMANT — ODR-015 Phase 2 pending. See guard-02 for dormancy explanation.
-# This guard is the primary non-vacuousness check: if ControlValve is declared WITHOUT
-# hasComponentPartAtAllTimes parts, the reasoner will NOT infer Assembly and this
-# guard will fail. That failure is the expected result of the Phase 2 negative test.
+# This guard is the primary non-vacuousness check: ControlValve ⊑ Assembly is
+# ASSERTED (not inferred) because iof:Assembly is primitive in COPI's scope.
+# The Phase 2 negative test removes that assertion — not part restrictions —
+# and expects this guard to return ≥1 violation row.
 PREFIX owl:        <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX copi:       <https://www.inf.ufrgs.br/ontologies/copi/>
