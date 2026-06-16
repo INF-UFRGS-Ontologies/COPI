@@ -1,5 +1,17 @@
 # Guard 02: ControlValve (if declared) must be entailed as subClassOf Valve
 # Violation: ControlValve exists but is NOT a subClassOf* Valve
+#
+# DORMANT — ODR-015 Phase 2 pending.
+# copi:ControlValve is not yet declared in copi-enriched.owl. The BIND pattern
+# causes `?x a owl:Class` to fail (0 rows) → this guard vacuously passes.
+# A green result here is NOT active protection; it becomes a real check only
+# once ControlValve is introduced (ODR-015 Phase 2, ODR-008).
+#
+# Phase 2 acceptance criterion (guards 02 + 04):
+# After declaring ControlValve, run a NEGATIVE test: define ControlValve with
+# only hasFunction (no hasComponentPartAtAllTimes parts) so the reasoner does NOT
+# infer iof-constr:Assembly. Guard 04 must FAIL (return ≥1 violation row).
+# If 04 fails correctly, both 02 and 04 are confirmed non-vacuous.
 PREFIX owl:  <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX copi: <https://www.inf.ufrgs.br/ontologies/copi/>
