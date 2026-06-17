@@ -1,0 +1,61 @@
+name: Diagnose SFTP file permissions
+
+# workflow_dispatch ONLY — never triggered by push/PR.
+# Use to verify whether the 403 on .owl/.ttl is caused by wrong file permissions
+# (600/700) vs. an Apache-level restriction (SELinux, AllowOverride, etc.).
+# Does NOT modify anything on the server.
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    name: List permissions on UFRGS server
+    runs-on: arc-runner-copi
+
+    steps:
+      - name: Ensure lftp is available
+        run: command -v lftp >/dev/null 2>&1 || sudo apt-get install -y -q lftp
+
+      - name: List permissions — public_html/copi/ root
+        env:
+          SFTP_PASS: ${{ secrets.FTP }}
+          SFTP_HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          echo "=== public_html/copi/ ==="
+          lftp -u "ontokg,${SFTP_PASS}" "sftp://${SFTP_HOST}" -e "
+            set net:timeout 30;
+            set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no';
+            ls -la ../ontologies/public_html/copi/;
+            quit"
+
+      - name: List permissions — public_html/copi/releases/ and subdirs
+        env:
+          SFTP_PASS: ${{ secrets.FTP }}
+          SFTP_HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          echo "=== public_html/copi/releases/ ==="
+          lftp -u "ontokg,${SFTP_PASS}" "sftp://${SFTP_HOST}" -e "
+            set net:timeout 30;
+            set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no';
+            ls -la ../ontologies/public_html/copi/releases/;
+            glob ls -la ../ontologies/public_html/copi/releases/*/;
+            quit"
+
+      - name: List permissions — public_html/ root (orphan check)
+        env:
+          SFTP_PASS: ${{ secrets.FTP }}
+          SFTP_HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          echo "=== public_html/ root (looking for copi.owl orphans) ==="
+          lftp -u "ontokg,${SFTP_PASS}" "sftp://${SFTP_HOST}" -e "
+            set net:timeout 30;
+            set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no';
+            ls -la ../ontologies/public_html/copi.owl ../ontologies/public_html/copi.ttl \
+                   ../ontologies/public_html/copi-base.owl ../ontologies/public_html/copi-full.owl || true;
+            quit"
+
+      # HOW TO INTERPRET THE OUTPUT:
+      # Good (chmod fixes it):   -rw-------  or  -rw-r-----  → Apache can't read → chmod 644 resolves
+      # Not a permission issue:  -rw-r--r--  → files ARE world-readable → 403 is Apache config
+      #                          (SELinux label mismatch, .htaccess, AllowOverride None, etc.)
+      #                          In that case do NOT merge Fix 1; escalate to UFRGS sysadmin.
