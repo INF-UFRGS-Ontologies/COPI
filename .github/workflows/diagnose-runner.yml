@@ -1,0 +1,49 @@
+name: Diagnose runner environment
+
+# workflow_dispatch ONLY — never triggered by push/PR.
+# Use to inspect the arc-runner-copi environment before choosing an lftp alternative.
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    name: Runner environment audit
+    runs-on: arc-runner-copi
+
+    steps:
+      - name: OS and kernel
+        run: |
+          uname -a
+          cat /etc/os-release
+
+      - name: Package managers and key binaries
+        run: |
+          echo "--- package managers ---"
+          command -v apt-get  && echo "apt-get:  $(apt-get --version 2>&1 | head -1)"  || echo "apt-get:  NOT FOUND"
+          command -v yum      && echo "yum:      $(yum --version 2>&1 | head -1)"      || echo "yum:      NOT FOUND"
+          command -v dnf      && echo "dnf:      $(dnf --version 2>&1 | head -1)"      || echo "dnf:      NOT FOUND"
+          command -v apk      && echo "apk:      $(apk --version 2>&1)"                || echo "apk:      NOT FOUND"
+          echo "--- SFTP/transfer binaries ---"
+          command -v lftp     && echo "lftp:     $(lftp --version 2>&1 | head -1)"     || echo "lftp:     NOT FOUND"
+          command -v sftp     && echo "sftp:     $(sftp -V 2>&1 | head -1)"            || echo "sftp:     NOT FOUND"
+          command -v rsync    && echo "rsync:    $(rsync --version 2>&1 | head -1)"    || echo "rsync:    NOT FOUND"
+          command -v sshpass  && echo "sshpass:  present"                              || echo "sshpass:  NOT FOUND"
+          echo "--- Python ---"
+          command -v python3  && echo "python3:  $(python3 --version)"                 || echo "python3:  NOT FOUND"
+          python3 -m pip --version 2>/dev/null || echo "pip:      NOT FOUND"
+
+      - name: apt-cache policy for lftp
+        run: |
+          echo "--- apt-cache policy lftp ---"
+          apt-cache policy lftp 2>/dev/null || echo "(apt-cache not available or lftp not in any configured repo)"
+
+      - name: apt repository components
+        run: |
+          echo "--- apt sources (components) ---"
+          grep -rh "^deb " /etc/apt/sources.list /etc/apt/sources.list.d/ 2>/dev/null \
+            | grep -oE "universe|main|restricted|multiverse" | sort -u \
+            || echo "(no apt sources found)"
+          echo "--- full sources.list snippet ---"
+          grep -rh "^deb " /etc/apt/sources.list /etc/apt/sources.list.d/ 2>/dev/null \
+            | head -20 \
+            || echo "(empty)"
