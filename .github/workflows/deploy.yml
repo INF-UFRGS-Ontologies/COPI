@@ -10,7 +10,7 @@ jobs:
   generate:
     name: Generate ODK release artefacts
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.6
+    container: obolibrary/odkfull:v1.6.1
 
     steps:
       - name: Checkout repository

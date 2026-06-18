@@ -1,19 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+<?xml version='1.0' encoding='UTF-8'?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
   <group id="odk-managed-catalog" prefer="public">
-    <uri name="https://www.inf.ufrgs.br/ontologies/copi/imports/bfo_import.owl" uri="imports/bfo_import.owl"/>
-    <uri name="https://www.inf.ufrgs.br/ontologies/copi/imports/iof-core_import.owl" uri="imports/iof-core_import.owl"/>
+    <uri name="https://www.inf.ufrgs.br/ontologies/copi/imports/bfo_import.owl" uri="imports/bfo_import.owl" />
+    <uri name="https://www.inf.ufrgs.br/ontologies/copi/imports/iof-core_import.owl" uri="imports/iof-core_import.owl" />
+    <uri name="https://www.inf.ufrgs.br/ontologies/copi/components/copi-core.ttl" uri="components/copi-core.ttl" />
+    <uri name="https://www.inf.ufrgs.br/ontologies/copi/components/copi-vocab.ttl" uri="components/copi-vocab.ttl" />
+    <uri name="https://www.inf.ufrgs.br/ontologies/copi/components/copi-enriched.owl" uri="components/copi-enriched.owl" />
   </group>
   <group id="upstream-mirrors" prefer="public">
-    <!-- BFO 2020: both URL variants map to local mirror -->
-    <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl" uri="mirror/bfo.owl"/>
-    <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl" uri="mirror/bfo.owl"/>
-    <!-- IOF-Core 202602: unversioned module IRI (as used by copi-core.ttl) -->
-    <uri name="https://spec.industrialontologies.org/ontology/core/Core/" uri="mirror/iof-core.owl"/>
+    <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl" uri="mirror/bfo.owl" />
+    <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl" uri="mirror/bfo.owl" />
+    <uri name="https://spec.industrialontologies.org/ontology/core/Core/" uri="mirror/iof-core.owl" />
   </group>
   <group id="components" prefer="public">
-    <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-core" uri="components/copi-core.ttl"/>
-    <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab" uri="components/copi-vocab.ttl"/>
-    <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched" uri="components/copi-enriched.owl"/>
+    <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-core" uri="components/copi-core.ttl" />
+    <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab" uri="components/copi-vocab.ttl" />
+    <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched" uri="components/copi-enriched.owl" />
   </group>
 </catalog>

@@ -3,16 +3,6 @@
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 
-# Override mirror-iof-core: generated Makefile has 202601; correct version is 202602.
-# Remove this override after `sh run.sh make update` regenerates the main Makefile.
-.PHONY: mirror-iof-core
-mirror-iof-core: | $(TMPDIR)
-	$(ROBOT) convert -I https://spec.industrialontologies.org/ontology/202602/core/Core/ -o $(TMPDIR)/$@.owl
-
-# ODR-015: component files (editorial; pending odk.py update regeneration)
-COMPONENT_FILES = $(COMPONENTSDIR)/copi-core.ttl $(COMPONENTSDIR)/copi-vocab.ttl $(COMPONENTSDIR)/copi-enriched.owl
-OTHER_SRC = $(COMPONENT_FILES)
-
 # Override base target: generated Makefile uses $(URIBASE)/COPI (uppercase, no path)
 # which does not match actual COPI IRIs (https://www.inf.ufrgs.br/ontologies/copi/...).
 $(ONT)-base.owl: $(EDIT_PREPROCESSED) $(OTHER_SRC) $(IMPORT_FILES)
@@ -42,7 +32,7 @@ $(ONT).ttl: $(ONT).owl
 GUARD_QUERIES = $(wildcard ../sparql/guards/guard-*.sparql)
 REASONED_GRAPH = $(TMPDIR)/reasoned-copi.owl
 
-$(REASONED_GRAPH): $(COMPONENT_FILES) | $(TMPDIR)
+$(REASONED_GRAPH): $(OTHER_SRC) | $(TMPDIR)
 	$(ROBOT) merge \
 		-i mirror/bfo.owl \
 		-i mirror/iof-core.owl \
