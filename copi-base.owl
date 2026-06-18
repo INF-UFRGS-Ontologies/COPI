@@ -221,6 +221,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000056 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000056"/>
+    
+
+
     <!-- https://spec.industrialontologies.org/ontology/construct/describes -->
 
     <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/construct/describes"/>
@@ -230,6 +236,20 @@
     <!-- https://spec.industrialontologies.org/ontology/construct/hasFunction -->
 
     <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/participatesIn -->
+
+    <owl:ObjectProperty rdf:about="https://www.inf.ufrgs.br/ontologies/copi/participatesIn">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000056"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
+        <rdfs:label xml:lang="pt-br">participa em</rdfs:label>
+        <rdfs:label xml:lang="en">participates in</rdfs:label>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact participates in every operation that realizes one of its designed functions; sub-property of bfo:participatesIn (BFO_0000056) that isolates the realization-to-participation bridge within COPI.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material participa em toda operação que realiza uma de suas funções projetadas; sub-propriedade de bfo:participatesIn (BFO_0000056) que isola a ponte realização-participação dentro da COPI.</annotation:naturalLanguageDefinition>
+    </owl:ObjectProperty>
     
 
 

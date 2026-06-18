@@ -598,9 +598,6 @@ xsd:date rdf:type rdfs:Datatype .
                                                                        )
                                                          ] ;
                                              rdfs:range <http://purl.obolibrary.org/obo/BFO_0000015> ;
-                                             owl:propertyChainAxiom ( construct:hasFunction
-                                                                      <http://purl.obolibrary.org/obo/BFO_0000054>
-                                                                    ) ;
                                              dce:identifier "250-BFO" ;
                                              rdfs:label "participates in"@en ;
                                              skos:definition "(Elucidation) participates in holds between some b that is either a specifically dependent continuant or generically dependent continuant or independent continuant that is not a spatial region & some process p such that b participates in p some way"@en ;
@@ -2445,6 +2442,20 @@ construct:temporallyStarts rdf:type owl:ObjectProperty ,
                                                                      "LA2: If both i and j are 'temporal intervals' and i 'temporally starts' j then the 'first instant’ of i ‘occurs simultaneously with’ the 'first instant of' j and the 'last instant of' i 'precedes' the 'last instant of' j" ,
                                                                      "LA3: If both i and j are 'process' and i 'temporally starts' j then the 'temporal interval' that i occupies 'temporally starts' the 'temporal interval' that j occupies" ,
                                                                      "LA4: i 'temporally starts' j if and only if there exists k that 'meets' i and j and there exists l such that i is 'before' l and j 'meets' l" .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/participatesIn
+copi:participatesIn rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000056> ;
+                    owl:propertyChainAxiom ( construct:hasFunction
+                                             <http://purl.obolibrary.org/obo/BFO_0000054>
+                                           ) ;
+                    rdfs:isDefinedBy copi:copi-core ;
+                    rdfs:label "participa em"@pt-br ,
+                               "participates in"@en ;
+                    annotation:isPrimitive "false"^^xsd:boolean ;
+                    annotation:naturalLanguageDefinition "A material artifact participates in every operation that realizes one of its designed functions; sub-property of bfo:participatesIn (BFO_0000056) that isolates the realization-to-participation bridge within COPI."@en ,
+                                                         "Um artefato material participa em toda operação que realiza uma de suas funções projetadas; sub-propriedade de bfo:participatesIn (BFO_0000056) que isola a ponte realização-participação dentro da COPI."@pt-br .
 
 
 #################################################################

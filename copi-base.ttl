@@ -149,12 +149,27 @@ copi:poscCaesarReference rdf:type owl:AnnotationProperty ;
 <http://purl.obolibrary.org/obo/BFO_0000054> rdf:type owl:ObjectProperty .
 
 
+###  http://purl.obolibrary.org/obo/BFO_0000056
+<http://purl.obolibrary.org/obo/BFO_0000056> rdf:type owl:ObjectProperty .
+
+
 ###  https://spec.industrialontologies.org/ontology/construct/describes
 construct:describes rdf:type owl:ObjectProperty .
 
 
 ###  https://spec.industrialontologies.org/ontology/construct/hasFunction
 construct:hasFunction rdf:type owl:ObjectProperty .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/participatesIn
+copi:participatesIn rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000056> ;
+                    rdfs:isDefinedBy copi:copi-core ;
+                    rdfs:label "participa em"@pt-br ,
+                               "participates in"@en ;
+                    annotation:isPrimitive "false"^^xsd:boolean ;
+                    annotation:naturalLanguageDefinition "A material artifact participates in every operation that realizes one of its designed functions; sub-property of bfo:participatesIn (BFO_0000056) that isolates the realization-to-participation bridge within COPI."@en ,
+                                                         "Um artefato material participa em toda operação que realiza uma de suas funções projetadas; sub-propriedade de bfo:participatesIn (BFO_0000056) que isola a ponte realização-participação dentro da COPI."@pt-br .
 
 
 #################################################################
