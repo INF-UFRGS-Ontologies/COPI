@@ -83,14 +83,19 @@ jobs:
       # a `!file` pattern matches every file that is NOT that file, so with only
       # negation entries every file satisfies some() → is_uploadable always false →
       # zero uploads. Fix: stage only the 8 target files so no ignore is needed.
+      #
+      # Source path must be workspace-relative (like docs/ which works). An absolute
+      # /tmp path is silently swallowed by Promise.allSettled in the action even if
+      # ssh2-sftp-client cannot access it from the runner's JavaScript context.
       - name: Stage OWL/TTL artefacts for upload
         run: |
-          mkdir /tmp/copi-stage
+          mkdir -p copi-stage
           cp copi.owl copi.ttl \
              copi-base.owl copi-base.ttl \
              copi-full.owl copi-full.ttl \
              copi-simple.owl copi-simple.ttl \
-             /tmp/copi-stage/
+             copi-stage/
+          ls -la copi-stage/
 
       - name: Transfer OWL/TTL variants to copi/ folder
         uses: Dylan700/sftp-upload-action@38cf757ef896d654aa0a56c84ed1a033d6b5bda2  # node24; master HEAD 2026-05-10 (not yet tagged)
@@ -100,7 +105,7 @@ jobs:
           password: ${{ secrets.FTP }}
           port: 22
           uploads: |
-            /tmp/copi-stage/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/
+            copi-stage/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/
 
       - name: Transfer versioned snapshot to copi/releases/
         uses: Dylan700/sftp-upload-action@38cf757ef896d654aa0a56c84ed1a033d6b5bda2  # node24; master HEAD 2026-05-10 (not yet tagged)
@@ -110,4 +115,4 @@ jobs:
           password: ${{ secrets.FTP }}
           port: 22
           uploads: |
-            /tmp/copi-stage/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/releases/${{ env.RELEASE_DATE }}/
+            copi-stage/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/releases/${{ env.RELEASE_DATE }}/
