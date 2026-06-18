@@ -28,17 +28,21 @@ $(ONT).ttl: $(ONT).owl
 
 # Scoped HermiT guard target (ODR-015)
 # Merges copi-core + copi-vocab + copi-enriched + mirrors; reasons with HermiT;
-# then verifies 10 violation-style SPARQL guards.
+# then verifies violation-style SPARQL guards.
+# CHAIN_TEST_ABOX is test-only: not in OTHER_SRC, not imported by copi-edit.owl,
+# does not appear in any release artefact.
 GUARD_QUERIES = $(wildcard ../sparql/guards/guard-*.sparql)
 REASONED_GRAPH = $(TMPDIR)/reasoned-copi.owl
+CHAIN_TEST_ABOX = test/chain-participates-in-abox.ttl
 
-$(REASONED_GRAPH): $(OTHER_SRC) | $(TMPDIR)
+$(REASONED_GRAPH): $(OTHER_SRC) $(CHAIN_TEST_ABOX) | $(TMPDIR)
 	$(ROBOT) merge \
 		-i mirror/bfo.owl \
 		-i mirror/iof-core.owl \
 		-i $(COMPONENTSDIR)/copi-core.ttl \
 		-i $(COMPONENTSDIR)/copi-vocab.ttl \
 		-i $(COMPONENTSDIR)/copi-enriched.owl \
+		-i $(CHAIN_TEST_ABOX) \
 		reason --reasoner HermiT \
 			--equivalent-classes-allowed asserted-only \
 			--exclude-tautologies structural \
