@@ -55,6 +55,10 @@ jobs:
     env:
       ONTOLOGY: copi
       REMOTE_BASE_PATH: ../ontologies/public_html/
+      # Dylan700/sftp-upload-action@v1.2.3 declares node20; GitHub enforces node24
+      # from 2026-06-16. This override allows node20 actions until September 2026,
+      # when it will be removed. Tracked in: fix/sftp-revert-node20 PR #9.
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
     steps:
       - name: Checkout repository
@@ -70,7 +74,7 @@ jobs:
       # copi/copi.owl is confirmed live and returning 200.
 
       - name: Transfer HTML docs to copi/ folder
-        uses: Dylan700/sftp-upload-action@38cf757ef896d654aa0a56c84ed1a033d6b5bda2  # node24; master HEAD 2026-05-10 (not yet tagged)
+        uses: Dylan700/sftp-upload-action@50ed7273493353a60dace713957c36b02dd87bec  # v1.2.3 node20; confirmed working in PR #5
         with:
           server: ${{ secrets.DEPLOY_HOST }}
           username: ontokg
@@ -98,7 +102,7 @@ jobs:
           ls -la copi-stage/
 
       - name: Transfer OWL/TTL variants to copi/ folder
-        uses: Dylan700/sftp-upload-action@38cf757ef896d654aa0a56c84ed1a033d6b5bda2  # node24; master HEAD 2026-05-10 (not yet tagged)
+        uses: Dylan700/sftp-upload-action@50ed7273493353a60dace713957c36b02dd87bec  # v1.2.3 node20; confirmed working in PR #5
         with:
           server: ${{ secrets.DEPLOY_HOST }}
           username: ontokg
@@ -108,7 +112,7 @@ jobs:
             copi-stage/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/
 
       - name: Transfer versioned snapshot to copi/releases/
-        uses: Dylan700/sftp-upload-action@38cf757ef896d654aa0a56c84ed1a033d6b5bda2  # node24; master HEAD 2026-05-10 (not yet tagged)
+        uses: Dylan700/sftp-upload-action@50ed7273493353a60dace713957c36b02dd87bec  # v1.2.3 node20; confirmed working in PR #5
         with:
           server: ${{ secrets.DEPLOY_HOST }}
           username: ontokg
