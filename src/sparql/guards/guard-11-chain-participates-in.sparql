@@ -1,0 +1,26 @@
+# Guard 11: copi:participatesIn property chain entailment (TBox check)
+#
+# Chain:  iof-constr:hasFunction ∘ obo:BFO_0000054 ⊑ copi:participatesIn ⊑ obo:BFO_0000056
+#
+# WitnessParticipant ≡ ∃obo:BFO_0000056.copi:MomentumTransfer
+# is defined in test/chain-participates-in-abox.ttl (guards-only test module).
+#
+# If the chain and subPropertyOf hold, HermiT entails at TBox level:
+#   copi:MomentumTransferDevice ⊑ WitnessParticipant
+# because MomentumTransferDevice ≡ MaterialArtifact ⊓ ∃hasFunction.(DesignedFunction ⊓ ∃BFO_0000054.MomentumTransfer).
+#
+# Violation: MomentumTransferDevice NOT entailed ⊑ WitnessParticipant,
+# meaning the chain or the subPropertyOf copi:participatesIn ⊑ bfo:participatesIn broke.
+
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX copi: <https://www.inf.ufrgs.br/ontologies/copi/>
+PREFIX copi-test: <https://www.inf.ufrgs.br/ontologies/copi/test/>
+
+SELECT ?x WHERE {
+  BIND(copi:MomentumTransferDevice AS ?x)
+  ?x a owl:Class .
+  FILTER NOT EXISTS {
+    ?x rdfs:subClassOf copi-test:WitnessParticipant .
+  }
+}

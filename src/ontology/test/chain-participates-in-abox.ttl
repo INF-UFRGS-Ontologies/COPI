@@ -1,0 +1,49 @@
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix obo:       <http://purl.obolibrary.org/obo/> .
+@prefix iof-constr: <https://spec.industrialontologies.org/ontology/construct/> .
+@prefix copi:      <https://www.inf.ufrgs.br/ontologies/copi/> .
+@prefix copi-test: <https://www.inf.ufrgs.br/ontologies/copi/test/> .
+
+# Guard-11 test module: chain copi:participatesIn entailment
+#
+# NOT imported by copi-edit.owl; NOT in OTHER_SRC.
+# Used ONLY by the guards target ($(REASONED_GRAPH) rule in copi.Makefile).
+#
+# Chain under test:
+#   iof-constr:hasFunction ∘ obo:BFO_0000054 ⊑ copi:participatesIn ⊑ obo:BFO_0000056
+#
+# GUARD STRATEGY — TBox subsumption (not ABox individual classification):
+#   ROBOT reason with HermiT materializes TBox inferences but not ABox ClassAssertions
+#   through property chains.  The guard therefore checks the TBox entailment:
+#     copi:MomentumTransferDevice ⊑ WitnessParticipant
+#   where WitnessParticipant ≡ ∃obo:BFO_0000056.copi:MomentumTransfer.
+#   This follows because MomentumTransferDevice is defined as
+#     MaterialArtifact ⊓ ∃hasFunction.(DesignedFunction ⊓ ∃BFO_0000054.MomentumTransfer)
+#   so the chain fires and the subPropertyOf entailment propagates at TBox level.
+#
+# The ABox below documents what the chain should do on actual role assertions:
+#   test-valve hasFunction test-fn ; test-fn realizedIn test-op → test-valve participatesIn test-op.
+
+<https://www.inf.ufrgs.br/ontologies/copi/test/chain-participates-in-abox>
+    a owl:Ontology .
+
+# Witness class W ≡ ∃bfo:participatesIn.copi:MomentumTransfer
+# test-valve ∈ W  iff  obo:BFO_0000056(test-valve, test-op) is entailed,
+# which requires the full chain + subPropertyOf to fire.
+copi-test:WitnessParticipant
+    a owl:Class ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:onProperty obo:BFO_0000056 ;
+        owl:someValuesFrom copi:MomentumTransfer
+    ] .
+
+# ABox: minimal witness triple set
+copi-test:test-valve  a iof-constr:MaterialArtifact .
+copi-test:test-fn     a iof-constr:DesignedFunction .
+copi-test:test-op     a copi:MomentumTransfer .
+
+copi-test:test-valve  iof-constr:hasFunction  copi-test:test-fn .
+copi-test:test-fn     obo:BFO_0000054         copi-test:test-op .
