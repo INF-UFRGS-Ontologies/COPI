@@ -123,16 +123,17 @@ copi:participatesIn a owl:ObjectProperty ;
 #==============================================================================
 
 copi:Operation a owl:Class ;
-    rdfs:subClassOf obo:BFO_0000015 ;
+    rdfs:subClassOf iof-constr:PlannedProcess ;
     rdfs:label "operation"@en , "operação"@pt-br ;
     iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A process that an item of process-industry equipment is designed to bring about or take part in."@en ,
-        "Um processo que um item de equipamento de indústria de processo é projetado para causar ou do qual é projetado para participar."@pt-br ;
-    iof-av:firstOrderLogicAxiom "Operation(x) → Process(x)" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is an 'operation' then x is a 'process'"@en ,
-        "se x é uma 'operação' então x é um 'processo'"@pt-br ;
-    iof-av:primitiveRationale "Abstract superclass collecting the nine COPI operation categories; differentiated by its subclasses, not by a single formal condition."@en ,
-        "Superclasse abstrata que reúne as nove categorias de operação do COPI; diferenciada por suas subclasses, não por uma única condição formal."@pt-br ;
+    iof-av:naturalLanguageDefinition "A planned process that an item of process-industry equipment is designed to bring about or take part in; a process-industry unit operation."@en ,
+        "Um processo planejado que um item de equipamento de indústria de processo é projetado para causar ou do qual é projetado para participar; uma operação unitária de indústria de processo."@pt-br ;
+    iof-av:firstOrderLogicAxiom "Operation(x) → PlannedProcess(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is an 'operation' then x is a 'planned process'"@en ,
+        "se x é uma 'operação' então x é um 'processo planejado'"@pt-br ;
+    iof-av:primitiveRationale "Root universal for process-industry unit operations in the chemical-engineering tradition (cf. each category's adaptedFrom). Members share a typed participation signature (material inputs/outputs) and differ by transformation effected; no single formal condition differentiates Operation from PlannedProcess in OWL — the differentia is OWL-inexpressible, standard for a BFO primitive. (ODR-009 Amendment A, 2026-06-18)"@en ,
+        "Universal raiz para operações unitárias de indústria de processo na tradição da engenharia química (cf. adaptedFrom de cada categoria). Os membros compartilham uma assinatura de participação tipada (entradas/saídas materiais) e diferem pela transformação efetuada; nenhuma condição formal única diferencia Operation de PlannedProcess em OWL — a diferença é inexpressível em OWL, padrão para um primitivo BFO. (ODR-009 Emenda A, 2026-06-18)"@pt-br ;
+    dcterms:source "ODR-009 Amendment A (2026-06-18): copi:Operation as explicit root universal; genus correction to iof-constr:PlannedProcess" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 1. Momentum transfer ---------------------------------------------------
