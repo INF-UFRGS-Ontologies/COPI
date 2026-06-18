@@ -80,7 +80,10 @@ deliberadamente NÃO disjuntas duas a duas (partição seletiva)."""@pt-br ;
 
     rdfs:seeAlso <https://www.inf.ufrgs.br/ontologies/copi> ;
     iof-av:usageNote "Load in Protégé; map the IOF import IRI to the local Core.rdf (202602) and ensure BFO 2020 resolves; run HermiT."@en ,
-                     "Carregue no Protégé; mapeie o IRI de importação da IOF para o Core.rdf local (202602) e garanta que a BFO 2020 resolva; rode o HermiT."@pt-br .
+                     "Carregue no Protégé; mapeie o IRI de importação da IOF para o Core.rdf local (202602) e garanta que a BFO 2020 resolva; rode o HermiT."@pt-br ;
+
+    iof-av:explanatoryNote "Relation to iof:PieceOfEquipment (ODR-012 §3): a COPI equipment category instance that additionally bears an equipment role is entailed as an iof:PieceOfEquipment. The COPI categories are function-based (rigid, grounded in designed function); iof:PieceOfEquipment is role-based (anti-rigid, grounded in an equipment role). The two are orthogonal, complementary views of the same artifact: COPI function-based identity is the primary criterion; membership in iof:PieceOfEquipment follows contextually from role-bearing. No subClassOf is asserted between any COPI equipment category and iof:PieceOfEquipment."@en ,
+                           "Relação com iof:PieceOfEquipment (ODR-012 §3): uma instância de categoria de equipamento COPI que adicionalmente porta um papel de equipamento é inferida como iof:PieceOfEquipment. As categorias COPI são baseadas em função (rígidas, fundamentadas na função projetada); iof:PieceOfEquipment é baseada em papel (anti-rígida, fundamentada em um papel de equipamento). As duas são visões ortogonais e complementares do mesmo artefato: a identidade baseada em função da COPI é o critério primário; a pertinência a iof:PieceOfEquipment decorre contextualmente do porte do papel. Nenhuma subClassOf é asserida entre qualquer categoria de equipamento COPI e iof:PieceOfEquipment."@pt-br .
 
 #==============================================================================
 # LEGEND (terms USED here; they arrive via the two imports)
@@ -98,11 +101,21 @@ deliberadamente NÃO disjuntas duas a duas (partição seletiva)."""@pt-br ;
 #   We REUSE iof-constr:hasFunction (202602; ⊑ bearerOf, range Function).
 #   In BFO, if a borne function f is realized in process p, then p has the
 #   bearer of f as a participant. OWL does not derive this from the imports
-#   alone, so we assert the sub-property chain on `participates in`:
-#       hasFunction o realized_in  ⊑  participates_in
-#   Regular -> stays in OWL 2 DL; HermiT accepts it.
+#   alone, so we assert the sub-property chain on a COPI sub-property of
+#   `participates in` rather than on the imported BFO property directly:
+#       hasFunction o realized_in  ⊑  copi:participatesIn
+#   Moving the chain off obo:BFO_0000056 isolates non-simplicity inside COPI
+#   and preserves the global OWL 2 DL profile. bfo:participatesIn is still
+#   entailed for every satisfying pair via rdfs:subPropertyOf.
 #==============================================================================
-obo:BFO_0000056 owl:propertyChainAxiom ( iof-constr:hasFunction obo:BFO_0000054 ) .
+copi:participatesIn a owl:ObjectProperty ;
+    rdfs:subPropertyOf obo:BFO_0000056 ;
+    owl:propertyChainAxiom ( iof-constr:hasFunction obo:BFO_0000054 ) ;
+    rdfs:label "participates in"@en , "participa em"@pt-br ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "A material artifact participates in every operation that realizes one of its designed functions; sub-property of bfo:participatesIn (BFO_0000056) that isolates the realization-to-participation bridge within COPI."@en ,
+        "Um artefato material participa em toda operação que realiza uma de suas funções projetadas; sub-propriedade de bfo:participatesIn (BFO_0000056) que isola a ponte realização-participação dentro da COPI."@pt-br ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 
 #==============================================================================
