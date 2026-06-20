@@ -115,6 +115,7 @@ copi:participatesIn a owl:ObjectProperty ;
     iof-av:isPrimitive false ;
     iof-av:naturalLanguageDefinition "A material artifact participates in every operation that realizes one of its designed functions; sub-property of bfo:participatesIn (BFO_0000056) that isolates the realization-to-participation bridge within COPI."@en ,
         "Um artefato material participa em toda operação que realiza uma de suas funções projetadas; sub-propriedade de bfo:participatesIn (BFO_0000056) que isola a ponte realização-participação dentro da COPI."@pt-br ;
+    dcterms:source "ODR-011 §4" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 
@@ -153,6 +154,7 @@ copi:MomentumTransfer a owl:Class ;
     skos:example "Raising the pressure of a process liquid; compressing a gas; circulating a slurry."@en ,
         "Elevar a pressão de um líquido de processo; comprimir um gás; circular uma lama."@pt-br ;
     iof-av:adaptedFrom "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering (fluid-flow operations)." ;
+    dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:LiquidPressureIncrease a owl:Class ;
@@ -166,6 +168,7 @@ copi:LiquidPressureIncrease a owl:Class ;
         "x é um 'aumento de pressão de líquido' se e somente se x é uma 'transferência de quantidade de movimento' cuja entrada fluida é um 'líquido'"@pt-br ;
     iof-av:primitiveRationale "OWL 2 DL cannot express the phase constraint on the fluid input; the OWL form asserts only the genus (MomentumTransfer). The disjointness with GasPressureIncrease is asserted to carry the pump/compressor partition."@en ,
         "OWL 2 DL não consegue expressar a restrição de fase sobre a entrada fluida; a forma OWL assere apenas o gênero (MomentumTransfer). A disjunção com GasPressureIncrease é asserida para sustentar a partição bomba/compressor."@pt-br ;
+    dcterms:source "ODR-011" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:GasPressureIncrease a owl:Class ;
@@ -179,6 +182,7 @@ copi:GasPressureIncrease a owl:Class ;
         "x é um 'aumento de pressão de gás' se e somente se x é uma 'transferência de quantidade de movimento' cuja entrada fluida é um 'gás'"@pt-br ;
     iof-av:primitiveRationale "As for LiquidPressureIncrease: the phase constraint is not expressible in OWL 2 DL; only the genus is asserted."@en ,
         "Como em LiquidPressureIncrease: a restrição de fase não é expressável em OWL 2 DL; apenas o gênero é asserido."@pt-br ;
+    dcterms:source "ODR-011" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # No occurrent takes an incompressible-liquid and a compressible-gas input at
@@ -200,6 +204,7 @@ copi:HeatTransfer a owl:Class ;
         "Classe de operações unitárias; a constância de fase e de identidade química que distingue a transferência de calor sensível não é capturada em OWL, de modo que apenas o envelope é asserido."@pt-br ;
     skos:example "Sensible heating of a process stream against a hot utility."@en ,
         "Aquecimento sensível de uma corrente de processo contra uma utilidade quente."@pt-br ;
+    dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 3. Mass transfer -------------------------------------------------------
@@ -216,6 +221,7 @@ copi:MassTransfer a owl:Class ;
         "Classe de operações unitárias; a migração interfásica que individua seus membros é declarada para folhas específicas (e.g. GasAbsorption) mas não no nível da categoria em OWL."@pt-br ;
     skos:example "Absorption of a gas component into a liquid solvent; stripping; distillation."@en ,
         "Absorção de um componente gasoso em um solvente líquido; esgotamento (stripping); destilação."@pt-br ;
+    dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:GasAbsorption a owl:Class ;
@@ -230,6 +236,7 @@ copi:GasAbsorption a owl:Class ;
     iof-av:primitiveRationale "Although a full first-order definition is available, OWL 2 DL carries only the typed-participation envelope; the relational differentia (a constituent migrating gas->liquid) is FOL-only."@en ,
         "Embora exista uma definição de primeira ordem completa, o OWL 2 DL carrega apenas o envelope de participação tipada; a diferença relacional (um constituinte migrando gás->líquido) é apenas-FOL."@pt-br ;
     iof-av:adaptedFrom "Treybal, Mass-Transfer Operations." ;
+    dcterms:source "ODR-011" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 4. Mechanical separation ----------------------------------------------
@@ -246,6 +253,7 @@ copi:MechanicalSeparation a owl:Class ;
         "Classe de operações unitárias; a separação de uma alimentação heterogênea por força mecânica não é formalizada em OWL além do envelope."@pt-br ;
     skos:example "Three-phase gravity separation; cyclonic separation; filtration; centrifugation."@en ,
         "Separação gravitacional trifásica; separação ciclônica; filtração; centrifugação."@pt-br ;
+    dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 5. Chemical reaction ---------------------------------------------------
@@ -262,6 +270,7 @@ copi:ChemicalReaction a owl:Class ;
         "Classe de processo unitário; a formação de uma espécie genuinamente nova é parcialmente caracterizada em FOL mas apenas o gênero é asserido em OWL."@pt-br ;
     skos:example "Fermentation of sugars to ethanol; combustion; catalytic conversion."@en ,
         "Fermentação de açúcares a etanol; combustão; conversão catalítica."@pt-br ;
+    dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 6. Phase change --------------------------------------------------------
@@ -278,6 +287,7 @@ copi:PhaseChange a owl:Class ;
         "Classe de operações unitárias; a mudança de fase a identidade química constante é declarada para folhas (e.g. Vaporization) mas não no nível da categoria em OWL."@pt-br ;
     skos:example "Evaporation; condensation; crystallisation."@en ,
         "Evaporação; condensação; cristalização."@pt-br ;
+    dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:Vaporization a owl:Class ;
@@ -291,6 +301,7 @@ copi:Vaporization a owl:Class ;
         "x é uma 'vaporização' se e somente se x é uma 'mudança de fase' cuja entrada líquida dá origem a uma saída de vapor"@pt-br ;
     iof-av:primitiveRationale "OWL 2 DL carries only the genus (PhaseChange); the liquid-to-vapour derivation is FOL-only."@en ,
         "OWL 2 DL carrega apenas o gênero (PhaseChange); a derivação líquido-para-vapor é apenas-FOL."@pt-br ;
+    dcterms:source "ODR-011" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 7. Material containment (auxiliary; limiting case: input = output) -----
@@ -307,6 +318,7 @@ copi:MaterialContainment a owl:Class ;
         "Categoria auxiliar mantida porque todo equipamento de planta deve ser classificável; a identidade entrada=saída é a caracterização-limite, não uma transformação."@pt-br ;
     skos:example "Holding crude in a storage tank; buffering liquid in a surge drum."@en ,
         "Armazenar petróleo cru em um tanque; amortecer líquido em um tambor de surto."@pt-br ;
+    dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # Illustrative UNPLANNED counterpart: motivates rooting operations under
@@ -324,6 +336,7 @@ copi:LossOfContainment a owl:Class ;
         "Incluída para tornar concreta a ancoragem em bfo:Process: o mesmo tipo de falha de barreira é relevante para falhas (ISO 14224) e não pode ser um PlannedProcess; uma hierarquia só-planejada o excluiria."@pt-br ;
     iof-av:explanatoryNote "Relevant to HAZOP and failure-propagation work built over COPI."@en ,
         "Relevante para trabalhos de HAZOP e propagação de falhas construídos sobre o COPI."@pt-br ;
+    dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 8. Flow control (auxiliary) -------------------------------------------
@@ -340,6 +353,7 @@ copi:FlowControl a owl:Class ;
         "Categoria auxiliar; a conservação de substância/fase/composição sob modulação é a caracterização e não é uma transformação material."@pt-br ;
     skos:example "Throttling a stream through a control valve; isolating via a shutoff valve; relieving overpressure."@en ,
         "Estrangular uma corrente por uma válvula de controle; isolar por uma válvula de bloqueio; aliviar sobrepressão."@pt-br ;
+    dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 9. Measurement (auxiliary) ---------------------------------------------
@@ -373,6 +387,7 @@ copi:MomentumTransferDevice a owl:Class ;
     skos:example "pump, compressor, fan, pipe, mixer"@en ,
         "bomba, compressor, ventilador, tubo, misturador"@pt-br ;
     iof-av:adaptedFrom "Unit-operations tradition (McCabe-Smith-Harriott); cross-checked against IEC 81346-2 codes G, M, W and ISO 14224 Annex A." ;
+    dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:HeatTransferDevice a owl:Class ;
@@ -395,6 +410,7 @@ copi:HeatTransferDevice a owl:Class ;
     skos:example "shell-and-tube exchanger, fired heater, reboiler"@en ,
         "trocador casco-e-tubo, aquecedor a fogo direto, refervedor"@pt-br ;
     iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 codes E, V." ;
+    dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:MassTransferDevice a owl:Class ;
@@ -415,6 +431,7 @@ copi:MassTransferDevice a owl:Class ;
     skos:example "absorber, stripper, distillation column, adsorber"@en ,
         "absorvedor, esgotador, coluna de destilação, adsorvedor"@pt-br ;
     iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
+    dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:MechanicalSeparationDevice a owl:Class ;
@@ -435,6 +452,7 @@ copi:MechanicalSeparationDevice a owl:Class ;
     skos:example "three-phase separator, cyclone, filter, centrifuge"@en ,
         "separador trifásico, ciclone, filtro, centrífuga"@pt-br ;
     iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
+    dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:ChemicalReactor a owl:Class ;
@@ -455,6 +473,7 @@ copi:ChemicalReactor a owl:Class ;
     skos:example "CSTR, plug-flow reactor, fixed-bed catalytic reactor"@en ,
         "CSTR, reator de fluxo pistonado, reator catalítico de leito fixo"@pt-br ;
     iof-av:adaptedFrom "Unit-process tradition; ISO 14224 Annex A; IEC 81346-2 code H." ;
+    dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:PhaseChangeDevice a owl:Class ;
@@ -475,6 +494,7 @@ copi:PhaseChangeDevice a owl:Class ;
     skos:example "evaporator, condenser, crystalliser"@en ,
         "evaporador, condensador, cristalizador"@pt-br ;
     iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
+    dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:ContainmentDevice a owl:Class ;
@@ -495,6 +515,7 @@ copi:ContainmentDevice a owl:Class ;
     skos:example "storage tank, pressure vessel, accumulator"@en ,
         "tanque de armazenamento, vaso de pressão, acumulador"@pt-br ;
     iof-av:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 code C." ;
+    dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:FlowControlDevice a owl:Class ;
@@ -515,6 +536,7 @@ copi:FlowControlDevice a owl:Class ;
     skos:example "control valve, shutoff valve, relief valve"@en ,
         "válvula de controle, válvula de bloqueio, válvula de alívio"@pt-br ;
     iof-av:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 codes Q, R, F." ;
+    dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:MeasurementInstrument a owl:Class ;
@@ -537,6 +559,7 @@ copi:MeasurementInstrument a owl:Class ;
     skos:example "temperature/pressure/flow/level transmitter, composition analyzer"@en ,
         "transmissor de temperatura/pressão/vazão/nível, analisador de composição"@pt-br ;
     iof-av:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 code B." ;
+    dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 
