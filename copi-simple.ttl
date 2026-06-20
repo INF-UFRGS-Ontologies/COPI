@@ -1850,6 +1850,7 @@ copi:participatesIn rdf:type owl:ObjectProperty ;
                     owl:propertyChainAxiom ( construct:hasFunction
                                              <http://purl.obolibrary.org/obo/BFO_0000054>
                                            ) ;
+                    terms:source "ODR-011 §4" ;
                     rdfs:isDefinedBy copi:copi-core ;
                     rdfs:label "participa em"@pt-br ,
                                "participates in"@en ;
@@ -1873,6 +1874,7 @@ copi:AbsorbentPhase rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/ChemicalReaction
 copi:ChemicalReaction rdf:type owl:Class ;
                       rdfs:subClassOf copi:Operation ;
+                      terms:source "ODR-009" ;
                       rdfs:isDefinedBy copi:copi-core ;
                       rdfs:label "chemical reaction"@en ,
                                  "reação química"@pt-br ;
@@ -1890,6 +1892,8 @@ copi:ChemicalReaction rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/ChemicalReactor
 copi:ChemicalReactor rdf:type owl:Class ;
+                     terms:source "ODR-011" ,
+                                  "ODR-012" ;
                      rdfs:isDefinedBy copi:copi-core ;
                      rdfs:label "chemical reactor"@en ,
                                 "reator químico"@pt-br ;
@@ -1976,6 +1980,8 @@ copi:Compressor rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/ContainmentDevice
 copi:ContainmentDevice rdf:type owl:Class ;
+                       terms:source "ODR-011" ,
+                                    "ODR-012" ;
                        rdfs:isDefinedBy copi:copi-core ;
                        rdfs:label "containment device"@en ,
                                   "dispositivo de contenção"@pt-br ;
@@ -2040,6 +2046,7 @@ copi:Filter rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/FlowControl
 copi:FlowControl rdf:type owl:Class ;
                  rdfs:subClassOf copi:Operation ;
+                 terms:source "ODR-009" ;
                  rdfs:isDefinedBy copi:copi-core ;
                  rdfs:label "controle de fluxo"@pt-br ,
                             "flow control"@en ;
@@ -2057,6 +2064,8 @@ copi:FlowControl rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/FlowControlDevice
 copi:FlowControlDevice rdf:type owl:Class ;
+                       terms:source "ODR-011" ,
+                                    "ODR-012" ;
                        rdfs:isDefinedBy copi:copi-core ;
                        rdfs:label "dispositivo de controle de fluxo"@pt-br ,
                                   "flow-control device"@en ;
@@ -2164,6 +2173,7 @@ copi:GasAbsorber rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/GasAbsorption
 copi:GasAbsorption rdf:type owl:Class ;
                    rdfs:subClassOf copi:MassTransfer ;
+                   terms:source "ODR-011" ;
                    rdfs:isDefinedBy copi:copi-core ;
                    rdfs:label "absorção de gás"@pt-br ,
                               "gas absorption"@en ;
@@ -2206,6 +2216,7 @@ copi:GasAbsorptionFunction rdf:type owl:Class ;
 copi:GasPressureIncrease rdf:type owl:Class ;
                          rdfs:subClassOf copi:MomentumTransfer ;
                          owl:disjointWith copi:LiquidPressureIncrease ;
+                         terms:source "ODR-011" ;
                          rdfs:isDefinedBy copi:copi-core ;
                          rdfs:label "aumento de pressão de gás"@pt-br ,
                                     "gas pressure increase"@en ;
@@ -2222,6 +2233,7 @@ copi:GasPressureIncrease rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/HeatTransfer
 copi:HeatTransfer rdf:type owl:Class ;
                   rdfs:subClassOf copi:Operation ;
+                  terms:source "ODR-009" ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "heat transfer"@en ,
                              "transferência de calor"@pt-br ;
@@ -2239,6 +2251,8 @@ copi:HeatTransfer rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/HeatTransferDevice
 copi:HeatTransferDevice rdf:type owl:Class ;
+                        terms:source "ODR-011" ,
+                                     "ODR-012" ;
                         rdfs:isDefinedBy copi:copi-core ;
                         rdfs:label "dispositivo de transferência de calor"@pt-br ,
                                    "heat-transfer device"@en ;
@@ -2317,6 +2331,7 @@ copi:LevelMeasurementResult rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/LiquidPressureIncrease
 copi:LiquidPressureIncrease rdf:type owl:Class ;
                             rdfs:subClassOf copi:MomentumTransfer ;
+                            terms:source "ODR-011" ;
                             rdfs:isDefinedBy copi:copi-core ;
                             rdfs:label "aumento de pressão de líquido"@pt-br ,
                                        "liquid pressure increase"@en ;
@@ -2332,6 +2347,7 @@ copi:LiquidPressureIncrease rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/LossOfContainment
 copi:LossOfContainment rdf:type owl:Class ;
+                       terms:source "ODR-009" ;
                        rdfs:isDefinedBy copi:copi-core ;
                        rdfs:label "loss of containment"@en ,
                                   "perda de contenção"@pt-br ;
@@ -2350,6 +2366,7 @@ copi:LossOfContainment rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/MassTransfer
 copi:MassTransfer rdf:type owl:Class ;
                   rdfs:subClassOf copi:Operation ;
+                  terms:source "ODR-009" ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "mass transfer"@en ,
                              "transferência de massa"@pt-br ;
@@ -2367,6 +2384,8 @@ copi:MassTransfer rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/MassTransferDevice
 copi:MassTransferDevice rdf:type owl:Class ;
+                        terms:source "ODR-011" ,
+                                     "ODR-012" ;
                         rdfs:isDefinedBy copi:copi-core ;
                         rdfs:label "dispositivo de transferência de massa"@pt-br ,
                                    "mass-transfer device"@en ;
@@ -2384,6 +2403,7 @@ copi:MassTransferDevice rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/MaterialContainment
 copi:MaterialContainment rdf:type owl:Class ;
                          rdfs:subClassOf copi:Operation ;
+                         terms:source "ODR-009" ;
                          rdfs:isDefinedBy copi:copi-core ;
                          rdfs:label "contenção de material"@pt-br ,
                                     "material containment"@en ;
@@ -2401,6 +2421,8 @@ copi:MaterialContainment rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/MeasurementInstrument
 copi:MeasurementInstrument rdf:type owl:Class ;
+                           terms:source "ODR-011" ,
+                                        "ODR-012" ;
                            rdfs:isDefinedBy copi:copi-core ;
                            rdfs:label "instrumento de medição"@pt-br ,
                                       "measurement instrument"@en ;
@@ -2427,6 +2449,7 @@ copi:MechanicalPower rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/MechanicalSeparation
 copi:MechanicalSeparation rdf:type owl:Class ;
                           rdfs:subClassOf copi:Operation ;
+                          terms:source "ODR-009" ;
                           rdfs:isDefinedBy copi:copi-core ;
                           rdfs:label "mechanical separation"@en ,
                                      "separação mecânica"@pt-br ;
@@ -2444,6 +2467,8 @@ copi:MechanicalSeparation rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/MechanicalSeparationDevice
 copi:MechanicalSeparationDevice rdf:type owl:Class ;
+                                terms:source "ODR-011" ,
+                                             "ODR-012" ;
                                 rdfs:isDefinedBy copi:copi-core ;
                                 rdfs:label "dispositivo de separação mecânica"@pt-br ,
                                            "mechanical-separation device"@en ;
@@ -2461,6 +2486,7 @@ copi:MechanicalSeparationDevice rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/MomentumTransfer
 copi:MomentumTransfer rdf:type owl:Class ;
                       rdfs:subClassOf copi:Operation ;
+                      terms:source "ODR-009" ;
                       rdfs:isDefinedBy copi:copi-core ;
                       rdfs:label "momentum transfer"@en ,
                                  "transferência de quantidade de movimento"@pt-br ;
@@ -2481,6 +2507,8 @@ copi:MomentumTransfer rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/MomentumTransferDevice
 copi:MomentumTransferDevice rdf:type owl:Class ;
+                            terms:source "ODR-011" ,
+                                         "ODR-012" ;
                             rdfs:isDefinedBy copi:copi-core ;
                             rdfs:label "dispositivo de transferência de quantidade de movimento"@pt-br ,
                                        "momentum-transfer device"@en ;
@@ -2516,6 +2544,7 @@ copi:Operation rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/PhaseChange
 copi:PhaseChange rdf:type owl:Class ;
                  rdfs:subClassOf copi:Operation ;
+                 terms:source "ODR-009" ;
                  rdfs:isDefinedBy copi:copi-core ;
                  rdfs:label "mudança de fase"@pt-br ,
                             "phase change"@en ;
@@ -2533,6 +2562,8 @@ copi:PhaseChange rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/PhaseChangeDevice
 copi:PhaseChangeDevice rdf:type owl:Class ;
+                       terms:source "ODR-011" ,
+                                    "ODR-012" ;
                        rdfs:isDefinedBy copi:copi-core ;
                        rdfs:label "dispositivo de mudança de fase"@pt-br ,
                                   "phase-change device"@en ;
@@ -2915,6 +2946,7 @@ copi:ValveBody rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/Vaporization
 copi:Vaporization rdf:type owl:Class ;
                   rdfs:subClassOf copi:PhaseChange ;
+                  terms:source "ODR-011" ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "vaporization"@en ,
                              "vaporização"@pt-br ;

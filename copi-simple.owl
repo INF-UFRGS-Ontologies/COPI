@@ -2398,6 +2398,7 @@ Units of Measure: Km, Kg, G</skos:example>
             <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000054"/>
         </owl:propertyChainAxiom>
+        <terms:source>ODR-011 §4</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">participa em</rdfs:label>
         <rdfs:label xml:lang="en">participates in</rdfs:label>
@@ -2434,6 +2435,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ChemicalReaction">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Operation"/>
+        <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">chemical reaction</rdfs:label>
         <rdfs:label xml:lang="pt-br">reação química</rdfs:label>
@@ -2454,6 +2456,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ChemicalReactor -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ChemicalReactor">
+        <terms:source>ODR-011</terms:source>
+        <terms:source>ODR-012</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">chemical reactor</rdfs:label>
         <rdfs:label xml:lang="pt-br">reator químico</rdfs:label>
@@ -2563,6 +2567,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ContainmentDevice -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ContainmentDevice">
+        <terms:source>ODR-011</terms:source>
+        <terms:source>ODR-012</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">containment device</rdfs:label>
         <rdfs:label xml:lang="pt-br">dispositivo de contenção</rdfs:label>
@@ -2649,6 +2655,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FlowControl">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Operation"/>
+        <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">controle de fluxo</rdfs:label>
         <rdfs:label xml:lang="en">flow control</rdfs:label>
@@ -2669,6 +2676,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/FlowControlDevice -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FlowControlDevice">
+        <terms:source>ODR-011</terms:source>
+        <terms:source>ODR-012</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de controle de fluxo</rdfs:label>
         <rdfs:label xml:lang="en">flow-control device</rdfs:label>
@@ -2811,6 +2820,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/GasAbsorption">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/MassTransfer"/>
+        <terms:source>ODR-011</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">absorção de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas absorption</rdfs:label>
@@ -2863,6 +2873,7 @@ Units of Measure: Km, Kg, G</skos:example>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/GasPressureIncrease">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/MomentumTransfer"/>
         <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/LiquidPressureIncrease"/>
+        <terms:source>ODR-011</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">aumento de pressão de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas pressure increase</rdfs:label>
@@ -2882,6 +2893,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/HeatTransfer">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Operation"/>
+        <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">heat transfer</rdfs:label>
         <rdfs:label xml:lang="pt-br">transferência de calor</rdfs:label>
@@ -2902,6 +2914,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/HeatTransferDevice -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/HeatTransferDevice">
+        <terms:source>ODR-011</terms:source>
+        <terms:source>ODR-012</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de transferência de calor</rdfs:label>
         <rdfs:label xml:lang="en">heat-transfer device</rdfs:label>
@@ -3004,6 +3018,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/LiquidPressureIncrease">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/MomentumTransfer"/>
+        <terms:source>ODR-011</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">aumento de pressão de líquido</rdfs:label>
         <rdfs:label xml:lang="en">liquid pressure increase</rdfs:label>
@@ -3022,6 +3037,7 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/LossOfContainment -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/LossOfContainment">
+        <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">loss of containment</rdfs:label>
         <rdfs:label xml:lang="pt-br">perda de contenção</rdfs:label>
@@ -3043,6 +3059,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MassTransfer">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Operation"/>
+        <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">mass transfer</rdfs:label>
         <rdfs:label xml:lang="pt-br">transferência de massa</rdfs:label>
@@ -3063,6 +3080,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MassTransferDevice -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MassTransferDevice">
+        <terms:source>ODR-011</terms:source>
+        <terms:source>ODR-012</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de transferência de massa</rdfs:label>
         <rdfs:label xml:lang="en">mass-transfer device</rdfs:label>
@@ -3083,6 +3102,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MaterialContainment">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Operation"/>
+        <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">contenção de material</rdfs:label>
         <rdfs:label xml:lang="en">material containment</rdfs:label>
@@ -3103,6 +3123,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MeasurementInstrument -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MeasurementInstrument">
+        <terms:source>ODR-011</terms:source>
+        <terms:source>ODR-012</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">instrumento de medição</rdfs:label>
         <rdfs:label xml:lang="en">measurement instrument</rdfs:label>
@@ -3135,6 +3157,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalSeparation">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Operation"/>
+        <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">mechanical separation</rdfs:label>
         <rdfs:label xml:lang="pt-br">separação mecânica</rdfs:label>
@@ -3155,6 +3178,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalSeparationDevice -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalSeparationDevice">
+        <terms:source>ODR-011</terms:source>
+        <terms:source>ODR-012</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de separação mecânica</rdfs:label>
         <rdfs:label xml:lang="en">mechanical-separation device</rdfs:label>
@@ -3175,6 +3200,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MomentumTransfer">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Operation"/>
+        <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">momentum transfer</rdfs:label>
         <rdfs:label xml:lang="pt-br">transferência de quantidade de movimento</rdfs:label>
@@ -3198,6 +3224,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MomentumTransferDevice -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MomentumTransferDevice">
+        <terms:source>ODR-011</terms:source>
+        <terms:source>ODR-012</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de transferência de quantidade de movimento</rdfs:label>
         <rdfs:label xml:lang="en">momentum-transfer device</rdfs:label>
@@ -3239,6 +3267,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PhaseChange">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Operation"/>
+        <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">mudança de fase</rdfs:label>
         <rdfs:label xml:lang="en">phase change</rdfs:label>
@@ -3259,6 +3288,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PhaseChangeDevice -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PhaseChangeDevice">
+        <terms:source>ODR-011</terms:source>
+        <terms:source>ODR-012</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de mudança de fase</rdfs:label>
         <rdfs:label xml:lang="en">phase-change device</rdfs:label>
@@ -3763,6 +3794,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/Vaporization">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PhaseChange"/>
+        <terms:source>ODR-011</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">vaporization</rdfs:label>
         <rdfs:label xml:lang="pt-br">vaporização</rdfs:label>
