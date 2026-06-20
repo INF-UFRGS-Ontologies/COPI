@@ -13,7 +13,7 @@
 @base <https://www.inf.ufrgs.br/ontologies/copi/copi-full.ttl> .
 
 <https://www.inf.ufrgs.br/ontologies/copi/copi-full.ttl> rdf:type owl:Ontology ;
-                                                          owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-18/copi-full.ttl> ;
+                                                          owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-20/copi-full.ttl> ;
                                                           dcterms:contributor "Cauã Antunes" ,
                                                                               "Haroldo Rojas" ,
                                                                               "Mara Abel" ,
@@ -24,7 +24,7 @@
                                                           dcterms:title "Core Ontology of Petroleum Installations (COPI)"@en ,
                                                                         "Ontologia Central de Plantas de Produção de Petróleo (COPI)"@pt ;
                                                           owl:versionInfo "2026-06-15" ,
-                                                                          "2026-06-18" ;
+                                                                          "2026-06-20" ;
                                                           skos:scopeNote "Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia."@pt-br ,
                                                                          "COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos."@pt-br ,
                                                                          "COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en ,
@@ -6869,18 +6869,19 @@ copi:MomentumTransferDevice rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/Operation
 copi:Operation rdf:type owl:Class ;
-               rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+               rdfs:subClassOf construct:PlannedProcess ;
+               dcterms:source "ODR-009 Amendment A (2026-06-18): copi:Operation as explicit root universal; genus correction to iof-constr:PlannedProcess" ;
                rdfs:isDefinedBy copi:copi-core ;
                rdfs:label "operation"@en ,
                           "operação"@pt-br ;
-               annotation:firstOrderLogicAxiom "Operation(x) → Process(x)" ;
+               annotation:firstOrderLogicAxiom "Operation(x) → PlannedProcess(x)" ;
                annotation:isPrimitive "true"^^xsd:boolean ;
-               annotation:naturalLanguageDefinition "A process that an item of process-industry equipment is designed to bring about or take part in."@en ,
-                                                    "Um processo que um item de equipamento de indústria de processo é projetado para causar ou do qual é projetado para participar."@pt-br ;
-               annotation:primitiveRationale "Abstract superclass collecting the nine COPI operation categories; differentiated by its subclasses, not by a single formal condition."@en ,
-                                             "Superclasse abstrata que reúne as nove categorias de operação do COPI; diferenciada por suas subclasses, não por uma única condição formal."@pt-br ;
-               annotation:semiFormalNaturalLanguageAxiom "if x is an 'operation' then x is a 'process'"@en ,
-                                                         "se x é uma 'operação' então x é um 'processo'"@pt-br .
+               annotation:naturalLanguageDefinition "A planned process that an item of process-industry equipment is designed to bring about or take part in; a process-industry unit operation."@en ,
+                                                    "Um processo planejado que um item de equipamento de indústria de processo é projetado para causar ou do qual é projetado para participar; uma operação unitária de indústria de processo."@pt-br ;
+               annotation:primitiveRationale "Root universal for process-industry unit operations in the chemical-engineering tradition (cf. each category's adaptedFrom). Members share a typed participation signature (material inputs/outputs) and differ by transformation effected; no single formal condition differentiates Operation from PlannedProcess in OWL — the differentia is OWL-inexpressible, standard for a BFO primitive. (ODR-009 Amendment A, 2026-06-18)"@en ,
+                                             "Universal raiz para operações unitárias de indústria de processo na tradição da engenharia química (cf. adaptedFrom de cada categoria). Os membros compartilham uma assinatura de participação tipada (entradas/saídas materiais) e diferem pela transformação efetuada; nenhuma condição formal única diferencia Operation de PlannedProcess em OWL — a diferença é inexpressível em OWL, padrão para um primitivo BFO. (ODR-009 Emenda A, 2026-06-18)"@pt-br ;
+               annotation:semiFormalNaturalLanguageAxiom "if x is an 'operation' then x is a 'planned process'"@en ,
+                                                         "se x é uma 'operação' então x é um 'processo planejado'"@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/PhaseChange

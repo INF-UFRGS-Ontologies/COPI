@@ -13,7 +13,7 @@
      xmlns:construct="https://spec.industrialontologies.org/ontology/construct/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-simple.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-18/copi-simple.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-20/copi-simple.owl"/>
         <terms:contributor>Cauã Antunes</terms:contributor>
         <terms:contributor>Haroldo Rojas</terms:contributor>
         <terms:contributor>Mara Abel</terms:contributor>
@@ -24,7 +24,7 @@
         <terms:title xml:lang="en">Core Ontology of Petroleum Installations (COPI)</terms:title>
         <terms:title xml:lang="pt">Ontologia Central de Plantas de Produção de Petróleo (COPI)</terms:title>
         <owl:versionInfo>2026-06-15</owl:versionInfo>
-        <owl:versionInfo>2026-06-18</owl:versionInfo>
+        <owl:versionInfo>2026-06-20</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
@@ -3219,17 +3219,18 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/Operation -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/Operation">
+        <terms:source>ODR-009 Amendment A (2026-06-18): copi:Operation as explicit root universal; genus correction to iof-constr:PlannedProcess</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">operation</rdfs:label>
         <rdfs:label xml:lang="pt-br">operação</rdfs:label>
-        <annotation:firstOrderLogicAxiom>Operation(x) → Process(x)</annotation:firstOrderLogicAxiom>
+        <annotation:firstOrderLogicAxiom>Operation(x) → PlannedProcess(x)</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A process that an item of process-industry equipment is designed to bring about or take part in.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um processo que um item de equipamento de indústria de processo é projetado para causar ou do qual é projetado para participar.</annotation:naturalLanguageDefinition>
-        <annotation:primitiveRationale xml:lang="en">Abstract superclass collecting the nine COPI operation categories; differentiated by its subclasses, not by a single formal condition.</annotation:primitiveRationale>
-        <annotation:primitiveRationale xml:lang="pt-br">Superclasse abstrata que reúne as nove categorias de operação do COPI; diferenciada por suas subclasses, não por uma única condição formal.</annotation:primitiveRationale>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">if x is an &apos;operation&apos; then x is a &apos;process&apos;</annotation:semiFormalNaturalLanguageAxiom>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="pt-br">se x é uma &apos;operação&apos; então x é um &apos;processo&apos;</annotation:semiFormalNaturalLanguageAxiom>
+        <annotation:naturalLanguageDefinition xml:lang="en">A planned process that an item of process-industry equipment is designed to bring about or take part in; a process-industry unit operation.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um processo planejado que um item de equipamento de indústria de processo é projetado para causar ou do qual é projetado para participar; uma operação unitária de indústria de processo.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">Root universal for process-industry unit operations in the chemical-engineering tradition (cf. each category&apos;s adaptedFrom). Members share a typed participation signature (material inputs/outputs) and differ by transformation effected; no single formal condition differentiates Operation from PlannedProcess in OWL — the differentia is OWL-inexpressible, standard for a BFO primitive. (ODR-009 Amendment A, 2026-06-18)</annotation:primitiveRationale>
+        <annotation:primitiveRationale xml:lang="pt-br">Universal raiz para operações unitárias de indústria de processo na tradição da engenharia química (cf. adaptedFrom de cada categoria). Os membros compartilham uma assinatura de participação tipada (entradas/saídas materiais) e diferem pela transformação efetuada; nenhuma condição formal única diferencia Operation de PlannedProcess em OWL — a diferença é inexpressível em OWL, padrão para um primitivo BFO. (ODR-009 Emenda A, 2026-06-18)</annotation:primitiveRationale>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">if x is an &apos;operation&apos; then x is a &apos;planned process&apos;</annotation:semiFormalNaturalLanguageAxiom>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="pt-br">se x é uma &apos;operação&apos; então x é um &apos;processo planejado&apos;</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
 
