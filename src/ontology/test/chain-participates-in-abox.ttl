@@ -37,13 +37,13 @@ copi-test:WitnessParticipant
     owl:equivalentClass [
         a owl:Restriction ;
         owl:onProperty obo:BFO_0000056 ;
-        owl:someValuesFrom copi:MomentumTransfer
+        owl:someValuesFrom copi:COPI_0000003
     ] .
 
 # ABox: minimal witness triple set
 copi-test:test-valve  a iof-constr:MaterialArtifact .
 copi-test:test-fn     a iof-constr:DesignedFunction .
-copi-test:test-op     a copi:MomentumTransfer .
+copi-test:test-op     a copi:COPI_0000003 .
 
 copi-test:test-valve  iof-constr:hasFunction  copi-test:test-fn .
 copi-test:test-fn     obo:BFO_0000054         copi-test:test-op .

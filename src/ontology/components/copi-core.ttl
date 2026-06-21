@@ -108,13 +108,15 @@ deliberadamente NÃO disjuntas duas a duas (partição seletiva)."""@pt-br ;
 #   and preserves the global OWL 2 DL profile. bfo:participatesIn is still
 #   entailed for every satisfying pair via rdfs:subPropertyOf.
 #==============================================================================
-copi:participatesIn a owl:ObjectProperty ;
+copi:COPI_0000002 a owl:ObjectProperty ;
     rdfs:subPropertyOf obo:BFO_0000056 ;
     owl:propertyChainAxiom ( iof-constr:hasFunction obo:BFO_0000054 ) ;
-    rdfs:label "participates in"@en , "participa em"@pt-br ;
+    rdfs:label "functionally participates in"@en , "participa funcionalmente em"@pt-br ;
     iof-av:isPrimitive false ;
-    iof-av:naturalLanguageDefinition "A material artifact participates in every operation that realizes one of its designed functions; sub-property of bfo:participatesIn (BFO_0000056) that isolates the realization-to-participation bridge within COPI."@en ,
-        "Um artefato material participa em toda operação que realiza uma de suas funções projetadas; sub-propriedade de bfo:participatesIn (BFO_0000056) que isola a ponte realização-participação dentro da COPI."@pt-br ;
+    iof-av:naturalLanguageDefinition "The sub-property of bfo:participatesIn (BFO_0000056) entailed exclusively by the chain iof-constr:hasFunction ∘ obo:BFO_0000054: a material artifact functionally participates in every process that realizes one of its designed functions."@en ,
+        "A sub-propriedade de bfo:participatesIn (BFO_0000056) entailada exclusivamente pela cadeia iof-constr:hasFunction ∘ obo:BFO_0000054: um artefato material participa funcionalmente em todo processo que realiza uma de suas funções projetadas."@pt-br ;
+    iof-av:explanatoryNote "Distinguishes function-mediated from general participation: obo:BFO_0000056 (participates in) holds whenever a continuant takes part in any process for any reason; copi:participatesIn is entailed only via the chain hasFunction ∘ BFO_0000054 (is realized in). A pump functionally participates in every liquid-pressure-increase operation that realizes its pumping function; BFO_0000056 additionally covers any other process involvement."@en ,
+        "Distingue a participação mediada por função da participação geral: obo:BFO_0000056 (participa em) vale sempre que um continuante toma parte em algum processo por qualquer razão; copi:participatesIn é entailada apenas pela cadeia hasFunction ∘ BFO_0000054 (é realizada em). Uma bomba participa funcionalmente em toda operação de aumento de pressão de líquido que realiza sua função de bombeamento; BFO_0000056 vale adicionalmente para qualquer outro envolvimento."@pt-br ;
     dcterms:source "ODR-011 §4" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
@@ -123,7 +125,7 @@ copi:participatesIn a owl:ObjectProperty ;
 # OPERATION CATEGORIES  (nine groupings of occurrents; specialise bfo:Process)
 #==============================================================================
 
-copi:Operation a owl:Class ;
+copi:COPI_0000001 a owl:Class ;
     rdfs:subClassOf iof-constr:PlannedProcess ;
     rdfs:label "operation"@en , "operação"@pt-br ;
     iof-av:isPrimitive true ;
@@ -138,8 +140,8 @@ copi:Operation a owl:Class ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 1. Momentum transfer ---------------------------------------------------
-copi:MomentumTransfer a owl:Class ;
-    rdfs:subClassOf copi:Operation ;
+copi:COPI_0000003 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000001 ;
     rdfs:label "momentum transfer"@en , "transferência de quantidade de movimento"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A process that imparts mechanical energy to a fluid, changing its pressure or inducing its bulk motion."@en ,
@@ -157,8 +159,8 @@ copi:MomentumTransfer a owl:Class ;
     dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:LiquidPressureIncrease a owl:Class ;
-    rdfs:subClassOf copi:MomentumTransfer ;
+copi:COPI_0000011 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000003 ;
     rdfs:label "liquid pressure increase"@en , "aumento de pressão de líquido"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A momentum-transfer operation whose fluid input is an incompressible liquid and whose effect is to raise that liquid's pressure."@en ,
@@ -171,8 +173,8 @@ copi:LiquidPressureIncrease a owl:Class ;
     dcterms:source "ODR-011" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:GasPressureIncrease a owl:Class ;
-    rdfs:subClassOf copi:MomentumTransfer ;
+copi:COPI_0000012 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000003 ;
     rdfs:label "gas pressure increase"@en , "aumento de pressão de gás"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A momentum-transfer operation whose fluid input is a compressible gas and whose effect is to raise that gas's pressure."@en ,
@@ -188,11 +190,11 @@ copi:GasPressureIncrease a owl:Class ;
 # No occurrent takes an incompressible-liquid and a compressible-gas input at
 # once; this single disjointness propagates (via the some+only function axioms)
 # into the entailed disjointness of PumpingFunction and CompressionFunction.
-copi:LiquidPressureIncrease owl:disjointWith copi:GasPressureIncrease .
+copi:COPI_0000011 owl:disjointWith copi:COPI_0000012 .
 
 # --- 2. Heat transfer -------------------------------------------------------
-copi:HeatTransfer a owl:Class ;
-    rdfs:subClassOf copi:Operation ;
+copi:COPI_0000004 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000001 ;
     rdfs:label "heat transfer"@en , "transferência de calor"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A process that transfers thermal energy between materials (or to/from a material) without, in itself, changing the phase or chemical identity of the process stream."@en ,
@@ -208,8 +210,8 @@ copi:HeatTransfer a owl:Class ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 3. Mass transfer -------------------------------------------------------
-copi:MassTransfer a owl:Class ;
-    rdfs:subClassOf copi:Operation ;
+copi:COPI_0000005 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000001 ;
     rdfs:label "mass transfer"@en , "transferência de massa"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A process in which one or more chemical species migrate between phases driven by a concentration (chemical-potential) difference."@en ,
@@ -224,8 +226,8 @@ copi:MassTransfer a owl:Class ;
     dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:GasAbsorption a owl:Class ;
-    rdfs:subClassOf copi:MassTransfer ;
+copi:COPI_0000013 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000005 ;
     rdfs:label "gas absorption"@en , "absorção de gás"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A mass-transfer operation in which a chemical species carried by an input gas, and absent from the input solvent, becomes a constituent of the output liquid."@en ,
@@ -240,8 +242,8 @@ copi:GasAbsorption a owl:Class ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 4. Mechanical separation ----------------------------------------------
-copi:MechanicalSeparation a owl:Class ;
-    rdfs:subClassOf copi:Operation ;
+copi:COPI_0000006 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000001 ;
     rdfs:label "mechanical separation"@en , "separação mecânica"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A process that separates a heterogeneous mixture into fractions by mechanical means (gravity, centrifugal, or barrier forces) without phase change or chemical reaction."@en ,
@@ -257,8 +259,8 @@ copi:MechanicalSeparation a owl:Class ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 5. Chemical reaction ---------------------------------------------------
-copi:ChemicalReaction a owl:Class ;
-    rdfs:subClassOf copi:Operation ;
+copi:COPI_0000007 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000001 ;
     rdfs:label "chemical reaction"@en , "reação química"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A process in which chemical species are consumed and new species, present in no input, are formed."@en ,
@@ -274,8 +276,8 @@ copi:ChemicalReaction a owl:Class ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 6. Phase change --------------------------------------------------------
-copi:PhaseChange a owl:Class ;
-    rdfs:subClassOf copi:Operation ;
+copi:COPI_0000008 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000001 ;
     rdfs:label "phase change"@en , "mudança de fase"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A process that changes the physical state (phase) of a material without changing its chemical identity."@en ,
@@ -290,8 +292,8 @@ copi:PhaseChange a owl:Class ;
     dcterms:source "ODR-009" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:Vaporization a owl:Class ;
-    rdfs:subClassOf copi:PhaseChange ;
+copi:COPI_0000014 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000008 ;
     rdfs:label "vaporization"@en , "vaporização"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A phase-change operation in which a liquid input is converted to a vapour output."@en ,
@@ -305,8 +307,8 @@ copi:Vaporization a owl:Class ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 7. Material containment (auxiliary; limiting case: input = output) -----
-copi:MaterialContainment a owl:Class ;
-    rdfs:subClassOf copi:Operation ;
+copi:COPI_0000009 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000001 ;
     rdfs:label "material containment"@en , "contenção de material"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A process that maintains a contained material's state and identity over time; a limiting case in which the process input and output coincide. An auxiliary (non-transformation) category."@en ,
@@ -323,7 +325,7 @@ copi:MaterialContainment a owl:Class ;
 
 # Illustrative UNPLANNED counterpart: motivates rooting operations under
 # bfo:Process rather than iof-constr:PlannedProcess.
-copi:LossOfContainment a owl:Class ;
+copi:COPI_0000015 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000015 ;
     rdfs:label "loss of containment"@en , "perda de contenção"@pt-br ;
     iof-av:isPrimitive true ;
@@ -340,8 +342,8 @@ copi:LossOfContainment a owl:Class ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 8. Flow control (auxiliary) -------------------------------------------
-copi:FlowControl a owl:Class ;
-    rdfs:subClassOf copi:Operation ;
+copi:COPI_0000010 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000001 ;
     rdfs:label "flow control"@en , "controle de fluxo"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A process that modulates a flow without changing the material's substance, phase, or composition."@en ,
@@ -367,13 +369,13 @@ copi:FlowControl a owl:Class ;
 #   Cat ≡ MaterialArtifact ⊓ ∃hasFunction.(DesignedFunction ⊓ ∃realized_in.Op)
 #==============================================================================
 
-copi:MomentumTransferDevice a owl:Class ;
+copi:COPI_0000016 a owl:Class ;
     owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
         iof-constr:MaterialArtifact
         [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
             [ a owl:Class ; owl:intersectionOf (
                 iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:MomentumTransfer ] ) ] ] ) ] ;
+                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000003 ] ) ] ] ) ] ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "momentum-transfer device"@en , "dispositivo de transferência de quantidade de movimento"@pt-br ;
     iof-av:isPrimitive false ;
@@ -390,13 +392,13 @@ copi:MomentumTransferDevice a owl:Class ;
     dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:HeatTransferDevice a owl:Class ;
+copi:COPI_0000017 a owl:Class ;
     owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
         iof-constr:MaterialArtifact
         [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
             [ a owl:Class ; owl:intersectionOf (
                 iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:HeatTransfer ] ) ] ] ) ] ;
+                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000004 ] ) ] ] ) ] ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "heat-transfer device"@en , "dispositivo de transferência de calor"@pt-br ;
     iof-av:isPrimitive false ;
@@ -413,13 +415,13 @@ copi:HeatTransferDevice a owl:Class ;
     dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:MassTransferDevice a owl:Class ;
+copi:COPI_0000018 a owl:Class ;
     owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
         iof-constr:MaterialArtifact
         [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
             [ a owl:Class ; owl:intersectionOf (
                 iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:MassTransfer ] ) ] ] ) ] ;
+                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000005 ] ) ] ] ) ] ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "mass-transfer device"@en , "dispositivo de transferência de massa"@pt-br ;
     iof-av:isPrimitive false ;
@@ -434,13 +436,13 @@ copi:MassTransferDevice a owl:Class ;
     dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:MechanicalSeparationDevice a owl:Class ;
+copi:COPI_0000019 a owl:Class ;
     owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
         iof-constr:MaterialArtifact
         [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
             [ a owl:Class ; owl:intersectionOf (
                 iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:MechanicalSeparation ] ) ] ] ) ] ;
+                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000006 ] ) ] ] ) ] ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "mechanical-separation device"@en , "dispositivo de separação mecânica"@pt-br ;
     iof-av:isPrimitive false ;
@@ -455,13 +457,13 @@ copi:MechanicalSeparationDevice a owl:Class ;
     dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:ChemicalReactor a owl:Class ;
+copi:COPI_0000020 a owl:Class ;
     owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
         iof-constr:MaterialArtifact
         [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
             [ a owl:Class ; owl:intersectionOf (
                 iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:ChemicalReaction ] ) ] ] ) ] ;
+                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000007 ] ) ] ] ) ] ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "chemical reactor"@en , "reator químico"@pt-br ;
     iof-av:isPrimitive false ;
@@ -476,13 +478,13 @@ copi:ChemicalReactor a owl:Class ;
     dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:PhaseChangeDevice a owl:Class ;
+copi:COPI_0000021 a owl:Class ;
     owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
         iof-constr:MaterialArtifact
         [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
             [ a owl:Class ; owl:intersectionOf (
                 iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:PhaseChange ] ) ] ] ) ] ;
+                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000008 ] ) ] ] ) ] ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "phase-change device"@en , "dispositivo de mudança de fase"@pt-br ;
     iof-av:isPrimitive false ;
@@ -497,13 +499,13 @@ copi:PhaseChangeDevice a owl:Class ;
     dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:ContainmentDevice a owl:Class ;
+copi:COPI_0000022 a owl:Class ;
     owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
         iof-constr:MaterialArtifact
         [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
             [ a owl:Class ; owl:intersectionOf (
                 iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:MaterialContainment ] ) ] ] ) ] ;
+                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000009 ] ) ] ] ) ] ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "containment device"@en , "dispositivo de contenção"@pt-br ;
     iof-av:isPrimitive false ;
@@ -518,13 +520,13 @@ copi:ContainmentDevice a owl:Class ;
     dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:FlowControlDevice a owl:Class ;
+copi:COPI_0000023 a owl:Class ;
     owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
         iof-constr:MaterialArtifact
         [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
             [ a owl:Class ; owl:intersectionOf (
                 iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:FlowControl ] ) ] ] ) ] ;
+                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000010 ] ) ] ] ) ] ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "flow-control device"@en , "dispositivo de controle de fluxo"@pt-br ;
     iof-av:isPrimitive false ;
@@ -539,7 +541,7 @@ copi:FlowControlDevice a owl:Class ;
     dcterms:source "ODR-011" , "ODR-012" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
-copi:MeasurementInstrument a owl:Class ;
+copi:COPI_0000024 a owl:Class ;
     owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
         iof-constr:MaterialArtifact
         [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom

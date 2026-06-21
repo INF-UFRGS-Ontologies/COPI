@@ -6,6 +6,7 @@
     <uri name="https://www.inf.ufrgs.br/ontologies/copi/components/copi-core.ttl" uri="components/copi-core.ttl" />
     <uri name="https://www.inf.ufrgs.br/ontologies/copi/components/copi-vocab.ttl" uri="components/copi-vocab.ttl" />
     <uri name="https://www.inf.ufrgs.br/ontologies/copi/components/copi-enriched.owl" uri="components/copi-enriched.owl" />
+    <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-idranges.owl" uri="copi-idranges.owl" />
   </group>
   <group id="upstream-mirrors" prefer="public">
     <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl" uri="mirror/bfo.owl" />

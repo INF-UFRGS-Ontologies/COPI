@@ -6,7 +6,7 @@ PREFIX copi: <https://www.inf.ufrgs.br/ontologies/copi/>
 PREFIX obo:  <http://purl.obolibrary.org/obo/>
 
 SELECT ?x WHERE {
-  BIND(copi:LossOfContainment AS ?x)
+  BIND(copi:COPI_0000015 AS ?x)
   ?x a owl:Class .
   FILTER NOT EXISTS {
     ?x rdfs:subClassOf* obo:BFO_0000015 .

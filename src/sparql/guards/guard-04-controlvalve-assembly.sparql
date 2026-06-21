@@ -7,7 +7,7 @@ PREFIX copi:       <https://www.inf.ufrgs.br/ontologies/copi/>
 PREFIX iof-constr: <https://spec.industrialontologies.org/ontology/construct/>
 
 SELECT ?x WHERE {
-  BIND(copi:ControlValve AS ?x)
+  BIND(copi:COPI_0000087 AS ?x)
   ?x a owl:Class .
   FILTER NOT EXISTS {
     ?x rdfs:subClassOf* iof-constr:Assembly .

@@ -37,23 +37,23 @@ https://www.inf.ufrgs.br/ontologies/copi/ (migrated from legacy hash IRIs)."""@e
 # ANNOTATION PROPERTIES  (ODR-015: renamed from COPI_0000045-0049 to slash IRIs)
 #==============================================================================
 
-copi:iso15926Reference a owl:AnnotationProperty ;
+copi:COPI_0000061 a owl:AnnotationProperty ;
     rdfs:label "iso15926Reference"@en ;
     rdfs:comment "Reference to an ISO 15926 term IRI."@en .
 
-copi:iso14224Reference a owl:AnnotationProperty ;
+copi:COPI_0000062 a owl:AnnotationProperty ;
     rdfs:label "iso14224Reference"@en ;
     rdfs:comment "Reference to an ISO 14224 equipment taxonomy entry."@en .
 
-copi:cfihosReference a owl:AnnotationProperty ;
+copi:COPI_0000063 a owl:AnnotationProperty ;
     rdfs:label "cfihosReference"@en ;
     rdfs:comment "Reference to a CFIHOS (Capital Facilities Information Handover Specification) term."@en .
 
-copi:dexpiReference a owl:AnnotationProperty ;
+copi:COPI_0000064 a owl:AnnotationProperty ;
     rdfs:label "dexpiReference"@en ;
     rdfs:comment "Reference to a DEXPI (Data Exchange in the Process Industry) prototype element."@en .
 
-copi:poscCaesarReference a owl:AnnotationProperty ;
+copi:COPI_0000065 a owl:AnnotationProperty ;
     rdfs:label "poscCaesarReference"@en ;
     rdfs:comment "Reference to a POSC Caesar RDL IRI."@en .
 
@@ -64,37 +64,37 @@ copi:poscCaesarReference a owl:AnnotationProperty ;
 # (AMB-2: some+only ensures unrealized functions do not vacuously satisfy only)
 #==============================================================================
 
-copi:ContainmentFunction a owl:Class ;
+copi:COPI_0000025 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:MaterialContainment ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:MaterialContainment ] ;
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000009 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000009 ] ;
     rdfs:label "containment function"@en ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "An identity-giving designed function realized in a MaterialContainment process; the function of holding a fluid or solid material within a bounded volume."@en ;
     iof-av:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:FlowControlFunction a owl:Class ;
+copi:COPI_0000026 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:FlowControl ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:FlowControl ] ;
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000010 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000010 ] ;
     rdfs:label "flow control function"@en ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "An identity-giving designed function realized in a FlowControl process; the function of modulating, regulating, or blocking fluid flow through a conduit or vessel connection."@en ;
     iof-av:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:ProcessControlledFlowFunction a owl:Class ;
-    rdfs:subClassOf copi:FlowControlFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:ProcessControlledFlowProcess ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:ProcessControlledFlowProcess ] ;
+copi:COPI_0000027 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000026 ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000033 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000033 ] ;
     rdfs:label "process-controlled flow function"@en ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "An identity-giving designed function realized in a ProcessControlledFlowProcess; the function of opening or shutting a flow path in response to an external process control signal."@en ;
     iof-av:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:IndicationFunction a owl:Class ;
+copi:COPI_0000028 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
         [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom iof-constr:MeasurementProcess ] ,
         [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  iof-constr:MeasurementProcess ] ;
@@ -104,7 +104,7 @@ copi:IndicationFunction a owl:Class ;
     iof-av:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:InstrumentationFunction a owl:Class ;
+copi:COPI_0000029 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
         [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom iof-constr:MeasurementProcess ] ,
         [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  iof-constr:MeasurementProcess ] ;
@@ -114,30 +114,30 @@ copi:InstrumentationFunction a owl:Class ;
     iof-av:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:SignalTransmissionFunction a owl:Class ;
-    rdfs:subClassOf copi:InstrumentationFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:SignalTransmissionProcess ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:SignalTransmissionProcess ] ;
+copi:COPI_0000030 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000029 ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000035 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000035 ] ;
     rdfs:label "signal transmission function"@en ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "An identity-giving designed function realized in a SignalTransmissionProcess; the function of converting a sensed physical quantity into a standardized electrical or pneumatic signal for remote reading, recording, or control."@en ;
     iof-av:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:PressureTransmissionFunction a owl:Class ;
-    rdfs:subClassOf copi:SignalTransmissionFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:PressureMeasurementAndTransmissionProcess ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:PressureMeasurementAndTransmissionProcess ] ;
+copi:COPI_0000031 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000030 ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000036 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000036 ] ;
     rdfs:label "pressure transmission function"@en ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "An identity-giving designed function specialized to pressure measurement and transmission; the function of converting a sensed pressure value into a proportional standardized signal for remote reading or control."@en ;
     iof-av:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:SafetyReliefFunction a owl:Class ;
+copi:COPI_0000032 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:SafetyReliefProcess ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:SafetyReliefProcess ] ;
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000034 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000034 ] ;
     rdfs:label "safety relief function"@en ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "An identity-giving designed function realized in a SafetyReliefProcess; the function of preventing over-pressure conditions by automatically relieving fluid at a pre-set pressure set-point, or of isolating wellbore flow when conditions are unsafe."@en ;
@@ -151,28 +151,28 @@ copi:SafetyReliefFunction a owl:Class ;
 # iof-constr:MeasurementProcess (planned measurement acts per ODR-009 §4)
 #==============================================================================
 
-copi:ProcessControlledFlowProcess a owl:Class ;
-    rdfs:subClassOf copi:FlowControl ;
+copi:COPI_0000033 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000010 ;
     rdfs:label "process-controlled flow process"@en ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A FlowControl process in which flow through a conduit is opened, closed, or throttled in response to an external control signal from a process control system."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:SafetyReliefProcess a owl:Class ;
-    rdfs:subClassOf copi:FlowControl ;
+copi:COPI_0000034 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000010 ;
     rdfs:label "safety relief process"@en ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A FlowControl process in which excess pressure is relieved by opening a flow path at a pre-set set-point, or in which wellbore flow is isolated to prevent blowout."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:SignalTransmissionProcess a owl:Class ;
+copi:COPI_0000035 a owl:Class ;
     rdfs:subClassOf iof-constr:MeasurementProcess ;
     rdfs:label "signal transmission process"@en ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A MeasurementProcess (hence planned) in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:PressureMeasurementAndTransmissionProcess a owl:Class ;
+copi:COPI_0000036 a owl:Class ;
     rdfs:subClassOf iof-constr:MeasurementProcess ;
     rdfs:label "pressure measurement and transmission process"@en ;
     iof-av:isPrimitive true ;
@@ -187,156 +187,156 @@ copi:PressureMeasurementAndTransmissionProcess a owl:Class ;
 
 ### 3.1 — PortionOfFluid hierarchy (ODR-010 §2)
 
-copi:PortionOfFluid a owl:Class ;
+copi:COPI_0000037 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000040 ;
     rdfs:label "portion of fluid"@en ;
     iof-av:naturalLanguageDefinition "A bounded portion of matter in a fluid state (gaseous, liquid, or supercritical) that participates in an equipment-realizing process as input, output, or transformed substance."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:PortionOfLiquid a owl:Class ;
-    rdfs:subClassOf copi:PortionOfFluid ;
+copi:COPI_0000038 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
     rdfs:label "portion of liquid"@en ;
     iof-av:naturalLanguageDefinition "A portion of fluid in liquid phase."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:PortionOfGas a owl:Class ;
-    rdfs:subClassOf copi:PortionOfFluid ;
+copi:COPI_0000039 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
     rdfs:label "portion of gas"@en ;
     iof-av:naturalLanguageDefinition "A portion of fluid in gaseous phase."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:PortionOfSolid a owl:Class ;
+copi:COPI_0000040 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000040 ;
     rdfs:label "portion of solid"@en ;
     iof-av:naturalLanguageDefinition "A bounded portion of matter in a solid state that participates in an equipment-realizing process (filtered contaminants, particulate input, solid product)."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:PortionOfLiquid owl:disjointWith copi:PortionOfGas .
+copi:COPI_0000038 owl:disjointWith copi:COPI_0000039 .
 
-copi:AbsorbentPhase a owl:Class ;
-    rdfs:subClassOf copi:PortionOfLiquid ;
+copi:COPI_0000041 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000038 ;
     rdfs:label "absorbent phase"@en ;
     iof-av:naturalLanguageDefinition "A liquid phase whose function is to absorb target components from a gas stream by physical or chemical means."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:RichAbsorbent a owl:Class ;
-    rdfs:subClassOf copi:AbsorbentPhase ;
+copi:COPI_0000042 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000041 ;
     rdfs:label "rich absorbent"@en ;
     iof-av:naturalLanguageDefinition "An absorbent phase that has absorbed target components from a gas stream and is loaded for regeneration."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:DepletedFluid a owl:Class ;
-    rdfs:subClassOf copi:PortionOfFluid ;
+copi:COPI_0000043 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
     rdfs:label "depleted fluid"@en ;
     iof-av:naturalLanguageDefinition "A fluid from which target components have been removed or transferred during a treatment process."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:FluidMixture a owl:Class ;
-    rdfs:subClassOf copi:PortionOfFluid ;
+copi:COPI_0000044 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
     rdfs:label "fluid mixture"@en ;
     iof-av:naturalLanguageDefinition "A fluid portion consisting of two or more components or phases that have not yet been fully separated."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 ### 3.2 — InformationContentEntity hierarchy (ODR-010 §3)
 
-copi:ControlSignal a owl:Class ;
+copi:COPI_0000045 a owl:Class ;
     rdfs:subClassOf iof-constr:InformationContentEntity ;
     rdfs:label "control signal"@en ;
     iof-av:naturalLanguageDefinition "An information content entity that conveys an instruction or set-point to a control device."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:VisualIndication a owl:Class ;
+copi:COPI_0000046 a owl:Class ;
     rdfs:subClassOf iof-constr:InformationContentEntity ;
     rdfs:label "visual indication"@en ;
     iof-av:naturalLanguageDefinition "An information content entity perceptible through visual representation at the point of measurement or display."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:TemperatureMeasurementResult a owl:Class ;
+copi:COPI_0000047 a owl:Class ;
     rdfs:subClassOf iof-constr:MeasurementInformationContentEntity ,
-        [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom copi:Temperature ] ;
+        [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom copi:COPI_0000052 ] ;
     rdfs:label "temperature measurement result"@en ;
     iof-av:naturalLanguageDefinition "Measurement information content entity describing a temperature quality of some material entity."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:PressureMeasurementResult a owl:Class ;
+copi:COPI_0000048 a owl:Class ;
     rdfs:subClassOf iof-constr:MeasurementInformationContentEntity ,
-        [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom copi:Pressure ] ;
+        [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom copi:COPI_0000053 ] ;
     rdfs:label "pressure measurement result"@en ;
     iof-av:naturalLanguageDefinition "Measurement information content entity describing a pressure quality of some material entity or fluid."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:FlowMeasurementResult a owl:Class ;
+copi:COPI_0000049 a owl:Class ;
     rdfs:subClassOf iof-constr:MeasurementInformationContentEntity ,
-        [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom copi:FlowRate ] ;
+        [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom copi:COPI_0000054 ] ;
     rdfs:label "flow measurement result"@en ;
     iof-av:naturalLanguageDefinition "Measurement information content entity describing a flow rate quality of a fluid stream."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:LevelMeasurementResult a owl:Class ;
+copi:COPI_0000050 a owl:Class ;
     rdfs:subClassOf iof-constr:MeasurementInformationContentEntity ,
-        [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom copi:Level ] ;
+        [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom copi:COPI_0000055 ] ;
     rdfs:label "level measurement result"@en ;
     iof-av:naturalLanguageDefinition "Measurement information content entity describing a liquid level quality of a vessel or container."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:CompositionMeasurementResult a owl:Class ;
+copi:COPI_0000051 a owl:Class ;
     rdfs:subClassOf iof-constr:MeasurementInformationContentEntity ,
-        [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom copi:Composition ] ;
+        [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom copi:COPI_0000056 ] ;
     rdfs:label "composition measurement result"@en ;
     iof-av:naturalLanguageDefinition "Measurement information content entity describing the chemical or phase composition quality of a substance."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 ### 3.3 — Quality vocabulary (ODR-010 §4)
 
-copi:Temperature a owl:Class ;
+copi:COPI_0000052 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000019 ;
     rdfs:label "temperature"@en ;
     iof-av:naturalLanguageDefinition "A quality inhering in a material entity that represents the intensity of thermal energy of that entity."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:Pressure a owl:Class ;
+copi:COPI_0000053 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000019 ;
     rdfs:label "pressure"@en ;
     iof-av:naturalLanguageDefinition "A quality inhering in a fluid or solid that represents the force per unit area exerted by the substance on its boundary."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:FlowRate a owl:Class ;
+copi:COPI_0000054 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000019 ;
     rdfs:label "flow rate"@en ;
     iof-av:naturalLanguageDefinition "A quality inhering in a fluid stream that represents the volume or mass of fluid passing a cross-section per unit time."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:Level a owl:Class ;
+copi:COPI_0000055 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000019 ;
     rdfs:label "level"@en ;
     iof-av:naturalLanguageDefinition "A quality inhering in a vessel or container that represents the height of a liquid surface above a reference datum."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:Composition a owl:Class ;
+copi:COPI_0000056 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000019 ;
     rdfs:label "composition"@en ;
     iof-av:naturalLanguageDefinition "A quality inhering in a mixture or stream that represents the proportions of its constituent components or phases."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:Vibration a owl:Class ;
+copi:COPI_0000057 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000019 ;
     rdfs:label "vibration"@en ;
     iof-av:naturalLanguageDefinition "A quality inhering in a mechanical system that represents oscillatory motion or periodic displacement from an equilibrium position."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:ElectricalPower a owl:Class ;
+copi:COPI_0000058 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000019 ;
     rdfs:label "electrical power"@en ;
     iof-av:naturalLanguageDefinition "A quality inhering in an electrical system that represents the rate of electrical energy transfer."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:MechanicalPower a owl:Class ;
+copi:COPI_0000059 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000019 ;
     rdfs:label "mechanical power"@en ;
     iof-av:naturalLanguageDefinition "A quality inhering in a rotating or reciprocating mechanical system that represents the rate of mechanical work."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
-copi:RotationalSpeed a owl:Class ;
+copi:COPI_0000060 a owl:Class ;
     rdfs:subClassOf obo:BFO_0000019 ;
     rdfs:label "rotational speed"@en ;
     iof-av:naturalLanguageDefinition "A quality inhering in a rotating element that represents the number of complete revolutions per unit time."@en ;

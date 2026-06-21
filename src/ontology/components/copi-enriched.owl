@@ -43,10 +43,10 @@ Provisional stubs must be fully enriched before iof-av:maturity is promoted."""@
 # LEAF DESIGNED FUNCTIONS  (moved from copi-core_4 PREVIEW)
 #==============================================================================
 
-copi:PumpingFunction a owl:Class ;
+copi:COPI_0000066 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:LiquidPressureIncrease ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:LiquidPressureIncrease ] ;
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000011 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000011 ] ;
     rdfs:label "pumping function"@en , "função de bombeamento"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "The designed function to raise the pressure of an incompressible liquid; realized only in a liquid-pressure-increase operation."@en ,
@@ -60,10 +60,10 @@ copi:PumpingFunction a owl:Class ;
         "OWL fornece apenas condições necessárias (restrições de subclasse); o par algum+apenas mais a disjunção das operações folha implica -- mas não OWL-define -- a função."@pt-br ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:CompressionFunction a owl:Class ;
+copi:COPI_0000067 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:GasPressureIncrease ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:GasPressureIncrease ] ;
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000012 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000012 ] ;
     rdfs:label "compression function"@en , "função de compressão"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "The designed function to raise the pressure of a compressible gas; realized only in a gas-pressure-increase operation."@en ,
@@ -76,10 +76,10 @@ copi:CompressionFunction a owl:Class ;
     iof-av:primitiveRationale "As for PumpingFunction."@en , "Como em PumpingFunction."@pt-br ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:HeatTransferFunction a owl:Class ;
+copi:COPI_0000068 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:HeatTransfer ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:HeatTransfer ] ;
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000004 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000004 ] ;
     rdfs:label "heat-transfer function"@en , "função de transferência de calor"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "The designed function to transfer thermal energy to or from a process stream; realized only in a heat-transfer operation."@en ,
@@ -91,10 +91,10 @@ copi:HeatTransferFunction a owl:Class ;
         "OWL fornece apenas condições necessárias; o par algum+apenas caracteriza a função para inferência."@pt-br ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:GasAbsorptionFunction a owl:Class ;
+copi:COPI_0000069 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:GasAbsorption ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:GasAbsorption ] ;
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000013 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000013 ] ;
     rdfs:label "gas-absorption function"@en , "função de absorção de gás"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "The designed function to contact a gas with a solvent so a species migrates gas->liquid; realized only in a gas-absorption operation."@en ,
@@ -107,7 +107,7 @@ copi:GasAbsorptionFunction a owl:Class ;
     iof-av:adaptedFrom "Treybal, Mass-Transfer Operations." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:TemperatureSensingFunction a owl:Class ;
+copi:COPI_0000070 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
         [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom iof-constr:MeasurementProcess ] ,
         [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  iof-constr:MeasurementProcess ] ;
@@ -122,10 +122,10 @@ copi:TemperatureSensingFunction a owl:Class ;
         "OWL fornece apenas condições necessárias; o par algum+apenas caracteriza a função para inferência."@pt-br ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:VaporizationFunction a owl:Class ;
+copi:COPI_0000071 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:Vaporization ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:Vaporization ] ;
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000014 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000014 ] ;
     rdfs:label "vaporization function"@en , "função de vaporização"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "The designed function to convert a liquid into a vapour; realized only in a vaporization operation."@en ,
@@ -141,9 +141,9 @@ copi:VaporizationFunction a owl:Class ;
 # LEAF EQUIPMENT UNIVERSALS  (moved from copi-core_4 PREVIEW)
 #==============================================================================
 
-copi:Pump a owl:Class ;
+copi:COPI_0000072 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ,
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:PumpingFunction ] ;
+        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:COPI_0000066 ] ;
     rdfs:label "pump"@en , "bomba"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A material artifact whose identity-giving designed function is to raise the pressure of an incompressible liquid."@en ,
@@ -160,9 +160,9 @@ copi:Pump a owl:Class ;
     iof-av:adaptedFrom "ISO 14224 Annex A (rotating equipment)." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:Compressor a owl:Class ;
+copi:COPI_0000073 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ,
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:CompressionFunction ] ;
+        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:COPI_0000067 ] ;
     rdfs:label "compressor"@en , "compressor"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A material artifact whose identity-giving designed function is to raise the pressure of a compressible gas."@en ,
@@ -178,11 +178,11 @@ copi:Compressor a owl:Class ;
     iof-av:adaptedFrom "ISO 14224 Annex A (rotating equipment)." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:Pump owl:disjointWith copi:Compressor .
+copi:COPI_0000072 owl:disjointWith copi:COPI_0000073 .
 
-copi:ShellAndTubeHeatExchanger a owl:Class ;
+copi:COPI_0000074 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ,
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:HeatTransferFunction ] ;
+        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:COPI_0000068 ] ;
     rdfs:label "shell-and-tube heat exchanger"@en , "trocador de calor casco-e-tubo"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A heat-transfer material artifact in which one fluid flows through a bundle of tubes and another through the surrounding shell."@en ,
@@ -196,9 +196,9 @@ copi:ShellAndTubeHeatExchanger a owl:Class ;
     iof-av:adaptedFrom "ISO 14224 Annex A (heat exchangers); TEMA." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:GasAbsorber a owl:Class ;
+copi:COPI_0000075 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ,
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:GasAbsorptionFunction ] ;
+        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:COPI_0000069 ] ;
     rdfs:label "gas absorber"@en , "absorvedor de gás"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A mass-transfer artifact that contacts a gas with a solvent so that a species migrates gas->liquid."@en ,
@@ -212,9 +212,9 @@ copi:GasAbsorber a owl:Class ;
     iof-av:adaptedFrom "Treybal, Mass-Transfer Operations; TEG contactor." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:TemperatureSensor a owl:Class ;
+copi:COPI_0000076 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ,
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:TemperatureSensingFunction ] ;
+        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:COPI_0000070 ] ;
     rdfs:label "temperature sensor"@en , "sensor de temperatura"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A measurement artifact whose identity-giving designed function is to determine temperature."@en ,
@@ -236,9 +236,9 @@ copi:TemperatureSensor a owl:Class ;
 #                definitional subtypes such as ControlValve — to be added in Phase 2)
 #==============================================================================
 
-copi:Valve a owl:Class ;
+copi:COPI_0000077 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ,
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:FlowControlFunction ] ;
+        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom copi:COPI_0000026 ] ;
     rdfs:label "valve"@en , "válvula"@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams."@en ,
@@ -253,27 +253,27 @@ copi:Valve a owl:Class ;
     skos:definition "[POSC Caesar] A fluid regulator that can be used to control (i.e. permit, obstruct, regulate or divert) a fluid stream."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:ValveBody a owl:Class ;
+copi:COPI_0000078 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "valve body"@en , "corpo de válvula"@pt-br ;
     iof-av:naturalLanguageDefinition "The main structural component of a valve that houses the internal trim and connects to the pipeline."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:FlowControlElement a owl:Class ;
+copi:COPI_0000079 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "flow control element"@en , "elemento de controle de fluxo"@pt-br ;
     iof-av:naturalLanguageDefinition "A valve trim component whose position controls the area of the flow path (e.g. plug, disc, gate, ball)."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:Seat a owl:Class ;
+copi:COPI_0000080 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "seat"@en , "assento"@pt-br ;
     iof-av:naturalLanguageDefinition "A valve trim component that forms a sealing interface with the flow control element when the valve is closed."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
 # Valve disjointness: Pump and Compressor are ruled out (AMB-5: Turbine removed)
-copi:Valve owl:disjointWith copi:Pump .
-copi:Valve owl:disjointWith copi:Compressor .
+copi:COPI_0000077 owl:disjointWith copi:COPI_0000072 .
+copi:COPI_0000077 owl:disjointWith copi:COPI_0000073 .
 
 #==============================================================================
 # PROVISIONAL GENUS STUBS  (AMB-4: pending enrichment; iof-av:maturity = Provisional)
@@ -281,42 +281,42 @@ copi:Valve owl:disjointWith copi:Compressor .
 # as an electrical artifact. Scope with respect to petroleum plant boundary TBD.
 #==============================================================================
 
-copi:Filter a owl:Class ;
+copi:COPI_0000081 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "filter"@en ;
     iof-av:maturity iof-ind:Provisional ;
     iof-av:naturalLanguageDefinition "A material artifact that separates solid contaminants or particles from a fluid stream by passing the stream through a porous medium or filter element."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:FlowMeasuringElement a owl:Class ;
+copi:COPI_0000082 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "flow measuring element"@en ;
     iof-av:maturity iof-ind:Provisional ;
     iof-av:naturalLanguageDefinition "A primary flow element inserted in a fluid stream that creates a differential pressure, velocity, or other measurable effect proportional to the volumetric or mass flow rate."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:FlowModificationAccessory a owl:Class ;
+copi:COPI_0000083 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "flow modification accessory"@en ;
     iof-av:maturity iof-ind:Provisional ;
     iof-av:naturalLanguageDefinition "A material artifact installed in a pipeline to modify flow characteristics — such as flow rate, pressure drop, or velocity profile — without functioning as a primary flow control device."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:Separator a owl:Class ;
+copi:COPI_0000084 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "separator"@en ;
     iof-av:maturity iof-ind:Provisional ;
     iof-av:naturalLanguageDefinition "A material artifact that separates a mixed-phase or multi-component stream into distinct streams or phases through mechanical means."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:SightGlass a owl:Class ;
+copi:COPI_0000085 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "sight glass"@en ;
     iof-av:maturity iof-ind:Provisional ;
     iof-av:naturalLanguageDefinition "A material artifact with a transparent section that permits direct visual observation of the fluid level, condition, or flow inside a vessel or pipeline."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
 
-copi:Transformer a owl:Class ;
+copi:COPI_0000086 a owl:Class ;
     rdfs:subClassOf iof-constr:MaterialArtifact ;
     rdfs:label "transformer"@en ;
     iof-av:maturity iof-ind:Provisional ;
@@ -331,12 +331,12 @@ copi:Transformer a owl:Class ;
 #    :leanRichExchanger -> HeatTransferDevice ; :tempSensor -> MeasurementInstrument ;
 #    :reboiler -> HeatTransferDevice AND PhaseChangeDevice.
 #==============================================================================
-copi:contactor         a copi:GasAbsorber .
-copi:circulationPump   a copi:Pump .
-copi:leanRichExchanger a copi:ShellAndTubeHeatExchanger .
-copi:tempSensor        a copi:TemperatureSensor .
+copi:contactor         a copi:COPI_0000075 .
+copi:circulationPump   a copi:COPI_0000072 .
+copi:leanRichExchanger a copi:COPI_0000074 .
+copi:tempSensor        a copi:COPI_0000076 .
 
 copi:reboiler a iof-constr:MaterialArtifact ;
     iof-constr:hasFunction copi:reboiler_heatFn , copi:reboiler_vapFn .
-copi:reboiler_heatFn a copi:HeatTransferFunction .
-copi:reboiler_vapFn  a copi:VaporizationFunction .
+copi:reboiler_heatFn a copi:COPI_0000068 .
+copi:reboiler_vapFn  a copi:COPI_0000071 .

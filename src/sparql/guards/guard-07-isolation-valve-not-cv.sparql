@@ -6,7 +6,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX copi: <https://www.inf.ufrgs.br/ontologies/copi/>
 
 SELECT ?x WHERE {
-  BIND(copi:IsolationValve AS ?x)
+  BIND(copi:COPI_0000088 AS ?x)
   ?x a owl:Class .
-  ?x rdfs:subClassOf* copi:ControlValve .
+  ?x rdfs:subClassOf* copi:COPI_0000087 .
 }
