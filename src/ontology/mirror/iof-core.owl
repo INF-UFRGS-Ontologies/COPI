@@ -93,6 +93,78 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000082 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000082"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000110 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000110"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000111 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000111"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000118 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000118"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000137 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000137"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000138 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000138"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000167 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000167"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000170 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000170"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000172 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000172"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000174 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000174"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000175 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000175"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000177 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000177"/>
+    
+
+
     <!-- https://spec.industrialontologies.org/ontology/construct/achievesAtSomeTime -->
 
     <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/construct/achievesAtSomeTime">
