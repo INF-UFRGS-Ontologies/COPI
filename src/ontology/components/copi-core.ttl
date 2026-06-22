@@ -643,10 +643,10 @@ copi:COPI_0000092 a owl:Class ;
     iof-av:isPrimitive true ;
     iof-av:naturalLanguageDefinition "A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing."@en ,
         "Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos."@pt-br ;
-    iof-av:firstOrderLogicAxiom "HeatExchanger(x) → PressureVessel(x)" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'heat exchanger' then x is a 'pressure vessel'"@en ,
-        "se x é um 'trocador de calor', então x é um 'vaso de pressão'"@pt-br ;
-    iof-av:primitiveRationale "The structural differentia (solid heat-transfer surface separating two fluid circuits without mixing) is stated informally in the NLD; OWL carries only the genus (PressureVessel). Full FOL definition is deferred to Incremento 2b."@en ,
-        "A diferença estrutural (superfície sólida de transferência de calor separando dois circuitos de fluido sem mistura) é declarada informalmente na NLD; OWL carrega apenas o gênero (PressureVessel). A definição FOL completa é adiada ao Incremento 2b."@pt-br ;
-    dcterms:source "ODR-018" ;
+    iof-av:firstOrderLogicAxiom "HeatExchanger(x) → PressureVessel(x) ∧ ∃s(SolidHeatTransferSurface(s) ∧ hasComponentPartAtAllTimes(x,s))" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'heat exchanger' then x is a 'pressure vessel' that has a 'solid heat-transfer surface' as a component part at all times"@en ,
+        "se x é um 'trocador de calor', então x é um 'vaso de pressão' que tem uma 'superfície sólida de transferência de calor' como parte componente em todo momento"@pt-br ;
+    iof-av:primitiveRationale "SolidHeatTransferSurface is a FOL-only predicate (no OWL IRI), analogous to Fluid and sameSubstance in operation axioms; OWL carries only the genus (PressureVessel). The two-circuit-separation and no-mixing differentia are in the NLD. Full equivalentClass axiomatisation is deferred to Incremento 2c."@en ,
+        "SolidHeatTransferSurface é um predicado somente-FOL (sem IRI OWL), análogo a Fluid e sameSubstance nos axiomas de operação; OWL carrega apenas o gênero (PressureVessel). A differentia de separação de dois circuitos e não-mistura está na NLD. Axiomatização plena equivalentClass adiada ao Incremento 2c."@pt-br ;
+    dcterms:source "ODR-018, ODR-019" ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
