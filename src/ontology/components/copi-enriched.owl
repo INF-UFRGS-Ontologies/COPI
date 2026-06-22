@@ -8,10 +8,34 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:copi="https://www.inf.ufrgs.br/ontologies/copi/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:iof-av="https://spec.industrialontologies.org/ontology/annotation/"
      xmlns:iof-constr="https://spec.industrialontologies.org/ontology/construct/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched">
         <rdfs:label xml:lang="en">COPI Enriched — Nível 1</rdfs:label>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/annotation/firstOrderLogicAxiom -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/firstOrderLogicAxiom"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition"/>
     
 
 
@@ -58,12 +82,6 @@
     <!-- https://spec.industrialontologies.org/ontology/construct/DesignedFunction -->
 
     <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
-    
-
-
-    <!-- https://spec.industrialontologies.org/ontology/construct/MaterialArtifact -->
-
-    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
     
 
 
@@ -188,6 +206,8 @@
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">pump</rdfs:label>
+        <iof-av:naturalLanguageDefinition xml:lang="en">A pump is an assembly that bears the designed function of adding mechanical energy to fluid for pressurization and transport.</iof-av:naturalLanguageDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma bomba é um conjunto que possui a função projetada de adicionar energia mecânica ao fluido para pressurização e transporte.</iof-av:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -209,6 +229,8 @@
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">compressor</rdfs:label>
+        <iof-av:naturalLanguageDefinition xml:lang="en">A compressor is an assembly that bears the designed function of compressing gases by adding mechanical energy to increase their pressure.</iof-av:naturalLanguageDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um compressor é um conjunto que possui a função projetada de comprimir gases através da adição de energia mecânica para aumentar sua pressão.</iof-av:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -216,7 +238,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -225,6 +247,9 @@
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">shell and tube heat exchanger</rdfs:label>
+        <iof-av:firstOrderLogicAxiom xml:lang="en">ShellAndTubeHeatExchanger(x) → HeatExchanger(x) ∧ ∃tb(TubeBundle(tb) ∧ hasComponentPartAtAllTimes(x,tb)) ∧ ∃s(Shell(s) ∧ hasComponentPartAtAllTimes(x,s) ∧ spatiallyContains(s,tb))</iof-av:firstOrderLogicAxiom>
+        <iof-av:naturalLanguageDefinition xml:lang="en">A shell and tube heat exchanger is a heat exchanger that has a tube bundle spatially contained within a surrounding shell.</iof-av:naturalLanguageDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um trocador de calor de casco e tubos é um trocador de calor que possui um feixe de tubos contido espacialmente dentro de um casco envolvente.</iof-av:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -235,7 +260,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
                         <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000069"/>
@@ -243,9 +268,11 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">gas absorber</rdfs:label>
+        <iof-av:naturalLanguageDefinition xml:lang="en">An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase.</iof-av:naturalLanguageDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um absorvedor é um vaso de pressão que realiza uma função de absorção para transferência seletiva de massa de componentes de uma mistura fluida para uma fase absorvente.</iof-av:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -256,7 +283,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
                         <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070"/>
@@ -264,9 +291,11 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">temperature sensor</rdfs:label>
+        <iof-av:naturalLanguageDefinition xml:lang="en">A temperature element is an instrument that bears a temperature sensing function.</iof-av:naturalLanguageDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um elemento de temperatura é um instrumento que possui uma função de sensoreamento de temperatura.</iof-av:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -274,6 +303,24 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089"/>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
 </rdf:RDF>
 
 
