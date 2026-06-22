@@ -2444,6 +2444,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001"/>
+        <terms:source>Bird, Stewart &amp; Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part I: momentum transport.</terms:source>
         <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">momentum transfer</rdfs:label>
@@ -2469,6 +2470,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001"/>
+        <terms:source>Bird, Stewart &amp; Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part II: energy transport.</terms:source>
         <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">heat transfer</rdfs:label>
@@ -2491,6 +2493,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001"/>
+        <terms:source>Bird, Stewart &amp; Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part III: mass transport.</terms:source>
         <terms:source>ODR-009</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">mass transfer</rdfs:label>
@@ -2624,10 +2627,12 @@ Units of Measure: Km, Kg, G</skos:example>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000011">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000012"/>
+        <terms:source>McCabe, Smith &amp; Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, pumping).</terms:source>
         <terms:source>ODR-011</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">aumento de pressão de líquido</rdfs:label>
         <rdfs:label xml:lang="en">liquid pressure increase</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfLiquid"/>
         <annotation:firstOrderLogicDefinition>LiquidPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Liquid(m))</annotation:firstOrderLogicDefinition>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A momentum-transfer operation whose fluid input is an incompressible liquid and whose effect is to raise that liquid&apos;s pressure.</annotation:naturalLanguageDefinition>
@@ -2644,10 +2649,12 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000012">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
+        <terms:source>McCabe, Smith &amp; Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, compression).</terms:source>
         <terms:source>ODR-011</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">aumento de pressão de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas pressure increase</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfGas"/>
         <annotation:firstOrderLogicDefinition>GasPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃g(Gas(g) ∧ hasInput(x,g)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Gas(m))</annotation:firstOrderLogicDefinition>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A momentum-transfer operation whose fluid input is a compressible gas and whose effect is to raise that gas&apos;s pressure.</annotation:naturalLanguageDefinition>
@@ -2664,10 +2671,12 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000013">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
+        <terms:source>Green &amp; Southard (eds.), Perry&apos;s Chemical Engineers&apos; Handbook, 9th ed. §14 (absorption and stripping).</terms:source>
         <terms:source>ODR-011</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">absorção de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas absorption</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Absorption"/>
         <annotation:adaptedFrom>Treybal, Mass-Transfer Operations.</annotation:adaptedFrom>
         <annotation:firstOrderLogicDefinition>GasAbsorption(p) ↔ MassTransfer(p) ∧ ∃g,l,l2,c(hasInput(p,g) ∧ Gas(g) ∧ hasInput(p,l) ∧ Liquid(l) ∧ hasOutput(p,l2) ∧ Liquid(l2) ∧ derivesFrom(l2,l) ∧ hasConstituent(g,c) ∧ ¬∃c1(hasConstituent(l,c1) ∧ sameSubstance(c1,c)) ∧ ∃c2(hasConstituent(l2,c2) ∧ sameSubstance(c2,c)))</annotation:firstOrderLogicDefinition>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -2685,10 +2694,12 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000014">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000008"/>
+        <terms:source>McCabe, Smith &amp; Harriott, Unit Operations of Chemical Engineering, 8th ed. §16 (evaporation).</terms:source>
         <terms:source>ODR-011</terms:source>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">vaporization</rdfs:label>
         <rdfs:label xml:lang="pt-br">vaporização</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Vaporization"/>
         <annotation:firstOrderLogicDefinition>Vaporization(x) ↔ PhaseChange(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∃v(Vapour(v) ∧ hasOutput(x,v) ∧ derivesFrom(v,l))</annotation:firstOrderLogicDefinition>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A phase-change operation in which a liquid input is converted to a vapour output.</annotation:naturalLanguageDefinition>
@@ -3447,7 +3458,7 @@ Units of Measure: Km, Kg, G</skos:example>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
@@ -3492,6 +3503,8 @@ Units of Measure: Km, Kg, G</skos:example>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">pump</rdfs:label>
+        <annotation:naturalLanguageDefinition xml:lang="en">A pump is an assembly that bears the designed function of adding mechanical energy to fluid for pressurization and transport.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma bomba é um conjunto que possui a função projetada de adicionar energia mecânica ao fluido para pressurização e transporte.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -3508,6 +3521,8 @@ Units of Measure: Km, Kg, G</skos:example>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">compressor</rdfs:label>
+        <annotation:naturalLanguageDefinition xml:lang="en">A compressor is an assembly that bears the designed function of compressing gases by adding mechanical energy to increase their pressure.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um compressor é um conjunto que possui a função projetada de comprimir gases através da adição de energia mecânica para aumentar sua pressão.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -3516,6 +3531,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000017"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -3524,6 +3540,9 @@ Units of Measure: Km, Kg, G</skos:example>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">shell and tube heat exchanger</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">ShellAndTubeHeatExchanger(x) → HeatExchanger(x) ∧ ∃tb(TubeBundle(tb) ∧ hasComponentPartAtAllTimes(x,tb)) ∧ ∃s(Shell(s) ∧ hasComponentPartAtAllTimes(x,s) ∧ spatiallyContains(s,tb))</annotation:firstOrderLogicAxiom>
+        <annotation:naturalLanguageDefinition xml:lang="en">A shell and tube heat exchanger is a heat exchanger that has a tube bundle spatially contained within a surrounding shell.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um trocador de calor de casco e tubos é um trocador de calor que possui um feixe de tubos contido espacialmente dentro de um casco envolvente.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -3532,6 +3551,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000075">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000018"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -3540,6 +3560,8 @@ Units of Measure: Km, Kg, G</skos:example>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">gas absorber</rdfs:label>
+        <annotation:naturalLanguageDefinition xml:lang="en">An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um absorvedor é um vaso de pressão que realiza uma função de absorção para transferência seletiva de massa de componentes de uma mistura fluida para uma fase absorvente.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -3548,6 +3570,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000024"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -3556,6 +3579,89 @@ Units of Measure: Km, Kg, G</skos:example>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">temperature sensor</rdfs:label>
+        <annotation:naturalLanguageDefinition xml:lang="en">A temperature element is an instrument that bears a temperature sensing function.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um elemento de temperatura é um instrumento que possui uma função de sensoreamento de temperatura.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
+        <terms:source>Green &amp; Southard (eds.), Perry&apos;s Chemical Engineers&apos; Handbook, 9th ed. §11 (heat transfer).</terms:source>
+        <terms:source>ODR-016 §A (HeatExchange leaf, Nível 2 Incremento 1a)</terms:source>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
+        <rdfs:label xml:lang="en">heat exchange</rdfs:label>
+        <rdfs:label xml:lang="pt-br">troca de calor</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#TemperatureChange"/>
+        <annotation:adaptedFrom>McCabe, Smith &amp; Harriott, Unit Operations of Chemical Engineering, 8th ed. §11–12 (heat transfer without/with phase change).</annotation:adaptedFrom>
+        <annotation:firstOrderLogicDefinition>HeatExchange(x) ↔ HeatTransfer(x) ∧ ∃f1,f2,f3,f4(hasInput(x,f1) ∧ Fluid(f1) ∧ hasInput(x,f2) ∧ Fluid(f2) ∧ f1≠f2 ∧ hasOutput(x,f3) ∧ Fluid(f3) ∧ hasOutput(x,f4) ∧ Fluid(f4) ∧ f3≠f4 ∧ derivesFrom(f3,f1) ∧ derivesFrom(f4,f2) ∧ ¬∃c3(hasConstituent(f3,c3) ∧ ¬∃c1(hasConstituent(f1,c1) ∧ sameSubstance(c1,c3))) ∧ ¬∃c4(hasConstituent(f4,c4) ∧ ¬∃c2(hasConstituent(f2,c2) ∧ sameSubstance(c2,c4))))</annotation:firstOrderLogicDefinition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A heat-transfer operation in which thermal energy is exchanged between two or more fluid streams, typically separated by a solid heat-transfer surface, without mixing those streams.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma operação de transferência de calor na qual energia térmica é trocada entre dois ou mais fluidos, tipicamente separados por uma superfície sólida de troca de calor, sem mistura dessas correntes.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">Although a full first-order definition is available, OWL 2 DL carries only the genus (HeatTransfer); the pair-wise input–output correspondence (derivesFrom linking each output to its source input) and the cross-stream composition conservation (no constituent transferred between streams) are FOL-only constructs that exceed OWL 2 DL expressivity.</annotation:primitiveRationale>
+        <annotation:primitiveRationale xml:lang="pt-br">Embora exista uma definição de primeira ordem completa, o OWL 2 DL carrega apenas o gênero (HeatTransfer); a correspondência par-a-par entrada–saída (derivesFrom ligando cada saída à sua entrada de origem) e a conservação de composição entre correntes (nenhum constituinte transferido entre as correntes) são construtos apenas-FOL que excedem a expressividade do OWL 2 DL.</annotation:primitiveRationale>
+        <annotation:semiFormalNaturalLanguageDefinition xml:lang="en">x is a &apos;heat exchange&apos; if and only if x is a &apos;heat transfer&apos; in which two distinct fluid inputs each give rise to a corresponding fluid output of identical composition, with no constituent transferred between streams</annotation:semiFormalNaturalLanguageDefinition>
+        <annotation:semiFormalNaturalLanguageDefinition xml:lang="pt-br">x é uma &apos;troca de calor&apos; se e somente se x é uma &apos;transferência de calor&apos; na qual dois fluidos de entrada distintos dão origem cada um a um fluido de saída correspondente de composição idêntica, sem transferência de constituinte entre as correntes</annotation:semiFormalNaturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090">
+        <terms:source>ODR-018</terms:source>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
+        <rdfs:label xml:lang="en">pressure vessel</rdfs:label>
+        <rdfs:label xml:lang="pt-br">vaso de pressão</rdfs:label>
+        <annotation:firstOrderLogicAxiom>PressureVessel(x) → Assembly(x)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="pt-br">A diferença estrutural de contenção de pressão (casco classificado, especificação de tensão mecânica) é expressa informalmente na NLD; OWL carrega apenas o gênero (Assembly). Axiomas estruturais são adiados ao Incremento 2b.</annotation:primitiveRationale>
+        <annotation:primitiveRationale xml:lang="en">The pressure-containing structural differentia (rated shell, mechanical stress specification) is expressed informally in the NLD; OWL carries only the genus (Assembly). Structural axioms are deferred to Incremento 2b.</annotation:primitiveRationale>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">if x is a &apos;pressure vessel&apos; then x is an &apos;assembly&apos;</annotation:semiFormalNaturalLanguageAxiom>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="pt-br">se x é um &apos;vaso de pressão&apos;, então x é um &apos;conjunto&apos;</annotation:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091">
+        <terms:source>ODR-018</terms:source>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
+        <rdfs:label xml:lang="en">instrument</rdfs:label>
+        <rdfs:label xml:lang="pt-br">instrumento</rdfs:label>
+        <annotation:firstOrderLogicAxiom>Instrument(x) → MaterialArtifact(x)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="pt-br">A diferença estrutural de detecção-ou-medição é expressa informalmente na NLD; OWL carrega apenas o gênero (MaterialArtifact). O eixo estrutural (Instrument) é ortogonal ao eixo funcional (MeasurementInstrument); um artefato é ambos simultaneamente — intencional (ODR-018).</annotation:primitiveRationale>
+        <annotation:primitiveRationale xml:lang="en">The sensing-or-measuring structural differentia is expressed informally in the NLD; OWL carries only the genus (MaterialArtifact). The structural axis (Instrument) is orthogonal to the functional axis (MeasurementInstrument); an artifact is both simultaneously — intended (ODR-018).</annotation:primitiveRationale>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">if x is an &apos;instrument&apos; then x is a &apos;material artifact&apos;</annotation:semiFormalNaturalLanguageAxiom>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="pt-br">se x é um &apos;instrumento&apos;, então x é um &apos;artefato material&apos;</annotation:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
+        <terms:source>ODR-018, ODR-019</terms:source>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
+        <rdfs:label xml:lang="en">heat exchanger</rdfs:label>
+        <rdfs:label xml:lang="pt-br">trocador de calor</rdfs:label>
+        <annotation:firstOrderLogicAxiom>HeatExchanger(x) → PressureVessel(x) ∧ ∃s(SolidHeatTransferSurface(s) ∧ hasComponentPartAtAllTimes(x,s))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">SolidHeatTransferSurface is a FOL-only predicate (no OWL IRI), analogous to Fluid and sameSubstance in operation axioms; OWL carries only the genus (PressureVessel). The two-circuit-separation and no-mixing differentia are in the NLD. Full equivalentClass axiomatisation is deferred to Incremento 2c.</annotation:primitiveRationale>
+        <annotation:primitiveRationale xml:lang="pt-br">SolidHeatTransferSurface é um predicado somente-FOL (sem IRI OWL), análogo a Fluid e sameSubstance nos axiomas de operação; OWL carrega apenas o gênero (PressureVessel). A differentia de separação de dois circuitos e não-mistura está na NLD. Axiomatização plena equivalentClass adiada ao Incremento 2c.</annotation:primitiveRationale>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">if x is a &apos;heat exchanger&apos; then x is a &apos;pressure vessel&apos; that has a &apos;solid heat-transfer surface&apos; as a component part at all times</annotation:semiFormalNaturalLanguageAxiom>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="pt-br">se x é um &apos;trocador de calor&apos;, então x é um &apos;vaso de pressão&apos; que tem uma &apos;superfície sólida de transferência de calor&apos; como parte componente em todo momento</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
 </rdf:RDF>
 

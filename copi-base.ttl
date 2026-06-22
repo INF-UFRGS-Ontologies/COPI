@@ -230,7 +230,8 @@ copi:COPI_0000001 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003
 copi:COPI_0000003 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000001 ;
-                  dcterms:source "ODR-009" ;
+                  dcterms:source "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part I: momentum transport." ,
+                                 "ODR-009" ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "momentum transfer"@en ,
                              "transferência de quantidade de movimento"@pt-br ;
@@ -252,7 +253,8 @@ copi:COPI_0000003 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004
 copi:COPI_0000004 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000001 ;
-                  dcterms:source "ODR-009" ;
+                  dcterms:source "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part II: energy transport." ,
+                                 "ODR-009" ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "heat transfer"@en ,
                              "transferência de calor"@pt-br ;
@@ -271,7 +273,8 @@ copi:COPI_0000004 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005
 copi:COPI_0000005 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000001 ;
-                  dcterms:source "ODR-009" ;
+                  dcterms:source "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part III: mass transport." ,
+                                 "ODR-009" ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "mass transfer"@en ,
                              "transferência de massa"@pt-br ;
@@ -386,10 +389,12 @@ copi:COPI_0000010 rdf:type owl:Class ;
 copi:COPI_0000011 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000003 ;
                   owl:disjointWith copi:COPI_0000012 ;
-                  dcterms:source "ODR-011" ;
+                  dcterms:source "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, pumping)." ,
+                                 "ODR-011" ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "aumento de pressão de líquido"@pt-br ,
                              "liquid pressure increase"@en ;
+                  rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfLiquid> ;
                   annotation:firstOrderLogicDefinition "LiquidPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Liquid(m))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A momentum-transfer operation whose fluid input is an incompressible liquid and whose effect is to raise that liquid's pressure."@en ,
@@ -403,10 +408,12 @@ copi:COPI_0000011 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000012
 copi:COPI_0000012 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000003 ;
-                  dcterms:source "ODR-011" ;
+                  dcterms:source "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, compression)." ,
+                                 "ODR-011" ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "aumento de pressão de gás"@pt-br ,
                              "gas pressure increase"@en ;
+                  rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfGas> ;
                   annotation:firstOrderLogicDefinition "GasPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃g(Gas(g) ∧ hasInput(x,g)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Gas(m))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A momentum-transfer operation whose fluid input is a compressible gas and whose effect is to raise that gas's pressure."@en ,
@@ -420,10 +427,12 @@ copi:COPI_0000012 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000013
 copi:COPI_0000013 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000005 ;
-                  dcterms:source "ODR-011" ;
+                  dcterms:source "Green & Southard (eds.), Perry's Chemical Engineers' Handbook, 9th ed. §14 (absorption and stripping)." ,
+                                 "ODR-011" ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "absorção de gás"@pt-br ,
                              "gas absorption"@en ;
+                  rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Absorption> ;
                   annotation:adaptedFrom "Treybal, Mass-Transfer Operations." ;
                   annotation:firstOrderLogicDefinition "GasAbsorption(p) ↔ MassTransfer(p) ∧ ∃g,l,l2,c(hasInput(p,g) ∧ Gas(g) ∧ hasInput(p,l) ∧ Liquid(l) ∧ hasOutput(p,l2) ∧ Liquid(l2) ∧ derivesFrom(l2,l) ∧ hasConstituent(g,c) ∧ ¬∃c1(hasConstituent(l,c1) ∧ sameSubstance(c1,c)) ∧ ∃c2(hasConstituent(l2,c2) ∧ sameSubstance(c2,c)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
@@ -438,10 +447,12 @@ copi:COPI_0000013 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000014
 copi:COPI_0000014 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000008 ;
-                  dcterms:source "ODR-011" ;
+                  dcterms:source "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §16 (evaporation)." ,
+                                 "ODR-011" ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "vaporization"@en ,
                              "vaporização"@pt-br ;
+                  rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Vaporization> ;
                   annotation:firstOrderLogicDefinition "Vaporization(x) ↔ PhaseChange(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∃v(Vapour(v) ∧ hasOutput(x,v) ∧ derivesFrom(v,l))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A phase-change operation in which a liquid input is converted to a vapour output."@en ,
@@ -1302,7 +1313,7 @@ copi:COPI_0000068 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/DesignedFunction> ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:someValuesFrom copi:COPI_0000004
+                                    owl:someValuesFrom copi:COPI_0000089
                                   ] ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "heat transfer function"@en .
@@ -1347,7 +1358,9 @@ copi:COPI_0000072 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000066
                                   ] ;
                   rdfs:isDefinedBy copi:copi-enriched ;
-                  rdfs:label "pump"@en .
+                  rdfs:label "pump"@en ;
+                  annotation:naturalLanguageDefinition "A pump is an assembly that bears the designed function of adding mechanical energy to fluid for pressurization and transport."@en ,
+                                                       "Uma bomba é um conjunto que possui a função projetada de adicionar energia mecânica ao fluido para pressurização e transporte."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073
@@ -1367,24 +1380,29 @@ copi:COPI_0000073 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000067
                                   ] ;
                   rdfs:isDefinedBy copi:copi-enriched ;
-                  rdfs:label "compressor"@en .
+                  rdfs:label "compressor"@en ;
+                  annotation:naturalLanguageDefinition "A compressor is an assembly that bears the designed function of compressing gases by adding mechanical energy to increase their pressure."@en ,
+                                                       "Um compressor é um conjunto que possui a função projetada de comprimir gases através da adição de energia mecânica para aumentar sua pressão."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074
 copi:COPI_0000074 rdf:type owl:Class ;
-                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/Assembly> ,
-                                  copi:COPI_0000017 ,
+                  rdfs:subClassOf copi:COPI_0000017 ,
+                                  copi:COPI_0000092 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000068
                                   ] ;
                   rdfs:isDefinedBy copi:copi-enriched ;
-                  rdfs:label "shell and tube heat exchanger"@en .
+                  rdfs:label "shell and tube heat exchanger"@en ;
+                  annotation:firstOrderLogicAxiom "ShellAndTubeHeatExchanger(x) → HeatExchanger(x) ∧ ∃tb(TubeBundle(tb) ∧ hasComponentPartAtAllTimes(x,tb)) ∧ ∃s(Shell(s) ∧ hasComponentPartAtAllTimes(x,s) ∧ spatiallyContains(s,tb))"@en ;
+                  annotation:naturalLanguageDefinition "A shell and tube heat exchanger is a heat exchanger that has a tube bundle spatially contained within a surrounding shell."@en ,
+                                                       "Um trocador de calor de casco e tubos é um trocador de calor que possui um feixe de tubos contido espacialmente dentro de um casco envolvente."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000075
 copi:COPI_0000075 rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( <https://spec.industrialontologies.org/ontology/construct/Assembly>
+                  owl:equivalentClass [ owl:intersectionOf ( copi:COPI_0000090
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                                                owl:someValuesFrom copi:COPI_0000069
@@ -1392,19 +1410,21 @@ copi:COPI_0000075 rdf:type owl:Class ;
                                                            ) ;
                                         rdf:type owl:Class
                                       ] ;
-                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/Assembly> ,
-                                  copi:COPI_0000018 ,
+                  rdfs:subClassOf copi:COPI_0000018 ,
+                                  copi:COPI_0000090 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000069
                                   ] ;
                   rdfs:isDefinedBy copi:copi-enriched ;
-                  rdfs:label "gas absorber"@en .
+                  rdfs:label "gas absorber"@en ;
+                  annotation:naturalLanguageDefinition "An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase."@en ,
+                                                       "Um absorvedor é um vaso de pressão que realiza uma função de absorção para transferência seletiva de massa de componentes de uma mistura fluida para uma fase absorvente."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076
 copi:COPI_0000076 rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact>
+                  owl:equivalentClass [ owl:intersectionOf ( copi:COPI_0000091
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                                                owl:someValuesFrom copi:COPI_0000070
@@ -1413,12 +1433,86 @@ copi:COPI_0000076 rdf:type owl:Class ;
                                         rdf:type owl:Class
                                       ] ;
                   rdfs:subClassOf copi:COPI_0000024 ,
+                                  copi:COPI_0000091 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000070
                                   ] ;
                   rdfs:isDefinedBy copi:copi-enriched ;
-                  rdfs:label "temperature sensor"@en .
+                  rdfs:label "temperature sensor"@en ;
+                  annotation:naturalLanguageDefinition "A temperature element is an instrument that bears a temperature sensing function."@en ,
+                                                       "Um elemento de temperatura é um instrumento que possui uma função de sensoreamento de temperatura."@pt-br .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089
+copi:COPI_0000089 rdf:type owl:Class ;
+                  rdfs:subClassOf copi:COPI_0000004 ;
+                  dcterms:source "Green & Southard (eds.), Perry's Chemical Engineers' Handbook, 9th ed. §11 (heat transfer)." ,
+                                 "ODR-016 §A (HeatExchange leaf, Nível 2 Incremento 1a)" ;
+                  rdfs:isDefinedBy copi:copi-core ;
+                  rdfs:label "heat exchange"@en ,
+                             "troca de calor"@pt-br ;
+                  rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#TemperatureChange> ;
+                  annotation:adaptedFrom "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §11–12 (heat transfer without/with phase change)." ;
+                  annotation:firstOrderLogicDefinition "HeatExchange(x) ↔ HeatTransfer(x) ∧ ∃f1,f2,f3,f4(hasInput(x,f1) ∧ Fluid(f1) ∧ hasInput(x,f2) ∧ Fluid(f2) ∧ f1≠f2 ∧ hasOutput(x,f3) ∧ Fluid(f3) ∧ hasOutput(x,f4) ∧ Fluid(f4) ∧ f3≠f4 ∧ derivesFrom(f3,f1) ∧ derivesFrom(f4,f2) ∧ ¬∃c3(hasConstituent(f3,c3) ∧ ¬∃c1(hasConstituent(f1,c1) ∧ sameSubstance(c1,c3))) ∧ ¬∃c4(hasConstituent(f4,c4) ∧ ¬∃c2(hasConstituent(f2,c2) ∧ sameSubstance(c2,c4))))" ;
+                  annotation:isPrimitive "true"^^xsd:boolean ;
+                  annotation:naturalLanguageDefinition "A heat-transfer operation in which thermal energy is exchanged between two or more fluid streams, typically separated by a solid heat-transfer surface, without mixing those streams."@en ,
+                                                       "Uma operação de transferência de calor na qual energia térmica é trocada entre dois ou mais fluidos, tipicamente separados por uma superfície sólida de troca de calor, sem mistura dessas correntes."@pt-br ;
+                  annotation:primitiveRationale "Although a full first-order definition is available, OWL 2 DL carries only the genus (HeatTransfer); the pair-wise input–output correspondence (derivesFrom linking each output to its source input) and the cross-stream composition conservation (no constituent transferred between streams) are FOL-only constructs that exceed OWL 2 DL expressivity."@en ,
+                                                "Embora exista uma definição de primeira ordem completa, o OWL 2 DL carrega apenas o gênero (HeatTransfer); a correspondência par-a-par entrada–saída (derivesFrom ligando cada saída à sua entrada de origem) e a conservação de composição entre correntes (nenhum constituinte transferido entre as correntes) são construtos apenas-FOL que excedem a expressividade do OWL 2 DL."@pt-br ;
+                  annotation:semiFormalNaturalLanguageDefinition "x is a 'heat exchange' if and only if x is a 'heat transfer' in which two distinct fluid inputs each give rise to a corresponding fluid output of identical composition, with no constituent transferred between streams"@en ,
+                                                                 "x é uma 'troca de calor' se e somente se x é uma 'transferência de calor' na qual dois fluidos de entrada distintos dão origem cada um a um fluido de saída correspondente de composição idêntica, sem transferência de constituinte entre as correntes"@pt-br .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090
+copi:COPI_0000090 rdf:type owl:Class ;
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/Assembly> ;
+                  dcterms:source "ODR-018" ;
+                  rdfs:isDefinedBy copi:copi-core ;
+                  rdfs:label "pressure vessel"@en ,
+                             "vaso de pressão"@pt-br ;
+                  annotation:firstOrderLogicAxiom "PressureVessel(x) → Assembly(x)" ;
+                  annotation:isPrimitive "true"^^xsd:boolean ;
+                  annotation:naturalLanguageDefinition "A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress."@en ,
+                                                       "Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante."@pt-br ;
+                  annotation:primitiveRationale "A diferença estrutural de contenção de pressão (casco classificado, especificação de tensão mecânica) é expressa informalmente na NLD; OWL carrega apenas o gênero (Assembly). Axiomas estruturais são adiados ao Incremento 2b."@pt-br ,
+                                                "The pressure-containing structural differentia (rated shell, mechanical stress specification) is expressed informally in the NLD; OWL carries only the genus (Assembly). Structural axioms are deferred to Incremento 2b."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "if x is a 'pressure vessel' then x is an 'assembly'"@en ,
+                                                            "se x é um 'vaso de pressão', então x é um 'conjunto'"@pt-br .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091
+copi:COPI_0000091 rdf:type owl:Class ;
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
+                  dcterms:source "ODR-018" ;
+                  rdfs:isDefinedBy copi:copi-core ;
+                  rdfs:label "instrument"@en ,
+                             "instrumento"@pt-br ;
+                  annotation:firstOrderLogicAxiom "Instrument(x) → MaterialArtifact(x)" ;
+                  annotation:isPrimitive "true"^^xsd:boolean ;
+                  annotation:naturalLanguageDefinition "A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item."@en ,
+                                                       "Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta."@pt-br ;
+                  annotation:primitiveRationale "A diferença estrutural de detecção-ou-medição é expressa informalmente na NLD; OWL carrega apenas o gênero (MaterialArtifact). O eixo estrutural (Instrument) é ortogonal ao eixo funcional (MeasurementInstrument); um artefato é ambos simultaneamente — intencional (ODR-018)."@pt-br ,
+                                                "The sensing-or-measuring structural differentia is expressed informally in the NLD; OWL carries only the genus (MaterialArtifact). The structural axis (Instrument) is orthogonal to the functional axis (MeasurementInstrument); an artifact is both simultaneously — intended (ODR-018)."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "if x is an 'instrument' then x is a 'material artifact'"@en ,
+                                                            "se x é um 'instrumento', então x é um 'artefato material'"@pt-br .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092
+copi:COPI_0000092 rdf:type owl:Class ;
+                  rdfs:subClassOf copi:COPI_0000090 ;
+                  dcterms:source "ODR-018, ODR-019" ;
+                  rdfs:isDefinedBy copi:copi-core ;
+                  rdfs:label "heat exchanger"@en ,
+                             "trocador de calor"@pt-br ;
+                  annotation:firstOrderLogicAxiom "HeatExchanger(x) → PressureVessel(x) ∧ ∃s(SolidHeatTransferSurface(s) ∧ hasComponentPartAtAllTimes(x,s))" ;
+                  annotation:isPrimitive "true"^^xsd:boolean ;
+                  annotation:naturalLanguageDefinition "A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing."@en ,
+                                                       "Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos."@pt-br ;
+                  annotation:primitiveRationale "SolidHeatTransferSurface is a FOL-only predicate (no OWL IRI), analogous to Fluid and sameSubstance in operation axioms; OWL carries only the genus (PressureVessel). The two-circuit-separation and no-mixing differentia are in the NLD. Full equivalentClass axiomatisation is deferred to Incremento 2c."@en ,
+                                                "SolidHeatTransferSurface é um predicado somente-FOL (sem IRI OWL), análogo a Fluid e sameSubstance nos axiomas de operação; OWL carrega apenas o gênero (PressureVessel). A differentia de separação de dois circuitos e não-mistura está na NLD. Axiomatização plena equivalentClass adiada ao Incremento 2c."@pt-br ;
+                  annotation:semiFormalNaturalLanguageAxiom "if x is a 'heat exchanger' then x is a 'pressure vessel' that has a 'solid heat-transfer surface' as a component part at all times"@en ,
+                                                            "se x é um 'trocador de calor', então x é um 'vaso de pressão' que tem uma 'superfície sólida de transferência de calor' como parte componente em todo momento"@pt-br .
 
 
 ###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi
