@@ -44,7 +44,7 @@
 #==============================================================================
 <https://www.inf.ufrgs.br/ontologies/copi/copi-core>
     a owl:Ontology ;
-    owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-15/copi-core> ;
+    owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-22/copi-core> ;
 
     owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo.owl> ;            # BFO 2020 (ISO/IEC 21838-2)
     owl:imports <https://spec.industrialontologies.org/ontology/core/Core/> ; # IOF-Core 202602 (map to local Core.rdf via catalog)
@@ -54,8 +54,8 @@
     dcterms:creator "Nicolau Oyhenard dos Santos" , "Mara Abel" ;
     dcterms:publisher "Institute of Informatics, Federal University of Rio Grande do Sul (UFRGS)"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-06-15"^^xsd:date ;
-    owl:versionInfo "0.3.0-draft (copi-core; IOF-Core 202602 IRIs; bilingual annotations)" ;
+    dcterms:modified "2026-06-22"^^xsd:date ;
+    owl:versionInfo "0.4.0-draft (copi-core; Nível 2 Incremento 1a: operation anchors, OntoCAPE cross-refs, HeatExchange leaf)" ;
     iof-av:copyright "Copyright (c) 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Released under CC BY 4.0."@en ;
     iof-av:maturity iof-ind:Provisional ;
 
@@ -156,7 +156,7 @@ copi:COPI_0000003 a owl:Class ;
     skos:example "Raising the pressure of a process liquid; compressing a gas; circulating a slurry."@en ,
         "Elevar a pressão de um líquido de processo; comprimir um gás; circular uma lama."@pt-br ;
     iof-av:adaptedFrom "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering (fluid-flow operations)." ;
-    dcterms:source "ODR-009" ;
+    dcterms:source "ODR-009" , "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part I: momentum transport." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:COPI_0000011 a owl:Class ;
@@ -170,7 +170,8 @@ copi:COPI_0000011 a owl:Class ;
         "x é um 'aumento de pressão de líquido' se e somente se x é uma 'transferência de quantidade de movimento' cuja entrada fluida é um 'líquido'"@pt-br ;
     iof-av:primitiveRationale "OWL 2 DL cannot express the phase constraint on the fluid input; the OWL form asserts only the genus (MomentumTransfer). The disjointness with GasPressureIncrease is asserted to carry the pump/compressor partition."@en ,
         "OWL 2 DL não consegue expressar a restrição de fase sobre a entrada fluida; a forma OWL assere apenas o gênero (MomentumTransfer). A disjunção com GasPressureIncrease é asserida para sustentar a partição bomba/compressor."@pt-br ;
-    dcterms:source "ODR-011" ;
+    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfLiquid> ;
+    dcterms:source "ODR-011" , "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, pumping)." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:COPI_0000012 a owl:Class ;
@@ -184,7 +185,8 @@ copi:COPI_0000012 a owl:Class ;
         "x é um 'aumento de pressão de gás' se e somente se x é uma 'transferência de quantidade de movimento' cuja entrada fluida é um 'gás'"@pt-br ;
     iof-av:primitiveRationale "As for LiquidPressureIncrease: the phase constraint is not expressible in OWL 2 DL; only the genus is asserted."@en ,
         "Como em LiquidPressureIncrease: a restrição de fase não é expressável em OWL 2 DL; apenas o gênero é asserido."@pt-br ;
-    dcterms:source "ODR-011" ;
+    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfGas> ;
+    dcterms:source "ODR-011" , "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, compression)." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # No occurrent takes an incompressible-liquid and a compressible-gas input at
@@ -206,7 +208,24 @@ copi:COPI_0000004 a owl:Class ;
         "Classe de operações unitárias; a constância de fase e de identidade química que distingue a transferência de calor sensível não é capturada em OWL, de modo que apenas o envelope é asserido."@pt-br ;
     skos:example "Sensible heating of a process stream against a hot utility."@en ,
         "Aquecimento sensível de uma corrente de processo contra uma utilidade quente."@pt-br ;
-    dcterms:source "ODR-009" ;
+    dcterms:source "ODR-009" , "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part II: energy transport." ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
+
+# --- 2a. Heat exchange (leaf under heat transfer) ---------------------------
+copi:COPI_0000089 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000004 ;
+    rdfs:label "heat exchange"@en , "troca de calor"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A heat-transfer operation in which thermal energy is exchanged between two or more fluid streams, typically separated by a solid heat-transfer surface, without mixing those streams."@en ,
+        "Uma operação de transferência de calor na qual energia térmica é trocada entre dois ou mais fluidos, tipicamente separados por uma superfície sólida de troca de calor, sem mistura dessas correntes."@pt-br ;
+    iof-av:firstOrderLogicDefinition "HeatExchange(x) ↔ HeatTransfer(x) ∧ ∃f1,f2,f3,f4(hasInput(x,f1) ∧ Fluid(f1) ∧ hasInput(x,f2) ∧ Fluid(f2) ∧ f1≠f2 ∧ hasOutput(x,f3) ∧ Fluid(f3) ∧ hasOutput(x,f4) ∧ Fluid(f4) ∧ f3≠f4 ∧ derivesFrom(f3,f1) ∧ derivesFrom(f4,f2) ∧ ¬∃c3(hasConstituent(f3,c3) ∧ ¬∃c1(hasConstituent(f1,c1) ∧ sameSubstance(c1,c3))) ∧ ¬∃c4(hasConstituent(f4,c4) ∧ ¬∃c2(hasConstituent(f2,c2) ∧ sameSubstance(c2,c4))))" ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'heat exchange' if and only if x is a 'heat transfer' in which two distinct fluid inputs each give rise to a corresponding fluid output of identical composition, with no constituent transferred between streams"@en ,
+        "x é uma 'troca de calor' se e somente se x é uma 'transferência de calor' na qual dois fluidos de entrada distintos dão origem cada um a um fluido de saída correspondente de composição idêntica, sem transferência de constituinte entre as correntes"@pt-br ;
+    iof-av:primitiveRationale "Although a full first-order definition is available, OWL 2 DL carries only the genus (HeatTransfer); the pair-wise input–output correspondence (derivesFrom linking each output to its source input) and the cross-stream composition conservation (no constituent transferred between streams) are FOL-only constructs that exceed OWL 2 DL expressivity."@en ,
+        "Embora exista uma definição de primeira ordem completa, o OWL 2 DL carrega apenas o gênero (HeatTransfer); a correspondência par-a-par entrada–saída (derivesFrom ligando cada saída à sua entrada de origem) e a conservação de composição entre correntes (nenhum constituinte transferido entre as correntes) são construtos apenas-FOL que excedem a expressividade do OWL 2 DL."@pt-br ;
+    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#TemperatureChange> ;
+    iof-av:adaptedFrom "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §11–12 (heat transfer without/with phase change)." ;
+    dcterms:source "ODR-016 §A (HeatExchange leaf, Nível 2 Incremento 1a)" , "Green & Southard (eds.), Perry's Chemical Engineers' Handbook, 9th ed. §11 (heat transfer)." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 3. Mass transfer -------------------------------------------------------
@@ -223,7 +242,7 @@ copi:COPI_0000005 a owl:Class ;
         "Classe de operações unitárias; a migração interfásica que individua seus membros é declarada para folhas específicas (e.g. GasAbsorption) mas não no nível da categoria em OWL."@pt-br ;
     skos:example "Absorption of a gas component into a liquid solvent; stripping; distillation."@en ,
         "Absorção de um componente gasoso em um solvente líquido; esgotamento (stripping); destilação."@pt-br ;
-    dcterms:source "ODR-009" ;
+    dcterms:source "ODR-009" , "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part III: mass transport." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 copi:COPI_0000013 a owl:Class ;
@@ -237,8 +256,9 @@ copi:COPI_0000013 a owl:Class ;
         "x é uma 'absorção de gás' se e somente se x é uma 'transferência de massa' na qual uma substância transportada pelo gás de entrada, ausente do solvente de entrada, é constituinte do líquido de saída"@pt-br ;
     iof-av:primitiveRationale "Although a full first-order definition is available, OWL 2 DL carries only the typed-participation envelope; the relational differentia (a constituent migrating gas->liquid) is FOL-only."@en ,
         "Embora exista uma definição de primeira ordem completa, o OWL 2 DL carrega apenas o envelope de participação tipada; a diferença relacional (um constituinte migrando gás->líquido) é apenas-FOL."@pt-br ;
+    # TODO(Nível2-anchor): add rdfs:seeAlso to OntoCAPE process_extensionTGL25001.owl#Absorption — confirm IRI against source file before publishing
     iof-av:adaptedFrom "Treybal, Mass-Transfer Operations." ;
-    dcterms:source "ODR-011" ;
+    dcterms:source "ODR-011" , "Green & Southard (eds.), Perry's Chemical Engineers' Handbook, 9th ed. §14 (absorption and stripping)." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 4. Mechanical separation ----------------------------------------------
@@ -303,7 +323,8 @@ copi:COPI_0000014 a owl:Class ;
         "x é uma 'vaporização' se e somente se x é uma 'mudança de fase' cuja entrada líquida dá origem a uma saída de vapor"@pt-br ;
     iof-av:primitiveRationale "OWL 2 DL carries only the genus (PhaseChange); the liquid-to-vapour derivation is FOL-only."@en ,
         "OWL 2 DL carrega apenas o gênero (PhaseChange); a derivação líquido-para-vapor é apenas-FOL."@pt-br ;
-    dcterms:source "ODR-011" ;
+    # TODO(Nível2-anchor): add rdfs:seeAlso to OntoCAPE process_extensionTGL25001.owl#Vaporization — confirm IRI against source file before publishing
+    dcterms:source "ODR-011" , "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §16 (evaporation)." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
 # --- 7. Material containment (auxiliary; limiting case: input = output) -----

@@ -73,12 +73,6 @@
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004 -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
-    
-
-
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000011 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000011"/>
@@ -136,7 +130,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
@@ -274,6 +268,12 @@
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">temperature sensor</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089"/>
 </rdf:RDF>
 
 
