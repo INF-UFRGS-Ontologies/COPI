@@ -256,7 +256,8 @@ copi:COPI_0000013 a owl:Class ;
         "x é uma 'absorção de gás' se e somente se x é uma 'transferência de massa' na qual uma substância transportada pelo gás de entrada, ausente do solvente de entrada, é constituinte do líquido de saída"@pt-br ;
     iof-av:primitiveRationale "Although a full first-order definition is available, OWL 2 DL carries only the typed-participation envelope; the relational differentia (a constituent migrating gas->liquid) is FOL-only."@en ,
         "Embora exista uma definição de primeira ordem completa, o OWL 2 DL carrega apenas o envelope de participação tipada; a diferença relacional (um constituinte migrando gás->líquido) é apenas-FOL."@pt-br ;
-    # TODO(Nível2-anchor): add rdfs:seeAlso to OntoCAPE process_extensionTGL25001.owl#Absorption — confirm IRI against source file before publishing
+    # closeMatch — OntoCAPE: Absorption ⊑ Separation (process_extensionTGL25001.owl); COPI: GasAbsorption ⊑ MassTransfer — identical gas→liquid scope, different organizational axis (separation vs mass transfer)
+    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Absorption> ;
     iof-av:adaptedFrom "Treybal, Mass-Transfer Operations." ;
     dcterms:source "ODR-011" , "Green & Southard (eds.), Perry's Chemical Engineers' Handbook, 9th ed. §14 (absorption and stripping)." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
@@ -323,7 +324,8 @@ copi:COPI_0000014 a owl:Class ;
         "x é uma 'vaporização' se e somente se x é uma 'mudança de fase' cuja entrada líquida dá origem a uma saída de vapor"@pt-br ;
     iof-av:primitiveRationale "OWL 2 DL carries only the genus (PhaseChange); the liquid-to-vapour derivation is FOL-only."@en ,
         "OWL 2 DL carrega apenas o gênero (PhaseChange); a derivação líquido-para-vapor é apenas-FOL."@pt-br ;
-    # TODO(Nível2-anchor): add rdfs:seeAlso to OntoCAPE process_extensionTGL25001.owl#Vaporization — confirm IRI against source file before publishing
+    # closeMatch — OntoCAPE: Vaporization ⊑ PhaseChangeOfLiquids (process_extensionTGL25001.owl); COPI: Vaporization ⊑ PhaseChange — identical scope (liquid→gas phase transition)
+    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Vaporization> ;
     dcterms:source "ODR-011" , "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §16 (evaporation)." ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
 
