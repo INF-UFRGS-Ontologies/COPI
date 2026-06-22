@@ -1,163 +1,282 @@
-@prefix : <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched#> .
-@prefix obo: <http://purl.obolibrary.org/obo/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix copi: <https://www.inf.ufrgs.br/ontologies/copi/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix iof-constr: <https://spec.industrialontologies.org/ontology/construct/> .
-@base <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> .
-
-<https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> rdf:type owl:Ontology ;
-                                                          rdfs:label "COPI Enriched — Nível 1"@en .
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  http://purl.obolibrary.org/obo/BFO_0000054
-obo:BFO_0000054 rdf:type owl:ObjectProperty .
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched#"
+     xml:base="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:copi="https://www.inf.ufrgs.br/ontologies/copi/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:iof-constr="https://spec.industrialontologies.org/ontology/construct/">
+    <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched">
+        <rdfs:label xml:lang="en">COPI Enriched — Nível 1</rdfs:label>
+    </owl:Ontology>
+    
 
 
-###  https://spec.industrialontologies.org/ontology/construct/hasFunction
-iof-constr:hasFunction rdf:type owl:ObjectProperty .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
 
 
-#################################################################
-#    Classes
-#################################################################
+    <!-- http://purl.obolibrary.org/obo/BFO_0000054 -->
 
-###  https://spec.industrialontologies.org/ontology/construct/Assembly
-iof-constr:Assembly rdf:type owl:Class .
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000054"/>
+    
 
 
-###  https://spec.industrialontologies.org/ontology/construct/DesignedFunction
-iof-constr:DesignedFunction rdf:type owl:Class .
+    <!-- https://spec.industrialontologies.org/ontology/construct/hasFunction -->
+
+    <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+    
 
 
-###  https://spec.industrialontologies.org/ontology/construct/MaterialArtifact
-iof-constr:MaterialArtifact rdf:type owl:Class .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
 
 
-###  https://spec.industrialontologies.org/ontology/construct/MeasurementProcess
-iof-constr:MeasurementProcess rdf:type owl:Class .
+    <!-- https://spec.industrialontologies.org/ontology/construct/Assembly -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+    
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000011
-copi:COPI_0000011 rdf:type owl:Class .
+    <!-- https://spec.industrialontologies.org/ontology/construct/DesignedFunction -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+    
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000012
-copi:COPI_0000012 rdf:type owl:Class .
+    <!-- https://spec.industrialontologies.org/ontology/construct/MaterialArtifact -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+    
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000013
-copi:COPI_0000013 rdf:type owl:Class .
+    <!-- https://spec.industrialontologies.org/ontology/construct/MeasurementProcess -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
+    
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000066
-copi:COPI_0000066 rdf:type owl:Class ;
-                  rdfs:subClassOf iof-constr:DesignedFunction ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty obo:BFO_0000054 ;
-                                    owl:someValuesFrom copi:COPI_0000011
-                                  ] ;
-                  rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> ;
-                  rdfs:label "pumping function"@en .
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
+    
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000067
-copi:COPI_0000067 rdf:type owl:Class ;
-                  rdfs:subClassOf iof-constr:DesignedFunction ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty obo:BFO_0000054 ;
-                                    owl:someValuesFrom copi:COPI_0000012
-                                  ] ;
-                  rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> ;
-                  rdfs:label "compression function"@en .
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000011 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000011"/>
+    
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000069
-copi:COPI_0000069 rdf:type owl:Class ;
-                  rdfs:subClassOf iof-constr:DesignedFunction ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty obo:BFO_0000054 ;
-                                    owl:someValuesFrom copi:COPI_0000013
-                                  ] ;
-                  rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> ;
-                  rdfs:label "gas absorption function"@en .
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000012 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000012"/>
+    
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070
-copi:COPI_0000070 rdf:type owl:Class ;
-                  rdfs:subClassOf iof-constr:DesignedFunction ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty obo:BFO_0000054 ;
-                                    owl:someValuesFrom iof-constr:MeasurementProcess
-                                  ] ;
-                  rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> ;
-                  rdfs:label "temperature sensing function"@en .
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000013 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000013"/>
+    
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072
-copi:COPI_0000072 rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( iof-constr:Assembly
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty iof-constr:hasFunction ;
-                                                               owl:someValuesFrom copi:COPI_0000066
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf iof-constr:Assembly ;
-                  rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> ;
-                  rdfs:label "pump"@en .
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000066 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000066">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">pumping function</rdfs:label>
+    </owl:Class>
+    
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073
-copi:COPI_0000073 rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( iof-constr:Assembly
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty iof-constr:hasFunction ;
-                                                               owl:someValuesFrom copi:COPI_0000067
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf iof-constr:Assembly ;
-                  rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> ;
-                  rdfs:label "compressor"@en .
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000067 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000067">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000012"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">compression function</rdfs:label>
+    </owl:Class>
+    
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000075
-copi:COPI_0000075 rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( iof-constr:Assembly
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty iof-constr:hasFunction ;
-                                                               owl:someValuesFrom copi:COPI_0000069
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf iof-constr:Assembly ;
-                  rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> ;
-                  rdfs:label "gas absorber"@en .
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">heat transfer function</rdfs:label>
+    </owl:Class>
+    
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076
-copi:COPI_0000076 rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( iof-constr:MaterialArtifact
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty iof-constr:hasFunction ;
-                                                               owl:someValuesFrom copi:COPI_0000070
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf iof-constr:MaterialArtifact ;
-                  rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-enriched> ;
-                  rdfs:label "temperature sensor"@en .
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000069 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000069">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000013"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">gas absorption function</rdfs:label>
+    </owl:Class>
+    
 
 
-###  Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">temperature sensing function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000066"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">pump</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000067"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">compressor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">shell and tube heat exchanger</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000075 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000075">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000069"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">gas absorber</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">temperature sensor</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi -->
+

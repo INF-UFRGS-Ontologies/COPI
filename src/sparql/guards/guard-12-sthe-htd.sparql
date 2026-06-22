@@ -1,0 +1,13 @@
+# Nível 1 classification check: ShellAndTubeHeatExchanger ⊑ HeatTransferDevice (must hold)
+# Returns a row (violation) if the entailment is ABSENT from the reasoned graph.
+# STHE is primitive (axiom_mode=necessary); classification via HermiT from the
+# HeatTransferDevice equivalentClass + HeatTransferFunction realizedIn HeatTransfer.
+PREFIX copi: <https://www.inf.ufrgs.br/ontologies/copi/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?violation WHERE {
+  FILTER NOT EXISTS {
+    copi:COPI_0000074 rdfs:subClassOf+ copi:COPI_0000017 .
+  }
+  BIND("ShellAndTubeHeatExchanger (COPI_0000074) is not inferred as subClassOf HeatTransferDevice (COPI_0000017)" AS ?violation)
+}
