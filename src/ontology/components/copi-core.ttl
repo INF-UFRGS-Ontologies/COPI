@@ -597,3 +597,56 @@ copi:COPI_0000024 a owl:Class ;
 #   two functions is correctly inferred into BOTH HeatTransferDevice and
 #   PhaseChangeDevice.
 #==============================================================================
+
+
+#==============================================================================
+# STRUCTURAL GENERA  (Nível 2 Incremento 2a — ODR-018)
+#   Orthogonal to the functional device categories above. Each structural genus
+#   captures the physical form of an artifact; classification into device
+#   categories follows from the artifact's designed function. An artifact may
+#   simultaneously be a PressureVessel (form) and a MassTransferDevice
+#   (function) — intended, not a defect (ODR-018). Machine is not declared;
+#   Pump and Compressor retain iof-constr:Assembly as genus.
+#==============================================================================
+
+copi:COPI_0000090 a owl:Class ;
+    rdfs:subClassOf iof-constr:Assembly ;
+    rdfs:label "pressure vessel"@en , "vaso de pressão"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress."@en ,
+        "Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante."@pt-br ;
+    iof-av:firstOrderLogicAxiom "PressureVessel(x) → Assembly(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'pressure vessel' then x is an 'assembly'"@en ,
+        "se x é um 'vaso de pressão', então x é um 'conjunto'"@pt-br ;
+    iof-av:primitiveRationale "The pressure-containing structural differentia (rated shell, mechanical stress specification) is expressed informally in the NLD; OWL carries only the genus (Assembly). Structural axioms are deferred to Incremento 2b."@en ,
+        "A diferença estrutural de contenção de pressão (casco classificado, especificação de tensão mecânica) é expressa informalmente na NLD; OWL carrega apenas o gênero (Assembly). Axiomas estruturais são adiados ao Incremento 2b."@pt-br ;
+    dcterms:source "ODR-018" ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
+
+copi:COPI_0000091 a owl:Class ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    rdfs:label "instrument"@en , "instrumento"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item."@en ,
+        "Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta."@pt-br ;
+    iof-av:firstOrderLogicAxiom "Instrument(x) → MaterialArtifact(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is an 'instrument' then x is a 'material artifact'"@en ,
+        "se x é um 'instrumento', então x é um 'artefato material'"@pt-br ;
+    iof-av:primitiveRationale "The sensing-or-measuring structural differentia is expressed informally in the NLD; OWL carries only the genus (MaterialArtifact). The structural axis (Instrument) is orthogonal to the functional axis (MeasurementInstrument); an artifact is both simultaneously — intended (ODR-018)."@en ,
+        "A diferença estrutural de detecção-ou-medição é expressa informalmente na NLD; OWL carrega apenas o gênero (MaterialArtifact). O eixo estrutural (Instrument) é ortogonal ao eixo funcional (MeasurementInstrument); um artefato é ambos simultaneamente — intencional (ODR-018)."@pt-br ;
+    dcterms:source "ODR-018" ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
+
+copi:COPI_0000092 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000090 ;
+    rdfs:label "heat exchanger"@en , "trocador de calor"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing."@en ,
+        "Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos."@pt-br ;
+    iof-av:firstOrderLogicAxiom "HeatExchanger(x) → PressureVessel(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'heat exchanger' then x is a 'pressure vessel'"@en ,
+        "se x é um 'trocador de calor', então x é um 'vaso de pressão'"@pt-br ;
+    iof-av:primitiveRationale "The structural differentia (solid heat-transfer surface separating two fluid circuits without mixing) is stated informally in the NLD; OWL carries only the genus (PressureVessel). Full FOL definition is deferred to Incremento 2b."@en ,
+        "A diferença estrutural (superfície sólida de transferência de calor separando dois circuitos de fluido sem mistura) é declarada informalmente na NLD; OWL carrega apenas o gênero (PressureVessel). A definição FOL completa é adiada ao Incremento 2b."@pt-br ;
+    dcterms:source "ODR-018" ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .

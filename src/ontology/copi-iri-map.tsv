@@ -1,4 +1,4 @@
-# COPI IRI map: readable → numeric (88 entries, next free COPI_0000089)
+# COPI IRI map: readable → numeric (92 entries, next free COPI_0000093)
 # Generated 2026-06-20 for branch fix/iri-migration-numeric
 old_iri	new_iri
 https://www.inf.ufrgs.br/ontologies/copi/Operation	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001
@@ -89,3 +89,7 @@ https://www.inf.ufrgs.br/ontologies/copi/SightGlass	https://www.inf.ufrgs.br/ont
 https://www.inf.ufrgs.br/ontologies/copi/Transformer	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086
 https://www.inf.ufrgs.br/ontologies/copi/ControlValve	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087
 https://www.inf.ufrgs.br/ontologies/copi/IsolationValve	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000088
+https://www.inf.ufrgs.br/ontologies/copi/HeatExchange	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089
+https://www.inf.ufrgs.br/ontologies/copi/PressureVessel	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090
+https://www.inf.ufrgs.br/ontologies/copi/Instrument	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091
+https://www.inf.ufrgs.br/ontologies/copi/HeatExchanger	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092
