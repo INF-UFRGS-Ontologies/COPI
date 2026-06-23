@@ -119,8 +119,16 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000011"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">pumping function</rdfs:label>
+        <iof-av:naturalLanguageDefinition xml:lang="en">A designed function that is realized in a liquid pressure increase process.</iof-av:naturalLanguageDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma função projetada que é realizada em um processo de aumento de pressão de líquido.</iof-av:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -135,8 +143,16 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000012"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000012"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">compression function</rdfs:label>
+        <iof-av:naturalLanguageDefinition xml:lang="en">A designed function that is realized in a gas pressure increase process.</iof-av:naturalLanguageDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma função projetada que é realizada em um processo de aumento de pressão de gás.</iof-av:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -151,8 +167,16 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">heat transfer function</rdfs:label>
+        <iof-av:naturalLanguageDefinition xml:lang="en">A designed function that is realized in a heat exchange process.</iof-av:naturalLanguageDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma função projetada que é realizada em um processo de troca de calor.</iof-av:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -167,8 +191,16 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000013"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000013"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">gas absorption function</rdfs:label>
+        <iof-av:naturalLanguageDefinition xml:lang="en">A designed function that is realized in a gas absorption process.</iof-av:naturalLanguageDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma função projetada que é realizada em um processo de absorção de gás.</iof-av:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -183,8 +215,16 @@
                 <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">temperature sensing function</rdfs:label>
+        <iof-av:naturalLanguageDefinition xml:lang="en">A designed function that is realized in a temperature measurement process.</iof-av:naturalLanguageDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma função projetada que é realizada em um processo de medição de temperatura.</iof-av:naturalLanguageDefinition>
     </owl:Class>
     
 
