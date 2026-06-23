@@ -112,7 +112,12 @@ jobs:
           export SSH_ASKPASS="$ASKPASS"
           export DISPLAY=:0   # non-empty DISPLAY triggers SSH_ASKPASS on OpenSSH
 
+          # UFRGS server offers ssh-rsa/ssh-dss; modern OpenSSH disables these by
+          # default. Enable legacy key types to match the sftp-upload-action
+          # (Node.js ssh2-sftp-client, which accepts them).
           sftp -oBatchMode=no -oStrictHostKeyChecking=no \
+               -oHostKeyAlgorithms=+ssh-rsa \
+               -oPubkeyAcceptedAlgorithms=+ssh-rsa \
                -b "$BATCH" \
                "ontokg@${SFTP_HOST}" 2>&1 \
             || echo "sftp delete step completed (some files may not have existed)"
