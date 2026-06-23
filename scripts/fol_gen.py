@@ -14,16 +14,19 @@ def label_to_pred(label: str) -> str:
 
 
 def fix_fol_annotation(s: str) -> str:
-    """Add ∀x (...) wrapper if the annotation is a bare implication or biconditional.
+    """Add ∀v (...) wrapper if the annotation is a bare implication or biconditional.
     'FlowControl(x) → Process(x)' → '∀x (FlowControl(x) → Process(x))'
+    'GasAbsorption(p) ↔ ...' → '∀p (GasAbsorption(p) ↔ ...)'
     '∀x (...)' → unchanged
     """
     s = s.strip()
     if s.startswith('∀'):
         return s
-    # Bare: ClassPred(x) → ... or ClassPred(x) ↔ ...
-    if re.match(r'^[A-Z]\w+\(x\)\s*(→|↔)', s):
-        return f'∀x ({s})'
+    # Bare: ClassPred(v) → ... or ClassPred(v) ↔ ... where v is a single letter
+    m = re.match(r'^[A-Z]\w+\(([a-z])\)\s*(→|↔)', s)
+    if m:
+        v = m.group(1)
+        return f'∀{v} ({s})'
     return s
 
 
