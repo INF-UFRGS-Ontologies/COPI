@@ -5988,7 +5988,7 @@ copi:COPI_0000001 rdf:type owl:Class ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "operation"@en ,
                              "operação"@pt-br ;
-                  annotation:firstOrderLogicAxiom "Operation(x) → PlannedProcess(x)" ;
+                  annotation:firstOrderLogicAxiom "∀x (Operation(x) → PlannedProcess(x))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A planned process that an item of process-industry equipment is designed to bring about or take part in; a process-industry unit operation."@en ,
                                                        "Um processo planejado que um item de equipamento de indústria de processo é projetado para causar ou do qual é projetado para participar; uma operação unitária de indústria de processo."@pt-br ;
@@ -6011,7 +6011,7 @@ copi:COPI_0000003 rdf:type owl:Class ;
                   annotation:adaptedFrom "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering (fluid-flow operations)." ;
                   annotation:explanatoryNote "Includes pressure-raising operations on liquids and gases, and bulk transport/mixing. Its leaf operations LiquidPressureIncrease and GasPressureIncrease are disjoint."@en ,
                                              "Inclui operações de aumento de pressão de líquidos e gases, e transporte/mistura globais. Suas operações folha LiquidPressureIncrease e GasPressureIncrease são disjuntas."@pt-br ;
-                  annotation:firstOrderLogicAxiom "MomentumTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o))" ;
+                  annotation:firstOrderLogicAxiom "∀x (MomentumTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A process that imparts mechanical energy to a fluid, changing its pressure or inducing its bulk motion."@en ,
                                                        "Um processo que confere energia mecânica a um fluido, alterando sua pressão ou induzindo seu movimento global."@pt-br ;
@@ -6031,7 +6031,7 @@ copi:COPI_0000004 rdf:type owl:Class ;
                              "transferência de calor"@pt-br ;
                   skos:example "Aquecimento sensível de uma corrente de processo contra uma utilidade quente."@pt-br ,
                                "Sensible heating of a process stream against a hot utility."@en ;
-                  annotation:firstOrderLogicAxiom "HeatTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o))" ;
+                  annotation:firstOrderLogicAxiom "∀x (HeatTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A process that transfers thermal energy between materials (or to/from a material) without, in itself, changing the phase or chemical identity of the process stream."@en ,
                                                        "Um processo que transfere energia térmica entre materiais (ou de/para um material) sem, em si, alterar a fase ou a identidade química da corrente de processo."@pt-br ;
@@ -6051,7 +6051,7 @@ copi:COPI_0000005 rdf:type owl:Class ;
                              "transferência de massa"@pt-br ;
                   skos:example "Absorption of a gas component into a liquid solvent; stripping; distillation."@en ,
                                "Absorção de um componente gasoso em um solvente líquido; esgotamento (stripping); destilação."@pt-br ;
-                  annotation:firstOrderLogicAxiom "MassTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o))" ;
+                  annotation:firstOrderLogicAxiom "∀x (MassTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A process in which one or more chemical species migrate between phases driven by a concentration (chemical-potential) difference."@en ,
                                                        "Um processo no qual uma ou mais espécies químicas migram entre fases impulsionadas por uma diferença de concentração (potencial químico)."@pt-br ;
@@ -6070,7 +6070,7 @@ copi:COPI_0000006 rdf:type owl:Class ;
                              "separação mecânica"@pt-br ;
                   skos:example "Separação gravitacional trifásica; separação ciclônica; filtração; centrifugação."@pt-br ,
                                "Three-phase gravity separation; cyclonic separation; filtration; centrifugation."@en ;
-                  annotation:firstOrderLogicAxiom "MechanicalSeparation(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o))" ;
+                  annotation:firstOrderLogicAxiom "∀x (MechanicalSeparation(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A process that separates a heterogeneous mixture into fractions by mechanical means (gravity, centrifugal, or barrier forces) without phase change or chemical reaction."@en ,
                                                        "Um processo que separa uma mistura heterogênea em frações por meios mecânicos (forças gravitacionais, centrífugas ou de barreira) sem mudança de fase ou reação química."@pt-br ;
@@ -6089,7 +6089,7 @@ copi:COPI_0000007 rdf:type owl:Class ;
                              "reação química"@pt-br ;
                   skos:example "Fermentation of sugars to ethanol; combustion; catalytic conversion."@en ,
                                "Fermentação de açúcares a etanol; combustão; conversão catalítica."@pt-br ;
-                  annotation:firstOrderLogicAxiom "ChemicalReaction(x) → Process(x) ∧ ∃o,c(hasOutput(x,o) ∧ hasConstituent(o,c) ∧ ¬∃i,c1(hasInput(x,i) ∧ hasConstituent(i,c1) ∧ sameSubstance(c1,c)))" ;
+                  annotation:firstOrderLogicAxiom "∀x (ChemicalReaction(x) → Process(x) ∧ ∃o,c(hasOutput(x,o) ∧ hasConstituent(o,c) ∧ ¬∃i,c1(hasInput(x,i) ∧ hasConstituent(i,c1) ∧ sameSubstance(c1,c))))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A process in which chemical species are consumed and new species, present in no input, are formed."@en ,
                                                        "Um processo no qual espécies químicas são consumidas e novas espécies, presentes em nenhuma entrada, são formadas."@pt-br ;
@@ -6108,7 +6108,7 @@ copi:COPI_0000008 rdf:type owl:Class ;
                              "phase change"@en ;
                   skos:example "Evaporation; condensation; crystallisation."@en ,
                                "Evaporação; condensação; cristalização."@pt-br ;
-                  annotation:firstOrderLogicAxiom "PhaseChange(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o))" ;
+                  annotation:firstOrderLogicAxiom "∀x (PhaseChange(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A process that changes the physical state (phase) of a material without changing its chemical identity."@en ,
                                                        "Um processo que altera o estado físico (fase) de um material sem alterar sua identidade química."@pt-br ;
@@ -6127,7 +6127,7 @@ copi:COPI_0000009 rdf:type owl:Class ;
                              "material containment"@en ;
                   skos:example "Armazenar petróleo cru em um tanque; amortecer líquido em um tambor de surto."@pt-br ,
                                "Holding crude in a storage tank; buffering liquid in a surge drum."@en ;
-                  annotation:firstOrderLogicAxiom "MaterialContainment(x) → Process(x) ∧ ∃m(MaterialEntity(m) ∧ hasInput(x,m) ∧ hasOutput(x,m))" ;
+                  annotation:firstOrderLogicAxiom "∀x (MaterialContainment(x) → Process(x) ∧ ∃m(MaterialEntity(m) ∧ hasInput(x,m) ∧ hasOutput(x,m)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A process that maintains a contained material's state and identity over time; a limiting case in which the process input and output coincide. An auxiliary (non-transformation) category."@en ,
                                                        "Um processo que mantém o estado e a identidade de um material contido ao longo do tempo; um caso-limite no qual a entrada e a saída do processo coincidem. Uma categoria auxiliar (não-transformação)."@pt-br ;
@@ -6146,7 +6146,7 @@ copi:COPI_0000010 rdf:type owl:Class ;
                              "flow control"@en ;
                   skos:example "Estrangular uma corrente por uma válvula de controle; isolar por uma válvula de bloqueio; aliviar sobrepressão."@pt-br ,
                                "Throttling a stream through a control valve; isolating via a shutoff valve; relieving overpressure."@en ;
-                  annotation:firstOrderLogicAxiom "FlowControl(x) → Process(x) ∧ ∃m(MaterialEntity(m) ∧ hasInput(x,m) ∧ hasOutput(x,m))" ;
+                  annotation:firstOrderLogicAxiom "∀x (FlowControl(x) → Process(x) ∧ ∃m(MaterialEntity(m) ∧ hasInput(x,m) ∧ hasOutput(x,m)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A process that modulates a flow without changing the material's substance, phase, or composition."@en ,
                                                        "Um processo que modula um escoamento sem alterar a substância, a fase ou a composição do material."@pt-br ;
@@ -6166,7 +6166,7 @@ copi:COPI_0000011 rdf:type owl:Class ;
                   rdfs:label "aumento de pressão de líquido"@pt-br ,
                              "liquid pressure increase"@en ;
                   rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfLiquid> ;
-                  annotation:firstOrderLogicDefinition "LiquidPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Liquid(m))" ;
+                  annotation:firstOrderLogicDefinition "∀x (LiquidPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Liquid(m)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A momentum-transfer operation whose fluid input is an incompressible liquid and whose effect is to raise that liquid's pressure."@en ,
                                                        "Uma operação de transferência de quantidade de movimento cuja entrada fluida é um líquido incompressível e cujo efeito é elevar a pressão desse líquido."@pt-br ;
@@ -6185,7 +6185,7 @@ copi:COPI_0000012 rdf:type owl:Class ;
                   rdfs:label "aumento de pressão de gás"@pt-br ,
                              "gas pressure increase"@en ;
                   rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfGas> ;
-                  annotation:firstOrderLogicDefinition "GasPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃g(Gas(g) ∧ hasInput(x,g)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Gas(m))" ;
+                  annotation:firstOrderLogicDefinition "∀x (GasPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃g(Gas(g) ∧ hasInput(x,g)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Gas(m)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A momentum-transfer operation whose fluid input is a compressible gas and whose effect is to raise that gas's pressure."@en ,
                                                        "Uma operação de transferência de quantidade de movimento cuja entrada fluida é um gás compressível e cujo efeito é elevar a pressão desse gás."@pt-br ;
@@ -6205,7 +6205,7 @@ copi:COPI_0000013 rdf:type owl:Class ;
                              "gas absorption"@en ;
                   rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Absorption> ;
                   annotation:adaptedFrom "Treybal, Mass-Transfer Operations." ;
-                  annotation:firstOrderLogicDefinition "GasAbsorption(p) ↔ MassTransfer(p) ∧ ∃g,l,l2,c(hasInput(p,g) ∧ Gas(g) ∧ hasInput(p,l) ∧ Liquid(l) ∧ hasOutput(p,l2) ∧ Liquid(l2) ∧ derivesFrom(l2,l) ∧ hasConstituent(g,c) ∧ ¬∃c1(hasConstituent(l,c1) ∧ sameSubstance(c1,c)) ∧ ∃c2(hasConstituent(l2,c2) ∧ sameSubstance(c2,c)))" ;
+                  annotation:firstOrderLogicDefinition "∀p (GasAbsorption(p) ↔ MassTransfer(p) ∧ ∃g,l,l2,c(hasInput(p,g) ∧ Gas(g) ∧ hasInput(p,l) ∧ Liquid(l) ∧ hasOutput(p,l2) ∧ Liquid(l2) ∧ derivesFrom(l2,l) ∧ hasConstituent(g,c) ∧ ¬∃c1(hasConstituent(l,c1) ∧ sameSubstance(c1,c)) ∧ ∃c2(hasConstituent(l2,c2) ∧ sameSubstance(c2,c))))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A mass-transfer operation in which a chemical species carried by an input gas, and absent from the input solvent, becomes a constituent of the output liquid."@en ,
                                                        "Uma operação de transferência de massa na qual uma espécie química transportada por um gás de entrada, e ausente do solvente de entrada, torna-se constituinte do líquido de saída."@pt-br ;
@@ -6224,7 +6224,7 @@ copi:COPI_0000014 rdf:type owl:Class ;
                   rdfs:label "vaporization"@en ,
                              "vaporização"@pt-br ;
                   rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Vaporization> ;
-                  annotation:firstOrderLogicDefinition "Vaporization(x) ↔ PhaseChange(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∃v(Vapour(v) ∧ hasOutput(x,v) ∧ derivesFrom(v,l))" ;
+                  annotation:firstOrderLogicDefinition "∀x (Vaporization(x) ↔ PhaseChange(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∃v(Vapour(v) ∧ hasOutput(x,v) ∧ derivesFrom(v,l)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A phase-change operation in which a liquid input is converted to a vapour output."@en ,
                                                        "Uma operação de mudança de fase na qual uma entrada líquida é convertida em uma saída de vapor."@pt-br ;
@@ -6243,7 +6243,7 @@ copi:COPI_0000015 rdf:type owl:Class ;
                              "perda de contenção"@pt-br ;
                   annotation:explanatoryNote "Relevant to HAZOP and failure-propagation work built over COPI."@en ,
                                              "Relevante para trabalhos de HAZOP e propagação de falhas construídos sobre o COPI."@pt-br ;
-                  annotation:firstOrderLogicAxiom "LossOfContainment(x) → Process(x) ∧ ¬PlannedProcess(x)" ;
+                  annotation:firstOrderLogicAxiom "∀x (LossOfContainment(x) → Process(x) ∧ ¬PlannedProcess(x))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A process in which a contained material escapes its intended boundary. An unplanned process; deliberately not an iof-constr:PlannedProcess."@en ,
                                                        "Um processo no qual um material contido escapa de seu limite pretendido. Um processo não planejado; deliberadamente não um iof-constr:PlannedProcess."@pt-br ;
@@ -6292,7 +6292,7 @@ copi:COPI_0000016 rdf:type owl:Class ;
                   annotation:adaptedFrom "Unit-operations tradition (McCabe-Smith-Harriott); cross-checked against IEC 81346-2 codes G, M, W and ISO 14224 Annex A." ;
                   annotation:explanatoryNote "A dispersive (defined) category; a leaf declaring only its designed function is automatically classified here by the reasoner. Not asserted disjoint from the other equipment categories (selective partition)."@en ,
                                              "Uma categoria dispersiva (definida); uma folha que declara apenas sua função projetada é classificada aqui automaticamente pelo reasoner. Não asserida disjunta das demais categorias de equipamento (partição seletiva)."@pt-br ;
-                  annotation:firstOrderLogicDefinition "MomentumTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MomentumTransfer(p) ∧ realizedIn(f,p)))" ;
+                  annotation:firstOrderLogicDefinition "∀x (MomentumTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MomentumTransfer(p) ∧ realizedIn(f,p))))" ;
                   annotation:isPrimitive "false"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that bears a designed function realized in a momentum-transfer operation."@en ,
                                                        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de quantidade de movimento."@pt-br ;
@@ -6339,7 +6339,7 @@ copi:COPI_0000017 rdf:type owl:Class ;
                   annotation:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 codes E, V." ;
                   annotation:explanatoryNote "Categoria definida; um artefato que porta uma função secundária (e.g. um refervedor que também vaporiza) adquire pertinências adicionais de categoria -- intencional, não um defeito."@pt-br ,
                                              "Defined category; an artifact bearing a secondary function (e.g. a reboiler that also vaporizes) acquires additional category memberships -- intended, not a defect."@en ;
-                  annotation:firstOrderLogicDefinition "HeatTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(HeatTransfer(p) ∧ realizedIn(f,p)))" ;
+                  annotation:firstOrderLogicDefinition "∀x (HeatTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(HeatTransfer(p) ∧ realizedIn(f,p))))" ;
                   annotation:isPrimitive "false"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that bears a designed function realized in a heat-transfer operation."@en ,
                                                        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de calor."@pt-br ;
@@ -6384,7 +6384,7 @@ copi:COPI_0000018 rdf:type owl:Class ;
                   skos:example "absorber, stripper, distillation column, adsorber"@en ,
                                "absorvedor, esgotador, coluna de destilação, adsorvedor"@pt-br ;
                   annotation:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
-                  annotation:firstOrderLogicDefinition "MassTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MassTransfer(p) ∧ realizedIn(f,p)))" ;
+                  annotation:firstOrderLogicDefinition "∀x (MassTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MassTransfer(p) ∧ realizedIn(f,p))))" ;
                   annotation:isPrimitive "false"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that bears a designed function realized in a mass-transfer operation."@en ,
                                                        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de massa."@pt-br ;
@@ -6429,7 +6429,7 @@ copi:COPI_0000019 rdf:type owl:Class ;
                   skos:example "separador trifásico, ciclone, filtro, centrífuga"@pt-br ,
                                "three-phase separator, cyclone, filter, centrifuge"@en ;
                   annotation:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
-                  annotation:firstOrderLogicDefinition "MechanicalSeparationDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MechanicalSeparation(p) ∧ realizedIn(f,p)))" ;
+                  annotation:firstOrderLogicDefinition "∀x (MechanicalSeparationDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MechanicalSeparation(p) ∧ realizedIn(f,p))))" ;
                   annotation:isPrimitive "false"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that bears a designed function realized in a mechanical-separation operation."@en ,
                                                        "Um artefato material que porta uma função projetada realizada em uma operação de separação mecânica."@pt-br ;
@@ -6474,7 +6474,7 @@ copi:COPI_0000020 rdf:type owl:Class ;
                   skos:example "CSTR, plug-flow reactor, fixed-bed catalytic reactor"@en ,
                                "CSTR, reator de fluxo pistonado, reator catalítico de leito fixo"@pt-br ;
                   annotation:adaptedFrom "Unit-process tradition; ISO 14224 Annex A; IEC 81346-2 code H." ;
-                  annotation:firstOrderLogicDefinition "ChemicalReactor(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(ChemicalReaction(p) ∧ realizedIn(f,p)))" ;
+                  annotation:firstOrderLogicDefinition "∀x (ChemicalReactor(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(ChemicalReaction(p) ∧ realizedIn(f,p))))" ;
                   annotation:isPrimitive "false"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that bears a designed function realized in a chemical-reaction operation."@en ,
                                                        "Um artefato material que porta uma função projetada realizada em uma operação de reação química."@pt-br ;
@@ -6519,7 +6519,7 @@ copi:COPI_0000021 rdf:type owl:Class ;
                   skos:example "evaporador, condensador, cristalizador"@pt-br ,
                                "evaporator, condenser, crystalliser"@en ;
                   annotation:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
-                  annotation:firstOrderLogicDefinition "PhaseChangeDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(PhaseChange(p) ∧ realizedIn(f,p)))" ;
+                  annotation:firstOrderLogicDefinition "∀x (PhaseChangeDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(PhaseChange(p) ∧ realizedIn(f,p))))" ;
                   annotation:isPrimitive "false"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that bears a designed function realized in a phase-change operation."@en ,
                                                        "Um artefato material que porta uma função projetada realizada em uma operação de mudança de fase."@pt-br ;
@@ -6564,7 +6564,7 @@ copi:COPI_0000022 rdf:type owl:Class ;
                   skos:example "storage tank, pressure vessel, accumulator"@en ,
                                "tanque de armazenamento, vaso de pressão, acumulador"@pt-br ;
                   annotation:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 code C." ;
-                  annotation:firstOrderLogicDefinition "ContainmentDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MaterialContainment(p) ∧ realizedIn(f,p)))" ;
+                  annotation:firstOrderLogicDefinition "∀x (ContainmentDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MaterialContainment(p) ∧ realizedIn(f,p))))" ;
                   annotation:isPrimitive "false"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that bears a designed function realized in a material-containment operation."@en ,
                                                        "Um artefato material que porta uma função projetada realizada em uma operação de contenção de material."@pt-br ;
@@ -6609,7 +6609,7 @@ copi:COPI_0000023 rdf:type owl:Class ;
                   skos:example "control valve, shutoff valve, relief valve"@en ,
                                "válvula de controle, válvula de bloqueio, válvula de alívio"@pt-br ;
                   annotation:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 codes Q, R, F." ;
-                  annotation:firstOrderLogicDefinition "FlowControlDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(FlowControl(p) ∧ realizedIn(f,p)))" ;
+                  annotation:firstOrderLogicDefinition "∀x (FlowControlDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(FlowControl(p) ∧ realizedIn(f,p))))" ;
                   annotation:isPrimitive "false"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that bears a designed function realized in a flow-control operation."@en ,
                                                        "Um artefato material que porta uma função projetada realizada em uma operação de controle de fluxo."@pt-br ;
@@ -6656,7 +6656,7 @@ copi:COPI_0000024 rdf:type owl:Class ;
                   annotation:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 code B." ;
                   annotation:explanatoryNote "A medição distingue-se das categorias de transformação por produzir uma saída informacional em vez de material; reutiliza iof-constr:MeasurementProcess em vez de cunhar um processo COPI."@pt-br ,
                                              "Measurement stands apart from the transformation categories in yielding an informational rather than a material output; it reuses iof-constr:MeasurementProcess instead of minting a COPI process."@en ;
-                  annotation:firstOrderLogicDefinition "MeasurementInstrument(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MeasurementProcess(p) ∧ realizedIn(f,p)))" ;
+                  annotation:firstOrderLogicDefinition "∀x (MeasurementInstrument(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MeasurementProcess(p) ∧ realizedIn(f,p))))" ;
                   annotation:isPrimitive "false"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that bears a designed function realized in an iof-constr:MeasurementProcess (a planned process yielding an information output)."@en ,
                                                        "Um artefato material que porta uma função projetada realizada em um iof-constr:MeasurementProcess (um processo planejado que produz uma saída informacional)."@pt-br ;
@@ -7255,7 +7255,7 @@ copi:COPI_0000089 rdf:type owl:Class ;
                              "troca de calor"@pt-br ;
                   rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#TemperatureChange> ;
                   annotation:adaptedFrom "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §11–12 (heat transfer without/with phase change)." ;
-                  annotation:firstOrderLogicDefinition "HeatExchange(x) ↔ HeatTransfer(x) ∧ ∃f1,f2,f3,f4(hasInput(x,f1) ∧ Fluid(f1) ∧ hasInput(x,f2) ∧ Fluid(f2) ∧ f1≠f2 ∧ hasOutput(x,f3) ∧ Fluid(f3) ∧ hasOutput(x,f4) ∧ Fluid(f4) ∧ f3≠f4 ∧ derivesFrom(f3,f1) ∧ derivesFrom(f4,f2) ∧ ¬∃c3(hasConstituent(f3,c3) ∧ ¬∃c1(hasConstituent(f1,c1) ∧ sameSubstance(c1,c3))) ∧ ¬∃c4(hasConstituent(f4,c4) ∧ ¬∃c2(hasConstituent(f2,c2) ∧ sameSubstance(c2,c4))))" ;
+                  annotation:firstOrderLogicDefinition "∀x (HeatExchange(x) ↔ HeatTransfer(x) ∧ ∃f1,f2,f3,f4(hasInput(x,f1) ∧ Fluid(f1) ∧ hasInput(x,f2) ∧ Fluid(f2) ∧ f1≠f2 ∧ hasOutput(x,f3) ∧ Fluid(f3) ∧ hasOutput(x,f4) ∧ Fluid(f4) ∧ f3≠f4 ∧ derivesFrom(f3,f1) ∧ derivesFrom(f4,f2) ∧ ¬∃c3(hasConstituent(f3,c3) ∧ ¬∃c1(hasConstituent(f1,c1) ∧ sameSubstance(c1,c3))) ∧ ¬∃c4(hasConstituent(f4,c4) ∧ ¬∃c2(hasConstituent(f2,c2) ∧ sameSubstance(c2,c4)))))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A heat-transfer operation in which thermal energy is exchanged between two or more fluid streams, typically separated by a solid heat-transfer surface, without mixing those streams."@en ,
                                                        "Uma operação de transferência de calor na qual energia térmica é trocada entre dois ou mais fluidos, tipicamente separados por uma superfície sólida de troca de calor, sem mistura dessas correntes."@pt-br ;
@@ -7272,7 +7272,7 @@ copi:COPI_0000090 rdf:type owl:Class ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "pressure vessel"@en ,
                              "vaso de pressão"@pt-br ;
-                  annotation:firstOrderLogicAxiom "PressureVessel(x) → Assembly(x)" ;
+                  annotation:firstOrderLogicAxiom "∀x (PressureVessel(x) → Assembly(x))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress."@en ,
                                                        "Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante."@pt-br ;
@@ -7289,7 +7289,7 @@ copi:COPI_0000091 rdf:type owl:Class ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "instrument"@en ,
                              "instrumento"@pt-br ;
-                  annotation:firstOrderLogicAxiom "Instrument(x) → MaterialArtifact(x)" ;
+                  annotation:firstOrderLogicAxiom "∀x (Instrument(x) → MaterialArtifact(x))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item."@en ,
                                                        "Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta."@pt-br ;
@@ -7306,7 +7306,7 @@ copi:COPI_0000092 rdf:type owl:Class ;
                   rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "heat exchanger"@en ,
                              "trocador de calor"@pt-br ;
-                  annotation:firstOrderLogicAxiom "HeatExchanger(x) → PressureVessel(x) ∧ ∃s(SolidHeatTransferSurface(s) ∧ hasComponentPartAtAllTimes(x,s))" ;
+                  annotation:firstOrderLogicAxiom "∀x (HeatExchanger(x) → PressureVessel(x) ∧ ∃s(SolidHeatTransferSurface(s) ∧ hasComponentPartAtAllTimes(x,s)))" ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing."@en ,
                                                        "Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos."@pt-br ;
