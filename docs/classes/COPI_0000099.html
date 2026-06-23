@@ -358,15 +358,15 @@
         <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every butterfly control valve is a valve that has-component-part-at-all-times some rotating disc and has-component-part-at-all-times some actuator and bearer-of some process-controlled flow function.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (ButterflyControlValve(x) → ControlValve(x) ∧ ∃f (ProcessControlledFlowFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
-<span class="fol-line"><span class="fol-label">[Function axiom: ProcessControlledFlowFunction]</span>∀f (ProcessControlledFlowFunction(f) → ∀p (realizedIn(f,p) → ProcessControlledFlowProcess(p)) ∧ ∃p (ProcessControlledFlowProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (ButterflyControlValve(x) → ∃hasComponentPartAtAllTimes.RotatingDisc ⊓ ∃bearerOf.ProcessControlledFlowFunction ⊓ ∃hasComponentPartAtAllTimes.Actuator) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: Actuator]</span>∀x (ButterflyControlValve(x) → ∃p (Actuator(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: ValveBody]</span>∀x (ButterflyControlValve(x) → ∃p (ValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (ButterflyControlValve(x) → ControlValve(x) ∧ ∃f (ProcessControlledFlowFunction(f) ∧ bearerOf(x,f)))</span>
+<span class="fol-line"><span class="fol-label">[Function axiom: ProcessControlledFlowFunction]</span>∀f (ProcessControlledFlowFunction(f) → ∀p (realizedIn(f,p) → ProcessControlledFlowProcess(p)) ∧ ∃p (ProcessControlledFlowProcess(p) ∧ realizedIn(f,p)))</span>
+<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (ButterflyControlValve(x) → ∃p (RotatingDisc(p) ∧ hasComponentPartAtAllTimes(x,p)) ⊓ ∃f (ProcessControlledFlowFunction(f) ∧ bearerOf(x,f)) ⊓ ∃p (Actuator(p) ∧ hasComponentPartAtAllTimes(x,p)))</span>
+<span class="fol-line"><span class="fol-label">[Necessary part: Actuator]</span>∀x (ButterflyControlValve(x) → ∃p (Actuator(p) ∧ hasComponentPartAtAllTimes(x,p)))</span>
+<span class="fol-line"><span class="fol-label">[Necessary part: ValveBody]</span>∀x (ButterflyControlValve(x) → ∃p (ValveBody(p) ∧ hasComponentPartAtAllTimes(x,p)))</span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((ButterflyControlValve(x) ∧ ProcessControlledFlowFunction(f) ∧ bearerOf(x,f)) →
       ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
       ∃e (Participant(e) ∧ participatesIn(e,f)) ∧
-      processType(f,FlowRateAndPressureModulationThroughVariableAreaRestriction)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+      processType(f,FlowRateAndPressureModulationThroughVariableAreaRestriction))</span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .

@@ -294,15 +294,15 @@
         <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every double block and bleed valve is a valve that has a primary seat and has a secondary seat and has a bleed port.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (DoubleBlockAndBleedValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
-<span class="fol-line"><span class="fol-label">[Function axiom: FlowControlFunction]</span>∀f (FlowControlFunction(f) → ∀p (realizedIn(f,p) → FlowControlProcess(p)) ∧ ∃p (FlowControlProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (DoubleBlockAndBleedValve(x) → ∃hasComponentPartAtAllTimes.PrimarySeat ⊓ ∃hasComponentPartAtAllTimes.SecondarySeat ⊓ ∃hasComponentPartAtAllTimes.BleedPort) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: ValveBody]</span>∀x (DoubleBlockAndBleedValve(x) → ∃p (ValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (DoubleBlockAndBleedValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</span>
+<span class="fol-line"><span class="fol-label">[Function axiom: FlowControlFunction]</span>∀f (FlowControlFunction(f) → ∀p (realizedIn(f,p) → FlowControlProcess(p)) ∧ ∃p (FlowControlProcess(p) ∧ realizedIn(f,p)))</span>
+<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (DoubleBlockAndBleedValve(x) → ∃p (PrimarySeat(p) ∧ hasComponentPartAtAllTimes(x,p)) ⊓ ∃p (SecondarySeat(p) ∧ hasComponentPartAtAllTimes(x,p)) ⊓ ∃p (BleedPort(p) ∧ hasComponentPartAtAllTimes(x,p)))</span>
+<span class="fol-line"><span class="fol-label">[Necessary part: ValveBody]</span>∀x (DoubleBlockAndBleedValve(x) → ∃p (ValveBody(p) ∧ hasComponentPartAtAllTimes(x,p)))</span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((DoubleBlockAndBleedValve(x) ∧ FlowControlFunction(f) ∧ bearerOf(x,f)) →
       ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
       ∃e1 (Participant(e1) ∧ participatesIn(e1,f)) ∧
       ∃e2 (Participant(e2) ∧ participatesIn(e2,f)) ∧
-      processType(f,FlowControlWithDualIsolationCapabilityAndIntermediateCavityMonitoring/venting)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+      processType(f,FlowControlWithDualIsolationCapabilityAndIntermediateCavityMonitoring/venting))</span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .

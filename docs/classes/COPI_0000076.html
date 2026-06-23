@@ -259,12 +259,12 @@
         <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every temperature element is a detecting element that has the function to sense temperature</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (TemperatureElement(x) ↔ Instrument(x) ∧ ∃f (TemperatureSensingFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
-<span class="fol-line"><span class="fol-label">[Function axiom: TemperatureSensingFunction]</span>∀f (TemperatureSensingFunction(f) → ∀p (realizedIn(f,p) → TemperatureSensingProcess(p)) ∧ ∃p (TemperatureSensingProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (TemperatureElement(x) ↔ Instrument(x) ∧ ∃f (TemperatureSensingFunction(f) ∧ bearerOf(x,f)))</span>
+<span class="fol-line"><span class="fol-label">[Function axiom: TemperatureSensingFunction]</span>∀f (TemperatureSensingFunction(f) → ∀p (realizedIn(f,p) → TemperatureSensingProcess(p)) ∧ ∃p (TemperatureSensingProcess(p) ∧ realizedIn(f,p)))</span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((TemperatureElement(x) ∧ TemperatureSensingFunction(f) ∧ bearerOf(x,f)) →
       ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
       ∃e (Participant(e) ∧ participatesIn(e,f)) ∧
-      processType(f,ThermalToElectricalSignalTransduction)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+      processType(f,ThermalToElectricalSignalTransduction))</span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .

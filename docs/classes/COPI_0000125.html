@@ -259,14 +259,14 @@
         <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every humidity analyser is a process analyzer that has the function to measure humidity content.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (HumidityAnalyser(x) ↔ Instrument(x) ∧ ∃f (HumidityMeasurementFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
-<span class="fol-line"><span class="fol-label">[Function axiom: HumidityMeasurementFunction]</span>∀f (HumidityMeasurementFunction(f) → ∀p (realizedIn(f,p) → HumidityMeasurementProcess(p)) ∧ ∃p (HumidityMeasurementProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: Housing]</span>∀x (HumidityAnalyser(x) → ∃p (Housing(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (HumidityAnalyser(x) ↔ Instrument(x) ∧ ∃f (HumidityMeasurementFunction(f) ∧ bearerOf(x,f)))</span>
+<span class="fol-line"><span class="fol-label">[Function axiom: HumidityMeasurementFunction]</span>∀f (HumidityMeasurementFunction(f) → ∀p (realizedIn(f,p) → HumidityMeasurementProcess(p)) ∧ ∃p (HumidityMeasurementProcess(p) ∧ realizedIn(f,p)))</span>
+<span class="fol-line"><span class="fol-label">[Necessary part: Housing]</span>∀x (HumidityAnalyser(x) → ∃p (Housing(p) ∧ hasComponentPartAtAllTimes(x,p)))</span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((HumidityAnalyser(x) ∧ HumidityMeasurementFunction(f) ∧ bearerOf(x,f)) →
       ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
       ∃e1 (Participant(e1) ∧ participatesIn(e1,f)) ∧
       ∃e2 (Participant(e2) ∧ participatesIn(e2,f)) ∧
-      processType(f,TransductionOfHumidityContentToMeasurableElectricalOrOpticalSignal)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+      processType(f,TransductionOfHumidityContentToMeasurableElectricalOrOpticalSignal))</span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .

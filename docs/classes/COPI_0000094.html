@@ -358,15 +358,15 @@
         <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>BallControlValve SubClassOf ControlValve and hasComponentPartAtAllTimes some BallClosure and hasComponentPartAtAllTimes some RotaryActuator</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (BallControlValve(x) → ControlValve(x) ∧ ∃f (ProcessControlledFlowFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
-<span class="fol-line"><span class="fol-label">[Function axiom: ProcessControlledFlowFunction]</span>∀f (ProcessControlledFlowFunction(f) → ∀p (realizedIn(f,p) → ProcessControlledFlowProcess(p)) ∧ ∃p (ProcessControlledFlowProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (BallControlValve(x) → ∃hasComponentPartAtAllTimes.BallClosure ⊓ ∃hasComponentPartAtAllTimes.RotaryActuator) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: RotaryActuator]</span>∀x (BallControlValve(x) → ∃p (RotaryActuator(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: ValveSeat]</span>∀x (BallControlValve(x) → ∃p (ValveSeat(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (BallControlValve(x) → ControlValve(x) ∧ ∃f (ProcessControlledFlowFunction(f) ∧ bearerOf(x,f)))</span>
+<span class="fol-line"><span class="fol-label">[Function axiom: ProcessControlledFlowFunction]</span>∀f (ProcessControlledFlowFunction(f) → ∀p (realizedIn(f,p) → ProcessControlledFlowProcess(p)) ∧ ∃p (ProcessControlledFlowProcess(p) ∧ realizedIn(f,p)))</span>
+<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (BallControlValve(x) → ∃p (BallClosure(p) ∧ hasComponentPartAtAllTimes(x,p)) ⊓ ∃p (RotaryActuator(p) ∧ hasComponentPartAtAllTimes(x,p)))</span>
+<span class="fol-line"><span class="fol-label">[Necessary part: RotaryActuator]</span>∀x (BallControlValve(x) → ∃p (RotaryActuator(p) ∧ hasComponentPartAtAllTimes(x,p)))</span>
+<span class="fol-line"><span class="fol-label">[Necessary part: ValveSeat]</span>∀x (BallControlValve(x) → ∃p (ValveSeat(p) ∧ hasComponentPartAtAllTimes(x,p)))</span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((BallControlValve(x) ∧ ProcessControlledFlowFunction(f) ∧ bearerOf(x,f)) →
       ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
       ∃e (Participant(e) ∧ participatesIn(e,f)) ∧
-      processType(f,FlowRateModulationThroughRotaryBallPositioning)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+      processType(f,FlowRateModulationThroughRotaryBallPositioning))</span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
