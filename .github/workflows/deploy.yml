@@ -87,29 +87,36 @@ jobs:
       # that were generated before the IRI correction in commit cc6f14a.
       # These IRIs collided with the core ontology range; canonical pages now live
       # at COPI_0000072+. The sftp-upload-action cannot delete remote files, so
-      # we install lftp via apt-get (arc-runner-copi has apt-get; lftp is not
-      # pre-installed) and use lftp rm directly on the known stale paths.
+      # we use the sftp binary (present on arc-runner-copi at /usr/bin/sftp) with
+      # a batch file and sshpass-style password injection via SSH_ASKPASS.
+      # apt-get install lftp fails silently (not in configured repos without sudo).
       - name: Delete stale pre-migration class pages from server
         env:
           SFTP_PASS: ${{ secrets.FTP }}
           SFTP_HOST: ${{ secrets.DEPLOY_HOST }}
           REMOTE_CLASSES: ../ontologies/public_html/copi/classes
         run: |
-          apt-get install -y -qq lftp 2>/dev/null || true
-          if ! command -v lftp >/dev/null 2>&1; then
-            echo "lftp not available after install attempt; skipping delete step"
-            exit 0
-          fi
-          STALE_FILES=""
+          # Write an sftp batch file with rm commands for each stale IRI
+          BATCH=$(mktemp /tmp/sftp-batch-XXXXXX.txt)
           for i in $(seq 1 71) 89; do
-            STALE_FILES="$STALE_FILES rm ${REMOTE_CLASSES}/COPI_$(printf '%07d' $i).html;"
+            echo "rm ${REMOTE_CLASSES}/COPI_$(printf '%07d' $i).html" >> "$BATCH"
           done
-          lftp -u "ontokg,${SFTP_PASS}" "sftp://${SFTP_HOST}" -e "
-            set sftp:auto-confirm yes
-            set net:max-retries 2
-            ${STALE_FILES}
-            quit
-          " || echo "lftp delete step completed (some files may not have existed)"
+          echo "bye" >> "$BATCH"
+
+          # SSH_ASKPASS + DISPLAY trick: sftp reads password from askpass script
+          ASKPASS=$(mktemp /tmp/ssh-askpass-XXXXXX.sh)
+          echo "#!/bin/sh" > "$ASKPASS"
+          echo "echo \"\$SFTP_PASS\"" >> "$ASKPASS"
+          chmod +x "$ASKPASS"
+
+          export SSH_ASKPASS="$ASKPASS"
+          export DISPLAY=:0   # non-empty DISPLAY triggers SSH_ASKPASS on OpenSSH
+
+          sftp -oBatchMode=no -oStrictHostKeyChecking=no \
+               -b "$BATCH" \
+               "ontokg@${SFTP_HOST}" 2>&1 \
+            || echo "sftp delete step completed (some files may not have existed)"
+          rm -f "$BATCH" "$ASKPASS"
 
       # Dylan700/sftp-upload-action uses minimatch with some() (OR) logic:
       # a `!file` pattern matches every file that is NOT that file, so with only
