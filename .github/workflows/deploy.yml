@@ -83,6 +83,28 @@ jobs:
           uploads: |
             docs/ => ${{ env.REMOTE_BASE_PATH }}${{ env.ONTOLOGY }}/
 
+      # Remove stale sequential-IRI class pages (COPI_0000001–0000071, 0000089)
+      # that were generated before the IRI correction in commit cc6f14a.
+      # These IRIs collided with the core ontology range; canonical pages now live
+      # at COPI_0000072+. The sftp-upload-action cannot delete remote files, so
+      # we use lftp rm directly on the known stale paths.
+      - name: Delete stale pre-migration class pages from server
+        env:
+          SFTP_PASS: ${{ secrets.FTP }}
+          SFTP_HOST: ${{ secrets.DEPLOY_HOST }}
+          REMOTE_CLASSES: ../ontologies/public_html/copi/classes
+        run: |
+          STALE_FILES=""
+          for i in $(seq 1 71) 89; do
+            STALE_FILES="$STALE_FILES rm ${REMOTE_CLASSES}/COPI_$(printf '%07d' $i).html;"
+          done
+          lftp -u "ontokg,${SFTP_PASS}" "sftp://${SFTP_HOST}" -e "
+            set sftp:auto-confirm yes
+            set net:max-retries 2
+            ${STALE_FILES}
+            quit
+          " || echo "lftp delete step completed (some files may not have existed)"
+
       # Dylan700/sftp-upload-action uses minimatch with some() (OR) logic:
       # a `!file` pattern matches every file that is NOT that file, so with only
       # negation entries every file satisfies some() → is_uploadable always false →
