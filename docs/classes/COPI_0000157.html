@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>COPI · Angle Valve</title>
+<title>COPI · Transmitter</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='14 8 80 92'><polygon points='54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31' fill='%230a1628'/><polygon points='54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31' fill='none' stroke='%232563eb' stroke-width='3'/><circle cx='54' cy='54' r='11' fill='%2307101e' stroke='%232563eb' stroke-width='2'/><path d='M54,44 C61,47.5 61,52 61,53.5 A7,7 0,0,1 47,53.5 C47,52 47,47.5 54,44Z' fill='%23f59e0b'/></svg>">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -233,52 +233,17 @@
 
       <div class="ph-hero">
         <div class="d-flex align-items-start gap-3">
-          <div style="flex-shrink:0;background:#fff;border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:.5rem;width:80px;height:80px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><div style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="29.104166mm"
-   height="29.104166mm"
-   viewBox="0 0 29.104166 29.104166"
-   version="1.1"
-   id="svg3560"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs3557" />
-  <g
-     id="layer1"
-     transform="translate(-108.57695,-153.99631)">
-    <g
-       id="g1774"
-       style="display:inline"
-       transform="translate(55.628989,439.04838)">
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="m 67.5,-270.5 5.00001,-2.49999 V -268 l -10,-4.99999 V -268 Z"
-         id="path7828" />
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="m 80.00004,-270.625 h -5"
-         id="path7830" />
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="M 60.00004,-270.5 H 55.00005"
-         id="path7832" />
-    </g>
-  </g>
-</svg>
-</div></div>
+          <div style="flex-shrink:0;background:#fff;border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:.5rem;width:80px;height:80px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><div style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOkAAACoCAIAAACKUV59AAAN5UlEQVR4nO3dfUwb9R8H8M/daHksRQvYxUIHVRTEYVABZbDw1zIfsvk0iTOZC9k06hKj0Wji07I4ZzYRA9lgLBnxYXOZCUOTzWliYnTZhjAYG0+utsVRHiabbaEttPTul3H+zg5a6MN17ffu8/pjocfd9269N9/73t33vkexLAv/R1GU90eEYo13ROlobwxCIcLsIlJhdhFCCCEUiBsuLOB1BhTj8DoDEgM8V0OkwuwiUmF2Eakwu4hUmF1EKswuIlVcIDNRFAUA87qYBX4x2OfiS87DTeHw08MsauF/YcnSEPH1rs+9HtqyS85GzeGmcBP9hS/AohaWE1RpiNTsLoxpUMENZCmfv+KDtTBhwRblXY5Q/x1ERr278Pjrr8bi6jm+4vRZwpKrWHz+oIria9yQS0OkZndhneQvDd4Hen/L+qzhfK5iye0OsKiF/G38kgsiIs/VAjTvKC9UIAQpB0/LxEew7Ebo4CtU5rz/nLCdIA5C1ruCH3kFjxrLstg8EA3Bsrv4BVpBCkQoUvfVhA3ukpcIAiwnzBKQJLLLB0WQGlco3qVhlCWU3cBrPv5kaJFjfeAT510qDvA62sKJ3lsV7IYh0bZ3/QVlkRlCLjkcmEtJtxnCP9Qu2XEn8FUIWBQ+Xiry7N6EekvYq2BCFYVE0p8hnKo3kN6SAa5CwKKw0iUdjs+ASILjMyAxwGd+EKkwu4hUQvbFkbKpqanpOQzDyOXyhIQEpVKJt/EiCrMbCrfb3dfX193dXVdXZzKZrFarz6sfSUlJarX6pZdeKiwsLC4uvu2228LfYYiH1xmCwDDM8ePHt27dOjo6yk+Mj4/XaDRqtXrt2rWJiYk0TU9PT584ccJisZhMJpvNxs+Zmpr6ySefPPPMMyqVKpjVIj8XSbnuWnynLe+PiDc4OFhSUkLT108PaJrWarW1tbW//vqr3W5f/FvyeDwXL15saWkpLCxMTEzkvvP09PRvvvmGYRj8hoPlHVHM7hIGBwf5alKhUBw5csTtdrOh6uzs1Ol0XGkJCQknTpwIuShpwuwGxOFwPPTQQ1zO8vLyurq6hNoBExMTu3btWrZsGQCkpaV1dHQIVbLoYXaX1traymVLp9NdvXo1ErvB4/Hs37+f+9t45ZVXXC5XJNYi4uziudp8LpcrLy9vaGiIpum2trbHHnsMIumvv/4qKiqyWCzJycn9/f1ZWVkRXR3p8J6wXxaLJSMjY2hoKDs7e2JiItLBBYDs7Ox//vmnoaHBbrdrtdoff/wx0msUD38VsgQZjUa5XA4AR48evflr1+v13IWI2tram792UmB714eOjg6apimKOnPmDBslNptNqVQCQGNjY7S2IcZhe3c+vV6fl5cHAOfPn7/33nsheqanp7OysiYmJr7++uvnnnsuilsS++1dPFe73hVBpVK5XK6urq777rsvqK/yjz/+GBoays/P12g0AOBwOKxW68LZ0tLS+BsTS5qenlar1Var9fvvv78JDW6y4H21G6jVagD47bffgjp4eTyeZ599lv9C33nnHZZl6+vrfX7jH3zwQVCFT05OJiUlAUBPT09QC0qqzSD1vjjbt28fGxurr68vLy8PasHm5uYjR45s2bKlurq6trb2448/rqysLC0t/fDDDwHAbDY3NzdXV1fffffdALB69eqgCk9JSent7c3JySkpKZmcnIyLk/pu8s1fqKXg5MmT3AE9hGUfeeSR9PR07obClStXZDLZ66+/zv+2vb0dAE6ePBnO5jU1NQHAe++9F04hIuMdUen2PWcY5vHHHweA7u7uEBbfvHlzY2OjTCYDgIw5gj+ivHXrVpVKtWPHjo6ODmFLFgfpHowOHDjgcrn279+v1WpDWPzpp5/mf967d+/IyEhVVRUI7fz58xqNpry83OFwcPeo0X/8VcjiNjU1RdO0SqUKv6j29vb4+PgNGzbMmxh+m4HT0tICAF999VX4RYkAthlg9+7dDMNw7d0wVVdXL1++nO9VI7hNmzbJZLKampoIlU8uKbZ3r169un379uTk5Pvvvz/MooxGo8FgaGho4O6HRcju3btnZmZ++OGHyK2CRFLM7rfffgsA3Fl8mHp7ewEg2Dsawdq8eTNXwUd0LcSRYnbffvttiqI2bNgQflFr1qy5du3a7bffDpGUmppaUFBgtVpDuyQiVpLL7pUrVywWS3l5OXd5K0xtbW0lJSWXLl2CCDt69CjXRT3SKyKI5LL76quvAsDhw4cFKW1qakqv17tcLp+/5Z7NFERBQYFCoejs7BSqQBGQXF8cpVJpt9tnZ2eBNKWlpe3t7aLfQYuT7nMTDofDZrMROsbHm2++Ge1NiC3Syu7FixcBYNu2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" style="max-width:64px;max-height:64px;object-fit:contain;" alt="ISA 5.1 symbol" loading="lazy"></div></div>
           <div style="flex:1;">
             <div class="d-flex align-items-center gap-2 mb-1">
               <span class="status-pill status-validated">validated</span>
-              <span class="mode-pill mode-necessary">necessary</span>
-              <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000093</code>
+              <span class="mode-pill mode-equivalent">equivalent</span>
+              <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000157</code>
             </div>
-            <div class="ph-class-name">Angle Valve</div>
-            <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000093</code></div>
+            <div class="ph-class-name">Transmitter</div>
+            <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157</code></div>
             <div class="mt-2" style="font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted);">
-              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-04-16
+              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-04-09
             </div>
           </div>
         </div>
@@ -286,22 +251,21 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Uma válvula angular é uma válvula que tem portas da válvula que não estão alinhadas, mas dispostas em ângulo uma em relação à outra.</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A transmitter is an instrument that bears a signal transmission function, receiving process variable signals from sensors and converting them into standardized output signals for transmission to control systems.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um transmissor é um instrumento que possui uma função de transmissão de sinal, recebendo sinais de variáveis de processo de sensores e convertendo-os em sinais de saída padronizados para transmissão a sistemas de controle.</div>
       </div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every angle valve is a valve that has a non-inline port arrangement.</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every transmitter is an instrument that has the function of signal transmission and has a sensor element and signal conditioner and transmission module and receives process variable inputs and produces standardized signal outputs.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (AngleValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
-<span class="fol-line"><span class="fol-label">[Function axiom: FlowControlFunction]</span>∀f (FlowControlFunction(f) → ∀p (realizedIn(f,p) → FlowControlProcess(p)) ∧ ∃p (FlowControlProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (AngleValve(x) → ∃hasPart.NonInlinePortArrangement) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: AngleValveBody]</span>∀x (AngleValve(x) → ∃p (AngleValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
-<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((AngleValve(x) ∧ FlowControlFunction(f) ∧ bearerOf(x,f)) →
-      ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (Transmitter(x) ↔ Instrument(x) ∧ ∃f (SignalTransmissionFunction(f) ∧ bearerOf(x,f)) ∧ ∃bearerOf.SignalTransmissionFunction ⊓ ∃hasInput.ProcessVariableSignal ⊓ ∃hasOutput.StandardizedSignal) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+<span class="fol-line"><span class="fol-label">[Function axiom: SignalTransmissionFunction]</span>∀f (SignalTransmissionFunction(f) → ∀p (realizedIn(f,p) → SignalTransmissionProcess(p)) ∧ ∃p (SignalTransmissionProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((Transmitter(x) ∧ SignalTransmissionFunction(f) ∧ bearerOf(x,f)) →
+      ∃m1 (Participant(m1) ∧ participatesIn(m1,f)) ∧
+      ∃m2 (Participant(m2) ∧ participatesIn(m2,f)) ∧
       ∃e (Participant(e) ∧ participatesIn(e,f)) ∧
-      processType(f,DirectionalFlowControlWithAngularRedirection)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+      processType(f,ProcessVariableSignalTransductionAndConditioning)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
@@ -320,7 +284,7 @@
 @prefix apv:      &lt;http://inf.ufrgs.br/ontologies/apv#&gt; .
 
 ### COPI — Core Ontology for Petroleum Installations
-### Class module: AngleValve
+### Class module: Transmitter
 &lt;https://www.inf.ufrgs.br/ontologies/copi&gt;
     rdf:type owl:Ontology ;
     dcterms:title &quot;Core Ontology for Petroleum Installations (COPI)&quot;@en ;
@@ -349,63 +313,71 @@
     apv:ClassMinAnnotationCoverage &quot;rdfs:label&quot; .
 
 ### Identity-giving function
-:FlowControlFunction rdf:type owl:Class ;
-    rdfs:subClassOf iof-core:DesignedFunction ;
+:SignalTransmissionFunction rdf:type owl:Class ;
+    rdfs:subClassOf :InstrumentationFunction ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:allValuesFrom :FlowControlProcess
+        owl:allValuesFrom :SignalTransmissionProcess
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:someValuesFrom :FlowControlProcess
+        owl:someValuesFrom :SignalTransmissionProcess
     ] ;
-    rdfs:label &quot;flow control function&quot;@en .
+    rdfs:label &quot;signal transmission function&quot;@en .
+
+:InstrumentationFunction rdf:type owl:Class .
 
 ### Process type
-:FlowControlProcess rdf:type owl:Class ;
+:SignalTransmissionProcess rdf:type owl:Class ;
     rdfs:subClassOf iof-core:PlannedProcess ;
-    rdfs:label &quot;flow control process&quot;@en .
+    rdfs:label &quot;signal transmission process&quot;@en .
 
-:FlowControlProcess
+:SignalTransmissionProcess
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasInput ;
-        owl:someValuesFrom :FluidPortion
+        owl:someValuesFrom :ProcessVariable
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasInput ;
+        owl:someValuesFrom :ElectricalPower
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasSpecifiedOutput ;
-        owl:someValuesFrom :FluidPortion
+        owl:someValuesFrom :StandardizedSignal
     ] .
 
-### Equipment universal: AngleValve
-:AngleValve rdf:type owl:Class ;
-    rdfs:subClassOf :Valve ;
-    rdfs:subClassOf [
+### Equipment universal: Transmitter
+:Transmitter rdf:type owl:Class ;
+    owl:equivalentClass [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Instrument
+            [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
-        owl:someValuesFrom :FlowControlFunction
+        owl:someValuesFrom :SignalTransmissionFunction
+    ]
+        )
     ] ;
-    rdfs:subClassOf [
-        rdf:type owl:Restriction ;
-        owl:onProperty iof-core:hasComponentPartAtAllTimes ;
-        owl:someValuesFrom :AngleValveBody
-    ] ;
-    rdfs:label &quot;angle valve&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other.&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;Uma válvula angular é uma válvula que tem portas da válvula que não estão alinhadas, mas dispostas em ângulo uma em relação à outra.&quot;@pt-br ;
-    iof-av:semiFormalNaturalLanguageAxiom &quot;Every angle valve is a valve that has a non-inline port arrangement.&quot;@en ;
-    iof-av:firstOrderLogicAxiom &quot;∀x (AngleValve(x) → Valve(x) ∧ ∃p (hasPart(x,p) ∧ NonInlinePortArrangement(p)))&quot;@en ;
-    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
-    iof-av:primitiveRationale &quot;Constructive type defined by geometric configuration. Under OWA, sufficient conditions for non-inline port arrangement could lead to false positives where complex multi-port manifolds or specialized valves with angular components get incorrectly classified as standard angle valves.&quot;@en ;
-    skos:definition &quot;[ISO 15926-4] An &lt;ANGLE VALVE&gt; is an &lt;ARTEFACT&gt; and a &lt;VALVE&gt; that has valve ports which are not in-line&quot;@en ;
-    skos:definition &quot;[SLB Glossary] A variation of the globe valve in which the end connections are at right angles to each other, rather than being in line.&quot;@en .
+    rdfs:label &quot;transmitter&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;A transmitter is an instrument that bears a signal transmission function, receiving process variable signals from sensors and converting them into standardized output signals for transmission to control systems.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um transmissor é um instrumento que possui uma função de transmissão de sinal, recebendo sinais de variáveis de processo de sensores e convertendo-os em sinais de saída padronizados para transmissão a sistemas de controle.&quot;@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every transmitter is an instrument that has the function of signal transmission and has a sensor element and signal conditioner and transmission module and receives process variable inputs and produces standardized signal outputs.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x(Transmitter(x) ↔ Instrument(x) ∧ ∃f(SignalTransmissionFunction(f) ∧ bearerOf(x,f)) ∧ ∃s(SensorElement(s) ∧ hasComponentPartAtAllTimes(x,s)) ∧ ∃c(SignalConditioner(c) ∧ hasComponentPartAtAllTimes(x,c)) ∧ ∃t(TransmissionModule(t) ∧ hasComponentPartAtAllTimes(x,t)))&quot;@en ;
+    skos:definition &quot;[ISO 15926-4] A &lt;TRANSMITTER&gt; is a &lt;FunctionalObject&gt; that is capable of &lt;TRANSMITTING&gt;&quot;@en ;
+    skos:definition &quot;[CFIHOS] A physical object that is an element that receives a process variable signal from a sensor and converts it into an output signal.&quot;@en ;
+    skos:definition &quot;[DEXPI] A detecting instrument that generates a process variable signal and converts it into an output signal.&quot;@en ;
+    skos:definition &quot;[isa5_1] a device that senses a process variable through the medium of a sensor or measuring element and has an output whose steady-state value varies only as a predetermined function of the process variable.&quot;@en ;
+    skos:definition &quot;[POSC Caesar] A &#x27;detecting instrument&#x27; that generates a process variable signal and converts it into an output signal.&quot;@en .
 
-:AngleValveBody rdf:type owl:Class ;
-    rdfs:subClassOf :ValveBody ;
-    rdfs:label &quot;angle valve body&quot;@en .
+# Disjointness: Transmitter and Actuator
+[] rdf:type owl:AllDisjointClasses ;
+    owl:members ( :Transmitter :Actuator ) .
 
 </div></div>
       </div>
@@ -421,16 +393,16 @@
     <div class="row g-3 mb-2">
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Function class</div>
-        <span class="decision-value">FlowControlFunction</span>
-        <span class="text-muted" style="font-size:.8rem;"> ⊑ DesignedFunction</span>
+        <span class="decision-value">SignalTransmissionFunction</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ InstrumentationFunction</span>
       </div>
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
-        <span class="decision-value">FlowControlProcess</span>
+        <span class="decision-value">SignalTransmissionProcess</span>
         <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
       </div>
     </div>
-    <div class="rationale">Angle valves share the same identity-giving function as other valves - controlling fluid flow. The angle configuration is a structural differentia, not a functional one.</div>
+    <div class="rationale">All definitions consistently emphasize the core identity-giving function: receiving process variable signals and converting/transmitting them as standardized output signals. This signal transduction function is what makes a transmitter a transmitter regardless of the measured variable or sensing mechanism.</div>
   </div>
 </div>
 <div class="step-block step-2">
@@ -439,22 +411,22 @@
   </div>
   <div class="step-body">
     <div class="mb-2">
-      <span class="decision-value">Valve</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
+      <span class="decision-value">Instrument</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
     </div>
-    <div class="rationale">Valve is explicitly listed as a parent in the source hierarchies and is already enriched in our ontology. This is the most specific appropriate superclass - angle valve is clearly a subtype of valve distinguished by port geometry.</div>
+    <div class="rationale">While parent candidates include &#x27;instrument equipment&#x27; and &#x27;Instrumentation And Control Equipment&#x27;, transmitters are clearly a subtype of instruments - devices that measure, indicate, or control process variables. They are causally unified material artifacts designed for measurement and signal processing. The genus &#x27;Instrument&#x27; is more specific than MaterialArtifact but not yet enriched in our ontology.</div>
   </div>
 </div>
 <div class="step-block step-3">
   <div class="step-block-header">
     <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
-  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃hasPart.NonInlinePortArrangement</code></div><p style="font-size:.88rem;color:#374151;">Has valve ports that are not in-line but arranged at an angle to each other.</p><div class="rationale">The key differentiating feature is the non-inline port arrangement. This is what distinguishes angle valves from other valve types that maintain inline port geometry even when they redirect flow internally.</div></div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.SignalTransmissionFunction ⊓ ∃hasInput.ProcessVariableSignal ⊓ ∃hasOutput.StandardizedSignal</code></div><p style="font-size:.88rem;color:#374151;">A transmitter is distinguished from other instruments by its function of receiving process variable signals and converting them into standardized output signals for transmission to control systems or displays.</p><div class="rationale">The differentia focuses on the signal conversion and transmission capability that distinguishes transmitters from other measurement instruments. The requirement for standardized output signals (typically 4-20mA, digital protocols) is a key distinguishing characteristic.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
     <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
-  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>AngleValveBody</td><td>ValveBody</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">The angle valve body with its non-inline port configuration is the essential distinguishing part. The flow control element is inherited from the valve genus.</div></div>
+  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No necessary parts recorded.</p><div class="rationale mt-2">These three components represent the essential functional architecture of any transmitter: sensing, signal conditioning, and transmission. Specific sensor types vary by subtype but the basic architecture is universal.</div></div>
 </div>
       </div>
 
@@ -462,55 +434,20 @@
 <div class="doc-section">
   <div class="doc-section-title"><span class="t-en">Process Participation Signature</span><span class="t-pt">Assinatura de Participação em Processo</span></div>
   <div class="sig-grid">
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;any phase&#x27;}</div></div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;same composition, potentially modified pressure/flow rate&#x27;}</div></div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">directional flow control with angular redirection</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;ProcessVariable&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;measurable physical quantity&#x27;}, {&#x27;type&#x27;: &#x27;ElectricalPower&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;operating power supply&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;StandardizedSignal&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;4-20mA, digital protocol, or pneumatic&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">process variable signal transduction and conditioning</div></div>
   </div>
-  <div class="rationale mt-2">Same process signature as standard valves - single fluid input/output with flow control capability, but with angular flow redirection due to port geometry.</div>
+  <div class="rationale mt-2">Transmitters consistently transform physical process variables into standardized electrical, pneumatic, or digital signals suitable for transmission to control systems, displays, or data acquisition systems.</div>
 </div>
-      
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000093</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000093</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-23</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">Actuator</span></div><div class="rationale mt-2">C4: Actuator. Transmitters are sensing/measurement devices with signal outputs, while actuators and final control elements receive control signals and perform physical actions on the process. Their process signatures are fundamentally incompatible.</div></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000157</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-09</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-05-06</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-23</td></tr></tbody></table></div>
 
     </div>
 
     <div class="col-lg-4">
       <div class="sidebar-sticky mt-4 mt-lg-0">
-        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem;text-align:center;margin-bottom:1rem;"><div style="max-height:120px;max-width:200px;margin:0 auto;overflow:hidden;"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="29.104166mm"
-   height="29.104166mm"
-   viewBox="0 0 29.104166 29.104166"
-   version="1.1"
-   id="svg3560"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs3557" />
-  <g
-     id="layer1"
-     transform="translate(-108.57695,-153.99631)">
-    <g
-       id="g1774"
-       style="display:inline"
-       transform="translate(55.628989,439.04838)">
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="m 67.5,-270.5 5.00001,-2.49999 V -268 l -10,-4.99999 V -268 Z"
-         id="path7828" />
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="m 80.00004,-270.625 h -5"
-         id="path7830" />
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="M 60.00004,-270.5 H 55.00005"
-         id="path7832" />
-    </g>
-  </g>
-</svg>
-</div><div style="font-size:.68rem;color:var(--muted);margin-top:.4rem;font-family:monospace;">ISA 5.1-2022 — wikimedia/valve.svg</div></div>
+        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem;text-align:center;margin-bottom:1rem;"><div style="max-height:120px;max-width:200px;margin:0 auto;overflow:hidden;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOkAAACoCAIAAACKUV59AAAN5UlEQVR4nO3dfUwb9R8H8M/daHksRQvYxUIHVRTEYVABZbDw1zIfsvk0iTOZC9k06hKj0Wji07I4ZzYRA9lgLBnxYXOZCUOTzWliYnTZhjAYG0+utsVRHiabbaEttPTul3H+zg5a6MN17ffu8/pjocfd9269N9/73t33vkexLAv/R1GU90eEYo13ROlobwxCIcLsIlJhdhFCCCEUiBsuLOB1BhTj8DoDEgM8V0OkwuwiUmF2Eakwu4hUmF1EKswuIlVcIDNRFAUA87qYBX4x2OfiS87DTeHw08MsauF/YcnSEPH1rs+9HtqyS85GzeGmcBP9hS/AohaWE1RpiNTsLoxpUMENZCmfv+KDtTBhwRblXY5Q/x1ERr278Pjrr8bi6jm+4vRZwpKrWHz+oIria9yQS0OkZndhneQvDd4Hen/L+qzhfK5iye0OsKiF/G38kgsiIs/VAjTvKC9UIAQpB0/LxEew7Ebo4CtU5rz/nLCdIA5C1ruCH3kFjxrLstg8EA3Bsrv4BVpBCkQoUvfVhA3ukpcIAiwnzBKQJLLLB0WQGlco3qVhlCWU3cBrPv5kaJFjfeAT510qDvA62sKJ3lsV7IYh0bZ3/QVlkRlCLjkcmEtJtxnCP9Qu2XEn8FUIWBQ+Xiry7N6EekvYq2BCFYVE0p8hnKo3kN6SAa5CwKKw0iUdjs+ASILjMyAxwGd+EKkwu4hUQvbFkbKpqanpOQzDyOXyhIQEpVKJt/EiCrMbCrfb3dfX193dXVdXZzKZrFarz6sfSUlJarX6pZdeKiwsLC4uvu2228LfYYiH1xmCwDDM8ePHt27dOjo6yk+Mj4/XaDRqtXrt2rWJiYk0TU9PT584ccJisZhMJpvNxs+Zmpr6ySefPPPMMyqVKpjVIj8XSbnuWnynLe+PiDc4OFhSUkLT108PaJrWarW1tbW//vqr3W5f/FvyeDwXL15saWkpLCxMTEzkvvP09PRvvvmGYRj8hoPlHVHM7hIGBwf5alKhUBw5csTtdrOh6uzs1Ol0XGkJCQknTpwIuShpwuwGxOFwPPTQQ1zO8vLyurq6hNoBExMTu3btWrZsGQCkpaV1dHQIVbLoYXaX1traymVLp9NdvXo1ErvB4/Hs37+f+9t45ZVXXC5XJNYi4uziudp8LpcrLy9vaGiIpum2trbHHnsMIumvv/4qKiqyWCzJycn9/f1ZWVkRXR3p8J6wXxaLJSMjY2hoKDs7e2JiItLBBYDs7Ox//vmnoaHBbrdrtdoff/wx0msUD38VsgQZjUa5XA4AR48evflr1+v13IWI2tram792UmB714eOjg6apimKOnPmDBslNptNqVQCQGNjY7S2IcZhe3c+vV6fl5cHAOfPn7/33nsheqanp7OysiYmJr7++uvnnnsuilsS++1dPFe73hVBpVK5XK6urq777rsvqK/yjz/+GBoays/P12g0AOBwOKxW68LZ0tLS+BsTS5qenlar1Var9fvvv78JDW6y4H21G6jVagD47bffgjp4eTyeZ599lv9C33nnHZZl6+vrfX7jH3zwQVCFT05OJiUlAUBPT09QC0qqzSD1vjjbt28fGxurr68vLy8PasHm5uYjR45s2bKlurq6trb2448/rqysLC0t/fDDDwHAbDY3NzdXV1fffffdALB69eqgCk9JSent7c3JySkpKZmcnIyLk/pu8s1fqKXg5MmT3AE9hGUfeeSR9PR07obClStXZDLZ66+/zv+2vb0dAE6ePBnO5jU1NQHAe++9F04hIuMdUen2PWcY5vHHHweA7u7uEBbfvHlzY2OjTCYDgIw5gj+ivHXrVpVKtWPHjo6ODmFLFgfpHowOHDjgcrn279+v1WpDWPzpp5/mf967d+/IyEhVVRUI7fz58xqNpry83OFwcPeo0X/8VcjiNjU1RdO0SqUKv6j29vb4+PgNGzbMmxh+m4HT0tICAF999VX4RYkAthlg9+7dDMNw7d0wVVdXL1++nO9VI7hNmzbJZLKampoIlU8uKbZ3r169un379uTk5Pvvvz/MooxGo8FgaGho4O6HRcju3btnZmZ++OGHyK2CRFLM7rfffgsA3Fl8mHp7ewEg2Dsawdq8eTNXwUd0LcSRYnbffvttiqI2bNgQflFr1qy5du3a7bffDpGUmppaUFBgtVpDuyQiVpLL7pUrVywWS3l5OXd5K0xtbW0lJSWXLl2CCDt69CjXRT3SKyKI5LL76quvAsDhw4cFKW1qakqv17tcLp+/5Z7NFERBQYFCoejs7BSqQBGQXF8cpVJpt9tnZ2eBNKWlpe3t7aLfQYuT7nMTDofDZrMROsbHm2++Ge1NiC3Syu7FixcBYNu2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" style="max-width:120px;max-height:120px;object-fit:contain;" alt="ISA 5.1 symbol" loading="lazy"></div><div style="font-size:.68rem;color:var(--muted);margin-top:.4rem;font-family:monospace;">ISA 5.1-2022 — 5_2_1/001_transmitter_with_integral_primary_element_bubble_format.png</div></div>
         <div class="card border-0 shadow-sm mb-3" style="border-radius:8px;">
           <div class="card-header" style="font-family:system-ui,sans-serif;font-size:.72rem;
                font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:#f8fafc;">
@@ -518,12 +455,12 @@
           </div>
           <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
             <table class="meta-table">
-              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>Valve</strong></td></tr>
+              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>Instrument</strong></td></tr>
               <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">MaterialArtifact</span></td></tr>
-              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
-              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>FlowControlFunction</td></tr>
-              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>FlowControlProcess</td></tr>
-              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>1</td></tr>
+              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-equivalent">equivalent</span></td></tr>
+              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>SignalTransmissionFunction</td></tr>
+              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>SignalTransmissionProcess</td></tr>
+              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>
             </table>
           </div>
         </div>
@@ -531,31 +468,67 @@
 <div class="doc-section">
   <div class="doc-section-title">
     <span class="t-en">Source Definitions</span><span class="t-pt">Definições nas Fontes</span>
-    <span style="float:right;font-variant-numeric:tabular-nums;font-weight:400;">2 sources</span>
+    <span style="float:right;font-variant-numeric:tabular-nums;font-weight:400;">5 sources</span>
   </div>
   
 <div class="source-card">
   <div class="source-card-header">
     <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
           letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#dbeafe;color:#1e40af;">ISO 15926-4</span>
-    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">ANGLE VALVE</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">TRANSMITTER</span>
   </div>
   <div class="source-card-body">
-    <div style="color:#374151;font-size:.88rem;">An &lt;ANGLE VALVE&gt; is an &lt;ARTEFACT&gt; and a &lt;VALVE&gt; that has valve ports which are not in-line</div>
-    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: ANGLE_VALVE</div>
-    <div style="margin-top:.4rem;"><a href="https://standards.iso.org/iso/15926/-4/reference-data-item/ANGLE_VALVE" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">ISO 15926-4 2019 ↗</a></div>
+    <div style="color:#374151;font-size:.88rem;">A &lt;TRANSMITTER&gt; is a &lt;FunctionalObject&gt; that is capable of &lt;TRANSMITTING&gt;</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: TRANSMITTER</div>
+    <div style="margin-top:.4rem;"><a href="https://standards.iso.org/iso/15926/-4/reference-data-item/TRANSMITTER" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">ISO 15926-4 2019 ↗</a></div>
   </div>
 </div>
 <div class="source-card">
   <div class="source-card-header">
     <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
-          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#fce7f3;color:#9d174d;">SLB Glossary</span>
-    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">angle valve</span>
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#dcfce7;color:#166534;">CFIHOS</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">transmitter</span>
   </div>
   <div class="source-card-body">
-    <div style="color:#374151;font-size:.88rem;">A variation of the globe valve in which the end connections are at right angles to each other, rather than being in line.</div>
-    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: a/angle-valve</div>
-    <div style="margin-top:.4rem;"><a href="https://glossary.slb.com/en/terms/a/angle-valve" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">SLB Glossary ↗</a></div>
+    <div style="color:#374151;font-size:.88rem;">A physical object that is an element that receives a process variable signal from a sensor and converts it into an output signal.</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: CFIHOS-30000661</div>
+    
+  </div>
+</div>
+<div class="source-card">
+  <div class="source-card-header">
+    <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#fef3c7;color:#92400e;">DEXPI</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">Transmitter</span>
+  </div>
+  <div class="source-card-body">
+    <div style="color:#374151;font-size:.88rem;">A detecting instrument that generates a process variable signal and converts it into an output signal.</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: Plant.Instrumentation.Transmitter</div>
+    <div style="margin-top:.4rem;"><a href="https://gitlab.com/dexpi/Specification/-/blob/master/src/model" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">DEXPI ↗</a></div>
+  </div>
+</div>
+<div class="source-card">
+  <div class="source-card-header">
+    <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#f1f5f9;color:#374151;">ISA5_1</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">transmitter</span>
+  </div>
+  <div class="source-card-body">
+    <div style="color:#374151;font-size:.88rem;">a device that senses a process variable through the medium of a sensor or measuring element and has an output whose steady-state value varies only as a predetermined function of the process variable.</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: def_3_1_66</div>
+    <div style="margin-top:.4rem;"><a href="https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa5" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">ISA5_1 2022 ↗</a></div>
+  </div>
+</div>
+<div class="source-card">
+  <div class="source-card-header">
+    <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#ede9fe;color:#5b21b6;">POSC Caesar</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">Transmitter</span>
+  </div>
+  <div class="source-card-body">
+    <div style="color:#374151;font-size:.88rem;">A &#x27;detecting instrument&#x27; that generates a process variable signal and converts it into an output signal.</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: PCA_100004123</div>
+    <div style="margin-top:.4rem;"><a href="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100004123" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">POSC Caesar ↗</a></div>
   </div>
 </div>
 </div>
@@ -571,8 +544,8 @@
   var btnEn=document.getElementById('lang-btn-en');
   var btnPt=document.getElementById('lang-btn-pt');
   if(!btnEn||!btnPt)return;
-  var titleEn="COPI \u00b7 Angle Valve";
-  var titlePt="COPI \u00b7 Angle Valve";
+  var titleEn="COPI \u00b7 Transmitter";
+  var titlePt="COPI \u00b7 Transmitter";
   function applyLang(pt){
     if(pt){
       root.classList.add('lang-pt');root.lang='pt-BR';document.title=titlePt;

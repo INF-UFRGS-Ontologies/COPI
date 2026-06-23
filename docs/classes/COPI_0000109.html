@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>COPI · Angle Valve</title>
+<title>COPI · Differential Pressure Gauge</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='14 8 80 92'><polygon points='54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31' fill='%230a1628'/><polygon points='54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31' fill='none' stroke='%232563eb' stroke-width='3'/><circle cx='54' cy='54' r='11' fill='%2307101e' stroke='%232563eb' stroke-width='2'/><path d='M54,44 C61,47.5 61,52 61,53.5 A7,7 0,0,1 47,53.5 C47,52 47,47.5 54,44Z' fill='%23f59e0b'/></svg>">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -233,50 +233,15 @@
 
       <div class="ph-hero">
         <div class="d-flex align-items-start gap-3">
-          <div style="flex-shrink:0;background:#fff;border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:.5rem;width:80px;height:80px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><div style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="29.104166mm"
-   height="29.104166mm"
-   viewBox="0 0 29.104166 29.104166"
-   version="1.1"
-   id="svg3560"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs3557" />
-  <g
-     id="layer1"
-     transform="translate(-108.57695,-153.99631)">
-    <g
-       id="g1774"
-       style="display:inline"
-       transform="translate(55.628989,439.04838)">
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="m 67.5,-270.5 5.00001,-2.49999 V -268 l -10,-4.99999 V -268 Z"
-         id="path7828" />
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="m 80.00004,-270.625 h -5"
-         id="path7830" />
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="M 60.00004,-270.5 H 55.00005"
-         id="path7832" />
-    </g>
-  </g>
-</svg>
-</div></div>
+          <div style="flex-shrink:0;background:#fff;border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:.5rem;width:80px;height:80px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><div style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="data:image/png;base64,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" style="max-width:64px;max-height:64px;object-fit:contain;" alt="ISA 5.1 symbol" loading="lazy"></div></div>
           <div style="flex:1;">
             <div class="d-flex align-items-center gap-2 mb-1">
               <span class="status-pill status-validated">validated</span>
-              <span class="mode-pill mode-necessary">necessary</span>
-              <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000093</code>
+              <span class="mode-pill mode-equivalent">equivalent</span>
+              <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000109</code>
             </div>
-            <div class="ph-class-name">Angle Valve</div>
-            <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000093</code></div>
+            <div class="ph-class-name">Differential Pressure Gauge</div>
+            <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000109</code></div>
             <div class="mt-2" style="font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted);">
               <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-04-16
             </div>
@@ -286,22 +251,21 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Uma válvula angular é uma válvula que tem portas da válvula que não estão alinhadas, mas dispostas em ângulo uma em relação à outra.</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A differential pressure gauge is a pressure gauge that measures and indicates the difference between two pressure inputs using a differential pressure measuring element.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um manômetro de pressão diferencial é um manômetro que mede e indica a diferença entre duas entradas de pressão usando um elemento de medição de pressão diferencial.</div>
       </div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every angle valve is a valve that has a non-inline port arrangement.</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every differential pressure gauge is a pressure gauge that bears a DifferentialPressureMeasurementFunction and has component parts including a DifferentialPressureMeasuringElement and PressurePortPair.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (AngleValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
-<span class="fol-line"><span class="fol-label">[Function axiom: FlowControlFunction]</span>∀f (FlowControlFunction(f) → ∀p (realizedIn(f,p) → FlowControlProcess(p)) ∧ ∃p (FlowControlProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (AngleValve(x) → ∃hasPart.NonInlinePortArrangement) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: AngleValveBody]</span>∀x (AngleValve(x) → ∃p (AngleValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
-<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((AngleValve(x) ∧ FlowControlFunction(f) ∧ bearerOf(x,f)) →
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (DifferentialPressureGauge(x) ↔ PressureGauge(x) ∧ ∃f (DifferentialPressureMeasurementFunction(f) ∧ bearerOf(x,f)) ∧ ∃bearerOf.DifferentialPressureMeasurementFunction ⊓ ∃hasInput.PressurePortPair) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+<span class="fol-line"><span class="fol-label">[Function axiom: DifferentialPressureMeasurementFunction]</span>∀f (DifferentialPressureMeasurementFunction(f) → ∀p (realizedIn(f,p) → DifferentialPressureMeasurementProcess(p)) ∧ ∃p (DifferentialPressureMeasurementProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+<span class="fol-line"><span class="fol-label">[Necessary part: DifferentialPressureMeasuringElement]</span>∀x (DifferentialPressureGauge(x) → ∃p (DifferentialPressureMeasuringElement(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((DifferentialPressureGauge(x) ∧ DifferentialPressureMeasurementFunction(f) ∧ bearerOf(x,f)) →
       ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
       ∃e (Participant(e) ∧ participatesIn(e,f)) ∧
-      processType(f,DirectionalFlowControlWithAngularRedirection)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+      processType(f,DifferentialPressureComputationAndIndication)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
@@ -320,7 +284,7 @@
 @prefix apv:      &lt;http://inf.ufrgs.br/ontologies/apv#&gt; .
 
 ### COPI — Core Ontology for Petroleum Installations
-### Class module: AngleValve
+### Class module: DifferentialPressureGauge
 &lt;https://www.inf.ufrgs.br/ontologies/copi&gt;
     rdf:type owl:Ontology ;
     dcterms:title &quot;Core Ontology for Petroleum Installations (COPI)&quot;@en ;
@@ -349,63 +313,66 @@
     apv:ClassMinAnnotationCoverage &quot;rdfs:label&quot; .
 
 ### Identity-giving function
-:FlowControlFunction rdf:type owl:Class ;
+:DifferentialPressureMeasurementFunction rdf:type owl:Class ;
     rdfs:subClassOf iof-core:DesignedFunction ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:allValuesFrom :FlowControlProcess
+        owl:allValuesFrom :DifferentialPressureMeasurementProcess
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:someValuesFrom :FlowControlProcess
+        owl:someValuesFrom :DifferentialPressureMeasurementProcess
     ] ;
-    rdfs:label &quot;flow control function&quot;@en .
+    rdfs:label &quot;differential pressure measurement function&quot;@en .
 
 ### Process type
-:FlowControlProcess rdf:type owl:Class ;
+:DifferentialPressureMeasurementProcess rdf:type owl:Class ;
     rdfs:subClassOf iof-core:PlannedProcess ;
-    rdfs:label &quot;flow control process&quot;@en .
+    rdfs:label &quot;differential pressure measurement process&quot;@en .
 
-:FlowControlProcess
+:DifferentialPressureMeasurementProcess
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasInput ;
-        owl:someValuesFrom :FluidPortion
+        owl:someValuesFrom :PressureSignalPair
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasSpecifiedOutput ;
-        owl:someValuesFrom :FluidPortion
+        owl:someValuesFrom :DifferentialPressureIndication
     ] .
 
-### Equipment universal: AngleValve
-:AngleValve rdf:type owl:Class ;
-    rdfs:subClassOf :Valve ;
-    rdfs:subClassOf [
+### Equipment universal: DifferentialPressureGauge
+:DifferentialPressureGauge rdf:type owl:Class ;
+    owl:equivalentClass [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :PressureGauge
+            [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
-        owl:someValuesFrom :FlowControlFunction
-    ] ;
-    rdfs:subClassOf [
+        owl:someValuesFrom :DifferentialPressureMeasurementFunction
+    ]
+            [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasComponentPartAtAllTimes ;
-        owl:someValuesFrom :AngleValveBody
+        owl:someValuesFrom :DifferentialPressureMeasuringElement
+    ]
+        )
     ] ;
-    rdfs:label &quot;angle valve&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other.&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;Uma válvula angular é uma válvula que tem portas da válvula que não estão alinhadas, mas dispostas em ângulo uma em relação à outra.&quot;@pt-br ;
-    iof-av:semiFormalNaturalLanguageAxiom &quot;Every angle valve is a valve that has a non-inline port arrangement.&quot;@en ;
-    iof-av:firstOrderLogicAxiom &quot;∀x (AngleValve(x) → Valve(x) ∧ ∃p (hasPart(x,p) ∧ NonInlinePortArrangement(p)))&quot;@en ;
-    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
-    iof-av:primitiveRationale &quot;Constructive type defined by geometric configuration. Under OWA, sufficient conditions for non-inline port arrangement could lead to false positives where complex multi-port manifolds or specialized valves with angular components get incorrectly classified as standard angle valves.&quot;@en ;
-    skos:definition &quot;[ISO 15926-4] An &lt;ANGLE VALVE&gt; is an &lt;ARTEFACT&gt; and a &lt;VALVE&gt; that has valve ports which are not in-line&quot;@en ;
-    skos:definition &quot;[SLB Glossary] A variation of the globe valve in which the end connections are at right angles to each other, rather than being in line.&quot;@en .
+    rdfs:label &quot;differential pressure gauge&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;A differential pressure gauge is a pressure gauge that measures and indicates the difference between two pressure inputs using a differential pressure measuring element.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um manômetro de pressão diferencial é um manômetro que mede e indica a diferença entre duas entradas de pressão usando um elemento de medição de pressão diferencial.&quot;@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every differential pressure gauge is a pressure gauge that bears a DifferentialPressureMeasurementFunction and has component parts including a DifferentialPressureMeasuringElement and PressurePortPair.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x (DifferentialPressureGauge(x) ↔ PressureGauge(x) ∧ ∃f(DifferentialPressureMeasurementFunction(f) ∧ bearerOf(x,f)) ∧ ∃e(DifferentialPressureMeasuringElement(e) ∧ hasComponentPartAtAllTimes(x,e)) ∧ ∃p(PressurePortPair(p) ∧ hasComponentPartAtAllTimes(x,p)))&quot;@en ;
+    skos:definition &quot;[ISO 15926-4] A &lt;DIFFERENTIAL PRESSURE GAUGE&gt; is a &lt;PRESSURE GAUGE&gt; and a &lt;DIFFERENTIAL PRESSURE MEASURING INSTRUMENT&gt; using a &lt;DIFFERENTIAL PRESSURE MEASURING ELEMENT&gt;&quot;@en ;
+    skos:definition &quot;[CFIHOS] A gauge that is intended for measuring and indicating pressure differences.&quot;@en .
 
-:AngleValveBody rdf:type owl:Class ;
-    rdfs:subClassOf :ValveBody ;
-    rdfs:label &quot;angle valve body&quot;@en .
+:DifferentialPressureMeasuringElement rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;differential pressure measuring element&quot;@en .
 
 </div></div>
       </div>
@@ -421,16 +388,16 @@
     <div class="row g-3 mb-2">
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Function class</div>
-        <span class="decision-value">FlowControlFunction</span>
+        <span class="decision-value">DifferentialPressureMeasurementFunction</span>
         <span class="text-muted" style="font-size:.8rem;"> ⊑ DesignedFunction</span>
       </div>
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
-        <span class="decision-value">FlowControlProcess</span>
+        <span class="decision-value">DifferentialPressureMeasurementProcess</span>
         <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
       </div>
     </div>
-    <div class="rationale">Angle valves share the same identity-giving function as other valves - controlling fluid flow. The angle configuration is a structural differentia, not a functional one.</div>
+    <div class="rationale">The identity-giving function is measuring the difference between two pressure inputs and displaying this value. This is distinct from absolute pressure measurement as it requires two pressure inputs and computes their difference.</div>
   </div>
 </div>
 <div class="step-block step-2">
@@ -439,22 +406,22 @@
   </div>
   <div class="step-body">
     <div class="mb-2">
-      <span class="decision-value">Valve</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
+      <span class="decision-value">pressure gauge</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
     </div>
-    <div class="rationale">Valve is explicitly listed as a parent in the source hierarchies and is already enriched in our ontology. This is the most specific appropriate superclass - angle valve is clearly a subtype of valve distinguished by port geometry.</div>
+    <div class="rationale">From parent candidates, &#x27;pressure gauge&#x27; is the most specific appropriate superclass and is already enriched in our ontology. The differential pressure gauge inherits the basic pressure measurement capability but specializes it to differential measurement.</div>
   </div>
 </div>
 <div class="step-block step-3">
   <div class="step-block-header">
     <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
-  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃hasPart.NonInlinePortArrangement</code></div><p style="font-size:.88rem;color:#374151;">Has valve ports that are not in-line but arranged at an angle to each other.</p><div class="rationale">The key differentiating feature is the non-inline port arrangement. This is what distinguishes angle valves from other valve types that maintain inline port geometry even when they redirect flow internally.</div></div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.DifferentialPressureMeasurementFunction ⊓ ∃hasInput.PressurePortPair</code></div><p style="font-size:.88rem;color:#374151;">Measures pressure difference between two distinct pressure inputs rather than absolute pressure at a single point.</p><div class="rationale">The differentia is the specific function of differential measurement and the structural requirement for dual pressure inputs. The genus already provides basic pressure measurement capability.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
     <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
-  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>AngleValveBody</td><td>ValveBody</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">The angle valve body with its non-inline port configuration is the essential distinguishing part. The flow control element is inherited from the valve genus.</div></div>
+  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>DifferentialPressureMeasuringElement</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">Beyond the basic gauge components inherited from the genus, differential pressure gauges specifically require a differential measuring element and dual pressure ports</div></div>
 </div>
       </div>
 
@@ -462,55 +429,20 @@
 <div class="doc-section">
   <div class="doc-section-title"><span class="t-en">Process Participation Signature</span><span class="t-pt">Assinatura de Participação em Processo</span></div>
   <div class="sig-grid">
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;any phase&#x27;}</div></div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;same composition, potentially modified pressure/flow rate&#x27;}</div></div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">directional flow control with angular redirection</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;PressureSignalPair&#x27;, &#x27;count&#x27;: 2, &#x27;constraints&#x27;: &#x27;two distinct pressure values from different locations&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;DifferentialPressureIndication&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;visual display of pressure difference&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">differential pressure computation and indication</div></div>
   </div>
-  <div class="rationale mt-2">Same process signature as standard valves - single fluid input/output with flow control capability, but with angular flow redirection due to port geometry.</div>
+  <div class="rationale mt-2">Takes two pressure inputs, computes their difference, and displays the result. The signature differs from absolute pressure gauges by requiring two pressure inputs instead of one.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000093</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000093</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-23</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000109</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000109</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-05-06</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-23</td></tr></tbody></table></div>
 
     </div>
 
     <div class="col-lg-4">
       <div class="sidebar-sticky mt-4 mt-lg-0">
-        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem;text-align:center;margin-bottom:1rem;"><div style="max-height:120px;max-width:200px;margin:0 auto;overflow:hidden;"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="29.104166mm"
-   height="29.104166mm"
-   viewBox="0 0 29.104166 29.104166"
-   version="1.1"
-   id="svg3560"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs3557" />
-  <g
-     id="layer1"
-     transform="translate(-108.57695,-153.99631)">
-    <g
-       id="g1774"
-       style="display:inline"
-       transform="translate(55.628989,439.04838)">
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="m 67.5,-270.5 5.00001,-2.49999 V -268 l -10,-4.99999 V -268 Z"
-         id="path7828" />
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="m 80.00004,-270.625 h -5"
-         id="path7830" />
-      <path
-         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         d="M 60.00004,-270.5 H 55.00005"
-         id="path7832" />
-    </g>
-  </g>
-</svg>
-</div><div style="font-size:.68rem;color:var(--muted);margin-top:.4rem;font-family:monospace;">ISA 5.1-2022 — wikimedia/valve.svg</div></div>
+        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem;text-align:center;margin-bottom:1rem;"><div style="max-height:120px;max-width:200px;margin:0 auto;overflow:hidden;"><img src="data:image/png;base64,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" style="max-width:120px;max-height:120px;object-fit:contain;" alt="ISA 5.1 symbol" loading="lazy"></div><div style="font-size:.68rem;color:var(--muted);margin-top:.4rem;font-family:monospace;">ISA 5.1-2022 — 5_2_3/044_pressure_gage.png</div></div>
         <div class="card border-0 shadow-sm mb-3" style="border-radius:8px;">
           <div class="card-header" style="font-family:system-ui,sans-serif;font-size:.72rem;
                font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:#f8fafc;">
@@ -518,11 +450,11 @@
           </div>
           <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
             <table class="meta-table">
-              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>Valve</strong></td></tr>
-              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">MaterialArtifact</span></td></tr>
-              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
-              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>FlowControlFunction</td></tr>
-              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>FlowControlProcess</td></tr>
+              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>pressure gauge</strong></td></tr>
+              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">Assembly</span></td></tr>
+              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-equivalent">equivalent</span></td></tr>
+              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>DifferentialPressureMeasurementFunction</td></tr>
+              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>DifferentialPressureMeasurementProcess</td></tr>
               <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>1</td></tr>
             </table>
           </div>
@@ -538,24 +470,24 @@
   <div class="source-card-header">
     <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
           letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#dbeafe;color:#1e40af;">ISO 15926-4</span>
-    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">ANGLE VALVE</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">DIFFERENTIAL PRESSURE GAUGE</span>
   </div>
   <div class="source-card-body">
-    <div style="color:#374151;font-size:.88rem;">An &lt;ANGLE VALVE&gt; is an &lt;ARTEFACT&gt; and a &lt;VALVE&gt; that has valve ports which are not in-line</div>
-    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: ANGLE_VALVE</div>
-    <div style="margin-top:.4rem;"><a href="https://standards.iso.org/iso/15926/-4/reference-data-item/ANGLE_VALVE" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">ISO 15926-4 2019 ↗</a></div>
+    <div style="color:#374151;font-size:.88rem;">A &lt;DIFFERENTIAL PRESSURE GAUGE&gt; is a &lt;PRESSURE GAUGE&gt; and a &lt;DIFFERENTIAL PRESSURE MEASURING INSTRUMENT&gt; using a &lt;DIFFERENTIAL PRESSURE MEASURING ELEMENT&gt;</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: DIFFERENTIAL_PRESSURE_GAUGE</div>
+    <div style="margin-top:.4rem;"><a href="https://standards.iso.org/iso/15926/-4/reference-data-item/DIFFERENTIAL_PRESSURE_GAUGE" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">ISO 15926-4 2019 ↗</a></div>
   </div>
 </div>
 <div class="source-card">
   <div class="source-card-header">
     <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
-          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#fce7f3;color:#9d174d;">SLB Glossary</span>
-    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">angle valve</span>
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#dcfce7;color:#166534;">CFIHOS</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">differential pressure gauge</span>
   </div>
   <div class="source-card-body">
-    <div style="color:#374151;font-size:.88rem;">A variation of the globe valve in which the end connections are at right angles to each other, rather than being in line.</div>
-    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: a/angle-valve</div>
-    <div style="margin-top:.4rem;"><a href="https://glossary.slb.com/en/terms/a/angle-valve" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">SLB Glossary ↗</a></div>
+    <div style="color:#374151;font-size:.88rem;">A gauge that is intended for measuring and indicating pressure differences.</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: CFIHOS-30000415</div>
+    
   </div>
 </div>
 </div>
@@ -571,8 +503,8 @@
   var btnEn=document.getElementById('lang-btn-en');
   var btnPt=document.getElementById('lang-btn-pt');
   if(!btnEn||!btnPt)return;
-  var titleEn="COPI \u00b7 Angle Valve";
-  var titlePt="COPI \u00b7 Angle Valve";
+  var titleEn="COPI \u00b7 Differential Pressure Gauge";
+  var titlePt="COPI \u00b7 Differential Pressure Gauge";
   function applyLang(pt){
     if(pt){
       root.classList.add('lang-pt');root.lang='pt-BR';document.title=titlePt;
