@@ -27,24 +27,19 @@ def fix_fol_annotation(s: str) -> str:
     return s
 
 
-# Patterns for DL notation that leaks into FOL
-_DL_PATTERNS = [
-    # ∃bearerOf.ClassName or ∃hasFunction.ClassName or ∃hasComponentPartAtAllTimes.ClassName
-    # Replace with ∃v (ClassName(v) ∧ prop(x,v)) using a fresh variable
-    (
-        r'∃(bearerOf|hasFunction)\.([A-Z][A-Za-z0-9]+)',
-        lambda m: f'∃f ({m.group(2)}(f) ∧ {m.group(1)}(x,f))'
-    ),
-    (
-        r'∃hasComponentPartAtAllTimes\.([A-Z][A-Za-z0-9]+)',
-        lambda m: f'∃p ({m.group(1)}(p) ∧ hasComponentPartAtAllTimes(x,p))'
-    ),
-]
-
-
 def fix_dl_in_fol(s: str, outer_var: str = "x") -> str:
     """Replace DL-style existential notation (∃prop.Class) with proper FOL."""
-    for pattern, replacement in _DL_PATTERNS:
+    patterns = [
+        (
+            r'∃(bearerOf|hasFunction)\.([A-Z][A-Za-z0-9]+)',
+            lambda m, v=outer_var: f'∃f ({m.group(2)}(f) ∧ {m.group(1)}({v},f))'
+        ),
+        (
+            r'∃hasComponentPartAtAllTimes\.([A-Z][A-Za-z0-9]+)',
+            lambda m, v=outer_var: f'∃p ({m.group(1)}(p) ∧ hasComponentPartAtAllTimes({v},p))'
+        ),
+    ]
+    for pattern, replacement in patterns:
         s = re.sub(pattern, replacement, s)
     return s
 
