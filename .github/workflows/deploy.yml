@@ -87,13 +87,19 @@ jobs:
       # that were generated before the IRI correction in commit cc6f14a.
       # These IRIs collided with the core ontology range; canonical pages now live
       # at COPI_0000072+. The sftp-upload-action cannot delete remote files, so
-      # we use lftp rm directly on the known stale paths.
+      # we install lftp via apt-get (arc-runner-copi has apt-get; lftp is not
+      # pre-installed) and use lftp rm directly on the known stale paths.
       - name: Delete stale pre-migration class pages from server
         env:
           SFTP_PASS: ${{ secrets.FTP }}
           SFTP_HOST: ${{ secrets.DEPLOY_HOST }}
           REMOTE_CLASSES: ../ontologies/public_html/copi/classes
         run: |
+          apt-get install -y -qq lftp 2>/dev/null || true
+          if ! command -v lftp >/dev/null 2>&1; then
+            echo "lftp not available after install attempt; skipping delete step"
+            exit 0
+          fi
           STALE_FILES=""
           for i in $(seq 1 71) 89; do
             STALE_FILES="$STALE_FILES rm ${REMOTE_CLASSES}/COPI_$(printf '%07d' $i).html;"
