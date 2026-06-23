@@ -4,8 +4,7 @@ import re
 import pathlib
 from fol_gen import (
     label_to_pred, fix_fol_annotation, fix_dl_in_fol,
-    gen_genus_axiom, gen_some_restriction, gen_all_restriction,
-    gen_disjointness, render_fol_block, _fresh_var,
+    gen_all_restriction, gen_disjointness, render_fol_block, _fresh_var,
 )
 
 # Regex that matches the entire First-Order Logic Theory axiom-block div
