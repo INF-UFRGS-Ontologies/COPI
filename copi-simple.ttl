@@ -12,7 +12,7 @@
 @base <https://www.inf.ufrgs.br/ontologies/copi/copi-simple.ttl> .
 
 <https://www.inf.ufrgs.br/ontologies/copi/copi-simple.ttl> rdf:type owl:Ontology ;
-                                                            owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-22/copi-simple.ttl> ;
+                                                            owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-23/copi-simple.ttl> ;
                                                             terms:contributor "Cauã Antunes" ,
                                                                               "Haroldo Rojas" ,
                                                                               "Mara Abel" ,
@@ -23,7 +23,7 @@
                                                             terms:title "Core Ontology of Petroleum Installations (COPI)"@en ,
                                                                         "Ontologia Central de Plantas de Produção de Petróleo (COPI)"@pt ;
                                                             owl:versionInfo "2026-06-15" ,
-                                                                            "2026-06-22" ;
+                                                                            "2026-06-23" ;
                                                             skos:scopeNote "Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia."@pt-br ,
                                                                            "COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos."@pt-br ,
                                                                            "COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en ,
@@ -2659,9 +2659,15 @@ copi:COPI_0000066 rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:someValuesFrom copi:COPI_0000011
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                    owl:allValuesFrom copi:COPI_0000011
                                   ] ;
                   rdfs:isDefinedBy copi:copi-enriched ;
-                  rdfs:label "pumping function"@en .
+                  rdfs:label "pumping function"@en ;
+                  annotation:naturalLanguageDefinition "A designed function that is realized in a liquid pressure increase process."@en ,
+                                                       "Uma função projetada que é realizada em um processo de aumento de pressão de líquido."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000067
@@ -2669,9 +2675,15 @@ copi:COPI_0000067 rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:someValuesFrom copi:COPI_0000012
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                    owl:allValuesFrom copi:COPI_0000012
                                   ] ;
                   rdfs:isDefinedBy copi:copi-enriched ;
-                  rdfs:label "compression function"@en .
+                  rdfs:label "compression function"@en ;
+                  annotation:naturalLanguageDefinition "A designed function that is realized in a gas pressure increase process."@en ,
+                                                       "Uma função projetada que é realizada em um processo de aumento de pressão de gás."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068
@@ -2679,9 +2691,15 @@ copi:COPI_0000068 rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:someValuesFrom copi:COPI_0000089
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                    owl:allValuesFrom copi:COPI_0000089
                                   ] ;
                   rdfs:isDefinedBy copi:copi-enriched ;
-                  rdfs:label "heat transfer function"@en .
+                  rdfs:label "heat transfer function"@en ;
+                  annotation:naturalLanguageDefinition "A designed function that is realized in a heat exchange process."@en ,
+                                                       "Uma função projetada que é realizada em um processo de troca de calor."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000069
@@ -2689,15 +2707,23 @@ copi:COPI_0000069 rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:someValuesFrom copi:COPI_0000013
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                    owl:allValuesFrom copi:COPI_0000013
                                   ] ;
                   rdfs:isDefinedBy copi:copi-enriched ;
-                  rdfs:label "gas absorption function"@en .
+                  rdfs:label "gas absorption function"@en ;
+                  annotation:naturalLanguageDefinition "A designed function that is realized in a gas absorption process."@en ,
+                                                       "Uma função projetada que é realizada em um processo de absorção de gás."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070
 copi:COPI_0000070 rdf:type owl:Class ;
                   rdfs:isDefinedBy copi:copi-enriched ;
-                  rdfs:label "temperature sensing function"@en .
+                  rdfs:label "temperature sensing function"@en ;
+                  annotation:naturalLanguageDefinition "A designed function that is realized in a temperature measurement process."@en ,
+                                                       "Uma função projetada que é realizada em um processo de medição de temperatura."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072
