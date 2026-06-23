@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>COPI · Plate Heat Exchanger</title>
+<title>COPI · Shell And Tube Heat Exchanger</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='14 8 80 92'><polygon points='54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31' fill='%230a1628'/><polygon points='54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31' fill='none' stroke='%232563eb' stroke-width='3'/><circle cx='54' cy='54' r='11' fill='%2307101e' stroke='%232563eb' stroke-width='2'/><path d='M54,44 C61,47.5 61,52 61,53.5 A7,7 0,0,1 47,53.5 C47,52 47,47.5 54,44Z' fill='%23f59e0b'/></svg>">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -1419,12 +1419,12 @@
             <div class="d-flex align-items-center gap-2 mb-1">
               <span class="status-pill status-validated">validated</span>
               <span class="mode-pill mode-necessary">necessary</span>
-              <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000073</code>
+              <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000093</code>
             </div>
-            <div class="ph-class-name">Plate Heat Exchanger</div>
-            <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073</code></div>
+            <div class="ph-class-name">Shell And Tube Heat Exchanger</div>
+            <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000093</code></div>
             <div class="mt-2" style="font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted);">
-              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-04-13
+              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-04-16
             </div>
           </div>
         </div>
@@ -1432,22 +1432,24 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>A plate heat exchanger is a heat exchanger that has heat transfer plates as its primary heat transfer surface.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um trocador de calor de placas é um trocador de calor que possui placas de transferência de calor como sua superfície primária de transferência de calor.</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A shell and tube heat exchanger is a heat exchanger that has a tube bundle spatially contained within a surrounding shell.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um trocador de calor de casco e tubos é um trocador de calor que possui um feixe de tubos contido espacialmente dentro de um casco envolvente.</div>
       </div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every plate heat exchanger is a heat exchanger that has component part heat transfer plates at all times.</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every shell and tube heat exchanger is a heat exchanger that has a tube bundle as component part and has a shell as component part, where the tube bundle is spatially contained within the shell.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (PlateHeatExchanger(x) → HeatExchanger(x) ∧ ∃f (HeatTransferFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (ShellAndTubeHeatExchanger(x) → HeatExchanger(x) ∧ ∃f (HeatTransferFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Function axiom: HeatTransferFunction]</span>∀f (HeatTransferFunction(f) → ∀p (realizedIn(f,p) → HeatTransferProcess(p)) ∧ ∃p (HeatTransferProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (PlateHeatExchanger(x) → ∃hasComponentPartAtAllTimes.HeatTransferPlate) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: HeatTransferPlate]</span>∀x (PlateHeatExchanger(x) → ∃p (HeatTransferPlate(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
-<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((PlateHeatExchanger(x) ∧ HeatTransferFunction(f) ∧ bearerOf(x,f)) →
+<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (ShellAndTubeHeatExchanger(x) → ∃hasComponentPartAtAllTimes.TubeBundle ⊓ ∃hasComponentPartAtAllTimes.Shell ⊓ ∃spatiallyContains.(TubeBundle ⊓ ∃spatiallyContainedIn.Shell)) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
+<span class="fol-line"><span class="fol-label">[Necessary part: Shell]</span>∀x (ShellAndTubeHeatExchanger(x) → ∃p (Shell(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+<span class="fol-line"><span class="fol-label">[Necessary part: TubeBundle]</span>∀x (ShellAndTubeHeatExchanger(x) → ∃p (TubeBundle(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+<span class="fol-line"><span class="fol-label">[Necessary part: Tube]</span>∀x (ShellAndTubeHeatExchanger(x) → ∃p (Tube(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((ShellAndTubeHeatExchanger(x) ∧ HeatTransferFunction(f) ∧ bearerOf(x,f)) →
       ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
       ∃e (Participant(e) ∧ participatesIn(e,f)) ∧
-      processType(f,ThermalEnergyTransferBetweenFluidStreamsWithoutMixing)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+      processType(f,ThermalEnergyExchangeBetweenTwoFluidStreamsWithoutMixing)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
@@ -1466,7 +1468,7 @@
 @prefix apv:      &lt;http://inf.ufrgs.br/ontologies/apv#&gt; .
 
 ### COPI — Core Ontology for Petroleum Installations
-### Class module: PlateHeatExchanger
+### Class module: ShellAndTubeHeatExchanger
 &lt;https://www.inf.ufrgs.br/ontologies/copi&gt;
     rdf:type owl:Ontology ;
     dcterms:title &quot;Core Ontology for Petroleum Installations (COPI)&quot;@en ;
@@ -1526,8 +1528,8 @@
         owl:someValuesFrom :FluidPortion
     ] .
 
-### Equipment universal: PlateHeatExchanger
-:PlateHeatExchanger rdf:type owl:Class ;
+### Equipment universal: ShellAndTubeHeatExchanger
+:ShellAndTubeHeatExchanger rdf:type owl:Class ;
     rdfs:subClassOf :HeatExchanger ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
@@ -1537,22 +1539,44 @@
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasComponentPartAtAllTimes ;
-        owl:someValuesFrom :HeatTransferPlate
+        owl:someValuesFrom :Shell
     ] ;
-    rdfs:label &quot;plate heat exchanger&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;A plate heat exchanger is a heat exchanger that has heat transfer plates as its primary heat transfer surface.&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;Um trocador de calor de placas é um trocador de calor que possui placas de transferência de calor como sua superfície primária de transferência de calor.&quot;@pt-br ;
-    iof-av:semiFormalNaturalLanguageAxiom &quot;Every plate heat exchanger is a heat exchanger that has component part heat transfer plates at all times.&quot;@en ;
-    iof-av:firstOrderLogicAxiom &quot;∀x(PlateHeatExchanger(x) → HeatExchanger(x) ∧ ∃p(HeatTransferPlate(p) ∧ hasComponentPartAtAllTimes(x,p)))&quot;@en ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasComponentPartAtAllTimes ;
+        owl:someValuesFrom :TubeBundle
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasComponentPartAtAllTimes ;
+        owl:someValuesFrom :Tube
+    ] ;
+    rdfs:label &quot;shell and tube heat exchanger&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;A shell and tube heat exchanger is a heat exchanger that has a tube bundle spatially contained within a surrounding shell.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um trocador de calor de casco e tubos é um trocador de calor que possui um feixe de tubos contido espacialmente dentro de um casco envolvente.&quot;@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every shell and tube heat exchanger is a heat exchanger that has a tube bundle as component part and has a shell as component part, where the tube bundle is spatially contained within the shell.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;ShellAndTubeHeatExchanger(x) → HeatExchanger(x) ∧ ∃tb(TubeBundle(tb) ∧ hasComponentPartAtAllTimes(x,tb)) ∧ ∃s(Shell(s) ∧ hasComponentPartAtAllTimes(x,s) ∧ spatiallyContains(s,tb))&quot;@en ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
-    iof-av:primitiveRationale &quot;Using necessary conditions for this constructive type. While the plate-based structure is characteristic, under the Open World Assumption, asserting equivalence could lead to false positives where any equipment with heat transfer plates (e.g., specialized hybrid equipment, multi-function process units) would be automatically classified as a standard plate heat exchanger. Domain expert validation is needed to confirm the structural differentia is sufficient.&quot;@en ;
-    skos:definition &quot;[ISO 15926-4] A &lt;PLATE HEAT EXCHANGER&gt; is a &lt;NON-TUBULAR HEAT EXCHANGER&gt; that uses metal plates to transfer heat between two fluids&quot;@en ;
-    skos:definition &quot;[CFIHOS] A heat exchanger using plates as the device for separating the two fluids and across which the energy is transferred.&quot;@en ;
-    skos:definition &quot;[POSC Caesar] An indirect contact heat exchanger that separates the hot and cold fluids by plates.&quot;@en .
+    iof-av:primitiveRationale &quot;Using necessary conditions for this constructive type to avoid false positives under OWA. Any equipment with a shell and tube bundle could theoretically be classified as a standard shell-and-tube heat exchanger, but specialized variants (like graphite shell-and-tube or custom multi-stream designs) should not be automatically forced into this maintenance category without domain expert validation.&quot;@en ;
+    skos:definition &quot;[ISO 15926-4] A &lt;SHELL AND TUBE HEAT EXCHANGER&gt; is a &lt;TUBULAR HEAT EXCHANGER&gt; in which a tube bundle is surrounded by a shell&quot;@en ;
+    skos:definition &quot;[CFIHOS] A tubular heat exchanger in which a tube bundle is surrounded by a shell.&quot;@en ;
+    skos:definition &quot;[POSC Caesar] A tubular heat exchanger in which a tube bundle is surrounded by a shell.&quot;@en .
 
-:HeatTransferPlate rdf:type owl:Class ;
+:Shell rdf:type owl:Class ;
     rdfs:subClassOf iof-core:MaterialArtifact ;
-    rdfs:label &quot;heat transfer plate&quot;@en .
+    rdfs:label &quot;shell&quot;@en .
+
+:TubeBundle rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:Assembly ;
+    rdfs:label &quot;tube bundle&quot;@en .
+
+:Tube rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;tube&quot;@en .
+
+# Disjointness: ShellAndTubeHeatExchanger and PlateHeatExchanger
+[] rdf:type owl:AllDisjointClasses ;
+    owl:members ( :ShellAndTubeHeatExchanger :PlateHeatExchanger ) .
 
 </div></div>
       </div>
@@ -1577,7 +1601,7 @@
         <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
       </div>
     </div>
-    <div class="rationale">All heat exchangers are designed to transfer thermal energy between fluid streams. This is the generic function shared by all heat exchanger types, not a distinguishing function for plate heat exchangers specifically.</div>
+    <div class="rationale">The identity-giving function is heat transfer between fluid streams, which is shared with all heat exchangers. This is the fundamental purpose that makes any device a heat exchanger, regardless of its internal construction.</div>
   </div>
 </div>
 <div class="step-block step-2">
@@ -1588,20 +1612,20 @@
     <div class="mb-2">
       <span class="decision-value">heat exchanger</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
     </div>
-    <div class="rationale">From the parent candidates, &#x27;heat exchanger&#x27; (cfihos) and &#x27;NON-TUBULAR HEAT EXCHANGER&#x27; (iso15926) are most specific. HeatExchanger is the appropriate genus as it captures the functional identity while being more specific than Assembly. A heat exchanger is an Assembly because it has causally unified subcomponents (plates, frames, gaskets, connections) that are physically connected and maintainable as a single unit.</div>
+    <div class="rationale">The genus is &#x27;heat exchanger&#x27; as explicitly stated in all source definitions (&#x27;A tubular heat exchanger...&#x27;). This is the most specific appropriate superclass and is already enriched in our ontology. Heat exchanger is itself an Assembly with HeatTransferFunction. The parent candidates support this with &#x27;TUBULAR HEAT EXCHANGER&#x27; being a subtype of heat exchanger.</div>
   </div>
 </div>
 <div class="step-block step-3">
   <div class="step-block-header">
     <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
-  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃hasComponentPartAtAllTimes.HeatTransferPlate</code></div><p style="font-size:.88rem;color:#374151;">Uses metal plates as the primary heat transfer surface to separate and enable energy transfer between fluid streams.</p><div class="rationale">The defining structural characteristic is the presence of heat transfer plates. All definitions emphasize plates as the distinguishing physical feature that separates fluids and enables heat transfer, differentiating from other heat exchanger configurations.</div></div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃hasComponentPartAtAllTimes.TubeBundle ⊓ ∃hasComponentPartAtAllTimes.Shell ⊓ ∃spatiallyContains.(TubeBundle ⊓ ∃spatiallyContainedIn.Shell)</code></div><p style="font-size:.88rem;color:#374151;">Has a tube bundle that is spatially contained within a surrounding shell.</p><div class="rationale">The differentia captures the essential constructive feature that distinguishes shell and tube heat exchangers from other heat exchanger types: the specific geometric arrangement where a bundle of tubes is enclosed within a shell. This configuration enables the characteristic two-sided heat exchange (tube side vs shell side) mentioned in the standard properties.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
     <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
-  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>HeatTransferPlate</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">These are the minimal essential components that every plate heat exchanger must possess. Sealing elements (gaskets, welds, brazing) vary by subtype and should be modeled at the subtype level.</div></div>
+  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>Shell</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr><tr><td>TubeBundle</td><td>Assembly</td><td>hasComponentPartAtAllTimes</td></tr><tr><td>Tube</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">These parts directly correspond to the definitional elements in all standards: &#x27;tube bundle&#x27; and &#x27;shell&#x27; are explicitly mentioned as the defining structural components.</div></div>
 </div>
       </div>
 
@@ -1609,14 +1633,14 @@
 <div class="doc-section">
   <div class="doc-section-title"><span class="t-en">Process Participation Signature</span><span class="t-pt">Assinatura de Participação em Processo</span></div>
   <div class="sig-grid">
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 2, &#x27;constraints&#x27;: &#x27;different temperatures, separate flow paths&#x27;}</div></div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 2, &#x27;constraints&#x27;: &#x27;temperatures adjusted toward equilibrium, separate flow paths maintained&#x27;}</div></div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">thermal energy transfer between fluid streams without mixing</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 2, &#x27;constraints&#x27;: &#x27;one on tube side, one on shell side, different temperatures&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 2, &#x27;constraints&#x27;: &#x27;tube side and shell side fluids with modified temperatures&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">thermal energy exchange between two fluid streams without mixing</div></div>
   </div>
-  <div class="rationale mt-2">Signature of indirect contact heat transfer: two separate fluid streams enter at different temperatures, exchange thermal energy through the plate surfaces, and exit with adjusted temperatures while maintaining physical separation.</div>
+  <div class="rationale mt-2">Shell and tube heat exchangers have a characteristic two-stream signature: one fluid flows through tubes, another through the shell space around tubes, enabling heat exchange without direct contact. This matches the standard properties that specify separate tube side and shell side operating conditions.</div>
 </div>
-      
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000073</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-13</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-05-06</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-23</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">PlateHeatExchanger</span></div><div class="rationale mt-2">C?: PlateHeatExchanger [kind_ambiguous]. Different constructive configurations are mutually exclusive - an equipment cannot simultaneously have a shell-and-tube geometry and a plate stack geometry or spiral wound geometry.</div></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000093</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000093</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-21</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-23</td></tr></tbody></table></div>
 
     </div>
 
@@ -2816,7 +2840,7 @@
               <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
               <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>HeatTransferFunction</td></tr>
               <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>HeatTransferProcess</td></tr>
-              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>1</td></tr>
+              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>3</td></tr>
             </table>
           </div>
         </div>
@@ -2831,23 +2855,23 @@
   <div class="source-card-header">
     <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
           letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#dbeafe;color:#1e40af;">ISO 15926-4</span>
-    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">PLATE HEAT EXCHANGER</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">SHELL AND TUBE HEAT EXCHANGER</span>
   </div>
   <div class="source-card-body">
-    <div style="color:#374151;font-size:.88rem;">A &lt;PLATE HEAT EXCHANGER&gt; is a &lt;NON-TUBULAR HEAT EXCHANGER&gt; that uses metal plates to transfer heat between two fluids</div>
-    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: PLATE_HEAT_EXCHANGER</div>
-    <div style="margin-top:.4rem;"><a href="https://standards.iso.org/iso/15926/-4/reference-data-item/PLATE_HEAT_EXCHANGER" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">ISO 15926-4 2019 ↗</a></div>
+    <div style="color:#374151;font-size:.88rem;">A &lt;SHELL AND TUBE HEAT EXCHANGER&gt; is a &lt;TUBULAR HEAT EXCHANGER&gt; in which a tube bundle is surrounded by a shell</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: SHELL_AND_TUBE_HEAT_EXCHANGER</div>
+    <div style="margin-top:.4rem;"><a href="https://standards.iso.org/iso/15926/-4/reference-data-item/SHELL_AND_TUBE_HEAT_EXCHANGER" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">ISO 15926-4 2019 ↗</a></div>
   </div>
 </div>
 <div class="source-card">
   <div class="source-card-header">
     <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
           letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#dcfce7;color:#166534;">CFIHOS</span>
-    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">plate heat exchanger</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">shell and tube heat exchanger</span>
   </div>
   <div class="source-card-body">
-    <div style="color:#374151;font-size:.88rem;">A heat exchanger using plates as the device for separating the two fluids and across which the energy is transferred.</div>
-    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: CFIHOS-30000752</div>
+    <div style="color:#374151;font-size:.88rem;">A tubular heat exchanger in which a tube bundle is surrounded by a shell.</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: CFIHOS-30000755</div>
     
   </div>
 </div>
@@ -2855,12 +2879,12 @@
   <div class="source-card-header">
     <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
           letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#ede9fe;color:#5b21b6;">POSC Caesar</span>
-    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">Plate Heat Exchanger</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">Shell And Tube Heat Exchanger</span>
   </div>
   <div class="source-card-body">
-    <div style="color:#374151;font-size:.88rem;">An indirect contact heat exchanger that separates the hot and cold fluids by plates.</div>
-    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: PCA_100005971</div>
-    <div style="margin-top:.4rem;"><a href="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100005971" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">POSC Caesar ↗</a></div>
+    <div style="color:#374151;font-size:.88rem;">A tubular heat exchanger in which a tube bundle is surrounded by a shell.</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: PCA_100004127</div>
+    <div style="margin-top:.4rem;"><a href="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100004127" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">POSC Caesar ↗</a></div>
   </div>
 </div>
 </div>
@@ -2876,8 +2900,8 @@
   var btnEn=document.getElementById('lang-btn-en');
   var btnPt=document.getElementById('lang-btn-pt');
   if(!btnEn||!btnPt)return;
-  var titleEn="COPI \u00b7 Plate Heat Exchanger";
-  var titlePt="COPI \u00b7 Plate Heat Exchanger";
+  var titleEn="COPI \u00b7 Shell And Tube Heat Exchanger";
+  var titlePt="COPI \u00b7 Shell And Tube Heat Exchanger";
   function applyLang(pt){
     if(pt){
       root.classList.add('lang-pt');root.lang='pt-BR';document.title=titlePt;

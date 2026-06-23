@@ -6,25 +6,55 @@
 <title>COPI · Instrument</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='14 8 80 92'><polygon points='54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31' fill='%230a1628'/><polygon points='54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31' fill='none' stroke='%232563eb' stroke-width='3'/><circle cx='54' cy='54' r='11' fill='%2307101e' stroke='%232563eb' stroke-width='2'/><path d='M54,44 C61,47.5 61,52 61,53.5 A7,7 0,0,1 47,53.5 C47,52 47,47.5 54,44Z' fill='%23f59e0b'/></svg>">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 <style>
-  :root{--accent:#1e3a5f;--accent2:#2563eb;--border:#dee2e6;--muted:#6c757d;--light:#f8fafc;}
-  body{font-family:'Georgia',serif;background:#fff;color:#1a1a1a;font-size:15px;}
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap');
+  :root{
+    --accent:#1e3a5f;--accent2:#2563eb;--border:#dee2e6;--muted:#6c757d;--light:#f8fafc;
+    /* Layer identity colours — used for section headers, card left borders, and TOC indicators */
+    --layer-core:#1e3a5f;   /* copi-core:  deep navy — foundational taxonomy */
+    --layer-vocab:#0f766e;  /* copi-vocab: teal      — semantic vocabulary  */
+    --layer-leaf:#b45309;   /* leaf classes: amber   — concrete, material   */
+  }
+  body{font-family:'IBM Plex Serif','Georgia',serif;background:#fff;color:#1a1a1a;font-size:15px;}
   a{color:var(--accent2);}
   .doc-nav{background:var(--accent);color:white;padding:.6rem 0;
            font-family:system-ui,sans-serif;font-size:.85rem;}
   .doc-nav a{color:rgba(255,255,255,.75);text-decoration:none;}
   .doc-nav a:hover{color:white;}
-  .doc-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%);
-            color:white;padding:2rem 2rem 1.75rem;border-radius:10px;margin-bottom:2rem;}
-  .onto-title{font-family:system-ui,sans-serif;font-size:2.6rem;font-weight:800;letter-spacing:-.04em;}
-  .onto-subtitle{font-size:1.1rem;color:rgba(255,255,255,.6);font-weight:300;}
-  .onto-iri{font-family:monospace;font-size:.82rem;color:rgba(255,255,255,.5);margin-top:.5rem;}
-  .hero-pill{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
-             border-radius:20px;font-size:.72rem;font-family:monospace;padding:.2rem .7rem;color:rgba(255,255,255,.75);}
-  .hero-stat{font-family:system-ui,sans-serif;text-align:center;}
-  .hero-stat .val{font-size:2rem;font-weight:800;line-height:1;}
-  .hero-stat .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;
-                  color:rgba(255,255,255,.5);margin-top:.2rem;}
+  /* ── Hero: engineering data-sheet style, not SaaS landing ─────────── */
+  .doc-hero{background:linear-gradient(160deg,#0a1628 0%,#0f2040 55%,#0a1628 100%);
+            color:white;padding:2rem 2rem 1.75rem;border-radius:4px;margin-bottom:2rem;
+            border-top:3px solid #2563eb;}
+  .onto-eyebrow{font-family:'IBM Plex Mono','Courier New',monospace;font-size:.68rem;
+                font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+                color:rgba(255,255,255,.4);margin-bottom:.5rem;}
+  .onto-title{font-family:system-ui,sans-serif;font-size:2.8rem;font-weight:800;letter-spacing:-.04em;
+              line-height:1;}
+  .onto-subtitle{font-size:1rem;color:rgba(255,255,255,.55);font-weight:300;margin-top:.3rem;}
+  .onto-iri{font-family:'IBM Plex Mono','Courier New',monospace;font-size:.88rem;
+            color:rgba(255,255,255,.75);margin-top:1rem;letter-spacing:.01em;
+            padding:.4rem .7rem;background:rgba(255,255,255,.07);border-radius:4px;
+            display:inline-block;border-left:3px solid #2563eb;}
+  .hero-meta-strip{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1rem;
+                   font-family:'IBM Plex Mono','Courier New',monospace;
+                   font-size:.72rem;color:rgba(255,255,255,.45);}
+  .hero-meta-strip strong{color:rgba(255,255,255,.75);font-weight:600;}
+  .hero-pill{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+             border-radius:3px;font-size:.7rem;font-family:'IBM Plex Mono','Courier New',monospace;
+             padding:.15rem .55rem;color:rgba(255,255,255,.65);}
+  /* ── Language toggle: segmented EN/PT control ──────────────────────── */
+  .lang-toggle{display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.1);
+               border-radius:5px;padding:2px;}
+  .lang-seg{background:transparent;border:none;color:rgba(255,255,255,.5);
+            padding:.15rem .55rem;font-family:system-ui,sans-serif;font-size:.72rem;
+            font-weight:700;letter-spacing:.06em;border-radius:3px;cursor:pointer;
+            transition:background .15s,color .15s;}
+  .lang-seg.active{background:rgba(255,255,255,.2);color:white;}
+  .lang-seg:hover:not(.active){color:rgba(255,255,255,.8);}
+  .lang-toggle-label{font-family:system-ui,sans-serif;font-size:.65rem;font-weight:600;
+                     text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);
+                     margin-right:.4rem;}
   .index-table th{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;
                   text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
                   background:var(--light);border-bottom:2px solid var(--border);}
@@ -38,25 +68,34 @@
   .mode-equivalent{background:#dcfce7;color:#166534;}
   .mode-necessary{background:#fef3c7;color:#92400e;}
   .mode-mixed{background:#f3e8ff;color:#6b21a8;}
-  .group-section{margin-bottom:3rem;}
-  .group-header{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;
+  .bfo-section{margin-bottom:3rem;}
+  .bfo-section-header{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;
                       text-transform:uppercase;letter-spacing:.1em;color:var(--muted);
                       border-bottom:2px solid var(--border);padding-bottom:.5rem;margin-bottom:1.5rem;
                       display:flex;align-items:center;justify-content:space-between;}
   .count-badge{background:var(--light);border:1px solid var(--border);border-radius:20px;
                padding:.15rem .6rem;font-size:.68rem;font-weight:600;color:var(--muted);}
-  .class-card{border:1px solid var(--border);border-radius:8px;margin-bottom:1rem;overflow:hidden;}
-  .class-card-header{padding:.75rem 1.1rem .6rem;background:var(--light);border-bottom:1px solid var(--border);
+  .class-card{border:1px solid var(--border);border-radius:8px;margin-bottom:1.5rem;overflow:hidden;}
+  .class-card-header{padding:.85rem 1.1rem .7rem;background:var(--light);border-bottom:1px solid var(--border);
                      display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;}
-  .class-card-name{font-family:system-ui,sans-serif;font-size:1.05rem;font-weight:700;color:var(--accent);}
+  .class-card-name{font-family:system-ui,sans-serif;font-size:1.1rem;font-weight:700;color:var(--accent);}
   .class-card-name a{color:var(--accent);text-decoration:none;}
   .class-card-name a:hover{color:var(--accent2);text-decoration:underline;}
-  .class-iri{font-family:monospace;font-size:.7rem;color:var(--muted);}
-  .class-card-body{padding:.75rem 1.1rem;}
-  .class-def{font-size:.88rem;color:#374151;line-height:1.6;font-style:italic;margin-bottom:.5rem;}
-  .class-meta{display:flex;flex-wrap:wrap;gap:.6rem;font-family:system-ui,sans-serif;font-size:.78rem;}
+  .class-iri{font-family:monospace;font-size:.72rem;color:var(--muted);}
+  .class-card-body{padding:.85rem 1.1rem;display:flex;gap:1.5rem;align-items:flex-start;}
+  .class-def{font-size:.9rem;color:#374151;line-height:1.6;font-style:italic;margin-bottom:.6rem;}
+  .class-meta{display:flex;flex-wrap:wrap;gap:.75rem;font-family:system-ui,sans-serif;font-size:.8rem;}
   .meta-item{color:var(--muted);}
   .meta-item strong{color:#374151;}
+  .rel-card{border:1px solid var(--border);border-radius:6px;margin-bottom:.75rem;overflow:hidden;}
+  .rel-card-header{padding:.6rem .9rem;background:var(--light);border-bottom:1px solid var(--border);
+                   display:flex;align-items:center;gap:.75rem;}
+  .rel-name{font-family:monospace;font-size:.95rem;font-weight:700;color:var(--accent);}
+  .rel-type-pill{font-size:.65rem;font-family:system-ui,sans-serif;font-weight:700;text-transform:uppercase;
+                 letter-spacing:.05em;border-radius:4px;padding:.1rem .45rem;background:#ede9fe;color:#5b21b6;}
+  .rel-card-body{padding:.6rem .9rem;font-family:system-ui,sans-serif;font-size:.83rem;}
+  .rel-meta{display:flex;flex-wrap:wrap;gap:1rem;color:var(--muted);}
+  .rel-meta strong{color:#374151;}
   .toc-sticky{position:sticky;top:1rem;}
   .toc-link{display:block;font-family:system-ui,sans-serif;font-size:.82rem;color:var(--accent);
             text-decoration:none;padding:.2rem .5rem;border-left:2px solid var(--border);margin-bottom:.15rem;}
@@ -65,7 +104,7 @@
               letter-spacing:.1em;color:var(--muted);margin-bottom:.5rem;}
   /* Per-class page */
   .ph-hero{border-bottom:3px solid var(--accent);padding:2rem 0 1.5rem;margin-bottom:2rem;}
-  .ph-class-name{font-size:2.2rem;font-weight:700;letter-spacing:-.03em;
+  .ph-class-name{font-size:2.4rem;font-weight:700;letter-spacing:-.03em;
                  font-family:system-ui,sans-serif;color:var(--accent);}
   .ph-class-iri{font-family:monospace;font-size:.85rem;color:var(--muted);word-break:break-all;}
   .status-pill{font-size:.72rem;font-family:system-ui,sans-serif;font-weight:600;padding:.2rem .7rem;
@@ -78,7 +117,7 @@
   .doc-section-title{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;
                      letter-spacing:.1em;color:var(--muted);border-bottom:1px solid var(--border);
                      padding-bottom:.4rem;margin-bottom:1rem;}
-  .nl-def{font-size:1.05rem;font-style:italic;color:#1a1a1a;border-left:4px solid var(--accent2);
+  .nl-def{font-size:1.08rem;font-style:italic;color:#1a1a1a;border-left:4px solid var(--accent2);
           padding:.6rem 1rem;margin-bottom:.75rem;background:#f8faff;}
   .nl-def .lang-tag{font-size:.7rem;font-family:monospace;font-style:normal;color:var(--muted);margin-bottom:.2rem;}
   .axiom-block{background:#f8f9fa;border:1px solid var(--border);border-radius:6px;
@@ -88,33 +127,78 @@
   .owl-block{background:#1e293b;color:#e2e8f0;border-radius:8px;padding:1rem 1.2rem;
              font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:.78rem;
              line-height:1.7;overflow-x:auto;white-space:pre;}
-  .fol-block{background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;
-             font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:.85rem;
-             line-height:1.7;overflow-x:auto;white-space:pre-wrap;word-break:break-all;}
+  .fol-line{font-family:monospace;font-size:.85rem;line-height:1.9;display:block;}
+  .fol-label{font-family:system-ui,sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;
+             letter-spacing:.06em;color:var(--muted);margin-right:.5rem;}
+  .step-block{border:1px solid var(--border);border-radius:8px;margin-bottom:1rem;overflow:hidden;}
+  .step-block-header{display:flex;align-items:center;gap:.6rem;padding:.65rem 1rem;
+                     font-family:system-ui,sans-serif;font-weight:600;font-size:.9rem;}
+  .step-num{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;
+            justify-content:center;color:white;font-size:.7rem;font-weight:700;flex-shrink:0;}
+  .step-1 .step-block-header{background:color-mix(in srgb,#2563eb 8%,white);border-bottom:2px solid #2563eb;}
+  .step-1 .step-num{background:#2563eb;}
+  .step-2 .step-block-header{background:color-mix(in srgb,#7c3aed 8%,white);border-bottom:2px solid #7c3aed;}
+  .step-2 .step-num{background:#7c3aed;}
+  .step-3 .step-block-header{background:color-mix(in srgb,#d97706 8%,white);border-bottom:2px solid #d97706;}
+  .step-3 .step-num{background:#d97706;}
+  .step-4 .step-block-header{background:color-mix(in srgb,#059669 8%,white);border-bottom:2px solid #059669;}
+  .step-4 .step-num{background:#059669;}
+  .step-body{padding:.9rem 1rem;}
+  .decision-value{font-family:monospace;font-size:.9rem;background:#f1f5f9;padding:.15rem .5rem;
+                  border-radius:4px;font-weight:600;}
+  .rationale{margin-top:.6rem;font-size:.88rem;color:#374151;border-left:3px solid var(--border);padding-left:.75rem;}
   .disjoint-pill{display:inline-block;font-family:monospace;font-size:.8rem;padding:.2rem .6rem;
                  border-radius:4px;background:#fee2e2;color:#991b1b;margin:.15rem;}
+  .parts-table{width:100%;font-size:.85rem;border-collapse:collapse;}
+  .parts-table th{background:#f8f9fa;font-family:system-ui,sans-serif;font-size:.72rem;text-transform:uppercase;
+                  letter-spacing:.05em;padding:.4rem .7rem;border:1px solid var(--border);font-weight:600;color:var(--muted);}
+  .parts-table td{padding:.4rem .7rem;border:1px solid var(--border);font-family:monospace;}
+  .sig-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;}
+  .sig-cell{border:1px solid var(--border);border-radius:6px;padding:.65rem .8rem;}
+  .sig-cell-label{font-family:system-ui,sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;
+                  letter-spacing:.08em;color:var(--muted);margin-bottom:.3rem;}
+  .bfo-badge{display:inline-block;font-family:monospace;font-size:.75rem;padding:.15rem .5rem;
+             border-radius:4px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;}
   .meta-table{font-size:.8rem;font-family:system-ui,sans-serif;}
   .meta-table td:first-child{color:var(--muted);padding-right:1rem;white-space:nowrap;}
-  .meta-table td{padding:.25rem 0;vertical-align:top;}
-  .source-item{font-size:.82rem;color:#374151;padding:.4rem 0;border-bottom:1px solid var(--border);}
-  .source-item:last-child{border-bottom:none;}
-  .see-also-link{font-family:monospace;font-size:.78rem;}
-  .rationale-block{font-size:.88rem;color:#374151;border-left:3px solid var(--border);
-                   padding:.5rem .85rem;margin-top:.5rem;background:#fafafa;border-radius:0 4px 4px 0;}
-  .example-block{font-size:.88rem;color:#374151;border-left:4px solid #f59e0b;
-                 padding:.5rem .9rem;background:#fffbeb;border-radius:0 4px 4px 0;}
-  .scope-note{font-size:.88rem;color:#374151;border-left:4px solid #f59e0b;
-              padding:.5rem .9rem;margin-bottom:.6rem;background:#fffbeb;border-radius:0 4px 4px 0;}
+  .meta-table td{padding:.2rem 0;vertical-align:top;}
+  /* Source definitions */
+  .source-card{border:1px solid var(--border);border-radius:8px;margin-bottom:.75rem;overflow:hidden;}
+  .source-card-header{display:flex;justify-content:space-between;align-items:center;padding:.5rem .9rem;
+                      background:#f8f9fa;border-bottom:1px solid var(--border);font-family:system-ui,sans-serif;}
+  .source-card-body{padding:.75rem .9rem;font-size:.88rem;}
   @media (min-width:992px){.sidebar-sticky{position:sticky;top:1rem;}}
   @media print{.doc-nav,.no-print{display:none!important;}body{font-size:13px;}}
+  /* Language toggle */
   html.lang-pt .t-en{display:none!important;}
   html:not(.lang-pt) .t-pt{display:none!important;}
-  .lang-btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
-            color:rgba(255,255,255,.8);border-radius:4px;padding:.15rem .6rem;
-            font-family:system-ui,sans-serif;font-size:.75rem;font-weight:700;
-            letter-spacing:.06em;cursor:pointer;transition:background .15s;}
-  .lang-btn:hover{background:rgba(255,255,255,.22);color:white;}
+  .scope-note{font-size:.88rem;color:#374151;border-left:4px solid #f59e0b;
+              padding:.5rem .9rem;margin-bottom:.6rem;background:#fffbeb;border-radius:0 4px 4px 0;}
+  /* ── Monospace upgrade: use IBM Plex Mono where JetBrains Mono was referenced */
+  .owl-block{background:#0f1e35;color:#cfe2ff;border-radius:4px;padding:1rem 1.2rem;
+             font-family:'IBM Plex Mono','JetBrains Mono','Fira Code','Courier New',monospace;
+             font-size:.78rem;line-height:1.7;overflow-x:auto;white-space:pre;
+             border-left:3px solid #2563eb;}
+  /* ── Layer A: copi-core — navy ─────────────────────────────────────── */
+  #copi-core-module .class-card{border-left:3px solid var(--layer-core);}
+  #copi-core-module .rel-card{border-left:3px solid var(--layer-core);}
+  #copi-core-module .bfo-section-header{border-bottom-color:var(--layer-core);color:var(--layer-core);}
+  .toc-link[href="#copi-core-module"]{border-left-color:var(--layer-core);font-weight:600;}
+  /* ── Layer B: copi-vocab — teal ────────────────────────────────────── */
+  #copi-vocab-module .class-card{border-left:3px solid var(--layer-vocab);}
+  #copi-vocab-module .rel-card{border-left:3px solid var(--layer-vocab);}
+  #copi-vocab-module .bfo-section-header{border-bottom-color:var(--layer-vocab);color:var(--layer-vocab);}
+  .toc-link[href="#copi-vocab-module"]{border-left-color:var(--layer-vocab);font-weight:600;}
+  /* ── Layer C: leaf equipment — amber ───────────────────────────────── */
+  #leaf-classes .class-card{border-left:3px solid var(--layer-leaf);}
+  #leaf-classes .bfo-section-header{border-bottom-color:var(--layer-leaf);color:var(--layer-leaf);}
+  .toc-link[href="#leaf-classes"]{border-left-color:var(--layer-leaf);font-weight:600;}
+  /* ── Layer legend in TOC: coloured dot before each layer link ──────── */
+  .toc-layer-dot{display:inline-block;width:7px;height:7px;border-radius:50%;
+                 margin-right:.4rem;vertical-align:middle;flex-shrink:0;}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
 </style>
+
 </head>
 <body>
 <nav class="doc-nav">
@@ -125,8 +209,12 @@
     <span style="opacity:.3">·</span>
     <a href="https://github.com/INF-UFRGS-Ontologies/copi" target="_blank" rel="noopener"
        style="color:rgba(255,255,255,.55);font-size:.8rem;">GitHub ↗</a>
-    <div style="margin-left:auto;">
-      <button class="lang-btn" id="lang-btn" title="Switch language / Mudar idioma">PT</button>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:.5rem;">
+      <span class="lang-toggle-label">Lang</span>
+      <div class="lang-toggle" title="Switch language / Mudar idioma">
+        <button class="lang-seg active" id="lang-btn-en">EN</button>
+        <button class="lang-seg" id="lang-btn-pt">PT</button>
+      </div>
     </div>
   </div>
 </nav>
@@ -136,8 +224,6 @@
      style="font-family:system-ui,sans-serif;font-size:.83rem;">
   <div class="d-flex gap-2 align-items-center text-muted">
     <a href="../index.html" class="text-muted text-decoration-none">← <span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span></a>
-    <span style="opacity:.4">·</span>
-    <a href="../index.html#group-structural" class="text-muted text-decoration-none">Structural Genera &amp; Leaf Universals</a>
   </div>
 </div>
 
@@ -147,74 +233,251 @@
 
       <div class="ph-hero">
         <div class="d-flex align-items-start gap-3">
+          <div style="flex-shrink:0;background:#fff;border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:.5rem;width:80px;height:80px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><div style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><svg width="60mm" height="108.85mm" version="1.1" viewBox="0 0 60 108.85" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(25.555 -25.335)">
+  <g transform="matrix(3.7046 0 0 3.7046 -190.11 -172.63)" fill="none" stroke="#000" stroke-width=".26458">
+   <path d="m52.507 81.471v-13.235"/>
+   <circle cx="52.516" cy="61.535" r="6.616"/>
+  </g>
+ </g>
+</svg>
+</div></div>
           <div style="flex:1;">
             <div class="d-flex align-items-center gap-2 mb-1">
+              <span class="status-pill status-validated">validated</span>
               <span class="mode-pill mode-necessary">necessary</span>
               <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000091</code>
             </div>
             <div class="ph-class-name">Instrument</div>
-            <div style="font-size:1.1rem;color:#6c757d;font-style:italic;margin-top:.2rem;" class="t-pt">Instrumento</div>
             <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091</code></div>
             <div class="mt-2" style="font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted);">
-              <span class="t-en">Version</span><span class="t-pt">Versão</span> 2026-06-22
+              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-06-22
             </div>
           </div>
         </div>
       </div>
 
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div><div class="nl-def"><div class="lang-tag">EN</div>A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta.</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div><div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>if x is an &#x27;instrument&#x27; then x is a &#x27;material artifact&#x27;<div class="t-pt" style="margin-top:.5rem;font-style:italic;color:#374151;">se x é um &#x27;instrumento&#x27;, então x é um &#x27;artefato material&#x27;</div></div><div class="axiom-block"><div class="axiom-label"><span class="t-en">First-Order Logic</span><span class="t-pt">Lógica de Primeira Ordem</span></div><div class="fol-block">Instrument(x) → MaterialArtifact(x)</div></div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Primitive Rationale</span><span class="t-pt">Justificativa de Primitivo</span></div><div class="rationale-block">The sensing-or-measuring structural differentia is expressed informally in the NLD; OWL carries only the genus (MaterialArtifact). The structural axis (Instrument) is orthogonal to the functional axis (MeasurementInstrument); an artifact is both simultaneously — intended (ODR-018).</div></div>
+      <div class="doc-section">
+        <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
+        <p class="text-muted fst-italic">No natural language definition recorded.</p>
+      </div>
+
+      <div class="doc-section">
+        <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
+        
+        <div class="axiom-block">
+          <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (Instrument(x) → MaterialArtifact(x) ∧ ∃f (Unknown(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+<span class="fol-line"><span class="fol-label">[Function axiom: Unknown]</span>∀f (Unknown(f) → ∀p (realizedIn(f,p) → Unknown(p)) ∧ ∃p (Unknown(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+</div>
+        </div>
+        <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
+@prefix :         &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
+@prefix owl:      &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf:      &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs:     &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd:      &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix bfo:      &lt;http://purl.obolibrary.org/obo/&gt; .
+@prefix iof-core: &lt;https://spec.industrialontologies.org/ontology/construct/&gt; .
+@prefix iof-av:   &lt;https://spec.industrialontologies.org/ontology/annotation/&gt; .
+@prefix skos:     &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix qudt:     &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix dcterms:  &lt;http://purl.org/dc/terms/&gt; .
+@prefix foaf:     &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix apv:      &lt;http://inf.ufrgs.br/ontologies/apv#&gt; .
+
+### COPI — Core Ontology for Petroleum Installations
+### Class module: Instrument
+&lt;https://www.inf.ufrgs.br/ontologies/copi&gt;
+    rdf:type owl:Ontology ;
+    dcterms:title &quot;Core Ontology for Petroleum Installations (COPI)&quot;@en ;
+    dcterms:title &quot;Ontologia Central de Plantas de Produção de Petróleo (COPI)&quot;@pt ;
+    dcterms:description &quot;BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants, developed using the four-step RDL enrichment method.&quot;@en ;
+    skos:scopeNote &quot;Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.&quot;@en ;
+    skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
+    skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
+    skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
+    owl:versionInfo &quot;0.1.0-draft&quot; ;
+    owl:imports &lt;https://spec.industrialontologies.org/ontology/202602/core/Core/&gt; ;
+    owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
+    dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
+    dcterms:contributor &quot;Cauã Antunes&quot; ;
+    dcterms:contributor &quot;Haroldo Rojas&quot; ;
+    dcterms:contributor &quot;Rafael Petry&quot; ;
+    dcterms:contributor &quot;Régis Romeu&quot; ;
+    dcterms:contributor &quot;Mara Abel&quot; ;
+    dcterms:isPartOf &lt;https://inf.ufrgs.br/projetos/OntoKG&gt; ;
+    dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
+    dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
+    dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-06-23&quot;^^xsd:date ;
+    apv:GlobalMinLanguageCoverage &quot;en pt&quot; ;
+    apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
+    apv:ClassMinAnnotationCoverage &quot;rdfs:label&quot; .
+
+### Identity-giving function
+:InstrumentFunction rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:DesignedFunction ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
+        owl:allValuesFrom :InstrumentProcess
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
+        owl:someValuesFrom :InstrumentProcess
+    ] ;
+    rdfs:label &quot;instrument function&quot;@en .
+
+### Process type
+:InstrumentProcess rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:PlannedProcess ;
+    rdfs:label &quot;instrument process&quot;@en .
+
+### Equipment universal: Instrument
+:Instrument rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
+        owl:someValuesFrom :InstrumentFunction
+    ] ;
+    rdfs:label &quot;instrument&quot;@en ;
+    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
+    skos:definition &quot;[isa5_1] a device used for direct or indirect measurement, monitoring, and/or control of a variable, including primary elements, indicators, controllers, final control elements, computing devices, and electrical devices such as annunciators, switches, and pushbuttons.&quot;@en .
+
+</div></div>
+      </div>
+
+      <div class="doc-section">
+        <div class="doc-section-title"><span class="t-en">Axiomatization Decision Log</span><span class="t-pt">Registro de Decisões</span></div>
+        
+<div class="step-block step-1">
+  <div class="step-block-header">
+    <span class="step-num">1</span> <span class="t-en">Identity-Giving Function</span><span class="t-pt">Função Identitária</span>
+  </div>
+  <div class="step-body">
+    <div class="row g-3 mb-2">
+      <div class="col-sm-6">
+        <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Function class</div>
+        <span class="decision-value">—</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ DesignedFunction</span>
+      </div>
+      <div class="col-sm-6">
+        <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
+        <span class="decision-value">—</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<div class="step-block step-2">
+  <div class="step-block-header">
+    <span class="step-num">2</span> <span class="t-en">Genus Determination</span><span class="t-pt">Determinação do Gênero</span>
+  </div>
+  <div class="step-body">
+    <div class="mb-2">
+      <span class="decision-value">—</span>
+    </div>
+    
+  </div>
+</div>
+<div class="step-block step-3">
+  <div class="step-block-header">
+    <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
+  </div>
+  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No differentia recorded.</p></div>
+</div>
+<div class="step-block step-4">
+  <div class="step-block-header">
+    <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
+  </div>
+  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No necessary parts recorded.</p></div>
+</div>
+      </div>
+
       
       
-      
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Sources</span><span class="t-pt">Fontes</span></div><div class="source-item">ODR-018</div></div>
-      
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000091</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-06-22</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-22</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>—</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-23</td></tr></tbody></table></div>
 
     </div>
 
     <div class="col-lg-4">
       <div class="sidebar-sticky mt-4 mt-lg-0">
+        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem;text-align:center;margin-bottom:1rem;"><div style="max-height:120px;max-width:200px;margin:0 auto;overflow:hidden;"><svg width="60mm" height="108.85mm" version="1.1" viewBox="0 0 60 108.85" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(25.555 -25.335)">
+  <g transform="matrix(3.7046 0 0 3.7046 -190.11 -172.63)" fill="none" stroke="#000" stroke-width=".26458">
+   <path d="m52.507 81.471v-13.235"/>
+   <circle cx="52.516" cy="61.535" r="6.616"/>
+  </g>
+ </g>
+</svg>
+</div><div style="font-size:.68rem;color:var(--muted);margin-top:.4rem;font-family:monospace;">ISA 5.1-2022 — wikimedia/instrument_field.svg</div></div>
         <div class="card border-0 shadow-sm mb-3" style="border-radius:8px;">
           <div class="card-header" style="font-family:system-ui,sans-serif;font-size:.72rem;
                font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:#f8fafc;">
             <span class="t-en">Quick facts</span><span class="t-pt">Dados rápidos</span>
           </div>
           <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
-            <table class="meta-table"><tbody>
-      <tr><td>COPI ID</td><td><strong>COPI_0000091</strong></td></tr>
-      <tr><td>IRI</td><td style="font-family:monospace;font-size:.75rem;word-break:break-all;">https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091</td></tr>
-      <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>MaterialArtifact</strong></td></tr>
-      <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
-      <tr><td>Module</td><td style="font-family:monospace;font-size:.75rem;">copi-core</td></tr>
-      <tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-22</td></tr>
-    </tbody></table>
+            <table class="meta-table">
+              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>—</strong></td></tr>
+              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td>—</td></tr>
+              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
+              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>—</td></tr>
+              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>—</td></tr>
+              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>
+            </table>
           </div>
         </div>
+        
+<div class="doc-section">
+  <div class="doc-section-title">
+    <span class="t-en">Source Definitions</span><span class="t-pt">Definições nas Fontes</span>
+    <span style="float:right;font-variant-numeric:tabular-nums;font-weight:400;">1 source</span>
+  </div>
+  
+<div class="source-card">
+  <div class="source-card-header">
+    <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#f1f5f9;color:#374151;">ISA5_1</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">instrument</span>
+  </div>
+  <div class="source-card-body">
+    <div style="color:#374151;font-size:.88rem;">a device used for direct or indirect measurement, monitoring, and/or control of a variable, including primary elements, indicators, controllers, final control elements, computing devices, and electrical devices such as annunciators, switches, and pushbuttons.</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: def_3_1_36</div>
+    <div style="margin-top:.4rem;"><a href="https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa5" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">ISA5_1 2022 ↗</a></div>
+  </div>
+</div>
+</div>
       </div>
     </div>
   </div>
 </div>
 
 </div>
-
 <script>
 (function(){
   var root=document.getElementById('copi-root');
-  var btn=document.getElementById('lang-btn');
-  if(!btn)return;
+  var btnEn=document.getElementById('lang-btn-en');
+  var btnPt=document.getElementById('lang-btn-pt');
+  if(!btnEn||!btnPt)return;
+  var titleEn="COPI \u00b7 Instrument";
+  var titlePt="COPI \u00b7 Instrument";
   function applyLang(pt){
-    if(pt){root.classList.add('lang-pt');root.lang='pt-BR';btn.textContent='EN';}
-    else{root.classList.remove('lang-pt');root.lang='en';btn.textContent='PT';}
+    if(pt){
+      root.classList.add('lang-pt');root.lang='pt-BR';document.title=titlePt;
+      btnPt.classList.add('active');btnEn.classList.remove('active');
+    }else{
+      root.classList.remove('lang-pt');root.lang='en';document.title=titleEn;
+      btnEn.classList.add('active');btnPt.classList.remove('active');
+    }
   }
   try{applyLang(localStorage.getItem('copi-lang')==='pt');}catch(e){}
-  btn.addEventListener('click',function(){
-    var toPt=!root.classList.contains('lang-pt');
-    applyLang(toPt);
-    try{localStorage.setItem('copi-lang',toPt?'pt':'en');}catch(e){}
-  });
+  btnEn.addEventListener('click',function(){applyLang(false);try{localStorage.setItem('copi-lang','en');}catch(e){}} );
+  btnPt.addEventListener('click',function(){applyLang(true); try{localStorage.setItem('copi-lang','pt');}catch(e){}} );
 })();
 </script>
-
 </body>
 </html>
