@@ -268,14 +268,13 @@
     <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
     <rdfs:label xml:lang="pt-br">orifício de restrição</rdfs:label>
     <rdfs:label xml:lang="en">restriction orifice</rdfs:label>
-    <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (RestrictionOrifice(x) ↔ FlowModificationAccessory(x) ∧ ∃f (FlowRestrictionFunction(f) ∧ bearerOf(x,f)))</iof-av:firstOrderLogicAxiom>
+    <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (RestrictionOrifice(x) → FlowModificationAccessory(x) ∧ ∃f (FlowRestrictionFunction(f) ∧ bearerOf(x,f)))</iof-av:firstOrderLogicAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:equivalentClass rdf:nodeID="Ne89ed4a97d1f425e80e82e439ef6bd10"/>
     <rdfs:subClassOf rdf:nodeID="Nad7a5cb6c3254d7ea87b95f357878bf6"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000083"/>
     <iof-av:naturalLanguageDefinition xml:lang="en">A restriction orifice is a flow modification accessory that bears the function to restrict fluid flow by creating controlled pressure drop through geometric constriction.</iof-av:naturalLanguageDefinition>
     <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um orifício de restrição é um acessório de modificação de fluxo que possui a função de restringir o fluxo de fluido criando queda de pressão controlada através de constrição geométrica.</iof-av:naturalLanguageDefinition>
-    <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</iof-av:isPrimitive>
+    <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
   </rdf:Description>
   <rdf:Description rdf:nodeID="Nfe1b07f3334f47cca9db197eb4197cc8">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
@@ -942,9 +941,8 @@
     <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000098">
-    <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</iof-av:isPrimitive>
-    <owl:equivalentClass rdf:nodeID="Na49ab0301e1044f5a010933a7d7876bf"/>
-    <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (Blower(x) ↔ Compressor(x) ∧ ∃f (CompressionFunction(f) ∧ bearerOf(x,f)) ∧ ∃hasOperatingParameter.MediumPressureRange ⊓ ∃hasOperatingParameter.MediumVolumeFlowRange)</iof-av:firstOrderLogicAxiom>
+    <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
+    <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (Blower(x) → Compressor(x) ∧ ∃f (CompressionFunction(f) ∧ bearerOf(x,f)) ∧ ∃hasOperatingParameter.MediumPressureRange ⊓ ∃hasOperatingParameter.MediumVolumeFlowRange)</iof-av:firstOrderLogicAxiom>
     <iof-av:naturalLanguageDefinition xml:lang="en">A blower is a compressor that compresses and supplies air or gas at medium pressure and medium volume flow.</iof-av:naturalLanguageDefinition>
     <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um soprador é um compressor que comprime e fornece ar ou gás em pressão média e vazão volumétrica média.</iof-av:naturalLanguageDefinition>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
