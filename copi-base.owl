@@ -6,25 +6,35 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
      xmlns:copi="https://www.inf.ufrgs.br/ontologies/copi/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
+     xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/"
+     xmlns:AnnotationVocabulary="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-base.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-23/copi-base.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-24/copi-base.owl"/>
         <dce:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
         <dcterms:contributor>Cauã Antunes</dcterms:contributor>
         <dcterms:contributor>Haroldo Rojas</dcterms:contributor>
         <dcterms:contributor>Mara Abel</dcterms:contributor>
         <dcterms:contributor>Rafael Petry</dcterms:contributor>
         <dcterms:contributor>Régis Romeu</dcterms:contributor>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-01</dcterms:created>
+        <dcterms:creator>Nicolau Oyhenard dos Santos</dcterms:creator>
         <dcterms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants.</dcterms:description>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-23</dcterms:issued>
         <dcterms:license rdf:resource="https://opensource.org/license/mit"/>
+        <dcterms:publisher>Universidade Federal do Rio Grande do Sul (UFRGS)</dcterms:publisher>
         <dcterms:title xml:lang="en">Core Ontology of Petroleum Installations (COPI)</dcterms:title>
         <dcterms:title xml:lang="pt">Ontologia Central de Plantas de Produção de Petróleo (COPI)</dcterms:title>
+        <bibo:status>unstable</bibo:status>
+        <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>
         <owl:versionInfo>2026-06-15</owl:versionInfo>
-        <owl:versionInfo>2026-06-23</owl:versionInfo>
+        <owl:versionInfo>2026-06-24</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
@@ -56,15 +66,39 @@
     
 
 
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
     <!-- http://purl.org/dc/terms/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
     
 
 
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
     <!-- http://purl.org/dc/terms/license -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
     
 
 
@@ -77,6 +111,24 @@
     <!-- http://purl.org/dc/terms/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/status -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/status"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
     
 
 
@@ -146,6 +198,30 @@
     
 
 
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicAxiom -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicAxiom"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/primitiveRationale -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/primitiveRationale"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/semiFormalNaturalLanguageAxiom -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/semiFormalNaturalLanguageAxiom"/>
+    
+
+
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000061 -->
 
     <owl:AnnotationProperty rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000061">
@@ -188,6 +264,23 @@
         <rdfs:comment xml:lang="en">Reference to a POSC Caesar RDL IRI.</rdfs:comment>
         <rdfs:label xml:lang="en">poscCaesarReference</rdfs:label>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
@@ -1968,6 +2061,177 @@
     
 
 
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Valve(x) → MaterialArtifact(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A valve is an assembly that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula é um conjunto que possui uma função de controle de fluxo para permitir, obstruir, regular ou desviar correntes de fluido.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000019"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000194"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">filter</rdfs:label>
+        <rdfs:label xml:lang="pt-br">filtro</rdfs:label>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <AnnotationVocabulary:firstOrderLogicAxiom xml:lang="en">∀x (Filter(x) → Assembly(x) ∧ ∃f (FiltrationFunction(f) ∧ bearerOf(x,f)))</AnnotationVocabulary:firstOrderLogicAxiom>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="en">A filter is an assembly that has a filtration function to remove solid particles or contaminants from a fluid stream by passing the fluid through a porous medium.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="pt-br">Um filtro é um conjunto que possui uma função de filtração para remover partículas sólidas ou contaminantes de uma corrente de fluido ao fazê-la passar por um meio poroso.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:primitiveRationale xml:lang="pt-br">O meio filtrante poroso e o mecanismo específico de retenção de partículas (classificação absoluta vs. nominal) são predicados apenas-FOL; o OWL 2 DL carrega apenas o gênero (Assembly) e a restrição funcional (∃hasFunction.FiltrationFunction).</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:primitiveRationale xml:lang="en">The porous filtration medium and the specific particle retention mechanism (absolute vs. nominal rating) are FOL-only predicates; OWL 2 DL carries only the genus (Assembly) and the functional restriction (∃hasFunction.FiltrationFunction).</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:semiFormalNaturalLanguageAxiom xml:lang="en">Every filter is an assembly that has the function to remove solid particles or contaminants from a fluid stream by passing the fluid through a porous medium.</AnnotationVocabulary:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000082 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000082">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000116"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">elemento de medição de fluxo</rdfs:label>
+        <rdfs:label xml:lang="en">flow measuring element</rdfs:label>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <AnnotationVocabulary:firstOrderLogicAxiom xml:lang="en">∀x (FlowMeasuringElement(x) → Assembly(x) ∧ Instrument(x) ∧ ∃f (FlowMeasurementFunction(f) ∧ bearerOf(x,f)))</AnnotationVocabulary:firstOrderLogicAxiom>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="en">A flow measuring element is an instrument and assembly inserted into a fluid stream to produce a measurable signal — differential pressure, frequency, or velocity — proportional to the volumetric or mass flow rate.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="pt-br">Um elemento de medição de fluxo é um instrumento e conjunto inserido em uma corrente de fluido para produzir um sinal mensurável — pressão diferencial, frequência ou velocidade — proporcional à vazão volumétrica ou mássica.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:primitiveRationale xml:lang="pt-br">O princípio de sensoriamento específico (pressão diferencial, Coriolis, turbina, vórtice) e o tipo de sinal primário distinguem subtipos, mas são predicados apenas-FOL não expressos em OWL 2 DL; o OWL carrega apenas o gênero (Assembly ⊓ Instrument) e a restrição funcional.</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:primitiveRationale xml:lang="en">The specific sensing principle (differential pressure, Coriolis, turbine, vortex) and the primary signal type distinguish subtypes but are FOL-only predicates not expressible in OWL 2 DL; OWL carries only the genus (Assembly ⊓ Instrument) and the functional restriction.</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:semiFormalNaturalLanguageAxiom xml:lang="en">Every flow measuring element is an assembly and an instrument that has the function to produce a measurable signal proportional to the flow rate of the fluid passing through it.</AnnotationVocabulary:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000083 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000083">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000163"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">acessório de modificação de fluxo</rdfs:label>
+        <rdfs:label xml:lang="en">flow modification accessory</rdfs:label>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <AnnotationVocabulary:firstOrderLogicAxiom xml:lang="en">∀x (FlowModificationAccessory(x) → MaterialArtifact(x) ∧ ∃f (FlowRestrictionFunction(f) ∧ bearerOf(x,f)))</AnnotationVocabulary:firstOrderLogicAxiom>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="en">A flow modification accessory is a material artifact that has a flow restriction function to reduce or condition fluid flow by creating a controlled pressure drop across a fixed orifice or flow-conditioning geometry.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="pt-br">Um acessório de modificação de fluxo é um artefato material que possui uma função de restrição de fluxo para reduzir ou condicionar o escoamento de fluido ao criar uma queda de pressão controlada em um orifício fixo ou geometria condicionadora de fluxo.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:primitiveRationale xml:lang="pt-br">A geometria do orifício, o coeficiente de descarga e a presença ou ausência de uma placa condicionadora de fluxo são differentia apenas-FOL que distinguem o orifício de restrição da placa de orifício; o OWL 2 DL carrega apenas o gênero (MaterialArtifact) e a restrição funcional.</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:primitiveRationale xml:lang="en">The orifice geometry, discharge coefficient, and the presence or absence of a flow-conditioning plate are FOL-only differentia that distinguish restriction orifice from orifice plate; OWL 2 DL carries only the genus (MaterialArtifact) and the functional restriction.</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:semiFormalNaturalLanguageAxiom xml:lang="en">Every flow modification accessory is a material artifact that has the function to reduce or condition fluid flow by creating a controlled pressure drop through a fixed orifice or flow-conditioning geometry.</AnnotationVocabulary:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">separador</rdfs:label>
+        <rdfs:label xml:lang="en">separator</rdfs:label>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <AnnotationVocabulary:firstOrderLogicAxiom xml:lang="en">∀x (Separator(x) → Assembly(x) ∧ ∃f (SeparationFunction(f) ∧ bearerOf(x,f)))</AnnotationVocabulary:firstOrderLogicAxiom>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="en">A separator is an assembly that has a separation function to divide a fluid mixture into two or more phases or streams based on differences in physical properties such as density, particle size, or surface tension.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="pt-br">Um separador é um conjunto que possui uma função de separação para dividir uma mistura de fluidos em duas ou mais fases ou correntes com base em diferenças em propriedades físicas como densidade, tamanho de partícula ou tensão superficial.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:primitiveRationale xml:lang="pt-br">O mecanismo de separação (sedimentação gravitacional, ação ciclônica, coalescência, flotação) e o número e identidade das fases de saída são differentia apenas-FOL; o OWL 2 DL carrega apenas o gênero (Assembly) e a restrição funcional.</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:primitiveRationale xml:lang="en">The separation mechanism (gravity settling, cyclonic action, coalescence, flotation) and the number and identity of output phases are FOL-only differentia; OWL 2 DL carries only the genus (Assembly) and the functional restriction.</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:semiFormalNaturalLanguageAxiom xml:lang="en">Every separator is an assembly that has the function to divide a fluid mixture into two or more distinct phases or streams based on differences in physical properties.</AnnotationVocabulary:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000085 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000085">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">sight glass</rdfs:label>
+        <rdfs:label xml:lang="pt-br">visor de nível</rdfs:label>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <AnnotationVocabulary:firstOrderLogicAxiom xml:lang="en">∀x (SightGlass(x) → Instrument(x) ∧ ∃f (IndicationFunction(f) ∧ bearerOf(x,f)))</AnnotationVocabulary:firstOrderLogicAxiom>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="en">A sight glass is an instrument that has an indication function to provide direct visual observation of the presence, level, or condition of a fluid inside a vessel or pipe through a transparent or translucent window.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="pt-br">Um visor de nível é um instrumento que possui uma função de indicação para permitir a observação visual direta da presença, nível ou condição de um fluido no interior de um vaso ou tubulação por meio de uma janela transparente ou translúcida.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:primitiveRationale xml:lang="pt-br">O material da janela transparente, a propriedade do fluido observada (nível, fluxo, cor) e o arranjo de iluminação são differentia apenas-FOL; o OWL 2 DL carrega apenas o gênero (Instrument) e a restrição funcional.</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:primitiveRationale xml:lang="en">The transparent window material, the fluid property observed (level, flow, color), and the illumination arrangement are FOL-only differentia; OWL 2 DL carries only the genus (Instrument) and the functional restriction.</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:semiFormalNaturalLanguageAxiom xml:lang="en">Every sight glass is an instrument that has the function to allow direct visual observation of the presence, level, or condition of a fluid through a transparent or translucent window.</AnnotationVocabulary:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000199"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">transformador</rdfs:label>
+        <rdfs:label xml:lang="en">transformer</rdfs:label>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <AnnotationVocabulary:firstOrderLogicAxiom xml:lang="en">∀x (Transformer(x) → Assembly(x) ∧ ∃f (ElectricalPowerTransformationFunction(f) ∧ bearerOf(x,f)))</AnnotationVocabulary:firstOrderLogicAxiom>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="en">A transformer is an assembly that has an electrical power transformation function to convert alternating current electrical energy from one voltage and current level to another by electromagnetic induction, without changing its frequency.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:naturalLanguageDefinition xml:lang="pt-br">Um transformador é um conjunto que possui uma função de transformação de energia elétrica para converter energia elétrica em corrente alternada de um nível de tensão e corrente para outro por indução eletromagnética, sem alterar sua frequência.</AnnotationVocabulary:naturalLanguageDefinition>
+        <AnnotationVocabulary:primitiveRationale xml:lang="pt-br">A razão de transformação, o tipo de núcleo (shell/núcleo/toroidal), o número de enrolamentos e o método de refrigeração são differentia apenas-FOL que distinguem subtipos de transformadores de potência; o OWL 2 DL carrega apenas o gênero (Assembly) e a restrição funcional.</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:primitiveRationale xml:lang="en">The transformation ratio, core type (shell/core/toroidal), winding count, and cooling method are FOL-only differentia that distinguish power transformer subtypes; OWL 2 DL carries only the genus (Assembly) and the functional restriction.</AnnotationVocabulary:primitiveRationale>
+        <AnnotationVocabulary:semiFormalNaturalLanguageAxiom xml:lang="en">Every transformer is an assembly that has the function to convert alternating current electrical energy from one voltage and current level to another by electromagnetic induction without changing the frequency.</AnnotationVocabulary:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">control valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de controle</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (ControlValve(x) → Valve(x) ∧ ∃f (ProcessControlledFlowFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A control valve is a valve that is equipped with an actuator and regulates fluid flow rate in response to control signals from a process control system.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de controle é uma válvula que é equipada com um atuador e regula a vazão de fluido em resposta a sinais de controle de um sistema de controle de processo.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089">
@@ -2047,6 +2311,2306 @@
         <annotation:primitiveRationale xml:lang="pt-br">SolidHeatTransferSurface é um predicado somente-FOL (sem IRI OWL), análogo a Fluid e sameSubstance nos axiomas de operação; OWL carrega apenas o gênero (PressureVessel). A differentia de separação de dois circuitos e não-mistura está na NLD. Axiomatização plena equivalentClass adiada ao Incremento 2c.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">if x is a &apos;heat exchanger&apos; then x is a &apos;pressure vessel&apos; that has a &apos;solid heat-transfer surface&apos; as a component part at all times</annotation:semiFormalNaturalLanguageAxiom>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="pt-br">se x é um &apos;trocador de calor&apos;, então x é um &apos;vaso de pressão&apos; que tem uma &apos;superfície sólida de transferência de calor&apos; como parte componente em todo momento</annotation:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000093 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000093">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">angle valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula angular</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (AngleValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula angular é uma válvula que tem portas da válvula que não estão alinhadas, mas dispostas em ângulo uma em relação à outra.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">ball control valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de controle esférica</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (BallControlValve(x) → ControlValve(x) ∧ ∃f (ProcessControlledFlowFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A ball control valve is a control valve that uses a spherical ball closure element with rotary actuation to modulate fluid flow in response to control signals.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de controle esférica é uma válvula de controle que usa um elemento de fechamento esférico com atuação rotativa para modular o fluxo de fluido em resposta a sinais de controle.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">ball valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula esfera</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (BallValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A ball valve is a valve that controls fluid flow using a spherical ball closure member that rotates approximately 90 degrees to align or misalign its flow passage with the valve body ports.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula esfera é uma válvula que controla o fluxo de fluidos usando um elemento de fechamento esférico que gira aproximadamente 90 graus para alinhar ou desalinhar sua passagem de fluxo com as portas do corpo da válvula.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000096 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000096">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">block and bleed valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de bloqueio e sangria</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (BlockAndBleedValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A block and bleed valve is a valve that has one seat which provides a seal, and a bleeder line and valve that are tapped into the valve bonnet for controlled venting of downstream pressure.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de bloqueio e sangria é uma válvula que possui um assento que fornece vedação, e uma linha de sangria e válvula que são conectadas ao castelo da válvula para ventilação controlada da pressão a jusante.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000097 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000097">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000166"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000166"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">blow down valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de blow down</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (BlowDownValve(x) ↔ Valve(x) ∧ ∃f (RapidDepressurizationFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A blow down valve is a valve that bears a designed function for rapid depressurization of high pressure systems.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de blow down é uma válvula que possui uma função projetada para despressurização rápida de sistemas de alta pressão.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000098 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000098">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">blower</rdfs:label>
+        <rdfs:label xml:lang="pt-br">soprador</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Blower(x) → Compressor(x) ∧ ∃f (CompressionFunction(f) ∧ bearerOf(x,f)) ∧ ∃hasOperatingParameter.MediumPressureRange ⊓ ∃hasOperatingParameter.MediumVolumeFlowRange)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A blower is a compressor that compresses and supplies air or gas at medium pressure and medium volume flow.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um soprador é um compressor que comprime e fornece ar ou gás em pressão média e vazão volumétrica média.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">butterfly control valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula borboleta de controle</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (ButterflyControlValve(x) → ControlValve(x) ∧ ∃f (ProcessControlledFlowFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A butterfly control valve is a control valve that has a rotating disc closure mechanism and bears a process-controlled flow function enabling automated flow modulation in response to external control signals.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula borboleta de controle é uma válvula de controle que possui um mecanismo de fechamento por disco rotativo e possui uma função de fluxo controlado por processo, permitindo modulação automatizada do fluxo em resposta a sinais de controle externos.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">butterfly valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula borboleta</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (ButterflyValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A butterfly valve is a valve that has a disc-type closure member with a shaft parallel to the plane of the disc and an axis of rotation transverse to the flow direction.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula borboleta é uma válvula que possui um membro de fechamento tipo disco com haste paralela ao plano do disco e eixo de rotação transversal à direção do fluxo.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000101 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000101">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">centrifugal compressor</rdfs:label>
+        <rdfs:label xml:lang="pt-br">compressor centrífugo</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (CentrifugalCompressor(x) → Compressor(x) ∧ ∃f (CompressionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A centrifugal compressor is a compressor that uses one or more centrifugal impellers to accelerate gas through radial flow and generate pressure increase by centrifugal action.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um compressor centrífugo é um compressor que usa um ou mais impelidores centrífugos para acelerar o gás através de fluxo radial e gerar aumento de pressão por ação centrífuga.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">bomba centrífuga</rdfs:label>
+        <rdfs:label xml:lang="en">centrifugal pump</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (CentrifugalPump(x) → Pump(x) ∧ ∃f (PumpingFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A centrifugal pump is a pump that uses centrifugal force generated by rotating impellers with vanes to increase fluid pressure through a volute casing.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma bomba centrífuga é uma bomba que usa força centrífuga gerada por impulsores rotativos com pás para aumentar a pressão do fluido através de uma carcaça voluta.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000161"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000161"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">check valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de retenção</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (CheckValve(x) ↔ Valve(x) ∧ ∃f (BackflowPreventionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A check valve is a valve that bears a backflow prevention function, automatically permitting fluid to flow in one direction only while preventing reverse flow.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de retenção é uma válvula que possui uma função de prevenção de refluxo, permitindo automaticamente que o fluido flua em apenas uma direção enquanto previne o fluxo reverso.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">choke control valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de controle de choke</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (ChokeControlValve(x) → ControlValve(x) ∧ ∃f (ProcessControlledFlowFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A choke control valve is a control valve that has a choke geometry component for pressure reduction through flow restriction.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de controle de choke é uma válvula de controle que possui um componente de geometria de choke para redução de pressão através de restrição de fluxo.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000105 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000105">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000164"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000164"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">choke valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula choke</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (ChokeValve(x) ↔ Valve(x) ∧ ∃f (PressureReductionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A choke valve is a valve that bears a pressure reduction function, designed to reduce fluid pressure from inlet to outlet through controlled flow restriction and energy dissipation.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula choke é uma válvula que possui uma função de redução de pressão, projetada para reduzir a pressão do fluido da entrada para a saída através de restrição controlada do fluxo e dissipação de energia.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000106 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000106">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000200"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000200"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">circuit breaker</rdfs:label>
+        <rdfs:label xml:lang="pt-br">disjuntor</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (CircuitBreaker(x) ↔ MaterialArtifact(x) ∧ ∃f (ElectricalCurrentInterruptionFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (ElectricalCurrentInterruptionFunction(f) ∧ bearerOf(x,f)) ⊓ ∃participatesIn.RegularInterruptionProcess)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A circuit breaker is an electrical switching device that bears an electrical current interruption function and regularly participates in processes that safely interrupt electrical current.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um disjuntor é um dispositivo de chaveamento elétrico que possui uma função de interrupção de corrente elétrica e participa regularmente em processos que interrompem com segurança a corrente elétrica.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000107 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000107">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000196"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000196"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">coalescedor</rdfs:label>
+        <rdfs:label xml:lang="en">coalescer</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Coalescer(x) ↔ Separator(x) ∧ ∃f (CoalescenceFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (CoalescenceFunction(f) ∧ bearerOf(x,f)) ⊓ ∃participatesIn.GravitySeparationProcess ⊓ ∃hasOutput.SkimmableLiquidPortion)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A coalescer is a separator that uses coalescence media to promote droplet merger in immiscible liquid mixtures, enabling gravity-based separation where the less dense liquid phase can be skimmed off.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um coalescedor é um separador que usa meio de coalescência para promover a fusão de gotículas em misturas líquidas imiscíveis, permitindo separação por gravidade onde a fase líquida menos densa pode ser removida por escumação.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">diaphragm valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de diafragma</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (DiaphragmValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A diaphragm valve is a valve that uses a resilient diaphragm forced against a port as its closure mechanism to control fluid flow.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de diafragma é uma válvula que usa um diafragma resiliente forçado contra uma porta como seu mecanismo de fechamento para controlar o fluxo de fluido.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000109 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000109">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000179"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000179"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">differential pressure gauge</rdfs:label>
+        <rdfs:label xml:lang="pt-br">manômetro de pressão diferencial</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (DifferentialPressureGauge(x) ↔ PressureGauge(x) ∧ ∃f (DifferentialPressureMeasurementFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (DifferentialPressureMeasurementFunction(f) ∧ bearerOf(x,f)) ⊓ ∃hasInput.PressurePortPair)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A differential pressure gauge is a pressure gauge that measures and indicates the difference between two pressure inputs using a differential pressure measuring element.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um manômetro de pressão diferencial é um manômetro que mede e indica a diferença entre duas entradas de pressão usando um elemento de medição de pressão diferencial.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000110 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000110">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000186"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000186"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">differential pressure transmitter</rdfs:label>
+        <rdfs:label xml:lang="pt-br">transmissor de pressão diferencial</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (DifferentialPressureTransmitter(x) ↔ PressureTransmitter(x) ∧ ∃f (DifferentialPressureTransmissionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A differential pressure transmitter is a pressure transmitter that bears a differential pressure transmission function, enabling it to measure the pressure difference between two input pressure signals and transmit this difference as a standardized output signal.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um transmissor de pressão diferencial é um transmissor de pressão que possui uma função de transmissão de pressão diferencial, permitindo medir a diferença de pressão entre dois sinais de pressão de entrada e transmitir essa diferença como um sinal de saída padronizado.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000111 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000111">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">double block and bleed valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de bloqueio duplo e sangria</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (DoubleBlockAndBleedValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A double block and bleed valve is a valve that incorporates two seats each providing sealing capability and includes a means of venting the space between the seats.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de bloqueio duplo e sangria é uma válvula que incorpora duas sedes, cada uma proporcionando capacidade de vedação, e inclui um meio de ventilação do espaço entre as sedes.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000112 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000112">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000148"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000170"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000203"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000148"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000170"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000203"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">down hole safety valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de segurança de fundo de poço</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (DownHoleSafetyValve(x) ↔ SafetyValve(x) ∧ ∃f (SubsurfaceSafetyFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (SubsurfaceDeploymentRole(f) ∧ bearerOf(x,f)) ⊓ ∃participatesIn.SubsurfaceOperationProcess)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A down hole safety valve is a safety valve that bears a subsurface safety function for pressure relief and flow control operations in wellbore or other subsurface environments.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de segurança de fundo de poço é uma válvula de segurança que possui uma função de segurança subsuperficial para operações de alívio de pressão e controle de fluxo em poços ou outros ambientes subsuperficiais.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000193"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000193"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">electric motor</rdfs:label>
+        <rdfs:label xml:lang="pt-br">motor elétrico</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (ElectricMotor(x) ↔ Assembly(x) ∧ ∃f (ElectricToMechanicalConversionFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (ElectricToMechanicalConversionFunction(f) ∧ bearerOf(x,f)) ⊓ ∃p (Stator(p) ∧ hasComponentPartAtAllTimes(x,p)) ⊓ ∃p (Rotor(p) ∧ hasComponentPartAtAllTimes(x,p)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">An electric motor is an assembly that bears an electric-to-mechanical energy conversion function and has both a stator and rotor as essential components.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um motor elétrico é um conjunto que possui uma função de conversão de energia elétrica para mecânica e tem tanto um estator quanto um rotor como componentes essenciais.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000114 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000114">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000165"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000165"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">emergency shut down valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de parada de emergência</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (EmergencyShutDownValve(x) ↔ Valve(x) ∧ ∃f (EmergencyShutDownFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">An emergency shut down valve is a valve that bears an emergency shut down function, enabling rapid flow isolation in emergency situations through actuated mechanisms with fail-safe capability.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de parada de emergência é uma válvula que possui uma função de parada de emergência, permitindo o isolamento rápido de fluxo em situações de emergência através de mecanismos atuados com capacidade à prova de falhas.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000191"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000191"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">fan</rdfs:label>
+        <rdfs:label xml:lang="pt-br">ventilador</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Fan(x) ↔ Assembly(x) ∧ ∃f (GasMovementFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A fan is an assembly that bears a gas movement function for delivering or exhausting volumes of vapor or gas at low differential pressure.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um ventilador é um conjunto que possui uma função de movimentação de gás para fornecer ou exaurir volumes de vapor ou gás com baixa pressão diferencial.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000116 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000116">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000174"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000024"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000174"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">elemento de vazão</rdfs:label>
+        <rdfs:label xml:lang="en">flow element</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (FlowElement(x) ↔ Instrument(x) ∧ ∃f (FlowMeasurementFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A flow element is an instrument that has the function to measure flow rates in a flowstream and produce signals proportional to the measured flow.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um elemento de vazão é um instrumento que tem a função de medir vazões em um fluxo e produzir sinais proporcionais à vazão medida.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000117 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000117">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000171"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000171"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">flow indicator</rdfs:label>
+        <rdfs:label xml:lang="pt-br">indicador de fluxo</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (FlowIndicator(x) ↔ Indicator(x) ∧ ∃f (FlowIndicationFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (FlowIndicationFunction(f) ∧ bearerOf(x,f)) ⊓ ∃hasComponentPartAtSomeTime.FlowMeasuringElement)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A flow indicator is an indicator that is designed to indicate flow rates using a flow measuring element and display element.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um indicador de fluxo é um indicador projetado para indicar taxas de fluxo usando um elemento de medição de fluxo e elemento de exibição.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000185"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000185"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">flow transmitter</rdfs:label>
+        <rdfs:label xml:lang="pt-br">transmissor de fluxo</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (FlowTransmitter(x) ↔ Transmitter(x) ∧ ∃f (FlowSignalTransmissionFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (FlowSignalTransmissionFunction(f) ∧ bearerOf(x,f)) ⊓ ∃hasInput.FlowMeasurement)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A flow transmitter is a transmitter that produces standardized output signals proportional to flow measurements from flow sensing elements.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um transmissor de fluxo é um transmissor que produz sinais de saída padronizados proporcionais às medições de fluxo provenientes de elementos sensores de fluxo.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">gate control valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de controle tipo gaveta</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (GateControlValve(x) → ControlValve(x) ∧ ∃f (ProcessControlledFlowFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A gate control valve is a control valve that uses a gate or wedge closure element moving perpendicular to the flow path to modulate fluid flow in response to control signals.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de controle tipo gaveta é uma válvula de controle que usa um elemento de fechamento tipo gaveta ou cunha movendo-se perpendicular ao caminho do fluxo para modular o fluxo de fluido em resposta a sinais de controle.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">gate valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula gaveta</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (GateValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A gate valve is a valve that has a gate or disc closure member with linear motion parallel to the plane of flat seats, which are transverse to the direction of flow.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula gaveta é uma válvula que possui um membro de fechamento tipo gaveta ou disco com movimento linear paralelo ao plano dos assentos planos, que são transversais à direção do fluxo.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000121 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000121">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000192"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">caixa de engrenagens</rdfs:label>
+        <rdfs:label xml:lang="en">gearbox</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Gearbox(x) → Assembly(x) ∧ ∃f (PowerTransmissionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A gearbox is an assembly that consists of a gear casing containing an arrangement of two or more gear-wheels that transmit rotating motion from an input shaft to an output shaft.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma caixa de engrenagens é um conjunto que consiste em um invólucro de engrenagens contendo um arranjo de duas ou mais rodas de engrenagem que transmitem movimento rotativo de um eixo de entrada para um eixo de saída.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">globe control valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de controle globo</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (GlobeControlValve(x) → ControlValve(x) ∧ ∃f (ProcessControlledFlowFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A globe control valve is a control valve that has a globe-shaped body and uses linear motion closure mechanism to modulate fluid flow in response to process control signals.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de controle globo é uma válvula de controle que possui um corpo em formato de globo e usa um mecanismo de fechamento de movimento linear para modular o fluxo de fluido em resposta a sinais de controle de processo.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000123 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000123">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">globe valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula globo</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (GlobeValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A globe valve is a valve characterized by a closure member (disc or plug) that operates with linear motion perpendicular to a seat that is oriented normal to the fluid flow path.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula globo é uma válvula caracterizada por um elemento de fechamento (disco ou tampão) que opera com movimento linear perpendicular a uma sede orientada normal ao caminho do fluxo do fluido.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000190"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000017"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000190"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">aquecedor</rdfs:label>
+        <rdfs:label xml:lang="en">heater</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Heater(x) ↔ Assembly(x) ∧ ∃f (HeatingFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A heater is an assembly that bears a heating function to add thermal energy to a medium.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um aquecedor é um conjunto que possui uma função de aquecimento para adicionar energia térmica a um meio.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000180"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000024"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000180"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">analisador de umidade</rdfs:label>
+        <rdfs:label xml:lang="en">humidity analyser</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (HumidityAnalyser(x) ↔ Instrument(x) ∧ ∃f (HumidityMeasurementFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A humidity analyser is a process analyzer that is designed to measure and indicate humidity or moisture content in process streams or environments.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um analisador de umidade é um analisador de processo que é projetado para medir e indicar o conteúdo de umidade ou vapor d&amp;#x27;água em correntes de processo ou ambientes.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000126 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000126">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">filtro em linha</rdfs:label>
+        <rdfs:label xml:lang="en">in-line filter</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (InLineFilter(x) → Filter(x) ∧ ∃f (FiltrationFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">An in-line filter is a filter that is installed directly within a fluid line and supported by connected piping or equipment, designed to remove particles or contaminants from fluid streams during normal flow operations.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um filtro em linha é um filtro que é instalado diretamente dentro de uma linha de fluido e suportado por tubulações ou equipamentos conectados, projetado para remover partículas ou contaminantes de correntes de fluido durante operações normais de fluxo.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000024"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">indicador</rdfs:label>
+        <rdfs:label xml:lang="en">indicator</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Indicator(x) ↔ Instrument(x) ∧ ∃f (IndicationFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">An indicator is an instrument that displays or shows the value or status of a measured variable or condition to make it perceptible to operators.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um indicador é um instrumento que exibe ou mostra o valor ou status de uma variável medida ou condição para torná-la perceptível aos operadores.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000176"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000024"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000176"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">elemento de nível</rdfs:label>
+        <rdfs:label xml:lang="en">level element</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (LevelElement(x) ↔ Instrument(x) ∧ ∃f (LevelDetectionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A level element is an instrument that bears a level detection function for determining fluid level in a vessel or container.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um elemento de nível é um instrumento que possui uma função de detecção de nível para determinar o nível de fluido em um vaso ou recipiente.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000172"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000175"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000172"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000175"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">indicador de nível</rdfs:label>
+        <rdfs:label xml:lang="en">level indicator</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (LevelIndicator(x) ↔ Indicator(x) ∧ ∃f (LevelIndicationFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (LevelMeasurementFunction(f) ∧ hasFunction(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A level indicator is an indicator that measures and locally displays the level of liquid or bulk solid material in a vessel or tank.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um indicador de nível é um indicador que mede e exibe localmente o nível de material líquido ou sólido a granel em um vaso ou tanque.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000085"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000172"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000085"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000172"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">level sight glass</rdfs:label>
+        <rdfs:label xml:lang="pt-br">visor de nível</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (LevelSightGlass(x) ↔ SightGlass(x) ∧ ∃f (LevelIndicationFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A level sight glass is a sight glass that bears a designed function to indicate liquid level through visual inspection.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um visor de nível é um visor que possui uma função projetada para indicar o nível de líquido através de inspeção visual.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000175"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000187"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000175"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000187"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">level transmitter</rdfs:label>
+        <rdfs:label xml:lang="pt-br">transmissor de nível</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (LevelTransmitter(x) ↔ Transmitter(x) ∧ ∃f (LevelMeasurementAndTransmissionFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (LevelMeasurementFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A level transmitter is a transmitter that measures the level (height) of liquid or bulk solid material in a container and produces a standardized electrical output signal proportional to the measured level.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um transmissor de nível é um transmissor que mede o nível (altura) de material líquido ou sólido a granel em um recipiente e produz um sinal elétrico de saída padronizado proporcional ao nível medido.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000183"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000024"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000183"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">limit switch</rdfs:label>
+        <rdfs:label xml:lang="pt-br">limit switch</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (LimitSwitch(x) ↔ Instrument(x) ∧ ∃f (PositionLimitDetectionFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (PositionLimitDetectionFunction(f) ∧ bearerOf(x,f)) ⊓ ∃hasInput.MechanicalMotion ⊓ ∃hasOutput.ElectricalSignal)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A limit switch is an instrument that bears a position limit detection function, mechanically actuated by object motion to provide electrical switching signals when predetermined position limits are reached.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um limit switch é um instrumento que possui uma função de detecção de limite de posição, acionado mecanicamente pelo movimento de objetos para fornecer sinais de chaveamento elétrico quando limites de posição predeterminados são atingidos.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">manual valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula manual</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (ManualValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A manual valve is a valve that has a manual actuator requiring hand power for operation.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula manual é uma válvula que possui um atuador manual que requer força manual para operação.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000134 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000134">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">needle valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula agulha</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (NeedleValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A needle valve is a valve that has a conical needle-shaped closure member that seats into a small orifice to provide precise flow control.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula agulha é uma válvula que possui um membro de fechamento cônico em forma de agulha que se assenta em um pequeno orifício para fornecer controle preciso de fluxo.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000135 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000135">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000162"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000162"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">on-off control valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de controle liga-desliga</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (OnOffControlValve(x) ↔ ControlValve(x) ∧ ∃f (BinaryFlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">An on-off control valve is a control valve that bears a binary flow control function, having only two defined positions: fully open and fully closed.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de controle liga-desliga é uma válvula de controle que possui uma função de controle de fluxo binária, tendo apenas duas posições definidas: totalmente aberta e totalmente fechada.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000082"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">orifice plate</rdfs:label>
+        <rdfs:label xml:lang="pt-br">placa de orifício</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (OrificePlate(x) → FlowMeasuringElement(x) ∧ ∃f (FlowMeasurementFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">An orifice plate is a flow measuring element that consists of a thin plate with a specified hole through which fluid flows to create differential pressure for flow rate measurement.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma placa de orifício é um elemento de medição de fluxo que consiste de uma placa fina com um orifício especificado através do qual o fluido flui para criar pressão diferencial para medição da taxa de fluxo.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000137 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000137">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000181"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000024"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000181"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">medidor de sequência de fases</rdfs:label>
+        <rdfs:label xml:lang="en">phase sequence meter</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (PhaseSequenceMeter(x) ↔ Instrument(x) ∧ ∃f (PhaseSequenceMeasurementFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (PhaseSequenceMeasurementFunction(f) ∧ bearerOf(x,f)) ⊓ ∃hasInput.PolyphaseElectricalSignal)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A phase sequence meter is an electric measuring instrument that bears a phase sequence measurement function to determine and indicate the sequence in which the instantaneous voltages of phase conductors reach their maximum value in a polyphase electrical system.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um medidor de sequência de fases é um instrumento de medição elétrica que possui uma função de medição de sequência de fases para determinar e indicar a sequência na qual as tensões instantâneas dos condutores de fase atingem seu valor máximo em um sistema elétrico polifásico.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000138 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000138">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">piston check valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de retenção tipo pistão</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (PistonCheckValve(x) → CheckValve(x) ∧ ∃f (BackflowPreventionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A piston check valve is a check valve that has a piston-type closure member that moves linearly along the flow axis under gravity or spring loading to prevent backflow.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de retenção tipo pistão é uma válvula de retenção que possui um elemento de fechamento tipo pistão que se move linearmente ao longo do eixo de fluxo sob ação da gravidade ou mola para prevenir refluxo.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000139 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000139">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000017"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">plate heat exchanger</rdfs:label>
+        <rdfs:label xml:lang="pt-br">trocador de calor de placas</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (PlateHeatExchanger(x) → HeatExchanger(x) ∧ ∃f (HeatTransferFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A plate heat exchanger is a heat exchanger that has heat transfer plates as its primary heat transfer surface.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um trocador de calor de placas é um trocador de calor que possui placas de transferência de calor como sua superfície primária de transferência de calor.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">plug valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula plug</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (PlugValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A plug valve is a valve that has a cylindrical or tapered plug closure member which operates by quarter-turn rotation on its axis to control fluid flow by sealing against a seat.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula plug é uma válvula que possui um elemento de fechamento em forma de plugue cilíndrico ou cônico que opera por rotação de um quarto de volta em seu eixo para controlar o fluxo de fluido selando contra um assento.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000141 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000141">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000199"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000202"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000202"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">power transformer</rdfs:label>
+        <rdfs:label xml:lang="pt-br">transformador de potência</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (PowerTransformer(x) ↔ Transformer(x) ∧ ∃f (ElectricalPowerTransformationFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (ElectricalPowerTransmissionRole(f) ∧ bearerOf(x,f)) ⊓ ∃hasInput.AlternatingCurrentPortion ⊓ ∃hasOutput.AlternatingCurrentPortion)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A power transformer is a transformer that bears an electrical power transformation function, realized by electromagnetic induction to transform alternating voltage and current systems to different levels at the same frequency for power transmission purposes.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um transformador de potência é um transformador que possui uma função de transformação de energia elétrica, realizada por indução eletromagnética para transformar sistemas de tensão e corrente alternadas para diferentes níveis na mesma frequência para fins de transmissão de energia.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000177"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000024"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000177"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">elemento de pressão</rdfs:label>
+        <rdfs:label xml:lang="en">pressure element</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (PressureElement(x) ↔ Instrument(x) ∧ ∃f (PressureSensingFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A pressure element is an instrument that bears a pressure sensing function.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um elemento de pressão é um instrumento que possui uma função de detecção de pressão.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000178"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000178"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">manômetro</rdfs:label>
+        <rdfs:label xml:lang="en">pressure gauge</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (PressureGauge(x) ↔ Indicator(x) ∧ ∃f (PressureMeasurementFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A pressure gauge is an indicator that bears the function of measuring and displaying pressure values.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um manômetro é um indicador que possui a função de medir e exibir valores de pressão.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000031"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000031"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">pressure transmitter</rdfs:label>
+        <rdfs:label xml:lang="pt-br">transmissor de pressão</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (PressureTransmitter(x) ↔ Transmitter(x) ∧ ∃f (PressureTransmissionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A pressure transmitter is a transmitter that converts pressure measurements into standardized output signals for transmission to control or monitoring systems.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um transmissor de pressão é um transmissor que converte medições de pressão em sinais de saída padronizados para transmissão a sistemas de controle ou monitoramento.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000145 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000145">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000169"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000147"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000169"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">relief valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de alívio</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (ReliefValve(x) ↔ Valve(x) ∧ ∃f (PressureReliefFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A relief valve is a valve that is designed to automatically open at a predetermined pressure setpoint to relieve excess pressure and prevent unsafe pressure levels in a system.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de alívio é uma válvula projetada para abrir automaticamente em um ponto de ajuste de pressão predeterminado para aliviar o excesso de pressão e prevenir níveis de pressão inseguros em um sistema.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000146 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000146">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000083"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">orifício de restrição</rdfs:label>
+        <rdfs:label xml:lang="en">restriction orifice</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (RestrictionOrifice(x) → FlowModificationAccessory(x) ∧ ∃f (FlowRestrictionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A restriction orifice is a flow modification accessory that bears the function to restrict fluid flow by creating controlled pressure drop through geometric constriction.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um orifício de restrição é um acessório de modificação de fluxo que possui a função de restringir o fluxo de fluido criando queda de pressão controlada através de constrição geométrica.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000147 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000147">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000032"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000032"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">safety relief valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de segurança e alívio</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (SafetyReliefValve(x) ↔ Valve(x) ∧ ∃f (SafetyReliefFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A safety relief valve is a valve that bears a safety relief function combining both safety protection and pressure relief capabilities.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de segurança e alívio é uma válvula que possui uma função de alívio de segurança que combina capacidades de proteção de segurança e alívio de pressão.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000148 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000148">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000032"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000168"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000147"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000168"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">safety valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de segurança</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (SafetyValve(x) ↔ Valve(x) ∧ ∃f (SafetyVentingFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (SafetyReliefFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A safety valve is a valve that bears a safety venting function for automatic pressure relief through rapid full opening to protect against dangerous overpressure conditions.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de segurança é uma válvula que possui uma função de ventilação de segurança para alívio automático de pressão por abertura rápida e total para proteção contra condições perigosas de sobrepressão.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000149 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000149">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000204"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">self-operating valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula auto-operante</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (SelfOperatingValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A self-operating valve is a valve that includes an internal means of operation (such as spring, gravity, fluid pressure, or counterbalance) and does not depend on an external source of energy for its actuation.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula auto-operante é uma válvula que inclui um mecanismo interno de operação (como mola, gravidade, pressão do fluido ou contrapeso) e não depende de uma fonte externa de energia para seu acionamento.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000150 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000150">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000167"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">solenoid valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula solenoide</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (SolenoidValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A solenoid valve is a valve that has a solenoid actuator for electrical control of fluid flow.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula solenoide é uma válvula que possui um atuador solenoide para controle elétrico do fluxo de fluido.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000151 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000151">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000197"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000198"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000198"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">storage tank</rdfs:label>
+        <rdfs:label xml:lang="pt-br">tanque de armazenamento</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (StorageTank(x) ↔ Vessel(x) ∧ ∃f (StorageFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (ExtendedStorageFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A storage tank is a vessel that is designed to store fluids or materials for extended periods without transformation or active processing.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um tanque de armazenamento é um vaso projetado para armazenar fluidos ou materiais por períodos prolongados sem transformação ou processamento ativo.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000195"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000019"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000195"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">filtro grosso</rdfs:label>
+        <rdfs:label xml:lang="en">strainer</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Strainer(x) ↔ MaterialArtifact(x) ∧ ∃f (SeparationFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (SeparationFunction(f) ∧ bearerOf(x,f)) ⊓ ∃p (FilteringElement(p) ∧ hasComponentPartAtAllTimes(x,p)) ⊓ ∃participatesIn.SolidLiquidSeparationProcess)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A strainer is a material artifact that bears a separation function and has a filtering element, designed to separate solid particles from fluids by passing the fluid through screens or perforations.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um filtro grosso é um artefato material que possui uma função de separação e tem um elemento filtrante, projetado para separar partículas sólidas de fluidos fazendo o fluido passar através de telas ou perfurações.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000153 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000153">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">swing check valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de retenção basculante</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (SwingCheckValve(x) → CheckValve(x) ∧ ∃f (BackflowPreventionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de retenção basculante é uma válvula de retenção que possui um elemento de fechamento consistindo de um disco que gira livremente em um mecanismo de dobradiça e abre automaticamente quando o fluxo é estabelecido e fecha automaticamente quando o fluxo cessa ou se inverte.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000154 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000154">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000173"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000173"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">indicador de temperatura</rdfs:label>
+        <rdfs:label xml:lang="en">temperature indicator</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (TemperatureIndicator(x) ↔ Indicator(x) ∧ ∃f (TemperatureIndicationFunction(f) ∧ bearerOf(x,f)) ∧ ∃hasInput.Temperature ⊓ ∃hasOutput.LocalTemperatureDisplay)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A temperature indicator is an indicator that measures temperature and displays the measured value locally at the instrument location.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um indicador de temperatura é um indicador que mede temperatura e exibe o valor medido localmente na localização do instrumento.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000184"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000188"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000184"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000188"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">temperature transmitter</rdfs:label>
+        <rdfs:label xml:lang="pt-br">transmissor de temperatura</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (TemperatureTransmitter(x) ↔ Transmitter(x) ∧ ∃f (TemperatureMeasurementAndTransmissionFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (TemperatureMeasurementCapability(f) ∧ bearerOf(x,f)) ⊓ ∃hasInput.TemperatureSignal)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A temperature transmitter is a transmitter that measures temperature and produces a standardized output signal dependent on the received input signal from a temperature element.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um transmissor de temperatura é um transmissor que mede temperatura e produz um sinal de saída padronizado dependente do sinal de entrada recebido de um elemento de temperatura.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000156 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000156">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000024"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000201"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">poço termométrico</rdfs:label>
+        <rdfs:label xml:lang="en">thermowell</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Thermowell(x) → Instrument(x) ∧ ∃f (TemperatureSensorProtectionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A thermowell is an instrument that is a pressure-tight receptacle adapted to receive a temperature sensing element, provided with external threads or other means for pressure-tight attachment to a vessel or pipe.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um poço termométrico é um instrumento que é um receptáculo resistente à pressão adaptado para receber um elemento sensor de temperatura, provido com roscas externas ou outros meios para fixação resistente à pressão a um vaso ou tubulação.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000024"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">transmissor</rdfs:label>
+        <rdfs:label xml:lang="en">transmitter</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Transmitter(x) ↔ Instrument(x) ∧ ∃f (SignalTransmissionFunction(f) ∧ bearerOf(x,f)) ∧ ∃f (SignalTransmissionFunction(f) ∧ bearerOf(x,f)) ⊓ ∃hasInput.ProcessVariableSignal ⊓ ∃hasOutput.StandardizedSignal)</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A transmitter is an instrument that bears a signal transmission function, receiving process variable signals from sensors and converting them into standardized output signals for transmission to control systems.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um transmissor é um instrumento que possui uma função de transmissão de sinal, recebendo sinais de variáveis de processo de sensores e convertendo-os em sinais de saída padronizados para transmissão a sistemas de controle.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000025"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000022"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000025"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">vaso</rdfs:label>
+        <rdfs:label xml:lang="en">vessel</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Vessel(x) ↔ Assembly(x) ∧ ∃f (ContainmentFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A vessel is an assembly designed to contain fluids or solids for storage and/or processing purposes.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um vaso é um conjunto projetado para conter fluidos ou sólidos para fins de armazenamento e/ou processamento.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000182"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000189"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000182"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000189"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">transmissor de vibração</rdfs:label>
+        <rdfs:label xml:lang="en">vibration transmitter</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (VibrationTransmitter(x) ↔ Transmitter(x) ∧ ∃f (VibrationTransmissionFunction(f) ∧ bearerOf(x,f)) ∧ ∃hasInput.VibrationSignal ⊓ ∃f (VibrationMeasurementFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A vibration transmitter is a transmitter that measures mechanical vibrations and produces an output signal proportional to the measured vibration parameters.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um transmissor de vibração é um transmissor que mede vibrações mecânicas e produz um sinal de saída proporcional aos parâmetros de vibração medidos.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000160 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000160">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">válvula de retenção wafer</rdfs:label>
+        <rdfs:label xml:lang="en">wafer check valve</rdfs:label>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (WaferCheckValve(x) → CheckValve(x) ∧ ∃f (BackflowPreventionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A wafer check valve is a check valve that has a wafer pattern valve body designed for mounting between flanges.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de retenção wafer é uma válvula de retenção que possui um corpo de válvula padrão wafer projetado para montagem entre flanges.</annotation:naturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000161 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000161">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">backflow prevention function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de prevenção de refluxo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000162 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000162">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">binary flow control function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de controle de fluxo binário</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000163 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000163">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">flow restriction function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de restrição de fluxo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000164 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000164">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de redução de pressão</rdfs:label>
+        <rdfs:label xml:lang="en">pressure reduction function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000165 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000165">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">emergency shut-down function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de parada de emergência</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000166 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000166">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de despressurização rápida</rdfs:label>
+        <rdfs:label xml:lang="en">rapid depressurization function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000167 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000167">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">electrical control function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de controle elétrico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000168 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000168">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000032"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de ventilação de segurança</rdfs:label>
+        <rdfs:label xml:lang="en">safety venting function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000169 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000169">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000032"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de alívio de pressão</rdfs:label>
+        <rdfs:label xml:lang="en">pressure relief function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000170 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000170">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000032"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de segurança subsuperficial</rdfs:label>
+        <rdfs:label xml:lang="en">subsurface safety function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000171 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000171">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">flow indication function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de indicação de fluxo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000172 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000172">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de indicação de nível</rdfs:label>
+        <rdfs:label xml:lang="en">level indication function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000173 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000173">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de indicação de temperatura</rdfs:label>
+        <rdfs:label xml:lang="en">temperature indication function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000174 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000174">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">flow measurement function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de medição de fluxo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000175 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000175">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de medição de nível</rdfs:label>
+        <rdfs:label xml:lang="en">level measurement function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000176 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000176">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de detecção de nível</rdfs:label>
+        <rdfs:label xml:lang="en">level detection function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000177 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000177">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de sensoreamento de pressão</rdfs:label>
+        <rdfs:label xml:lang="en">pressure sensing function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000178 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000178">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de medição de pressão</rdfs:label>
+        <rdfs:label xml:lang="en">pressure measurement function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000179 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000179">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">differential pressure measurement function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de medição de pressão diferencial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000180 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000180">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de medição de umidade</rdfs:label>
+        <rdfs:label xml:lang="en">humidity measurement function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000181 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000181">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de medição de sequência de fase</rdfs:label>
+        <rdfs:label xml:lang="en">phase sequence measurement function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000182 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000182">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de medição de vibração</rdfs:label>
+        <rdfs:label xml:lang="en">vibration measurement function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000183 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000183">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de detecção de limite de posição</rdfs:label>
+        <rdfs:label xml:lang="en">position limit detection function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000184 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000184">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">capacidade de medição de temperatura</rdfs:label>
+        <rdfs:label xml:lang="en">temperature measurement capability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000185 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000185">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">flow signal transmission function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de transmissão de sinal de fluxo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000186 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000186">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">differential pressure transmission function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de transmissão de pressão diferencial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000187 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000187">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de medição e transmissão de nível</rdfs:label>
+        <rdfs:label xml:lang="en">level measurement and transmission function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000188 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000188">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de medição e transmissão de temperatura</rdfs:label>
+        <rdfs:label xml:lang="en">temperature measurement and transmission function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000189 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000189">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de transmissão de vibração</rdfs:label>
+        <rdfs:label xml:lang="en">vibration transmission function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000190 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000190">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de aquecimento</rdfs:label>
+        <rdfs:label xml:lang="en">heating function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000191 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000191">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de movimentação de gás</rdfs:label>
+        <rdfs:label xml:lang="en">gas movement function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000192 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000192">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de transmissão de potência</rdfs:label>
+        <rdfs:label xml:lang="en">power transmission function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000193 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000193">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">electric-to-mechanical conversion function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de conversão elétrica-mecânica</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000194 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000194">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">filtration function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de filtração</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000195 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000195">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de separação</rdfs:label>
+        <rdfs:label xml:lang="en">separation function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000196 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000196">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">coalescence function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de coalescência</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000197 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000197">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de armazenamento</rdfs:label>
+        <rdfs:label xml:lang="en">storage function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000198 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000198">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000197"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">extended storage function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de armazenamento prolongado</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000199 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000199">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">electrical power transformation function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de transformação de potência elétrica</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000200 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000200">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">electrical current interruption function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de interrupção de corrente elétrica</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000201 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000201">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">função de proteção de sensor de temperatura</rdfs:label>
+        <rdfs:label xml:lang="en">temperature sensor protection function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000202 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000202">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="en">electrical power transmission role</rdfs:label>
+        <rdfs:label xml:lang="pt-br">papel de transmissão de potência elétrica</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000203 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000203">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">papel de implantação subsuperficial</rdfs:label>
+        <rdfs:label xml:lang="en">subsurface deployment role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000204 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000204">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
+        <rdfs:label xml:lang="pt-br">capacidade de operação independente de energia</rdfs:label>
+        <rdfs:label xml:lang="en">energy-independent operation capability</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
