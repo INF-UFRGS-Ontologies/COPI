@@ -1,64 +1,621 @@
-@prefix copi:    <https://www.inf.ufrgs.br/ontologies/copi/> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix copi: <https://www.inf.ufrgs.br/ontologies/copi/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
-
-#==============================================================================
-# EXTERNAL ONTOLOGY NAMESPACES  --  matched to IOF-Core release 202602
-#------------------------------------------------------------------------------
-# 202602 decoupled CONSTRUCT identifiers from their curating modules: term IRIs
-# live under .../ontology/construct/ , the annotation vocabulary under
-# .../ontology/annotation/ , maturity individuals under .../ontology/individual/.
-# The string .../core/Core/ now denotes only the ONTOLOGY (module) IRI
-# (owl:imports, rdfs:isDefinedBy) -- never term IRIs. Prefix tokens mirror the
-# official Core.rdf. These three namespaces carry no version (stable across
-# releases); re-pin a version only via the owl:imports module IRIs.
-#==============================================================================
-@prefix obo:        <http://purl.obolibrary.org/obo/> .
+@prefix iof-av: <https://spec.industrialontologies.org/ontology/annotation/> .
 @prefix iof-constr: <https://spec.industrialontologies.org/ontology/construct/> .
-@prefix iof-av:     <https://spec.industrialontologies.org/ontology/annotation/> .
-@prefix iof-ind:    <https://spec.industrialontologies.org/ontology/individual/> .
+@prefix iof-ind: <https://spec.industrialontologies.org/ontology/individual/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-#==============================================================================
-# ANNOTATION DISCIPLINE (follows the IOF-Core 202602 Annotation Vocabulary)
-#------------------------------------------------------------------------------
-# Every COPI construct carries, mirroring IOF practice:
-#   rdfs:label                              (en + pt-br)
-#   iof-av:isPrimitive                      (xsd:boolean)
-#   iof-av:naturalLanguageDefinition        (en + pt-br)
-#   iof-av:firstOrderLogicDefinition (↔)    for OWL-DEFINED classes; or
-#   iof-av:firstOrderLogicAxiom (→)         for OWL-PRIMITIVE classes
-#   iof-av:semiFormalNaturalLanguage{Definition|Axiom}  (en + pt-br)
-#   iof-av:primitiveRationale               (en + pt-br)  on primitives
-#   iof-av:explanatoryNote / skos:example / iof-av:synonym (en + pt-br) as useful
-#   iof-av:adaptedFrom                      (provenance, where a source applies)
-#   rdfs:isDefinedBy                        (the copi-core module IRI)
-# FOL forms are symbolic and language-neutral (untagged), as in IOF.
-#==============================================================================
+copi:COPI_0000002 a owl:ObjectProperty ;
+    rdfs:label "functionally participates in"@en,
+        "participa funcionalmente em"@pt-br ;
+    dcterms:source "ODR-011 §4" ;
+    rdfs:comment "The sub-property of bfo:participatesIn (BFO_0000056) entailed exclusively by the chain iof-constr:hasFunction ∘ obo:BFO_0000054: a material artifact functionally participates in every process that realizes one of its designed functions."@en,
+        "A sub-propriedade de bfo:participatesIn (BFO_0000056) entailada exclusivamente pela cadeia iof-constr:hasFunction ∘ obo:BFO_0000054: um artefato material participa funcionalmente em todo processo que realiza uma de suas funções projetadas."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subPropertyOf obo:BFO_0000056 ;
+    owl:propertyChainAxiom ( iof-constr:hasFunction obo:BFO_0000054 ) ;
+    iof-av:explanatoryNote "Distinguishes function-mediated from general participation: obo:BFO_0000056 (participates in) holds whenever a continuant takes part in any process for any reason; copi:participatesIn is entailed only via the chain hasFunction ∘ BFO_0000054 (is realized in). A pump functionally participates in every liquid-pressure-increase operation that realizes its pumping function; BFO_0000056 additionally covers any other process involvement."@en,
+        "Distingue a participação mediada por função da participação geral: obo:BFO_0000056 (participa em) vale sempre que um continuante toma parte em algum processo por qualquer razão; copi:participatesIn é entailada apenas pela cadeia hasFunction ∘ BFO_0000054 (é realizada em). Uma bomba participa funcionalmente em toda operação de aumento de pressão de líquido que realiza sua função de bombeamento; BFO_0000056 vale adicionalmente para qualquer outro envolvimento."@pt-br ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "The sub-property of bfo:participatesIn (BFO_0000056) entailed exclusively by the chain iof-constr:hasFunction ∘ obo:BFO_0000054: a material artifact functionally participates in every process that realizes one of its designed functions."@en,
+        "A sub-propriedade de bfo:participatesIn (BFO_0000056) entailada exclusivamente pela cadeia iof-constr:hasFunction ∘ obo:BFO_0000054: um artefato material participa funcionalmente em todo processo que realiza uma de suas funções projetadas."@pt-br .
 
-#==============================================================================
-# ONTOLOGY HEADER
-#==============================================================================
-<https://www.inf.ufrgs.br/ontologies/copi/copi-core>
-    a owl:Ontology ;
-    owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-22/copi-core> ;
+copi:COPI_0000011 a owl:Class ;
+    rdfs:label "liquid pressure increase"@en,
+        "aumento de pressão de líquido"@pt-br ;
+    dcterms:source "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, pumping).",
+        "ODR-011" ;
+    rdfs:comment "A momentum-transfer operation whose fluid input is an incompressible liquid and whose effect is to raise that liquid's pressure."@en,
+        "Uma operação de transferência de quantidade de movimento cuja entrada fluida é um líquido incompressível e cujo efeito é elevar a pressão desse líquido."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfLiquid> ;
+    rdfs:subClassOf copi:COPI_0000003 ;
+    owl:disjointWith copi:COPI_0000012 ;
+    iof-av:firstOrderLogicDefinition "∀x (LiquidPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Liquid(m)))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A momentum-transfer operation whose fluid input is an incompressible liquid and whose effect is to raise that liquid's pressure."@en,
+        "Uma operação de transferência de quantidade de movimento cuja entrada fluida é um líquido incompressível e cujo efeito é elevar a pressão desse líquido."@pt-br ;
+    iof-av:primitiveRationale "OWL 2 DL cannot express the phase constraint on the fluid input; the OWL form asserts only the genus (MomentumTransfer). The disjointness with GasPressureIncrease is asserted to carry the pump/compressor partition."@en,
+        "OWL 2 DL não consegue expressar a restrição de fase sobre a entrada fluida; a forma OWL assere apenas o gênero (MomentumTransfer). A disjunção com GasPressureIncrease é asserida para sustentar a partição bomba/compressor."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'liquid pressure increase' if and only if x is a 'momentum transfer' whose fluid input is a 'liquid'"@en,
+        "x é um 'aumento de pressão de líquido' se e somente se x é uma 'transferência de quantidade de movimento' cuja entrada fluida é um 'líquido'"@pt-br .
 
-    owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo.owl> ;            # BFO 2020 (ISO/IEC 21838-2)
-    owl:imports <https://spec.industrialontologies.org/ontology/core/Core/> ; # IOF-Core 202602 (map to local Core.rdf via catalog)
+copi:COPI_0000013 a owl:Class ;
+    rdfs:label "gas absorption"@en,
+        "absorção de gás"@pt-br ;
+    dcterms:source "Green & Southard (eds.), Perry's Chemical Engineers' Handbook, 9th ed. §14 (absorption and stripping).",
+        "ODR-011" ;
+    rdfs:comment "A mass-transfer operation in which a chemical species carried by an input gas, and absent from the input solvent, becomes a constituent of the output liquid."@en,
+        "Uma operação de transferência de massa na qual uma espécie química transportada por um gás de entrada, e ausente do solvente de entrada, torna-se constituinte do líquido de saída."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Absorption> ;
+    rdfs:subClassOf copi:COPI_0000005 ;
+    iof-av:adaptedFrom "Treybal, Mass-Transfer Operations." ;
+    iof-av:firstOrderLogicDefinition "∀p (GasAbsorption(p) ↔ MassTransfer(p) ∧ ∃g,l,l2,c(hasInput(p,g) ∧ Gas(g) ∧ hasInput(p,l) ∧ Liquid(l) ∧ hasOutput(p,l2) ∧ Liquid(l2) ∧ derivesFrom(l2,l) ∧ hasConstituent(g,c) ∧ ¬∃c1(hasConstituent(l,c1) ∧ sameSubstance(c1,c)) ∧ ∃c2(hasConstituent(l2,c2) ∧ sameSubstance(c2,c))))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A mass-transfer operation in which a chemical species carried by an input gas, and absent from the input solvent, becomes a constituent of the output liquid."@en,
+        "Uma operação de transferência de massa na qual uma espécie química transportada por um gás de entrada, e ausente do solvente de entrada, torna-se constituinte do líquido de saída."@pt-br ;
+    iof-av:primitiveRationale "Although a full first-order definition is available, OWL 2 DL carries only the typed-participation envelope; the relational differentia (a constituent migrating gas->liquid) is FOL-only."@en,
+        "Embora exista uma definição de primeira ordem completa, o OWL 2 DL carrega apenas o envelope de participação tipada; a diferença relacional (um constituinte migrando gás->líquido) é apenas-FOL."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'gas absorption' if and only if x is a 'mass transfer' in which a substance carried by the input gas, absent from the input solvent, is a constituent of the output liquid"@en,
+        "x é uma 'absorção de gás' se e somente se x é uma 'transferência de massa' na qual uma substância transportada pelo gás de entrada, ausente do solvente de entrada, é constituinte do líquido de saída"@pt-br .
 
-    dcterms:title "COPI Core: a process-industry core layer in BFO"@en ,
-                  "COPI Núcleo: uma camada núcleo para indústrias de processo em BFO"@pt-br ;
-    dcterms:creator "Nicolau Oyhenard dos Santos" , "Mara Abel" ;
-    dcterms:publisher "Institute of Informatics, Federal University of Rio Grande do Sul (UFRGS)"@en ;
+copi:COPI_0000014 a owl:Class ;
+    rdfs:label "vaporization"@en,
+        "vaporização"@pt-br ;
+    dcterms:source "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §16 (evaporation).",
+        "ODR-011" ;
+    rdfs:comment "A phase-change operation in which a liquid input is converted to a vapour output."@en,
+        "Uma operação de mudança de fase na qual uma entrada líquida é convertida em uma saída de vapor."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Vaporization> ;
+    rdfs:subClassOf copi:COPI_0000008 ;
+    iof-av:firstOrderLogicDefinition "∀x (Vaporization(x) ↔ PhaseChange(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∃v(Vapour(v) ∧ hasOutput(x,v) ∧ derivesFrom(v,l)))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A phase-change operation in which a liquid input is converted to a vapour output."@en,
+        "Uma operação de mudança de fase na qual uma entrada líquida é convertida em uma saída de vapor."@pt-br ;
+    iof-av:primitiveRationale "OWL 2 DL carries only the genus (PhaseChange); the liquid-to-vapour derivation is FOL-only."@en,
+        "OWL 2 DL carrega apenas o gênero (PhaseChange); a derivação líquido-para-vapor é apenas-FOL."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'vaporization' if and only if x is a 'phase change' whose liquid input gives rise to a vapour output"@en,
+        "x é uma 'vaporização' se e somente se x é uma 'mudança de fase' cuja entrada líquida dá origem a uma saída de vapor"@pt-br .
+
+copi:COPI_0000015 a owl:Class ;
+    rdfs:label "loss of containment"@en,
+        "perda de contenção"@pt-br ;
+    dcterms:source "ODR-009" ;
+    rdfs:comment "A process in which a contained material escapes its intended boundary. An unplanned process; deliberately not an iof-constr:PlannedProcess."@en,
+        "Um processo no qual um material contido escapa de seu limite pretendido. Um processo não planejado; deliberadamente não um iof-constr:PlannedProcess."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    iof-av:explanatoryNote "Relevant to HAZOP and failure-propagation work built over COPI."@en,
+        "Relevante para trabalhos de HAZOP e propagação de falhas construídos sobre o COPI."@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀x (LossOfContainment(x) → Process(x) ∧ ¬PlannedProcess(x))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A process in which a contained material escapes its intended boundary. An unplanned process; deliberately not an iof-constr:PlannedProcess."@en,
+        "Um processo no qual um material contido escapa de seu limite pretendido. Um processo não planejado; deliberadamente não um iof-constr:PlannedProcess."@pt-br ;
+    iof-av:primitiveRationale "Included to make the bfo:Process rooting concrete: the same boundary-failure kind is failure-relevant (ISO 14224) and cannot be a PlannedProcess; a planned-only hierarchy would exclude it."@en,
+        "Incluída para tornar concreta a ancoragem em bfo:Process: o mesmo tipo de falha de barreira é relevante para falhas (ISO 14224) e não pode ser um PlannedProcess; uma hierarquia só-planejada o excluiria."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'loss of containment' then x is a 'process' and x is not a 'planned process'"@en,
+        "se x é uma 'perda de contenção' então x é um 'processo' e x não é um 'processo planejado'"@pt-br .
+
+copi:COPI_0000016 a owl:Class ;
+    rdfs:label "momentum-transfer device"@en,
+        "dispositivo de transferência de quantidade de movimento"@pt-br ;
+    dcterms:source "ODR-011",
+        "ODR-012" ;
+    rdfs:comment "A material artifact that bears a designed function realized in a momentum-transfer operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de quantidade de movimento."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ;
+                        owl:onProperty iof-constr:hasFunction ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( iof-constr:DesignedFunction [ a owl:Restriction ;
+                                            owl:onProperty obo:BFO_0000054 ;
+                                            owl:someValuesFrom copi:COPI_0000003 ] ) ] ] ) ] ;
+    skos:example "pump, compressor, fan, pipe, mixer"@en,
+        "bomba, compressor, ventilador, tubo, misturador"@pt-br ;
+    iof-av:adaptedFrom "Unit-operations tradition (McCabe-Smith-Harriott); cross-checked against IEC 81346-2 codes G, M, W and ISO 14224 Annex A." ;
+    iof-av:explanatoryNote "A dispersive (defined) category; a leaf declaring only its designed function is automatically classified here by the reasoner. Not asserted disjoint from the other equipment categories (selective partition)."@en,
+        "Uma categoria dispersiva (definida); uma folha que declara apenas sua função projetada é classificada aqui automaticamente pelo reasoner. Não asserida disjunta das demais categorias de equipamento (partição seletiva)."@pt-br ;
+    iof-av:firstOrderLogicDefinition "∀x (MomentumTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MomentumTransfer(p) ∧ realizedIn(f,p))))" ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a momentum-transfer operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de quantidade de movimento."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'momentum-transfer device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'momentum transfer'"@en,
+        "x é um 'dispositivo de transferência de quantidade de movimento' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'transferência de quantidade de movimento'"@pt-br .
+
+copi:COPI_0000017 a owl:Class ;
+    rdfs:label "heat-transfer device"@en,
+        "dispositivo de transferência de calor"@pt-br ;
+    dcterms:source "ODR-011",
+        "ODR-012" ;
+    rdfs:comment "A material artifact that bears a designed function realized in a heat-transfer operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de calor."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ;
+                        owl:onProperty iof-constr:hasFunction ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( iof-constr:DesignedFunction [ a owl:Restriction ;
+                                            owl:onProperty obo:BFO_0000054 ;
+                                            owl:someValuesFrom copi:COPI_0000004 ] ) ] ] ) ] ;
+    skos:example "shell-and-tube exchanger, fired heater, reboiler"@en,
+        "trocador casco-e-tubo, aquecedor a fogo direto, refervedor"@pt-br ;
+    iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 codes E, V." ;
+    iof-av:explanatoryNote "Defined category; an artifact bearing a secondary function (e.g. a reboiler that also vaporizes) acquires additional category memberships -- intended, not a defect."@en,
+        "Categoria definida; um artefato que porta uma função secundária (e.g. um refervedor que também vaporiza) adquire pertinências adicionais de categoria -- intencional, não um defeito."@pt-br ;
+    iof-av:firstOrderLogicDefinition "∀x (HeatTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(HeatTransfer(p) ∧ realizedIn(f,p))))" ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a heat-transfer operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de calor."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'heat-transfer device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'heat transfer'"@en,
+        "x é um 'dispositivo de transferência de calor' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'transferência de calor'"@pt-br .
+
+copi:COPI_0000018 a owl:Class ;
+    rdfs:label "mass-transfer device"@en,
+        "dispositivo de transferência de massa"@pt-br ;
+    dcterms:source "ODR-011",
+        "ODR-012" ;
+    rdfs:comment "A material artifact that bears a designed function realized in a mass-transfer operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de massa."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ;
+                        owl:onProperty iof-constr:hasFunction ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( iof-constr:DesignedFunction [ a owl:Restriction ;
+                                            owl:onProperty obo:BFO_0000054 ;
+                                            owl:someValuesFrom copi:COPI_0000005 ] ) ] ] ) ] ;
+    skos:example "absorber, stripper, distillation column, adsorber"@en,
+        "absorvedor, esgotador, coluna de destilação, adsorvedor"@pt-br ;
+    iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
+    iof-av:firstOrderLogicDefinition "∀x (MassTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MassTransfer(p) ∧ realizedIn(f,p))))" ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a mass-transfer operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de massa."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'mass-transfer device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'mass transfer'"@en,
+        "x é um 'dispositivo de transferência de massa' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'transferência de massa'"@pt-br .
+
+copi:COPI_0000019 a owl:Class ;
+    rdfs:label "mechanical-separation device"@en,
+        "dispositivo de separação mecânica"@pt-br ;
+    dcterms:source "ODR-011",
+        "ODR-012" ;
+    rdfs:comment "A material artifact that bears a designed function realized in a mechanical-separation operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de separação mecânica."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ;
+                        owl:onProperty iof-constr:hasFunction ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( iof-constr:DesignedFunction [ a owl:Restriction ;
+                                            owl:onProperty obo:BFO_0000054 ;
+                                            owl:someValuesFrom copi:COPI_0000006 ] ) ] ] ) ] ;
+    skos:example "three-phase separator, cyclone, filter, centrifuge"@en,
+        "separador trifásico, ciclone, filtro, centrífuga"@pt-br ;
+    iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
+    iof-av:firstOrderLogicDefinition "∀x (MechanicalSeparationDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MechanicalSeparation(p) ∧ realizedIn(f,p))))" ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a mechanical-separation operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de separação mecânica."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'mechanical-separation device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'mechanical separation'"@en,
+        "x é um 'dispositivo de separação mecânica' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'separação mecânica'"@pt-br .
+
+copi:COPI_0000020 a owl:Class ;
+    rdfs:label "chemical reactor"@en,
+        "reator químico"@pt-br ;
+    dcterms:source "ODR-011",
+        "ODR-012" ;
+    rdfs:comment "A material artifact that bears a designed function realized in a chemical-reaction operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de reação química."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ;
+                        owl:onProperty iof-constr:hasFunction ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( iof-constr:DesignedFunction [ a owl:Restriction ;
+                                            owl:onProperty obo:BFO_0000054 ;
+                                            owl:someValuesFrom copi:COPI_0000007 ] ) ] ] ) ] ;
+    skos:example "CSTR, plug-flow reactor, fixed-bed catalytic reactor"@en,
+        "CSTR, reator de fluxo pistonado, reator catalítico de leito fixo"@pt-br ;
+    iof-av:adaptedFrom "Unit-process tradition; ISO 14224 Annex A; IEC 81346-2 code H." ;
+    iof-av:firstOrderLogicDefinition "∀x (ChemicalReactor(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(ChemicalReaction(p) ∧ realizedIn(f,p))))" ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a chemical-reaction operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de reação química."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'chemical reactor' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'chemical reaction'"@en,
+        "x é um 'reator químico' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'reação química'"@pt-br .
+
+copi:COPI_0000021 a owl:Class ;
+    rdfs:label "phase-change device"@en,
+        "dispositivo de mudança de fase"@pt-br ;
+    dcterms:source "ODR-011",
+        "ODR-012" ;
+    rdfs:comment "A material artifact that bears a designed function realized in a phase-change operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de mudança de fase."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ;
+                        owl:onProperty iof-constr:hasFunction ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( iof-constr:DesignedFunction [ a owl:Restriction ;
+                                            owl:onProperty obo:BFO_0000054 ;
+                                            owl:someValuesFrom copi:COPI_0000008 ] ) ] ] ) ] ;
+    skos:example "evaporator, condenser, crystalliser"@en,
+        "evaporador, condensador, cristalizador"@pt-br ;
+    iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
+    iof-av:firstOrderLogicDefinition "∀x (PhaseChangeDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(PhaseChange(p) ∧ realizedIn(f,p))))" ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a phase-change operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de mudança de fase."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'phase-change device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'phase change'"@en,
+        "x é um 'dispositivo de mudança de fase' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'mudança de fase'"@pt-br .
+
+copi:COPI_0000022 a owl:Class ;
+    rdfs:label "containment device"@en,
+        "dispositivo de contenção"@pt-br ;
+    dcterms:source "ODR-011",
+        "ODR-012" ;
+    rdfs:comment "A material artifact that bears a designed function realized in a material-containment operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de contenção de material."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ;
+                        owl:onProperty iof-constr:hasFunction ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( iof-constr:DesignedFunction [ a owl:Restriction ;
+                                            owl:onProperty obo:BFO_0000054 ;
+                                            owl:someValuesFrom copi:COPI_0000009 ] ) ] ] ) ] ;
+    skos:example "storage tank, pressure vessel, accumulator"@en,
+        "tanque de armazenamento, vaso de pressão, acumulador"@pt-br ;
+    iof-av:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 code C." ;
+    iof-av:firstOrderLogicDefinition "∀x (ContainmentDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MaterialContainment(p) ∧ realizedIn(f,p))))" ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a material-containment operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de contenção de material."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'containment device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'material containment'"@en,
+        "x é um 'dispositivo de contenção' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'contenção de material'"@pt-br .
+
+copi:COPI_0000023 a owl:Class ;
+    rdfs:label "flow-control device"@en,
+        "dispositivo de controle de fluxo"@pt-br ;
+    dcterms:source "ODR-011",
+        "ODR-012" ;
+    rdfs:comment "A material artifact that bears a designed function realized in a flow-control operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de controle de fluxo."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ;
+                        owl:onProperty iof-constr:hasFunction ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( iof-constr:DesignedFunction [ a owl:Restriction ;
+                                            owl:onProperty obo:BFO_0000054 ;
+                                            owl:someValuesFrom copi:COPI_0000010 ] ) ] ] ) ] ;
+    skos:example "control valve, shutoff valve, relief valve"@en,
+        "válvula de controle, válvula de bloqueio, válvula de alívio"@pt-br ;
+    iof-av:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 codes Q, R, F." ;
+    iof-av:firstOrderLogicDefinition "∀x (FlowControlDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(FlowControl(p) ∧ realizedIn(f,p))))" ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a flow-control operation."@en,
+        "Um artefato material que porta uma função projetada realizada em uma operação de controle de fluxo."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'flow-control device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'flow control'"@en,
+        "x é um 'dispositivo de controle de fluxo' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' algum 'controle de fluxo'"@pt-br .
+
+copi:COPI_0000024 a owl:Class ;
+    rdfs:label "measurement instrument"@en,
+        "instrumento de medição"@pt-br ;
+    dcterms:source "ODR-011",
+        "ODR-012" ;
+    rdfs:comment "A material artifact that bears a designed function realized in an iof-constr:MeasurementProcess (a planned process yielding an information output)."@en,
+        "Um artefato material que porta uma função projetada realizada em um iof-constr:MeasurementProcess (um processo planejado que produz uma saída informacional)."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ;
+                        owl:onProperty iof-constr:hasFunction ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( iof-constr:DesignedFunction [ a owl:Restriction ;
+                                            owl:onProperty obo:BFO_0000054 ;
+                                            owl:someValuesFrom iof-constr:MeasurementProcess ] ) ] ] ) ] ;
+    skos:example "temperature/pressure/flow/level transmitter, composition analyzer"@en,
+        "transmissor de temperatura/pressão/vazão/nível, analisador de composição"@pt-br ;
+    iof-av:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 code B." ;
+    iof-av:explanatoryNote "Measurement stands apart from the transformation categories in yielding an informational rather than a material output; it reuses iof-constr:MeasurementProcess instead of minting a COPI process."@en,
+        "A medição distingue-se das categorias de transformação por produzir uma saída informacional em vez de material; reutiliza iof-constr:MeasurementProcess em vez de cunhar um processo COPI."@pt-br ;
+    iof-av:firstOrderLogicDefinition "∀x (MeasurementInstrument(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MeasurementProcess(p) ∧ realizedIn(f,p))))" ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in an iof-constr:MeasurementProcess (a planned process yielding an information output)."@en,
+        "Um artefato material que porta uma função projetada realizada em um iof-constr:MeasurementProcess (um processo planejado que produz uma saída informacional)."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'measurement instrument' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'measurement process'"@en,
+        "x é um 'instrumento de medição' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' algum 'processo de medição'"@pt-br .
+
+copi:COPI_0000089 a owl:Class ;
+    rdfs:label "heat exchange"@en,
+        "troca de calor"@pt-br ;
+    dcterms:source "Green & Southard (eds.), Perry's Chemical Engineers' Handbook, 9th ed. §11 (heat transfer).",
+        "ODR-016 §A (HeatExchange leaf, Nível 2 Incremento 1a)" ;
+    rdfs:comment "A heat-transfer operation in which thermal energy is exchanged between two or more fluid streams, typically separated by a solid heat-transfer surface, without mixing those streams."@en,
+        "Uma operação de transferência de calor na qual energia térmica é trocada entre dois ou mais fluidos, tipicamente separados por uma superfície sólida de troca de calor, sem mistura dessas correntes."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#TemperatureChange> ;
+    rdfs:subClassOf copi:COPI_0000004 ;
+    iof-av:adaptedFrom "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §11–12 (heat transfer without/with phase change)." ;
+    iof-av:firstOrderLogicDefinition "∀x (HeatExchange(x) ↔ HeatTransfer(x) ∧ ∃f1,f2,f3,f4(hasInput(x,f1) ∧ Fluid(f1) ∧ hasInput(x,f2) ∧ Fluid(f2) ∧ f1≠f2 ∧ hasOutput(x,f3) ∧ Fluid(f3) ∧ hasOutput(x,f4) ∧ Fluid(f4) ∧ f3≠f4 ∧ derivesFrom(f3,f1) ∧ derivesFrom(f4,f2) ∧ ¬∃c3(hasConstituent(f3,c3) ∧ ¬∃c1(hasConstituent(f1,c1) ∧ sameSubstance(c1,c3))) ∧ ¬∃c4(hasConstituent(f4,c4) ∧ ¬∃c2(hasConstituent(f2,c2) ∧ sameSubstance(c2,c4)))))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A heat-transfer operation in which thermal energy is exchanged between two or more fluid streams, typically separated by a solid heat-transfer surface, without mixing those streams."@en,
+        "Uma operação de transferência de calor na qual energia térmica é trocada entre dois ou mais fluidos, tipicamente separados por uma superfície sólida de troca de calor, sem mistura dessas correntes."@pt-br ;
+    iof-av:primitiveRationale "Although a full first-order definition is available, OWL 2 DL carries only the genus (HeatTransfer); the pair-wise input–output correspondence (derivesFrom linking each output to its source input) and the cross-stream composition conservation (no constituent transferred between streams) are FOL-only constructs that exceed OWL 2 DL expressivity."@en,
+        "Embora exista uma definição de primeira ordem completa, o OWL 2 DL carrega apenas o gênero (HeatTransfer); a correspondência par-a-par entrada–saída (derivesFrom ligando cada saída à sua entrada de origem) e a conservação de composição entre correntes (nenhum constituinte transferido entre as correntes) são construtos apenas-FOL que excedem a expressividade do OWL 2 DL."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'heat exchange' if and only if x is a 'heat transfer' in which two distinct fluid inputs each give rise to a corresponding fluid output of identical composition, with no constituent transferred between streams"@en,
+        "x é uma 'troca de calor' se e somente se x é uma 'transferência de calor' na qual dois fluidos de entrada distintos dão origem cada um a um fluido de saída correspondente de composição idêntica, sem transferência de constituinte entre as correntes"@pt-br .
+
+copi:COPI_0000091 a owl:Class ;
+    rdfs:label "instrument"@en,
+        "instrumento"@pt-br ;
+    dcterms:source "ODR-018" ;
+    rdfs:comment "A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item."@en,
+        "Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    iof-av:firstOrderLogicAxiom "∀x (Instrument(x) → MaterialArtifact(x))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item."@en,
+        "Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta."@pt-br ;
+    iof-av:primitiveRationale "The sensing-or-measuring structural differentia is expressed informally in the NLD; OWL carries only the genus (MaterialArtifact). The structural axis (Instrument) is orthogonal to the functional axis (MeasurementInstrument); an artifact is both simultaneously — intended (ODR-018)."@en,
+        "A diferença estrutural de detecção-ou-medição é expressa informalmente na NLD; OWL carrega apenas o gênero (MaterialArtifact). O eixo estrutural (Instrument) é ortogonal ao eixo funcional (MeasurementInstrument); um artefato é ambos simultaneamente — intencional (ODR-018)."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is an 'instrument' then x is a 'material artifact'"@en,
+        "se x é um 'instrumento', então x é um 'artefato material'"@pt-br .
+
+copi:COPI_0000092 a owl:Class ;
+    rdfs:label "heat exchanger"@en,
+        "trocador de calor"@pt-br ;
+    dcterms:source "ODR-018, ODR-019" ;
+    rdfs:comment "A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing."@en,
+        "Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000090 ;
+    iof-av:firstOrderLogicAxiom "∀x (HeatExchanger(x) → PressureVessel(x) ∧ ∃s(SolidHeatTransferSurface(s) ∧ hasComponentPartAtAllTimes(x,s)))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing."@en,
+        "Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos."@pt-br ;
+    iof-av:primitiveRationale "SolidHeatTransferSurface is a FOL-only predicate (no OWL IRI), analogous to Fluid and sameSubstance in operation axioms; OWL carries only the genus (PressureVessel). The two-circuit-separation and no-mixing differentia are in the NLD. Full equivalentClass axiomatisation is deferred to Incremento 2c."@en,
+        "SolidHeatTransferSurface é um predicado somente-FOL (sem IRI OWL), análogo a Fluid e sameSubstance nos axiomas de operação; OWL carrega apenas o gênero (PressureVessel). A differentia de separação de dois circuitos e não-mistura está na NLD. Axiomatização plena equivalentClass adiada ao Incremento 2c."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'heat exchanger' then x is a 'pressure vessel' that has a 'solid heat-transfer surface' as a component part at all times"@en,
+        "se x é um 'trocador de calor', então x é um 'vaso de pressão' que tem uma 'superfície sólida de transferência de calor' como parte componente em todo momento"@pt-br .
+
+copi:COPI_0000006 a owl:Class ;
+    rdfs:label "mechanical separation"@en,
+        "separação mecânica"@pt-br ;
+    dcterms:source "ODR-009" ;
+    rdfs:comment "A process that separates a heterogeneous mixture into fractions by mechanical means (gravity, centrifugal, or barrier forces) without phase change or chemical reaction."@en,
+        "Um processo que separa uma mistura heterogênea em frações por meios mecânicos (forças gravitacionais, centrífugas ou de barreira) sem mudança de fase ou reação química."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000001 ;
+    skos:example "Three-phase gravity separation; cyclonic separation; filtration; centrifugation."@en,
+        "Separação gravitacional trifásica; separação ciclônica; filtração; centrifugação."@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀x (MechanicalSeparation(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A process that separates a heterogeneous mixture into fractions by mechanical means (gravity, centrifugal, or barrier forces) without phase change or chemical reaction."@en,
+        "Um processo que separa uma mistura heterogênea em frações por meios mecânicos (forças gravitacionais, centrífugas ou de barreira) sem mudança de fase ou reação química."@pt-br ;
+    iof-av:primitiveRationale "Unit-operations class; the partition of a heterogeneous feed by mechanical force is not formalised in OWL beyond the envelope."@en,
+        "Classe de operações unitárias; a separação de uma alimentação heterogênea por força mecânica não é formalizada em OWL além do envelope."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'mechanical separation' then x is a 'process' that 'has input' some 'material entity' and 'has output' some 'material entity'"@en,
+        "se x é uma 'separação mecânica' então x é um 'processo' que 'tem entrada' alguma 'entidade material' e 'tem saída' alguma 'entidade material'"@pt-br .
+
+copi:COPI_0000007 a owl:Class ;
+    rdfs:label "chemical reaction"@en,
+        "reação química"@pt-br ;
+    dcterms:source "ODR-009" ;
+    rdfs:comment "A process in which chemical species are consumed and new species, present in no input, are formed."@en,
+        "Um processo no qual espécies químicas são consumidas e novas espécies, presentes em nenhuma entrada, são formadas."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000001 ;
+    skos:example "Fermentation of sugars to ethanol; combustion; catalytic conversion."@en,
+        "Fermentação de açúcares a etanol; combustão; conversão catalítica."@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀x (ChemicalReaction(x) → Process(x) ∧ ∃o,c(hasOutput(x,o) ∧ hasConstituent(o,c) ∧ ¬∃i,c1(hasInput(x,i) ∧ hasConstituent(i,c1) ∧ sameSubstance(c1,c))))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A process in which chemical species are consumed and new species, present in no input, are formed."@en,
+        "Um processo no qual espécies químicas são consumidas e novas espécies, presentes em nenhuma entrada, são formadas."@pt-br ;
+    iof-av:primitiveRationale "Unit-process class; the formation of a genuinely new species is partly characterised in FOL but only the genus is asserted in OWL."@en,
+        "Classe de processo unitário; a formação de uma espécie genuinamente nova é parcialmente caracterizada em FOL mas apenas o gênero é asserido em OWL."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'chemical reaction' then x is a 'process' whose output has a constituent substance that no input has"@en,
+        "se x é uma 'reação química' então x é um 'processo' cuja saída tem uma substância constituinte que nenhuma entrada possui"@pt-br .
+
+copi:COPI_0000009 a owl:Class ;
+    rdfs:label "material containment"@en,
+        "contenção de material"@pt-br ;
+    dcterms:source "ODR-009" ;
+    rdfs:comment "A process that maintains a contained material's state and identity over time; a limiting case in which the process input and output coincide. An auxiliary (non-transformation) category."@en,
+        "Um processo que mantém o estado e a identidade de um material contido ao longo do tempo; um caso-limite no qual a entrada e a saída do processo coincidem. Uma categoria auxiliar (não-transformação)."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000001 ;
+    skos:example "Holding crude in a storage tank; buffering liquid in a surge drum."@en,
+        "Armazenar petróleo cru em um tanque; amortecer líquido em um tambor de surto."@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀x (MaterialContainment(x) → Process(x) ∧ ∃m(MaterialEntity(m) ∧ hasInput(x,m) ∧ hasOutput(x,m)))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A process that maintains a contained material's state and identity over time; a limiting case in which the process input and output coincide. An auxiliary (non-transformation) category."@en,
+        "Um processo que mantém o estado e a identidade de um material contido ao longo do tempo; um caso-limite no qual a entrada e a saída do processo coincidem. Uma categoria auxiliar (não-transformação)."@pt-br ;
+    iof-av:primitiveRationale "Auxiliary category retained because all plant equipment must be classifiable; the input=output identity is the limiting characterisation, not a transformation."@en,
+        "Categoria auxiliar mantida porque todo equipamento de planta deve ser classificável; a identidade entrada=saída é a caracterização-limite, não uma transformação."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'material containment' then x is a 'process' that 'has input' and 'has output' the same 'material entity'"@en,
+        "se x é uma 'contenção de material' então x é um 'processo' que 'tem entrada' e 'tem saída' a mesma 'entidade material'"@pt-br .
+
+copi:COPI_0000010 a owl:Class ;
+    rdfs:label "flow control"@en,
+        "controle de fluxo"@pt-br ;
+    dcterms:source "ODR-009" ;
+    rdfs:comment "A process that modulates a flow without changing the material's substance, phase, or composition."@en,
+        "Um processo que modula um escoamento sem alterar a substância, a fase ou a composição do material."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000001 ;
+    skos:example "Throttling a stream through a control valve; isolating via a shutoff valve; relieving overpressure."@en,
+        "Estrangular uma corrente por uma válvula de controle; isolar por uma válvula de bloqueio; aliviar sobrepressão."@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀x (FlowControl(x) → Process(x) ∧ ∃m(MaterialEntity(m) ∧ hasInput(x,m) ∧ hasOutput(x,m)))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A process that modulates a flow without changing the material's substance, phase, or composition."@en,
+        "Um processo que modula um escoamento sem alterar a substância, a fase ou a composição do material."@pt-br ;
+    iof-av:primitiveRationale "Auxiliary category; the conservation of substance/phase/composition under modulation is the characterisation and is not a material transformation."@en,
+        "Categoria auxiliar; a conservação de substância/fase/composição sob modulação é a caracterização e não é uma transformação material."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'flow control' then x is a 'process' that conserves the substance, phase and composition of its material participant"@en,
+        "se x é um 'controle de fluxo' então x é um 'processo' que conserva a substância, a fase e a composição de seu participante material"@pt-br .
+
+copi:COPI_0000012 a owl:Class ;
+    rdfs:label "gas pressure increase"@en,
+        "aumento de pressão de gás"@pt-br ;
+    dcterms:source "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, compression).",
+        "ODR-011" ;
+    rdfs:comment "A momentum-transfer operation whose fluid input is a compressible gas and whose effect is to raise that gas's pressure."@en,
+        "Uma operação de transferência de quantidade de movimento cuja entrada fluida é um gás compressível e cujo efeito é elevar a pressão desse gás."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfGas> ;
+    rdfs:subClassOf copi:COPI_0000003 ;
+    iof-av:firstOrderLogicDefinition "∀x (GasPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃g(Gas(g) ∧ hasInput(x,g)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Gas(m)))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A momentum-transfer operation whose fluid input is a compressible gas and whose effect is to raise that gas's pressure."@en,
+        "Uma operação de transferência de quantidade de movimento cuja entrada fluida é um gás compressível e cujo efeito é elevar a pressão desse gás."@pt-br ;
+    iof-av:primitiveRationale "As for LiquidPressureIncrease: the phase constraint is not expressible in OWL 2 DL; only the genus is asserted."@en,
+        "Como em LiquidPressureIncrease: a restrição de fase não é expressável em OWL 2 DL; apenas o gênero é asserido."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x is a 'gas pressure increase' if and only if x is a 'momentum transfer' whose fluid input is a 'gas'"@en,
+        "x é um 'aumento de pressão de gás' se e somente se x é uma 'transferência de quantidade de movimento' cuja entrada fluida é um 'gás'"@pt-br .
+
+copi:COPI_0000090 a owl:Class ;
+    rdfs:label "pressure vessel"@en,
+        "vaso de pressão"@pt-br ;
+    dcterms:source "ODR-018" ;
+    rdfs:comment "A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress."@en,
+        "Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:Assembly ;
+    iof-av:firstOrderLogicAxiom "∀x (PressureVessel(x) → Assembly(x))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress."@en,
+        "Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante."@pt-br ;
+    iof-av:primitiveRationale "The pressure-containing structural differentia (rated shell, mechanical stress specification) is expressed informally in the NLD; OWL carries only the genus (Assembly). Structural axioms are deferred to Incremento 2b."@en,
+        "A diferença estrutural de contenção de pressão (casco classificado, especificação de tensão mecânica) é expressa informalmente na NLD; OWL carrega apenas o gênero (Assembly). Axiomas estruturais são adiados ao Incremento 2b."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'pressure vessel' then x is an 'assembly'"@en,
+        "se x é um 'vaso de pressão', então x é um 'conjunto'"@pt-br .
+
+copi:COPI_0000004 a owl:Class ;
+    rdfs:label "heat transfer"@en,
+        "transferência de calor"@pt-br ;
+    dcterms:source "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part II: energy transport.",
+        "ODR-009" ;
+    rdfs:comment "A process that transfers thermal energy between materials (or to/from a material) without, in itself, changing the phase or chemical identity of the process stream."@en,
+        "Um processo que transfere energia térmica entre materiais (ou de/para um material) sem, em si, alterar a fase ou a identidade química da corrente de processo."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000001 ;
+    skos:example "Sensible heating of a process stream against a hot utility."@en,
+        "Aquecimento sensível de uma corrente de processo contra uma utilidade quente."@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀x (HeatTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A process that transfers thermal energy between materials (or to/from a material) without, in itself, changing the phase or chemical identity of the process stream."@en,
+        "Um processo que transfere energia térmica entre materiais (ou de/para um material) sem, em si, alterar a fase ou a identidade química da corrente de processo."@pt-br ;
+    iof-av:primitiveRationale "Unit-operations class; the constancy of phase and chemical identity that distinguishes sensible heat transfer is not captured in OWL, so only the envelope is asserted."@en,
+        "Classe de operações unitárias; a constância de fase e de identidade química que distingue a transferência de calor sensível não é capturada em OWL, de modo que apenas o envelope é asserido."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'heat transfer' then x is a 'process' that 'has input' some 'material entity' and 'has output' some 'material entity'"@en,
+        "se x é uma 'transferência de calor' então x é um 'processo' que 'tem entrada' alguma 'entidade material' e 'tem saída' alguma 'entidade material'"@pt-br .
+
+copi:COPI_0000005 a owl:Class ;
+    rdfs:label "mass transfer"@en,
+        "transferência de massa"@pt-br ;
+    dcterms:source "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part III: mass transport.",
+        "ODR-009" ;
+    rdfs:comment "A process in which one or more chemical species migrate between phases driven by a concentration (chemical-potential) difference."@en,
+        "Um processo no qual uma ou mais espécies químicas migram entre fases impulsionadas por uma diferença de concentração (potencial químico)."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000001 ;
+    skos:example "Absorption of a gas component into a liquid solvent; stripping; distillation."@en,
+        "Absorção de um componente gasoso em um solvente líquido; esgotamento (stripping); destilação."@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀x (MassTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A process in which one or more chemical species migrate between phases driven by a concentration (chemical-potential) difference."@en,
+        "Um processo no qual uma ou mais espécies químicas migram entre fases impulsionadas por uma diferença de concentração (potencial químico)."@pt-br ;
+    iof-av:primitiveRationale "Unit-operations class; the inter-phase migration that individuates its members is stated for specific leaves (e.g. GasAbsorption) but not at the category level in OWL."@en,
+        "Classe de operações unitárias; a migração interfásica que individua seus membros é declarada para folhas específicas (e.g. GasAbsorption) mas não no nível da categoria em OWL."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'mass transfer' then x is a 'process' that 'has input' some 'material entity' and 'has output' some 'material entity'"@en,
+        "se x é uma 'transferência de massa' então x é um 'processo' que 'tem entrada' alguma 'entidade material' e 'tem saída' alguma 'entidade material'"@pt-br .
+
+copi:COPI_0000008 a owl:Class ;
+    rdfs:label "phase change"@en,
+        "mudança de fase"@pt-br ;
+    dcterms:source "ODR-009" ;
+    rdfs:comment "A process that changes the physical state (phase) of a material without changing its chemical identity."@en,
+        "Um processo que altera o estado físico (fase) de um material sem alterar sua identidade química."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000001 ;
+    skos:example "Evaporation; condensation; crystallisation."@en,
+        "Evaporação; condensação; cristalização."@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀x (PhaseChange(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A process that changes the physical state (phase) of a material without changing its chemical identity."@en,
+        "Um processo que altera o estado físico (fase) de um material sem alterar sua identidade química."@pt-br ;
+    iof-av:primitiveRationale "Unit-operations class; the change of phase at constant chemical identity is stated for leaves (e.g. Vaporization) but not at category level in OWL."@en,
+        "Classe de operações unitárias; a mudança de fase a identidade química constante é declarada para folhas (e.g. Vaporization) mas não no nível da categoria em OWL."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'phase change' then x is a 'process' that 'has input' some 'material entity' and 'has output' some 'material entity'"@en,
+        "se x é uma 'mudança de fase' então x é um 'processo' que 'tem entrada' alguma 'entidade material' e 'tem saída' alguma 'entidade material'"@pt-br .
+
+copi:COPI_0000003 a owl:Class ;
+    rdfs:label "momentum transfer"@en,
+        "transferência de quantidade de movimento"@pt-br ;
+    dcterms:source "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part I: momentum transport.",
+        "ODR-009" ;
+    rdfs:comment "A process that imparts mechanical energy to a fluid, changing its pressure or inducing its bulk motion."@en,
+        "Um processo que confere energia mecânica a um fluido, alterando sua pressão ou induzindo seu movimento global."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000001 ;
+    skos:example "Raising the pressure of a process liquid; compressing a gas; circulating a slurry."@en,
+        "Elevar a pressão de um líquido de processo; comprimir um gás; circular uma lama."@pt-br ;
+    iof-av:adaptedFrom "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering (fluid-flow operations)." ;
+    iof-av:explanatoryNote "Includes pressure-raising operations on liquids and gases, and bulk transport/mixing. Its leaf operations LiquidPressureIncrease and GasPressureIncrease are disjoint."@en,
+        "Inclui operações de aumento de pressão de líquidos e gases, e transporte/mistura globais. Suas operações folha LiquidPressureIncrease e GasPressureIncrease são disjuntas."@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀x (MomentumTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A process that imparts mechanical energy to a fluid, changing its pressure or inducing its bulk motion."@en,
+        "Um processo que confere energia mecânica a um fluido, alterando sua pressão ou induzindo seu movimento global."@pt-br ;
+    iof-av:primitiveRationale "A unit-operations class grounded in the McCabe-Smith-Harriott tradition; its members share a typed-participation envelope but no single formally necessary-and-sufficient differentia, so only the envelope is asserted in OWL."@en,
+        "Uma classe de operações unitárias fundamentada na tradição de McCabe-Smith-Harriott; seus membros compartilham um envelope de participação tipada mas nenhuma diferença formal necessária-e-suficiente única, de modo que apenas o envelope é asserido em OWL."@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'momentum transfer' then x is a 'process' that 'has input' some 'material entity' and 'has output' some 'material entity'"@en,
+        "se x é uma 'transferência de quantidade de movimento' então x é um 'processo' que 'tem entrada' alguma 'entidade material' e 'tem saída' alguma 'entidade material'"@pt-br .
+
+copi:COPI_0000001 a owl:Class ;
+    rdfs:label "operation"@en,
+        "operação"@pt-br ;
+    dcterms:source "ODR-009 Amendment A (2026-06-18): copi:Operation as explicit root universal; genus correction to iof-constr:PlannedProcess" ;
+    rdfs:comment "A planned process that an item of process-industry equipment is designed to bring about or take part in; a process-industry unit operation."@en,
+        "Um processo planejado que um item de equipamento de indústria de processo é projetado para causar ou do qual é projetado para participar; uma operação unitária de indústria de processo."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:PlannedProcess ;
+    iof-av:firstOrderLogicAxiom "∀x (Operation(x) → PlannedProcess(x))" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A planned process that an item of process-industry equipment is designed to bring about or take part in; a process-industry unit operation."@en,
+        "Um processo planejado que um item de equipamento de indústria de processo é projetado para causar ou do qual é projetado para participar; uma operação unitária de indústria de processo."@pt-br ;
+    iof-av:primitiveRationale "Root universal for process-industry unit operations in the chemical-engineering tradition (cf. each category's adaptedFrom). Members share a typed participation signature (material inputs/outputs) and differ by transformation effected; no single formal condition differentiates Operation from PlannedProcess in OWL — the differentia is OWL-inexpressible, standard for a BFO primitive. (ODR-009 Amendment A, 2026-06-18)"@en,
+        "Universal raiz para operações unitárias de indústria de processo na tradição da engenharia química (cf. adaptedFrom de cada categoria). Os membros compartilham uma assinatura de participação tipada (entradas/saídas materiais) e diferem pela transformação efetuada; nenhuma condição formal única diferencia Operation de PlannedProcess em OWL — a diferença é inexpressível em OWL, padrão para um primitivo BFO. (ODR-009 Emenda A, 2026-06-18)"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is an 'operation' then x is a 'planned process'"@en,
+        "se x é uma 'operação' então x é um 'processo planejado'"@pt-br .
+
+copi:copi-core a owl:Ontology ;
+    dcterms:creator "Mara Abel",
+        "Nicolau Oyhenard dos Santos" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:modified "2026-06-22"^^xsd:date ;
-    owl:versionInfo "0.4.0-draft (copi-core; Nível 2 Incremento 1a: operation anchors, OntoCAPE cross-refs, HeatExchange leaf)" ;
-    iof-av:copyright "Copyright (c) 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Released under CC BY 4.0."@en ;
-    iof-av:maturity iof-ind:Provisional ;
-
+    dcterms:publisher "Institute of Informatics, Federal University of Rio Grande do Sul (UFRGS)"@en ;
+    dcterms:title "COPI Core: a process-industry core layer in BFO"@en,
+        "COPI Núcleo: uma camada núcleo para indústrias de processo em BFO"@pt-br ;
     rdfs:comment """COPI Core is the top-level layer of the Core Ontology for
 Petroleum Installations (COPI). It specialises BFO 2020 and reuses IOF-Core
 202602 to provide, for the process industries, two cross-cutting nine-member
@@ -67,8 +624,8 @@ taxonomies linked by BFO function realization: nine OPERATION categories
 collecting the artifacts whose identity-giving designed function is realized in
 the paired operation). Identity is carried by the LEAF UNIVERSALS, individuated
 by designed function; the categories are dispersive and intentionally NOT
-pairwise disjoint (selective partition)."""@en ,
-"""COPI Núcleo é a camada de topo da Ontologia Núcleo para Instalações de
+pairwise disjoint (selective partition)."""@en,
+        """COPI Núcleo é a camada de topo da Ontologia Núcleo para Instalações de
 Petróleo (COPI). Especializa a BFO 2020 e reutiliza a IOF-Core 202602 para
 prover, às indústrias de processo, duas taxonomias cruzadas de nove membros
 ligadas pela realização de função da BFO: nove categorias de OPERAÇÃO
@@ -77,576 +634,15 @@ definidas que reúnem os artefatos cuja função projetada identificadora é
 realizada na operação pareada). A identidade é portada pelos UNIVERSAIS FOLHA,
 individuados pela função projetada; as categorias são dispersivas e
 deliberadamente NÃO disjuntas duas a duas (partição seletiva)."""@pt-br ;
-
     rdfs:seeAlso <https://www.inf.ufrgs.br/ontologies/copi> ;
-    iof-av:usageNote "Load in Protégé; map the IOF import IRI to the local Core.rdf (202602) and ensure BFO 2020 resolves; run HermiT."@en ,
-                     "Carregue no Protégé; mapeie o IRI de importação da IOF para o Core.rdf local (202602) e garanta que a BFO 2020 resolva; rode o HermiT."@pt-br ;
+    owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo.owl>,
+        <https://spec.industrialontologies.org/ontology/core/Core/> ;
+    owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-22/copi-core> ;
+    owl:versionInfo "0.4.0-draft (copi-core; Nível 2 Incremento 1a: operation anchors, OntoCAPE cross-refs, HeatExchange leaf)" ;
+    iof-av:copyright "Copyright (c) 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Released under CC BY 4.0."@en ;
+    iof-av:explanatoryNote "Relation to iof:PieceOfEquipment (ODR-012 §3): a COPI equipment category instance that additionally bears an equipment role is entailed as an iof:PieceOfEquipment. The COPI categories are function-based (rigid, grounded in designed function); iof:PieceOfEquipment is role-based (anti-rigid, grounded in an equipment role). The two are orthogonal, complementary views of the same artifact: COPI function-based identity is the primary criterion; membership in iof:PieceOfEquipment follows contextually from role-bearing. No subClassOf is asserted between any COPI equipment category and iof:PieceOfEquipment."@en,
+        "Relação com iof:PieceOfEquipment (ODR-012 §3): uma instância de categoria de equipamento COPI que adicionalmente porta um papel de equipamento é inferida como iof:PieceOfEquipment. As categorias COPI são baseadas em função (rígidas, fundamentadas na função projetada); iof:PieceOfEquipment é baseada em papel (anti-rígida, fundamentada em um papel de equipamento). As duas são visões ortogonais e complementares do mesmo artefato: a identidade baseada em função da COPI é o critério primário; a pertinência a iof:PieceOfEquipment decorre contextualmente do porte do papel. Nenhuma subClassOf é asserida entre qualquer categoria de equipamento COPI e iof:PieceOfEquipment."@pt-br ;
+    iof-av:maturity iof-ind:Provisional ;
+    iof-av:usageNote "Load in Protégé; map the IOF import IRI to the local Core.rdf (202602) and ensure BFO 2020 resolves; run HermiT."@en,
+        "Carregue no Protégé; mapeie o IRI de importação da IOF para o Core.rdf local (202602) e garanta que a BFO 2020 resolva; rode o HermiT."@pt-br .
 
-    iof-av:explanatoryNote "Relation to iof:PieceOfEquipment (ODR-012 §3): a COPI equipment category instance that additionally bears an equipment role is entailed as an iof:PieceOfEquipment. The COPI categories are function-based (rigid, grounded in designed function); iof:PieceOfEquipment is role-based (anti-rigid, grounded in an equipment role). The two are orthogonal, complementary views of the same artifact: COPI function-based identity is the primary criterion; membership in iof:PieceOfEquipment follows contextually from role-bearing. No subClassOf is asserted between any COPI equipment category and iof:PieceOfEquipment."@en ,
-                           "Relação com iof:PieceOfEquipment (ODR-012 §3): uma instância de categoria de equipamento COPI que adicionalmente porta um papel de equipamento é inferida como iof:PieceOfEquipment. As categorias COPI são baseadas em função (rígidas, fundamentadas na função projetada); iof:PieceOfEquipment é baseada em papel (anti-rígida, fundamentada em um papel de equipamento). As duas são visões ortogonais e complementares do mesmo artefato: a identidade baseada em função da COPI é o critério primário; a pertinência a iof:PieceOfEquipment decorre contextualmente do porte do papel. Nenhuma subClassOf é asserida entre qualquer categoria de equipamento COPI e iof:PieceOfEquipment."@pt-br .
-
-#==============================================================================
-# LEGEND (terms USED here; they arrive via the two imports)
-#   BFO: BFO_0000004 independent continuant; BFO_0000015 process;
-#        BFO_0000030 object; BFO_0000034 function;
-#        BFO_0000054 realized in; BFO_0000056 participates in; BFO_0000196 bearer of.
-#   IOF-Core 202602: iof-constr:MaterialArtifact (≡ Object ⊓ ∃bearerOf.DesignedFunction),
-#        iof-constr:DesignedFunction, iof-constr:hasFunction (⊑ bearerOf, range Function),
-#        iof-constr:PlannedProcess, iof-constr:MeasurementProcess (⊑ PlannedProcess).
-#==============================================================================
-
-
-#==============================================================================
-# REALIZATION-TO-PARTICIPATION BRIDGE
-#   We REUSE iof-constr:hasFunction (202602; ⊑ bearerOf, range Function).
-#   In BFO, if a borne function f is realized in process p, then p has the
-#   bearer of f as a participant. OWL does not derive this from the imports
-#   alone, so we assert the sub-property chain on a COPI sub-property of
-#   `participates in` rather than on the imported BFO property directly:
-#       hasFunction o realized_in  ⊑  copi:participatesIn
-#   Moving the chain off obo:BFO_0000056 isolates non-simplicity inside COPI
-#   and preserves the global OWL 2 DL profile. bfo:participatesIn is still
-#   entailed for every satisfying pair via rdfs:subPropertyOf.
-#==============================================================================
-copi:COPI_0000002 a owl:ObjectProperty ;
-    rdfs:subPropertyOf obo:BFO_0000056 ;
-    owl:propertyChainAxiom ( iof-constr:hasFunction obo:BFO_0000054 ) ;
-    rdfs:label "functionally participates in"@en , "participa funcionalmente em"@pt-br ;
-    iof-av:isPrimitive false ;
-    iof-av:naturalLanguageDefinition "The sub-property of bfo:participatesIn (BFO_0000056) entailed exclusively by the chain iof-constr:hasFunction ∘ obo:BFO_0000054: a material artifact functionally participates in every process that realizes one of its designed functions."@en ,
-        "A sub-propriedade de bfo:participatesIn (BFO_0000056) entailada exclusivamente pela cadeia iof-constr:hasFunction ∘ obo:BFO_0000054: um artefato material participa funcionalmente em todo processo que realiza uma de suas funções projetadas."@pt-br ;
-    iof-av:explanatoryNote "Distinguishes function-mediated from general participation: obo:BFO_0000056 (participates in) holds whenever a continuant takes part in any process for any reason; copi:participatesIn is entailed only via the chain hasFunction ∘ BFO_0000054 (is realized in). A pump functionally participates in every liquid-pressure-increase operation that realizes its pumping function; BFO_0000056 additionally covers any other process involvement."@en ,
-        "Distingue a participação mediada por função da participação geral: obo:BFO_0000056 (participa em) vale sempre que um continuante toma parte em algum processo por qualquer razão; copi:participatesIn é entailada apenas pela cadeia hasFunction ∘ BFO_0000054 (é realizada em). Uma bomba participa funcionalmente em toda operação de aumento de pressão de líquido que realiza sua função de bombeamento; BFO_0000056 vale adicionalmente para qualquer outro envolvimento."@pt-br ;
-    dcterms:source "ODR-011 §4" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-
-#==============================================================================
-# OPERATION CATEGORIES  (nine groupings of occurrents; specialise bfo:Process)
-#==============================================================================
-
-copi:COPI_0000001 a owl:Class ;
-    rdfs:subClassOf iof-constr:PlannedProcess ;
-    rdfs:label "operation"@en , "operação"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A planned process that an item of process-industry equipment is designed to bring about or take part in; a process-industry unit operation."@en ,
-        "Um processo planejado que um item de equipamento de indústria de processo é projetado para causar ou do qual é projetado para participar; uma operação unitária de indústria de processo."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (Operation(x) → PlannedProcess(x))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is an 'operation' then x is a 'planned process'"@en ,
-        "se x é uma 'operação' então x é um 'processo planejado'"@pt-br ;
-    iof-av:primitiveRationale "Root universal for process-industry unit operations in the chemical-engineering tradition (cf. each category's adaptedFrom). Members share a typed participation signature (material inputs/outputs) and differ by transformation effected; no single formal condition differentiates Operation from PlannedProcess in OWL — the differentia is OWL-inexpressible, standard for a BFO primitive. (ODR-009 Amendment A, 2026-06-18)"@en ,
-        "Universal raiz para operações unitárias de indústria de processo na tradição da engenharia química (cf. adaptedFrom de cada categoria). Os membros compartilham uma assinatura de participação tipada (entradas/saídas materiais) e diferem pela transformação efetuada; nenhuma condição formal única diferencia Operation de PlannedProcess em OWL — a diferença é inexpressível em OWL, padrão para um primitivo BFO. (ODR-009 Emenda A, 2026-06-18)"@pt-br ;
-    dcterms:source "ODR-009 Amendment A (2026-06-18): copi:Operation as explicit root universal; genus correction to iof-constr:PlannedProcess" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-# --- 1. Momentum transfer ---------------------------------------------------
-copi:COPI_0000003 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000001 ;
-    rdfs:label "momentum transfer"@en , "transferência de quantidade de movimento"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A process that imparts mechanical energy to a fluid, changing its pressure or inducing its bulk motion."@en ,
-        "Um processo que confere energia mecânica a um fluido, alterando sua pressão ou induzindo seu movimento global."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (MomentumTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'momentum transfer' then x is a 'process' that 'has input' some 'material entity' and 'has output' some 'material entity'"@en ,
-        "se x é uma 'transferência de quantidade de movimento' então x é um 'processo' que 'tem entrada' alguma 'entidade material' e 'tem saída' alguma 'entidade material'"@pt-br ;
-    iof-av:primitiveRationale "A unit-operations class grounded in the McCabe-Smith-Harriott tradition; its members share a typed-participation envelope but no single formally necessary-and-sufficient differentia, so only the envelope is asserted in OWL."@en ,
-        "Uma classe de operações unitárias fundamentada na tradição de McCabe-Smith-Harriott; seus membros compartilham um envelope de participação tipada mas nenhuma diferença formal necessária-e-suficiente única, de modo que apenas o envelope é asserido em OWL."@pt-br ;
-    iof-av:explanatoryNote "Includes pressure-raising operations on liquids and gases, and bulk transport/mixing. Its leaf operations LiquidPressureIncrease and GasPressureIncrease are disjoint."@en ,
-        "Inclui operações de aumento de pressão de líquidos e gases, e transporte/mistura globais. Suas operações folha LiquidPressureIncrease e GasPressureIncrease são disjuntas."@pt-br ;
-    skos:example "Raising the pressure of a process liquid; compressing a gas; circulating a slurry."@en ,
-        "Elevar a pressão de um líquido de processo; comprimir um gás; circular uma lama."@pt-br ;
-    iof-av:adaptedFrom "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering (fluid-flow operations)." ;
-    dcterms:source "ODR-009" , "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part I: momentum transport." ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000011 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000003 ;
-    rdfs:label "liquid pressure increase"@en , "aumento de pressão de líquido"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A momentum-transfer operation whose fluid input is an incompressible liquid and whose effect is to raise that liquid's pressure."@en ,
-        "Uma operação de transferência de quantidade de movimento cuja entrada fluida é um líquido incompressível e cujo efeito é elevar a pressão desse líquido."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (LiquidPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Liquid(m)))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'liquid pressure increase' if and only if x is a 'momentum transfer' whose fluid input is a 'liquid'"@en ,
-        "x é um 'aumento de pressão de líquido' se e somente se x é uma 'transferência de quantidade de movimento' cuja entrada fluida é um 'líquido'"@pt-br ;
-    iof-av:primitiveRationale "OWL 2 DL cannot express the phase constraint on the fluid input; the OWL form asserts only the genus (MomentumTransfer). The disjointness with GasPressureIncrease is asserted to carry the pump/compressor partition."@en ,
-        "OWL 2 DL não consegue expressar a restrição de fase sobre a entrada fluida; a forma OWL assere apenas o gênero (MomentumTransfer). A disjunção com GasPressureIncrease é asserida para sustentar a partição bomba/compressor."@pt-br ;
-    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfLiquid> ;
-    dcterms:source "ODR-011" , "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, pumping)." ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000012 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000003 ;
-    rdfs:label "gas pressure increase"@en , "aumento de pressão de gás"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A momentum-transfer operation whose fluid input is a compressible gas and whose effect is to raise that gas's pressure."@en ,
-        "Uma operação de transferência de quantidade de movimento cuja entrada fluida é um gás compressível e cujo efeito é elevar a pressão desse gás."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (GasPressureIncrease(x) ↔ MomentumTransfer(x) ∧ ∃g(Gas(g) ∧ hasInput(x,g)) ∧ ∀m(hasInput(x,m) ∧ Fluid(m) → Gas(m)))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'gas pressure increase' if and only if x is a 'momentum transfer' whose fluid input is a 'gas'"@en ,
-        "x é um 'aumento de pressão de gás' se e somente se x é uma 'transferência de quantidade de movimento' cuja entrada fluida é um 'gás'"@pt-br ;
-    iof-av:primitiveRationale "As for LiquidPressureIncrease: the phase constraint is not expressible in OWL 2 DL; only the genus is asserted."@en ,
-        "Como em LiquidPressureIncrease: a restrição de fase não é expressável em OWL 2 DL; apenas o gênero é asserido."@pt-br ;
-    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#PressureChangeOfGas> ;
-    dcterms:source "ODR-011" , "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, compression)." ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-# No occurrent takes an incompressible-liquid and a compressible-gas input at
-# once; this single disjointness propagates (via the some+only function axioms)
-# into the entailed disjointness of PumpingFunction and CompressionFunction.
-copi:COPI_0000011 owl:disjointWith copi:COPI_0000012 .
-
-# --- 2. Heat transfer -------------------------------------------------------
-copi:COPI_0000004 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000001 ;
-    rdfs:label "heat transfer"@en , "transferência de calor"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A process that transfers thermal energy between materials (or to/from a material) without, in itself, changing the phase or chemical identity of the process stream."@en ,
-        "Um processo que transfere energia térmica entre materiais (ou de/para um material) sem, em si, alterar a fase ou a identidade química da corrente de processo."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (HeatTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'heat transfer' then x is a 'process' that 'has input' some 'material entity' and 'has output' some 'material entity'"@en ,
-        "se x é uma 'transferência de calor' então x é um 'processo' que 'tem entrada' alguma 'entidade material' e 'tem saída' alguma 'entidade material'"@pt-br ;
-    iof-av:primitiveRationale "Unit-operations class; the constancy of phase and chemical identity that distinguishes sensible heat transfer is not captured in OWL, so only the envelope is asserted."@en ,
-        "Classe de operações unitárias; a constância de fase e de identidade química que distingue a transferência de calor sensível não é capturada em OWL, de modo que apenas o envelope é asserido."@pt-br ;
-    skos:example "Sensible heating of a process stream against a hot utility."@en ,
-        "Aquecimento sensível de uma corrente de processo contra uma utilidade quente."@pt-br ;
-    dcterms:source "ODR-009" , "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part II: energy transport." ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-# --- 2a. Heat exchange (leaf under heat transfer) ---------------------------
-copi:COPI_0000089 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000004 ;
-    rdfs:label "heat exchange"@en , "troca de calor"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A heat-transfer operation in which thermal energy is exchanged between two or more fluid streams, typically separated by a solid heat-transfer surface, without mixing those streams."@en ,
-        "Uma operação de transferência de calor na qual energia térmica é trocada entre dois ou mais fluidos, tipicamente separados por uma superfície sólida de troca de calor, sem mistura dessas correntes."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (HeatExchange(x) ↔ HeatTransfer(x) ∧ ∃f1,f2,f3,f4(hasInput(x,f1) ∧ Fluid(f1) ∧ hasInput(x,f2) ∧ Fluid(f2) ∧ f1≠f2 ∧ hasOutput(x,f3) ∧ Fluid(f3) ∧ hasOutput(x,f4) ∧ Fluid(f4) ∧ f3≠f4 ∧ derivesFrom(f3,f1) ∧ derivesFrom(f4,f2) ∧ ¬∃c3(hasConstituent(f3,c3) ∧ ¬∃c1(hasConstituent(f1,c1) ∧ sameSubstance(c1,c3))) ∧ ¬∃c4(hasConstituent(f4,c4) ∧ ¬∃c2(hasConstituent(f2,c2) ∧ sameSubstance(c2,c4)))))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'heat exchange' if and only if x is a 'heat transfer' in which two distinct fluid inputs each give rise to a corresponding fluid output of identical composition, with no constituent transferred between streams"@en ,
-        "x é uma 'troca de calor' se e somente se x é uma 'transferência de calor' na qual dois fluidos de entrada distintos dão origem cada um a um fluido de saída correspondente de composição idêntica, sem transferência de constituinte entre as correntes"@pt-br ;
-    iof-av:primitiveRationale "Although a full first-order definition is available, OWL 2 DL carries only the genus (HeatTransfer); the pair-wise input–output correspondence (derivesFrom linking each output to its source input) and the cross-stream composition conservation (no constituent transferred between streams) are FOL-only constructs that exceed OWL 2 DL expressivity."@en ,
-        "Embora exista uma definição de primeira ordem completa, o OWL 2 DL carrega apenas o gênero (HeatTransfer); a correspondência par-a-par entrada–saída (derivesFrom ligando cada saída à sua entrada de origem) e a conservação de composição entre correntes (nenhum constituinte transferido entre as correntes) são construtos apenas-FOL que excedem a expressividade do OWL 2 DL."@pt-br ;
-    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process.owl#TemperatureChange> ;
-    iof-av:adaptedFrom "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §11–12 (heat transfer without/with phase change)." ;
-    dcterms:source "ODR-016 §A (HeatExchange leaf, Nível 2 Incremento 1a)" , "Green & Southard (eds.), Perry's Chemical Engineers' Handbook, 9th ed. §11 (heat transfer)." ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-# --- 3. Mass transfer -------------------------------------------------------
-copi:COPI_0000005 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000001 ;
-    rdfs:label "mass transfer"@en , "transferência de massa"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A process in which one or more chemical species migrate between phases driven by a concentration (chemical-potential) difference."@en ,
-        "Um processo no qual uma ou mais espécies químicas migram entre fases impulsionadas por uma diferença de concentração (potencial químico)."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (MassTransfer(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'mass transfer' then x is a 'process' that 'has input' some 'material entity' and 'has output' some 'material entity'"@en ,
-        "se x é uma 'transferência de massa' então x é um 'processo' que 'tem entrada' alguma 'entidade material' e 'tem saída' alguma 'entidade material'"@pt-br ;
-    iof-av:primitiveRationale "Unit-operations class; the inter-phase migration that individuates its members is stated for specific leaves (e.g. GasAbsorption) but not at the category level in OWL."@en ,
-        "Classe de operações unitárias; a migração interfásica que individua seus membros é declarada para folhas específicas (e.g. GasAbsorption) mas não no nível da categoria em OWL."@pt-br ;
-    skos:example "Absorption of a gas component into a liquid solvent; stripping; distillation."@en ,
-        "Absorção de um componente gasoso em um solvente líquido; esgotamento (stripping); destilação."@pt-br ;
-    dcterms:source "ODR-009" , "Bird, Stewart & Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part III: mass transport." ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000013 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000005 ;
-    rdfs:label "gas absorption"@en , "absorção de gás"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A mass-transfer operation in which a chemical species carried by an input gas, and absent from the input solvent, becomes a constituent of the output liquid."@en ,
-        "Uma operação de transferência de massa na qual uma espécie química transportada por um gás de entrada, e ausente do solvente de entrada, torna-se constituinte do líquido de saída."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀p (GasAbsorption(p) ↔ MassTransfer(p) ∧ ∃g,l,l2,c(hasInput(p,g) ∧ Gas(g) ∧ hasInput(p,l) ∧ Liquid(l) ∧ hasOutput(p,l2) ∧ Liquid(l2) ∧ derivesFrom(l2,l) ∧ hasConstituent(g,c) ∧ ¬∃c1(hasConstituent(l,c1) ∧ sameSubstance(c1,c)) ∧ ∃c2(hasConstituent(l2,c2) ∧ sameSubstance(c2,c))))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'gas absorption' if and only if x is a 'mass transfer' in which a substance carried by the input gas, absent from the input solvent, is a constituent of the output liquid"@en ,
-        "x é uma 'absorção de gás' se e somente se x é uma 'transferência de massa' na qual uma substância transportada pelo gás de entrada, ausente do solvente de entrada, é constituinte do líquido de saída"@pt-br ;
-    iof-av:primitiveRationale "Although a full first-order definition is available, OWL 2 DL carries only the typed-participation envelope; the relational differentia (a constituent migrating gas->liquid) is FOL-only."@en ,
-        "Embora exista uma definição de primeira ordem completa, o OWL 2 DL carrega apenas o envelope de participação tipada; a diferença relacional (um constituinte migrando gás->líquido) é apenas-FOL."@pt-br ;
-    # closeMatch — OntoCAPE: Absorption ⊑ Separation (process_extensionTGL25001.owl); COPI: GasAbsorption ⊑ MassTransfer — identical gas→liquid scope, different organizational axis (separation vs mass transfer)
-    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Absorption> ;
-    iof-av:adaptedFrom "Treybal, Mass-Transfer Operations." ;
-    dcterms:source "ODR-011" , "Green & Southard (eds.), Perry's Chemical Engineers' Handbook, 9th ed. §14 (absorption and stripping)." ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-# --- 4. Mechanical separation ----------------------------------------------
-copi:COPI_0000006 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000001 ;
-    rdfs:label "mechanical separation"@en , "separação mecânica"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A process that separates a heterogeneous mixture into fractions by mechanical means (gravity, centrifugal, or barrier forces) without phase change or chemical reaction."@en ,
-        "Um processo que separa uma mistura heterogênea em frações por meios mecânicos (forças gravitacionais, centrífugas ou de barreira) sem mudança de fase ou reação química."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (MechanicalSeparation(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'mechanical separation' then x is a 'process' that 'has input' some 'material entity' and 'has output' some 'material entity'"@en ,
-        "se x é uma 'separação mecânica' então x é um 'processo' que 'tem entrada' alguma 'entidade material' e 'tem saída' alguma 'entidade material'"@pt-br ;
-    iof-av:primitiveRationale "Unit-operations class; the partition of a heterogeneous feed by mechanical force is not formalised in OWL beyond the envelope."@en ,
-        "Classe de operações unitárias; a separação de uma alimentação heterogênea por força mecânica não é formalizada em OWL além do envelope."@pt-br ;
-    skos:example "Three-phase gravity separation; cyclonic separation; filtration; centrifugation."@en ,
-        "Separação gravitacional trifásica; separação ciclônica; filtração; centrifugação."@pt-br ;
-    dcterms:source "ODR-009" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-# --- 5. Chemical reaction ---------------------------------------------------
-copi:COPI_0000007 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000001 ;
-    rdfs:label "chemical reaction"@en , "reação química"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A process in which chemical species are consumed and new species, present in no input, are formed."@en ,
-        "Um processo no qual espécies químicas são consumidas e novas espécies, presentes em nenhuma entrada, são formadas."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (ChemicalReaction(x) → Process(x) ∧ ∃o,c(hasOutput(x,o) ∧ hasConstituent(o,c) ∧ ¬∃i,c1(hasInput(x,i) ∧ hasConstituent(i,c1) ∧ sameSubstance(c1,c))))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'chemical reaction' then x is a 'process' whose output has a constituent substance that no input has"@en ,
-        "se x é uma 'reação química' então x é um 'processo' cuja saída tem uma substância constituinte que nenhuma entrada possui"@pt-br ;
-    iof-av:primitiveRationale "Unit-process class; the formation of a genuinely new species is partly characterised in FOL but only the genus is asserted in OWL."@en ,
-        "Classe de processo unitário; a formação de uma espécie genuinamente nova é parcialmente caracterizada em FOL mas apenas o gênero é asserido em OWL."@pt-br ;
-    skos:example "Fermentation of sugars to ethanol; combustion; catalytic conversion."@en ,
-        "Fermentação de açúcares a etanol; combustão; conversão catalítica."@pt-br ;
-    dcterms:source "ODR-009" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-# --- 6. Phase change --------------------------------------------------------
-copi:COPI_0000008 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000001 ;
-    rdfs:label "phase change"@en , "mudança de fase"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A process that changes the physical state (phase) of a material without changing its chemical identity."@en ,
-        "Um processo que altera o estado físico (fase) de um material sem alterar sua identidade química."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (PhaseChange(x) → Process(x) ∧ ∃i∃o(MaterialEntity(i) ∧ MaterialEntity(o) ∧ hasInput(x,i) ∧ hasOutput(x,o)))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'phase change' then x is a 'process' that 'has input' some 'material entity' and 'has output' some 'material entity'"@en ,
-        "se x é uma 'mudança de fase' então x é um 'processo' que 'tem entrada' alguma 'entidade material' e 'tem saída' alguma 'entidade material'"@pt-br ;
-    iof-av:primitiveRationale "Unit-operations class; the change of phase at constant chemical identity is stated for leaves (e.g. Vaporization) but not at category level in OWL."@en ,
-        "Classe de operações unitárias; a mudança de fase a identidade química constante é declarada para folhas (e.g. Vaporization) mas não no nível da categoria em OWL."@pt-br ;
-    skos:example "Evaporation; condensation; crystallisation."@en ,
-        "Evaporação; condensação; cristalização."@pt-br ;
-    dcterms:source "ODR-009" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000014 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000008 ;
-    rdfs:label "vaporization"@en , "vaporização"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A phase-change operation in which a liquid input is converted to a vapour output."@en ,
-        "Uma operação de mudança de fase na qual uma entrada líquida é convertida em uma saída de vapor."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (Vaporization(x) ↔ PhaseChange(x) ∧ ∃l(Liquid(l) ∧ hasInput(x,l)) ∧ ∃v(Vapour(v) ∧ hasOutput(x,v) ∧ derivesFrom(v,l)))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'vaporization' if and only if x is a 'phase change' whose liquid input gives rise to a vapour output"@en ,
-        "x é uma 'vaporização' se e somente se x é uma 'mudança de fase' cuja entrada líquida dá origem a uma saída de vapor"@pt-br ;
-    iof-av:primitiveRationale "OWL 2 DL carries only the genus (PhaseChange); the liquid-to-vapour derivation is FOL-only."@en ,
-        "OWL 2 DL carrega apenas o gênero (PhaseChange); a derivação líquido-para-vapor é apenas-FOL."@pt-br ;
-    # closeMatch — OntoCAPE: Vaporization ⊑ PhaseChangeOfLiquids (process_extensionTGL25001.owl); COPI: Vaporization ⊑ PhaseChange — identical scope (liquid→gas phase transition)
-    rdfs:seeAlso <http://www.theworldavatar.com/ontology/ontocape/chemical_process_system/CPS_function/process_extensionTGL25001.owl#Vaporization> ;
-    dcterms:source "ODR-011" , "McCabe, Smith & Harriott, Unit Operations of Chemical Engineering, 8th ed. §16 (evaporation)." ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-# --- 7. Material containment (auxiliary; limiting case: input = output) -----
-copi:COPI_0000009 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000001 ;
-    rdfs:label "material containment"@en , "contenção de material"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A process that maintains a contained material's state and identity over time; a limiting case in which the process input and output coincide. An auxiliary (non-transformation) category."@en ,
-        "Um processo que mantém o estado e a identidade de um material contido ao longo do tempo; um caso-limite no qual a entrada e a saída do processo coincidem. Uma categoria auxiliar (não-transformação)."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (MaterialContainment(x) → Process(x) ∧ ∃m(MaterialEntity(m) ∧ hasInput(x,m) ∧ hasOutput(x,m)))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'material containment' then x is a 'process' that 'has input' and 'has output' the same 'material entity'"@en ,
-        "se x é uma 'contenção de material' então x é um 'processo' que 'tem entrada' e 'tem saída' a mesma 'entidade material'"@pt-br ;
-    iof-av:primitiveRationale "Auxiliary category retained because all plant equipment must be classifiable; the input=output identity is the limiting characterisation, not a transformation."@en ,
-        "Categoria auxiliar mantida porque todo equipamento de planta deve ser classificável; a identidade entrada=saída é a caracterização-limite, não uma transformação."@pt-br ;
-    skos:example "Holding crude in a storage tank; buffering liquid in a surge drum."@en ,
-        "Armazenar petróleo cru em um tanque; amortecer líquido em um tambor de surto."@pt-br ;
-    dcterms:source "ODR-009" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-# Illustrative UNPLANNED counterpart: motivates rooting operations under
-# bfo:Process rather than iof-constr:PlannedProcess.
-copi:COPI_0000015 a owl:Class ;
-    rdfs:subClassOf obo:BFO_0000015 ;
-    rdfs:label "loss of containment"@en , "perda de contenção"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A process in which a contained material escapes its intended boundary. An unplanned process; deliberately not an iof-constr:PlannedProcess."@en ,
-        "Um processo no qual um material contido escapa de seu limite pretendido. Um processo não planejado; deliberadamente não um iof-constr:PlannedProcess."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (LossOfContainment(x) → Process(x) ∧ ¬PlannedProcess(x))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'loss of containment' then x is a 'process' and x is not a 'planned process'"@en ,
-        "se x é uma 'perda de contenção' então x é um 'processo' e x não é um 'processo planejado'"@pt-br ;
-    iof-av:primitiveRationale "Included to make the bfo:Process rooting concrete: the same boundary-failure kind is failure-relevant (ISO 14224) and cannot be a PlannedProcess; a planned-only hierarchy would exclude it."@en ,
-        "Incluída para tornar concreta a ancoragem em bfo:Process: o mesmo tipo de falha de barreira é relevante para falhas (ISO 14224) e não pode ser um PlannedProcess; uma hierarquia só-planejada o excluiria."@pt-br ;
-    iof-av:explanatoryNote "Relevant to HAZOP and failure-propagation work built over COPI."@en ,
-        "Relevante para trabalhos de HAZOP e propagação de falhas construídos sobre o COPI."@pt-br ;
-    dcterms:source "ODR-009" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-# --- 8. Flow control (auxiliary) -------------------------------------------
-copi:COPI_0000010 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000001 ;
-    rdfs:label "flow control"@en , "controle de fluxo"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A process that modulates a flow without changing the material's substance, phase, or composition."@en ,
-        "Um processo que modula um escoamento sem alterar a substância, a fase ou a composição do material."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (FlowControl(x) → Process(x) ∧ ∃m(MaterialEntity(m) ∧ hasInput(x,m) ∧ hasOutput(x,m)))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'flow control' then x is a 'process' that conserves the substance, phase and composition of its material participant"@en ,
-        "se x é um 'controle de fluxo' então x é um 'processo' que conserva a substância, a fase e a composição de seu participante material"@pt-br ;
-    iof-av:primitiveRationale "Auxiliary category; the conservation of substance/phase/composition under modulation is the characterisation and is not a material transformation."@en ,
-        "Categoria auxiliar; a conservação de substância/fase/composição sob modulação é a caracterização e não é uma transformação material."@pt-br ;
-    skos:example "Throttling a stream through a control valve; isolating via a shutoff valve; relieving overpressure."@en ,
-        "Estrangular uma corrente por uma válvula de controle; isolar por uma válvula de bloqueio; aliviar sobrepressão."@pt-br ;
-    dcterms:source "ODR-009" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-# --- 9. Measurement (auxiliary) ---------------------------------------------
-# We REUSE iof-constr:MeasurementProcess (a PlannedProcess yielding an
-# information output); no COPI Measurement process class is minted. The
-# MeasurementInstrument category below is defined directly over it.
-
-
-#==============================================================================
-# EQUIPMENT CATEGORIES  (nine DEFINED CLASSES)
-#   Cat ≡ MaterialArtifact ⊓ ∃hasFunction.(DesignedFunction ⊓ ∃realized_in.Op)
-#==============================================================================
-
-copi:COPI_0000016 a owl:Class ;
-    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
-        iof-constr:MaterialArtifact
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
-            [ a owl:Class ; owl:intersectionOf (
-                iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000003 ] ) ] ] ) ] ;
-    rdfs:subClassOf iof-constr:MaterialArtifact ;
-    rdfs:label "momentum-transfer device"@en , "dispositivo de transferência de quantidade de movimento"@pt-br ;
-    iof-av:isPrimitive false ;
-    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a momentum-transfer operation."@en ,
-        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de quantidade de movimento."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (MomentumTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MomentumTransfer(p) ∧ realizedIn(f,p))))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'momentum-transfer device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'momentum transfer'"@en ,
-        "x é um 'dispositivo de transferência de quantidade de movimento' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'transferência de quantidade de movimento'"@pt-br ;
-    iof-av:explanatoryNote "A dispersive (defined) category; a leaf declaring only its designed function is automatically classified here by the reasoner. Not asserted disjoint from the other equipment categories (selective partition)."@en ,
-        "Uma categoria dispersiva (definida); uma folha que declara apenas sua função projetada é classificada aqui automaticamente pelo reasoner. Não asserida disjunta das demais categorias de equipamento (partição seletiva)."@pt-br ;
-    skos:example "pump, compressor, fan, pipe, mixer"@en ,
-        "bomba, compressor, ventilador, tubo, misturador"@pt-br ;
-    iof-av:adaptedFrom "Unit-operations tradition (McCabe-Smith-Harriott); cross-checked against IEC 81346-2 codes G, M, W and ISO 14224 Annex A." ;
-    dcterms:source "ODR-011" , "ODR-012" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000017 a owl:Class ;
-    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
-        iof-constr:MaterialArtifact
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
-            [ a owl:Class ; owl:intersectionOf (
-                iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000004 ] ) ] ] ) ] ;
-    rdfs:subClassOf iof-constr:MaterialArtifact ;
-    rdfs:label "heat-transfer device"@en , "dispositivo de transferência de calor"@pt-br ;
-    iof-av:isPrimitive false ;
-    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a heat-transfer operation."@en ,
-        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de calor."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (HeatTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(HeatTransfer(p) ∧ realizedIn(f,p))))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'heat-transfer device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'heat transfer'"@en ,
-        "x é um 'dispositivo de transferência de calor' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'transferência de calor'"@pt-br ;
-    iof-av:explanatoryNote "Defined category; an artifact bearing a secondary function (e.g. a reboiler that also vaporizes) acquires additional category memberships -- intended, not a defect."@en ,
-        "Categoria definida; um artefato que porta uma função secundária (e.g. um refervedor que também vaporiza) adquire pertinências adicionais de categoria -- intencional, não um defeito."@pt-br ;
-    skos:example "shell-and-tube exchanger, fired heater, reboiler"@en ,
-        "trocador casco-e-tubo, aquecedor a fogo direto, refervedor"@pt-br ;
-    iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 codes E, V." ;
-    dcterms:source "ODR-011" , "ODR-012" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000018 a owl:Class ;
-    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
-        iof-constr:MaterialArtifact
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
-            [ a owl:Class ; owl:intersectionOf (
-                iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000005 ] ) ] ] ) ] ;
-    rdfs:subClassOf iof-constr:MaterialArtifact ;
-    rdfs:label "mass-transfer device"@en , "dispositivo de transferência de massa"@pt-br ;
-    iof-av:isPrimitive false ;
-    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a mass-transfer operation."@en ,
-        "Um artefato material que porta uma função projetada realizada em uma operação de transferência de massa."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (MassTransferDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MassTransfer(p) ∧ realizedIn(f,p))))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'mass-transfer device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'mass transfer'"@en ,
-        "x é um 'dispositivo de transferência de massa' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'transferência de massa'"@pt-br ;
-    skos:example "absorber, stripper, distillation column, adsorber"@en ,
-        "absorvedor, esgotador, coluna de destilação, adsorvedor"@pt-br ;
-    iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
-    dcterms:source "ODR-011" , "ODR-012" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000019 a owl:Class ;
-    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
-        iof-constr:MaterialArtifact
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
-            [ a owl:Class ; owl:intersectionOf (
-                iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000006 ] ) ] ] ) ] ;
-    rdfs:subClassOf iof-constr:MaterialArtifact ;
-    rdfs:label "mechanical-separation device"@en , "dispositivo de separação mecânica"@pt-br ;
-    iof-av:isPrimitive false ;
-    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a mechanical-separation operation."@en ,
-        "Um artefato material que porta uma função projetada realizada em uma operação de separação mecânica."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (MechanicalSeparationDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MechanicalSeparation(p) ∧ realizedIn(f,p))))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'mechanical-separation device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'mechanical separation'"@en ,
-        "x é um 'dispositivo de separação mecânica' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'separação mecânica'"@pt-br ;
-    skos:example "three-phase separator, cyclone, filter, centrifuge"@en ,
-        "separador trifásico, ciclone, filtro, centrífuga"@pt-br ;
-    iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
-    dcterms:source "ODR-011" , "ODR-012" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000020 a owl:Class ;
-    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
-        iof-constr:MaterialArtifact
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
-            [ a owl:Class ; owl:intersectionOf (
-                iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000007 ] ) ] ] ) ] ;
-    rdfs:subClassOf iof-constr:MaterialArtifact ;
-    rdfs:label "chemical reactor"@en , "reator químico"@pt-br ;
-    iof-av:isPrimitive false ;
-    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a chemical-reaction operation."@en ,
-        "Um artefato material que porta uma função projetada realizada em uma operação de reação química."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (ChemicalReactor(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(ChemicalReaction(p) ∧ realizedIn(f,p))))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'chemical reactor' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'chemical reaction'"@en ,
-        "x é um 'reator químico' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'reação química'"@pt-br ;
-    skos:example "CSTR, plug-flow reactor, fixed-bed catalytic reactor"@en ,
-        "CSTR, reator de fluxo pistonado, reator catalítico de leito fixo"@pt-br ;
-    iof-av:adaptedFrom "Unit-process tradition; ISO 14224 Annex A; IEC 81346-2 code H." ;
-    dcterms:source "ODR-011" , "ODR-012" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000021 a owl:Class ;
-    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
-        iof-constr:MaterialArtifact
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
-            [ a owl:Class ; owl:intersectionOf (
-                iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000008 ] ) ] ] ) ] ;
-    rdfs:subClassOf iof-constr:MaterialArtifact ;
-    rdfs:label "phase-change device"@en , "dispositivo de mudança de fase"@pt-br ;
-    iof-av:isPrimitive false ;
-    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a phase-change operation."@en ,
-        "Um artefato material que porta uma função projetada realizada em uma operação de mudança de fase."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (PhaseChangeDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(PhaseChange(p) ∧ realizedIn(f,p))))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'phase-change device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'phase change'"@en ,
-        "x é um 'dispositivo de mudança de fase' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'mudança de fase'"@pt-br ;
-    skos:example "evaporator, condenser, crystalliser"@en ,
-        "evaporador, condensador, cristalizador"@pt-br ;
-    iof-av:adaptedFrom "Unit-operations tradition; ISO 14224 Annex A; IEC 81346-2 code V." ;
-    dcterms:source "ODR-011" , "ODR-012" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000022 a owl:Class ;
-    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
-        iof-constr:MaterialArtifact
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
-            [ a owl:Class ; owl:intersectionOf (
-                iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000009 ] ) ] ] ) ] ;
-    rdfs:subClassOf iof-constr:MaterialArtifact ;
-    rdfs:label "containment device"@en , "dispositivo de contenção"@pt-br ;
-    iof-av:isPrimitive false ;
-    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a material-containment operation."@en ,
-        "Um artefato material que porta uma função projetada realizada em uma operação de contenção de material."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (ContainmentDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MaterialContainment(p) ∧ realizedIn(f,p))))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'containment device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'material containment'"@en ,
-        "x é um 'dispositivo de contenção' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' alguma 'contenção de material'"@pt-br ;
-    skos:example "storage tank, pressure vessel, accumulator"@en ,
-        "tanque de armazenamento, vaso de pressão, acumulador"@pt-br ;
-    iof-av:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 code C." ;
-    dcterms:source "ODR-011" , "ODR-012" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000023 a owl:Class ;
-    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
-        iof-constr:MaterialArtifact
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
-            [ a owl:Class ; owl:intersectionOf (
-                iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000010 ] ) ] ] ) ] ;
-    rdfs:subClassOf iof-constr:MaterialArtifact ;
-    rdfs:label "flow-control device"@en , "dispositivo de controle de fluxo"@pt-br ;
-    iof-av:isPrimitive false ;
-    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in a flow-control operation."@en ,
-        "Um artefato material que porta uma função projetada realizada em uma operação de controle de fluxo."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (FlowControlDevice(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(FlowControl(p) ∧ realizedIn(f,p))))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'flow-control device' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'flow control'"@en ,
-        "x é um 'dispositivo de controle de fluxo' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' algum 'controle de fluxo'"@pt-br ;
-    skos:example "control valve, shutoff valve, relief valve"@en ,
-        "válvula de controle, válvula de bloqueio, válvula de alívio"@pt-br ;
-    iof-av:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 codes Q, R, F." ;
-    dcterms:source "ODR-011" , "ODR-012" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000024 a owl:Class ;
-    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
-        iof-constr:MaterialArtifact
-        [ a owl:Restriction ; owl:onProperty iof-constr:hasFunction ; owl:someValuesFrom
-            [ a owl:Class ; owl:intersectionOf (
-                iof-constr:DesignedFunction
-                [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom iof-constr:MeasurementProcess ] ) ] ] ) ] ;
-    rdfs:subClassOf iof-constr:MaterialArtifact ;
-    rdfs:label "measurement instrument"@en , "instrumento de medição"@pt-br ;
-    iof-av:isPrimitive false ;
-    iof-av:naturalLanguageDefinition "A material artifact that bears a designed function realized in an iof-constr:MeasurementProcess (a planned process yielding an information output)."@en ,
-        "Um artefato material que porta uma função projetada realizada em um iof-constr:MeasurementProcess (um processo planejado que produz uma saída informacional)."@pt-br ;
-    iof-av:firstOrderLogicDefinition "∀x (MeasurementInstrument(x) ↔ MaterialArtifact(x) ∧ ∃f(DesignedFunction(f) ∧ hasFunction(x,f) ∧ ∃p(MeasurementProcess(p) ∧ realizedIn(f,p))))" ;
-    iof-av:semiFormalNaturalLanguageDefinition "x is a 'measurement instrument' if and only if x is a 'material artifact' that 'has function' some 'designed function' that is 'realized in' some 'measurement process'"@en ,
-        "x é um 'instrumento de medição' se e somente se x é um 'artefato material' que 'tem função' alguma 'função projetada' que é 'realizada em' algum 'processo de medição'"@pt-br ;
-    iof-av:explanatoryNote "Measurement stands apart from the transformation categories in yielding an informational rather than a material output; it reuses iof-constr:MeasurementProcess instead of minting a COPI process."@en ,
-        "A medição distingue-se das categorias de transformação por produzir uma saída informacional em vez de material; reutiliza iof-constr:MeasurementProcess em vez de cunhar um processo COPI."@pt-br ;
-    skos:example "temperature/pressure/flow/level transmitter, composition analyzer"@en ,
-        "transmissor de temperatura/pressão/vazão/nível, analisador de composição"@pt-br ;
-    iof-av:adaptedFrom "ISO 14224 Annex A; IEC 81346-2 code B." ;
-    dcterms:source "ODR-011" , "ODR-012" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-
-#==============================================================================
-# SELECTIVE-DISJOINTNESS NOTE
-#   The nine categories are NOT asserted pairwise disjoint. Objectivity rests,
-#   at the LEAF level, on (i) each leaf having exactly ONE identity-giving
-#   function and (ii) competing leaf operations being incompatible
-#   (LiquidPressureIncrease ⊥ GasPressureIncrease). A reboiler typed only by its
-#   two functions is correctly inferred into BOTH HeatTransferDevice and
-#   PhaseChangeDevice.
-#==============================================================================
-
-
-#==============================================================================
-# STRUCTURAL GENERA  (Nível 2 Incremento 2a — ODR-018)
-#   Orthogonal to the functional device categories above. Each structural genus
-#   captures the physical form of an artifact; classification into device
-#   categories follows from the artifact's designed function. An artifact may
-#   simultaneously be a PressureVessel (form) and a MassTransferDevice
-#   (function) — intended, not a defect (ODR-018). Machine is not declared;
-#   Pump and Compressor retain iof-constr:Assembly as genus.
-#==============================================================================
-
-copi:COPI_0000090 a owl:Class ;
-    rdfs:subClassOf iof-constr:Assembly ;
-    rdfs:label "pressure vessel"@en , "vaso de pressão"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress."@en ,
-        "Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (PressureVessel(x) → Assembly(x))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'pressure vessel' then x is an 'assembly'"@en ,
-        "se x é um 'vaso de pressão', então x é um 'conjunto'"@pt-br ;
-    iof-av:primitiveRationale "The pressure-containing structural differentia (rated shell, mechanical stress specification) is expressed informally in the NLD; OWL carries only the genus (Assembly). Structural axioms are deferred to Incremento 2b."@en ,
-        "A diferença estrutural de contenção de pressão (casco classificado, especificação de tensão mecânica) é expressa informalmente na NLD; OWL carrega apenas o gênero (Assembly). Axiomas estruturais são adiados ao Incremento 2b."@pt-br ;
-    dcterms:source "ODR-018" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000091 a owl:Class ;
-    rdfs:subClassOf iof-constr:MaterialArtifact ;
-    rdfs:label "instrument"@en , "instrumento"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item."@en ,
-        "Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (Instrument(x) → MaterialArtifact(x))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is an 'instrument' then x is a 'material artifact'"@en ,
-        "se x é um 'instrumento', então x é um 'artefato material'"@pt-br ;
-    iof-av:primitiveRationale "The sensing-or-measuring structural differentia is expressed informally in the NLD; OWL carries only the genus (MaterialArtifact). The structural axis (Instrument) is orthogonal to the functional axis (MeasurementInstrument); an artifact is both simultaneously — intended (ODR-018)."@en ,
-        "A diferença estrutural de detecção-ou-medição é expressa informalmente na NLD; OWL carrega apenas o gênero (MaterialArtifact). O eixo estrutural (Instrument) é ortogonal ao eixo funcional (MeasurementInstrument); um artefato é ambos simultaneamente — intencional (ODR-018)."@pt-br ;
-    dcterms:source "ODR-018" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
-
-copi:COPI_0000092 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000090 ;
-    rdfs:label "heat exchanger"@en , "trocador de calor"@pt-br ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing."@en ,
-        "Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos."@pt-br ;
-    iof-av:firstOrderLogicAxiom "∀x (HeatExchanger(x) → PressureVessel(x) ∧ ∃s(SolidHeatTransferSurface(s) ∧ hasComponentPartAtAllTimes(x,s)))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'heat exchanger' then x is a 'pressure vessel' that has a 'solid heat-transfer surface' as a component part at all times"@en ,
-        "se x é um 'trocador de calor', então x é um 'vaso de pressão' que tem uma 'superfície sólida de transferência de calor' como parte componente em todo momento"@pt-br ;
-    iof-av:primitiveRationale "SolidHeatTransferSurface is a FOL-only predicate (no OWL IRI), analogous to Fluid and sameSubstance in operation axioms; OWL carries only the genus (PressureVessel). The two-circuit-separation and no-mixing differentia are in the NLD. Full equivalentClass axiomatisation is deferred to Incremento 2c."@en ,
-        "SolidHeatTransferSurface é um predicado somente-FOL (sem IRI OWL), análogo a Fluid e sameSubstance nos axiomas de operação; OWL carrega apenas o gênero (PressureVessel). A differentia de separação de dois circuitos e não-mistura está na NLD. Axiomatização plena equivalentClass adiada ao Incremento 2c."@pt-br ;
-    dcterms:source "ODR-018, ODR-019" ;
-    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-core> .
