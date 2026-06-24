@@ -11,6 +11,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:schema="https://schema.org/"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/"
      xmlns:AnnotationVocabulary="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/">
@@ -26,7 +27,11 @@
         <dcterms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants.</dcterms:description>
         <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-23</dcterms:issued>
         <dcterms:license rdf:resource="https://opensource.org/license/mit"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-24</dcterms:modified>
         <dcterms:publisher>Universidade Federal do Rio Grande do Sul (UFRGS)</dcterms:publisher>
+        <dcterms:source rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
+        <dcterms:source rdf:resource="https://github.com/INF-UFRGS-Ontologies/COPI"/>
+        <dcterms:source rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/"/>
         <dcterms:title xml:lang="en">Core Ontology of Petroleum Installations (COPI)</dcterms:title>
         <dcterms:title xml:lang="pt">Ontologia Central de Plantas de Produção de Petróleo (COPI)</dcterms:title>
         <bibo:status>unstable</bibo:status>
@@ -38,6 +43,7 @@
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.</skos:scopeNote>
+        <schema:logo rdf:resource="https://github.com/INF-UFRGS-Ontologies.png"/>
     </owl:Ontology>
     
 
@@ -364,6 +370,12 @@ This annotation MUST NOT be used in IOF ontologies. IOF authors SHOULD use expla
         <skos:definition xml:lang="en-us">note that helps to clarify the meaning and/or the use of a concept</skos:definition>
         <annotation:usageNote xml:lang="en-us">Use of this annotation is optional, but recommended if it will help a user understand the scope and/or context for usage of the concept.</annotation:usageNote>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- https://schema.org/logo -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/logo"/>
     
 
 
