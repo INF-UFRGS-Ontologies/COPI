@@ -1681,6 +1681,8 @@ copi:COPI_0000081 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000194
                                   ] ;
+                  rdfs:comment "A filter is an assembly that bears a filtration function, removing particulate or contaminant matter from a fluid by passage through a permeable medium."@en ,
+                               "Um filtro é um conjunto que possui uma função de filtração, removendo matéria particulada ou contaminante de um fluido por passagem através de um meio permeável."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "filter"@en ,
                              "filtro"@pt-br ;
@@ -1697,6 +1699,8 @@ copi:COPI_0000081 rdf:type owl:Class ;
 copi:COPI_0000082 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/Assembly> ,
                                   copi:COPI_0000116 ;
+                  rdfs:comment "A flow measuring element is an instrument that bears a flow measurement function, sensing the flow rate of a fluid in a conduit."@en ,
+                               "Um elemento medidor de vazão é um instrumento que possui uma função de medição de vazão, detectando a taxa de fluxo de um fluido em um conduto."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "elemento de medição de fluxo"@pt-br ,
                              "flow measuring element"@en ;
@@ -1716,6 +1720,8 @@ copi:COPI_0000083 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000163
                                   ] ;
+                  rdfs:comment "A flow modification accessory is a material artifact that bears a function whose realization modifies the flow characteristics of a fluid in a piping system."@en ,
+                               "Um acessório de modificação de fluxo é um artefato material que possui uma função cuja realização modifica as características de fluxo de um fluido em um sistema de tubulações."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "acessório de modificação de fluxo"@pt-br ,
                              "flow modification accessory"@en ;
@@ -1731,6 +1737,8 @@ copi:COPI_0000083 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084
 copi:COPI_0000084 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000152 ;
+                  rdfs:comment "A separator is an assembly that bears a separation function, dividing a multiphase fluid mixture into its constituent phases."@en ,
+                               "Um separador é um conjunto que possui uma função de separação, dividindo uma mistura fluida multifásica em suas fases constituintes."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "separador"@pt-br ,
                              "separator"@en ;
@@ -1746,6 +1754,8 @@ copi:COPI_0000084 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000085
 copi:COPI_0000085 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000127 ;
+                  rdfs:comment "A sight glass is an instrument that allows visual observation of the fluid level or flow inside a vessel or pipe."@en ,
+                               "Um visor de nível é um instrumento que permite a observação visual do nível ou fluxo de fluido dentro de um vaso ou tubulação."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "sight glass"@en ,
                              "visor de nível"@pt-br ;
@@ -1765,6 +1775,8 @@ copi:COPI_0000086 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000199
                                   ] ;
+                  rdfs:comment "A transformer is an assembly that bears an electrical power transformation function, converting electrical energy from one voltage level to another."@en ,
+                               "Um transformador é um conjunto que possui uma função de transformação de potência elétrica, convertendo energia elétrica de um nível de tensão para outro."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "transformador"@pt-br ,
                              "transformer"@en ;
@@ -3373,6 +3385,8 @@ copi:COPI_0000160 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000161
 copi:COPI_0000161 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000026 ;
+                  rdfs:comment "A backflow prevention function is a flow control function whose realization prevents the reverse flow of fluid through a conduit."@en ,
+                               "Uma função de prevenção de refluxo é uma função de controle de fluxo cuja realização previne o fluxo reverso de fluido em um conduto."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "backflow prevention function"@en ,
                              "função de prevenção de refluxo"@pt-br .
@@ -3381,6 +3395,8 @@ copi:COPI_0000161 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000162
 copi:COPI_0000162 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000026 ;
+                  rdfs:comment "A binary flow control function is a flow control function whose realization switches fluid flow between fully open and fully closed states."@en ,
+                               "Uma função de controle binário de fluxo é uma função de controle de fluxo cuja realização alterna o fluxo de fluido entre os estados totalmente aberto e totalmente fechado."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "binary flow control function"@en ,
                              "função de controle de fluxo binário"@pt-br .
@@ -3389,6 +3405,8 @@ copi:COPI_0000162 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000163
 copi:COPI_0000163 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000026 ;
+                  rdfs:comment "A flow restriction function is a flow control function whose realization reduces or limits fluid flow by introducing resistance in a conduit."@en ,
+                               "Uma função de restrição de fluxo é uma função de controle de fluxo cuja realização reduz ou limita o fluxo de fluido introduzindo resistência em um conduto."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "flow restriction function"@en ,
                              "função de restrição de fluxo"@pt-br .
@@ -3397,6 +3415,8 @@ copi:COPI_0000163 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000164
 copi:COPI_0000164 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000026 ;
+                  rdfs:comment "A pressure reduction function is a flow control function whose realization reduces the downstream pressure of a fluid to a specified set level."@en ,
+                               "Uma função de redução de pressão é uma função de controle de fluxo cuja realização reduz a pressão a jusante de um fluido a um nível definido especificado."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de redução de pressão"@pt-br ,
                              "pressure reduction function"@en .
@@ -3405,6 +3425,8 @@ copi:COPI_0000164 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000165
 copi:COPI_0000165 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000026 ;
+                  rdfs:comment "An emergency shut-down function is a flow control function whose realization rapidly isolates a process segment upon detection of an abnormal or hazardous condition."@en ,
+                               "Uma função de parada de emergência é uma função de controle de fluxo cuja realização isola rapidamente um segmento de processo ao detectar uma condição anormal ou perigosa."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "emergency shut-down function"@en ,
                              "função de parada de emergência"@pt-br .
@@ -3413,6 +3435,8 @@ copi:COPI_0000165 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000166
 copi:COPI_0000166 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000026 ;
+                  rdfs:comment "A rapid depressurization function is a flow control function whose realization quickly reduces the pressure of a process segment by venting fluid to a safe location."@en ,
+                               "Uma função de despressurização rápida é uma função de controle de fluxo cuja realização reduz rapidamente a pressão de um segmento de processo descarregando fluido para um local seguro."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de despressurização rápida"@pt-br ,
                              "rapid depressurization function"@en .
@@ -3421,6 +3445,8 @@ copi:COPI_0000166 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000167
 copi:COPI_0000167 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000027 ;
+                  rdfs:comment "An electrical control function is a process-controlled flow function whose realization modulates fluid flow in response to an electrical signal."@en ,
+                               "Uma função de controle elétrico é uma função de fluxo controlada por processo cuja realização modula o fluxo de fluido em resposta a um sinal elétrico."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "electrical control function"@en ,
                              "função de controle elétrico"@pt-br .
@@ -3429,6 +3455,8 @@ copi:COPI_0000167 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000168
 copi:COPI_0000168 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000032 ;
+                  rdfs:comment "A safety venting function is a safety relief function whose realization discharges gas or vapour from a process system to prevent overpressure."@en ,
+                               "Uma função de ventilação de segurança é uma função de alívio de segurança cuja realização descarrega gás ou vapor de um sistema de processo para prevenir sobrepressão."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de ventilação de segurança"@pt-br ,
                              "safety venting function"@en .
@@ -3437,6 +3465,8 @@ copi:COPI_0000168 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000169
 copi:COPI_0000169 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000032 ;
+                  rdfs:comment "A pressure relief function is a safety relief function whose realization automatically opens a flow path when process pressure exceeds a set limit, protecting equipment from overpressure damage."@en ,
+                               "Uma função de alívio de pressão é uma função de alívio de segurança cuja realização abre automaticamente um caminho de fluxo quando a pressão do processo excede um limite definido, protegendo equipamentos de danos por sobrepressão."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de alívio de pressão"@pt-br ,
                              "pressure relief function"@en .
@@ -3445,6 +3475,8 @@ copi:COPI_0000169 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000170
 copi:COPI_0000170 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000032 ;
+                  rdfs:comment "A subsurface safety function is a safety relief function whose realization closes a wellbore flow path to prevent uncontrolled flow from a subsurface reservoir."@en ,
+                               "Uma função de segurança subsuperficial é uma função de alívio de segurança cuja realização fecha o caminho de fluxo de um poço para prevenir o fluxo não controlado de um reservatório subsuperficial."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de segurança subsuperficial"@pt-br ,
                              "subsurface safety function"@en .
@@ -3453,6 +3485,8 @@ copi:COPI_0000170 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000171
 copi:COPI_0000171 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000028 ;
+                  rdfs:comment "A flow indication function is an indication function whose realization displays the flow rate of a fluid to an operator."@en ,
+                               "Uma função de indicação de vazão é uma função de indicação cuja realização exibe a taxa de fluxo de um fluido para um operador."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "flow indication function"@en ,
                              "função de indicação de fluxo"@pt-br .
@@ -3461,6 +3495,8 @@ copi:COPI_0000171 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000172
 copi:COPI_0000172 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000028 ;
+                  rdfs:comment "A level indication function is an indication function whose realization displays the fluid level in a vessel to an operator."@en ,
+                               "Uma função de indicação de nível é uma função de indicação cuja realização exibe o nível de fluido em um vaso para um operador."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de indicação de nível"@pt-br ,
                              "level indication function"@en .
@@ -3469,6 +3505,8 @@ copi:COPI_0000172 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000173
 copi:COPI_0000173 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000028 ;
+                  rdfs:comment "A temperature indication function is an indication function whose realization displays the temperature of a process fluid or surface to an operator."@en ,
+                               "Uma função de indicação de temperatura é uma função de indicação cuja realização exibe a temperatura de um fluido de processo ou superfície para um operador."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de indicação de temperatura"@pt-br ,
                              "temperature indication function"@en .
@@ -3477,6 +3515,8 @@ copi:COPI_0000173 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000174
 copi:COPI_0000174 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000029 ;
+                  rdfs:comment "A flow measurement function is an instrumentation function whose realization determines the volumetric or mass flow rate of a fluid."@en ,
+                               "Uma função de medição de vazão é uma função de instrumentação cuja realização determina a taxa de fluxo volumétrico ou mássico de um fluido."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "flow measurement function"@en ,
                              "função de medição de fluxo"@pt-br .
@@ -3485,6 +3525,8 @@ copi:COPI_0000174 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000175
 copi:COPI_0000175 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000029 ;
+                  rdfs:comment "A level measurement function is an instrumentation function whose realization determines the height of a fluid interface within a vessel."@en ,
+                               "Uma função de medição de nível é uma função de instrumentação cuja realização determina a altura da interface de um fluido dentro de um vaso."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de medição de nível"@pt-br ,
                              "level measurement function"@en .
@@ -3493,6 +3535,8 @@ copi:COPI_0000175 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000176
 copi:COPI_0000176 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000029 ;
+                  rdfs:comment "A level detection function is an instrumentation function whose realization generates a discrete signal when a fluid reaches a specified level within a vessel."@en ,
+                               "Uma função de detecção de nível é uma função de instrumentação cuja realização gera um sinal discreto quando um fluido atinge um nível especificado dentro de um vaso."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de detecção de nível"@pt-br ,
                              "level detection function"@en .
@@ -3501,6 +3545,8 @@ copi:COPI_0000176 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000177
 copi:COPI_0000177 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000029 ;
+                  rdfs:comment "A pressure sensing function is an instrumentation function whose realization detects the pressure of a process fluid."@en ,
+                               "Uma função de sensoreamento de pressão é uma função de instrumentação cuja realização detecta a pressão de um fluido de processo."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de sensoreamento de pressão"@pt-br ,
                              "pressure sensing function"@en .
@@ -3509,6 +3555,8 @@ copi:COPI_0000177 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000178
 copi:COPI_0000178 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000029 ;
+                  rdfs:comment "A pressure measurement function is an instrumentation function whose realization determines and outputs a quantitative value for the pressure of a process fluid."@en ,
+                               "Uma função de medição de pressão é uma função de instrumentação cuja realização determina e emite um valor quantitativo da pressão de um fluido de processo."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de medição de pressão"@pt-br ,
                              "pressure measurement function"@en .
@@ -3517,6 +3565,8 @@ copi:COPI_0000178 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000179
 copi:COPI_0000179 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000029 ;
+                  rdfs:comment "A differential pressure measurement function is an instrumentation function whose realization determines the pressure difference between two points in a process system."@en ,
+                               "Uma função de medição de pressão diferencial é uma função de instrumentação cuja realização determina a diferença de pressão entre dois pontos em um sistema de processo."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "differential pressure measurement function"@en ,
                              "função de medição de pressão diferencial"@pt-br .
@@ -3525,6 +3575,8 @@ copi:COPI_0000179 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000180
 copi:COPI_0000180 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000029 ;
+                  rdfs:comment "A humidity measurement function is an instrumentation function whose realization determines the moisture content or relative humidity of a gas stream."@en ,
+                               "Uma função de medição de umidade é uma função de instrumentação cuja realização determina o teor de umidade ou umidade relativa de uma corrente de gás."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de medição de umidade"@pt-br ,
                              "humidity measurement function"@en .
@@ -3533,6 +3585,8 @@ copi:COPI_0000180 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000181
 copi:COPI_0000181 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000029 ;
+                  rdfs:comment "A phase sequence measurement function is an instrumentation function whose realization detects the rotational order of phases in a multi-phase electrical supply."@en ,
+                               "Uma função de medição de sequência de fases é uma função de instrumentação cuja realização detecta a ordem rotacional das fases em uma alimentação elétrica multifásica."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de medição de sequência de fase"@pt-br ,
                              "phase sequence measurement function"@en .
@@ -3541,6 +3595,8 @@ copi:COPI_0000181 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000182
 copi:COPI_0000182 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000029 ;
+                  rdfs:comment "A vibration measurement function is an instrumentation function whose realization quantifies the mechanical oscillation amplitude, velocity, or frequency of a rotating or reciprocating component."@en ,
+                               "Uma função de medição de vibração é uma função de instrumentação cuja realização quantifica a amplitude, velocidade ou frequência de oscilação mecânica de um componente rotativo ou alternativo."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de medição de vibração"@pt-br ,
                              "vibration measurement function"@en .
@@ -3549,6 +3605,8 @@ copi:COPI_0000182 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000183
 copi:COPI_0000183 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000029 ;
+                  rdfs:comment "A position limit detection function is an instrumentation function whose realization generates a discrete signal when a moving component reaches a defined travel limit."@en ,
+                               "Uma função de detecção de limite de posição é uma função de instrumentação cuja realização gera um sinal discreto quando um componente móvel atinge um limite de curso definido."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de detecção de limite de posição"@pt-br ,
                              "position limit detection function"@en .
@@ -3557,6 +3615,8 @@ copi:COPI_0000183 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000184
 copi:COPI_0000184 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000029 ;
+                  rdfs:comment "A temperature measurement capability is an instrumentation function whose realization determines the temperature of a process fluid or surface."@en ,
+                               "Uma capacidade de medição de temperatura é uma função de instrumentação cuja realização determina a temperatura de um fluido de processo ou superfície."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "capacidade de medição de temperatura"@pt-br ,
                              "temperature measurement capability"@en .
@@ -3565,6 +3625,8 @@ copi:COPI_0000184 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000185
 copi:COPI_0000185 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000030 ;
+                  rdfs:comment "A flow signal transmission function is a signal transmission function whose realization conveys a flow measurement signal from a sensing element to a remote display or control system."@en ,
+                               "Uma função de transmissão de sinal de vazão é uma função de transmissão de sinal cuja realização transmite um sinal de medição de vazão de um elemento sensor para um display remoto ou sistema de controle."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "flow signal transmission function"@en ,
                              "função de transmissão de sinal de fluxo"@pt-br .
@@ -3573,6 +3635,8 @@ copi:COPI_0000185 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000186
 copi:COPI_0000186 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000030 ;
+                  rdfs:comment "A differential pressure transmission function is a signal transmission function whose realization conveys a differential pressure measurement signal to a remote indicator or control system."@en ,
+                               "Uma função de transmissão de pressão diferencial é uma função de transmissão de sinal cuja realização transmite um sinal de medição de pressão diferencial para um indicador remoto ou sistema de controle."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "differential pressure transmission function"@en ,
                              "função de transmissão de pressão diferencial"@pt-br .
@@ -3581,6 +3645,8 @@ copi:COPI_0000186 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000187
 copi:COPI_0000187 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000030 ;
+                  rdfs:comment "A level measurement and transmission function is a signal transmission function whose realization both determines and transmits a fluid level measurement to a remote system."@en ,
+                               "Uma função de medição e transmissão de nível é uma função de transmissão de sinal cuja realização determina e transmite uma medição de nível de fluido para um sistema remoto."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de medição e transmissão de nível"@pt-br ,
                              "level measurement and transmission function"@en .
@@ -3589,6 +3655,8 @@ copi:COPI_0000187 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000188
 copi:COPI_0000188 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000030 ;
+                  rdfs:comment "A temperature measurement and transmission function is a signal transmission function whose realization both determines and transmits a temperature measurement to a remote system."@en ,
+                               "Uma função de medição e transmissão de temperatura é uma função de transmissão de sinal cuja realização determina e transmite uma medição de temperatura para um sistema remoto."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de medição e transmissão de temperatura"@pt-br ,
                              "temperature measurement and transmission function"@en .
@@ -3597,6 +3665,8 @@ copi:COPI_0000188 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000189
 copi:COPI_0000189 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000030 ;
+                  rdfs:comment "A vibration transmission function is a signal transmission function whose realization conveys a vibration measurement signal to a remote monitor or control system."@en ,
+                               "Uma função de transmissão de vibração é uma função de transmissão de sinal cuja realização transmite um sinal de medição de vibração para um monitor remoto ou sistema de controle."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de transmissão de vibração"@pt-br ,
                              "vibration transmission function"@en .
@@ -3605,6 +3675,8 @@ copi:COPI_0000189 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000190
 copi:COPI_0000190 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000068 ;
+                  rdfs:comment "A heating function is a heat transfer function whose realization increases the thermal energy of a process fluid or material."@en ,
+                               "Uma função de aquecimento é uma função de transferência de calor cuja realização aumenta a energia térmica de um fluido ou material de processo."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de aquecimento"@pt-br ,
                              "heating function"@en .
@@ -3617,6 +3689,8 @@ copi:COPI_0000191 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:someValuesFrom copi:COPI_0000003
                                   ] ;
+                  rdfs:comment "A gas movement function is a designed function whose realization imparts mechanical energy to a gas to induce or sustain its flow."@en ,
+                               "Uma função de movimentação de gás é uma função projetada cuja realização fornece energia mecânica a um gás para induzir ou sustentar seu fluxo."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de movimentação de gás"@pt-br ,
                              "gas movement function"@en .
@@ -3629,6 +3703,8 @@ copi:COPI_0000192 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:someValuesFrom copi:COPI_0000003
                                   ] ;
+                  rdfs:comment "A power transmission function is a designed function whose realization transfers mechanical power from a prime mover to a driven load."@en ,
+                               "Uma função de transmissão de potência é uma função projetada cuja realização transfere potência mecânica de um motor primário para uma carga acionada."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de transmissão de potência"@pt-br ,
                              "power transmission function"@en .
@@ -3641,6 +3717,8 @@ copi:COPI_0000193 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:someValuesFrom copi:COPI_0000003
                                   ] ;
+                  rdfs:comment "An electric-to-mechanical conversion function is a designed function whose realization converts electrical energy into rotational or linear mechanical motion."@en ,
+                               "Uma função de conversão elétrico-mecânica é uma função projetada cuja realização converte energia elétrica em movimento mecânico rotacional ou linear."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "electric-to-mechanical conversion function"@en ,
                              "função de conversão elétrica-mecânica"@pt-br .
@@ -3653,6 +3731,8 @@ copi:COPI_0000194 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:someValuesFrom copi:COPI_0000006
                                   ] ;
+                  rdfs:comment "A filtration function is a designed function whose realization removes particulate or contaminant matter from a fluid by passage through a permeable medium."@en ,
+                               "Uma função de filtração é uma função projetada cuja realização remove matéria particulada ou contaminante de um fluido por passagem através de um meio permeável."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "filtration function"@en ,
                              "função de filtração"@pt-br .
@@ -3665,6 +3745,8 @@ copi:COPI_0000195 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:someValuesFrom copi:COPI_0000006
                                   ] ;
+                  rdfs:comment "A separation function is a designed function whose realization divides a fluid mixture into two or more distinct phases or streams."@en ,
+                               "Uma função de separação é uma função projetada cuja realização divide uma mistura fluida em duas ou mais fases ou correntes distintas."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de separação"@pt-br ,
                              "separation function"@en .
@@ -3677,6 +3759,8 @@ copi:COPI_0000196 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:someValuesFrom copi:COPI_0000006
                                   ] ;
+                  rdfs:comment "A coalescence function is a designed function whose realization promotes the merging of dispersed droplets into larger droplets or a continuous phase to facilitate separation."@en ,
+                               "Uma função de coalescência é uma função projetada cuja realização promove a fusão de gotículas dispersas em gotículas maiores ou em uma fase contínua para facilitar a separação."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "coalescence function"@en ,
                              "função de coalescência"@pt-br .
@@ -3689,6 +3773,8 @@ copi:COPI_0000197 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:someValuesFrom copi:COPI_0000009
                                   ] ;
+                  rdfs:comment "A storage function is a designed function whose realization accumulates and holds a quantity of fluid or material for subsequent use or transfer."@en ,
+                               "Uma função de armazenamento é uma função projetada cuja realização acumula e mantém uma quantidade de fluido ou material para uso ou transferência subsequente."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de armazenamento"@pt-br ,
                              "storage function"@en .
@@ -3697,6 +3783,8 @@ copi:COPI_0000197 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000198
 copi:COPI_0000198 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000197 ;
+                  rdfs:comment "An extended storage function is a storage function whose realization maintains a quantity of fluid or material over an extended duration, providing buffer capacity beyond immediate operational needs."@en ,
+                               "Uma função de armazenamento prolongado é uma função de armazenamento cuja realização mantém uma quantidade de fluido ou material por uma duração prolongada, fornecendo capacidade de reserva além das necessidades operacionais imediatas."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "extended storage function"@en ,
                              "função de armazenamento prolongado"@pt-br .
@@ -3705,6 +3793,8 @@ copi:COPI_0000198 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000199
 copi:COPI_0000199 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/DesignedFunction> ;
+                  rdfs:comment "An electrical power transformation function is a designed function whose realization changes the voltage or current characteristics of an electrical supply."@en ,
+                               "Uma função de transformação de potência elétrica é uma função projetada cuja realização altera as características de tensão ou corrente de uma alimentação elétrica."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "electrical power transformation function"@en ,
                              "função de transformação de potência elétrica"@pt-br .
@@ -3713,6 +3803,8 @@ copi:COPI_0000199 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000200
 copi:COPI_0000200 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/DesignedFunction> ;
+                  rdfs:comment "An electrical current interruption function is a designed function whose realization opens or closes an electrical circuit to control or protect electrical equipment."@en ,
+                               "Uma função de interrupção de corrente elétrica é uma função projetada cuja realização abre ou fecha um circuito elétrico para controlar ou proteger equipamentos elétricos."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "electrical current interruption function"@en ,
                              "função de interrupção de corrente elétrica"@pt-br .
@@ -3721,6 +3813,8 @@ copi:COPI_0000200 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000201
 copi:COPI_0000201 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/DesignedFunction> ;
+                  rdfs:comment "A temperature sensor protection function is a designed function whose realization shields a temperature sensing element from direct contact with a process fluid while enabling thermal conduction."@en ,
+                               "Uma função de proteção de sensor de temperatura é uma função projetada cuja realização protege um elemento sensor de temperatura do contato direto com um fluido de processo, permitindo a condução térmica."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "função de proteção de sensor de temperatura"@pt-br ,
                              "temperature sensor protection function"@en .
@@ -3729,6 +3823,8 @@ copi:COPI_0000201 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000202
 copi:COPI_0000202 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/DesignedFunction> ;
+                  rdfs:comment "An electrical power transmission role is a designed function whose realization conducts electrical energy between generation, transformation, and consumption points in a power system."@en ,
+                               "Um papel de transmissão de potência elétrica é uma função projetada cuja realização conduz energia elétrica entre os pontos de geração, transformação e consumo em um sistema de potência."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "electrical power transmission role"@en ,
                              "papel de transmissão de potência elétrica"@pt-br .
@@ -3737,6 +3833,8 @@ copi:COPI_0000202 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000203
 copi:COPI_0000203 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/DesignedFunction> ;
+                  rdfs:comment "A subsurface deployment role is a designed function whose realization enables operation of an artifact within a wellbore below the surface of the earth."@en ,
+                               "Um papel de implantação subsuperficial é uma função projetada cuja realização permite a operação de um artefato dentro de um poço abaixo da superfície terrestre."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "papel de implantação subsuperficial"@pt-br ,
                              "subsurface deployment role"@en .
@@ -3745,6 +3843,8 @@ copi:COPI_0000203 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000204
 copi:COPI_0000204 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/DesignedFunction> ;
+                  rdfs:comment "An energy-independent operation capability is a designed function whose realization maintains the functional state of an artifact without reliance on an external power supply."@en ,
+                               "Uma capacidade de operação independente de energia é uma função projetada cuja realização mantém o estado funcional de um artefato sem dependência de uma fonte de energia externa."@pt-br ;
                   rdfs:isDefinedBy copi:copi-enriched ;
                   rdfs:label "capacidade de operação independente de energia"@pt-br ,
                              "energy-independent operation capability"@en .

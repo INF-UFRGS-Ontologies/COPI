@@ -3843,6 +3843,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000194"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A filter is an assembly that bears a filtration function, removing particulate or contaminant matter from a fluid by passage through a permeable medium.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um filtro é um conjunto que possui uma função de filtração, removendo matéria particulada ou contaminante de um fluido por passagem através de um meio permeável.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">filter</rdfs:label>
         <rdfs:label xml:lang="pt-br">filtro</rdfs:label>
@@ -3861,6 +3863,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000082">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000116"/>
+        <rdfs:comment xml:lang="en">A flow measuring element is an instrument that bears a flow measurement function, sensing the flow rate of a fluid in a conduit.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um elemento medidor de vazão é um instrumento que possui uma função de medição de vazão, detectando a taxa de fluxo de um fluido em um conduto.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">elemento de medição de fluxo</rdfs:label>
         <rdfs:label xml:lang="en">flow measuring element</rdfs:label>
@@ -3885,6 +3889,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000163"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A flow modification accessory is a material artifact that bears a function whose realization modifies the flow characteristics of a fluid in a piping system.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um acessório de modificação de fluxo é um artefato material que possui uma função cuja realização modifica as características de fluxo de um fluido em um sistema de tubulações.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">acessório de modificação de fluxo</rdfs:label>
         <rdfs:label xml:lang="en">flow modification accessory</rdfs:label>
@@ -3903,6 +3909,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
+        <rdfs:comment xml:lang="en">A separator is an assembly that bears a separation function, dividing a multiphase fluid mixture into its constituent phases.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um separador é um conjunto que possui uma função de separação, dividindo uma mistura fluida multifásica em suas fases constituintes.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">separador</rdfs:label>
         <rdfs:label xml:lang="en">separator</rdfs:label>
@@ -3921,6 +3929,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000085">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+        <rdfs:comment xml:lang="en">A sight glass is an instrument that allows visual observation of the fluid level or flow inside a vessel or pipe.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um visor de nível é um instrumento que permite a observação visual do nível ou fluxo de fluido dentro de um vaso ou tubulação.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">sight glass</rdfs:label>
         <rdfs:label xml:lang="pt-br">visor de nível</rdfs:label>
@@ -3944,6 +3954,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000199"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A transformer is an assembly that bears an electrical power transformation function, converting electrical energy from one voltage level to another.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um transformador é um conjunto que possui uma função de transformação de potência elétrica, convertendo energia elétrica de um nível de tensão para outro.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">transformador</rdfs:label>
         <rdfs:label xml:lang="en">transformer</rdfs:label>
@@ -5527,6 +5539,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000161">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:comment xml:lang="en">A backflow prevention function is a flow control function whose realization prevents the reverse flow of fluid through a conduit.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de prevenção de refluxo é uma função de controle de fluxo cuja realização previne o fluxo reverso de fluido em um conduto.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">backflow prevention function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de prevenção de refluxo</rdfs:label>
@@ -5538,6 +5552,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000162">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:comment xml:lang="en">A binary flow control function is a flow control function whose realization switches fluid flow between fully open and fully closed states.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de controle binário de fluxo é uma função de controle de fluxo cuja realização alterna o fluxo de fluido entre os estados totalmente aberto e totalmente fechado.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">binary flow control function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de controle de fluxo binário</rdfs:label>
@@ -5549,6 +5565,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000163">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:comment xml:lang="en">A flow restriction function is a flow control function whose realization reduces or limits fluid flow by introducing resistance in a conduit.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de restrição de fluxo é uma função de controle de fluxo cuja realização reduz ou limita o fluxo de fluido introduzindo resistência em um conduto.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">flow restriction function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de restrição de fluxo</rdfs:label>
@@ -5560,6 +5578,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000164">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:comment xml:lang="en">A pressure reduction function is a flow control function whose realization reduces the downstream pressure of a fluid to a specified set level.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de redução de pressão é uma função de controle de fluxo cuja realização reduz a pressão a jusante de um fluido a um nível definido especificado.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de redução de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure reduction function</rdfs:label>
@@ -5571,6 +5591,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000165">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:comment xml:lang="en">An emergency shut-down function is a flow control function whose realization rapidly isolates a process segment upon detection of an abnormal or hazardous condition.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de parada de emergência é uma função de controle de fluxo cuja realização isola rapidamente um segmento de processo ao detectar uma condição anormal ou perigosa.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">emergency shut-down function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de parada de emergência</rdfs:label>
@@ -5582,6 +5604,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000166">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
+        <rdfs:comment xml:lang="en">A rapid depressurization function is a flow control function whose realization quickly reduces the pressure of a process segment by venting fluid to a safe location.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de despressurização rápida é uma função de controle de fluxo cuja realização reduz rapidamente a pressão de um segmento de processo descarregando fluido para um local seguro.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de despressurização rápida</rdfs:label>
         <rdfs:label xml:lang="en">rapid depressurization function</rdfs:label>
@@ -5593,6 +5617,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000167">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
+        <rdfs:comment xml:lang="en">An electrical control function is a process-controlled flow function whose realization modulates fluid flow in response to an electrical signal.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de controle elétrico é uma função de fluxo controlada por processo cuja realização modula o fluxo de fluido em resposta a um sinal elétrico.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">electrical control function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de controle elétrico</rdfs:label>
@@ -5604,6 +5630,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000168">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000032"/>
+        <rdfs:comment xml:lang="en">A safety venting function is a safety relief function whose realization discharges gas or vapour from a process system to prevent overpressure.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de ventilação de segurança é uma função de alívio de segurança cuja realização descarrega gás ou vapor de um sistema de processo para prevenir sobrepressão.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de ventilação de segurança</rdfs:label>
         <rdfs:label xml:lang="en">safety venting function</rdfs:label>
@@ -5615,6 +5643,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000169">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000032"/>
+        <rdfs:comment xml:lang="en">A pressure relief function is a safety relief function whose realization automatically opens a flow path when process pressure exceeds a set limit, protecting equipment from overpressure damage.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de alívio de pressão é uma função de alívio de segurança cuja realização abre automaticamente um caminho de fluxo quando a pressão do processo excede um limite definido, protegendo equipamentos de danos por sobrepressão.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de alívio de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure relief function</rdfs:label>
@@ -5626,6 +5656,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000170">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000032"/>
+        <rdfs:comment xml:lang="en">A subsurface safety function is a safety relief function whose realization closes a wellbore flow path to prevent uncontrolled flow from a subsurface reservoir.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de segurança subsuperficial é uma função de alívio de segurança cuja realização fecha o caminho de fluxo de um poço para prevenir o fluxo não controlado de um reservatório subsuperficial.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de segurança subsuperficial</rdfs:label>
         <rdfs:label xml:lang="en">subsurface safety function</rdfs:label>
@@ -5637,6 +5669,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000171">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028"/>
+        <rdfs:comment xml:lang="en">A flow indication function is an indication function whose realization displays the flow rate of a fluid to an operator.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de indicação de vazão é uma função de indicação cuja realização exibe a taxa de fluxo de um fluido para um operador.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">flow indication function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de indicação de fluxo</rdfs:label>
@@ -5648,6 +5682,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000172">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028"/>
+        <rdfs:comment xml:lang="en">A level indication function is an indication function whose realization displays the fluid level in a vessel to an operator.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de indicação de nível é uma função de indicação cuja realização exibe o nível de fluido em um vaso para um operador.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de indicação de nível</rdfs:label>
         <rdfs:label xml:lang="en">level indication function</rdfs:label>
@@ -5659,6 +5695,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000173">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028"/>
+        <rdfs:comment xml:lang="en">A temperature indication function is an indication function whose realization displays the temperature of a process fluid or surface to an operator.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de indicação de temperatura é uma função de indicação cuja realização exibe a temperatura de um fluido de processo ou superfície para um operador.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de indicação de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature indication function</rdfs:label>
@@ -5670,6 +5708,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000174">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:comment xml:lang="en">A flow measurement function is an instrumentation function whose realization determines the volumetric or mass flow rate of a fluid.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de medição de vazão é uma função de instrumentação cuja realização determina a taxa de fluxo volumétrico ou mássico de um fluido.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">flow measurement function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de medição de fluxo</rdfs:label>
@@ -5681,6 +5721,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000175">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:comment xml:lang="en">A level measurement function is an instrumentation function whose realization determines the height of a fluid interface within a vessel.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de medição de nível é uma função de instrumentação cuja realização determina a altura da interface de um fluido dentro de um vaso.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de medição de nível</rdfs:label>
         <rdfs:label xml:lang="en">level measurement function</rdfs:label>
@@ -5692,6 +5734,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000176">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:comment xml:lang="en">A level detection function is an instrumentation function whose realization generates a discrete signal when a fluid reaches a specified level within a vessel.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de detecção de nível é uma função de instrumentação cuja realização gera um sinal discreto quando um fluido atinge um nível especificado dentro de um vaso.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de detecção de nível</rdfs:label>
         <rdfs:label xml:lang="en">level detection function</rdfs:label>
@@ -5703,6 +5747,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000177">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:comment xml:lang="en">A pressure sensing function is an instrumentation function whose realization detects the pressure of a process fluid.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de sensoreamento de pressão é uma função de instrumentação cuja realização detecta a pressão de um fluido de processo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de sensoreamento de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure sensing function</rdfs:label>
@@ -5714,6 +5760,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000178">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:comment xml:lang="en">A pressure measurement function is an instrumentation function whose realization determines and outputs a quantitative value for the pressure of a process fluid.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de medição de pressão é uma função de instrumentação cuja realização determina e emite um valor quantitativo da pressão de um fluido de processo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de medição de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure measurement function</rdfs:label>
@@ -5725,6 +5773,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000179">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:comment xml:lang="en">A differential pressure measurement function is an instrumentation function whose realization determines the pressure difference between two points in a process system.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de medição de pressão diferencial é uma função de instrumentação cuja realização determina a diferença de pressão entre dois pontos em um sistema de processo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">differential pressure measurement function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de medição de pressão diferencial</rdfs:label>
@@ -5736,6 +5786,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000180">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:comment xml:lang="en">A humidity measurement function is an instrumentation function whose realization determines the moisture content or relative humidity of a gas stream.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de medição de umidade é uma função de instrumentação cuja realização determina o teor de umidade ou umidade relativa de uma corrente de gás.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de medição de umidade</rdfs:label>
         <rdfs:label xml:lang="en">humidity measurement function</rdfs:label>
@@ -5747,6 +5799,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000181">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:comment xml:lang="en">A phase sequence measurement function is an instrumentation function whose realization detects the rotational order of phases in a multi-phase electrical supply.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de medição de sequência de fases é uma função de instrumentação cuja realização detecta a ordem rotacional das fases em uma alimentação elétrica multifásica.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de medição de sequência de fase</rdfs:label>
         <rdfs:label xml:lang="en">phase sequence measurement function</rdfs:label>
@@ -5758,6 +5812,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000182">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:comment xml:lang="en">A vibration measurement function is an instrumentation function whose realization quantifies the mechanical oscillation amplitude, velocity, or frequency of a rotating or reciprocating component.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de medição de vibração é uma função de instrumentação cuja realização quantifica a amplitude, velocidade ou frequência de oscilação mecânica de um componente rotativo ou alternativo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de medição de vibração</rdfs:label>
         <rdfs:label xml:lang="en">vibration measurement function</rdfs:label>
@@ -5769,6 +5825,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000183">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:comment xml:lang="en">A position limit detection function is an instrumentation function whose realization generates a discrete signal when a moving component reaches a defined travel limit.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de detecção de limite de posição é uma função de instrumentação cuja realização gera um sinal discreto quando um componente móvel atinge um limite de curso definido.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de detecção de limite de posição</rdfs:label>
         <rdfs:label xml:lang="en">position limit detection function</rdfs:label>
@@ -5780,6 +5838,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000184">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:comment xml:lang="en">A temperature measurement capability is an instrumentation function whose realization determines the temperature of a process fluid or surface.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma capacidade de medição de temperatura é uma função de instrumentação cuja realização determina a temperatura de um fluido de processo ou superfície.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">capacidade de medição de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature measurement capability</rdfs:label>
@@ -5791,6 +5851,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000185">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+        <rdfs:comment xml:lang="en">A flow signal transmission function is a signal transmission function whose realization conveys a flow measurement signal from a sensing element to a remote display or control system.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de transmissão de sinal de vazão é uma função de transmissão de sinal cuja realização transmite um sinal de medição de vazão de um elemento sensor para um display remoto ou sistema de controle.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">flow signal transmission function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de transmissão de sinal de fluxo</rdfs:label>
@@ -5802,6 +5864,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000186">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+        <rdfs:comment xml:lang="en">A differential pressure transmission function is a signal transmission function whose realization conveys a differential pressure measurement signal to a remote indicator or control system.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de transmissão de pressão diferencial é uma função de transmissão de sinal cuja realização transmite um sinal de medição de pressão diferencial para um indicador remoto ou sistema de controle.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">differential pressure transmission function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de transmissão de pressão diferencial</rdfs:label>
@@ -5813,6 +5877,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000187">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+        <rdfs:comment xml:lang="en">A level measurement and transmission function is a signal transmission function whose realization both determines and transmits a fluid level measurement to a remote system.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de medição e transmissão de nível é uma função de transmissão de sinal cuja realização determina e transmite uma medição de nível de fluido para um sistema remoto.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de medição e transmissão de nível</rdfs:label>
         <rdfs:label xml:lang="en">level measurement and transmission function</rdfs:label>
@@ -5824,6 +5890,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000188">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+        <rdfs:comment xml:lang="en">A temperature measurement and transmission function is a signal transmission function whose realization both determines and transmits a temperature measurement to a remote system.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de medição e transmissão de temperatura é uma função de transmissão de sinal cuja realização determina e transmite uma medição de temperatura para um sistema remoto.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de medição e transmissão de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature measurement and transmission function</rdfs:label>
@@ -5835,6 +5903,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000189">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
+        <rdfs:comment xml:lang="en">A vibration transmission function is a signal transmission function whose realization conveys a vibration measurement signal to a remote monitor or control system.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de transmissão de vibração é uma função de transmissão de sinal cuja realização transmite um sinal de medição de vibração para um monitor remoto ou sistema de controle.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de transmissão de vibração</rdfs:label>
         <rdfs:label xml:lang="en">vibration transmission function</rdfs:label>
@@ -5846,6 +5916,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000190">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068"/>
+        <rdfs:comment xml:lang="en">A heating function is a heat transfer function whose realization increases the thermal energy of a process fluid or material.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de aquecimento é uma função de transferência de calor cuja realização aumenta a energia térmica de um fluido ou material de processo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de aquecimento</rdfs:label>
         <rdfs:label xml:lang="en">heating function</rdfs:label>
@@ -5862,6 +5934,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A gas movement function is a designed function whose realization imparts mechanical energy to a gas to induce or sustain its flow.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de movimentação de gás é uma função projetada cuja realização fornece energia mecânica a um gás para induzir ou sustentar seu fluxo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de movimentação de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas movement function</rdfs:label>
@@ -5878,6 +5952,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A power transmission function is a designed function whose realization transfers mechanical power from a prime mover to a driven load.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de transmissão de potência é uma função projetada cuja realização transfere potência mecânica de um motor primário para uma carga acionada.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de transmissão de potência</rdfs:label>
         <rdfs:label xml:lang="en">power transmission function</rdfs:label>
@@ -5894,6 +5970,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An electric-to-mechanical conversion function is a designed function whose realization converts electrical energy into rotational or linear mechanical motion.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de conversão elétrico-mecânica é uma função projetada cuja realização converte energia elétrica em movimento mecânico rotacional ou linear.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">electric-to-mechanical conversion function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de conversão elétrica-mecânica</rdfs:label>
@@ -5910,6 +5988,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A filtration function is a designed function whose realization removes particulate or contaminant matter from a fluid by passage through a permeable medium.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de filtração é uma função projetada cuja realização remove matéria particulada ou contaminante de um fluido por passagem através de um meio permeável.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">filtration function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de filtração</rdfs:label>
@@ -5926,6 +6006,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A separation function is a designed function whose realization divides a fluid mixture into two or more distinct phases or streams.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de separação é uma função projetada cuja realização divide uma mistura fluida em duas ou mais fases ou correntes distintas.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de separação</rdfs:label>
         <rdfs:label xml:lang="en">separation function</rdfs:label>
@@ -5942,6 +6024,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A coalescence function is a designed function whose realization promotes the merging of dispersed droplets into larger droplets or a continuous phase to facilitate separation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de coalescência é uma função projetada cuja realização promove a fusão de gotículas dispersas em gotículas maiores ou em uma fase contínua para facilitar a separação.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">coalescence function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de coalescência</rdfs:label>
@@ -5958,6 +6042,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A storage function is a designed function whose realization accumulates and holds a quantity of fluid or material for subsequent use or transfer.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de armazenamento é uma função projetada cuja realização acumula e mantém uma quantidade de fluido ou material para uso ou transferência subsequente.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de armazenamento</rdfs:label>
         <rdfs:label xml:lang="en">storage function</rdfs:label>
@@ -5969,6 +6055,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000198">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000197"/>
+        <rdfs:comment xml:lang="en">An extended storage function is a storage function whose realization maintains a quantity of fluid or material over an extended duration, providing buffer capacity beyond immediate operational needs.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de armazenamento prolongado é uma função de armazenamento cuja realização mantém uma quantidade de fluido ou material por uma duração prolongada, fornecendo capacidade de reserva além das necessidades operacionais imediatas.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">extended storage function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de armazenamento prolongado</rdfs:label>
@@ -5979,6 +6067,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000199 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000199">
+        <rdfs:comment xml:lang="en">An electrical power transformation function is a designed function whose realization changes the voltage or current characteristics of an electrical supply.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de transformação de potência elétrica é uma função projetada cuja realização altera as características de tensão ou corrente de uma alimentação elétrica.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">electrical power transformation function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de transformação de potência elétrica</rdfs:label>
@@ -5989,6 +6079,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000200 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000200">
+        <rdfs:comment xml:lang="en">An electrical current interruption function is a designed function whose realization opens or closes an electrical circuit to control or protect electrical equipment.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de interrupção de corrente elétrica é uma função projetada cuja realização abre ou fecha um circuito elétrico para controlar ou proteger equipamentos elétricos.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">electrical current interruption function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de interrupção de corrente elétrica</rdfs:label>
@@ -5999,6 +6091,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000201 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000201">
+        <rdfs:comment xml:lang="en">A temperature sensor protection function is a designed function whose realization shields a temperature sensing element from direct contact with a process fluid while enabling thermal conduction.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função de proteção de sensor de temperatura é uma função projetada cuja realização protege um elemento sensor de temperatura do contato direto com um fluido de processo, permitindo a condução térmica.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">função de proteção de sensor de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature sensor protection function</rdfs:label>
@@ -6009,6 +6103,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000202 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000202">
+        <rdfs:comment xml:lang="en">An electrical power transmission role is a designed function whose realization conducts electrical energy between generation, transformation, and consumption points in a power system.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um papel de transmissão de potência elétrica é uma função projetada cuja realização conduz energia elétrica entre os pontos de geração, transformação e consumo em um sistema de potência.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">electrical power transmission role</rdfs:label>
         <rdfs:label xml:lang="pt-br">papel de transmissão de potência elétrica</rdfs:label>
@@ -6019,6 +6115,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000203 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000203">
+        <rdfs:comment xml:lang="en">A subsurface deployment role is a designed function whose realization enables operation of an artifact within a wellbore below the surface of the earth.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um papel de implantação subsuperficial é uma função projetada cuja realização permite a operação de um artefato dentro de um poço abaixo da superfície terrestre.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">papel de implantação subsuperficial</rdfs:label>
         <rdfs:label xml:lang="en">subsurface deployment role</rdfs:label>
@@ -6029,6 +6127,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000204 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000204">
+        <rdfs:comment xml:lang="en">An energy-independent operation capability is a designed function whose realization maintains the functional state of an artifact without reliance on an external power supply.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma capacidade de operação independente de energia é uma função projetada cuja realização mantém o estado funcional de um artefato sem dependência de uma fonte de energia externa.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">capacidade de operação independente de energia</rdfs:label>
         <rdfs:label xml:lang="en">energy-independent operation capability</rdfs:label>
