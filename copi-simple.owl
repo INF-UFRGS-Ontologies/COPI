@@ -33,7 +33,7 @@
         <terms:source rdf:resource="https://github.com/INF-UFRGS-Ontologies/COPI"/>
         <terms:source rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/"/>
         <terms:title xml:lang="en">Core Ontology of Petroleum Installations (COPI)</terms:title>
-        <terms:title xml:lang="pt">Ontologia Central de Plantas de Produção de Petróleo (COPI)</terms:title>
+        <terms:title xml:lang="pt">Ontologia Core para Instalações de Petróleo (COPI)</terms:title>
         <bibo:status>unstable</bibo:status>
         <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>

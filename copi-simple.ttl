@@ -33,7 +33,7 @@
                                                                          <https://github.com/INF-UFRGS-Ontologies/COPI> ,
                                                                          <https://spec.industrialontologies.org/ontology/core/Core/> ;
                                                             terms:title "Core Ontology of Petroleum Installations (COPI)"@en ,
-                                                                        "Ontologia Central de Plantas de Produção de Petróleo (COPI)"@pt ;
+                                                                        "Ontologia Core para Instalações de Petróleo (COPI)"@pt ;
                                                             bibo:status "unstable" ;
                                                             vann:preferredNamespacePrefix "copi" ;
                                                             vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI ;

@@ -34,7 +34,7 @@
         <dcterms:source rdf:resource="https://github.com/INF-UFRGS-Ontologies/COPI"/>
         <dcterms:source rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/"/>
         <dcterms:title xml:lang="en">Core Ontology of Petroleum Installations (COPI)</dcterms:title>
-        <dcterms:title xml:lang="pt">Ontologia Central de Plantas de Produção de Petróleo (COPI)</dcterms:title>
+        <dcterms:title xml:lang="pt">Ontologia Core para Instalações de Petróleo (COPI)</dcterms:title>
         <bibo:status>unstable</bibo:status>
         <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>
