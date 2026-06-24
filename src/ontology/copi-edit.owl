@@ -32,7 +32,7 @@ Annotation(dcterms:publisher "Universidade Federal do Rio Grande do Sul (UFRGS)"
 Annotation(dcterms:description "BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants."@en)
 Annotation(dcterms:license <https://opensource.org/license/mit>)
 Annotation(dcterms:title "Core Ontology of Petroleum Installations (COPI)"@en)
-Annotation(dcterms:title "Ontologia Central de Plantas de Produção de Petróleo (COPI)"@pt)
+Annotation(dcterms:title "Ontologia Core para Instalações de Petróleo (COPI)"@pt)
 Annotation(vann:preferredNamespacePrefix "copi")
 Annotation(vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI)
 Annotation(bibo:status "unstable")
