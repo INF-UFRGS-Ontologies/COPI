@@ -10,6 +10,8 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi.owl">
         <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-23/copi.owl"/>
@@ -18,10 +20,17 @@
         <dcterms:contributor>Mara Abel</dcterms:contributor>
         <dcterms:contributor>Rafael Petry</dcterms:contributor>
         <dcterms:contributor>Régis Romeu</dcterms:contributor>
+        <dcterms:creator>Nicolau Oyhenard dos Santos</dcterms:creator>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-01</dcterms:created>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-23</dcterms:issued>
+        <dcterms:publisher>Universidade Federal do Rio Grande do Sul (UFRGS)</dcterms:publisher>
         <dcterms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants.</dcterms:description>
         <dcterms:license rdf:resource="https://opensource.org/license/mit"/>
         <dcterms:title xml:lang="en">Core Ontology of Petroleum Installations (COPI)</dcterms:title>
         <dcterms:title xml:lang="pt">Ontologia Central de Plantas de Produção de Petróleo (COPI)</dcterms:title>
+        <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/"/>
+        <bibo:status>unstable</bibo:status>
         <owl:versionInfo>2026-06-15</owl:versionInfo>
         <owl:versionInfo>2026-06-23</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
