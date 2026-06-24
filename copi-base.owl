@@ -324,6 +324,8 @@
     <owl:ObjectProperty rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000002">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000056"/>
         <dcterms:source>ODR-011 §4</dcterms:source>
+        <rdfs:comment xml:lang="pt-br">A sub-propriedade de bfo:participatesIn (BFO_0000056) entailada exclusivamente pela cadeia iof-constr:hasFunction ∘ obo:BFO_0000054: um artefato material participa funcionalmente em todo processo que realiza uma de suas funções projetadas.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The sub-property of bfo:participatesIn (BFO_0000056) entailed exclusively by the chain iof-constr:hasFunction ∘ obo:BFO_0000054: a material artifact functionally participates in every process that realizes one of its designed functions.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">functionally participates in</rdfs:label>
         <rdfs:label xml:lang="pt-br">participa funcionalmente em</rdfs:label>
@@ -412,6 +414,8 @@
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
         <dcterms:source>ODR-009 Amendment A (2026-06-18): copi:Operation as explicit root universal; genus correction to iof-constr:PlannedProcess</dcterms:source>
+        <rdfs:comment xml:lang="en">A planned process that an item of process-industry equipment is designed to bring about or take part in; a process-industry unit operation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um processo planejado que um item de equipamento de indústria de processo é projetado para causar ou do qual é projetado para participar; uma operação unitária de indústria de processo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">operation</rdfs:label>
         <rdfs:label xml:lang="pt-br">operação</rdfs:label>
@@ -433,6 +437,8 @@
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001"/>
         <dcterms:source>Bird, Stewart &amp; Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part I: momentum transport.</dcterms:source>
         <dcterms:source>ODR-009</dcterms:source>
+        <rdfs:comment xml:lang="en">A process that imparts mechanical energy to a fluid, changing its pressure or inducing its bulk motion.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um processo que confere energia mecânica a um fluido, alterando sua pressão ou induzindo seu movimento global.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">momentum transfer</rdfs:label>
         <rdfs:label xml:lang="pt-br">transferência de quantidade de movimento</rdfs:label>
@@ -459,6 +465,8 @@
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001"/>
         <dcterms:source>Bird, Stewart &amp; Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part II: energy transport.</dcterms:source>
         <dcterms:source>ODR-009</dcterms:source>
+        <rdfs:comment xml:lang="en">A process that transfers thermal energy between materials (or to/from a material) without, in itself, changing the phase or chemical identity of the process stream.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um processo que transfere energia térmica entre materiais (ou de/para um material) sem, em si, alterar a fase ou a identidade química da corrente de processo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">heat transfer</rdfs:label>
         <rdfs:label xml:lang="pt-br">transferência de calor</rdfs:label>
@@ -482,6 +490,8 @@
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001"/>
         <dcterms:source>Bird, Stewart &amp; Lightfoot, Transport Phenomena, 2nd ed. (Wiley, 2002) — Part III: mass transport.</dcterms:source>
         <dcterms:source>ODR-009</dcterms:source>
+        <rdfs:comment xml:lang="en">A process in which one or more chemical species migrate between phases driven by a concentration (chemical-potential) difference.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um processo no qual uma ou mais espécies químicas migram entre fases impulsionadas por uma diferença de concentração (potencial químico).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">mass transfer</rdfs:label>
         <rdfs:label xml:lang="pt-br">transferência de massa</rdfs:label>
@@ -504,6 +514,8 @@
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001"/>
         <dcterms:source>ODR-009</dcterms:source>
+        <rdfs:comment xml:lang="en">A process that separates a heterogeneous mixture into fractions by mechanical means (gravity, centrifugal, or barrier forces) without phase change or chemical reaction.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um processo que separa uma mistura heterogênea em frações por meios mecânicos (forças gravitacionais, centrífugas ou de barreira) sem mudança de fase ou reação química.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">mechanical separation</rdfs:label>
         <rdfs:label xml:lang="pt-br">separação mecânica</rdfs:label>
@@ -526,6 +538,8 @@
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001"/>
         <dcterms:source>ODR-009</dcterms:source>
+        <rdfs:comment xml:lang="en">A process in which chemical species are consumed and new species, present in no input, are formed.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um processo no qual espécies químicas são consumidas e novas espécies, presentes em nenhuma entrada, são formadas.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">chemical reaction</rdfs:label>
         <rdfs:label xml:lang="pt-br">reação química</rdfs:label>
@@ -548,6 +562,8 @@
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000008">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001"/>
         <dcterms:source>ODR-009</dcterms:source>
+        <rdfs:comment xml:lang="en">A process that changes the physical state (phase) of a material without changing its chemical identity.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um processo que altera o estado físico (fase) de um material sem alterar sua identidade química.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">mudança de fase</rdfs:label>
         <rdfs:label xml:lang="en">phase change</rdfs:label>
@@ -570,6 +586,8 @@
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001"/>
         <dcterms:source>ODR-009</dcterms:source>
+        <rdfs:comment xml:lang="en">A process that maintains a contained material&apos;s state and identity over time; a limiting case in which the process input and output coincide. An auxiliary (non-transformation) category.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um processo que mantém o estado e a identidade de um material contido ao longo do tempo; um caso-limite no qual a entrada e a saída do processo coincidem. Uma categoria auxiliar (não-transformação).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">contenção de material</rdfs:label>
         <rdfs:label xml:lang="en">material containment</rdfs:label>
@@ -592,6 +610,8 @@
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001"/>
         <dcterms:source>ODR-009</dcterms:source>
+        <rdfs:comment xml:lang="en">A process that modulates a flow without changing the material&apos;s substance, phase, or composition.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um processo que modula um escoamento sem alterar a substância, a fase ou a composição do material.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">controle de fluxo</rdfs:label>
         <rdfs:label xml:lang="en">flow control</rdfs:label>
@@ -616,6 +636,8 @@
         <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000012"/>
         <dcterms:source>McCabe, Smith &amp; Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, pumping).</dcterms:source>
         <dcterms:source>ODR-011</dcterms:source>
+        <rdfs:comment xml:lang="en">A momentum-transfer operation whose fluid input is an incompressible liquid and whose effect is to raise that liquid&apos;s pressure.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma operação de transferência de quantidade de movimento cuja entrada fluida é um líquido incompressível e cujo efeito é elevar a pressão desse líquido.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">aumento de pressão de líquido</rdfs:label>
         <rdfs:label xml:lang="en">liquid pressure increase</rdfs:label>
@@ -638,6 +660,8 @@
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <dcterms:source>McCabe, Smith &amp; Harriott, Unit Operations of Chemical Engineering, 8th ed. §3 (fluid flow, compression).</dcterms:source>
         <dcterms:source>ODR-011</dcterms:source>
+        <rdfs:comment xml:lang="en">A momentum-transfer operation whose fluid input is a compressible gas and whose effect is to raise that gas&apos;s pressure.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma operação de transferência de quantidade de movimento cuja entrada fluida é um gás compressível e cujo efeito é elevar a pressão desse gás.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">aumento de pressão de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas pressure increase</rdfs:label>
@@ -660,6 +684,8 @@
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
         <dcterms:source>Green &amp; Southard (eds.), Perry&apos;s Chemical Engineers&apos; Handbook, 9th ed. §14 (absorption and stripping).</dcterms:source>
         <dcterms:source>ODR-011</dcterms:source>
+        <rdfs:comment xml:lang="en">A mass-transfer operation in which a chemical species carried by an input gas, and absent from the input solvent, becomes a constituent of the output liquid.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma operação de transferência de massa na qual uma espécie química transportada por um gás de entrada, e ausente do solvente de entrada, torna-se constituinte do líquido de saída.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">absorção de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas absorption</rdfs:label>
@@ -683,6 +709,8 @@
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000008"/>
         <dcterms:source>McCabe, Smith &amp; Harriott, Unit Operations of Chemical Engineering, 8th ed. §16 (evaporation).</dcterms:source>
         <dcterms:source>ODR-011</dcterms:source>
+        <rdfs:comment xml:lang="en">A phase-change operation in which a liquid input is converted to a vapour output.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma operação de mudança de fase na qual uma entrada líquida é convertida em uma saída de vapor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">vaporization</rdfs:label>
         <rdfs:label xml:lang="pt-br">vaporização</rdfs:label>
@@ -704,6 +732,8 @@
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000015">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <dcterms:source>ODR-009</dcterms:source>
+        <rdfs:comment xml:lang="en">A process in which a contained material escapes its intended boundary. An unplanned process; deliberately not an iof-constr:PlannedProcess.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um processo no qual um material contido escapa de seu limite pretendido. Um processo não planejado; deliberadamente não um iof-constr:PlannedProcess.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">loss of containment</rdfs:label>
         <rdfs:label xml:lang="pt-br">perda de contenção</rdfs:label>
@@ -764,6 +794,8 @@
         </rdfs:subClassOf>
         <dcterms:source>ODR-011</dcterms:source>
         <dcterms:source>ODR-012</dcterms:source>
+        <rdfs:comment xml:lang="en">A material artifact that bears a designed function realized in a momentum-transfer operation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um artefato material que porta uma função projetada realizada em uma operação de transferência de quantidade de movimento.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de transferência de quantidade de movimento</rdfs:label>
         <rdfs:label xml:lang="en">momentum-transfer device</rdfs:label>
@@ -825,6 +857,8 @@
         </rdfs:subClassOf>
         <dcterms:source>ODR-011</dcterms:source>
         <dcterms:source>ODR-012</dcterms:source>
+        <rdfs:comment xml:lang="en">A material artifact that bears a designed function realized in a heat-transfer operation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um artefato material que porta uma função projetada realizada em uma operação de transferência de calor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de transferência de calor</rdfs:label>
         <rdfs:label xml:lang="en">heat-transfer device</rdfs:label>
@@ -886,6 +920,8 @@
         </rdfs:subClassOf>
         <dcterms:source>ODR-011</dcterms:source>
         <dcterms:source>ODR-012</dcterms:source>
+        <rdfs:comment xml:lang="en">A material artifact that bears a designed function realized in a mass-transfer operation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um artefato material que porta uma função projetada realizada em uma operação de transferência de massa.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de transferência de massa</rdfs:label>
         <rdfs:label xml:lang="en">mass-transfer device</rdfs:label>
@@ -945,6 +981,8 @@
         </rdfs:subClassOf>
         <dcterms:source>ODR-011</dcterms:source>
         <dcterms:source>ODR-012</dcterms:source>
+        <rdfs:comment xml:lang="en">A material artifact that bears a designed function realized in a mechanical-separation operation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um artefato material que porta uma função projetada realizada em uma operação de separação mecânica.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de separação mecânica</rdfs:label>
         <rdfs:label xml:lang="en">mechanical-separation device</rdfs:label>
@@ -1004,6 +1042,8 @@
         </rdfs:subClassOf>
         <dcterms:source>ODR-011</dcterms:source>
         <dcterms:source>ODR-012</dcterms:source>
+        <rdfs:comment xml:lang="en">A material artifact that bears a designed function realized in a chemical-reaction operation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um artefato material que porta uma função projetada realizada em uma operação de reação química.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">chemical reactor</rdfs:label>
         <rdfs:label xml:lang="pt-br">reator químico</rdfs:label>
@@ -1063,6 +1103,8 @@
         </rdfs:subClassOf>
         <dcterms:source>ODR-011</dcterms:source>
         <dcterms:source>ODR-012</dcterms:source>
+        <rdfs:comment xml:lang="en">A material artifact that bears a designed function realized in a phase-change operation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um artefato material que porta uma função projetada realizada em uma operação de mudança de fase.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de mudança de fase</rdfs:label>
         <rdfs:label xml:lang="en">phase-change device</rdfs:label>
@@ -1122,6 +1164,8 @@
         </rdfs:subClassOf>
         <dcterms:source>ODR-011</dcterms:source>
         <dcterms:source>ODR-012</dcterms:source>
+        <rdfs:comment xml:lang="en">A material artifact that bears a designed function realized in a material-containment operation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um artefato material que porta uma função projetada realizada em uma operação de contenção de material.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">containment device</rdfs:label>
         <rdfs:label xml:lang="pt-br">dispositivo de contenção</rdfs:label>
@@ -1181,6 +1225,8 @@
         </rdfs:subClassOf>
         <dcterms:source>ODR-011</dcterms:source>
         <dcterms:source>ODR-012</dcterms:source>
+        <rdfs:comment xml:lang="en">A material artifact that bears a designed function realized in a flow-control operation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um artefato material que porta uma função projetada realizada em uma operação de controle de fluxo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">dispositivo de controle de fluxo</rdfs:label>
         <rdfs:label xml:lang="en">flow-control device</rdfs:label>
@@ -1240,6 +1286,8 @@
         </rdfs:subClassOf>
         <dcterms:source>ODR-011</dcterms:source>
         <dcterms:source>ODR-012</dcterms:source>
+        <rdfs:comment xml:lang="en">A material artifact that bears a designed function realized in an iof-constr:MeasurementProcess (a planned process yielding an information output).</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um artefato material que porta uma função projetada realizada em um iof-constr:MeasurementProcess (um processo planejado que produz uma saída informacional).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="pt-br">instrumento de medição</rdfs:label>
         <rdfs:label xml:lang="en">measurement instrument</rdfs:label>
@@ -1274,6 +1322,7 @@
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An identity-giving designed function realized in a MaterialContainment process; the function of holding a fluid or solid material within a bounded volume.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">containment function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1299,6 +1348,7 @@
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An identity-giving designed function realized in a FlowControl process; the function of modulating, regulating, or blocking fluid flow through a conduit or vessel connection.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">flow control function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1324,6 +1374,7 @@
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000033"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An identity-giving designed function realized in a ProcessControlledFlowProcess; the function of opening or shutting a flow path in response to an external process control signal.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">process-controlled flow function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1349,6 +1400,7 @@
                 <owl:allValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An identity-giving designed function realized in a Measurement process; the function of converting a physical quantity into a locally readable display at the point of measurement.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">indication function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1374,6 +1426,7 @@
                 <owl:allValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An identity-giving designed function realized in a sensing or measurement process; the function of detecting and converting a physical quantity into a usable signal or reading.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">instrumentation function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1399,6 +1452,7 @@
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000035"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An identity-giving designed function realized in a SignalTransmissionProcess; the function of converting a sensed physical quantity into a standardized electrical or pneumatic signal for remote reading, recording, or control.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">signal transmission function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1424,6 +1478,7 @@
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000036"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An identity-giving designed function specialized to pressure measurement and transmission; the function of converting a sensed pressure value into a proportional standardized signal for remote reading or control.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">pressure transmission function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1449,6 +1504,7 @@
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000034"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An identity-giving designed function realized in a SafetyReliefProcess; the function of preventing over-pressure conditions by automatically relieving fluid at a pre-set pressure set-point, or of isolating wellbore flow when conditions are unsafe.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">safety relief function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1462,6 +1518,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000033">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
+        <rdfs:comment xml:lang="en">A FlowControl process in which flow through a conduit is opened, closed, or throttled in response to an external control signal from a process control system.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">process-controlled flow process</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1474,6 +1531,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000034">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
+        <rdfs:comment xml:lang="en">A FlowControl process in which excess pressure is relieved by opening a flow path at a pre-set set-point, or in which wellbore flow is isolated to prevent blowout.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">safety relief process</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1486,6 +1544,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000035">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
+        <rdfs:comment xml:lang="en">A MeasurementProcess (hence planned) in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">signal transmission process</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1498,6 +1557,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000036">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
+        <rdfs:comment xml:lang="en">A MeasurementProcess (hence planned) in which differential or gauge pressure is sensed, converted to a proportional standardized signal, and transmitted to a remote reading or control device.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">pressure measurement and transmission process</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -1510,6 +1570,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:comment xml:lang="en">A bounded portion of matter in a fluid state (gaseous, liquid, or supercritical) that participates in an equipment-realizing process as input, output, or transformed substance.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">portion of fluid</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A bounded portion of matter in a fluid state (gaseous, liquid, or supercritical) that participates in an equipment-realizing process as input, output, or transformed substance.</annotation:naturalLanguageDefinition>
@@ -1522,6 +1583,7 @@
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000038">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
         <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000039"/>
+        <rdfs:comment xml:lang="en">A portion of fluid in liquid phase.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">portion of liquid</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A portion of fluid in liquid phase.</annotation:naturalLanguageDefinition>
@@ -1533,6 +1595,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000039">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
+        <rdfs:comment xml:lang="en">A portion of fluid in gaseous phase.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">portion of gas</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A portion of fluid in gaseous phase.</annotation:naturalLanguageDefinition>
@@ -1544,6 +1607,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000040">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:comment xml:lang="en">A bounded portion of matter in a solid state that participates in an equipment-realizing process (filtered contaminants, particulate input, solid product).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">portion of solid</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A bounded portion of matter in a solid state that participates in an equipment-realizing process (filtered contaminants, particulate input, solid product).</annotation:naturalLanguageDefinition>
@@ -1555,6 +1619,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000041">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000038"/>
+        <rdfs:comment xml:lang="en">A liquid phase whose function is to absorb target components from a gas stream by physical or chemical means.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">absorbent phase</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A liquid phase whose function is to absorb target components from a gas stream by physical or chemical means.</annotation:naturalLanguageDefinition>
@@ -1566,6 +1631,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000042">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000041"/>
+        <rdfs:comment xml:lang="en">An absorbent phase that has absorbed target components from a gas stream and is loaded for regeneration.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">rich absorbent</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">An absorbent phase that has absorbed target components from a gas stream and is loaded for regeneration.</annotation:naturalLanguageDefinition>
@@ -1577,6 +1643,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000043">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
+        <rdfs:comment xml:lang="en">A fluid from which target components have been removed or transferred during a treatment process.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">depleted fluid</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A fluid from which target components have been removed or transferred during a treatment process.</annotation:naturalLanguageDefinition>
@@ -1588,6 +1655,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000044">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
+        <rdfs:comment xml:lang="en">A fluid portion consisting of two or more components or phases that have not yet been fully separated.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">fluid mixture</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A fluid portion consisting of two or more components or phases that have not yet been fully separated.</annotation:naturalLanguageDefinition>
@@ -1599,6 +1667,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000045">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
+        <rdfs:comment xml:lang="en">An information content entity that conveys an instruction or set-point to a control device.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">control signal</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">An information content entity that conveys an instruction or set-point to a control device.</annotation:naturalLanguageDefinition>
@@ -1610,6 +1679,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000046">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
+        <rdfs:comment xml:lang="en">An information content entity perceptible through visual representation at the point of measurement or display.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">visual indication</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">An information content entity perceptible through visual representation at the point of measurement or display.</annotation:naturalLanguageDefinition>
@@ -1627,6 +1697,7 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000052"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Measurement information content entity describing a temperature quality of some material entity.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">temperature measurement result</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">Measurement information content entity describing a temperature quality of some material entity.</annotation:naturalLanguageDefinition>
@@ -1644,6 +1715,7 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000053"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Measurement information content entity describing a pressure quality of some material entity or fluid.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">pressure measurement result</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">Measurement information content entity describing a pressure quality of some material entity or fluid.</annotation:naturalLanguageDefinition>
@@ -1661,6 +1733,7 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000054"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Measurement information content entity describing a flow rate quality of a fluid stream.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">flow measurement result</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">Measurement information content entity describing a flow rate quality of a fluid stream.</annotation:naturalLanguageDefinition>
@@ -1678,6 +1751,7 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000055"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Measurement information content entity describing a liquid level quality of a vessel or container.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">level measurement result</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">Measurement information content entity describing a liquid level quality of a vessel or container.</annotation:naturalLanguageDefinition>
@@ -1695,6 +1769,7 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000056"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Measurement information content entity describing the chemical or phase composition quality of a substance.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">composition measurement result</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">Measurement information content entity describing the chemical or phase composition quality of a substance.</annotation:naturalLanguageDefinition>
@@ -1706,6 +1781,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000052">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="en">A quality inhering in a material entity that represents the intensity of thermal energy of that entity.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">temperature</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a material entity that represents the intensity of thermal energy of that entity.</annotation:naturalLanguageDefinition>
@@ -1717,6 +1793,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000053">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="en">A quality inhering in a fluid or solid that represents the force per unit area exerted by the substance on its boundary.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">pressure</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a fluid or solid that represents the force per unit area exerted by the substance on its boundary.</annotation:naturalLanguageDefinition>
@@ -1728,6 +1805,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000054">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="en">A quality inhering in a fluid stream that represents the volume or mass of fluid passing a cross-section per unit time.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">flow rate</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a fluid stream that represents the volume or mass of fluid passing a cross-section per unit time.</annotation:naturalLanguageDefinition>
@@ -1739,6 +1817,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000055">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="en">A quality inhering in a vessel or container that represents the height of a liquid surface above a reference datum.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">level</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a vessel or container that represents the height of a liquid surface above a reference datum.</annotation:naturalLanguageDefinition>
@@ -1750,6 +1829,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000056">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="en">A quality inhering in a mixture or stream that represents the proportions of its constituent components or phases.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">composition</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a mixture or stream that represents the proportions of its constituent components or phases.</annotation:naturalLanguageDefinition>
@@ -1761,6 +1841,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000057">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="en">A quality inhering in a mechanical system that represents oscillatory motion or periodic displacement from an equilibrium position.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">vibration</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a mechanical system that represents oscillatory motion or periodic displacement from an equilibrium position.</annotation:naturalLanguageDefinition>
@@ -1772,6 +1853,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000058">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="en">A quality inhering in an electrical system that represents the rate of electrical energy transfer.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">electrical power</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in an electrical system that represents the rate of electrical energy transfer.</annotation:naturalLanguageDefinition>
@@ -1783,6 +1865,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000059">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="en">A quality inhering in a rotating or reciprocating mechanical system that represents the rate of mechanical work.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">mechanical power</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a rotating or reciprocating mechanical system that represents the rate of mechanical work.</annotation:naturalLanguageDefinition>
@@ -1794,6 +1877,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000060">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="en">A quality inhering in a rotating element that represents the number of complete revolutions per unit time.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">rotational speed</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a rotating element that represents the number of complete revolutions per unit time.</annotation:naturalLanguageDefinition>
@@ -1817,6 +1901,8 @@
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000011"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A designed function that is realized in a liquid pressure increase process.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função projetada que é realizada em um processo de aumento de pressão de líquido.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">pumping function</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A designed function that is realized in a liquid pressure increase process.</annotation:naturalLanguageDefinition>
@@ -1841,6 +1927,8 @@
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000012"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A designed function that is realized in a gas pressure increase process.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função projetada que é realizada em um processo de aumento de pressão de gás.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">compression function</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A designed function that is realized in a gas pressure increase process.</annotation:naturalLanguageDefinition>
@@ -1865,6 +1953,8 @@
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A designed function that is realized in a heat exchange process.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função projetada que é realizada em um processo de troca de calor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">heat transfer function</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A designed function that is realized in a heat exchange process.</annotation:naturalLanguageDefinition>
@@ -1889,6 +1979,8 @@
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000013"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A designed function that is realized in a gas absorption process.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função projetada que é realizada em um processo de absorção de gás.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">gas absorption function</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A designed function that is realized in a gas absorption process.</annotation:naturalLanguageDefinition>
@@ -1913,6 +2005,8 @@
                 <owl:allValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A designed function that is realized in a temperature measurement process.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma função projetada que é realizada em um processo de medição de temperatura.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">temperature sensing function</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A designed function that is realized in a temperature measurement process.</annotation:naturalLanguageDefinition>
@@ -1943,6 +2037,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000066"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A pump is an assembly that bears the designed function of adding mechanical energy to fluid for pressurization and transport.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma bomba é um conjunto que possui a função projetada de adicionar energia mecânica ao fluido para pressurização e transporte.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">pump</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A pump is an assembly that bears the designed function of adding mechanical energy to fluid for pressurization and transport.</annotation:naturalLanguageDefinition>
@@ -1973,6 +2069,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000067"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A compressor is an assembly that bears the designed function of compressing gases by adding mechanical energy to increase their pressure.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um compressor é um conjunto que possui a função projetada de comprimir gases através da adição de energia mecânica para aumentar sua pressão.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">compressor</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A compressor is an assembly that bears the designed function of compressing gases by adding mechanical energy to increase their pressure.</annotation:naturalLanguageDefinition>
@@ -1992,6 +2090,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A shell and tube heat exchanger is a heat exchanger that has a tube bundle spatially contained within a surrounding shell.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um trocador de calor de casco e tubos é um trocador de calor que possui um feixe de tubos contido espacialmente dentro de um casco envolvente.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">shell and tube heat exchanger</rdfs:label>
         <annotation:firstOrderLogicAxiom xml:lang="en">ShellAndTubeHeatExchanger(x) → HeatExchanger(x) ∧ ∃tb(TubeBundle(tb) ∧ hasComponentPartAtAllTimes(x,tb)) ∧ ∃s(Shell(s) ∧ hasComponentPartAtAllTimes(x,s) ∧ spatiallyContains(s,tb))</annotation:firstOrderLogicAxiom>
@@ -2023,6 +2123,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000069"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um absorvedor é um vaso de pressão que realiza uma função de absorção para transferência seletiva de massa de componentes de uma mistura fluida para uma fase absorvente.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">gas absorber</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase.</annotation:naturalLanguageDefinition>
@@ -2053,6 +2155,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A temperature element is an instrument that bears a temperature sensing function.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um elemento de temperatura é um instrumento que possui uma função de sensoreamento de temperatura.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">temperature sensor</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A temperature element is an instrument that bears a temperature sensing function.</annotation:naturalLanguageDefinition>
@@ -2072,6 +2176,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A valve is an assembly that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula é um conjunto que possui uma função de controle de fluxo para permitir, obstruir, regular ou desviar correntes de fluido.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula</rdfs:label>
@@ -2221,6 +2327,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A control valve is a valve that is equipped with an actuator and regulates fluid flow rate in response to control signals from a process control system.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de controle é uma válvula que é equipada com um atuador e regula a vazão de fluido em resposta a sinais de controle de um sistema de controle de processo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle</rdfs:label>
@@ -2238,6 +2346,8 @@
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
         <dcterms:source>Green &amp; Southard (eds.), Perry&apos;s Chemical Engineers&apos; Handbook, 9th ed. §11 (heat transfer).</dcterms:source>
         <dcterms:source>ODR-016 §A (HeatExchange leaf, Nível 2 Incremento 1a)</dcterms:source>
+        <rdfs:comment xml:lang="en">A heat-transfer operation in which thermal energy is exchanged between two or more fluid streams, typically separated by a solid heat-transfer surface, without mixing those streams.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma operação de transferência de calor na qual energia térmica é trocada entre dois ou mais fluidos, tipicamente separados por uma superfície sólida de troca de calor, sem mistura dessas correntes.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">heat exchange</rdfs:label>
         <rdfs:label xml:lang="pt-br">troca de calor</rdfs:label>
@@ -2260,6 +2370,8 @@
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
         <dcterms:source>ODR-018</dcterms:source>
+        <rdfs:comment xml:lang="en">A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">pressure vessel</rdfs:label>
         <rdfs:label xml:lang="pt-br">vaso de pressão</rdfs:label>
@@ -2280,6 +2392,8 @@
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
         <dcterms:source>ODR-018</dcterms:source>
+        <rdfs:comment xml:lang="en">A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">instrument</rdfs:label>
         <rdfs:label xml:lang="pt-br">instrumento</rdfs:label>
@@ -2300,6 +2414,8 @@
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
         <dcterms:source>ODR-018, ODR-019</dcterms:source>
+        <rdfs:comment xml:lang="en">A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">heat exchanger</rdfs:label>
         <rdfs:label xml:lang="pt-br">trocador de calor</rdfs:label>
@@ -2319,6 +2435,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000093">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:comment xml:lang="en">An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula angular é uma válvula que tem portas da válvula que não estão alinhadas, mas dispostas em ângulo uma em relação à outra.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">angle valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula angular</rdfs:label>
@@ -2334,6 +2452,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:comment xml:lang="en">A ball control valve is a control valve that uses a spherical ball closure element with rotary actuation to modulate fluid flow in response to control signals.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de controle esférica é uma válvula de controle que usa um elemento de fechamento esférico com atuação rotativa para modular o fluxo de fluido em resposta a sinais de controle.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">ball control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle esférica</rdfs:label>
@@ -2349,6 +2469,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:comment xml:lang="en">A ball valve is a valve that controls fluid flow using a spherical ball closure member that rotates approximately 90 degrees to align or misalign its flow passage with the valve body ports.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula esfera é uma válvula que controla o fluxo de fluidos usando um elemento de fechamento esférico que gira aproximadamente 90 graus para alinhar ou desalinhar sua passagem de fluxo com as portas do corpo da válvula.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">ball valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula esfera</rdfs:label>
@@ -2364,6 +2486,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000096">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:comment xml:lang="en">A block and bleed valve is a valve that has one seat which provides a seal, and a bleeder line and valve that are tapped into the valve bonnet for controlled venting of downstream pressure.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de bloqueio e sangria é uma válvula que possui um assento que fornece vedação, e uma linha de sangria e válvula que são conectadas ao castelo da válvula para ventilação controlada da pressão a jusante.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">block and bleed valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de bloqueio e sangria</rdfs:label>
@@ -2396,6 +2520,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000166"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A blow down valve is a valve that bears a designed function for rapid depressurization of high pressure systems.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de blow down é uma válvula que possui uma função projetada para despressurização rápida de sistemas de alta pressão.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">blow down valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de blow down</rdfs:label>
@@ -2411,6 +2537,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000098">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+        <rdfs:comment xml:lang="en">A blower is a compressor that compresses and supplies air or gas at medium pressure and medium volume flow.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um soprador é um compressor que comprime e fornece ar ou gás em pressão média e vazão volumétrica média.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">blower</rdfs:label>
         <rdfs:label xml:lang="pt-br">soprador</rdfs:label>
@@ -2426,6 +2554,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:comment xml:lang="en">A butterfly control valve is a control valve that has a rotating disc closure mechanism and bears a process-controlled flow function enabling automated flow modulation in response to external control signals.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula borboleta de controle é uma válvula de controle que possui um mecanismo de fechamento por disco rotativo e possui uma função de fluxo controlado por processo, permitindo modulação automatizada do fluxo em resposta a sinais de controle externos.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">butterfly control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula borboleta de controle</rdfs:label>
@@ -2441,6 +2571,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:comment xml:lang="en">A butterfly valve is a valve that has a disc-type closure member with a shaft parallel to the plane of the disc and an axis of rotation transverse to the flow direction.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula borboleta é uma válvula que possui um membro de fechamento tipo disco com haste paralela ao plano do disco e eixo de rotação transversal à direção do fluxo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">butterfly valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula borboleta</rdfs:label>
@@ -2456,6 +2588,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000101">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+        <rdfs:comment xml:lang="en">A centrifugal compressor is a compressor that uses one or more centrifugal impellers to accelerate gas through radial flow and generate pressure increase by centrifugal action.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um compressor centrífugo é um compressor que usa um ou mais impelidores centrífugos para acelerar o gás através de fluxo radial e gerar aumento de pressão por ação centrífuga.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">centrifugal compressor</rdfs:label>
         <rdfs:label xml:lang="pt-br">compressor centrífugo</rdfs:label>
@@ -2471,6 +2605,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+        <rdfs:comment xml:lang="en">A centrifugal pump is a pump that uses centrifugal force generated by rotating impellers with vanes to increase fluid pressure through a volute casing.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma bomba centrífuga é uma bomba que usa força centrífuga gerada por impulsores rotativos com pás para aumentar a pressão do fluido através de uma carcaça voluta.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">bomba centrífuga</rdfs:label>
         <rdfs:label xml:lang="en">centrifugal pump</rdfs:label>
@@ -2503,6 +2639,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000161"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A check valve is a valve that bears a backflow prevention function, automatically permitting fluid to flow in one direction only while preventing reverse flow.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de retenção é uma válvula que possui uma função de prevenção de refluxo, permitindo automaticamente que o fluido flua em apenas uma direção enquanto previne o fluxo reverso.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">check valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de retenção</rdfs:label>
@@ -2518,6 +2656,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:comment xml:lang="en">A choke control valve is a control valve that has a choke geometry component for pressure reduction through flow restriction.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de controle de choke é uma válvula de controle que possui um componente de geometria de choke para redução de pressão através de restrição de fluxo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">choke control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle de choke</rdfs:label>
@@ -2550,6 +2690,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000164"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A choke valve is a valve that bears a pressure reduction function, designed to reduce fluid pressure from inlet to outlet through controlled flow restriction and energy dissipation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula choke é uma válvula que possui uma função de redução de pressão, projetada para reduzir a pressão do fluido da entrada para a saída através de restrição controlada do fluxo e dissipação de energia.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">choke valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula choke</rdfs:label>
@@ -2582,6 +2724,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000200"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A circuit breaker is an electrical switching device that bears an electrical current interruption function and regularly participates in processes that safely interrupt electrical current.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um disjuntor é um dispositivo de chaveamento elétrico que possui uma função de interrupção de corrente elétrica e participa regularmente em processos que interrompem com segurança a corrente elétrica.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">circuit breaker</rdfs:label>
         <rdfs:label xml:lang="pt-br">disjuntor</rdfs:label>
@@ -2614,6 +2758,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000196"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A coalescer is a separator that uses coalescence media to promote droplet merger in immiscible liquid mixtures, enabling gravity-based separation where the less dense liquid phase can be skimmed off.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um coalescedor é um separador que usa meio de coalescência para promover a fusão de gotículas em misturas líquidas imiscíveis, permitindo separação por gravidade onde a fase líquida menos densa pode ser removida por escumação.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">coalescedor</rdfs:label>
         <rdfs:label xml:lang="en">coalescer</rdfs:label>
@@ -2629,6 +2775,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:comment xml:lang="en">A diaphragm valve is a valve that uses a resilient diaphragm forced against a port as its closure mechanism to control fluid flow.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de diafragma é uma válvula que usa um diafragma resiliente forçado contra uma porta como seu mecanismo de fechamento para controlar o fluxo de fluido.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">diaphragm valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de diafragma</rdfs:label>
@@ -2661,6 +2809,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000179"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A differential pressure gauge is a pressure gauge that measures and indicates the difference between two pressure inputs using a differential pressure measuring element.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um manômetro de pressão diferencial é um manômetro que mede e indica a diferença entre duas entradas de pressão usando um elemento de medição de pressão diferencial.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">differential pressure gauge</rdfs:label>
         <rdfs:label xml:lang="pt-br">manômetro de pressão diferencial</rdfs:label>
@@ -2693,6 +2843,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000186"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A differential pressure transmitter is a pressure transmitter that bears a differential pressure transmission function, enabling it to measure the pressure difference between two input pressure signals and transmit this difference as a standardized output signal.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um transmissor de pressão diferencial é um transmissor de pressão que possui uma função de transmissão de pressão diferencial, permitindo medir a diferença de pressão entre dois sinais de pressão de entrada e transmitir essa diferença como um sinal de saída padronizado.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">differential pressure transmitter</rdfs:label>
         <rdfs:label xml:lang="pt-br">transmissor de pressão diferencial</rdfs:label>
@@ -2708,6 +2860,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000111">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:comment xml:lang="en">A double block and bleed valve is a valve that incorporates two seats each providing sealing capability and includes a means of venting the space between the seats.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de bloqueio duplo e sangria é uma válvula que incorpora duas sedes, cada uma proporcionando capacidade de vedação, e inclui um meio de ventilação do espaço entre as sedes.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">double block and bleed valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de bloqueio duplo e sangria</rdfs:label>
@@ -2750,6 +2904,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000203"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A down hole safety valve is a safety valve that bears a subsurface safety function for pressure relief and flow control operations in wellbore or other subsurface environments.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de segurança de fundo de poço é uma válvula de segurança que possui uma função de segurança subsuperficial para operações de alívio de pressão e controle de fluxo em poços ou outros ambientes subsuperficiais.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">down hole safety valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de segurança de fundo de poço</rdfs:label>
@@ -2783,6 +2939,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000193"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An electric motor is an assembly that bears an electric-to-mechanical energy conversion function and has both a stator and rotor as essential components.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um motor elétrico é um conjunto que possui uma função de conversão de energia elétrica para mecânica e tem tanto um estator quanto um rotor como componentes essenciais.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">electric motor</rdfs:label>
         <rdfs:label xml:lang="pt-br">motor elétrico</rdfs:label>
@@ -2815,6 +2973,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000165"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An emergency shut down valve is a valve that bears an emergency shut down function, enabling rapid flow isolation in emergency situations through actuated mechanisms with fail-safe capability.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de parada de emergência é uma válvula que possui uma função de parada de emergência, permitindo o isolamento rápido de fluxo em situações de emergência através de mecanismos atuados com capacidade à prova de falhas.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">emergency shut down valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de parada de emergência</rdfs:label>
@@ -2848,6 +3008,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000191"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A fan is an assembly that bears a gas movement function for delivering or exhausting volumes of vapor or gas at low differential pressure.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um ventilador é um conjunto que possui uma função de movimentação de gás para fornecer ou exaurir volumes de vapor ou gás com baixa pressão diferencial.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">fan</rdfs:label>
         <rdfs:label xml:lang="pt-br">ventilador</rdfs:label>
@@ -2881,6 +3043,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000174"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A flow element is an instrument that has the function to measure flow rates in a flowstream and produce signals proportional to the measured flow.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um elemento de vazão é um instrumento que tem a função de medir vazões em um fluxo e produzir sinais proporcionais à vazão medida.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">elemento de vazão</rdfs:label>
         <rdfs:label xml:lang="en">flow element</rdfs:label>
@@ -2913,6 +3077,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000171"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A flow indicator is an indicator that is designed to indicate flow rates using a flow measuring element and display element.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um indicador de fluxo é um indicador projetado para indicar taxas de fluxo usando um elemento de medição de fluxo e elemento de exibição.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">flow indicator</rdfs:label>
         <rdfs:label xml:lang="pt-br">indicador de fluxo</rdfs:label>
@@ -2945,6 +3111,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000185"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A flow transmitter is a transmitter that produces standardized output signals proportional to flow measurements from flow sensing elements.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um transmissor de fluxo é um transmissor que produz sinais de saída padronizados proporcionais às medições de fluxo provenientes de elementos sensores de fluxo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">flow transmitter</rdfs:label>
         <rdfs:label xml:lang="pt-br">transmissor de fluxo</rdfs:label>
@@ -2960,6 +3128,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:comment xml:lang="en">A gate control valve is a control valve that uses a gate or wedge closure element moving perpendicular to the flow path to modulate fluid flow in response to control signals.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de controle tipo gaveta é uma válvula de controle que usa um elemento de fechamento tipo gaveta ou cunha movendo-se perpendicular ao caminho do fluxo para modular o fluxo de fluido em resposta a sinais de controle.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">gate control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle tipo gaveta</rdfs:label>
@@ -2975,6 +3145,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:comment xml:lang="en">A gate valve is a valve that has a gate or disc closure member with linear motion parallel to the plane of flat seats, which are transverse to the direction of flow.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula gaveta é uma válvula que possui um membro de fechamento tipo gaveta ou disco com movimento linear paralelo ao plano dos assentos planos, que são transversais à direção do fluxo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">gate valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula gaveta</rdfs:label>
@@ -2997,6 +3169,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000192"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A gearbox is an assembly that consists of a gear casing containing an arrangement of two or more gear-wheels that transmit rotating motion from an input shaft to an output shaft.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma caixa de engrenagens é um conjunto que consiste em um invólucro de engrenagens contendo um arranjo de duas ou mais rodas de engrenagem que transmitem movimento rotativo de um eixo de entrada para um eixo de saída.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">caixa de engrenagens</rdfs:label>
         <rdfs:label xml:lang="en">gearbox</rdfs:label>
@@ -3012,6 +3186,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:comment xml:lang="en">A globe control valve is a control valve that has a globe-shaped body and uses linear motion closure mechanism to modulate fluid flow in response to process control signals.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de controle globo é uma válvula de controle que possui um corpo em formato de globo e usa um mecanismo de fechamento de movimento linear para modular o fluxo de fluido em resposta a sinais de controle de processo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">globe control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle globo</rdfs:label>
@@ -3027,6 +3203,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000123">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:comment xml:lang="en">A globe valve is a valve characterized by a closure member (disc or plug) that operates with linear motion perpendicular to a seat that is oriented normal to the fluid flow path.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula globo é uma válvula caracterizada por um elemento de fechamento (disco ou tampão) que opera com movimento linear perpendicular a uma sede orientada normal ao caminho do fluxo do fluido.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">globe valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula globo</rdfs:label>
@@ -3060,6 +3238,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000190"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A heater is an assembly that bears a heating function to add thermal energy to a medium.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um aquecedor é um conjunto que possui uma função de aquecimento para adicionar energia térmica a um meio.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">aquecedor</rdfs:label>
         <rdfs:label xml:lang="en">heater</rdfs:label>
@@ -3093,6 +3273,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000180"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A humidity analyser is a process analyzer that is designed to measure and indicate humidity or moisture content in process streams or environments.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um analisador de umidade é um analisador de processo que é projetado para medir e indicar o conteúdo de umidade ou vapor d&amp;#x27;água em correntes de processo ou ambientes.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">analisador de umidade</rdfs:label>
         <rdfs:label xml:lang="en">humidity analyser</rdfs:label>
@@ -3108,6 +3290,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000126">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+        <rdfs:comment xml:lang="en">An in-line filter is a filter that is installed directly within a fluid line and supported by connected piping or equipment, designed to remove particles or contaminants from fluid streams during normal flow operations.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um filtro em linha é um filtro que é instalado diretamente dentro de uma linha de fluido e suportado por tubulações ou equipamentos conectados, projetado para remover partículas ou contaminantes de correntes de fluido durante operações normais de fluxo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">filtro em linha</rdfs:label>
         <rdfs:label xml:lang="en">in-line filter</rdfs:label>
@@ -3141,6 +3325,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An indicator is an instrument that displays or shows the value or status of a measured variable or condition to make it perceptible to operators.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um indicador é um instrumento que exibe ou mostra o valor ou status de uma variável medida ou condição para torná-la perceptível aos operadores.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">indicador</rdfs:label>
         <rdfs:label xml:lang="en">indicator</rdfs:label>
@@ -3174,6 +3360,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000176"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A level element is an instrument that bears a level detection function for determining fluid level in a vessel or container.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um elemento de nível é um instrumento que possui uma função de detecção de nível para determinar o nível de fluido em um vaso ou recipiente.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">elemento de nível</rdfs:label>
         <rdfs:label xml:lang="en">level element</rdfs:label>
@@ -3216,6 +3404,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000175"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A level indicator is an indicator that measures and locally displays the level of liquid or bulk solid material in a vessel or tank.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um indicador de nível é um indicador que mede e exibe localmente o nível de material líquido ou sólido a granel em um vaso ou tanque.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">indicador de nível</rdfs:label>
         <rdfs:label xml:lang="en">level indicator</rdfs:label>
@@ -3248,6 +3438,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000172"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A level sight glass is a sight glass that bears a designed function to indicate liquid level through visual inspection.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um visor de nível é um visor que possui uma função projetada para indicar o nível de líquido através de inspeção visual.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">level sight glass</rdfs:label>
         <rdfs:label xml:lang="pt-br">visor de nível</rdfs:label>
@@ -3290,6 +3482,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000187"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A level transmitter is a transmitter that measures the level (height) of liquid or bulk solid material in a container and produces a standardized electrical output signal proportional to the measured level.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um transmissor de nível é um transmissor que mede o nível (altura) de material líquido ou sólido a granel em um recipiente e produz um sinal elétrico de saída padronizado proporcional ao nível medido.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">level transmitter</rdfs:label>
         <rdfs:label xml:lang="pt-br">transmissor de nível</rdfs:label>
@@ -3323,6 +3517,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000183"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A limit switch is an instrument that bears a position limit detection function, mechanically actuated by object motion to provide electrical switching signals when predetermined position limits are reached.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um limit switch é um instrumento que possui uma função de detecção de limite de posição, acionado mecanicamente pelo movimento de objetos para fornecer sinais de chaveamento elétrico quando limites de posição predeterminados são atingidos.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">limit switch</rdfs:label>
         <rdfs:label xml:lang="pt-br">limit switch</rdfs:label>
@@ -3338,6 +3534,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:comment xml:lang="en">A manual valve is a valve that has a manual actuator requiring hand power for operation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula manual é uma válvula que possui um atuador manual que requer força manual para operação.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">manual valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula manual</rdfs:label>
@@ -3353,6 +3551,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000134">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:comment xml:lang="en">A needle valve is a valve that has a conical needle-shaped closure member that seats into a small orifice to provide precise flow control.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula agulha é uma válvula que possui um membro de fechamento cônico em forma de agulha que se assenta em um pequeno orifício para fornecer controle preciso de fluxo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">needle valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula agulha</rdfs:label>
@@ -3385,6 +3585,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000162"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An on-off control valve is a control valve that bears a binary flow control function, having only two defined positions: fully open and fully closed.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de controle liga-desliga é uma válvula de controle que possui uma função de controle de fluxo binária, tendo apenas duas posições definidas: totalmente aberta e totalmente fechada.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">on-off control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle liga-desliga</rdfs:label>
@@ -3400,6 +3602,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000082"/>
+        <rdfs:comment xml:lang="en">An orifice plate is a flow measuring element that consists of a thin plate with a specified hole through which fluid flows to create differential pressure for flow rate measurement.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma placa de orifício é um elemento de medição de fluxo que consiste de uma placa fina com um orifício especificado através do qual o fluido flui para criar pressão diferencial para medição da taxa de fluxo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">orifice plate</rdfs:label>
         <rdfs:label xml:lang="pt-br">placa de orifício</rdfs:label>
@@ -3433,6 +3637,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000181"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A phase sequence meter is an electric measuring instrument that bears a phase sequence measurement function to determine and indicate the sequence in which the instantaneous voltages of phase conductors reach their maximum value in a polyphase electrical system.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um medidor de sequência de fases é um instrumento de medição elétrica que possui uma função de medição de sequência de fases para determinar e indicar a sequência na qual as tensões instantâneas dos condutores de fase atingem seu valor máximo em um sistema elétrico polifásico.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">medidor de sequência de fases</rdfs:label>
         <rdfs:label xml:lang="en">phase sequence meter</rdfs:label>
@@ -3448,6 +3654,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000138">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
+        <rdfs:comment xml:lang="en">A piston check valve is a check valve that has a piston-type closure member that moves linearly along the flow axis under gravity or spring loading to prevent backflow.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de retenção tipo pistão é uma válvula de retenção que possui um elemento de fechamento tipo pistão que se move linearmente ao longo do eixo de fluxo sob ação da gravidade ou mola para prevenir refluxo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">piston check valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de retenção tipo pistão</rdfs:label>
@@ -3470,6 +3678,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A plate heat exchanger is a heat exchanger that has heat transfer plates as its primary heat transfer surface.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um trocador de calor de placas é um trocador de calor que possui placas de transferência de calor como sua superfície primária de transferência de calor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">plate heat exchanger</rdfs:label>
         <rdfs:label xml:lang="pt-br">trocador de calor de placas</rdfs:label>
@@ -3485,6 +3695,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:comment xml:lang="en">A plug valve is a valve that has a cylindrical or tapered plug closure member which operates by quarter-turn rotation on its axis to control fluid flow by sealing against a seat.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula plug é uma válvula que possui um elemento de fechamento em forma de plugue cilíndrico ou cônico que opera por rotação de um quarto de volta em seu eixo para controlar o fluxo de fluido selando contra um assento.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">plug valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula plug</rdfs:label>
@@ -3521,6 +3733,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000202"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A power transformer is a transformer that bears an electrical power transformation function, realized by electromagnetic induction to transform alternating voltage and current systems to different levels at the same frequency for power transmission purposes.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um transformador de potência é um transformador que possui uma função de transformação de energia elétrica, realizada por indução eletromagnética para transformar sistemas de tensão e corrente alternadas para diferentes níveis na mesma frequência para fins de transmissão de energia.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">power transformer</rdfs:label>
         <rdfs:label xml:lang="pt-br">transformador de potência</rdfs:label>
@@ -3554,6 +3768,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000177"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A pressure element is an instrument that bears a pressure sensing function.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um elemento de pressão é um instrumento que possui uma função de detecção de pressão.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">elemento de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure element</rdfs:label>
@@ -3586,6 +3802,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000178"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A pressure gauge is an indicator that bears the function of measuring and displaying pressure values.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um manômetro é um indicador que possui a função de medir e exibir valores de pressão.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">manômetro</rdfs:label>
         <rdfs:label xml:lang="en">pressure gauge</rdfs:label>
@@ -3618,6 +3836,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000031"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A pressure transmitter is a transmitter that converts pressure measurements into standardized output signals for transmission to control or monitoring systems.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um transmissor de pressão é um transmissor que converte medições de pressão em sinais de saída padronizados para transmissão a sistemas de controle ou monitoramento.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">pressure transmitter</rdfs:label>
         <rdfs:label xml:lang="pt-br">transmissor de pressão</rdfs:label>
@@ -3650,6 +3870,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000169"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A relief valve is a valve that is designed to automatically open at a predetermined pressure setpoint to relieve excess pressure and prevent unsafe pressure levels in a system.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de alívio é uma válvula projetada para abrir automaticamente em um ponto de ajuste de pressão predeterminado para aliviar o excesso de pressão e prevenir níveis de pressão inseguros em um sistema.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">relief valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de alívio</rdfs:label>
@@ -3665,6 +3887,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000146">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000083"/>
+        <rdfs:comment xml:lang="en">A restriction orifice is a flow modification accessory that bears the function to restrict fluid flow by creating controlled pressure drop through geometric constriction.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um orifício de restrição é um acessório de modificação de fluxo que possui a função de restringir o fluxo de fluido criando queda de pressão controlada através de constrição geométrica.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">orifício de restrição</rdfs:label>
         <rdfs:label xml:lang="en">restriction orifice</rdfs:label>
@@ -3697,6 +3921,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000032"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A safety relief valve is a valve that bears a safety relief function combining both safety protection and pressure relief capabilities.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de segurança e alívio é uma válvula que possui uma função de alívio de segurança que combina capacidades de proteção de segurança e alívio de pressão.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">safety relief valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de segurança e alívio</rdfs:label>
@@ -3733,6 +3959,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000168"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A safety valve is a valve that bears a safety venting function for automatic pressure relief through rapid full opening to protect against dangerous overpressure conditions.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de segurança é uma válvula que possui uma função de ventilação de segurança para alívio automático de pressão por abertura rápida e total para proteção contra condições perigosas de sobrepressão.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">safety valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de segurança</rdfs:label>
@@ -3754,6 +3982,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000204"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A self-operating valve is a valve that includes an internal means of operation (such as spring, gravity, fluid pressure, or counterbalance) and does not depend on an external source of energy for its actuation.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula auto-operante é uma válvula que inclui um mecanismo interno de operação (como mola, gravidade, pressão do fluido ou contrapeso) e não depende de uma fonte externa de energia para seu acionamento.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">self-operating valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula auto-operante</rdfs:label>
@@ -3775,6 +4005,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000167"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A solenoid valve is a valve that has a solenoid actuator for electrical control of fluid flow.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula solenoide é uma válvula que possui um atuador solenoide para controle elétrico do fluxo de fluido.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">solenoid valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula solenoide</rdfs:label>
@@ -3811,6 +4043,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000198"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A storage tank is a vessel that is designed to store fluids or materials for extended periods without transformation or active processing.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um tanque de armazenamento é um vaso projetado para armazenar fluidos ou materiais por períodos prolongados sem transformação ou processamento ativo.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">storage tank</rdfs:label>
         <rdfs:label xml:lang="pt-br">tanque de armazenamento</rdfs:label>
@@ -3844,6 +4078,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000195"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A strainer is a material artifact that bears a separation function and has a filtering element, designed to separate solid particles from fluids by passing the fluid through screens or perforations.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um filtro grosso é um artefato material que possui uma função de separação e tem um elemento filtrante, projetado para separar partículas sólidas de fluidos fazendo o fluido passar através de telas ou perfurações.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">filtro grosso</rdfs:label>
         <rdfs:label xml:lang="en">strainer</rdfs:label>
@@ -3859,6 +4095,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000153">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
+        <rdfs:comment xml:lang="en">A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de retenção basculante é uma válvula de retenção que possui um elemento de fechamento consistindo de um disco que gira livremente em um mecanismo de dobradiça e abre automaticamente quando o fluxo é estabelecido e fecha automaticamente quando o fluxo cessa ou se inverte.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">swing check valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de retenção basculante</rdfs:label>
@@ -3891,6 +4129,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000173"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A temperature indicator is an indicator that measures temperature and displays the measured value locally at the instrument location.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um indicador de temperatura é um indicador que mede temperatura e exibe o valor medido localmente na localização do instrumento.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">indicador de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature indicator</rdfs:label>
@@ -3933,6 +4173,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000188"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A temperature transmitter is a transmitter that measures temperature and produces a standardized output signal dependent on the received input signal from a temperature element.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um transmissor de temperatura é um transmissor que mede temperatura e produz um sinal de saída padronizado dependente do sinal de entrada recebido de um elemento de temperatura.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="en">temperature transmitter</rdfs:label>
         <rdfs:label xml:lang="pt-br">transmissor de temperatura</rdfs:label>
@@ -3955,6 +4197,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000201"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A thermowell is an instrument that is a pressure-tight receptacle adapted to receive a temperature sensing element, provided with external threads or other means for pressure-tight attachment to a vessel or pipe.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um poço termométrico é um instrumento que é um receptáculo resistente à pressão adaptado para receber um elemento sensor de temperatura, provido com roscas externas ou outros meios para fixação resistente à pressão a um vaso ou tubulação.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">poço termométrico</rdfs:label>
         <rdfs:label xml:lang="en">thermowell</rdfs:label>
@@ -3988,6 +4232,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A transmitter is an instrument that bears a signal transmission function, receiving process variable signals from sensors and converting them into standardized output signals for transmission to control systems.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um transmissor é um instrumento que possui uma função de transmissão de sinal, recebendo sinais de variáveis de processo de sensores e convertendo-os em sinais de saída padronizados para transmissão a sistemas de controle.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">transmissor</rdfs:label>
         <rdfs:label xml:lang="en">transmitter</rdfs:label>
@@ -4021,6 +4267,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000025"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A vessel is an assembly designed to contain fluids or solids for storage and/or processing purposes.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um vaso é um conjunto projetado para conter fluidos ou sólidos para fins de armazenamento e/ou processamento.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">vaso</rdfs:label>
         <rdfs:label xml:lang="en">vessel</rdfs:label>
@@ -4063,6 +4311,8 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000189"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A vibration transmitter is a transmitter that measures mechanical vibrations and produces an output signal proportional to the measured vibration parameters.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Um transmissor de vibração é um transmissor que mede vibrações mecânicas e produz um sinal de saída proporcional aos parâmetros de vibração medidos.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">transmissor de vibração</rdfs:label>
         <rdfs:label xml:lang="en">vibration transmitter</rdfs:label>
@@ -4078,6 +4328,8 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000160">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
+        <rdfs:comment xml:lang="en">A wafer check valve is a check valve that has a wafer pattern valve body designed for mounting between flanges.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Uma válvula de retenção wafer é uma válvula de retenção que possui um corpo de válvula padrão wafer projetado para montagem entre flanges.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched"/>
         <rdfs:label xml:lang="pt-br">válvula de retenção wafer</rdfs:label>
         <rdfs:label xml:lang="en">wafer check valve</rdfs:label>
