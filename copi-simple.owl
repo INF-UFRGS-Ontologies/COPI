@@ -16,7 +16,7 @@
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/"
      xmlns:AnnotationVocabulary="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-simple.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-24/copi-simple.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-25/copi-simple.owl"/>
         <terms:contributor>Cauã Antunes</terms:contributor>
         <terms:contributor>Haroldo Rojas</terms:contributor>
         <terms:contributor>Mara Abel</terms:contributor>
@@ -38,7 +38,7 @@
         <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>
         <owl:versionInfo>2026-06-15</owl:versionInfo>
-        <owl:versionInfo>2026-06-24</owl:versionInfo>
+        <owl:versionInfo>2026-06-25</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
@@ -2490,11 +2490,14 @@ Units of Measure: Km, Kg, G</skos:example>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">functionally participates in</rdfs:label>
         <rdfs:label xml:lang="pt-br">participa funcionalmente em</rdfs:label>
-        <annotation:explanatoryNote xml:lang="pt-br">Distingue a participação mediada por função da participação geral: obo:BFO_0000056 (participa em) vale sempre que um continuante toma parte em algum processo por qualquer razão; copi:participatesIn é entailada apenas pela cadeia hasFunction ∘ BFO_0000054 (é realizada em). Uma bomba participa funcionalmente em toda operação de aumento de pressão de líquido que realiza sua função de bombeamento; BFO_0000056 vale adicionalmente para qualquer outro envolvimento.</annotation:explanatoryNote>
-        <annotation:explanatoryNote xml:lang="en">Distinguishes function-mediated from general participation: obo:BFO_0000056 (participates in) holds whenever a continuant takes part in any process for any reason; copi:participatesIn is entailed only via the chain hasFunction ∘ BFO_0000054 (is realized in). A pump functionally participates in every liquid-pressure-increase operation that realizes its pumping function; BFO_0000056 additionally covers any other process involvement.</annotation:explanatoryNote>
+        <annotation:explanatoryNote xml:lang="pt-br">Distingue a participação mediada por função da participação geral: obo:BFO_0000056 (participa em) vale sempre que um continuante toma parte em algum processo por qualquer razão; copi:participatesIn é entailada apenas pela cadeia hasFunction ∘ BFO_0000054 (tem realização). Uma bomba participa funcionalmente em toda operação de aumento de pressão de líquido que realiza sua função de bombeamento; BFO_0000056 vale adicionalmente para qualquer outro envolvimento.</annotation:explanatoryNote>
+        <annotation:explanatoryNote xml:lang="en">Distinguishes function-mediated from general participation: obo:BFO_0000056 (participates in) holds whenever a continuant takes part in any process for any reason; copi:participatesIn is entailed only via the chain hasFunction ∘ BFO_0000054 (has realization). A pump functionally participates in every liquid-pressure-increase operation that realizes its pumping function; BFO_0000056 additionally covers any other process involvement.</annotation:explanatoryNote>
+        <annotation:firstOrderLogicDefinition xml:lang="en">∀x∀y (functionallyParticipatesIn(x,y) ↔ ∃f(hasFunction(x,f) ∧ hasRealization(f,y)))</annotation:firstOrderLogicDefinition>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">A sub-propriedade de bfo:participatesIn (BFO_0000056) entailada exclusivamente pela cadeia iof-constr:hasFunction ∘ obo:BFO_0000054: um artefato material participa funcionalmente em todo processo que realiza uma de suas funções projetadas.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="en">The sub-property of bfo:participatesIn (BFO_0000056) entailed exclusively by the chain iof-constr:hasFunction ∘ obo:BFO_0000054: a material artifact functionally participates in every process that realizes one of its designed functions.</annotation:naturalLanguageDefinition>
+        <annotation:semiFormalNaturalLanguageDefinition xml:lang="en">x &apos;functionally participates in&apos; y if and only if there exists a function f such that x &apos;has function&apos; f and f &apos;has realization&apos; y</annotation:semiFormalNaturalLanguageDefinition>
+        <annotation:semiFormalNaturalLanguageDefinition xml:lang="pt-br">x &apos;participa funcionalmente em&apos; y se e somente se existe uma função f tal que x &apos;tem função&apos; f e f &apos;tem realização&apos; y</annotation:semiFormalNaturalLanguageDefinition>
     </owl:ObjectProperty>
     
 
