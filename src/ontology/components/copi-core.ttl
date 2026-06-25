@@ -13,17 +13,22 @@
 copi:COPI_0000002 a owl:ObjectProperty ;
     rdfs:label "functionally participates in"@en,
         "participa funcionalmente em"@pt-br ;
+    rdfs:domain iof-constr:MaterialArtifact ;
+    rdfs:range obo:BFO_0000015 ;
     dcterms:source "ODR-011 §4" ;
     rdfs:comment "The sub-property of bfo:participatesIn (BFO_0000056) entailed exclusively by the chain iof-constr:hasFunction ∘ obo:BFO_0000054: a material artifact functionally participates in every process that realizes one of its designed functions."@en,
         "A sub-propriedade de bfo:participatesIn (BFO_0000056) entailada exclusivamente pela cadeia iof-constr:hasFunction ∘ obo:BFO_0000054: um artefato material participa funcionalmente em todo processo que realiza uma de suas funções projetadas."@pt-br ;
     rdfs:isDefinedBy copi:copi-core ;
     rdfs:subPropertyOf obo:BFO_0000056 ;
     owl:propertyChainAxiom ( iof-constr:hasFunction obo:BFO_0000054 ) ;
-    iof-av:explanatoryNote "Distinguishes function-mediated from general participation: obo:BFO_0000056 (participates in) holds whenever a continuant takes part in any process for any reason; copi:participatesIn is entailed only via the chain hasFunction ∘ BFO_0000054 (is realized in). A pump functionally participates in every liquid-pressure-increase operation that realizes its pumping function; BFO_0000056 additionally covers any other process involvement."@en,
-        "Distingue a participação mediada por função da participação geral: obo:BFO_0000056 (participa em) vale sempre que um continuante toma parte em algum processo por qualquer razão; copi:participatesIn é entailada apenas pela cadeia hasFunction ∘ BFO_0000054 (é realizada em). Uma bomba participa funcionalmente em toda operação de aumento de pressão de líquido que realiza sua função de bombeamento; BFO_0000056 vale adicionalmente para qualquer outro envolvimento."@pt-br ;
+    iof-av:explanatoryNote "Distinguishes function-mediated from general participation: obo:BFO_0000056 (participates in) holds whenever a continuant takes part in any process for any reason; copi:participatesIn is entailed only via the chain hasFunction ∘ BFO_0000054 (has realization). A pump functionally participates in every liquid-pressure-increase operation that realizes its pumping function; BFO_0000056 additionally covers any other process involvement."@en,
+        "Distingue a participação mediada por função da participação geral: obo:BFO_0000056 (participa em) vale sempre que um continuante toma parte em algum processo por qualquer razão; copi:participatesIn é entailada apenas pela cadeia hasFunction ∘ BFO_0000054 (tem realização). Uma bomba participa funcionalmente em toda operação de aumento de pressão de líquido que realiza sua função de bombeamento; BFO_0000056 vale adicionalmente para qualquer outro envolvimento."@pt-br ;
+    iof-av:firstOrderLogicDefinition "∀x∀y (functionallyParticipatesIn(x,y) ↔ ∃f(hasFunction(x,f) ∧ hasRealization(f,y)))"@en ;
     iof-av:isPrimitive false ;
     iof-av:naturalLanguageDefinition "The sub-property of bfo:participatesIn (BFO_0000056) entailed exclusively by the chain iof-constr:hasFunction ∘ obo:BFO_0000054: a material artifact functionally participates in every process that realizes one of its designed functions."@en,
-        "A sub-propriedade de bfo:participatesIn (BFO_0000056) entailada exclusivamente pela cadeia iof-constr:hasFunction ∘ obo:BFO_0000054: um artefato material participa funcionalmente em todo processo que realiza uma de suas funções projetadas."@pt-br .
+        "A sub-propriedade de bfo:participatesIn (BFO_0000056) entailada exclusivamente pela cadeia iof-constr:hasFunction ∘ obo:BFO_0000054: um artefato material participa funcionalmente em todo processo que realiza uma de suas funções projetadas."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x 'functionally participates in' y if and only if there exists a function f such that x 'has function' f and f 'has realization' y"@en,
+        "x 'participa funcionalmente em' y se e somente se existe uma função f tal que x 'tem função' f e f 'tem realização' y"@pt-br .
 
 copi:COPI_0000011 a owl:Class ;
     rdfs:label "liquid pressure increase"@en,
