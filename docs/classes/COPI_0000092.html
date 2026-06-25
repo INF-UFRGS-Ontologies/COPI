@@ -1417,14 +1417,14 @@
 </div></div>
           <div style="flex:1;">
             <div class="d-flex align-items-center gap-2 mb-1">
-              <span class="status-pill status-validated">validated</span>
-              <span class="mode-pill mode-necessary">necessary</span>
+              <span class="status-pill status-exported">exported</span>
+              <span class="mode-pill mode-equivalent">equivalent</span>
               <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000092</code>
             </div>
             <div class="ph-class-name">Heat Exchanger</div>
             <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092</code></div>
             <div class="mt-2" style="font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted);">
-              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-06-22
+              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-04-13
             </div>
           </div>
         </div>
@@ -1432,15 +1432,20 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <p class="text-muted fst-italic">No natural language definition recorded.</p>
+        <div class="nl-def"><div class="lang-tag">EN</div>A heat exchanger is a pressure vessel that bears the designed function of transferring thermal energy between two or more fluid streams while maintaining their separation.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um trocador de calor é um vaso de pressão que possui a função projetada de transferir energia térmica entre duas ou mais correntes de fluido mantendo sua separação.</div>
       </div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every heat exchanger is an assembly that has the function of heat transfer and has component parts including heat transfer surfaces and fluid passages for separated streams.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (HeatExchanger(x) → PressureVessel(x) ∧ ∃s(SolidHeatTransferSurface(s) ∧ hasComponentPartAtAllTimes(x,s)))</span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (HeatExchanger(x) ↔ PressureVessel(x) ∧ ∃f (HeatTransferFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+<span class="fol-line"><span class="fol-label">[Function axiom: HeatTransferFunction]</span>∀f (HeatTransferFunction(f) → ∀p (realizedIn(f,p) → HeatTransferProcess(p)) ∧ ∃p (HeatTransferProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((HeatExchanger(x) ∧ HeatTransferFunction(f) ∧ bearerOf(x,f)) →
+      ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
+      ∃e (Participant(e) ∧ participatesIn(e,f)) ∧
+      processType(f,ThermalEnergyTransferFromHotFluidToColdFluidWithoutMixing)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
@@ -1469,8 +1474,8 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;0.1.0-draft&quot; ;
-    owl:imports &lt;https://spec.industrialontologies.org/ontology/202602/core/Core/&gt; ;
+    owl:versionInfo &quot;0.1.0-draft-10-g8d1338c&quot; ;
+    owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
     dcterms:contributor &quot;Cauã Antunes&quot; ;
@@ -1482,43 +1487,70 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-06-23&quot;^^xsd:date ;
-    apv:GlobalMinLanguageCoverage &quot;en pt&quot; ;
+    dcterms:modified &quot;2026-06-25&quot;^^xsd:date ;
+    apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label&quot; .
 
 ### Identity-giving function
-:HeatExchangerFunction rdf:type owl:Class ;
+:HeatTransferFunction rdf:type owl:Class ;
     rdfs:subClassOf iof-core:DesignedFunction ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:allValuesFrom :HeatExchangerProcess
+        owl:allValuesFrom :HeatTransferProcess
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:someValuesFrom :HeatExchangerProcess
+        owl:someValuesFrom :HeatTransferProcess
     ] ;
-    rdfs:label &quot;heat exchanger function&quot;@en .
+    rdfs:label &quot;heat transfer function&quot;@en ;
+    rdfs:label &quot;função de transferência de calor&quot;@pt-br .
 
 ### Process type
-:HeatExchangerProcess rdf:type owl:Class ;
+:HeatTransferProcess rdf:type owl:Class ;
     rdfs:subClassOf iof-core:PlannedProcess ;
-    rdfs:label &quot;heat exchanger process&quot;@en .
+    rdfs:label &quot;heat transfer process&quot;@en ;
+    rdfs:label &quot;processo de transferência de calor&quot;@pt-br .
+
+:HeatTransferProcess
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasInput ;
+        owl:someValuesFrom :FluidPortion
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasSpecifiedOutput ;
+        owl:someValuesFrom :FluidPortion
+    ] .
 
 ### Equipment universal: HeatExchanger
 :HeatExchanger rdf:type owl:Class ;
-    rdfs:subClassOf iof-core:MaterialArtifact ;
-    rdfs:subClassOf [
+    owl:equivalentClass [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :PressureVessel
+            [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
-        owl:someValuesFrom :HeatExchangerFunction
+        owl:someValuesFrom :HeatTransferFunction
+    ]
+        )
     ] ;
     rdfs:label &quot;heat exchanger&quot;@en ;
-    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
+    rdfs:label &quot;trocador de calor&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A heat exchanger is a pressure vessel that bears the designed function of transferring thermal energy between two or more fluid streams while maintaining their separation.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um trocador de calor é um vaso de pressão que possui a função projetada de transferir energia térmica entre duas ou mais correntes de fluido mantendo sua separação.&quot;@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every heat exchanger is an assembly that has the function of heat transfer and has component parts including heat transfer surfaces and fluid passages for separated streams.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x (HeatExchanger(x) ↔ (Assembly(x) ∧ ∃f(HeatTransferFunction(f) ∧ bearerOf(x,f))))&quot;@en ;
     skos:definition &quot;[ISO 15926-4] A &lt;HEAT EXCHANGER&gt; is an &lt;EXCHANGER&gt; that has the capability of &lt;HEAT EXCHANGING&gt;&quot;@en ;
     skos:definition &quot;[CFIHOS] A physical object that is intended to transfer heat from one object to another.&quot;@en .
+
+# Disjointness: HeatExchanger and Mixer
+[] rdf:type owl:AllDisjointClasses ;
+    owl:members ( :HeatExchanger :Mixer ) .
 
 </div></div>
       </div>
@@ -1534,16 +1566,16 @@
     <div class="row g-3 mb-2">
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Function class</div>
-        <span class="decision-value">—</span>
+        <span class="decision-value">HeatTransferFunction</span>
         <span class="text-muted" style="font-size:.8rem;"> ⊑ DesignedFunction</span>
       </div>
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
-        <span class="decision-value">—</span>
+        <span class="decision-value">HeatTransferProcess</span>
         <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
       </div>
     </div>
-    
+    <div class="rationale">The identity-giving function is thermal energy transfer between two fluid streams or media. This is what makes a heat exchanger a heat exchanger regardless of its physical configuration. ISO 15926 explicitly states &#x27;has the capability of HEAT EXCHANGING&#x27; and CFIHOS states &#x27;intended to transfer heat from one object to another&#x27;.</div>
   </div>
 </div>
 <div class="step-block step-2">
@@ -1552,28 +1584,37 @@
   </div>
   <div class="step-body">
     <div class="mb-2">
-      <span class="decision-value">—</span>
+      <span class="decision-value">pressure vessel</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
     </div>
-    
+    <div class="rationale">All heat exchangers in oil &amp; gas plants are pressure-containing vessels designed to transfer heat between two fluid streams through a separating wall; they are therefore classified as PressureVessel (the most specific enriched superclass). The PressureVessel genus is already axiomatized in this ontology (id 60) and provides the necessary structural differentia (pressure boundary, fluid containment). The identity-giving function (heat transfer) provides the functional differentia that distinguishes HeatExchanger from other pressure vessels.</div>
   </div>
 </div>
 <div class="step-block step-3">
   <div class="step-block-header">
     <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
-  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No differentia recorded.</p></div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.HeatTransferFunction</code></div><p style="font-size:.88rem;color:#374151;">Bears the designed function of transferring thermal energy between two or more fluid streams or media without mixing them.</p><div class="rationale">The HeatTransferFunction is the minimal differentiating condition that distinguishes heat exchangers from all other assemblies. This function is neither provided by the Assembly genus nor shared with sibling equipment types that perform other operations on fluids.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
     <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
-  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No necessary parts recorded.</p></div>
+  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No necessary parts recorded.</p><div class="rationale mt-2">These parts represent the minimal universal components - heat transfer surface and fluid passages are present in all heat exchanger configurations from simple double-pipe to complex shell-and-tube designs.</div></div>
 </div>
       </div>
 
       
-      
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000092</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-06-22</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-22</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>—</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-23</td></tr></tbody></table></div>
+<div class="doc-section">
+  <div class="doc-section-title"><span class="t-en">Process Participation Signature</span><span class="t-pt">Assinatura de Participação em Processo</span></div>
+  <div class="sig-grid">
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 2, &#x27;constraints&#x27;: &#x27;different temperatures, separated streams&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 2, &#x27;constraints&#x27;: &#x27;temperatures adjusted toward equilibrium, streams remain separated&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">thermal energy transfer from hot fluid to cold fluid without mixing</div></div>
+  </div>
+  <div class="rationale mt-2">Heat exchangers fundamentally require two fluid inputs at different temperatures and produce two outputs with adjusted temperatures. The key constraint is that fluids remain separated while heat is transferred.</div>
+</div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">Mixer</span></div><div class="rationale mt-2">C4: Mixer. Mixers are designed to combine fluids rather than keep them separated during heat transfer. Reactors are designed for chemical transformation rather than purely thermal energy transfer.</div></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000092</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-13</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-25</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-25</td></tr></tbody></table></div>
 
     </div>
 
@@ -2768,11 +2809,11 @@
           </div>
           <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
             <table class="meta-table">
-              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>—</strong></td></tr>
-              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td>—</td></tr>
-              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
-              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>—</td></tr>
-              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>—</td></tr>
+              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>pressure vessel</strong></td></tr>
+              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">Assembly</span></td></tr>
+              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-equivalent">equivalent</span></td></tr>
+              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>HeatTransferFunction</td></tr>
+              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>HeatTransferProcess</td></tr>
               <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>
             </table>
           </div>

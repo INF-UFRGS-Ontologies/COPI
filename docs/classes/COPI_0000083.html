@@ -233,16 +233,17 @@
 
       <div class="ph-hero">
         <div class="d-flex align-items-start gap-3">
+          
           <div style="flex:1;">
             <div class="d-flex align-items-center gap-2 mb-1">
-              <span class="status-pill status-validated">validated</span>
-              <span class="mode-pill mode-necessary">necessary</span>
+              <span class="status-pill status-exported">exported</span>
+              <span class="mode-pill mode-equivalent">equivalent</span>
               <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000083</code>
             </div>
-            <div class="ph-class-name"><span class="t-en">Flow Modification Accessory</span><span class="t-pt">Acessório de Modificação de Fluxo</span></div>
+            <div class="ph-class-name">Flow Modification Accessory</div>
             <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000083</code></div>
             <div class="mt-2" style="font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted);">
-              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-06-23
+              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-05-04
             </div>
           </div>
         </div>
@@ -250,53 +251,149 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>A flow modification accessory is a material artifact that has a flow restriction function to reduce or condition fluid flow by creating a controlled pressure drop across a fixed orifice or flow-conditioning geometry.</div>
-        <div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um acessório de modificação de fluxo é um artefato material que possui uma função de restrição de fluxo para reduzir ou condicionar o escoamento de fluido ao criar uma queda de pressão controlada em um orifício fixo ou geometria condicionadora de fluxo.</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A MaterialArtifact that bears a FlowModificationFunction and that is used as a component in flow control assemblies to alter the characteristics of fluid flow such as velocity profile, turbulence, or pressure distribution.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um MaterialArtifact que possui uma FlowModificationFunction e que é usado como componente em conjuntos de controle de fluxo para alterar as características do fluxo de fluido, como perfil de velocidade, turbulência ou distribuição de pressão.</div>
       </div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every flow modification accessory is a material artifact that has the function to reduce or condition fluid flow by creating a controlled pressure drop through a fixed orifice or flow-conditioning geometry.</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every flow modification accessory is a MaterialArtifact that bears a FlowModificationFunction and participates in processes that alter fluid flow characteristics.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (FlowModificationAccessory(x) → MaterialArtifact(x) ∧ ∃f (FlowRestrictionFunction(f) ∧ bearerOf(x,f)))</span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (FlowModificationAccessory(x) ↔ FlowModificationAccessory(x) ∧ ∃f (FlowModificationFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+<span class="fol-line"><span class="fol-label">[Function axiom: FlowModificationFunction]</span>∀f (FlowModificationFunction(f) → ∀p (realizedIn(f,p) → FlowModificationProcess(p)) ∧ ∃p (FlowModificationProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((FlowModificationAccessory(x) ∧ FlowModificationFunction(f) ∧ bearerOf(x,f)) →
+      ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
+      ∃e (Participant(e) ∧ participatesIn(e,f)) ∧
+      processType(f,FluidFlowCharacteristicsModifiedToAlterVelocityProfiles,TurbulenceLevels,OrPressureDistributionPatterns)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
         </div>
-        <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div>
-<div class="owl-block">
+        <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
 @prefix :         &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
 @prefix owl:      &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdf:      &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs:     &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd:      &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix bfo:      &lt;http://purl.obolibrary.org/obo/&gt; .
 @prefix iof-core: &lt;https://spec.industrialontologies.org/ontology/construct/&gt; .
-@prefix iof-av:   &lt;https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/&gt; .
+@prefix iof-av:   &lt;https://spec.industrialontologies.org/ontology/annotation/&gt; .
+@prefix skos:     &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix qudt:     &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix dcterms:  &lt;http://purl.org/dc/terms/&gt; .
+@prefix foaf:     &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix apv:      &lt;http://inf.ufrgs.br/ontologies/apv#&gt; .
 
-:FlowModificationAccessory rdf:type owl:Class ;
-    rdfs:subClassOf iof-core:MaterialArtifact ;
+### COPI — Core Ontology for Petroleum Installations
+### Class module: FlowModificationAccessory
+&lt;https://www.inf.ufrgs.br/ontologies/copi&gt;
+    rdf:type owl:Ontology ;
+    dcterms:title &quot;Core Ontology for Petroleum Installations (COPI)&quot;@en ;
+    dcterms:title &quot;Ontologia Central de Plantas de Produção de Petróleo (COPI)&quot;@pt ;
+    dcterms:description &quot;BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants, developed using the four-step RDL enrichment method.&quot;@en ;
+    skos:scopeNote &quot;Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.&quot;@en ;
+    skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
+    skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
+    skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
+    owl:versionInfo &quot;0.1.0-draft-10-g8d1338c&quot; ;
+    owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
+    owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
+    dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
+    dcterms:contributor &quot;Cauã Antunes&quot; ;
+    dcterms:contributor &quot;Haroldo Rojas&quot; ;
+    dcterms:contributor &quot;Rafael Petry&quot; ;
+    dcterms:contributor &quot;Régis Romeu&quot; ;
+    dcterms:contributor &quot;Mara Abel&quot; ;
+    dcterms:isPartOf &lt;https://inf.ufrgs.br/projetos/OntoKG&gt; ;
+    dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
+    dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
+    dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-06-25&quot;^^xsd:date ;
+    apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
+    apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
+    apv:ClassMinAnnotationCoverage &quot;rdfs:label&quot; .
+
+### Identity-giving function
+:FlowModificationFunction rdf:type owl:Class ;
+    rdfs:subClassOf :FlowControlFunction ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
-        owl:onProperty iof-core:hasFunction ;
-        owl:someValuesFrom :COPI_0000163  # FlowRestrictionFunction
+        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
+        owl:allValuesFrom :FlowModificationProcess
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
+        owl:someValuesFrom :FlowModificationProcess
+    ] ;
+    rdfs:label &quot;flow modification function&quot;@en ;
+    rdfs:label &quot;função de modificação de fluxo&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A FlowControlFunction that is realized in a FlowModificationProcess and that consists in altering the characteristics of fluid flow (such as velocity profile, turbulence, pressure drop pattern, or flow distribution) without primarily controlling the flow rate or direction.&quot;@en .
+
+:FlowControlFunction rdf:type owl:Class .
+
+### Process type
+:FlowModificationProcess rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:PlannedProcess ;
+    rdfs:label &quot;flow modification process&quot;@en ;
+    rdfs:label &quot;processo de modificação de fluxo&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which the characteristics of fluid flow are altered by a flow modification accessory, resulting in changes to flow patterns, velocity profiles, turbulence levels, or pressure drop characteristics while the fluid passes through or around the device.&quot;@en .
+
+:FlowModificationProcess
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasInput ;
+        owl:someValuesFrom :FluidPortion
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasSpecifiedOutput ;
+        owl:someValuesFrom :FluidPortion
+    ] .
+
+### Equipment universal: FlowModificationAccessory
+:FlowModificationAccessory rdf:type owl:Class ;
+    owl:equivalentClass [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :FlowModificationAccessory
+            [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
+        owl:someValuesFrom :FlowModificationFunction
+    ]
+        )
     ] ;
     rdfs:label &quot;flow modification accessory&quot;@en ;
-    rdfs:label &quot;acessório de modificação de fluxo&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A flow modification accessory is a material artifact that has a flow restriction function to reduce or condition fluid flow by creating a controlled pressure drop across a fixed orifice or flow-conditioning geometry.&quot;@en ;
-    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
-    rdfs:isDefinedBy &lt;https://www.inf.ufrgs.br/ontologies/copi/copi-enriched&gt; .
+    rdfs:label &quot;MaterialArtifact que possui uma FlowModificationFunction e&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A MaterialArtifact that bears a FlowModificationFunction and that is used as a component in flow control assemblies to alter the characteristics of fluid flow such as velocity profile, turbulence, or pressure distribution.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um MaterialArtifact que possui uma FlowModificationFunction e que é usado como componente em conjuntos de controle de fluxo para alterar as características do fluxo de fluido, como perfil de velocidade, turbulência ou distribuição de pressão.&quot;@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every flow modification accessory is a MaterialArtifact that bears a FlowModificationFunction and participates in processes that alter fluid flow characteristics.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x(FlowModificationAccessory(x) ↔ (MaterialArtifact(x) ∧ ∃f(FlowModificationFunction(f) ∧ bearerOf(x,f))))&quot;@en ;
+    skos:definition &quot;[ISO 15926-4] A&lt;FLOW MODIFICATION ACCESSORY&gt; is a &lt;FINAL CONTROL ASSEMBLY COMPONENT&gt; and a &lt;MODIFIER&gt; that is used to modify the characteristics of fluid flow&quot;@en .
+
 </div></div>
       </div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Axiomatization Decision Log</span><span class="t-pt">Registro de Decisões</span></div>
-
+        
 <div class="step-block step-1">
   <div class="step-block-header">
     <span class="step-num">1</span> <span class="t-en">Identity-Giving Function</span><span class="t-pt">Função Identitária</span>
   </div>
   <div class="step-body">
-    <div class="mb-2"><span class="decision-value">FlowRestrictionFunction</span></div>
-    <div class="rationale"><span class="t-en">The identity-giving function of a flow modification accessory is <em>FlowRestrictionFunction</em>. Every instance of this class bears this function by design.</span><span class="t-pt">A função identitária de um acessório de modificação de fluxo é <em>FlowRestrictionFunction</em>. Toda instância desta classe possui essa função por projeto.</span></div>
+    <div class="row g-3 mb-2">
+      <div class="col-sm-6">
+        <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Function class</div>
+        <span class="decision-value">FlowModificationFunction</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ FlowControlFunction</span>
+      </div>
+      <div class="col-sm-6">
+        <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
+        <span class="decision-value">FlowModificationProcess</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
+      </div>
+    </div>
+    <div class="rationale">Flow modification is the identity-giving function — what makes this equipment type distinct from other flow control devices. It is more specific than general FlowControlFunction because it focuses on altering flow characteristics rather than controlling flow rate or isolation. This differs from existing functions like FlowRestrictionFunction (which creates pressure drop) by being broader and encompassing various flow characteristic alterations.</div>
   </div>
 </div>
 <div class="step-block step-2">
@@ -304,62 +401,44 @@
     <span class="step-num">2</span> <span class="t-en">Genus Determination</span><span class="t-pt">Determinação do Gênero</span>
   </div>
   <div class="step-body">
-    <div class="mb-2"><span class="decision-value">MaterialArtifact</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span></div>
-    <div class="rationale"><span class="t-en">Flow Modification Accessory is a subtype of MaterialArtifact. This is the most specific appropriate superclass available in the COPI/IOF-Core hierarchy.</span><span class="t-pt">Acessório de Modificação de Fluxo é um subtipo de MaterialArtifact. Esta é a superclasse mais específica disponível na hierarquia COPI/IOF-Core.</span></div>
+    <div class="mb-2">
+      <span class="decision-value">flow modification accessory</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
+    </div>
+    <div class="rationale">This appears to be a root equipment category with no more specific superclass available. The parent candidates (FINAL CONTROL ASSEMBLY COMPONENT, MODIFIER) are too abstract and not domain-specific equipment classes. The concept represents a distinct category of flow accessories that would be the genus for more specific types like restriction orifices, flow conditioners, etc. Since it is itself the most specific category available, it becomes its own genus. The BFO root is MaterialArtifact as these are typically individual devices installed in piping systems.</div>
   </div>
 </div>
 <div class="step-block step-3">
   <div class="step-block-header">
     <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
-  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;"><span class="t-en">Differentia are encoded in FOL only — see Primitive Rationale below.</span><span class="t-pt">As differentia estão codificadas apenas em FOL — ver Razão Primitiva abaixo.</span></p></div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.FlowModificationFunction</code></div><p style="font-size:.88rem;color:#374151;">Bears a FlowModificationFunction that alters fluid flow characteristics.</p><div class="rationale">Since this is a root category, the differentia is simply the identity-giving function. This distinguishes it from other flow-related equipment that measure, control, or simply conduct flow without modifying its characteristics.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
     <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
-  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;"><span class="t-en">No necessary parts recorded for this intermediate parent class.</span><span class="t-pt">Nenhuma parte necessária registrada para esta classe pai intermediária.</span></p></div>
+  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No necessary parts recorded.</p><div class="rationale mt-2">No component terms are available in the source standards, and the definition is too generic to specify universal parts. Flow modification accessories can have diverse physical implementations (orifice plates, flow conditioners, trim elements) with no common structural components that would be necessary across all subtypes.</div></div>
 </div>
-
       </div>
 
+      
 <div class="doc-section">
   <div class="doc-section-title"><span class="t-en">Process Participation Signature</span><span class="t-pt">Assinatura de Participação em Processo</span></div>
   <div class="sig-grid">
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div>Fluid stream (PortionOfFluid) at upstream pressure</div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div>Fluid stream (PortionOfFluid) at reduced downstream pressure</div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div>Controlled pressure drop created by fixed orifice geometry</div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;any phase - liquid, gas, or multiphase stream entering the device&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;same fluid with modified flow characteristics - altered velocity profile, turbulence, or pressure distribution&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">fluid flow characteristics modified to alter velocity profiles, turbulence levels, or pressure distribution patterns</div></div>
   </div>
+  <div class="rationale mt-2">The signature captures the essential transformation - fluid enters with one set of flow characteristics and exits with modified characteristics. The transformation_kind is flow_regulation as it involves modifying flow behavior, though not necessarily controlling flow rate.</div>
 </div>
-
-      <div class="doc-section">
-        <div class="doc-section-title"><span class="t-en">Primitive Rationale</span><span class="t-pt">Razão Primitiva</span></div>
-        <div class="scope-note"><span class="t-en">The orifice geometry, discharge coefficient, and the presence or absence of a flow-conditioning plate are FOL-only differentia that distinguish RestrictionOrifice from OrificePlate; OWL 2 DL carries only the genus (MaterialArtifact) and the functional restriction.</span><span class="t-pt">A geometria do orifício, o coeficiente de descarga e a presença de placa condicionadora são differentia apenas-FOL que distinguem RestrictionOrifice de OrificePlate; o OWL 2 DL carrega apenas o gênero (MaterialArtifact) e a restrição funcional.</span></div>
-      </div>
-
-      <div class="doc-section">
-        <div class="doc-section-title"><span class="t-en">Known Subclasses</span><span class="t-pt">Subclasses Conhecidas</span></div>
-        <div><a href="COPI_0000146.html" class="disjoint-pill" style="background:#dbeafe;color:#1e40af;text-decoration:none;">RestrictionOrifice</a> </div>
-      </div>
-
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div>
-        <table class="meta-table"><tbody>
-          <tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000083</td></tr>
-          <tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000083</td></tr>
-          <tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr>
-          <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr>
-          <tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-06-23</td></tr>
-          <tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-23</td></tr>
-          <tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-6</td></tr>
-          <tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-23</td></tr>
-        </tbody></table>
-      </div>
+      
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000083</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000083</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-04</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-25</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-25</td></tr></tbody></table></div>
 
     </div>
 
     <div class="col-lg-4">
       <div class="sidebar-sticky mt-4 mt-lg-0">
-
+        
         <div class="card border-0 shadow-sm mb-3" style="border-radius:8px;">
           <div class="card-header" style="font-family:system-ui,sans-serif;font-size:.72rem;
                font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:#f8fafc;">
@@ -367,47 +446,61 @@
           </div>
           <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
             <table class="meta-table">
-              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>MaterialArtifact</strong></td></tr>
-              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-badge">bfo:Object (BFO_0000030)</span></td></tr>
-              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
-              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>FlowRestrictionFunction</td></tr>
-              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>FlowControl (FlowRestriction)</td></tr>
-              <tr><td><span class="t-en">Subclasses</span><span class="t-pt">Subclasses</span></td><td>1</td></tr>
+              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>flow modification accessory</strong></td></tr>
+              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">MaterialArtifact</span></td></tr>
+              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-equivalent">equivalent</span></td></tr>
+              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>FlowModificationFunction</td></tr>
+              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>FlowModificationProcess</td></tr>
+              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>
             </table>
           </div>
         </div>
-
-        <div style="border:1px solid var(--border);border-radius:8px;padding:.9rem;font-family:system-ui,sans-serif;font-size:.8rem;">
-          <div class="toc-header"><span class="t-en">On this page</span><span class="t-pt">Nesta página</span></div>
-          <a href="#" class="toc-link"><span class="t-en">Definition</span><span class="t-pt">Definição</span></a>
-          <a href="#" class="toc-link"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></a>
-          <a href="#" class="toc-link"><span class="t-en">Decision Log</span><span class="t-pt">Registro de Decisões</span></a>
-          <a href="#" class="toc-link"><span class="t-en">Participation</span><span class="t-pt">Participação</span></a>
-          <a href="#" class="toc-link"><span class="t-en">Primitive Rationale</span><span class="t-pt">Razão Primitiva</span></a>
-          <div class="toc-header mt-3"><span class="t-en">Known subclasses</span><span class="t-pt">Subclasses</span></div>
-          <a href="COPI_0000146.html" class="toc-link" style="border-left-color:var(--layer-leaf);"><span class="toc-layer-dot" style="background:var(--layer-leaf);"></span>RestrictionOrifice</a>
-
-        </div>
-
+        
+<div class="doc-section">
+  <div class="doc-section-title">
+    <span class="t-en">Source Definitions</span><span class="t-pt">Definições nas Fontes</span>
+    <span style="float:right;font-variant-numeric:tabular-nums;font-weight:400;">1 source</span>
+  </div>
+  
+<div class="source-card">
+  <div class="source-card-header">
+    <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#dbeafe;color:#1e40af;">ISO 15926-4</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">FLOW MODIFICATION ACCESSORY</span>
+  </div>
+  <div class="source-card-body">
+    <div style="color:#374151;font-size:.88rem;">A&lt;FLOW MODIFICATION ACCESSORY&gt; is a &lt;FINAL CONTROL ASSEMBLY COMPONENT&gt; and a &lt;MODIFIER&gt; that is used to modify the characteristics of fluid flow</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: FLOW_MODIFICATION_ACCESSORY</div>
+    <div style="margin-top:.4rem;"><a href="https://standards.iso.org/iso/15926/-4/reference-data-item/FLOW_MODIFICATION_ACCESSORY" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">ISO 15926-4 2019 ↗</a></div>
+  </div>
+</div>
+</div>
       </div>
     </div>
   </div>
 </div>
-</div>
 
+</div>
 <script>
 (function(){
   var root=document.getElementById('copi-root');
-  document.getElementById('lang-btn-en').addEventListener('click',function(){
-    root.classList.remove('lang-pt');
-    document.getElementById('lang-btn-en').classList.add('active');
-    document.getElementById('lang-btn-pt').classList.remove('active');
-  });
-  document.getElementById('lang-btn-pt').addEventListener('click',function(){
-    root.classList.add('lang-pt');
-    document.getElementById('lang-btn-pt').classList.add('active');
-    document.getElementById('lang-btn-en').classList.remove('active');
-  });
+  var btnEn=document.getElementById('lang-btn-en');
+  var btnPt=document.getElementById('lang-btn-pt');
+  if(!btnEn||!btnPt)return;
+  var titleEn="COPI \u00b7 Flow Modification Accessory";
+  var titlePt="COPI \u00b7 Flow Modification Accessory";
+  function applyLang(pt){
+    if(pt){
+      root.classList.add('lang-pt');root.lang='pt-BR';document.title=titlePt;
+      btnPt.classList.add('active');btnEn.classList.remove('active');
+    }else{
+      root.classList.remove('lang-pt');root.lang='en';document.title=titleEn;
+      btnEn.classList.add('active');btnPt.classList.remove('active');
+    }
+  }
+  try{applyLang(localStorage.getItem('copi-lang')==='pt');}catch(e){}
+  btnEn.addEventListener('click',function(){applyLang(false);try{localStorage.setItem('copi-lang','en');}catch(e){}} );
+  btnPt.addEventListener('click',function(){applyLang(true); try{localStorage.setItem('copi-lang','pt');}catch(e){}} );
 })();
 </script>
 </body>

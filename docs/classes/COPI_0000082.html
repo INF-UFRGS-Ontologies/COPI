@@ -233,16 +233,17 @@
 
       <div class="ph-hero">
         <div class="d-flex align-items-start gap-3">
+          
           <div style="flex:1;">
             <div class="d-flex align-items-center gap-2 mb-1">
-              <span class="status-pill status-validated">validated</span>
-              <span class="mode-pill mode-necessary">necessary</span>
+              <span class="status-pill status-exported">exported</span>
+              <span class="mode-pill mode-equivalent">equivalent</span>
               <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000082</code>
             </div>
-            <div class="ph-class-name"><span class="t-en">Flow Measuring Element</span><span class="t-pt">Elemento de Medição de Fluxo</span></div>
+            <div class="ph-class-name">Flow Measuring Element</div>
             <div class="ph-class-iri mt-1"><strong>IRI:</strong> <code>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000082</code></div>
             <div class="mt-2" style="font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted);">
-              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-06-23
+              <span class="t-en">Generated on</span><span class="t-pt">Gerado em</span> 2026-05-04
             </div>
           </div>
         </div>
@@ -250,54 +251,147 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>A flow measuring element is an instrument and assembly inserted into a fluid stream to produce a measurable signal — differential pressure, frequency, or velocity — proportional to the volumetric or mass flow rate.</div>
-        <div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um elemento de medição de fluxo é um instrumento e conjunto inserido em uma corrente de fluido para produzir um sinal mensurável — pressão diferencial, frequência ou velocidade — proporcional à vazão volumétrica ou mássica.</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A MeasuringElement that bears a FlowMeasurementFunction and that is designed to determine and quantify the rate of fluid flow through a system.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um MeasuringElement que possui uma FlowMeasurementFunction e que é projetado para determinar e quantificar a taxa de fluxo de fluido através de um sistema.</div>
       </div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every flow measuring element is an assembly and an instrument that has the function to produce a measurable signal proportional to the flow rate of the fluid passing through it.</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every FlowMeasuringElement is a MeasuringElement that bears a FlowMeasurementFunction</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (FlowMeasuringElement(x) → Assembly(x) ∧ Instrument(x) ∧ ∃f (FlowMeasurementFunction(f) ∧ bearerOf(x,f)))</span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (FlowMeasuringElement(x) ↔ FlowElement(x) ∧ ∃f (FlowMeasurementFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+<span class="fol-line"><span class="fol-label">[Function axiom: FlowMeasurementFunction]</span>∀f (FlowMeasurementFunction(f) → ∀p (realizedIn(f,p) → FlowMeasurementProcess(p)) ∧ ∃p (FlowMeasurementProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((FlowMeasuringElement(x) ∧ FlowMeasurementFunction(f) ∧ bearerOf(x,f)) →
+      ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
+      ∃e (Participant(e) ∧ participatesIn(e,f)) ∧
+      processType(f,FlowRateOfAFluidStreamIsSensedAndConvertedIntoAMeasurableSignalOrIndication)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
         </div>
-        <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div>
-<div class="owl-block">
+        <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
 @prefix :         &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
 @prefix owl:      &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdf:      &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs:     &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd:      &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix bfo:      &lt;http://purl.obolibrary.org/obo/&gt; .
 @prefix iof-core: &lt;https://spec.industrialontologies.org/ontology/construct/&gt; .
-@prefix iof-av:   &lt;https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/&gt; .
+@prefix iof-av:   &lt;https://spec.industrialontologies.org/ontology/annotation/&gt; .
+@prefix skos:     &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix qudt:     &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix dcterms:  &lt;http://purl.org/dc/terms/&gt; .
+@prefix foaf:     &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix apv:      &lt;http://inf.ufrgs.br/ontologies/apv#&gt; .
 
-:FlowMeasuringElement rdf:type owl:Class ;
-    rdfs:subClassOf iof-core:Assembly ;
-    rdfs:subClassOf :COPI_0000091 ;  # Instrument
+### COPI — Core Ontology for Petroleum Installations
+### Class module: FlowMeasuringElement
+&lt;https://www.inf.ufrgs.br/ontologies/copi&gt;
+    rdf:type owl:Ontology ;
+    dcterms:title &quot;Core Ontology for Petroleum Installations (COPI)&quot;@en ;
+    dcterms:title &quot;Ontologia Central de Plantas de Produção de Petróleo (COPI)&quot;@pt ;
+    dcterms:description &quot;BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants, developed using the four-step RDL enrichment method.&quot;@en ;
+    skos:scopeNote &quot;Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.&quot;@en ;
+    skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
+    skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
+    skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
+    owl:versionInfo &quot;0.1.0-draft-10-g8d1338c&quot; ;
+    owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
+    owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
+    dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
+    dcterms:contributor &quot;Cauã Antunes&quot; ;
+    dcterms:contributor &quot;Haroldo Rojas&quot; ;
+    dcterms:contributor &quot;Rafael Petry&quot; ;
+    dcterms:contributor &quot;Régis Romeu&quot; ;
+    dcterms:contributor &quot;Mara Abel&quot; ;
+    dcterms:isPartOf &lt;https://inf.ufrgs.br/projetos/OntoKG&gt; ;
+    dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
+    dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
+    dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-06-25&quot;^^xsd:date ;
+    apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
+    apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
+    apv:ClassMinAnnotationCoverage &quot;rdfs:label&quot; .
+
+### Identity-giving function
+:FlowMeasurementFunction rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:DesignedFunction ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
-        owl:onProperty iof-core:hasFunction ;
-        owl:someValuesFrom :COPI_0000174  # FlowMeasurementFunction
+        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
+        owl:allValuesFrom :FlowMeasurementProcess
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
+        owl:someValuesFrom :FlowMeasurementProcess
+    ] ;
+    rdfs:label &quot;flow measurement function&quot;@en ;
+    rdfs:label &quot;função de medição de fluxo&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in a FlowMeasurementProcess and that consists in determining and quantifying the rate of fluid flow through a system, providing measurement data for monitoring, control, or recording purposes.&quot;@en .
+
+### Process type
+:FlowMeasurementProcess rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:PlannedProcess ;
+    rdfs:label &quot;flow measurement process&quot;@en ;
+    rdfs:label &quot;processo de medição de fluxo&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which a measuring element determines the flow rate of a fluid by sensing flow-related physical phenomena and converting them into measurable signals or indications.&quot;@en .
+
+:FlowMeasurementProcess
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasInput ;
+        owl:someValuesFrom :FluidPortion
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasSpecifiedOutput ;
+        owl:someValuesFrom :InformationBearingArtifact
+    ] .
+
+### Equipment universal: FlowMeasuringElement
+:FlowMeasuringElement rdf:type owl:Class ;
+    owl:equivalentClass [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :FlowElement
+            [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
+        owl:someValuesFrom :FlowMeasurementFunction
+    ]
+        )
     ] ;
     rdfs:label &quot;flow measuring element&quot;@en ;
-    rdfs:label &quot;elemento de medição de fluxo&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A flow measuring element is an instrument and assembly inserted into a fluid stream to produce a measurable signal proportional to the volumetric or mass flow rate.&quot;@en ;
-    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
-    rdfs:isDefinedBy &lt;https://www.inf.ufrgs.br/ontologies/copi/copi-enriched&gt; .
+    rdfs:label &quot;MeasuringElement que possui uma FlowMeasurementFunction e&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A MeasuringElement that bears a FlowMeasurementFunction and that is designed to determine and quantify the rate of fluid flow through a system.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um MeasuringElement que possui uma FlowMeasurementFunction e que é projetado para determinar e quantificar a taxa de fluxo de fluido através de um sistema.&quot;@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every FlowMeasuringElement is a MeasuringElement that bears a FlowMeasurementFunction&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x(FlowMeasuringElement(x) ↔ (MeasuringElement(x) ∧ ∃f(FlowMeasurementFunction(f) ∧ bearerOf(x,f))))&quot;@en ;
+    skos:definition &quot;[ISO 15926-4] A &lt;FLOW MEASURING ELEMENT&gt; is  a &lt;MEASURING ELEMENT&gt; that is used to measure &lt;FLOW RATE&gt;&quot;@en .
+
 </div></div>
       </div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Axiomatization Decision Log</span><span class="t-pt">Registro de Decisões</span></div>
-
+        
 <div class="step-block step-1">
   <div class="step-block-header">
     <span class="step-num">1</span> <span class="t-en">Identity-Giving Function</span><span class="t-pt">Função Identitária</span>
   </div>
   <div class="step-body">
-    <div class="mb-2"><span class="decision-value">FlowMeasurementFunction</span></div>
-    <div class="rationale"><span class="t-en">The identity-giving function of a flow measuring element is <em>FlowMeasurementFunction</em>. Every instance of this class bears this function by design.</span><span class="t-pt">A função identitária de um elemento de medição de fluxo é <em>FlowMeasurementFunction</em>. Toda instância desta classe possui essa função por projeto.</span></div>
+    <div class="row g-3 mb-2">
+      <div class="col-sm-6">
+        <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Function class</div>
+        <span class="decision-value">FlowMeasurementFunction</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ DesignedFunction</span>
+      </div>
+      <div class="col-sm-6">
+        <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
+        <span class="decision-value">FlowMeasurementProcess</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
+      </div>
+    </div>
+    <div class="rationale">The function FlowMeasurementFunction already exists in the enriched classes list (used by flow element, flow meter, orifice plate, coriolis mass flow meter). Since &#x27;flow measuring element&#x27; has the identical identity-giving function - measuring flow rate - I reuse the existing function name rather than creating a new one.</div>
   </div>
 </div>
 <div class="step-block step-2">
@@ -305,62 +399,44 @@
     <span class="step-num">2</span> <span class="t-en">Genus Determination</span><span class="t-pt">Determinação do Gênero</span>
   </div>
   <div class="step-body">
-    <div class="mb-2"><span class="decision-value">Assembly ⊓ Instrument</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span></div>
-    <div class="rationale"><span class="t-en">Flow Measuring Element is a subtype of Assembly ⊓ Instrument. This is the most specific appropriate superclass available in the COPI/IOF-Core hierarchy.</span><span class="t-pt">Elemento de Medição de Fluxo é um subtipo de Assembly ⊓ Instrumento. Esta é a superclasse mais específica disponível na hierarquia COPI/IOF-Core.</span></div>
+    <div class="mb-2">
+      <span class="decision-value">flow element</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
+    </div>
+    <div class="rationale">The source definition explicitly states that &#x27;A FLOW MEASURING ELEMENT is a MEASURING ELEMENT that is used to measure FLOW RATE&#x27;. The genus MEASURING ELEMENT is directly provided in the parent_candidates. While MeasuringElement is not yet enriched in our ontology, it is the most specific and ontologically correct superclass according to the ISO 15926 hierarchy.</div>
   </div>
 </div>
 <div class="step-block step-3">
   <div class="step-block-header">
     <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
-  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;"><span class="t-en">Differentia are encoded in FOL only — see Primitive Rationale below.</span><span class="t-pt">As differentia estão codificadas apenas em FOL — ver Razão Primitiva abaixo.</span></p></div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.FlowMeasurementFunction</code></div><p style="font-size:.88rem;color:#374151;">Bears a FlowMeasurementFunction that specifically measures flow rate, distinguishing it from other measuring elements that measure different physical quantities.</p><div class="rationale">The differentia is the specific measurement function - FlowMeasurementFunction. The genus MeasuringElement already provides the general measurement capability, so the differentia only needs to specify that this particular measuring element is designed for flow rate measurement.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
     <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
-  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;"><span class="t-en">No necessary parts recorded for this intermediate parent class.</span><span class="t-pt">Nenhuma parte necessária registrada para esta classe pai intermediária.</span></p></div>
+  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No necessary parts recorded.</p><div class="rationale mt-2">No specific component parts are mentioned in the source definition or available in the Known Component Terms list. The definition is purely functional, stating only that it &#x27;measures flow rate&#x27; without specifying any mandatory physical components. Different subtypes (differential pressure, electromagnetic, optical, etc.) have different structural implementations, so parts should be specified at the subtype level rather than at this universal level.</div></div>
 </div>
-
       </div>
 
+      
 <div class="doc-section">
   <div class="doc-section-title"><span class="t-en">Process Participation Signature</span><span class="t-pt">Assinatura de Participação em Processo</span></div>
   <div class="sig-grid">
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div>Fluid stream (PortionOfFluid)</div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div>Measurement signal (FlowRate value)</div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div>Physical perturbation of fluid stream converted to a proportional signal</div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FluidPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;flowing fluid stream whose flow rate is to be measured&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;InformationBearingArtifact&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;measurement signal or indication representing flow rate&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">flow rate of a fluid stream is sensed and converted into a measurable signal or indication</div></div>
   </div>
+  <div class="rationale mt-2">The process signature captures the essence of flow measurement: a flowing fluid stream enters as input, and the measuring element outputs an information-bearing artifact (signal, indication, or reading) that represents the flow rate. The transformation is measurement_transduction as the element converts a physical quantity (flow rate) into a measurable signal.</div>
 </div>
-
-      <div class="doc-section">
-        <div class="doc-section-title"><span class="t-en">Primitive Rationale</span><span class="t-pt">Razão Primitiva</span></div>
-        <div class="scope-note"><span class="t-en">The specific sensing principle (differential pressure, Coriolis, turbine, vortex) and the primary signal type distinguish subtypes but are FOL-only predicates not expressible in OWL 2 DL; OWL carries only the genus (Assembly ⊓ Instrument) and the functional restriction.</span><span class="t-pt">O princípio de sensoriamento específico (pressão diferencial, Coriolis, turbina, vórtice) e o tipo de sinal primário distinguem subtipos, mas são predicados apenas-FOL; o OWL carrega apenas o gênero (Assembly ⊓ Instrument) e a restrição funcional.</span></div>
-      </div>
-
-      <div class="doc-section">
-        <div class="doc-section-title"><span class="t-en">Known Subclasses</span><span class="t-pt">Subclasses Conhecidas</span></div>
-        <div><a href="COPI_0000136.html" class="disjoint-pill" style="background:#dbeafe;color:#1e40af;text-decoration:none;">OrificePlate</a> </div>
-      </div>
-
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div>
-        <table class="meta-table"><tbody>
-          <tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000082</td></tr>
-          <tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000082</td></tr>
-          <tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr>
-          <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr>
-          <tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-06-23</td></tr>
-          <tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-23</td></tr>
-          <tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-6</td></tr>
-          <tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-23</td></tr>
-        </tbody></table>
-      </div>
+      
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000082</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000082</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-04</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-25</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-25</td></tr></tbody></table></div>
 
     </div>
 
     <div class="col-lg-4">
       <div class="sidebar-sticky mt-4 mt-lg-0">
-
+        
         <div class="card border-0 shadow-sm mb-3" style="border-radius:8px;">
           <div class="card-header" style="font-family:system-ui,sans-serif;font-size:.72rem;
                font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:#f8fafc;">
@@ -368,47 +444,61 @@
           </div>
           <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
             <table class="meta-table">
-              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>Assembly ⊓ Instrument</strong></td></tr>
-              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-badge">bfo:Object (BFO_0000030)</span></td></tr>
-              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
+              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>flow element</strong></td></tr>
+              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">MaterialArtifact</span></td></tr>
+              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-equivalent">equivalent</span></td></tr>
               <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>FlowMeasurementFunction</td></tr>
-              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>FlowMeasurement</td></tr>
-              <tr><td><span class="t-en">Subclasses</span><span class="t-pt">Subclasses</span></td><td>1</td></tr>
+              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>FlowMeasurementProcess</td></tr>
+              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>
             </table>
           </div>
         </div>
-
-        <div style="border:1px solid var(--border);border-radius:8px;padding:.9rem;font-family:system-ui,sans-serif;font-size:.8rem;">
-          <div class="toc-header"><span class="t-en">On this page</span><span class="t-pt">Nesta página</span></div>
-          <a href="#" class="toc-link"><span class="t-en">Definition</span><span class="t-pt">Definição</span></a>
-          <a href="#" class="toc-link"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></a>
-          <a href="#" class="toc-link"><span class="t-en">Decision Log</span><span class="t-pt">Registro de Decisões</span></a>
-          <a href="#" class="toc-link"><span class="t-en">Participation</span><span class="t-pt">Participação</span></a>
-          <a href="#" class="toc-link"><span class="t-en">Primitive Rationale</span><span class="t-pt">Razão Primitiva</span></a>
-          <div class="toc-header mt-3"><span class="t-en">Known subclasses</span><span class="t-pt">Subclasses</span></div>
-          <a href="COPI_0000136.html" class="toc-link" style="border-left-color:var(--layer-leaf);"><span class="toc-layer-dot" style="background:var(--layer-leaf);"></span>OrificePlate</a>
-
-        </div>
-
+        
+<div class="doc-section">
+  <div class="doc-section-title">
+    <span class="t-en">Source Definitions</span><span class="t-pt">Definições nas Fontes</span>
+    <span style="float:right;font-variant-numeric:tabular-nums;font-weight:400;">1 source</span>
+  </div>
+  
+<div class="source-card">
+  <div class="source-card-header">
+    <span class="source-badge" style="font-size:.7rem;font-weight:700;text-transform:uppercase;
+          letter-spacing:.06em;padding:.2rem .6rem;border-radius:4px;background:#dbeafe;color:#1e40af;">ISO 15926-4</span>
+    <span style="font-size:.75rem;color:var(--muted);font-family:monospace;">FLOW MEASURING ELEMENT</span>
+  </div>
+  <div class="source-card-body">
+    <div style="color:#374151;font-size:.88rem;">A &lt;FLOW MEASURING ELEMENT&gt; is  a &lt;MEASURING ELEMENT&gt; that is used to measure &lt;FLOW RATE&gt;</div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted);">source_id: FLOW_MEASURING_ELEMENT</div>
+    <div style="margin-top:.4rem;"><a href="https://standards.iso.org/iso/15926/-4/reference-data-item/FLOW_MEASURING_ELEMENT" target="_blank" rel="noopener" style="font-size:.75rem;color:var(--accent2);text-decoration:none;">ISO 15926-4 2019 ↗</a></div>
+  </div>
+</div>
+</div>
       </div>
     </div>
   </div>
 </div>
-</div>
 
+</div>
 <script>
 (function(){
   var root=document.getElementById('copi-root');
-  document.getElementById('lang-btn-en').addEventListener('click',function(){
-    root.classList.remove('lang-pt');
-    document.getElementById('lang-btn-en').classList.add('active');
-    document.getElementById('lang-btn-pt').classList.remove('active');
-  });
-  document.getElementById('lang-btn-pt').addEventListener('click',function(){
-    root.classList.add('lang-pt');
-    document.getElementById('lang-btn-pt').classList.add('active');
-    document.getElementById('lang-btn-en').classList.remove('active');
-  });
+  var btnEn=document.getElementById('lang-btn-en');
+  var btnPt=document.getElementById('lang-btn-pt');
+  if(!btnEn||!btnPt)return;
+  var titleEn="COPI \u00b7 Flow Measuring Element";
+  var titlePt="COPI \u00b7 Flow Measuring Element";
+  function applyLang(pt){
+    if(pt){
+      root.classList.add('lang-pt');root.lang='pt-BR';document.title=titlePt;
+      btnPt.classList.add('active');btnEn.classList.remove('active');
+    }else{
+      root.classList.remove('lang-pt');root.lang='en';document.title=titleEn;
+      btnEn.classList.add('active');btnPt.classList.remove('active');
+    }
+  }
+  try{applyLang(localStorage.getItem('copi-lang')==='pt');}catch(e){}
+  btnEn.addEventListener('click',function(){applyLang(false);try{localStorage.setItem('copi-lang','en');}catch(e){}} );
+  btnPt.addEventListener('click',function(){applyLang(true); try{localStorage.setItem('copi-lang','pt');}catch(e){}} );
 })();
 </script>
 </body>
