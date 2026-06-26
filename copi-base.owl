@@ -414,9 +414,21 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000024 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000024"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BFO_0000029 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000029"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000030"/>
     
 
 
@@ -483,10 +495,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ACElectricalPower -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ACElectricalPower">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:label xml:lang="en">a c electrical power</rdfs:label>
         <rdfs:label xml:lang="pt-br">potência elétrico de CA</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes alternating-current electrical power delivered to petroleum production equipment to drive motors, instrumentation, or control systems.</skos:definition>
+        <skos:definition xml:lang="en">A quality inhering in a material entity, constituting alternating-current electrical power delivered to petroleum production equipment to drive motors, instrumentation, or control systems.</skos:definition>
     </owl:Class>
     
 
@@ -752,7 +764,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/AirPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/AirPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">air portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de ar</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of air participating as an oxidant, carrier, or motive fluid in a petroleum production process.</skos:definition>
@@ -767,28 +779,6 @@
         <rdfs:label xml:lang="en">air supply system</rdfs:label>
         <rdfs:label xml:lang="pt-br">sistema de ar de suprimento</rdfs:label>
         <skos:definition xml:lang="en">An assembly of compressors, dryers, filters, and distribution piping that provides instrument or utility air to petroleum production equipment.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/AlternatingCurrentPortion -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/AlternatingCurrentPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="en">alternating current portion</rdfs:label>
-        <rdfs:label xml:lang="pt-br">porção alternado de corrente</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a portion of alternating electrical current flowing in a circuit of petroleum production equipment.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/AlternatingElectricalCurrent -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/AlternatingElectricalCurrent">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="en">alternating electrical current</rdfs:label>
-        <rdfs:label xml:lang="pt-br">corrente alternado elétrico</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an alternating electrical current that periodically reverses direction and is used to power petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -14027,7 +14017,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CapturedPig -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CapturedPig">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">captured pig</rdfs:label>
         <rdfs:label xml:lang="pt-br">pig de capturado</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a pipeline pig that has been retrieved and confined in a pig receiver following completion of its pipeline pass.</skos:definition>
@@ -14038,7 +14028,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CarrierFluid -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CarrierFluid">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">carrier fluid</rdfs:label>
         <rdfs:label xml:lang="pt-br">fluido de portador</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a fluid used to transport or suspend another substance through petroleum production equipment.</skos:definition>
@@ -14160,7 +14150,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ChemicalFuelPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ChemicalFuelPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">chemical fuel portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção químico de combustível</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of chemical fuel consumed in a combustion process in petroleum production equipment.</skos:definition>
@@ -14193,7 +14183,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ChristmasTreeConnectionPoint -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ChristmasTreeConnectionPoint">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">christmas tree connection point</rdfs:label>
         <rdfs:label xml:lang="pt-br">ponto de árvore de natal de árvore de conexão</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a mechanical connection point on a Christmas tree for attachment of flowlines, control lines, or other equipment.</skos:definition>
@@ -14238,10 +14228,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ChromatographicSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ChromatographicSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="en">chromatographic signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal de cromatográfico</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a signal generated by a chromatographic detector representing the presence and concentration of chemical components in a process sample.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting a signal generated by a chromatographic detector representing the presence and concentration of chemical components in a process sample.</skos:definition>
     </owl:Class>
     
 
@@ -14305,7 +14295,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CleanedGasPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CleanedGasPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">cleaned gas portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção limpo de gás</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of gas from which impurities have been removed by petroleum production equipment.</skos:definition>
@@ -14316,7 +14306,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CleanedSurface -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CleanedSurface">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">cleaned surface</rdfs:label>
         <rdfs:label xml:lang="pt-br">superfície limpo</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a surface from which scale, deposits, or contaminants have been removed by a cleaning process in petroleum production equipment.</skos:definition>
@@ -14405,7 +14395,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CombustionGasPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CombustionGasPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">combustion gas portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de combustão de gás</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of gas undergoing or having undergone a combustion reaction in petroleum production equipment.</skos:definition>
@@ -14427,7 +14417,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CombustionProductPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CombustionProductPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">combustion product portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de combustão de produto</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of the chemical products resulting from a combustion reaction in petroleum production equipment.</skos:definition>
@@ -14438,7 +14428,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CombustionProducts -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CombustionProducts">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">combustion products</rdfs:label>
         <rdfs:label xml:lang="pt-br">produtos de combustão</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the chemical products—primarily carbon dioxide and water vapour—resulting from the combustion of a fuel in petroleum production equipment.</skos:definition>
@@ -14471,10 +14461,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CompositionAnalysisData -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CompositionAnalysisData">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">composition analysis data</rdfs:label>
         <rdfs:label xml:lang="pt-br">dados de composição de análise</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes data representing the chemical composition of a process fluid as determined by analytical instrumentation in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting data representing the chemical composition of a process fluid as determined by analytical instrumentation in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -14482,7 +14472,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CompressedAirPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CompressedAirPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">compressed air portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção comprimido de ar</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of air that has been compressed to a pressure above atmospheric for use in pneumatic systems of petroleum production equipment.</skos:definition>
@@ -14493,7 +14483,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CompressedGasPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CompressedGasPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">compressed gas portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção comprimido de gás</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of gas that has been compressed to a higher pressure for transport, storage, or processing in petroleum production equipment.</skos:definition>
@@ -14537,7 +14527,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CompressorInternals -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CompressorInternals">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">compressor internals</rdfs:label>
         <rdfs:label xml:lang="pt-br">internos de compressor</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the internal components—such as impellers, valves, and seals—contained within the casing of a compressor in petroleum production equipment.</skos:definition>
@@ -14776,7 +14766,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ContaminatedSurface -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ContaminatedSurface">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">contaminated surface</rdfs:label>
         <rdfs:label xml:lang="pt-br">superfície contaminado</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a surface bearing scale, deposits, or contaminants that are to be removed by a cleaning process in petroleum production equipment.</skos:definition>
@@ -14840,17 +14830,6 @@
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/ControlSignalPortion -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ControlSignalPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="en">control signal portion</rdfs:label>
-        <rdfs:label xml:lang="pt-br">porção de controle de sinal</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a portion of a control signal transmitted between components of a control system in petroleum production equipment.</skos:definition>
-    </owl:Class>
-    
-
-
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ConversionElement -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ConversionElement">
@@ -14865,7 +14844,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CoolantPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CoolantPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">coolant portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de refrigerante</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of cooling medium used to remove thermal energy from a process stream or equipment component.</skos:definition>
@@ -14876,7 +14855,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CooledHeatingMedium -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CooledHeatingMedium">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">cooled heating medium</rdfs:label>
         <rdfs:label xml:lang="pt-br">meio de resfriado de aquecimento</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a heating medium that has transferred thermal energy to a process stream and returned to a lower temperature.</skos:definition>
@@ -14943,7 +14922,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CorrosionProducts -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CorrosionProducts">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">corrosion products</rdfs:label>
         <rdfs:label xml:lang="pt-br">produtos de corrosão</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the solid products—oxides, hydroxides, or sulfides—formed on a metallic surface as a result of corrosion in petroleum production equipment.</skos:definition>
@@ -14965,7 +14944,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CuttingsAndFluid -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CuttingsAndFluid">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">cuttings and fluid</rdfs:label>
         <rdfs:label xml:lang="pt-br">fluido de cascalhos de e</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a mixture of rock cuttings and drilling fluid circulated from the wellbore bottom to the surface during drilling operations.</skos:definition>
@@ -15257,7 +15236,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DensePhase -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DensePhase">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">dense phase</rdfs:label>
         <rdfs:label xml:lang="pt-br">fase denso</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the denser of two or more phases present in a separation process within petroleum production equipment.</skos:definition>
@@ -15336,10 +15315,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DetectionSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DetectionSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">detection signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal de detecção</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a signal generated by a detection element indicating the presence or concentration of a detected entity in petroleum production instrumentation.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a signal generated by a detection element indicating the presence or concentration of a detected entity in petroleum production instrumentation.</skos:definition>
     </owl:Class>
     
 
@@ -15392,7 +15371,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DieselFuel -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DieselFuel">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">combustível diesel</rdfs:label>
         <rdfs:label xml:lang="en">diesel fuel</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes diesel fuel used as energy source for engines or combustion equipment in petroleum production installations.</skos:definition>
@@ -15403,10 +15382,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DifferentialPressureIndication -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DifferentialPressureIndication">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="en">differential pressure indication</rdfs:label>
         <rdfs:label xml:lang="pt-br">indicação de diferencial de pressão</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a displayed or transmitted value representing the differential pressure between two process points in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting a displayed or transmitted value representing the differential pressure between two process points in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -15515,10 +15494,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DiscreteElectricalSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DiscreteElectricalSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">discrete electrical signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal discreto elétrico</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical signal that can assume only two defined states—on or off—used in control and safety systems of petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting an electrical signal that can assume only two defined states—on or off—used in control and safety systems of petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -15582,10 +15561,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DisturbanceSource -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DisturbanceSource">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="en">disturbance source</rdfs:label>
         <rdfs:label xml:lang="pt-br">fonte de perturbação</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a source of unwanted perturbation—vibration, electrical noise, or pressure surge—affecting the performance of petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A process in which a source of unwanted perturbation—vibration, electrical noise, or pressure surge—affecting the performance of petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -15638,7 +15617,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DownholeToolAssembly -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DownholeToolAssembly">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">conjunto de fundo de poço de ferramenta</rdfs:label>
         <rdfs:label xml:lang="en">downhole tool assembly</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes an assembly of tools deployed in a wellbore on a wireline or tubing string to perform measurement, completion, or intervention operations.</skos:definition>
@@ -15649,7 +15628,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DriedMaterial -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DriedMaterial">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">dried material</rdfs:label>
         <rdfs:label xml:lang="pt-br">material seco</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a material from which moisture or solvent has been removed by a drying process in petroleum production equipment.</skos:definition>
@@ -15682,7 +15661,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DrillString -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DrillString">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">coluna de perfuração</rdfs:label>
         <rdfs:label xml:lang="en">drill string</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the assembly of drill pipe, drill collars, and bottom-hole assembly that transmits rotation and drilling fluid from surface to the drill bit.</skos:definition>
@@ -15693,7 +15672,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DrillingFluid -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DrillingFluid">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">drilling fluid</rdfs:label>
         <rdfs:label xml:lang="pt-br">fluido de perfuração</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the fluid—water-based, oil-based, or synthetic—circulated during drilling to cool the bit, carry cuttings to surface, and stabilise the wellbore.</skos:definition>
@@ -15738,7 +15717,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DrillingFluidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DrillingFluidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">drilling fluid portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de perfuração de fluido</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of drilling fluid at a defined point in the drilling circulation system.</skos:definition>
@@ -15749,7 +15728,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DrillingTool -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DrillingTool">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">drilling tool</rdfs:label>
         <rdfs:label xml:lang="pt-br">ferramenta de perfuração</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a tool used in the bottom-hole assembly or drill string to perform a specific function during the drilling of a petroleum well.</skos:definition>
@@ -15793,7 +15772,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/DryAirPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DryAirPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">dry air portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção seco de ar</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of air from which water vapour has been removed to a specified dew point.</skos:definition>
@@ -15916,7 +15895,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ElectricalCable -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ElectricalCable">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">cabo elétrico</rdfs:label>
         <rdfs:label xml:lang="en">electrical cable</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes an insulated conductor or assembly of conductors used to transmit electrical power or signals in a petroleum production installation.</skos:definition>
@@ -16059,10 +16038,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ElectricalCurrent -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ElectricalCurrent">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="pt-br">corrente elétrico</rdfs:label>
         <rdfs:label xml:lang="en">electrical current</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the flow of electric charge through a conductor in an electrical circuit of petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A process in which the flow of electric charge through a conductor in an electrical circuit of petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -16070,10 +16049,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ElectricalCurrentFlow -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ElectricalCurrentFlow">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="en">electrical current flow</rdfs:label>
         <rdfs:label xml:lang="pt-br">fluxo elétrico de corrente</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the directed movement of electric charge carriers through a conductor in petroleum production electrical systems.</skos:definition>
+        <skos:definition xml:lang="en">A process in which the directed movement of electric charge carriers through a conductor in petroleum production electrical systems.</skos:definition>
     </owl:Class>
     
 
@@ -16092,7 +16071,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ElectricalEnergyPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ElectricalEnergyPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">electrical energy portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção elétrico de energia</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a quantity of electrical energy supplied to or consumed by petroleum production equipment.</skos:definition>
@@ -16128,21 +16107,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ElectricalSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ElectricalSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">electrical signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal elétrico</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical signal carrying a measurement, control, or status value within petroleum production instrumentation and control systems.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/ElectricalSignalPortion -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ElectricalSignalPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="en">electrical signal portion</rdfs:label>
-        <rdfs:label xml:lang="pt-br">porção elétrico de sinal</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a portion of an electrical signal at a defined point in the instrumentation or control circuit of petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting an electrical signal carrying a measurement, control, or status value within petroleum production instrumentation and control systems.</skos:definition>
     </owl:Class>
     
 
@@ -16194,10 +16162,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ElectromagneticRadiation -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ElectromagneticRadiation">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="en">electromagnetic radiation</rdfs:label>
         <rdfs:label xml:lang="pt-br">radiação eletromagnético</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes electromagnetic energy—such as infrared or ultraviolet radiation—detected or emitted by petroleum production instrumentation.</skos:definition>
+        <skos:definition xml:lang="en">A process in which electromagnetic energy—such as infrared or ultraviolet radiation—detected or emitted by petroleum production instrumentation.</skos:definition>
     </owl:Class>
     
 
@@ -16220,17 +16188,6 @@
         <rdfs:label xml:lang="en">emergency shut down process</rdfs:label>
         <rdfs:label xml:lang="pt-br">processo de parada de emergência</rdfs:label>
         <skos:definition xml:lang="en">A planned process in which process flows or equipment are rapidly and automatically isolated in response to a detected hazardous condition.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/EnclosedSpace -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/EnclosedSpace">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="en">enclosed space</rdfs:label>
-        <rdfs:label xml:lang="pt-br">espaço fechado</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an enclosed void space within petroleum production equipment that isolates its contents from the surrounding environment.</skos:definition>
     </owl:Class>
     
 
@@ -16381,7 +16338,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/EnergyPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/EnergyPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">energy portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de energia</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a quantity of energy in a defined form that participates in a process within petroleum production equipment.</skos:definition>
@@ -16448,7 +16405,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/EquipmentItem -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/EquipmentItem">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">equipment item</rdfs:label>
         <rdfs:label xml:lang="pt-br">item de equipamento</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a discrete item of petroleum production equipment assembled or installed as a unit within a production system.</skos:definition>
@@ -16493,7 +16450,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ExhaustGas -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ExhaustGas">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">exhaust gas</rdfs:label>
         <rdfs:label xml:lang="pt-br">gás de escapamento</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the combustion exhaust gas discharged from an engine, turbine, or fired heater in a petroleum production installation.</skos:definition>
@@ -16504,7 +16461,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ExhaustGasPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ExhaustGasPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">exhaust gas portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de escapamento de gás</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of exhaust gas at a defined point in the exhaust system of petroleum production equipment.</skos:definition>
@@ -16526,7 +16483,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ExpandedGasPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ExpandedGasPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">expanded gas portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção expandido de gás</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of gas that has undergone expansion and pressure reduction in petroleum production equipment.</skos:definition>
@@ -16592,7 +16549,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/FilteredConstituents -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FilteredConstituents">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">constituintes filtrado</rdfs:label>
         <rdfs:label xml:lang="en">filtered constituents</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the fluid constituents that pass through a filter medium during a filtration process in petroleum production equipment.</skos:definition>
@@ -16603,7 +16560,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/FilteredContaminants -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FilteredContaminants">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">contaminantes filtrado</rdfs:label>
         <rdfs:label xml:lang="en">filtered contaminants</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the solid or liquid contaminants captured and retained by a filter medium during a filtration process.</skos:definition>
@@ -16614,7 +16571,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/FilteredFluidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FilteredFluidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">filtered fluid portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção filtrado de fluido</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of fluid from which particulate or liquid contaminants have been removed by filtration.</skos:definition>
@@ -16932,10 +16889,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/FlowMeasurement -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FlowMeasurement">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="en">flow measurement</rdfs:label>
         <rdfs:label xml:lang="pt-br">medição de fluxo</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a quantitative value representing the flow rate of a process stream as measured by petroleum production instrumentation.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting a quantitative value representing the flow rate of a process stream as measured by petroleum production instrumentation.</skos:definition>
     </owl:Class>
     
 
@@ -17215,7 +17172,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/FluidMixturePortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FluidMixturePortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">fluid mixture portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de fluido de mistura</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of a mixture of two or more fluids at a defined point in a petroleum production process.</skos:definition>
@@ -17281,7 +17238,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/FluidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FluidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">fluid portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de fluido</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a defined portion of fluid at a specified point within a petroleum production process stream.</skos:definition>
@@ -17407,7 +17364,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/FormationFluidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FormationFluidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">formation fluid portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de formação de fluido</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of fluid originating from a subsurface geological formation and produced through a petroleum production well.</skos:definition>
@@ -17429,7 +17386,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/FuelPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FuelPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">fuel portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de combustível</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of fuel supplied to a combustion device in petroleum production equipment.</skos:definition>
@@ -17540,7 +17497,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/GasMixturePortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/GasMixturePortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">gas mixture portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de gás de mistura</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of a mixture of two or more gases at a defined point in a petroleum production process.</skos:definition>
@@ -17574,7 +17531,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/GasPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/GasPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">gas portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de gás</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of gas at a defined point in a petroleum production process.</skos:definition>
@@ -17596,7 +17553,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/GaseousFuelPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/GaseousFuelPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">gaseous fuel portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção gasoso de combustível</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of gaseous fuel—such as natural gas—supplied to combustion equipment in a petroleum production installation.</skos:definition>
@@ -17607,7 +17564,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/GaseousPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/GaseousPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">gaseous portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção gasoso</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of gas phase material at a defined point in a petroleum production process.</skos:definition>
@@ -17729,7 +17686,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/HeatingMedium -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/HeatingMedium">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">heating medium</rdfs:label>
         <rdfs:label xml:lang="pt-br">meio de aquecimento</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the fluid—steam, hot oil, or heated water—used to supply thermal energy to a process stream in petroleum production equipment.</skos:definition>
@@ -17751,7 +17708,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/HighPressureFluidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/HighPressureFluidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">high pressure fluid portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção alto de pressão de fluido</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of fluid maintained at a pressure significantly above the system reference pressure in petroleum production equipment.</skos:definition>
@@ -17762,10 +17719,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/HighPressureSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/HighPressureSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">high pressure signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal alto de pressão</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical or pneumatic signal representing a high-pressure condition in a petroleum production process.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting an electrical or pneumatic signal representing a high-pressure condition in a petroleum production process.</skos:definition>
     </owl:Class>
     
 
@@ -17806,7 +17763,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/HumidAirPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/HumidAirPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">humid air portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção úmido de ar</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of air carrying a significant concentration of water vapour in a petroleum production process.</skos:definition>
@@ -17839,7 +17796,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/HydraulicFluid -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/HydraulicFluid">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">fluido hidráulico</rdfs:label>
         <rdfs:label xml:lang="en">hydraulic fluid</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the incompressible fluid used to transmit pressure and power in hydraulic systems of petroleum production equipment.</skos:definition>
@@ -17883,7 +17840,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/HydraulicFluidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/HydraulicFluidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">hydraulic fluid portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção hidráulico de fluido</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of hydraulic fluid at a defined point in the hydraulic circuit of petroleum production equipment.</skos:definition>
@@ -17961,7 +17918,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/HydrocarbonFluid -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/HydrocarbonFluid">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">fluido de hidrocarboneto</rdfs:label>
         <rdfs:label xml:lang="en">hydrocarbon fluid</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a fluid consisting primarily of hydrocarbon compounds produced from or processed in a petroleum production system.</skos:definition>
@@ -18022,7 +17979,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/InformationBearingArtifact -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/InformationBearingArtifact">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">artefato de informação de mancal</rdfs:label>
         <rdfs:label xml:lang="en">information bearing artifact</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that bears information—in the form of a signal, display, or record—representing a process variable or equipment state in petroleum production systems.</skos:definition>
@@ -18033,10 +17990,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/InformationBearingEntity -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/InformationBearingEntity">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">entidade de informação de mancal</rdfs:label>
         <rdfs:label xml:lang="en">information bearing entity</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that carries or encodes information representing a process variable, equipment state, or analytical result in petroleum production systems.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting that carries or encodes information representing a process variable, equipment state, or analytical result in petroleum production systems.</skos:definition>
     </owl:Class>
     
 
@@ -18044,10 +18001,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/InformationContentEntity -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/InformationContentEntity">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">entidade de informação de conteúdo</rdfs:label>
         <rdfs:label xml:lang="en">information content entity</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the informational content—a measurement value, alarm state, or analysis result—encoded in a signal or record within petroleum production systems.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting the informational content—a measurement value, alarm state, or analysis result—encoded in a signal or record within petroleum production systems.</skos:definition>
     </owl:Class>
     
 
@@ -18091,10 +18048,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/InformationSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/InformationSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">information signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal de informação</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a signal carrying informational content such as a measurement value or status indication within petroleum production instrumentation.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a signal carrying informational content such as a measurement value or status indication within petroleum production instrumentation.</skos:definition>
     </owl:Class>
     
 
@@ -18283,10 +18240,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/KineticMotion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/KineticMotion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="en">kinetic motion</rdfs:label>
         <rdfs:label xml:lang="pt-br">movimento cinético</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the directed mechanical motion of a component or fluid stream carrying kinetic energy in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A process in which the directed mechanical motion of a component or fluid stream carrying kinetic energy in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -18361,10 +18318,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/LevelInformation -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/LevelInformation">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">informação de nível</rdfs:label>
         <rdfs:label xml:lang="en">level information</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a measurement or display value representing the fluid level in a vessel of petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a measurement or display value representing the fluid level in a vessel of petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -18394,10 +18351,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/LevelSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/LevelSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="en">level signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal de nível</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical or pneumatic signal representing the fluid level in a vessel of petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting an electrical or pneumatic signal representing the fluid level in a vessel of petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -18439,7 +18396,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/LightPhase -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/LightPhase">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">fase leve</rdfs:label>
         <rdfs:label xml:lang="en">light phase</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the less dense of two or more phases present in a separation process within petroleum production equipment.</skos:definition>
@@ -18461,7 +18418,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/LiquidMixturePortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/LiquidMixturePortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">liquid mixture portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção líquido de mistura</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of a mixture of two or more liquid phases at a defined point in a petroleum production process.</skos:definition>
@@ -18483,7 +18440,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/LiquidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/LiquidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">liquid portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção líquido</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of liquid phase material at a defined point in a petroleum production process.</skos:definition>
@@ -18494,10 +18451,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/LocalPressureDisplay -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/LocalPressureDisplay">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">display local de pressão</rdfs:label>
         <rdfs:label xml:lang="en">local pressure display</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an instrument mounted locally to a pressure measurement point that visually displays the process pressure.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting an instrument mounted locally to a pressure measurement point that visually displays the process pressure.</skos:definition>
     </owl:Class>
     
 
@@ -18505,10 +18462,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/LocalTemperatureDisplay -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/LocalTemperatureDisplay">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">display local de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">local temperature display</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an instrument mounted locally to a temperature measurement point that visually displays the process temperature.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting an instrument mounted locally to a temperature measurement point that visually displays the process temperature.</skos:definition>
     </owl:Class>
     
 
@@ -18516,10 +18473,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/LoggingData -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/LoggingData">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">dados de perfilagem</rdfs:label>
         <rdfs:label xml:lang="en">logging data</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes data acquired by measurement tools deployed in a wellbore to characterise subsurface formation properties.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting data acquired by measurement tools deployed in a wellbore to characterise subsurface formation properties.</skos:definition>
     </owl:Class>
     
 
@@ -18527,10 +18484,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/LowPressureSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/LowPressureSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">low pressure signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal baixo de pressão</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical or pneumatic signal representing a low-pressure condition in a petroleum production process.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting an electrical or pneumatic signal representing a low-pressure condition in a petroleum production process.</skos:definition>
     </owl:Class>
     
 
@@ -18549,10 +18506,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ManualControlSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ManualControlSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">manual control signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal manual de controle</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a control signal generated by an operator to adjust the set point or state of petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a control signal generated by an operator to adjust the set point or state of petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -18560,10 +18517,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MassFlowRateSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MassFlowRateSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="en">mass flow rate signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal de massa de fluxo de taxa</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical signal representing the mass flow rate of a process stream as measured by petroleum production instrumentation.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting an electrical signal representing the mass flow rate of a process stream as measured by petroleum production instrumentation.</skos:definition>
     </owl:Class>
     
 
@@ -18582,7 +18539,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MaterialArtifact -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MaterialArtifact">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">artefato de material</rdfs:label>
         <rdfs:label xml:lang="en">material artifact</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a physical object that is part of a petroleum production system and bears functions whose realizations are planned processes in petroleum production operations.</skos:definition>
@@ -18593,21 +18550,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MaterialComponent -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MaterialComponent">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">componente de material</rdfs:label>
         <rdfs:label xml:lang="en">material component</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a discrete material component of petroleum production equipment that contributes to its overall function.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/MaterialEntity -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MaterialEntity">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="pt-br">entidade de material</rdfs:label>
-        <rdfs:label xml:lang="en">material entity</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a material entity that is part of a petroleum production system.</skos:definition>
     </owl:Class>
     
 
@@ -18626,7 +18572,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MaterialPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MaterialPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">material portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de material</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a defined quantity of a material substance at a specified point in a petroleum production process.</skos:definition>
@@ -18671,7 +18617,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MatingSurface -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MatingSurface">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">mating surface</rdfs:label>
         <rdfs:label xml:lang="pt-br">superfície de encaixe</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a machined surface that mates with a corresponding surface of another component to form a seal or mechanical joint in petroleum production equipment.</skos:definition>
@@ -18704,10 +18650,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MeasurementSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MeasurementSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="en">measurement signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal de medição</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical or pneumatic signal representing a measured process variable value in petroleum production instrumentation.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting an electrical or pneumatic signal representing a measured process variable value in petroleum production instrumentation.</skos:definition>
     </owl:Class>
     
 
@@ -18726,21 +18672,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalDisplacement -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalDisplacement">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:label xml:lang="pt-br">deslocamento mecânico</rdfs:label>
         <rdfs:label xml:lang="en">mechanical displacement</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the displacement of a mechanical component from its reference position in petroleum production equipment.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalDisplacementStimulus -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalDisplacementStimulus">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="pt-br">estímulo mecânico de deslocamento</rdfs:label>
-        <rdfs:label xml:lang="en">mechanical displacement stimulus</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the physical stimulus—such as a pressure or force input—that induces displacement of a mechanical component.</skos:definition>
+        <skos:definition xml:lang="en">A quality inhering in a material entity, constituting the displacement of a mechanical component from its reference position in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -18782,7 +18717,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalEnergyPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalEnergyPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">mechanical energy portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção mecânico de energia</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a quantity of mechanical energy—kinetic or potential—present in a component or fluid of petroleum production equipment.</skos:definition>
@@ -18793,10 +18728,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalForce -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalForce">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:label xml:lang="pt-br">força mecânico</rdfs:label>
         <rdfs:label xml:lang="en">mechanical force</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a force applied to or by a mechanical component in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A quality inhering in a material entity, constituting a force applied to or by a mechanical component in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -18804,10 +18739,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalLoad -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalLoad">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:label xml:lang="pt-br">carga mecânico</rdfs:label>
         <rdfs:label xml:lang="en">mechanical load</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the aggregate mechanical force or moment applied to a structural component of petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A quality inhering in a material entity, constituting the aggregate mechanical force or moment applied to a structural component of petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -18815,21 +18750,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalMotion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalMotion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="en">mechanical motion</rdfs:label>
         <rdfs:label xml:lang="pt-br">movimento mecânico</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the movement of a mechanical component along a defined path in petroleum production equipment.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalMotionPortion -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalMotionPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="en">mechanical motion portion</rdfs:label>
-        <rdfs:label xml:lang="pt-br">porção mecânico de movimento</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a portion of mechanical motion transmitted through a drive train or linkage in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A process in which the movement of a mechanical component along a defined path in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -18837,10 +18761,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalMovement -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalMovement">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="en">mechanical movement</rdfs:label>
         <rdfs:label xml:lang="pt-br">movimento mecânico</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the translational or rotational displacement of a mechanical element relative to a reference frame in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A process in which the translational or rotational displacement of a mechanical element relative to a reference frame in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -18859,10 +18783,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalRotation -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalRotation">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="en">mechanical rotation</rdfs:label>
         <rdfs:label xml:lang="pt-br">rotação mecânico</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the angular motion of a rotating component about its axis in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A process in which the angular motion of a rotating component about its axis in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -18870,7 +18794,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalSupport -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalSupport">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">mechanical support</rdfs:label>
         <rdfs:label xml:lang="pt-br">suporte mecânico</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a structural member that bears mechanical loads to maintain the position and alignment of petroleum production equipment.</skos:definition>
@@ -18881,10 +18805,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MechanicalWork -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MechanicalWork">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="en">mechanical work</rdfs:label>
         <rdfs:label xml:lang="pt-br">trabalho mecânico</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the work performed by or on a mechanical component through the application of force over a displacement in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A process in which the work performed by or on a mechanical component through the application of force over a displacement in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -18892,7 +18816,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MetallicStructure -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MetallicStructure">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">estrutura metálico</rdfs:label>
         <rdfs:label xml:lang="en">metallic structure</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a metallic structural element—frame, vessel shell, or structural member—that forms part of a petroleum production installation.</skos:definition>
@@ -18903,7 +18827,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MixedFluidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MixedFluidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">mixed fluid portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção misto de fluido</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of fluid formed by the combination of two or more streams in petroleum production equipment.</skos:definition>
@@ -19048,7 +18972,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MovingObject -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MovingObject">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">moving object</rdfs:label>
         <rdfs:label xml:lang="pt-br">objeto móvel</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a moving element within petroleum production equipment—such as a piston, rotor, or actuator—that transmits force or motion.</skos:definition>
@@ -19115,7 +19039,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/MultiphaseFluidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MultiphaseFluidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">multiphase fluid portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção multifásico de fluido</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of fluid containing two or more distinct phases—gas, liquid hydrocarbon, or water—at a defined point in a petroleum production process.</skos:definition>
@@ -19182,7 +19106,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/OilPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/OilPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="en">oil portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de óleo</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of liquid hydrocarbon at a defined point in a petroleum production process.</skos:definition>
@@ -19282,10 +19206,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PhaseSequenceIndication -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PhaseSequenceIndication">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">indicação de fase de sequência</rdfs:label>
         <rdfs:label xml:lang="en">phase sequence indication</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a displayed or transmitted value representing the phase sequence of an alternating-current electrical supply in a petroleum production installation.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting a displayed or transmitted value representing the phase sequence of an alternating-current electrical supply in a petroleum production installation.</skos:definition>
     </owl:Class>
     
 
@@ -19304,7 +19228,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PhysicalObject -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PhysicalObject">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">objeto físico</rdfs:label>
         <rdfs:label xml:lang="en">physical object</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a discrete physical entity within a petroleum production system that occupies space and has defined material properties.</skos:definition>
@@ -19315,10 +19239,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PhysicalPhenomenon -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PhysicalPhenomenon">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="pt-br">fenômeno físico</rdfs:label>
         <rdfs:label xml:lang="en">physical phenomenon</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a physical phenomenon—such as a pressure wave, temperature gradient, or electromagnetic field—that participates in or is generated by a petroleum production process.</skos:definition>
+        <skos:definition xml:lang="en">A process in which a physical phenomenon—such as a pressure wave, temperature gradient, or electromagnetic field—that participates in or is generated by a petroleum production process.</skos:definition>
     </owl:Class>
     
 
@@ -19326,10 +19250,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PhysicalVariable -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PhysicalVariable">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">physical variable</rdfs:label>
         <rdfs:label xml:lang="pt-br">variável físico</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a measurable physical property—such as pressure, temperature, or flow rate—of a process stream or equipment state in petroleum production.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a measurable physical property—such as pressure, temperature, or flow rate—of a process stream or equipment state in petroleum production.</skos:definition>
     </owl:Class>
     
 
@@ -19359,7 +19283,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PigFromPipeline -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PigFromPipeline">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">pig from pipeline</rdfs:label>
         <rdfs:label xml:lang="pt-br">pipeline de pig de proveniente de</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a pipeline pig that has been retrieved from a pipeline after completing its pass and is now held in the pig receiver.</skos:definition>
@@ -19505,7 +19429,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PipePig -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PipePig">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">pig de tubo</rdfs:label>
         <rdfs:label xml:lang="en">pipe pig</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a device propelled through a pipeline by the flow of product to perform internal inspection, cleaning, or product separation.</skos:definition>
@@ -19572,7 +19496,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PipelinePig -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PipelinePig">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">pig de pipeline</rdfs:label>
         <rdfs:label xml:lang="en">pipeline pig</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a device inserted into and propelled through a pipeline to perform internal inspection, cleaning, or gauging operations.</skos:definition>
@@ -19661,10 +19585,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PolyphaseElectricalSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PolyphaseElectricalSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">polyphase electrical signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal polifásico elétrico</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a multi-phase electrical signal used to characterise or transmit information about a polyphase alternating-current supply.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a multi-phase electrical signal used to characterise or transmit information about a polyphase alternating-current supply.</skos:definition>
     </owl:Class>
     
 
@@ -19705,10 +19629,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PositionSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PositionSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="en">position signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal de posição</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical signal representing the position of a mechanical component in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting an electrical signal representing the position of a mechanical component in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -19839,10 +19763,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PressureField -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PressureField">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:label xml:lang="pt-br">campo de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure field</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the pressure distribution within a fluid volume in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A quality inhering in a material entity, constituting the pressure distribution within a fluid volume in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -19928,10 +19852,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PressureReading -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PressureReading">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">leitura de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure reading</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a quantitative value representing the pressure of a process stream as measured and displayed by petroleum production instrumentation.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting a quantitative value representing the pressure of a process stream as measured and displayed by petroleum production instrumentation.</skos:definition>
     </owl:Class>
     
 
@@ -19995,10 +19919,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PressureSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PressureSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="en">pressure signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal de pressão</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical or pneumatic signal representing the pressure of a process stream in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting an electrical or pneumatic signal representing the pressure of a process stream in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -20006,10 +19930,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PressureSignalPair -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PressureSignalPair">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">par de pressão de sinal</rdfs:label>
         <rdfs:label xml:lang="en">pressure signal pair</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a pair of pressure signals representing the upstream and downstream pressures at two points of a petroleum production process.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a pair of pressure signals representing the upstream and downstream pressures at two points of a petroleum production process.</skos:definition>
     </owl:Class>
     
 
@@ -20039,7 +19963,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/PressurizedFluidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PressurizedFluidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">porção pressurizado de fluido</rdfs:label>
         <rdfs:label xml:lang="en">pressurized fluid portion</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of fluid held at a pressure above the reference pressure in petroleum production equipment.</skos:definition>
@@ -20072,7 +19996,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ProcessFluidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ProcessFluidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">porção de processo de fluido</rdfs:label>
         <rdfs:label xml:lang="en">process fluid portion</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of the process fluid—hydrocarbon, water, or gas—handled at a defined point in a petroleum production process.</skos:definition>
@@ -20083,10 +20007,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ProcessFluidSample -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ProcessFluidSample">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">amostra de processo de fluido</rdfs:label>
         <rdfs:label xml:lang="en">process fluid sample</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a representative sample of process fluid withdrawn from a petroleum production stream for analysis or testing.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a representative sample of process fluid withdrawn from a petroleum production stream for analysis or testing.</skos:definition>
     </owl:Class>
     
 
@@ -20094,10 +20018,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ProcessVariable -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ProcessVariable">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">process variable</rdfs:label>
         <rdfs:label xml:lang="pt-br">variável de processo</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a measurable variable—pressure, temperature, flow rate, or level—that characterises the state of a petroleum production process.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a measurable variable—pressure, temperature, flow rate, or level—that characterises the state of a petroleum production process.</skos:definition>
     </owl:Class>
     
 
@@ -20138,7 +20062,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ProtectedTemperatureSensingElement -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ProtectedTemperatureSensingElement">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">elemento protegido de temperatura de sensoriamento</rdfs:label>
         <rdfs:label xml:lang="en">protected temperature sensing element</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a temperature sensing element installed within a thermowell or protective sheath to isolate it from the process medium while remaining thermally coupled.</skos:definition>
@@ -20327,10 +20251,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ReferenceSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ReferenceSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">reference signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal de referência</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a signal representing a reference value—such as a set point or calibration standard—used in control or measurement systems of petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a signal representing a reference value—such as a set point or calibration standard—used in control or measurement systems of petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -20371,7 +20295,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/RemovedMaterial -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/RemovedMaterial">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">material de removido</rdfs:label>
         <rdfs:label xml:lang="en">removed material</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes material—scale, deposits, or cuttings—removed from a surface or stream by a mechanical cleaning process in petroleum production equipment.</skos:definition>
@@ -20393,7 +20317,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/RestrictedObject -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/RestrictedObject">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">objeto restrito</rdfs:label>
         <rdfs:label xml:lang="en">restricted object</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a component whose movement or flow is constrained by a restriction mechanism in petroleum production equipment.</skos:definition>
@@ -20404,7 +20328,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/RockCuttings -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/RockCuttings">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">cascalhos de rocha</rdfs:label>
         <rdfs:label xml:lang="en">rock cuttings</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes rock fragments produced by the drill bit during drilling and transported to surface by the circulating drilling fluid.</skos:definition>
@@ -20506,10 +20430,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/RotationalMotion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/RotationalMotion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="pt-br">movimento rotacional</rdfs:label>
         <rdfs:label xml:lang="en">rotational motion</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the angular motion of a rotating component about its axis in petroleum production rotating equipment.</skos:definition>
+        <skos:definition xml:lang="en">A process in which the angular motion of a rotating component about its axis in petroleum production rotating equipment.</skos:definition>
     </owl:Class>
     
 
@@ -20617,7 +20541,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/SealedJoint -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/SealedJoint">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">junta selado</rdfs:label>
         <rdfs:label xml:lang="en">sealed joint</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a joint between two components in petroleum production equipment that is sealed to prevent leakage of process fluid.</skos:definition>
@@ -20730,7 +20654,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/SeparatedSolidLiquidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/SeparatedSolidLiquidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">porção separado líquido de sólido</rdfs:label>
         <rdfs:label xml:lang="en">separated solid liquid portion</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the solid–liquid fraction recovered after a phase separation process in petroleum production equipment.</skos:definition>
@@ -20930,10 +20854,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/Signal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/Signal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="en">signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a physical quantity—electrical, pneumatic, or optical—carrying information about a process variable or equipment state in petroleum production systems.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a physical quantity—electrical, pneumatic, or optical—carrying information about a process variable or equipment state in petroleum production systems.</skos:definition>
     </owl:Class>
     
 
@@ -21109,7 +21033,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/SolidPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/SolidPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">porção de sólido</rdfs:label>
         <rdfs:label xml:lang="en">solid portion</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of solid material at a defined point in a petroleum production process.</skos:definition>
@@ -21210,10 +21134,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/StandardizedElectricalSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/StandardizedElectricalSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">sinal padronizado elétrico</rdfs:label>
         <rdfs:label xml:lang="en">standardized electrical signal</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical signal in a standardised format—such as 4–20 mA or 0–10 V—used to transmit process variable values between petroleum production instrumentation components.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting an electrical signal in a standardised format—such as 4–20 mA or 0–10 V—used to transmit process variable values between petroleum production instrumentation components.</skos:definition>
     </owl:Class>
     
 
@@ -21221,10 +21145,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/StandardizedSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/StandardizedSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">sinal padronizado</rdfs:label>
         <rdfs:label xml:lang="en">standardized signal</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a signal in a standardised format used to transmit measurement values or control commands between petroleum production instrumentation and control system components.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a signal in a standardised format used to transmit measurement values or control commands between petroleum production instrumentation and control system components.</skos:definition>
     </owl:Class>
     
 
@@ -21290,7 +21214,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/SteelPipe -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/SteelPipe">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="en">steel pipe</rdfs:label>
         <rdfs:label xml:lang="pt-br">tubo de de aço</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a pipe made of steel used to convey fluids under pressure in petroleum production piping systems.</skos:definition>
@@ -21334,10 +21258,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/StructuralDisplacement -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/StructuralDisplacement">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:label xml:lang="pt-br">deslocamento estrutural</rdfs:label>
         <rdfs:label xml:lang="en">structural displacement</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a displacement—elongation, settlement, or lateral movement—of a structural element in a petroleum production installation.</skos:definition>
+        <skos:definition xml:lang="en">A quality inhering in a material entity, constituting a displacement—elongation, settlement, or lateral movement—of a structural element in a petroleum production installation.</skos:definition>
     </owl:Class>
     
 
@@ -21345,10 +21269,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/StructuralForce -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/StructuralForce">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:label xml:lang="pt-br">força estrutural</rdfs:label>
         <rdfs:label xml:lang="en">structural force</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a force transmitted through a structural element of petroleum production equipment due to imposed loads.</skos:definition>
+        <skos:definition xml:lang="en">A quality inhering in a material entity, constituting a force transmitted through a structural element of petroleum production equipment due to imposed loads.</skos:definition>
     </owl:Class>
     
 
@@ -21385,17 +21309,6 @@
         <rdfs:label xml:lang="en">structural support process</rdfs:label>
         <skos:definition xml:lang="en">A PlannedProcess in which a structural element bears loads, distributes forces, or maintains structural integrity within a system, typically through its geometric configuration and material properties.</skos:definition>
         <annotation:naturalLanguageDefinition xml:lang="en">A PlannedProcess in which a structural element bears loads, distributes forces, or maintains structural integrity within a system, typically through its geometric configuration and material properties.</annotation:naturalLanguageDefinition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/SubsurfaceAccess -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/SubsurfaceAccess">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="pt-br">acesso de subsuperfície</rdfs:label>
-        <rdfs:label xml:lang="en">subsurface access</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the wellbore or access path through which tools, fluids, or production equipment are deployed to interact with subsurface formations.</skos:definition>
     </owl:Class>
     
 
@@ -21526,7 +21439,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/SupportedElectricalCable -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/SupportedElectricalCable">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">cabo suportado elétrico</rdfs:label>
         <rdfs:label xml:lang="en">supported electrical cable</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes an electrical cable that is mechanically supported and routed by cable support systems in a petroleum production installation.</skos:definition>
@@ -21537,7 +21450,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/SupportedTubingString -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/SupportedTubingString">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">coluna suportado de coluna de produção</rdfs:label>
         <rdfs:label xml:lang="en">supported tubing string</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a downhole tubing string that is suspended and supported from the wellhead by a tubing hanger in a petroleum production well.</skos:definition>
@@ -21581,10 +21494,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/SuppressedDisturbance -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/SuppressedDisturbance">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:label xml:lang="pt-br">perturbação suprimido</rdfs:label>
         <rdfs:label xml:lang="en">suppressed disturbance</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an unwanted physical perturbation—vibration, noise, or pressure surge—that has been attenuated or eliminated by petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A process in which an unwanted physical perturbation—vibration, noise, or pressure surge—that has been attenuated or eliminated by petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -21780,10 +21693,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/TemperatureSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/TemperatureSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">sinal de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature signal</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical or pneumatic signal representing the temperature of a process stream or equipment surface in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting an electrical or pneumatic signal representing the temperature of a process stream or equipment surface in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -21791,7 +21704,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ThermalEnergy -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ThermalEnergy">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">energia térmico</rdfs:label>
         <rdfs:label xml:lang="en">thermal energy</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes thermal energy transferred between a process stream and heat exchange surfaces of petroleum production equipment.</skos:definition>
@@ -21802,7 +21715,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/ThermalEnergyPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ThermalEnergyPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">porção térmico de energia</rdfs:label>
         <rdfs:label xml:lang="en">thermal energy portion</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a quantity of thermal energy at a defined point in the heat transfer circuit of petroleum production equipment.</skos:definition>
@@ -22047,7 +21960,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/TubingString -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/TubingString">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <rdfs:label xml:lang="pt-br">coluna de coluna de produção</rdfs:label>
         <rdfs:label xml:lang="en">tubing string</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the continuous string of tubing that conveys production fluids from the wellbore to the surface or delivers injection fluids downhole.</skos:definition>
@@ -22282,7 +22195,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/VaporPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/VaporPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">porção de vapor</rdfs:label>
         <rdfs:label xml:lang="en">vapor portion</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of vapour phase material at a defined point in a petroleum production process.</skos:definition>
@@ -22370,10 +22283,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/VibrationSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/VibrationSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">sinal de vibração</rdfs:label>
         <rdfs:label xml:lang="en">vibration signal</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes an electrical signal representing the amplitude or frequency of mechanical vibration measured in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A measurement information content entity constituting an electrical signal representing the amplitude or frequency of mechanical vibration measured in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -22381,10 +22294,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/VisualInformation -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/VisualInformation">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">informação visual</rdfs:label>
         <rdfs:label xml:lang="en">visual information</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes visual information—such as a colour, indicator state, or display value—conveying process or equipment status to an operator.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting visual information—such as a colour, indicator state, or display value—conveying process or equipment status to an operator.</skos:definition>
     </owl:Class>
     
 
@@ -22428,10 +22341,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/VisualSignal -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/VisualSignal">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:label xml:lang="pt-br">sinal visual</rdfs:label>
         <rdfs:label xml:lang="en">visual signal</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes a visual indication—such as a light, colour band, or pointer position—conveying the state of a process variable in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">An information content entity constituting a visual indication—such as a light, colour band, or pointer position—conveying the state of a process variable in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -22541,7 +22454,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/WasteGasPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/WasteGasPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">porção de resíduo de gás</rdfs:label>
         <rdfs:label xml:lang="en">waste gas portion</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of waste or surplus gas generated in petroleum production operations that is directed to disposal equipment.</skos:definition>
@@ -22552,7 +22465,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/WasteMaterialPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/WasteMaterialPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">porção de resíduo de material</rdfs:label>
         <rdfs:label xml:lang="en">waste material portion</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of waste material generated by a processing step in petroleum production equipment and requiring disposal.</skos:definition>
@@ -22574,7 +22487,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/WaterPortion -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/WaterPortion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">porção de água</rdfs:label>
         <rdfs:label xml:lang="en">water portion</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of water—produced water or injection water—at a defined point in a petroleum production process.</skos:definition>
@@ -22585,7 +22498,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/WaterVapor -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/WaterVapor">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">vapor de água</rdfs:label>
         <rdfs:label xml:lang="en">water vapor</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes water in the vapour phase present in a process stream handled by petroleum production equipment.</skos:definition>
@@ -22596,10 +22509,10 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/WeightOnBit -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/WeightOnBit">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:label xml:lang="pt-br">broca de peso de em</rdfs:label>
         <rdfs:label xml:lang="en">weight on bit</rdfs:label>
-        <skos:definition xml:lang="en">A material artifact that constitutes the compressive force applied to the drill bit through the drill string during a drilling operation.</skos:definition>
+        <skos:definition xml:lang="en">A quality inhering in a material entity, constituting the compressive force applied to the drill bit through the drill string during a drilling operation.</skos:definition>
     </owl:Class>
     
 
@@ -22607,7 +22520,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/WellFluid -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/WellFluid">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">fluido de poço</rdfs:label>
         <rdfs:label xml:lang="en">well fluid</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the fluid—hydrocarbon, water, or gas—produced from or injected into a petroleum production well.</skos:definition>
@@ -22708,7 +22621,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/WetMaterial -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/WetMaterial">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">material úmido</rdfs:label>
         <rdfs:label xml:lang="en">wet material</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a material containing a significant moisture or liquid content prior to processing in petroleum production equipment.</skos:definition>
