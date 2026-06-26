@@ -98,63 +98,28 @@ jobs:
       # Node.js 20 runs under the node24 enforcement that started June 2026. It does
       # not error — it just produces 0-byte remote files.
       #
-      # Replaced with the sftp CLI (part of OpenSSH, always on the runner) using
-      # SSH_ASKPASS + SSH_ASKPASS_REQUIRE=force (OpenSSH ≥ 8.4) for non-interactive
-      # password auth — no pip, apt-get, or external actions required.
+      # Replaced with sshpass+scp.  sshpass is not pre-installed but apt-get returns
+      # exit 100 (package not in cache, not a sudo error) — so apt-get update then
+      # install works.  scp replaces files atomically and exits non-zero on failure.
+      - name: Install sshpass
+        run: |
+          apt-get update -qq 2>/dev/null || sudo apt-get update -qq
+          apt-get install -y -q sshpass 2>/dev/null || sudo apt-get install -y -q sshpass
+          sshpass -V
+
       - name: Transfer OWL/TTL variants to copi/ folder
         run: |
-          # Write the askpass helper
-          printf '#!/bin/sh\nprintf "%%s\n" "${SSH_PASSWORD}"\n' > /tmp/askpass.sh
-          chmod +x /tmp/askpass.sh
-
-          # Build sftp batch: put each staged file to the copi/ root
-          {
-            for f in copi-stage/*; do
-              fname=$(basename "$f")
-              local_bytes=$(stat -c%s "$f")
-              printf '# uploading %s (%s bytes)\n' "$fname" "$local_bytes"
-              printf 'put %s ../ontologies/public_html/copi/%s\n' "$f" "$fname"
-            done
-            echo "quit"
-          } > /tmp/sftp_batch.txt
-
-          echo "--- sftp batch commands ---"
-          grep -v '^#' /tmp/sftp_batch.txt
-
-          SSH_PASSWORD="${FTP_PASS}" \
-          SSH_ASKPASS=/tmp/askpass.sh \
-          SSH_ASKPASS_REQUIRE=force \
-          sftp -b /tmp/sftp_batch.txt \
-               -o StrictHostKeyChecking=no \
-               -o UserKnownHostsFile=/dev/null \
-               "ontokg@${DEPLOY_HOST}"
-
-          # Verify: list the remote copi/ directory so sizes are visible in CI logs
-          printf '#!/bin/sh\nprintf "%%s\n" "${SSH_PASSWORD}"\n' > /tmp/askpass.sh
-          printf 'ls -la ../ontologies/public_html/copi/\nquit\n' > /tmp/sftp_verify.txt
-          SSH_PASSWORD="${FTP_PASS}" \
-          SSH_ASKPASS=/tmp/askpass.sh \
-          SSH_ASKPASS_REQUIRE=force \
-          sftp -b /tmp/sftp_verify.txt \
-               -o StrictHostKeyChecking=no \
-               -o UserKnownHostsFile=/dev/null \
-               "ontokg@${DEPLOY_HOST}" | tee /tmp/remote_listing.txt
-
-          # Fail if any staged file appears as 0 bytes on the remote
-          failed=0
           for f in copi-stage/*; do
             fname=$(basename "$f")
             local_bytes=$(stat -c%s "$f")
-            remote_entry=$(grep "$fname" /tmp/remote_listing.txt || true)
-            remote_bytes=$(echo "$remote_entry" | awk '{print $5}')
-            if [ -z "$remote_bytes" ] || [ "$remote_bytes" = "0" ]; then
-              printf 'FAIL: %s — remote is empty or missing (local=%s bytes)\n' "$fname" "$local_bytes"
-              failed=1
-            else
-              printf 'OK:   %s — %s bytes\n' "$fname" "$remote_bytes"
-            fi
+            echo "Uploading $fname ($local_bytes bytes)..."
+            SSHPASS="${FTP_PASS}" sshpass -e scp \
+              -o StrictHostKeyChecking=no \
+              -o UserKnownHostsFile=/dev/null \
+              "$f" "ontokg@${DEPLOY_HOST}:../ontologies/public_html/copi/${fname}" \
+              || { echo "  FAILED (scp exited $?)"; exit 1; }
+            echo "  OK"
           done
-          exit $failed
         env:
           FTP_PASS: ${{ secrets.FTP }}
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
