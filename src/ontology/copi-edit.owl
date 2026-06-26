@@ -1,4 +1,4 @@
-Prefix(:=<https://www.inf.ufrgs.br/ontologies/copi/copi.owl#>)
+Prefix(:=<https://www.inf.ufrgs.br/ontologies/copi/>)
 Prefix(dce:=<http://purl.org/dc/elements/1.1/>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
@@ -12,8 +12,8 @@ Prefix(bibo:=<http://purl.org/ontology/bibo/>)
 Prefix(schema:=<https://schema.org/>)
 
 
-Ontology(<https://www.inf.ufrgs.br/ontologies/copi/copi.owl>
-<https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-15/copi.owl>
+Ontology(<https://www.inf.ufrgs.br/ontologies/copi/>
+<https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-26/copi.owl>
 Import(<https://www.inf.ufrgs.br/ontologies/copi/components/copi-core.ttl>)
 Import(<https://www.inf.ufrgs.br/ontologies/copi/components/copi-enriched.owl>)
 Import(<https://www.inf.ufrgs.br/ontologies/copi/components/copi-vocab.ttl>)
