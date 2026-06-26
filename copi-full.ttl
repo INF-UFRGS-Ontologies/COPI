@@ -7669,11 +7669,11 @@ copi:COPI_0000068 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/DesignedFunction> ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:someValuesFrom copi:HeatTransferProcess
+                                    owl:someValuesFrom copi:COPI_0000004
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:allValuesFrom copi:HeatTransferProcess
+                                    owl:allValuesFrom copi:COPI_0000004
                                   ] ;
                   rdfs:label "função de transferência de calor"@pt-br ,
                              "heat transfer function"@en ;
@@ -7827,8 +7827,7 @@ copi:COPI_0000076 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077
 copi:COPI_0000077 rdf:type owl:Class ;
-                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/Assembly> ,
-                                  copi:COPI_0000023 ,
+                  rdfs:subClassOf copi:COPI_0000023 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000078
@@ -8098,7 +8097,8 @@ copi:COPI_0000086 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087
 copi:COPI_0000087 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000077 ,
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/Assembly> ,
+                                  copi:COPI_0000077 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000207
@@ -8235,7 +8235,8 @@ copi:COPI_0000092 rdf:type owl:Class ;
                                                            ) ;
                                         rdf:type owl:Class
                                       ] ;
-                  rdfs:subClassOf copi:COPI_0000090 ,
+                  rdfs:subClassOf copi:COPI_0000017 ,
+                                  copi:COPI_0000090 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000068
@@ -13860,7 +13861,7 @@ copi:COPI_0000293 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000294
 copi:COPI_0000294 rdf:type owl:Class ;
-                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ,
+                  rdfs:subClassOf copi:COPI_0000017 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000068
@@ -19043,14 +19044,6 @@ copi:HeatTransferBundle rdf:type owl:Class ;
                         rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
                         rdfs:label "feixe de calor de transferência"@pt-br ,
                                    "heat transfer bundle"@en .
-
-
-###  https://www.inf.ufrgs.br/ontologies/copi/HeatTransferProcess
-copi:HeatTransferProcess rdf:type owl:Class ;
-                         rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/PlannedProcess> ;
-                         rdfs:label "heat transfer process"@en ,
-                                    "processo de transferência de calor"@pt-br ;
-                         annotation:naturalLanguageDefinition "A PlannedProcess in which thermal energy is transferred between two or more fluid streams through a solid boundary, enabling temperature equalization or thermal conditioning without direct mixing of the media."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/HeatTransferSurface

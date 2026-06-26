@@ -4209,13 +4209,13 @@ Units of Measure: Km, Kg, G</skos:example>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/HeatTransferProcess"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/HeatTransferProcess"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de transferência de calor</rdfs:label>
@@ -4768,6 +4768,7 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000017"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -10306,6 +10307,7 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000294 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000294">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000017"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -16201,16 +16203,6 @@ Units of Measure: Km, Kg, G</skos:example>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/HeatTransferBundle">
         <rdfs:label xml:lang="pt-br">feixe de calor de transferência</rdfs:label>
         <rdfs:label xml:lang="en">heat transfer bundle</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/HeatTransferProcess -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/HeatTransferProcess">
-        <rdfs:label xml:lang="en">heat transfer process</rdfs:label>
-        <rdfs:label xml:lang="pt-br">processo de transferência de calor</rdfs:label>
-        <annotation:naturalLanguageDefinition xml:lang="en">A PlannedProcess in which thermal energy is transferred between two or more fluid streams through a solid boundary, enabling temperature equalization or thermal conditioning without direct mixing of the media.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
