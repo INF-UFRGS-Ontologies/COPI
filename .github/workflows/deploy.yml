@@ -98,6 +98,7 @@ jobs:
              copi-base.owl copi-base.ttl \
              copi-full.owl copi-full.ttl \
              copi-simple.owl copi-simple.ttl \
+             index.php \
              copi-stage/
           ls -la copi-stage/
 
