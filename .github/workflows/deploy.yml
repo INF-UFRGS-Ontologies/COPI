@@ -109,7 +109,7 @@ jobs:
 
       - name: Transfer OWL/TTL variants to copi/ folder
         run: |
-          for f in copi-stage/*; do
+          for f in copi-stage/*.owl copi-stage/*.ttl; do
             fname=$(basename "$f")
             local_bytes=$(stat -c%s "$f")
             echo "Uploading $fname ($local_bytes bytes)..."
