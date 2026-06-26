@@ -6,7 +6,11 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# LOV registration: declare ontology as voaf:Vocabulary (rdf:type triple, safe in Turtle)
+<https://www.inf.ufrgs.br/ontologies/copi/> a voaf:Vocabulary .
 
 copi:COPI_0000025 a owl:Class ;
     rdfs:label "containment function"@en ;
