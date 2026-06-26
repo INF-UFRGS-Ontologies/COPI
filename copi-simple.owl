@@ -4559,7 +4559,13 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000083 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000083">
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000083"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/FlowModificationFunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">MaterialArtifact que possui uma FlowModificationFunction e</rdfs:label>
         <rdfs:label xml:lang="en">flow modification accessory</rdfs:label>
         <skos:definition xml:lang="en">A MaterialArtifact that bears a FlowModificationFunction and that is used as a component in flow control assemblies to alter the characteristics of fluid flow such as velocity profile, turbulence, or pressure distribution.</skos:definition>
@@ -4673,29 +4679,9 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087">
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle</rdfs:label>
-        <skos:definition xml:lang="en">A control valve is a valve that is equipped with an actuator and regulates fluid flow rate in response to control signals from a process control system.</skos:definition>
         <skos:exactMatch rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
-        <annotation:firstOrderLogicAxiom xml:lang="en">ControlValve(x) → Valve(x) ∧ ∃a(Actuator(a) ∧ hasComponentPartAtAllTimes(x,a)) ∧ ∃f(FlowControlFunction(f) ∧ bearerOf(x,f)) ∧ ∀p(participatesIn(x,p) ∧ FlowControlProcess(p) → ∃s(ControlSignal(s) ∧ hasInput(p,s)))</annotation:firstOrderLogicAxiom>
-        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A control valve is a valve that is equipped with an actuator and regulates fluid flow rate in response to control signals from a process control system.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de controle é uma válvula que é equipada com um atuador e regula a vazão de fluido em resposta a sinais de controle de um sistema de controle de processo.</annotation:naturalLanguageDefinition>
-        <annotation:primitiveRationale xml:lang="en">Control valve is a functional type where identity is grounded in the designed function to regulate flow in response to control signals. This functional identity cannot be reduced to structural checklists as the same function can be realized through many different physical mechanisms (ball, butterfly, globe, gate, etc.). The presence of actuator and flow control element are necessary but not sufficient - the key is the integration for automated flow modulation.</annotation:primitiveRationale>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every control valve is a valve that has an actuator as component part and has a flow control function and participates in flow control processes by receiving control signals and modulating fluid flow.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
 
@@ -4861,6 +4847,7 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -4872,6 +4859,12 @@ Units of Measure: Km, Kg, G</skos:example>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000371"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">ball control valve</rdfs:label>
@@ -4993,7 +4986,26 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000078"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">butterfly control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula borboleta de controle</rdfs:label>
         <skos:definition xml:lang="en">A butterfly control valve is a control valve that has a rotating disc closure mechanism and bears a process-controlled flow function enabling automated flow modulation in response to external control signals.</skos:definition>
@@ -5116,7 +5128,20 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">choke control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle de choke</rdfs:label>
         <skos:definition xml:lang="en">A choke control valve is a control valve that has a choke geometry component for pressure reduction through flow restriction.</skos:definition>
@@ -5497,11 +5522,18 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000372"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">gate control valve</rdfs:label>
@@ -5566,6 +5598,7 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -5577,6 +5610,12 @@ Units of Measure: Km, Kg, G</skos:example>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000372"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">globe control valve</rdfs:label>
@@ -5843,6 +5882,7 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000135 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000135">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
         <rdfs:subClassOf>
             <owl:Restriction>
