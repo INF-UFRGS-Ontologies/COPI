@@ -28,8 +28,9 @@
                                              dcterms:description "BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants."@en ;
                                              dcterms:issued "2026-06-23"^^xsd:date ;
                                              dcterms:license <https://spdx.org/licenses/MIT.html> ;
-                                             dcterms:modified "2026-06-24"^^xsd:date ;
+                                             dcterms:modified "2026-06-26"^^xsd:date ;
                                              dcterms:publisher "Universidade Federal do Rio Grande do Sul (UFRGS)" ;
+                                             dcterms:rights "Copyright © 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Available under the MIT License." ;
                                              dcterms:source <http://purl.obolibrary.org/obo/bfo.owl> ,
                                                             <https://github.com/INF-UFRGS-Ontologies/COPI> ,
                                                             <https://spec.industrialontologies.org/ontology/core/Core/> ;
@@ -3104,6 +3105,10 @@ category within a classification scheme of an entity that the value expression i
                                              rdfs:label "temporal instant"@en ;
                                              skos:definition "(Elucidation) A temporal instant is a zero-dimensional temporal region that has no proper temporal part"@en ;
                                              skos:example "The millennium"@en .
+
+
+###  http://purl.org/vocommons/voaf#Vocabulary
+<http://purl.org/vocommons/voaf#Vocabulary> rdf:type owl:Class .
 
 
 ###  https://spec.industrialontologies.org/ontology/construct/ActionSpecification
@@ -23386,6 +23391,11 @@ copi:WirelineLoggingProcess rdf:type owl:Class ;
                                                                      rdfs:label "released"@en-us ;
                                                                      skos:definition "construct or ontology development state in which the resource is stable, usable, and has been made available to external users"@en-us ;
                                                                      annotation:explanatoryNote "Release notes will be provided for any changes concerning released content, and any revisions will be backward compatible with the prior version to the degree possible."@en-us .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/
+<https://www.inf.ufrgs.br/ontologies/copi/> rdf:type owl:NamedIndividual ,
+                                                     <http://purl.org/vocommons/voaf#Vocabulary> .
 
 
 #################################################################

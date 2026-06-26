@@ -28,8 +28,9 @@
                                                           dcterms:description "BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants."@en ;
                                                           dcterms:issued "2026-06-23"^^xsd:date ;
                                                           dcterms:license <https://spdx.org/licenses/MIT.html> ;
-                                                          dcterms:modified "2026-06-24"^^xsd:date ;
+                                                          dcterms:modified "2026-06-26"^^xsd:date ;
                                                           dcterms:publisher "Universidade Federal do Rio Grande do Sul (UFRGS)" ;
+                                                          dcterms:rights "Copyright © 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Available under the MIT License." ;
                                                           dcterms:source <http://purl.obolibrary.org/obo/bfo.owl> ,
                                                                          <https://github.com/INF-UFRGS-Ontologies/COPI> ,
                                                                          <https://spec.industrialontologies.org/ontology/core/Core/> ;
@@ -87,6 +88,10 @@ dcterms:modified rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/publisher
 dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+dcterms:rights rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/source
@@ -282,6 +287,10 @@ copi:COPI_0000002 rdf:type owl:ObjectProperty ;
 
 ###  http://purl.obolibrary.org/obo/BFO_0000040
 <http://purl.obolibrary.org/obo/BFO_0000040> rdf:type owl:Class .
+
+
+###  http://purl.org/vocommons/voaf#Vocabulary
+<http://purl.org/vocommons/voaf#Vocabulary> rdf:type owl:Class .
 
 
 ###  https://spec.industrialontologies.org/ontology/construct/Assembly
@@ -17628,6 +17637,15 @@ copi:WirelineLoggingProcess rdf:type owl:Class ;
                             rdfs:label "processo de perfilagem por wireline"@pt-br ,
                                        "wireline logging process"@en ;
                             skos:definition "A planned process in which measurement tools are lowered into a well on a wireline cable to acquire subsurface formation and wellbore data."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://www.inf.ufrgs.br/ontologies/copi/
+copi: rdf:type owl:NamedIndividual ,
+               <http://purl.org/vocommons/voaf#Vocabulary> .
 
 
 #################################################################

@@ -28,8 +28,9 @@
         <dcterms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants.</dcterms:description>
         <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-23</dcterms:issued>
         <dcterms:license rdf:resource="https://spdx.org/licenses/MIT.html"/>
-        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-24</dcterms:modified>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-26</dcterms:modified>
         <dcterms:publisher>Universidade Federal do Rio Grande do Sul (UFRGS)</dcterms:publisher>
+        <dcterms:rights>Copyright © 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Available under the MIT License.</dcterms:rights>
         <dcterms:source rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <dcterms:source rdf:resource="https://github.com/INF-UFRGS-Ontologies/COPI"/>
         <dcterms:source rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/"/>
@@ -116,6 +117,12 @@
     <!-- http://purl.org/dc/terms/publisher -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rights"/>
     
 
 
@@ -416,6 +423,12 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    
+
+
+    <!-- http://purl.org/vocommons/voaf#Vocabulary -->
+
+    <owl:Class rdf:about="http://purl.org/vocommons/voaf#Vocabulary"/>
     
 
 
@@ -23385,6 +23398,25 @@
         <rdfs:label xml:lang="en">wireline logging process</rdfs:label>
         <skos:definition xml:lang="en">A planned process in which measurement tools are lowered into a well on a wireline cable to acquire subsurface formation and wellbore data.</skos:definition>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/ -->
+
+    <owl:NamedIndividual rdf:about="https://www.inf.ufrgs.br/ontologies/copi/">
+        <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
+    </owl:NamedIndividual>
     
 
 

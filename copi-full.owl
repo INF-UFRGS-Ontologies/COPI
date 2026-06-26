@@ -28,8 +28,9 @@
         <dcterms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants.</dcterms:description>
         <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-23</dcterms:issued>
         <dcterms:license rdf:resource="https://spdx.org/licenses/MIT.html"/>
-        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-24</dcterms:modified>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-26</dcterms:modified>
         <dcterms:publisher>Universidade Federal do Rio Grande do Sul (UFRGS)</dcterms:publisher>
+        <dcterms:rights>Copyright © 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Available under the MIT License.</dcterms:rights>
         <dcterms:source rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <dcterms:source rdf:resource="https://github.com/INF-UFRGS-Ontologies/COPI"/>
         <dcterms:source rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/"/>
@@ -4116,6 +4117,12 @@ category within a classification scheme of an entity that the value expression i
         <skos:definition xml:lang="en">(Elucidation) A temporal instant is a zero-dimensional temporal region that has no proper temporal part</skos:definition>
         <skos:example xml:lang="en">The millennium</skos:example>
     </owl:Class>
+    
+
+
+    <!-- http://purl.org/vocommons/voaf#Vocabulary -->
+
+    <owl:Class rdf:about="http://purl.org/vocommons/voaf#Vocabulary"/>
     
 
 
@@ -30951,6 +30958,14 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:label xml:lang="en-us">released</rdfs:label>
         <skos:definition xml:lang="en-us">construct or ontology development state in which the resource is stable, usable, and has been made available to external users</skos:definition>
         <annotation:explanatoryNote xml:lang="en-us">Release notes will be provided for any changes concerning released content, and any revisions will be backward compatible with the prior version to the degree possible.</annotation:explanatoryNote>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/ -->
+
+    <owl:NamedIndividual rdf:about="https://www.inf.ufrgs.br/ontologies/copi/">
+        <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
     </owl:NamedIndividual>
     
 
