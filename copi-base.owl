@@ -17,6 +17,7 @@
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-base.owl">
         <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-26/copi-base.owl"/>
         <dce:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
+        <dcterms:bibliographicCitation>Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press.</dcterms:bibliographicCitation>
         <dcterms:contributor>Cauã Antunes</dcterms:contributor>
         <dcterms:contributor>Haroldo Rojas</dcterms:contributor>
         <dcterms:contributor>Mara Abel</dcterms:contributor>
@@ -37,7 +38,6 @@
         <bibo:status>unstable</bibo:status>
         <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>
-        <owl:versionInfo>2026-06-15</owl:versionInfo>
         <owl:versionInfo>2026-06-26</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
@@ -62,6 +62,12 @@
     <!-- http://purl.org/dc/elements/1.1/type -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/type"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/bibliographicCitation -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
     
 
 
@@ -2618,6 +2624,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de bombeamento</rdfs:label>
         <rdfs:label xml:lang="en">pumping function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the transfer of mechanical energy to a fluid to increase its pressure, velocity, or both.</skos:definition>
     </owl:Class>
     
 
@@ -2640,6 +2647,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">compression function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de compressão</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the compression of a gas stream to increase its pressure for transport, injection, or processing.</skos:definition>
     </owl:Class>
     
 
@@ -2686,6 +2694,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de absorção de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas absorption function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the selective transfer of gaseous components from a gas phase into a liquid absorbent phase.</skos:definition>
     </owl:Class>
     
 
@@ -2708,6 +2717,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de sensoriamento de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature sensing function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the detection and measurement of the temperature of a process stream or equipment surface.</skos:definition>
     </owl:Class>
     
 
@@ -2860,6 +2870,7 @@
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
         <rdfs:label xml:lang="pt-br">sensor de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature sensor</rdfs:label>
+        <skos:definition xml:lang="en">A material artifact that constitutes a sensing device that detects the temperature of a process stream or equipment surface and converts the measurement into an electrical signal in petroleum production instrumentation.</skos:definition>
     </owl:Class>
     
 
@@ -3260,6 +3271,7 @@
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
         <rdfs:label xml:lang="en">isolation valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de isolamento</rdfs:label>
+        <skos:definition xml:lang="en">A material artifact that bears a binary flow control function whose realization constitutes the complete opening or closing of a flow path to isolate a process segment in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -5780,6 +5792,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">binary flow control function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de controle binário de fluxo</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the complete opening or closing of a flow path to allow or prevent fluid passage.</skos:definition>
     </owl:Class>
     
 
@@ -5802,6 +5815,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">flow restriction function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de restrição de fluxo</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the reduction of fluid flow rate by creating a controlled resistance in the flow path.</skos:definition>
     </owl:Class>
     
 
@@ -5824,6 +5838,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de redução de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure reduction function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the reduction of fluid pressure from a higher upstream value to a controlled downstream value.</skos:definition>
     </owl:Class>
     
 
@@ -5846,6 +5861,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">emergency shut down function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de parada de emergência</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the automatic isolation of process equipment upon detection of a hazardous condition.</skos:definition>
     </owl:Class>
     
 
@@ -5868,6 +5884,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de despressurização rápida</rdfs:label>
         <rdfs:label xml:lang="en">rapid depressurization function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the rapid controlled release of process pressure to a safe disposal system to prevent catastrophic failure.</skos:definition>
     </owl:Class>
     
 
@@ -5890,6 +5907,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de ventilação de segurança</rdfs:label>
         <rdfs:label xml:lang="en">safety venting function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the release of excess pressure from a process system to a safe disposal location.</skos:definition>
     </owl:Class>
     
 
@@ -5912,6 +5930,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de alívio de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure relief function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the automatic release of process fluid when pressure exceeds a defined set point to protect equipment from overpressure.</skos:definition>
     </owl:Class>
     
 
@@ -5934,6 +5953,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de segurança subsuperficial</rdfs:label>
         <rdfs:label xml:lang="en">subsurface safety function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by a downhole safety valve whose realization constitutes the isolation of wellbore flow to prevent uncontrolled release of reservoir fluids to surface.</skos:definition>
     </owl:Class>
     
 
@@ -5956,6 +5976,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">flow indication function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de indicação de fluxo</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the local display of the flow rate of a process stream.</skos:definition>
     </owl:Class>
     
 
@@ -5978,6 +5999,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de indicação de nível</rdfs:label>
         <rdfs:label xml:lang="en">level indication function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the local display of the fluid level within a vessel.</skos:definition>
     </owl:Class>
     
 
@@ -6000,6 +6022,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de indicação de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature indication function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the local display of the temperature of a process stream or equipment surface.</skos:definition>
     </owl:Class>
     
 
@@ -6046,6 +6069,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de detecção de nível</rdfs:label>
         <rdfs:label xml:lang="en">level detection function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the detection of a fluid level reaching or exceeding a defined threshold within a vessel.</skos:definition>
     </owl:Class>
     
 
@@ -6068,6 +6092,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de sensoriamento de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure sensing function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the detection and measurement of the pressure of a process stream.</skos:definition>
     </owl:Class>
     
 
@@ -6090,6 +6115,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de medição de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure measurement function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the measurement and local display of the pressure of a process stream.</skos:definition>
     </owl:Class>
     
 
@@ -6136,6 +6162,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de medição de umidade</rdfs:label>
         <rdfs:label xml:lang="en">humidity measurement function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the measurement and display of the moisture content or relative humidity of a gas stream.</skos:definition>
     </owl:Class>
     
 
@@ -6158,6 +6185,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de medição de sequência de fases</rdfs:label>
         <rdfs:label xml:lang="en">phase sequence measurement function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the measurement and display of the phase sequence of a polyphase alternating-current electrical supply.</skos:definition>
     </owl:Class>
     
 
@@ -6180,6 +6208,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de detecção de limite de posição</rdfs:label>
         <rdfs:label xml:lang="en">position limit detection function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the detection of a mechanical component reaching a defined travel limit position.</skos:definition>
     </owl:Class>
     
 
@@ -6202,6 +6231,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">flow signal transmission function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de transmissão de sinal de fluxo</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the measurement and remote transmission of the flow rate of a process stream.</skos:definition>
     </owl:Class>
     
 
@@ -6224,6 +6254,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">differential pressure transmission function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de transmissão de pressão diferencial</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the measurement and remote transmission of the differential pressure between two process points.</skos:definition>
     </owl:Class>
     
 
@@ -6246,6 +6277,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de medição e transmissão de nível</rdfs:label>
         <rdfs:label xml:lang="en">level measurement and transmission function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the measurement and remote transmission of the fluid level within a vessel.</skos:definition>
     </owl:Class>
     
 
@@ -6268,6 +6300,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de medição e transmissão de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature measurement and transmission function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the measurement and remote transmission of the temperature of a process stream or equipment surface.</skos:definition>
     </owl:Class>
     
 
@@ -6290,6 +6323,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de transmissão de vibração</rdfs:label>
         <rdfs:label xml:lang="en">vibration transmission function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the measurement and remote transmission of mechanical vibration amplitude or frequency in rotating equipment.</skos:definition>
     </owl:Class>
     
 
@@ -6312,6 +6346,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de aquecimento</rdfs:label>
         <rdfs:label xml:lang="en">heating function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the transfer of thermal energy to a process stream or vessel to raise its temperature.</skos:definition>
     </owl:Class>
     
 
@@ -6334,6 +6369,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de movimentação de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas movement function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the movement of a gas stream from a region of lower pressure to a region of higher pressure.</skos:definition>
     </owl:Class>
     
 
@@ -6390,6 +6426,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">electric to mechanical conversion function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de conversão elétrico-mecânica</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the conversion of electrical energy into rotational or linear mechanical motion.</skos:definition>
     </owl:Class>
     
 
@@ -6436,6 +6473,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de separação</rdfs:label>
         <rdfs:label xml:lang="en">separation function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the separation of a mixed-phase or mixed-component stream into distinct phases or fractions.</skos:definition>
     </owl:Class>
     
 
@@ -6458,6 +6496,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">coalescence function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de coalescência</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the merging of dispersed liquid droplets into a continuous liquid phase to facilitate their subsequent removal.</skos:definition>
     </owl:Class>
     
 
@@ -6480,6 +6519,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de armazenamento</rdfs:label>
         <rdfs:label xml:lang="en">storage function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the temporary or permanent containment of fluids or materials in a defined storage volume.</skos:definition>
     </owl:Class>
     
 
@@ -6528,6 +6568,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">electrical current interruption function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de interrupção de corrente elétrica</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the interruption of electrical current flow in a circuit under normal operating or fault conditions.</skos:definition>
     </owl:Class>
     
 
