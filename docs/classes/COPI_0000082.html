@@ -237,7 +237,7 @@
           <div style="flex:1;">
             <div class="d-flex align-items-center gap-2 mb-1">
               <span class="status-pill status-exported">exported</span>
-              <span class="mode-pill mode-equivalent">equivalent</span>
+              <span class="mode-pill mode-necessary">necessary</span>
               <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000082</code>
             </div>
             <div class="ph-class-name">Flow Measuring Element</div>
@@ -259,8 +259,9 @@
         <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every FlowMeasuringElement is a MeasuringElement that bears a FlowMeasurementFunction</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (FlowMeasuringElement(x) ↔ FlowElement(x) ∧ ∃f (FlowMeasurementFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (FlowMeasuringElement(x) → FlowElement(x) ∧ ∃f (FlowMeasurementFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Function axiom: FlowMeasurementFunction]</span>∀f (FlowMeasurementFunction(f) → ∀p (realizedIn(f,p) → FlowMeasurementProcess(p)) ∧ ∃p (FlowMeasurementProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (FlowMeasuringElement(x) → ∃bearerOf.FlowMeasurementFunction) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((FlowMeasuringElement(x) ∧ FlowMeasurementFunction(f) ∧ bearerOf(x,f)) →
       ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
       ∃e (Participant(e) ∧ participatesIn(e,f)) ∧
@@ -293,7 +294,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;0.1.0-draft-10-g8d1338c&quot; ;
+    owl:versionInfo &quot;1.1.0-15-g4d17286&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -349,16 +350,11 @@
 
 ### Equipment universal: FlowMeasuringElement
 :FlowMeasuringElement rdf:type owl:Class ;
-    owl:equivalentClass [
-        rdf:type owl:Class ;
-        owl:intersectionOf (
-            :FlowElement
-            [
+    rdfs:subClassOf :FlowElement ;
+    rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
         owl:someValuesFrom :FlowMeasurementFunction
-    ]
-        )
     ] ;
     rdfs:label &quot;flow measuring element&quot;@en ;
     rdfs:label &quot;MeasuringElement que possui uma FlowMeasurementFunction e&quot;@pt-br ;
@@ -366,6 +362,7 @@
     iof-av:naturalLanguageDefinition &quot;Um MeasuringElement que possui uma FlowMeasurementFunction e que é projetado para determinar e quantificar a taxa de fluxo de fluido através de um sistema.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every FlowMeasuringElement is a MeasuringElement that bears a FlowMeasurementFunction&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x(FlowMeasuringElement(x) ↔ (MeasuringElement(x) ∧ ∃f(FlowMeasurementFunction(f) ∧ bearerOf(x,f))))&quot;@en ;
+    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
     skos:definition &quot;[ISO 15926-4] A &lt;FLOW MEASURING ELEMENT&gt; is  a &lt;MEASURING ELEMENT&gt; that is used to measure &lt;FLOW RATE&gt;&quot;@en .
 
 </div></div>
@@ -430,7 +427,7 @@
   <div class="rationale mt-2">The process signature captures the essence of flow measurement: a flowing fluid stream enters as input, and the measuring element outputs an information-bearing artifact (signal, indication, or reading) that represents the flow rate. The transformation is measurement_transduction as the element converts a physical quantity (flow rate) into a measurable signal.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000082</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000082</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-04</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-25</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-25</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000082</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000082</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-04</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-26</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-26</td></tr></tbody></table></div>
 
     </div>
 
@@ -446,7 +443,7 @@
             <table class="meta-table">
               <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>flow element</strong></td></tr>
               <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">MaterialArtifact</span></td></tr>
-              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-equivalent">equivalent</span></td></tr>
+              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
               <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>FlowMeasurementFunction</td></tr>
               <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>FlowMeasurementProcess</td></tr>
               <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>

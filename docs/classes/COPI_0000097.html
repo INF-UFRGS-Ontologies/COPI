@@ -271,7 +271,7 @@
 </div></div>
           <div style="flex:1;">
             <div class="d-flex align-items-center gap-2 mb-1">
-              <span class="status-pill status-validated">validated</span>
+              <span class="status-pill status-exported">exported</span>
               <span class="mode-pill mode-equivalent">equivalent</span>
               <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000097</code>
             </div>
@@ -294,14 +294,14 @@
         <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every blow down valve is a valve that has the function of rapid depressurization.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (BlowDownValve(x) ↔ Valve(x) ∧ ∃f (RapidDepressurizationFunction(f) ∧ bearerOf(x,f)))</span>
-<span class="fol-line"><span class="fol-label">[Function axiom: RapidDepressurizationFunction]</span>∀f (RapidDepressurizationFunction(f) → ∀p (realizedIn(f,p) → RapidDepressurizationProcess(p)) ∧ ∃p (RapidDepressurizationProcess(p) ∧ realizedIn(f,p)))</span>
-<span class="fol-line"><span class="fol-label">[Necessary part: ValveBody]</span>∀x (BlowDownValve(x) → ∃p (ValveBody(p) ∧ hasComponentPartAtAllTimes(x,p)))</span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (BlowDownValve(x) ↔ Valve(x) ∧ ∃f (RapidDepressurizationFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+<span class="fol-line"><span class="fol-label">[Function axiom: RapidDepressurizationFunction]</span>∀f (RapidDepressurizationFunction(f) → ∀p (realizedIn(f,p) → RapidDepressurizationProcess(p)) ∧ ∃p (RapidDepressurizationProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+<span class="fol-line"><span class="fol-label">[Necessary part: ValveBody]</span>∀x (BlowDownValve(x) → ∃p (ValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((BlowDownValve(x) ∧ RapidDepressurizationFunction(f) ∧ bearerOf(x,f)) →
       ∃m (Participant(m) ∧ participatesIn(m,f)) ∧
       ∃e1 (Participant(e1) ∧ participatesIn(e1,f)) ∧
       ∃e2 (Participant(e2) ∧ participatesIn(e2,f)) ∧
-      processType(f,RapidPressureReductionThroughControlledFluidDischarge))</span>
+      processType(f,RapidPressureReductionThroughControlledFluidDischarge)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
@@ -330,8 +330,8 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;0.1.0-draft&quot; ;
-    owl:imports &lt;https://spec.industrialontologies.org/ontology/202602/core/Core/&gt; ;
+    owl:versionInfo &quot;1.1.0-15-g4d17286&quot; ;
+    owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
     dcterms:contributor &quot;Cauã Antunes&quot; ;
@@ -343,8 +343,8 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-06-23&quot;^^xsd:date ;
-    apv:GlobalMinLanguageCoverage &quot;en pt&quot; ;
+    dcterms:modified &quot;2026-06-25&quot;^^xsd:date ;
+    apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label&quot; .
 
@@ -361,12 +361,14 @@
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
         owl:someValuesFrom :RapidDepressurizationProcess
     ] ;
-    rdfs:label &quot;rapid depressurization function&quot;@en .
+    rdfs:label &quot;rapid depressurization function&quot;@en ;
+    rdfs:label &quot;função de despressurização rápida&quot;@pt-br .
 
 ### Process type
 :RapidDepressurizationProcess rdf:type owl:Class ;
     rdfs:subClassOf iof-core:PlannedProcess ;
-    rdfs:label &quot;rapid depressurization process&quot;@en .
+    rdfs:label &quot;rapid depressurization process&quot;@en ;
+    rdfs:label &quot;processo de despressurização rápida&quot;@pt-br .
 
 :RapidDepressurizationProcess
     rdfs:subClassOf [
@@ -404,6 +406,7 @@
         )
     ] ;
     rdfs:label &quot;blow down valve&quot;@en ;
+    rdfs:label &quot;válvula de blow down&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A blow down valve is a valve that bears a designed function for rapid depressurization of high pressure systems.&quot;@en ;
     iof-av:naturalLanguageDefinition &quot;Uma válvula de blow down é uma válvula que possui uma função projetada para despressurização rápida de sistemas de alta pressão.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every blow down valve is a valve that has the function of rapid depressurization.&quot;@en ;
@@ -413,6 +416,7 @@
 
 :ValveBody rdf:type owl:Class ;
     rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;corpo de válvula&quot;@pt-br ;
     rdfs:label &quot;valve body&quot;@en .
 
 </div></div>
@@ -477,7 +481,7 @@
   <div class="rationale mt-2">Takes high pressure fluid and rapidly reduces pressure by discharging fluid to atmosphere or lower pressure system. The key characteristic is the rapid nature of the depressurization.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000097</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000097</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-23</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000097</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000097</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-25</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-06-26</td></tr></tbody></table></div>
 
     </div>
 
