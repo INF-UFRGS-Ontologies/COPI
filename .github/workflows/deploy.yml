@@ -100,7 +100,9 @@ jobs:
       # we get an explicit size-verified upload that fails CI on any mismatch.
       - name: Transfer OWL/TTL variants to copi/ folder
         run: |
-          pip install --quiet paramiko 2>/dev/null || pip3 install --quiet paramiko
+          python3 -m pip install --quiet paramiko 2>/dev/null \
+            || apt-get install -y -q python3-paramiko 2>/dev/null \
+            || sudo apt-get install -y -q python3-paramiko
           python3 - << 'PYEOF'
           import paramiko, os, sys
           host     = os.environ['DEPLOY_HOST']
