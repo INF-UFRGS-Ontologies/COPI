@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://www.inf.ufrgs.br/ontologies/copi/copi.owl#"
-     xml:base="https://www.inf.ufrgs.br/ontologies/copi/copi.owl"
+<rdf:RDF xmlns="https://www.inf.ufrgs.br/ontologies/copi/"
+     xml:base="https://www.inf.ufrgs.br/ontologies/copi/"
      xmlns:apv="http://inf.ufrgs.br/ontologies/apv#"
      xmlns:dce="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -15,7 +15,7 @@
      xmlns:schema="https://schema.org/"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
-    <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi.owl">
+    <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/">
         <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-26/copi.owl"/>
         <dcterms:contributor>Cauã Antunes</dcterms:contributor>
         <dcterms:contributor>Haroldo Rojas</dcterms:contributor>

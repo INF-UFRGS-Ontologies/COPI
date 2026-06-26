@@ -1,4 +1,4 @@
-@prefix : <https://www.inf.ufrgs.br/ontologies/copi/copi.ttl#> .
+@prefix : <https://www.inf.ufrgs.br/ontologies/copi/> .
 @prefix apv: <http://inf.ufrgs.br/ontologies/apv#> .
 @prefix dce: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -13,37 +13,37 @@
 @prefix schema: <https://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix annotation: <https://spec.industrialontologies.org/ontology/annotation/> .
-@base <https://www.inf.ufrgs.br/ontologies/copi/copi.ttl> .
+@base <https://www.inf.ufrgs.br/ontologies/copi/> .
 
-<https://www.inf.ufrgs.br/ontologies/copi/copi.ttl> rdf:type owl:Ontology ;
-                                                     owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-26/copi.ttl> ;
-                                                     dcterms:contributor "Cauã Antunes" ,
-                                                                         "Haroldo Rojas" ,
-                                                                         "Mara Abel" ,
-                                                                         "Rafael Petry" ,
-                                                                         "Régis Romeu" ;
-                                                     dcterms:created "2026-03-01"^^xsd:date ;
-                                                     dcterms:creator "Nicolau Oyhenard dos Santos" ;
-                                                     dcterms:description "BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants."@en ;
-                                                     dcterms:issued "2026-06-23"^^xsd:date ;
-                                                     dcterms:license <https://opensource.org/license/mit> ;
-                                                     dcterms:modified "2026-06-24"^^xsd:date ;
-                                                     dcterms:publisher "Universidade Federal do Rio Grande do Sul (UFRGS)" ;
-                                                     dcterms:source <http://purl.obolibrary.org/obo/bfo.owl> ,
-                                                                    <https://github.com/INF-UFRGS-Ontologies/COPI> ,
-                                                                    <https://spec.industrialontologies.org/ontology/core/Core/> ;
-                                                     dcterms:title "Core Ontology of Petroleum Installations (COPI)"@en ,
-                                                                   "Ontologia Core para Instalações de Petróleo (COPI)"@pt ;
-                                                     bibo:status "unstable" ;
-                                                     vann:preferredNamespacePrefix "copi" ;
-                                                     vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI ;
-                                                     owl:versionInfo "2026-06-15" ,
-                                                                     "2026-06-26" ;
-                                                     skos:scopeNote "Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia."@pt-br ,
-                                                                    "COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos."@pt-br ,
-                                                                    "COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en ,
-                                                                    "Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy."@en ;
-                                                     schema:logo <https://github.com/INF-UFRGS-Ontologies.png> .
+<https://www.inf.ufrgs.br/ontologies/copi/> rdf:type owl:Ontology ;
+                                             owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-06-26/copi.ttl> ;
+                                             dcterms:contributor "Cauã Antunes" ,
+                                                                 "Haroldo Rojas" ,
+                                                                 "Mara Abel" ,
+                                                                 "Rafael Petry" ,
+                                                                 "Régis Romeu" ;
+                                             dcterms:created "2026-03-01"^^xsd:date ;
+                                             dcterms:creator "Nicolau Oyhenard dos Santos" ;
+                                             dcterms:description "BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants."@en ;
+                                             dcterms:issued "2026-06-23"^^xsd:date ;
+                                             dcterms:license <https://opensource.org/license/mit> ;
+                                             dcterms:modified "2026-06-24"^^xsd:date ;
+                                             dcterms:publisher "Universidade Federal do Rio Grande do Sul (UFRGS)" ;
+                                             dcterms:source <http://purl.obolibrary.org/obo/bfo.owl> ,
+                                                            <https://github.com/INF-UFRGS-Ontologies/COPI> ,
+                                                            <https://spec.industrialontologies.org/ontology/core/Core/> ;
+                                             dcterms:title "Core Ontology of Petroleum Installations (COPI)"@en ,
+                                                           "Ontologia Core para Instalações de Petróleo (COPI)"@pt ;
+                                             bibo:status "unstable" ;
+                                             vann:preferredNamespacePrefix "copi" ;
+                                             vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI ;
+                                             owl:versionInfo "2026-06-15" ,
+                                                             "2026-06-26" ;
+                                             skos:scopeNote "Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia."@pt-br ,
+                                                            "COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos."@pt-br ,
+                                                            "COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en ,
+                                                            "Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy."@en ;
+                                             schema:logo <https://github.com/INF-UFRGS-Ontologies.png> .
 
 #################################################################
 #    Annotation properties
