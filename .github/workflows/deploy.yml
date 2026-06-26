@@ -116,6 +116,7 @@ jobs:
             SSHPASS="${FTP_PASS}" sshpass -e scp \
               -o StrictHostKeyChecking=no \
               -o UserKnownHostsFile=/dev/null \
+              -o HostKeyAlgorithms=+ssh-rsa,ssh-dss \
               "$f" "ontokg@${DEPLOY_HOST}:../ontologies/public_html/copi/${fname}" \
               || { echo "  FAILED (scp exited $?)"; exit 1; }
             echo "  OK"
