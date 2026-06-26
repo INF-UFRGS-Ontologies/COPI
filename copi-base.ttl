@@ -1910,7 +1910,8 @@ copi:COPI_0000066 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:PumpingProcess
                                   ] ;
                   rdfs:label "função de bombeamento"@pt-br ,
-                             "pumping function"@en .
+                             "pumping function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the transfer of mechanical energy to a fluid to increase its pressure, velocity, or both."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000067
@@ -1925,7 +1926,8 @@ copi:COPI_0000067 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:CompressionProcess
                                   ] ;
                   rdfs:label "compression function"@en ,
-                             "função de compressão"@pt-br .
+                             "função de compressão"@pt-br ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the increase of gas pressure by reducing its volume through mechanical work."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068
@@ -1956,7 +1958,8 @@ copi:COPI_0000069 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:AbsorptionProcess
                                   ] ;
                   rdfs:label "função de absorção de gás"@pt-br ,
-                             "gas absorption function"@en .
+                             "gas absorption function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the transfer of one or more gaseous components from a gas phase into a liquid absorbent phase."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070
@@ -1971,7 +1974,8 @@ copi:COPI_0000070 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:TemperatureSensingProcess
                                   ] ;
                   rdfs:label "função de sensoriamento de temperatura"@pt-br ,
-                             "temperature sensing function"@en .
+                             "temperature sensing function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the detection and conversion of thermal energy into a measurable signal representing the temperature of a process stream or component."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072
@@ -2086,7 +2090,8 @@ copi:COPI_0000074 rdf:type owl:Class ;
 copi:COPI_0000076 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
                   rdfs:label "sensor de temperatura"@pt-br ,
-                             "temperature sensor"@en .
+                             "temperature sensor"@en ;
+                  skos:definition "A material artifact that is part of a petroleum production installation and bears a temperature sensing function whose realization produces a signal representing the thermal state of a process stream or equipment component."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077
@@ -2392,7 +2397,8 @@ copi:COPI_0000087 rdf:type owl:Class ;
 copi:COPI_0000088 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
                   rdfs:label "isolation valve"@en ,
-                             "válvula de isolamento"@pt-br .
+                             "válvula de isolamento"@pt-br ;
+                  skos:definition "A material artifact that is part of a petroleum production installation and bears a binary flow control function whose realization allows or prevents fluid flow by opening or closing a passage in a pipeline or process line."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089
@@ -4305,7 +4311,8 @@ copi:COPI_0000162 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:BinaryFlowControlProcess
                                   ] ;
                   rdfs:label "binary flow control function"@en ,
-                             "função de controle binário de fluxo"@pt-br .
+                             "função de controle binário de fluxo"@pt-br ;
+                  skos:definition "A process-controlled flow function borne by petroleum production equipment whose realization constitutes the complete opening or closing of a flow path to allow or prevent fluid passage."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000163
@@ -4320,7 +4327,8 @@ copi:COPI_0000163 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:FlowRestrictionProcess
                                   ] ;
                   rdfs:label "flow restriction function"@en ,
-                             "função de restrição de fluxo"@pt-br .
+                             "função de restrição de fluxo"@pt-br ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the controlled reduction of fluid flow rate or pressure through a passage by introducing a fixed or variable resistance."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000164
@@ -4335,7 +4343,8 @@ copi:COPI_0000164 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:PressureReductionProcess
                                   ] ;
                   rdfs:label "função de redução de pressão"@pt-br ,
-                             "pressure reduction function"@en .
+                             "pressure reduction function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the reduction of fluid pressure from a higher upstream value to a controlled lower downstream value."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000165
@@ -4350,7 +4359,8 @@ copi:COPI_0000165 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:EmergencyShutDownProcess
                                   ] ;
                   rdfs:label "emergency shut down function"@en ,
-                             "função de parada de emergência"@pt-br .
+                             "função de parada de emergência"@pt-br ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the rapid automatic isolation of process flows or equipment in response to a detected hazardous condition."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000166
@@ -4365,7 +4375,8 @@ copi:COPI_0000166 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:RapidDepressurizationProcess
                                   ] ;
                   rdfs:label "função de despressurização rápida"@pt-br ,
-                             "rapid depressurization function"@en .
+                             "rapid depressurization function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the controlled and accelerated discharge of pressure from a process system to a safe destination in an emergency."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000168
@@ -4380,7 +4391,8 @@ copi:COPI_0000168 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:COPI_0000034
                                   ] ;
                   rdfs:label "função de ventilação de segurança"@pt-br ,
-                             "safety venting function"@en .
+                             "safety venting function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the controlled release of excess pressure from a process system to a safe destination to prevent equipment failure."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000169
@@ -4395,7 +4407,8 @@ copi:COPI_0000169 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:PressureReliefProcess
                                   ] ;
                   rdfs:label "função de alívio de pressão"@pt-br ,
-                             "pressure relief function"@en .
+                             "pressure relief function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the automatic opening of a flow path to discharge fluid when process pressure exceeds a defined set point."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000170
@@ -4410,7 +4423,8 @@ copi:COPI_0000170 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:SubsurfaceSafetyProcess
                                   ] ;
                   rdfs:label "função de segurança subsuperficial"@pt-br ,
-                             "subsurface safety function"@en .
+                             "subsurface safety function"@en ;
+                  skos:definition "A safety relief function borne by downhole petroleum production equipment whose realization constitutes the automatic closure of the wellbore flow path to prevent uncontrolled flow of reservoir fluids to surface."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000171
@@ -4425,7 +4439,8 @@ copi:COPI_0000171 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:FlowIndicationProcess
                                   ] ;
                   rdfs:label "flow indication function"@en ,
-                             "função de indicação de fluxo"@pt-br .
+                             "função de indicação de fluxo"@pt-br ;
+                  skos:definition "An indication function borne by petroleum production equipment whose realization constitutes the local or remote display of the instantaneous flow rate of a process stream."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000172
@@ -4440,7 +4455,8 @@ copi:COPI_0000172 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:LevelIndicationProcess
                                   ] ;
                   rdfs:label "função de indicação de nível"@pt-br ,
-                             "level indication function"@en .
+                             "level indication function"@en ;
+                  skos:definition "An indication function borne by petroleum production equipment whose realization constitutes the local or remote display of the fluid level within a vessel or container."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000173
@@ -4455,7 +4471,8 @@ copi:COPI_0000173 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:TemperatureIndicationProcess
                                   ] ;
                   rdfs:label "função de indicação de temperatura"@pt-br ,
-                             "temperature indication function"@en .
+                             "temperature indication function"@en ;
+                  skos:definition "An indication function borne by petroleum production equipment whose realization constitutes the local or remote display of the temperature of a process stream or equipment surface."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000174
@@ -4486,7 +4503,8 @@ copi:COPI_0000176 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:LevelDetectionProcess
                                   ] ;
                   rdfs:label "função de detecção de nível"@pt-br ,
-                             "level detection function"@en .
+                             "level detection function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the detection of the fluid level within a vessel reaching a defined high or low threshold."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000177
@@ -4501,7 +4519,8 @@ copi:COPI_0000177 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:PressureSensingProcess
                                   ] ;
                   rdfs:label "função de sensoriamento de pressão"@pt-br ,
-                             "pressure sensing function"@en .
+                             "pressure sensing function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the detection and conversion of fluid pressure into a measurable electrical or pneumatic signal."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000178
@@ -4516,7 +4535,8 @@ copi:COPI_0000178 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:PressureMeasurementProcess
                                   ] ;
                   rdfs:label "função de medição de pressão"@pt-br ,
-                             "pressure measurement function"@en .
+                             "pressure measurement function"@en ;
+                  skos:definition "An indication function borne by petroleum production equipment whose realization constitutes the measurement and display of the absolute or gauge pressure of a process stream."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000179
@@ -4547,7 +4567,8 @@ copi:COPI_0000180 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:HumidityMeasurementProcess
                                   ] ;
                   rdfs:label "função de medição de umidade"@pt-br ,
-                             "humidity measurement function"@en .
+                             "humidity measurement function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the measurement of the moisture content or relative humidity of a gas stream."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000181
@@ -4562,7 +4583,8 @@ copi:COPI_0000181 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:PhaseSequenceMeasurementProcess
                                   ] ;
                   rdfs:label "função de medição de sequência de fases"@pt-br ,
-                             "phase sequence measurement function"@en .
+                             "phase sequence measurement function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the measurement and verification of the phase sequence of an alternating-current electrical supply."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000183
@@ -4577,7 +4599,8 @@ copi:COPI_0000183 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:PositionLimitDetectionProcess
                                   ] ;
                   rdfs:label "função de detecção de limite de posição"@pt-br ,
-                             "position limit detection function"@en .
+                             "position limit detection function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the detection of the end-of-travel or open or closed position of a moving mechanical component."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000185
@@ -4592,7 +4615,8 @@ copi:COPI_0000185 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:FlowSignalTransmissionProcess
                                   ] ;
                   rdfs:label "flow signal transmission function"@en ,
-                             "função de transmissão de sinal de fluxo"@pt-br .
+                             "função de transmissão de sinal de fluxo"@pt-br ;
+                  skos:definition "A signal transmission function borne by petroleum production equipment whose realization constitutes the transmission of a standardised signal representing a measured flow rate to a remote control or monitoring system."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000186
@@ -4607,7 +4631,8 @@ copi:COPI_0000186 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:DifferentialPressureMeasurementAndTransmissionProcess
                                   ] ;
                   rdfs:label "differential pressure transmission function"@en ,
-                             "função de transmissão de pressão diferencial"@pt-br .
+                             "função de transmissão de pressão diferencial"@pt-br ;
+                  skos:definition "A pressure transmission function borne by petroleum production equipment whose realization constitutes the transmission of a standardised signal representing the differential pressure between two process points to a remote control or monitoring system."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000187
@@ -4622,7 +4647,8 @@ copi:COPI_0000187 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:LevelMeasurementAndTransmissionProcess
                                   ] ;
                   rdfs:label "função de medição e transmissão de nível"@pt-br ,
-                             "level measurement and transmission function"@en .
+                             "level measurement and transmission function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the measurement of fluid level within a vessel and the transmission of the corresponding signal to a remote control or monitoring system."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000188
@@ -4637,7 +4663,8 @@ copi:COPI_0000188 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:TemperatureMeasurementAndTransmissionProcess
                                   ] ;
                   rdfs:label "função de medição e transmissão de temperatura"@pt-br ,
-                             "temperature measurement and transmission function"@en .
+                             "temperature measurement and transmission function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the measurement of process temperature and the transmission of the corresponding signal to a remote control or monitoring system."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000189
@@ -4652,7 +4679,8 @@ copi:COPI_0000189 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:VibrationMeasurementAndTransmissionProcess
                                   ] ;
                   rdfs:label "função de transmissão de vibração"@pt-br ,
-                             "vibration transmission function"@en .
+                             "vibration transmission function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the measurement of mechanical vibration amplitude or frequency and the transmission of the corresponding signal to a remote monitoring system."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000190
@@ -4667,7 +4695,8 @@ copi:COPI_0000190 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:HeatingProcess
                                   ] ;
                   rdfs:label "função de aquecimento"@pt-br ,
-                             "heating function"@en .
+                             "heating function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the transfer of thermal energy to a process stream or vessel to raise its temperature."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000191
@@ -4682,7 +4711,8 @@ copi:COPI_0000191 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:GasMovementProcess
                                   ] ;
                   rdfs:label "função de movimentação de gás"@pt-br ,
-                             "gas movement function"@en .
+                             "gas movement function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the transport of gas from one location to another by imparting kinetic or pressure energy to the gas stream."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000192
@@ -4718,7 +4748,8 @@ copi:COPI_0000193 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:ElectricToMechanicalConversionProcess
                                   ] ;
                   rdfs:label "electric to mechanical conversion function"@en ,
-                             "função de conversão elétrico-mecânica"@pt-br .
+                             "função de conversão elétrico-mecânica"@pt-br ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the conversion of electrical energy into rotational or linear mechanical motion."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000194
@@ -4749,7 +4780,8 @@ copi:COPI_0000195 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:SeparationProcess
                                   ] ;
                   rdfs:label "função de separação"@pt-br ,
-                             "separation function"@en .
+                             "separation function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the physical separation of a heterogeneous fluid mixture into two or more phases or fractions by exploiting differences in density, surface tension, or other physical properties."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000196
@@ -4764,7 +4796,8 @@ copi:COPI_0000196 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:CoalescenceProcess
                                   ] ;
                   rdfs:label "coalescence function"@en ,
-                             "função de coalescência"@pt-br .
+                             "função de coalescência"@pt-br ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the aggregation of dispersed droplets of one phase within another to form larger droplets that can be more readily separated."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000197
@@ -4779,7 +4812,8 @@ copi:COPI_0000197 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:StorageProcess
                                   ] ;
                   rdfs:label "função de armazenamento"@pt-br ,
-                             "storage function"@en .
+                             "storage function"@en ;
+                  skos:definition "A containment function borne by petroleum production equipment whose realization constitutes the holding of a fluid or material within a contained space for a defined period."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000199
@@ -4811,7 +4845,8 @@ copi:COPI_0000200 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:ElectricalCurrentInterruptionProcess
                                   ] ;
                   rdfs:label "electrical current interruption function"@en ,
-                             "função de interrupção de corrente elétrica"@pt-br .
+                             "função de interrupção de corrente elétrica"@pt-br ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the opening of an electrical circuit to stop the flow of current, either under normal operating conditions or in response to a fault."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000201
