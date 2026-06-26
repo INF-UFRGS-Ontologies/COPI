@@ -96,43 +96,68 @@ jobs:
 
       # Dylan700/sftp-upload-action silently truncates existing files to 0 bytes when
       # Node.js 20 runs under the node24 enforcement that started June 2026. It does
-      # not error — it just produces 0-byte remote files.  Replaced with paramiko so
-      # we get an explicit size-verified upload that fails CI on any mismatch.
+      # not error — it just produces 0-byte remote files.
+      #
+      # Replaced with the sftp CLI (part of OpenSSH, always on the runner) using
+      # SSH_ASKPASS + SSH_ASKPASS_REQUIRE=force (OpenSSH ≥ 8.4) for non-interactive
+      # password auth — no pip, apt-get, or external actions required.
       - name: Transfer OWL/TTL variants to copi/ folder
         run: |
-          python3 -m pip install --quiet paramiko 2>/dev/null \
-            || apt-get install -y -q python3-paramiko 2>/dev/null \
-            || sudo apt-get install -y -q python3-paramiko
-          python3 - << 'PYEOF'
-          import paramiko, os, sys
-          host     = os.environ['DEPLOY_HOST']
-          password = os.environ['FTP_PASS']
-          remote_base = '../ontologies/public_html/copi'
-          stage_dir   = 'copi-stage'
-          ssh = paramiko.SSHClient()
-          ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-          ssh.connect(host, port=22, username='ontokg', password=password, timeout=30)
-          sftp = ssh.open_sftp()
-          failed = False
-          for fname in sorted(os.listdir(stage_dir)):
-              local_path  = os.path.join(stage_dir, fname)
-              remote_path = f'{remote_base}/{fname}'
-              local_size  = os.path.getsize(local_path)
-              print(f'Uploading {fname} ({local_size:,} bytes) …', flush=True)
-              sftp.put(local_path, remote_path)
-              remote_size = sftp.stat(remote_path).st_size
-              if remote_size != local_size:
-                  print(f'  FAIL: remote={remote_size:,} local={local_size:,}', flush=True)
-                  failed = True
-              else:
-                  print(f'  OK ({remote_size:,} bytes verified)', flush=True)
-          sftp.close()
-          ssh.close()
-          sys.exit(1 if failed else 0)
-          PYEOF
+          # Write the askpass helper
+          printf '#!/bin/sh\nprintf "%%s\n" "${SSH_PASSWORD}"\n' > /tmp/askpass.sh
+          chmod +x /tmp/askpass.sh
+
+          # Build sftp batch: put each staged file to the copi/ root
+          {
+            for f in copi-stage/*; do
+              fname=$(basename "$f")
+              local_bytes=$(stat -c%s "$f")
+              printf '# uploading %s (%s bytes)\n' "$fname" "$local_bytes"
+              printf 'put %s ../ontologies/public_html/copi/%s\n' "$f" "$fname"
+            done
+            echo "quit"
+          } > /tmp/sftp_batch.txt
+
+          echo "--- sftp batch commands ---"
+          grep -v '^#' /tmp/sftp_batch.txt
+
+          SSH_PASSWORD="${FTP_PASS}" \
+          SSH_ASKPASS=/tmp/askpass.sh \
+          SSH_ASKPASS_REQUIRE=force \
+          sftp -b /tmp/sftp_batch.txt \
+               -o StrictHostKeyChecking=no \
+               -o UserKnownHostsFile=/dev/null \
+               "ontokg@${DEPLOY_HOST}"
+
+          # Verify: list the remote copi/ directory so sizes are visible in CI logs
+          printf '#!/bin/sh\nprintf "%%s\n" "${SSH_PASSWORD}"\n' > /tmp/askpass.sh
+          printf 'ls -la ../ontologies/public_html/copi/\nquit\n' > /tmp/sftp_verify.txt
+          SSH_PASSWORD="${FTP_PASS}" \
+          SSH_ASKPASS=/tmp/askpass.sh \
+          SSH_ASKPASS_REQUIRE=force \
+          sftp -b /tmp/sftp_verify.txt \
+               -o StrictHostKeyChecking=no \
+               -o UserKnownHostsFile=/dev/null \
+               "ontokg@${DEPLOY_HOST}" | tee /tmp/remote_listing.txt
+
+          # Fail if any staged file appears as 0 bytes on the remote
+          failed=0
+          for f in copi-stage/*; do
+            fname=$(basename "$f")
+            local_bytes=$(stat -c%s "$f")
+            remote_entry=$(grep "$fname" /tmp/remote_listing.txt || true)
+            remote_bytes=$(echo "$remote_entry" | awk '{print $5}')
+            if [ -z "$remote_bytes" ] || [ "$remote_bytes" = "0" ]; then
+              printf 'FAIL: %s — remote is empty or missing (local=%s bytes)\n' "$fname" "$local_bytes"
+              failed=1
+            else
+              printf 'OK:   %s — %s bytes\n' "$fname" "$remote_bytes"
+            fi
+          done
+          exit $failed
         env:
-          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           FTP_PASS: ${{ secrets.FTP }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
 
       - name: Transfer versioned snapshot to copi/releases/
         uses: Dylan700/sftp-upload-action@50ed7273493353a60dace713957c36b02dd87bec  # v1.2.3 node20; confirmed working in PR #5
