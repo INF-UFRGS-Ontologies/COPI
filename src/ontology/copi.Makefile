@@ -16,14 +16,15 @@ $(ONT)-base.owl: $(EDIT_PREPROCESSED) $(OTHER_SRC) $(IMPORT_FILES)
 		--ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		--output $@.tmp.owl && mv $@.tmp.owl $@
 
-# Override copi.owl and copi.ttl IRIs: use $(ONTBASE)/copi.{owl,ttl}
-# = https://www.inf.ufrgs.br/ontologies/copi/copi.owl  (ODR-015 IRI canonical)
+# Canonical ontology IRI = namespace URI (without filename suffix)
+# = https://www.inf.ufrgs.br/ontologies/copi/
+# index.php handles content negotiation at this URI.
 $(ONT).owl: $(ONT)-full.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
 
 $(ONT).ttl: $(ONT).owl
-	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f ttl -o $@.tmp.ttl && mv $@.tmp.ttl $@
 
 # Scoped HermiT guard target (ODR-015)
