@@ -1,4 +1,4 @@
-# COPI IRI map: readable → numeric (378 entries, next free COPI_0000379)
+# COPI IRI map: readable → numeric (380 entries, next free COPI_0000381)
 # Generated 2026-06-25 — extended with 174 new equipment class IRIs (COPI_0000205–COPI_0000378)
 old_iri	new_iri
 https://www.inf.ufrgs.br/ontologies/copi/Operation	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001
@@ -379,3 +379,5 @@ https://www.inf.ufrgs.br/ontologies/copi/Well	https://www.inf.ufrgs.br/ontologie
 https://www.inf.ufrgs.br/ontologies/copi/Wellbore	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000376
 https://www.inf.ufrgs.br/ontologies/copi/Wellhead	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377
 https://www.inf.ufrgs.br/ontologies/copi/Wireline	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000378
+https://www.inf.ufrgs.br/ontologies/copi/Absorber	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000379
+https://www.inf.ufrgs.br/ontologies/copi/TemperatureElement	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000380
