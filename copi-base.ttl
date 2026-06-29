@@ -2084,10 +2084,18 @@ copi:COPI_0000086 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087
 copi:COPI_0000087 rdf:type owl:Class ;
-                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
-                  rdfs:label "control valve"@en ,
-                             "válvula de controle"@pt-br ;
-                  skos:exactMatch copi:COPI_0000087 .
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/Assembly> ,
+                                  copi:COPI_0000077 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
+                                    owl:someValuesFrom copi:COPI_0000027
+                                  ] ;
+                  rdfs:label "control valve"@en ;
+                  skos:definition "A control valve is a valve that modulates flow rate in response to external control signals by means of an actuator-driven closure element."@en ;
+                  skos:exactMatch copi:COPI_0000087 ;
+                  annotation:isPrimitive "true"^^xsd:boolean ;
+                  annotation:naturalLanguageDefinition "A control valve is a valve that modulates flow rate in response to external control signals by means of an actuator-driven closure element."@en ,
+                                                       "definição teste"@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000088
@@ -2245,12 +2253,7 @@ copi:COPI_0000093 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094
 copi:COPI_0000094 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000023 ,
-                                  copi:COPI_0000087 ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                    owl:someValuesFrom copi:COPI_0000027
-                                  ] ;
+                  rdfs:subClassOf copi:COPI_0000087 ;
                   rdfs:label "ball control valve"@en ,
                              "válvula de controle esférica"@pt-br ;
                   skos:definition "A ball control valve is a control valve that uses a spherical ball closure element with rotary actuation to modulate fluid flow in response to control signals."@en ;
@@ -2331,15 +2334,10 @@ copi:COPI_0000098 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099
 copi:COPI_0000099 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000023 ,
-                                  copi:COPI_0000087 ,
+                  rdfs:subClassOf copi:COPI_0000087 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000207
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                    owl:someValuesFrom copi:COPI_0000027
                                   ] ;
                   rdfs:label "butterfly control valve"@en ,
                              "válvula borboleta de controle"@pt-br ;
@@ -2428,15 +2426,10 @@ copi:COPI_0000103 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104
 copi:COPI_0000104 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000023 ,
-                                  copi:COPI_0000087 ,
+                  rdfs:subClassOf copi:COPI_0000087 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000207
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                    owl:someValuesFrom copi:COPI_0000027
                                   ] ;
                   rdfs:label "choke control valve"@en ,
                              "válvula de controle de choke"@pt-br ;
@@ -2793,12 +2786,7 @@ copi:COPI_0000118 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119
 copi:COPI_0000119 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000023 ,
-                                  copi:COPI_0000087 ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                    owl:someValuesFrom copi:COPI_0000027
-                                  ] ;
+                  rdfs:subClassOf copi:COPI_0000087 ;
                   rdfs:label "gate control valve"@en ,
                              "válvula de controle tipo gaveta"@pt-br ;
                   skos:definition "A gate control valve is a control valve that uses a gate or wedge closure element moving perpendicular to the flow path to modulate fluid flow in response to control signals."@en ;
@@ -2848,12 +2836,7 @@ copi:COPI_0000121 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122
 copi:COPI_0000122 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000023 ,
-                                  copi:COPI_0000087 ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                    owl:someValuesFrom copi:COPI_0000027
-                                  ] ;
+                  rdfs:subClassOf copi:COPI_0000087 ;
                   rdfs:label "globe control valve"@en ,
                              "válvula de controle globo"@pt-br ;
                   skos:definition "A globe control valve is a control valve that has a globe-shaped body and uses linear motion closure mechanism to modulate fluid flow in response to process control signals."@en ;
@@ -3106,8 +3089,7 @@ copi:COPI_0000135 rdf:type owl:Class ;
                                                            ) ;
                                         rdf:type owl:Class
                                       ] ;
-                  rdfs:subClassOf copi:COPI_0000023 ,
-                                  copi:COPI_0000087 ,
+                  rdfs:subClassOf copi:COPI_0000087 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000162

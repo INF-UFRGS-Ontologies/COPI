@@ -10287,10 +10287,20 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">control valve</rdfs:label>
-        <rdfs:label xml:lang="pt-br">válvula de controle</rdfs:label>
+        <skos:definition xml:lang="en">A control valve is a valve that modulates flow rate in response to external control signals by means of an actuator-driven closure element.</skos:definition>
         <skos:exactMatch rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A control valve is a valve that modulates flow rate in response to external control signals by means of an actuator-driven closure element.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">definição teste</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -10484,14 +10494,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094">
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">ball control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle esférica</rdfs:label>
         <skos:definition xml:lang="en">A ball control valve is a control valve that uses a spherical ball closure element with rotary actuation to modulate fluid flow in response to control signals.</skos:definition>
@@ -10592,18 +10595,11 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099">
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">butterfly control valve</rdfs:label>
@@ -10715,18 +10711,11 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104">
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">choke control valve</rdfs:label>
@@ -11193,14 +11182,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119">
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">gate control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle tipo gaveta</rdfs:label>
         <skos:definition xml:lang="en">A gate control valve is a control valve that uses a gate or wedge closure element moving perpendicular to the flow path to modulate fluid flow in response to control signals.</skos:definition>
@@ -11263,14 +11245,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122">
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">globe control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle globo</rdfs:label>
         <skos:definition xml:lang="en">A globe control valve is a control valve that has a globe-shaped body and uses linear motion closure mechanism to modulate fluid flow in response to process control signals.</skos:definition>
@@ -11600,7 +11575,6 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
         <rdfs:subClassOf>
             <owl:Restriction>
