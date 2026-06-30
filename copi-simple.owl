@@ -79,6 +79,12 @@
     
 
 
+    <!-- http://inf.ufrgs.br/ontologies/apv#MinAnnotationLength -->
+
+    <owl:AnnotationProperty rdf:about="http://inf.ufrgs.br/ontologies/apv#MinAnnotationLength"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/contributor -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
@@ -568,6 +574,7 @@ HOWEVER: While acronyms and other abbreviations may be provided as annotations t
     <!-- https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition -->
 
     <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition">
+        <apv:MinAnnotationLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</apv:MinAnnotationLength>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en-us">natural language definition</rdfs:label>
         <skos:definition xml:lang="en-us">definition written in plain text for human understanding</skos:definition>

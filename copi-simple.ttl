@@ -63,6 +63,10 @@ apv:ClassURIFormationRule rdf:type owl:AnnotationProperty .
 apv:GlobalMinLanguageCoverage rdf:type owl:AnnotationProperty .
 
 
+###  http://inf.ufrgs.br/ontologies/apv#MinAnnotationLength
+apv:MinAnnotationLength rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/elements/1.1/contributor
 dc:contributor rdf:type owl:AnnotationProperty .
 
@@ -423,6 +427,7 @@ annotation:maturity rdf:type owl:AnnotationProperty ;
 
 ###  https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition
 annotation:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
+                                     apv:MinAnnotationLength 20 ;
                                      rdfs:isDefinedBy "https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/"^^xsd:anyURI ;
                                      rdfs:label "natural language definition"@en-us ;
                                      skos:definition "definition written in plain text for human understanding"@en-us ;
