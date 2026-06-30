@@ -37,7 +37,7 @@ Annotation(dcterms:title "Ontologia Core para Instalações de Petróleo (COPI)"
 Annotation(vann:preferredNamespacePrefix "copi")
 Annotation(vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI)
 Annotation(bibo:status "unstable")
-Annotation(owl:versionInfo "2026-06-26")
+Annotation(owl:versionInfo "2026-06-29")
 Annotation(dcterms:bibliographicCitation "Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press.")
 Annotation(dcterms:source <http://purl.obolibrary.org/obo/bfo.owl>)
 Annotation(dcterms:source <https://spec.industrialontologies.org/ontology/core/Core/>)
