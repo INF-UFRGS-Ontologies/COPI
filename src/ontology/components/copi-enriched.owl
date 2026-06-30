@@ -2251,7 +2251,7 @@
     <dcterms:publisher xml:lang="en">Universidade Federal do Rio Grande do Sul (UFRGS)</dcterms:publisher>
     <apv:GlobalMinLanguageCoverage>en pt-br</apv:GlobalMinLanguageCoverage>
     <dcterms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants, developed using the four-step RDL enrichment method.</dcterms:description>
-    <apv:ClassMinAnnotationCoverage>rdfs:label</apv:ClassMinAnnotationCoverage>
+    <apv:ClassMinAnnotationCoverage>rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition</apv:ClassMinAnnotationCoverage>
     <apv:ClassURIFormationRule>https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)</apv:ClassURIFormationRule>
     <owl:versionInfo>1.1.0-83-g4e6247c</owl:versionInfo>
     <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
@@ -13050,4 +13050,7 @@
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
     <rdf:rest rdf:nodeID="nf266522652ef4baaa16832c599df7f92b467"/>
   </rdf:Description>
+  <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition">
+    <apv:MinAnnotationLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</apv:MinAnnotationLength>
+  </owl:AnnotationProperty>
 </rdf:RDF>
