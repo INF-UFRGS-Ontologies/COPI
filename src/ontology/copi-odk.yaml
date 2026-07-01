@@ -6,7 +6,7 @@ description: "A domain-core ontology for petroleum production plants developed u
   aligning with industrial standards including ISO 15926-4, ISO 14224, CFIHOS, and DEXPI 
   to support interoperability throughout the asset lifecycle."
 uribase: https://www.inf.ufrgs.br/ontologies
-license: https://opensource.org/license/mit
+license: https://creativecommons.org/licenses/by/4.0/
 creators:
   - Nicolau Oyhenard dos Santos
 contributors:

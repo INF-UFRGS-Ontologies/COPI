@@ -27,10 +27,10 @@
                                              dcterms:creator "Nicolau Oyhenard dos Santos" ;
                                              dcterms:description "BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants."@en ;
                                              dcterms:issued "2026-06-23"^^xsd:date ;
-                                             dcterms:license <https://spdx.org/licenses/MIT.html> ;
+                                             dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
                                              dcterms:modified "2026-06-26"^^xsd:date ;
                                              dcterms:publisher "Universidade Federal do Rio Grande do Sul (UFRGS)" ;
-                                             dcterms:rights "Copyright © 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Available under the MIT License." ;
+                                             dcterms:rights "Copyright © 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Available under the CC BY 4.0 License." ;
                                              dcterms:source <http://purl.obolibrary.org/obo/bfo.owl> ,
                                                             <https://github.com/INF-UFRGS-Ontologies/COPI> ,
                                                             <https://spec.industrialontologies.org/ontology/core/Core/> ;

@@ -27,10 +27,10 @@
         <terms:creator>Nicolau Oyhenard dos Santos</terms:creator>
         <terms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants.</terms:description>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-23</terms:issued>
-        <terms:license rdf:resource="https://spdx.org/licenses/MIT.html"/>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-26</terms:modified>
         <terms:publisher>Universidade Federal do Rio Grande do Sul (UFRGS)</terms:publisher>
-        <terms:rights>Copyright © 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Available under the MIT License.</terms:rights>
+        <terms:rights>Copyright © 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Available under the CC BY 4.0 License.</terms:rights>
         <terms:source rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <terms:source rdf:resource="https://github.com/INF-UFRGS-Ontologies/COPI"/>
         <terms:source rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/"/>

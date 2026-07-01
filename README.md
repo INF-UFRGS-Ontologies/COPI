@@ -1,7 +1,7 @@
 # COPI — Core Ontology of Petroleum Installations
 
 **IRI:** `https://www.inf.ufrgs.br/ontologies/copi`  
-**License:** [MIT](LICENSE)
+**License:** [CC BY 4.0](LICENSE)
 
 COPI is a domain-core ontology for petroleum production plants. It provides a domain-level semantic backbone by specializing [BFO 2020](https://github.com/bfo-ontology/bfo-2020) and [IOF-Core](https://spec.industrialontologies.org/ontology/202601/core/Core/), supporting semantic interoperability across heterogeneous industrial standards and datasets.
 
