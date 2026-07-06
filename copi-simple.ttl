@@ -3377,25 +3377,13 @@ copi:COPI_0000090 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:PressureContainmentFunction
                                   ] ;
-                  terms:source "ODR-018" ;
-                  rdfs:comment "A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress."@en ,
-                               "Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante."@pt-br ;
-                  rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "pressure vessel"@en ,
                              "vaso de pressão"@pt-br ;
                   skos:definition "A pressure vessel is a vessel that bears a pressure containment function, designed to safely withstand internal and/or external pressure loads."@en ;
-                  annotation:firstOrderLogicAxiom "∀x (PressureVessel(x) → Assembly(x))" ,
-                                                  "∀x (PressureVessel(x) ↔ (Vessel(x) ∧ ∃f (PressureContainmentFunction(f) ∧ bearerOf(x,f))))"@en ;
-                  annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress."@en ,
-                                                       "A pressure vessel is a vessel that bears a pressure containment function, designed to safely withstand internal and/or external pressure loads."@en ,
-                                                       "Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante."@pt-br ,
+                  annotation:firstOrderLogicAxiom "∀x (PressureVessel(x) ↔ (Vessel(x) ∧ ∃f (PressureContainmentFunction(f) ∧ bearerOf(x,f))))"@en ;
+                  annotation:naturalLanguageDefinition "A pressure vessel is a vessel that bears a pressure containment function, designed to safely withstand internal and/or external pressure loads."@en ,
                                                        "Um vaso de pressão é um vaso que possui uma função de contenção sob pressão, projetado para suportar com segurança cargas de pressão internas e/ou externas."@pt-br ;
-                  annotation:primitiveRationale "A diferença estrutural de contenção de pressão (casco classificado, especificação de tensão mecânica) é expressa informalmente na NLD; OWL carrega apenas o gênero (Assembly). Axiomas estruturais são adiados ao Incremento 2b."@pt-br ,
-                                                "The pressure-containing structural differentia (rated shell, mechanical stress specification) is expressed informally in the NLD; OWL carries only the genus (Assembly). Structural axioms are deferred to Incremento 2b."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every pressure vessel is a vessel that has a pressure containment function, and every vessel with a pressure containment function is a pressure vessel."@en ,
-                                                            "if x is a 'pressure vessel' then x is an 'assembly'"@en ,
-                                                            "se x é um 'vaso de pressão', então x é um 'conjunto'"@pt-br .
+                  annotation:semiFormalNaturalLanguageAxiom "Every pressure vessel is a vessel that has a pressure containment function, and every vessel with a pressure containment function is a pressure vessel."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091
@@ -3434,25 +3422,13 @@ copi:COPI_0000092 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000068
                                   ] ;
-                  terms:source "ODR-018, ODR-019" ;
-                  rdfs:comment "A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing."@en ,
-                               "Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos."@pt-br ;
-                  rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "heat exchanger"@en ,
                              "trocador de calor"@pt-br ;
                   skos:definition "A heat exchanger is a pressure vessel that bears the designed function of transferring thermal energy between two or more fluid streams while maintaining their separation."@en ;
-                  annotation:firstOrderLogicAxiom "∀x (HeatExchanger(x) → PressureVessel(x) ∧ ∃s(SolidHeatTransferSurface(s) ∧ hasComponentPartAtAllTimes(x,s)))" ,
-                                                  "∀x (HeatExchanger(x) ↔ (Assembly(x) ∧ ∃f(HeatTransferFunction(f) ∧ bearerOf(x,f))))"@en ;
-                  annotation:isPrimitive "true"^^xsd:boolean ;
+                  annotation:firstOrderLogicAxiom "∀x (HeatExchanger(x) ↔ (Assembly(x) ∧ ∃f(HeatTransferFunction(f) ∧ bearerOf(x,f))))"@en ;
                   annotation:naturalLanguageDefinition "A heat exchanger is a pressure vessel that bears the designed function of transferring thermal energy between two or more fluid streams while maintaining their separation."@en ,
-                                                       "A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing."@en ,
-                                                       "Um trocador de calor é um vaso de pressão que possui a função projetada de transferir energia térmica entre duas ou mais correntes de fluido mantendo sua separação."@pt-br ,
-                                                       "Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos."@pt-br ;
-                  annotation:primitiveRationale "SolidHeatTransferSurface is a FOL-only predicate (no OWL IRI), analogous to Fluid and sameSubstance in operation axioms; OWL carries only the genus (PressureVessel). The two-circuit-separation and no-mixing differentia are in the NLD. Full equivalentClass axiomatisation is deferred to Incremento 2c."@en ,
-                                                "SolidHeatTransferSurface é um predicado somente-FOL (sem IRI OWL), análogo a Fluid e sameSubstance nos axiomas de operação; OWL carrega apenas o gênero (PressureVessel). A differentia de separação de dois circuitos e não-mistura está na NLD. Axiomatização plena equivalentClass adiada ao Incremento 2c."@pt-br ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every heat exchanger is an assembly that has the function of heat transfer and has component parts including heat transfer surfaces and fluid passages for separated streams."@en ,
-                                                            "if x is a 'heat exchanger' then x is a 'pressure vessel' that has a 'solid heat-transfer surface' as a component part at all times"@en ,
-                                                            "se x é um 'trocador de calor', então x é um 'vaso de pressão' que tem uma 'superfície sólida de transferência de calor' como parte componente em todo momento"@pt-br .
+                                                       "Um trocador de calor é um vaso de pressão que possui a função projetada de transferir energia térmica entre duas ou mais correntes de fluido mantendo sua separação."@pt-br ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every heat exchanger is an assembly that has the function of heat transfer and has component parts including heat transfer surfaces and fluid passages for separated streams."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000093

@@ -2849,25 +2849,13 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentFunction"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dcterms:source>ODR-018</dcterms:source>
-        <rdfs:comment xml:lang="en">A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress.</rdfs:comment>
-        <rdfs:comment xml:lang="pt-br">Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">pressure vessel</rdfs:label>
         <rdfs:label xml:lang="pt-br">vaso de pressão</rdfs:label>
         <skos:definition xml:lang="en">A pressure vessel is a vessel that bears a pressure containment function, designed to safely withstand internal and/or external pressure loads.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (PressureVessel(x) ↔ (Vessel(x) ∧ ∃f (PressureContainmentFunction(f) ∧ bearerOf(x,f))))</annotation:firstOrderLogicAxiom>
-        <annotation:firstOrderLogicAxiom>∀x (PressureVessel(x) → Assembly(x))</annotation:firstOrderLogicAxiom>
-        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A closed assembly designed to hold fluids at a pressure substantially different from ambient, with a shell rated to withstand the resulting mechanical stress.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="en">A pressure vessel is a vessel that bears a pressure containment function, designed to safely withstand internal and/or external pressure loads.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um conjunto fechado projetado para conter fluidos a uma pressão substancialmente diferente da ambiente, com casco classificado para suportar a tensão mecânica resultante.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">Um vaso de pressão é um vaso que possui uma função de contenção sob pressão, projetado para suportar com segurança cargas de pressão internas e/ou externas.</annotation:naturalLanguageDefinition>
-        <annotation:primitiveRationale xml:lang="pt-br">A diferença estrutural de contenção de pressão (casco classificado, especificação de tensão mecânica) é expressa informalmente na NLD; OWL carrega apenas o gênero (Assembly). Axiomas estruturais são adiados ao Incremento 2b.</annotation:primitiveRationale>
-        <annotation:primitiveRationale xml:lang="en">The pressure-containing structural differentia (rated shell, mechanical stress specification) is expressed informally in the NLD; OWL carries only the genus (Assembly). Structural axioms are deferred to Incremento 2b.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every pressure vessel is a vessel that has a pressure containment function, and every vessel with a pressure containment function is a pressure vessel.</annotation:semiFormalNaturalLanguageAxiom>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">if x is a &apos;pressure vessel&apos; then x is an &apos;assembly&apos;</annotation:semiFormalNaturalLanguageAxiom>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="pt-br">se x é um &apos;vaso de pressão&apos;, então x é um &apos;conjunto&apos;</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
 
@@ -2938,25 +2926,13 @@
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dcterms:source>ODR-018, ODR-019</dcterms:source>
-        <rdfs:comment xml:lang="en">A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing.</rdfs:comment>
-        <rdfs:comment xml:lang="pt-br">Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">heat exchanger</rdfs:label>
         <rdfs:label xml:lang="pt-br">trocador de calor</rdfs:label>
         <skos:definition xml:lang="en">A heat exchanger is a pressure vessel that bears the designed function of transferring thermal energy between two or more fluid streams while maintaining their separation.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (HeatExchanger(x) ↔ (Assembly(x) ∧ ∃f(HeatTransferFunction(f) ∧ bearerOf(x,f))))</annotation:firstOrderLogicAxiom>
-        <annotation:firstOrderLogicAxiom>∀x (HeatExchanger(x) → PressureVessel(x) ∧ ∃s(SolidHeatTransferSurface(s) ∧ hasComponentPartAtAllTimes(x,s)))</annotation:firstOrderLogicAxiom>
-        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A heat exchanger is a pressure vessel that bears the designed function of transferring thermal energy between two or more fluid streams while maintaining their separation.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="en">A pressure vessel in which two fluid circuits are separated by a solid heat-transfer surface, so that thermal energy passes between them without the circuits mixing.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">Um trocador de calor é um vaso de pressão que possui a função projetada de transferir energia térmica entre duas ou mais correntes de fluido mantendo sua separação.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um vaso de pressão no qual dois circuitos de fluido são separados por uma superfície sólida de transferência de calor, de modo que energia térmica passa entre eles sem mistura dos circuitos.</annotation:naturalLanguageDefinition>
-        <annotation:primitiveRationale xml:lang="en">SolidHeatTransferSurface is a FOL-only predicate (no OWL IRI), analogous to Fluid and sameSubstance in operation axioms; OWL carries only the genus (PressureVessel). The two-circuit-separation and no-mixing differentia are in the NLD. Full equivalentClass axiomatisation is deferred to Incremento 2c.</annotation:primitiveRationale>
-        <annotation:primitiveRationale xml:lang="pt-br">SolidHeatTransferSurface é um predicado somente-FOL (sem IRI OWL), análogo a Fluid e sameSubstance nos axiomas de operação; OWL carrega apenas o gênero (PressureVessel). A differentia de separação de dois circuitos e não-mistura está na NLD. Axiomatização plena equivalentClass adiada ao Incremento 2c.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every heat exchanger is an assembly that has the function of heat transfer and has component parts including heat transfer surfaces and fluid passages for separated streams.</annotation:semiFormalNaturalLanguageAxiom>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">if x is a &apos;heat exchanger&apos; then x is a &apos;pressure vessel&apos; that has a &apos;solid heat-transfer surface&apos; as a component part at all times</annotation:semiFormalNaturalLanguageAxiom>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="pt-br">se x é um &apos;trocador de calor&apos;, então x é um &apos;vaso de pressão&apos; que tem uma &apos;superfície sólida de transferência de calor&apos; como parte componente em todo momento</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
 
