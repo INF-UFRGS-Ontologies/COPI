@@ -16,7 +16,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-full.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-07-01/copi-full.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-07-06/copi-full.owl"/>
         <dcterms:bibliographicCitation>Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press.</dcterms:bibliographicCitation>
         <dcterms:contributor>Cauã Antunes</dcterms:contributor>
         <dcterms:contributor>Haroldo Rojas</dcterms:contributor>
@@ -40,7 +40,7 @@
         <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>
         <owl:versionInfo>2026-06-29</owl:versionInfo>
-        <owl:versionInfo>2026-07-01</owl:versionInfo>
+        <owl:versionInfo>2026-07-06</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
@@ -9282,13 +9282,28 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/ContainmentProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/ContainmentProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a MaterialContainment process; the function of holding a fluid or solid material within a bounded volume.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">containment function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de contenção</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A DesignedFunction that is realized in a ContainmentProcess and that consists in the capacity to enclose and contain material within a defined boundary.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a MaterialContainment process; the function of holding a fluid or solid material within a bounded volume.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">OWL gives only necessary conditions; the some+only pair characterises the function for inference.</annotation:primitiveRationale>
     </owl:Class>
@@ -9308,13 +9323,28 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/FlowControlProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/FlowControlProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a FlowControl process; the function of modulating, regulating, or blocking fluid flow through a conduit or vessel connection.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">flow control function</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de controle de fluxo</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A DesignedFunction that is realized in a FlowControlProcess and that consists in the capacity to regulate, direct, or restrict the flow of fluids through a system by means of movable internal components.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a FlowControl process; the function of modulating, regulating, or blocking fluid flow through a conduit or vessel connection.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">OWL gives only necessary conditions; the some+only pair characterises the function for inference.</annotation:primitiveRationale>
     </owl:Class>
@@ -9338,7 +9368,10 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a ProcessControlledFlowProcess; the function of opening or shutting a flow path in response to an external process control signal.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="pt-br">função de controle de fluxo de processo</rdfs:label>
+        <rdfs:label xml:lang="en">process controlled flow function</rdfs:label>
         <rdfs:label xml:lang="en">process-controlled flow function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a ProcessControlledFlowProcess; the function of opening or shutting a flow path in response to an external process control signal.</annotation:naturalLanguageDefinition>
@@ -9350,11 +9383,11 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/IndicationProcess"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -9363,8 +9396,16 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                 <owl:allValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/IndicationProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a Measurement process; the function of converting a physical quantity into a locally readable display at the point of measurement.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="pt-br">função de indicação</rdfs:label>
         <rdfs:label xml:lang="en">indication function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a Measurement process; the function of converting a physical quantity into a locally readable display at the point of measurement.</annotation:naturalLanguageDefinition>
@@ -9386,11 +9427,25 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/InstrumentationProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
                 <owl:allValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/InstrumentationProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a sensing or measurement process; the function of detecting and converting a physical quantity into a usable signal or reading.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="pt-br">função de instrumentação</rdfs:label>
         <rdfs:label xml:lang="en">instrumentation function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a sensing or measurement process; the function of detecting and converting a physical quantity into a usable signal or reading.</annotation:naturalLanguageDefinition>
@@ -9416,7 +9471,9 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a SignalTransmissionProcess; the function of converting a sensed physical quantity into a standardized electrical or pneumatic signal for remote reading, recording, or control.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="pt-br">função de transmissão de sinal</rdfs:label>
         <rdfs:label xml:lang="en">signal transmission function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a SignalTransmissionProcess; the function of converting a sensed physical quantity into a standardized electrical or pneumatic signal for remote reading, recording, or control.</annotation:naturalLanguageDefinition>
@@ -9438,11 +9495,25 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PressureSignalTransmissionProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000036"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PressureSignalTransmissionProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function specialized to pressure measurement and transmission; the function of converting a sensed pressure value into a proportional standardized signal for remote reading or control.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="pt-br">função de transmissão de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure transmission function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function specialized to pressure measurement and transmission; the function of converting a sensed pressure value into a proportional standardized signal for remote reading or control.</annotation:naturalLanguageDefinition>
@@ -9468,7 +9539,9 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a SafetyReliefProcess; the function of preventing over-pressure conditions by automatically relieving fluid at a pre-set pressure set-point, or of isolating wellbore flow when conditions are unsafe.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="pt-br">função de alívio de segurança</rdfs:label>
         <rdfs:label xml:lang="en">safety relief function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a SafetyReliefProcess; the function of preventing over-pressure conditions by automatically relieving fluid at a pre-set pressure set-point, or of isolating wellbore flow when conditions are unsafe.</annotation:naturalLanguageDefinition>
@@ -9482,8 +9555,11 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000033">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:comment xml:lang="en">A FlowControl process in which flow through a conduit is opened, closed, or throttled in response to an external control signal from a process control system.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="en">process controlled flow process</rdfs:label>
         <rdfs:label xml:lang="en">process-controlled flow process</rdfs:label>
+        <rdfs:label xml:lang="pt-br">processo de controle de fluxo de processo</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A FlowControl process in which flow through a conduit is opened, closed, or throttled in response to an external control signal from a process control system.</annotation:naturalLanguageDefinition>
     </owl:Class>
@@ -9495,7 +9571,9 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000034">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:comment xml:lang="en">A FlowControl process in which excess pressure is relieved by opening a flow path at a pre-set set-point, or in which wellbore flow is isolated to prevent blowout.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="pt-br">processo de alívio de segurança</rdfs:label>
         <rdfs:label xml:lang="en">safety relief process</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A FlowControl process in which excess pressure is relieved by opening a flow path at a pre-set set-point, or in which wellbore flow is isolated to prevent blowout.</annotation:naturalLanguageDefinition>
@@ -9508,7 +9586,9 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000035">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:comment xml:lang="en">A MeasurementProcess (hence planned) in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="pt-br">processo de transmissão de sinal</rdfs:label>
         <rdfs:label xml:lang="en">signal transmission process</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A MeasurementProcess (hence planned) in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system.</annotation:naturalLanguageDefinition>
@@ -9521,8 +9601,10 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000036">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:comment xml:lang="en">A MeasurementProcess (hence planned) in which differential or gauge pressure is sensed, converted to a proportional standardized signal, and transmitted to a remote reading or control device.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">pressure measurement and transmission process</rdfs:label>
+        <rdfs:label xml:lang="pt-br">processo de medição e transmissão de pressão</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A MeasurementProcess (hence planned) in which differential or gauge pressure is sensed, converted to a proportional standardized signal, and transmitted to a remote reading or control device.</annotation:naturalLanguageDefinition>
     </owl:Class>
@@ -9581,10 +9663,13 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000041 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000041">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000038"/>
         <rdfs:comment xml:lang="en">A liquid phase whose function is to absorb target components from a gas stream by physical or chemical means.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">absorbent phase</rdfs:label>
+        <rdfs:label xml:lang="pt-br">fase absorvente</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A liquid phase whose function is to absorb target components from a gas stream by physical or chemical means.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -9595,7 +9680,9 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000042">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000041"/>
         <rdfs:comment xml:lang="en">An absorbent phase that has absorbed target components from a gas stream and is loaded for regeneration.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="pt-br">absorvente rico</rdfs:label>
         <rdfs:label xml:lang="en">rich absorbent</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">An absorbent phase that has absorbed target components from a gas stream and is loaded for regeneration.</annotation:naturalLanguageDefinition>
     </owl:Class>
@@ -9605,10 +9692,13 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000043 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000043">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
         <rdfs:comment xml:lang="en">A fluid from which target components have been removed or transferred during a treatment process.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">depleted fluid</rdfs:label>
+        <rdfs:label xml:lang="pt-br">fluido esgotado</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A fluid from which target components have been removed or transferred during a treatment process.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -9617,10 +9707,13 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000044 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000044">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
         <rdfs:comment xml:lang="en">A fluid portion consisting of two or more components or phases that have not yet been fully separated.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">fluid mixture</rdfs:label>
+        <rdfs:label xml:lang="pt-br">mistura de fluidos</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A fluid portion consisting of two or more components or phases that have not yet been fully separated.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -9631,8 +9724,10 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000045">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
         <rdfs:comment xml:lang="en">An information content entity that conveys an instruction or set-point to a control device.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">control signal</rdfs:label>
+        <rdfs:label xml:lang="pt-br">sinal de controle</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">An information content entity that conveys an instruction or set-point to a control device.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -9641,9 +9736,11 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000046 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000046">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
         <rdfs:comment xml:lang="en">An information content entity perceptible through visual representation at the point of measurement or display.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="pt-br">indicação visual</rdfs:label>
         <rdfs:label xml:lang="en">visual indication</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">An information content entity perceptible through visual representation at the point of measurement or display.</annotation:naturalLanguageDefinition>
     </owl:Class>
@@ -9745,7 +9842,9 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000052">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:comment xml:lang="en">A quality inhering in a material entity that represents the intensity of thermal energy of that entity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
+        <rdfs:label xml:lang="pt-br">temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a material entity that represents the intensity of thermal energy of that entity.</annotation:naturalLanguageDefinition>
     </owl:Class>
@@ -9817,8 +9916,10 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000058">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:comment xml:lang="en">A quality inhering in an electrical system that represents the rate of electrical energy transfer.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">electrical power</rdfs:label>
+        <rdfs:label xml:lang="pt-br">potência elétrica</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in an electrical system that represents the rate of electrical energy transfer.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -9829,8 +9930,10 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000059">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:comment xml:lang="en">A quality inhering in a rotating or reciprocating mechanical system that represents the rate of mechanical work.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">mechanical power</rdfs:label>
+        <rdfs:label xml:lang="pt-br">potência mecânica</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a rotating or reciprocating mechanical system that represents the rate of mechanical work.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -10303,11 +10406,12 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">control valve</rdfs:label>
+        <rdfs:label xml:lang="pt-br">válvula de controle</rdfs:label>
         <skos:definition xml:lang="en">A control valve is a valve that modulates flow rate in response to external control signals by means of an actuator-driven closure element.</skos:definition>
         <skos:exactMatch rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A control valve is a valve that modulates flow rate in response to external control signals by means of an actuator-driven closure element.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">definição teste</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de controle é uma válvula que modula a vazão em resposta a sinais de controle externos por meio de um elemento de fechamento acionado por atuador.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -10785,17 +10889,6 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/CircuitProtectionFunction"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -10803,25 +10896,14 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000200"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/CircuitProtectionFunction"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">circuit breaker</rdfs:label>
         <rdfs:label xml:lang="pt-br">disjuntor</rdfs:label>
         <skos:definition xml:lang="en">A circuit breaker is a material artifact that bears an electrical current interruption function and regularly participates in processes that safely interrupt electrical current.</skos:definition>
-        <skos:definition xml:lang="en">A circuit-breaker is an electrical equipment that bears a circuit protection function and participates in current interruption processes at regular intervals.</skos:definition>
         <skos:exactMatch rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000106"/>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (CircuitBreaker(x) ↔ ElectricalSwitchingDevice(x) ∧ ∃f (ElectricalCurrentInterruptionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p (RegularInterruptionProcess(p) ∧ participatesIn(x,p)))</annotation:firstOrderLogicAxiom>
-        <annotation:firstOrderLogicAxiom xml:lang="en">∀x(CircuitBreaker(x) ↔ ElectricalEquipment(x) ∧ ∃f(CircuitProtectionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(CurrentInterruptionProcess(p) ∧ participatesIn(x,p)))</annotation:firstOrderLogicAxiom>
         <annotation:naturalLanguageDefinition xml:lang="en">A circuit breaker is a material artifact that bears an electrical current interruption function and regularly participates in processes that safely interrupt electrical current.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="en">A circuit-breaker is an electrical equipment that bears a circuit protection function and participates in current interruption processes at regular intervals.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">Um disjuntor é um dispositivo de chaveamento elétrico que possui uma função de interrupção de corrente elétrica e participa regularmente em processos que interrompem com segurança a corrente elétrica.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um disjuntor é um equipamento elétrico que possui uma função de proteção de circuito e participa em processos de interrupção de corrente em intervalos regulares.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every circuit breaker is an electrical switching device that has the function to interrupt electrical current and participates in regular current interruption processes.</annotation:semiFormalNaturalLanguageAxiom>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every circuit-breaker is an electrical equipment that has the function to protect circuits and participates in the process of interrupting electrical current at regular intervals.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
 
@@ -15372,20 +15454,25 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                     <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/CircuitProtectionFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/OvercurrentProtectionByFusingFunction"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000106"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/OvercurrentProtectionByFusingFunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">fuse</rdfs:label>
         <rdfs:label xml:lang="pt-br">fusível</rdfs:label>
         <skos:definition xml:lang="en">A fuse is an electrical equipment that protects circuits by interrupting current flow through the intentional melting of a fusible element when current exceeds specified values for a sufficient duration.</skos:definition>
-        <annotation:firstOrderLogicAxiom xml:lang="en">∀x(Fuse(x) ↔ ElectricalEquipment(x) ∧ ∃f(CircuitProtectionFunction(f) ∧ bearerOf(x,f)) ∧ ∃e(FuseElement(e) ∧ hasComponentPartAtAllTimes(x,e)))</annotation:firstOrderLogicAxiom>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x(Fuse(x) ↔ ElectricalEquipment(x) ∧ ∃f(OvercurrentProtectionByFusingFunction(f) ∧ bearerOf(x,f)) ∧ ∃e(FuseElement(e) ∧ hasComponentPartAtAllTimes(x,e)))</annotation:firstOrderLogicAxiom>
         <annotation:naturalLanguageDefinition xml:lang="en">A fuse is an electrical equipment that protects circuits by interrupting current flow through the intentional melting of a fusible element when current exceeds specified values for a sufficient duration.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">Um fusível é um equipamento elétrico que protege circuitos interrompendo o fluxo de corrente através do derretimento intencional de um elemento fusível quando a corrente excede valores especificados por uma duração suficiente.</annotation:naturalLanguageDefinition>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every fuse is an electrical equipment that bears a circuit protection function and has a fuse element that melts under overcurrent conditions.</annotation:semiFormalNaturalLanguageAxiom>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every fuse is an electrical equipment that bears an overcurrent-protection-by-fusing function and has a fuse element that melts under overcurrent conditions.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
 
@@ -18049,10 +18136,10 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:label xml:lang="en">absorber</rdfs:label>
         <rdfs:label xml:lang="pt-br">absorvedor</rdfs:label>
         <skos:definition xml:lang="en">An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase.</skos:definition>
-        <annotation:firstOrderLogicAxiom xml:lang="en">∀x(Absorber(x) ↔ (Separator(x) ∧ ∃f(AbsorptionFunction(f) ∧ bearerOf(x,f))))</annotation:firstOrderLogicAxiom>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x(Absorber(x) ↔ (PressureVessel(x) ∧ ∃f(GasAbsorptionFunction(f) ∧ bearerOf(x,f))))</annotation:firstOrderLogicAxiom>
         <annotation:naturalLanguageDefinition xml:lang="en">An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">Um absorvedor é um vaso de pressão que realiza uma função de absorção para transferência seletiva de massa de componentes de uma mistura fluida para uma fase absorvente.</annotation:naturalLanguageDefinition>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every absorber is a separator that has the function to absorb specific components from fluid mixtures through mass transfer to an absorbent phase</annotation:semiFormalNaturalLanguageAxiom>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every absorber is a pressure vessel that has a gas-absorption function whose realization absorbs specific components from a fluid mixture through mass transfer to an absorbent phase</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
 
@@ -18264,40 +18351,6 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:label xml:lang="en">chromatographic signal</rdfs:label>
         <rdfs:label xml:lang="pt-br">sinal de cromatográfico</rdfs:label>
         <skos:definition xml:lang="en">A measurement information content entity constituting a signal generated by a chromatographic detector representing the presence and concentration of chemical components in a process sample.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/CircuitProtectionFunction -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CircuitProtectionFunction">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/CircuitProtectionProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/CircuitProtectionProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">circuit protection function</rdfs:label>
-        <rdfs:label xml:lang="pt-br">função de proteção de circuito</rdfs:label>
-        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the automatic interruption or limitation of current in an electrical circuit to protect equipment from overload or fault conditions.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/CircuitProtectionProcess -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CircuitProtectionProcess">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
-        <rdfs:label xml:lang="en">circuit protection process</rdfs:label>
-        <rdfs:label xml:lang="pt-br">processo de proteção de circuito</rdfs:label>
-        <skos:definition xml:lang="en">A planned process in which current in an electrical circuit is automatically interrupted or limited to protect equipment from overload or fault conditions.</skos:definition>
     </owl:Class>
     
 
@@ -18705,6 +18758,15 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:label xml:lang="en">corrosion products</rdfs:label>
         <rdfs:label xml:lang="pt-br">produtos de corrosão</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the solid products—oxides, hydroxides, or sulfides—formed on a metallic surface as a result of corrosion in petroleum production equipment.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/CurrentInterruptionByFusing -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CurrentInterruptionByFusing">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:label xml:lang="en">current interruption by fusing</rdfs:label>
     </owl:Class>
     
 
@@ -21710,6 +21772,27 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:label xml:lang="en">oil portion</rdfs:label>
         <rdfs:label xml:lang="pt-br">porção de óleo</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a portion of liquid hydrocarbon at a defined point in a petroleum production process.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/OvercurrentProtectionByFusingFunction -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/OvercurrentProtectionByFusingFunction">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/CurrentInterruptionByFusing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/CurrentInterruptionByFusing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">overcurrent protection by fusing function</rdfs:label>
     </owl:Class>
     
 
