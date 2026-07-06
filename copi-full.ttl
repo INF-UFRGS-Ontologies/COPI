@@ -7060,24 +7060,13 @@ copi:COPI_0000025 rdf:type owl:Class ;
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:someValuesFrom copi:ContainmentProcess
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000009
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:allValuesFrom copi:ContainmentProcess
                                   ] ;
                   rdfs:comment "An identity-giving designed function realized in a MaterialContainment process; the function of holding a fluid or solid material within a bounded volume."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "containment function"@en ,
-                             "função de contenção"@pt-br ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "containment function"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A DesignedFunction that is realized in a ContainmentProcess and that consists in the capacity to enclose and contain material within a defined boundary."@en ,
-                                                       "An identity-giving designed function realized in a MaterialContainment process; the function of holding a fluid or solid material within a bounded volume."@en ;
+                  annotation:naturalLanguageDefinition "An identity-giving designed function realized in a MaterialContainment process; the function of holding a fluid or solid material within a bounded volume."@en ;
                   annotation:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en .
 
 
@@ -7090,24 +7079,13 @@ copi:COPI_0000026 rdf:type owl:Class ;
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:someValuesFrom copi:FlowControlProcess
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000010
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:allValuesFrom copi:FlowControlProcess
                                   ] ;
                   rdfs:comment "An identity-giving designed function realized in a FlowControl process; the function of modulating, regulating, or blocking fluid flow through a conduit or vessel connection."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "flow control function"@en ,
-                             "função de controle de fluxo"@pt-br ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "flow control function"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A DesignedFunction that is realized in a FlowControlProcess and that consists in the capacity to regulate, direct, or restrict the flow of fluids through a system by means of movable internal components."@en ,
-                                                       "An identity-giving designed function realized in a FlowControl process; the function of modulating, regulating, or blocking fluid flow through a conduit or vessel connection."@en ;
+                  annotation:naturalLanguageDefinition "An identity-giving designed function realized in a FlowControl process; the function of modulating, regulating, or blocking fluid flow through a conduit or vessel connection."@en ;
                   annotation:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en .
 
 
@@ -7123,11 +7101,8 @@ copi:COPI_0000027 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:COPI_0000033
                                   ] ;
                   rdfs:comment "An identity-giving designed function realized in a ProcessControlledFlowProcess; the function of opening or shutting a flow path in response to an external process control signal."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "função de controle de fluxo de processo"@pt-br ,
-                             "process controlled flow function"@en ,
-                             "process-controlled flow function"@en ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "process-controlled flow function"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "An identity-giving designed function realized in a ProcessControlledFlowProcess; the function of opening or shutting a flow path in response to an external process control signal."@en ;
                   annotation:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en .
@@ -7135,24 +7110,18 @@ copi:COPI_0000027 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028
 copi:COPI_0000028 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000029 ,
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/DesignedFunction> ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:someValuesFrom copi:IndicationProcess
+                                    owl:someValuesFrom <https://spec.industrialontologies.org/ontology/construct/MeasurementProcess>
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom <https://spec.industrialontologies.org/ontology/construct/MeasurementProcess>
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:allValuesFrom copi:IndicationProcess
                                   ] ;
                   rdfs:comment "An identity-giving designed function realized in a Measurement process; the function of converting a physical quantity into a locally readable display at the point of measurement."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "função de indicação"@pt-br ,
-                             "indication function"@en ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "indication function"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "An identity-giving designed function realized in a Measurement process; the function of converting a physical quantity into a locally readable display at the point of measurement."@en ;
                   annotation:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en .
@@ -7167,21 +7136,11 @@ copi:COPI_0000029 rdf:type owl:Class ;
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:someValuesFrom copi:InstrumentationProcess
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom <https://spec.industrialontologies.org/ontology/construct/MeasurementProcess>
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:allValuesFrom copi:InstrumentationProcess
                                   ] ;
                   rdfs:comment "An identity-giving designed function realized in a sensing or measurement process; the function of detecting and converting a physical quantity into a usable signal or reading."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "função de instrumentação"@pt-br ,
-                             "instrumentation function"@en ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "instrumentation function"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "An identity-giving designed function realized in a sensing or measurement process; the function of detecting and converting a physical quantity into a usable signal or reading."@en ;
                   annotation:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en .
@@ -7199,10 +7158,8 @@ copi:COPI_0000030 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:COPI_0000035
                                   ] ;
                   rdfs:comment "An identity-giving designed function realized in a SignalTransmissionProcess; the function of converting a sensed physical quantity into a standardized electrical or pneumatic signal for remote reading, recording, or control."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "função de transmissão de sinal"@pt-br ,
-                             "signal transmission function"@en ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "signal transmission function"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "An identity-giving designed function realized in a SignalTransmissionProcess; the function of converting a sensed physical quantity into a standardized electrical or pneumatic signal for remote reading, recording, or control."@en ;
                   annotation:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en .
@@ -7217,21 +7174,11 @@ copi:COPI_0000031 rdf:type owl:Class ;
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:someValuesFrom copi:PressureSignalTransmissionProcess
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000036
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                    owl:allValuesFrom copi:PressureSignalTransmissionProcess
                                   ] ;
                   rdfs:comment "An identity-giving designed function specialized to pressure measurement and transmission; the function of converting a sensed pressure value into a proportional standardized signal for remote reading or control."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "função de transmissão de pressão"@pt-br ,
-                             "pressure transmission function"@en ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "pressure transmission function"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "An identity-giving designed function specialized to pressure measurement and transmission; the function of converting a sensed pressure value into a proportional standardized signal for remote reading or control."@en ;
                   annotation:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en .
@@ -7249,10 +7196,8 @@ copi:COPI_0000032 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:COPI_0000034
                                   ] ;
                   rdfs:comment "An identity-giving designed function realized in a SafetyReliefProcess; the function of preventing over-pressure conditions by automatically relieving fluid at a pre-set pressure set-point, or of isolating wellbore flow when conditions are unsafe."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "função de alívio de segurança"@pt-br ,
-                             "safety relief function"@en ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "safety relief function"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "An identity-giving designed function realized in a SafetyReliefProcess; the function of preventing over-pressure conditions by automatically relieving fluid at a pre-set pressure set-point, or of isolating wellbore flow when conditions are unsafe."@en ;
                   annotation:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en .
@@ -7262,11 +7207,8 @@ copi:COPI_0000032 rdf:type owl:Class ;
 copi:COPI_0000033 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000010 ;
                   rdfs:comment "A FlowControl process in which flow through a conduit is opened, closed, or throttled in response to an external control signal from a process control system."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "process controlled flow process"@en ,
-                             "process-controlled flow process"@en ,
-                             "processo de controle de fluxo de processo"@pt-br ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "process-controlled flow process"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A FlowControl process in which flow through a conduit is opened, closed, or throttled in response to an external control signal from a process control system."@en .
 
@@ -7275,10 +7217,8 @@ copi:COPI_0000033 rdf:type owl:Class ;
 copi:COPI_0000034 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000010 ;
                   rdfs:comment "A FlowControl process in which excess pressure is relieved by opening a flow path at a pre-set set-point, or in which wellbore flow is isolated to prevent blowout."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "processo de alívio de segurança"@pt-br ,
-                             "safety relief process"@en ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "safety relief process"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A FlowControl process in which excess pressure is relieved by opening a flow path at a pre-set set-point, or in which wellbore flow is isolated to prevent blowout."@en .
 
@@ -7287,10 +7227,8 @@ copi:COPI_0000034 rdf:type owl:Class ;
 copi:COPI_0000035 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MeasurementProcess> ;
                   rdfs:comment "A MeasurementProcess (hence planned) in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "processo de transmissão de sinal"@pt-br ,
-                             "signal transmission process"@en ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "signal transmission process"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A MeasurementProcess (hence planned) in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system."@en .
 
@@ -7299,10 +7237,8 @@ copi:COPI_0000035 rdf:type owl:Class ;
 copi:COPI_0000036 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MeasurementProcess> ;
                   rdfs:comment "A MeasurementProcess (hence planned) in which differential or gauge pressure is sensed, converted to a proportional standardized signal, and transmitted to a remote reading or control device."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "pressure measurement and transmission process"@en ,
-                             "processo de medição e transmissão de pressão"@pt-br ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "pressure measurement and transmission process"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A MeasurementProcess (hence planned) in which differential or gauge pressure is sensed, converted to a proportional standardized signal, and transmitted to a remote reading or control device."@en .
 
@@ -7346,13 +7282,10 @@ copi:COPI_0000040 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000041
 copi:COPI_0000041 rdf:type owl:Class ;
-                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000024> ,
-                                  copi:COPI_0000038 ;
+                  rdfs:subClassOf copi:COPI_0000038 ;
                   rdfs:comment "A liquid phase whose function is to absorb target components from a gas stream by physical or chemical means."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "absorbent phase"@en ,
-                             "fase absorvente"@pt-br ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "absorbent phase"@en ;
                   annotation:naturalLanguageDefinition "A liquid phase whose function is to absorb target components from a gas stream by physical or chemical means."@en .
 
 
@@ -7360,34 +7293,26 @@ copi:COPI_0000041 rdf:type owl:Class ;
 copi:COPI_0000042 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000041 ;
                   rdfs:comment "An absorbent phase that has absorbed target components from a gas stream and is loaded for regeneration."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "absorvente rico"@pt-br ,
-                             "rich absorbent"@en ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "rich absorbent"@en ;
                   annotation:naturalLanguageDefinition "An absorbent phase that has absorbed target components from a gas stream and is loaded for regeneration."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000043
 copi:COPI_0000043 rdf:type owl:Class ;
-                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000024> ,
-                                  copi:COPI_0000037 ;
+                  rdfs:subClassOf copi:COPI_0000037 ;
                   rdfs:comment "A fluid from which target components have been removed or transferred during a treatment process."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "depleted fluid"@en ,
-                             "fluido esgotado"@pt-br ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "depleted fluid"@en ;
                   annotation:naturalLanguageDefinition "A fluid from which target components have been removed or transferred during a treatment process."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000044
 copi:COPI_0000044 rdf:type owl:Class ;
-                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000024> ,
-                                  copi:COPI_0000037 ;
+                  rdfs:subClassOf copi:COPI_0000037 ;
                   rdfs:comment "A fluid portion consisting of two or more components or phases that have not yet been fully separated."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "fluid mixture"@en ,
-                             "mistura de fluidos"@pt-br ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "fluid mixture"@en ;
                   annotation:naturalLanguageDefinition "A fluid portion consisting of two or more components or phases that have not yet been fully separated."@en .
 
 
@@ -7395,21 +7320,17 @@ copi:COPI_0000044 rdf:type owl:Class ;
 copi:COPI_0000045 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/InformationContentEntity> ;
                   rdfs:comment "An information content entity that conveys an instruction or set-point to a control device."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "control signal"@en ,
-                             "sinal de controle"@pt-br ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "control signal"@en ;
                   annotation:naturalLanguageDefinition "An information content entity that conveys an instruction or set-point to a control device."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000046
 copi:COPI_0000046 rdf:type owl:Class ;
-                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity> ;
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/InformationContentEntity> ;
                   rdfs:comment "An information content entity perceptible through visual representation at the point of measurement or display."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "indicação visual"@pt-br ,
-                             "visual indication"@en ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "visual indication"@en ;
                   annotation:naturalLanguageDefinition "An information content entity perceptible through visual representation at the point of measurement or display."@en .
 
 
@@ -7482,10 +7403,8 @@ copi:COPI_0000051 rdf:type owl:Class ;
 copi:COPI_0000052 rdf:type owl:Class ;
                   rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
                   rdfs:comment "A quality inhering in a material entity that represents the intensity of thermal energy of that entity."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "temperatura"@pt-br ,
-                             "temperature"@en ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "temperature"@en ;
                   annotation:naturalLanguageDefinition "A quality inhering in a material entity that represents the intensity of thermal energy of that entity."@en .
 
 
@@ -7538,10 +7457,8 @@ copi:COPI_0000057 rdf:type owl:Class ;
 copi:COPI_0000058 rdf:type owl:Class ;
                   rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
                   rdfs:comment "A quality inhering in an electrical system that represents the rate of electrical energy transfer."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "electrical power"@en ,
-                             "potência elétrica"@pt-br ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "electrical power"@en ;
                   annotation:naturalLanguageDefinition "A quality inhering in an electrical system that represents the rate of electrical energy transfer."@en .
 
 
@@ -7549,10 +7466,8 @@ copi:COPI_0000058 rdf:type owl:Class ;
 copi:COPI_0000059 rdf:type owl:Class ;
                   rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
                   rdfs:comment "A quality inhering in a rotating or reciprocating mechanical system that represents the rate of mechanical work."@en ;
-                  rdfs:isDefinedBy copi:copi-core ,
-                                   copi:copi-vocab ;
-                  rdfs:label "mechanical power"@en ,
-                             "potência mecânica"@pt-br ;
+                  rdfs:isDefinedBy copi:copi-vocab ;
+                  rdfs:label "mechanical power"@en ;
                   annotation:naturalLanguageDefinition "A quality inhering in a rotating or reciprocating mechanical system that represents the rate of mechanical work."@en .
 
 

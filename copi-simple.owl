@@ -3442,28 +3442,13 @@ Units of Measure: Km, Kg, G</skos:example>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/ContainmentProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/ContainmentProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a MaterialContainment process; the function of holding a fluid or solid material within a bounded volume.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">containment function</rdfs:label>
-        <rdfs:label xml:lang="pt-br">função de contenção</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A DesignedFunction that is realized in a ContainmentProcess and that consists in the capacity to enclose and contain material within a defined boundary.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a MaterialContainment process; the function of holding a fluid or solid material within a bounded volume.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">OWL gives only necessary conditions; the some+only pair characterises the function for inference.</annotation:primitiveRationale>
     </owl:Class>
@@ -3482,28 +3467,13 @@ Units of Measure: Km, Kg, G</skos:example>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/FlowControlProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/FlowControlProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a FlowControl process; the function of modulating, regulating, or blocking fluid flow through a conduit or vessel connection.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">flow control function</rdfs:label>
-        <rdfs:label xml:lang="pt-br">função de controle de fluxo</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A DesignedFunction that is realized in a FlowControlProcess and that consists in the capacity to regulate, direct, or restrict the flow of fluids through a system by means of movable internal components.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a FlowControl process; the function of modulating, regulating, or blocking fluid flow through a conduit or vessel connection.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">OWL gives only necessary conditions; the some+only pair characterises the function for inference.</annotation:primitiveRationale>
     </owl:Class>
@@ -3527,10 +3497,7 @@ Units of Measure: Km, Kg, G</skos:example>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a ProcessControlledFlowProcess; the function of opening or shutting a flow path in response to an external process control signal.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="pt-br">função de controle de fluxo de processo</rdfs:label>
-        <rdfs:label xml:lang="en">process controlled flow function</rdfs:label>
         <rdfs:label xml:lang="en">process-controlled flow function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a ProcessControlledFlowProcess; the function of opening or shutting a flow path in response to an external process control signal.</annotation:naturalLanguageDefinition>
@@ -3542,23 +3509,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028">
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/IndicationProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/IndicationProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a Measurement process; the function of converting a physical quantity into a locally readable display at the point of measurement.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="pt-br">função de indicação</rdfs:label>
         <rdfs:label xml:lang="en">indication function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a Measurement process; the function of converting a physical quantity into a locally readable display at the point of measurement.</annotation:naturalLanguageDefinition>
@@ -3570,22 +3522,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/InstrumentationProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/InstrumentationProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a sensing or measurement process; the function of detecting and converting a physical quantity into a usable signal or reading.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="pt-br">função de instrumentação</rdfs:label>
         <rdfs:label xml:lang="en">instrumentation function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a sensing or measurement process; the function of detecting and converting a physical quantity into a usable signal or reading.</annotation:naturalLanguageDefinition>
@@ -3611,9 +3549,7 @@ Units of Measure: Km, Kg, G</skos:example>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a SignalTransmissionProcess; the function of converting a sensed physical quantity into a standardized electrical or pneumatic signal for remote reading, recording, or control.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="pt-br">função de transmissão de sinal</rdfs:label>
         <rdfs:label xml:lang="en">signal transmission function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a SignalTransmissionProcess; the function of converting a sensed physical quantity into a standardized electrical or pneumatic signal for remote reading, recording, or control.</annotation:naturalLanguageDefinition>
@@ -3635,25 +3571,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PressureSignalTransmissionProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000036"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PressureSignalTransmissionProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function specialized to pressure measurement and transmission; the function of converting a sensed pressure value into a proportional standardized signal for remote reading or control.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="pt-br">função de transmissão de pressão</rdfs:label>
         <rdfs:label xml:lang="en">pressure transmission function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function specialized to pressure measurement and transmission; the function of converting a sensed pressure value into a proportional standardized signal for remote reading or control.</annotation:naturalLanguageDefinition>
@@ -3678,9 +3600,7 @@ Units of Measure: Km, Kg, G</skos:example>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identity-giving designed function realized in a SafetyReliefProcess; the function of preventing over-pressure conditions by automatically relieving fluid at a pre-set pressure set-point, or of isolating wellbore flow when conditions are unsafe.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="pt-br">função de alívio de segurança</rdfs:label>
         <rdfs:label xml:lang="en">safety relief function</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">An identity-giving designed function realized in a SafetyReliefProcess; the function of preventing over-pressure conditions by automatically relieving fluid at a pre-set pressure set-point, or of isolating wellbore flow when conditions are unsafe.</annotation:naturalLanguageDefinition>
@@ -3694,11 +3614,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000033">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:comment xml:lang="en">A FlowControl process in which flow through a conduit is opened, closed, or throttled in response to an external control signal from a process control system.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="en">process controlled flow process</rdfs:label>
         <rdfs:label xml:lang="en">process-controlled flow process</rdfs:label>
-        <rdfs:label xml:lang="pt-br">processo de controle de fluxo de processo</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A FlowControl process in which flow through a conduit is opened, closed, or throttled in response to an external control signal from a process control system.</annotation:naturalLanguageDefinition>
     </owl:Class>
@@ -3710,9 +3627,7 @@ Units of Measure: Km, Kg, G</skos:example>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000034">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:comment xml:lang="en">A FlowControl process in which excess pressure is relieved by opening a flow path at a pre-set set-point, or in which wellbore flow is isolated to prevent blowout.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="pt-br">processo de alívio de segurança</rdfs:label>
         <rdfs:label xml:lang="en">safety relief process</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A FlowControl process in which excess pressure is relieved by opening a flow path at a pre-set set-point, or in which wellbore flow is isolated to prevent blowout.</annotation:naturalLanguageDefinition>
@@ -3724,9 +3639,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000035">
         <rdfs:comment xml:lang="en">A MeasurementProcess (hence planned) in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="pt-br">processo de transmissão de sinal</rdfs:label>
         <rdfs:label xml:lang="en">signal transmission process</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A MeasurementProcess (hence planned) in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system.</annotation:naturalLanguageDefinition>
@@ -3738,10 +3651,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000036">
         <rdfs:comment xml:lang="en">A MeasurementProcess (hence planned) in which differential or gauge pressure is sensed, converted to a proportional standardized signal, and transmitted to a remote reading or control device.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">pressure measurement and transmission process</rdfs:label>
-        <rdfs:label xml:lang="pt-br">processo de medição e transmissão de pressão</rdfs:label>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
         <annotation:naturalLanguageDefinition xml:lang="en">A MeasurementProcess (hence planned) in which differential or gauge pressure is sensed, converted to a proportional standardized signal, and transmitted to a remote reading or control device.</annotation:naturalLanguageDefinition>
     </owl:Class>
@@ -3800,10 +3711,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000041">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000038"/>
         <rdfs:comment xml:lang="en">A liquid phase whose function is to absorb target components from a gas stream by physical or chemical means.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">absorbent phase</rdfs:label>
-        <rdfs:label xml:lang="pt-br">fase absorvente</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A liquid phase whose function is to absorb target components from a gas stream by physical or chemical means.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -3814,9 +3723,7 @@ Units of Measure: Km, Kg, G</skos:example>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000042">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000041"/>
         <rdfs:comment xml:lang="en">An absorbent phase that has absorbed target components from a gas stream and is loaded for regeneration.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="pt-br">absorvente rico</rdfs:label>
         <rdfs:label xml:lang="en">rich absorbent</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">An absorbent phase that has absorbed target components from a gas stream and is loaded for regeneration.</annotation:naturalLanguageDefinition>
     </owl:Class>
@@ -3828,10 +3735,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000043">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
         <rdfs:comment xml:lang="en">A fluid from which target components have been removed or transferred during a treatment process.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">depleted fluid</rdfs:label>
-        <rdfs:label xml:lang="pt-br">fluido esgotado</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A fluid from which target components have been removed or transferred during a treatment process.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -3842,10 +3747,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000044">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
         <rdfs:comment xml:lang="en">A fluid portion consisting of two or more components or phases that have not yet been fully separated.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">fluid mixture</rdfs:label>
-        <rdfs:label xml:lang="pt-br">mistura de fluidos</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A fluid portion consisting of two or more components or phases that have not yet been fully separated.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -3855,10 +3758,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000045">
         <rdfs:comment xml:lang="en">An information content entity that conveys an instruction or set-point to a control device.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">control signal</rdfs:label>
-        <rdfs:label xml:lang="pt-br">sinal de controle</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">An information content entity that conveys an instruction or set-point to a control device.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -3868,9 +3769,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000046">
         <rdfs:comment xml:lang="en">An information content entity perceptible through visual representation at the point of measurement or display.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="pt-br">indicação visual</rdfs:label>
         <rdfs:label xml:lang="en">visual indication</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">An information content entity perceptible through visual representation at the point of measurement or display.</annotation:naturalLanguageDefinition>
     </owl:Class>
@@ -3966,9 +3865,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000052">
         <rdfs:comment xml:lang="en">A quality inhering in a material entity that represents the intensity of thermal energy of that entity.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
-        <rdfs:label xml:lang="pt-br">temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a material entity that represents the intensity of thermal energy of that entity.</annotation:naturalLanguageDefinition>
     </owl:Class>
@@ -4034,10 +3931,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000058">
         <rdfs:comment xml:lang="en">A quality inhering in an electrical system that represents the rate of electrical energy transfer.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">electrical power</rdfs:label>
-        <rdfs:label xml:lang="pt-br">potência elétrica</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in an electrical system that represents the rate of electrical energy transfer.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -4047,10 +3942,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000059">
         <rdfs:comment xml:lang="en">A quality inhering in a rotating or reciprocating mechanical system that represents the rate of mechanical work.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab"/>
         <rdfs:label xml:lang="en">mechanical power</rdfs:label>
-        <rdfs:label xml:lang="pt-br">potência mecânica</rdfs:label>
         <annotation:naturalLanguageDefinition xml:lang="en">A quality inhering in a rotating or reciprocating mechanical system that represents the rate of mechanical work.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
