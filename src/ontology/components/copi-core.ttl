@@ -651,3 +651,156 @@ deliberadamente NÃO disjuntas duas a duas (partição seletiva)."""@pt-br ;
     iof-av:usageNote "Load in Protégé; map the IOF import IRI to the local Core.rdf (202602) and ensure BFO 2020 resolves; run HermiT."@en,
         "Carregue no Protégé; mapeie o IRI de importação da IOF para o Core.rdf local (202602) e garanta que a BFO 2020 resolva; rode o HermiT."@pt-br .
 
+
+
+# ---------------------------------------------------------------------------
+# Operation-layer function, process, and participant anchors (COPI_0000025-0000059)
+# Added to complete copi-core: regen strips COPI_0000001-0000060 subjects from
+# copi-enriched, so these must be declared here. Processes omit hasInput/
+# hasSpecifiedOutput (SDC/quality fillers violate IOF ranges; stripped at publish).
+# ---------------------------------------------------------------------------
+
+copi:COPI_0000025 a owl:Class ;
+    rdfs:label "containment function"@en ,
+        "função de contenção"@pt-br ;
+    rdfs:subClassOf iof-constr:DesignedFunction ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:ContainmentProcess ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom copi:ContainmentProcess ] ;
+    iof-av:naturalLanguageDefinition "A DesignedFunction that is realized in a ContainmentProcess and that consists in the capacity to enclose and contain material within a defined boundary."@en ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000026 a owl:Class ;
+    rdfs:label "flow control function"@en ,
+        "função de controle de fluxo"@pt-br ;
+    rdfs:subClassOf iof-constr:DesignedFunction ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:FlowControlProcess ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom copi:FlowControlProcess ] ;
+    iof-av:naturalLanguageDefinition "A DesignedFunction that is realized in a FlowControlProcess and that consists in the capacity to regulate, direct, or restrict the flow of fluids through a system by means of movable internal components."@en ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000027 a owl:Class ;
+    rdfs:label "process controlled flow function"@en ,
+        "função de controle de fluxo de processo"@pt-br ;
+    rdfs:subClassOf copi:COPI_0000026 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000033 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom copi:COPI_0000033 ] ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000028 a owl:Class ;
+    rdfs:label "indication function"@en ,
+        "função de indicação"@pt-br ;
+    rdfs:subClassOf copi:COPI_0000029 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:IndicationProcess ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom copi:IndicationProcess ] ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000029 a owl:Class ;
+    rdfs:label "instrumentation function"@en ,
+        "função de instrumentação"@pt-br ;
+    rdfs:subClassOf iof-constr:DesignedFunction ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:InstrumentationProcess ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom copi:InstrumentationProcess ] ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000030 a owl:Class ;
+    rdfs:label "signal transmission function"@en ,
+        "função de transmissão de sinal"@pt-br ;
+    rdfs:subClassOf copi:COPI_0000029 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000035 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom copi:COPI_0000035 ] ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000031 a owl:Class ;
+    rdfs:label "pressure transmission function"@en ,
+        "função de transmissão de pressão"@pt-br ;
+    rdfs:subClassOf copi:COPI_0000030 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:PressureSignalTransmissionProcess ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom copi:PressureSignalTransmissionProcess ] ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000032 a owl:Class ;
+    rdfs:label "safety relief function"@en ,
+        "função de alívio de segurança"@pt-br ;
+    rdfs:subClassOf iof-constr:DesignedFunction ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000034 ] ,
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom copi:COPI_0000034 ] ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000033 a owl:Class ;
+    rdfs:label "process controlled flow process"@en ,
+        "processo de controle de fluxo de processo"@pt-br ;
+    rdfs:subClassOf iof-constr:PlannedProcess ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000034 a owl:Class ;
+    rdfs:label "safety relief process"@en ,
+        "processo de alívio de segurança"@pt-br ;
+    rdfs:subClassOf iof-constr:PlannedProcess ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000035 a owl:Class ;
+    rdfs:label "signal transmission process"@en ,
+        "processo de transmissão de sinal"@pt-br ;
+    rdfs:subClassOf iof-constr:PlannedProcess ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000036 a owl:Class ;
+    rdfs:label "pressure measurement and transmission process"@en ,
+        "processo de medição e transmissão de pressão"@pt-br ;
+    rdfs:subClassOf iof-constr:PlannedProcess ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000041 a owl:Class ;
+    rdfs:label "absorbent phase"@en ,
+        "fase absorvente"@pt-br ;
+    rdfs:subClassOf obo:BFO_0000024 ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000042 a owl:Class ;
+    rdfs:label "rich absorbent"@en ,
+        "absorvente rico"@pt-br ;
+    rdfs:subClassOf obo:BFO_0000024 ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000043 a owl:Class ;
+    rdfs:label "depleted fluid"@en ,
+        "fluido esgotado"@pt-br ;
+    rdfs:subClassOf obo:BFO_0000024 ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000044 a owl:Class ;
+    rdfs:label "fluid mixture"@en ,
+        "mistura de fluidos"@pt-br ;
+    rdfs:subClassOf obo:BFO_0000024 ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000045 a owl:Class ;
+    rdfs:label "control signal"@en ,
+        "sinal de controle"@pt-br ;
+    rdfs:subClassOf iof-constr:InformationContentEntity ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000046 a owl:Class ;
+    rdfs:label "visual indication"@en ,
+        "indicação visual"@pt-br ;
+    rdfs:subClassOf iof-constr:MeasurementInformationContentEntity ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000052 a owl:Class ;
+    rdfs:label "temperature"@en ,
+        "temperatura"@pt-br ;
+    rdfs:subClassOf obo:BFO_0000019 ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000058 a owl:Class ;
+    rdfs:label "electrical power"@en ,
+        "potência elétrica"@pt-br ;
+    rdfs:subClassOf obo:BFO_0000019 ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0000059 a owl:Class ;
+    rdfs:label "mechanical power"@en ,
+        "potência mecânica"@pt-br ;
+    rdfs:subClassOf obo:BFO_0000019 ;
+    rdfs:isDefinedBy copi:copi-core .
+
