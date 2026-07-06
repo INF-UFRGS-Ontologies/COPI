@@ -10358,7 +10358,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                     <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000381"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -10367,7 +10367,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000381"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">pressure vessel</rdfs:label>
@@ -18049,6 +18049,29 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     
 
 
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000381 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000381">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000025"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="pt-br">função de contenção de pressão</rdfs:label>
+        <rdfs:label xml:lang="en">pressure containment function</rdfs:label>
+        <skos:definition xml:lang="en">A containment function borne by petroleum production equipment whose realization constitutes the retention of fluid within a defined pressure boundary to prevent uncontrolled release.</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- https://www.inf.ufrgs.br/ontologies/copi/CableBundle -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/CableBundle">
@@ -22035,29 +22058,6 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <annotation:naturalLanguageDefinition xml:lang="en">A PlannedProcess in which mechanical energy is transmitted through rotational motion from one component to another via a rotating shaft, enabling the transfer of torque and angular velocity to mounted components.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="en">A PlannedProcess in which mechanical power is transferred from one rotating or reciprocating component to another through direct mechanical engagement, resulting in motion transmission and potentially torque or speed modification.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="en">A PlannedProcess in which mechanical rotational energy is transmitted from a prime mover through a shaft to driven components, resulting in the transfer of torque and rotational motion necessary for equipment operation.</annotation:naturalLanguageDefinition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentFunction -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentFunction">
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000025"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="pt-br">função de contenção de pressão</rdfs:label>
-        <rdfs:label xml:lang="en">pressure containment function</rdfs:label>
-        <skos:definition xml:lang="en">A containment function borne by petroleum production equipment whose realization constitutes the retention of fluid within a defined pressure boundary to prevent uncontrolled release.</skos:definition>
     </owl:Class>
     
 

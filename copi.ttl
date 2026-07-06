@@ -7863,7 +7863,7 @@ copi:COPI_0000090 rdf:type owl:Class ;
                   owl:equivalentClass [ owl:intersectionOf ( copi:COPI_0000158
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                                               owl:someValuesFrom copi:PressureContainmentFunction
+                                                               owl:someValuesFrom copi:COPI_0000381
                                                              ]
                                                            ) ;
                                         rdf:type owl:Class
@@ -7871,7 +7871,7 @@ copi:COPI_0000090 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000158 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                    owl:someValuesFrom copi:PressureContainmentFunction
+                                    owl:someValuesFrom copi:COPI_0000381
                                   ] ;
                   rdfs:label "pressure vessel"@en ,
                              "vaso de pressão"@pt-br ;
@@ -13722,6 +13722,22 @@ copi:COPI_0000380 rdf:type owl:Class ;
                   annotation:semiFormalNaturalLanguageAxiom "Every temperature element is a detecting element that has the function to sense temperature"@en .
 
 
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000381
+copi:COPI_0000381 rdf:type owl:Class ;
+                  rdfs:subClassOf copi:COPI_0000025 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                    owl:someValuesFrom copi:PressureContainmentProcess
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                    owl:allValuesFrom copi:PressureContainmentProcess
+                                  ] ;
+                  rdfs:label "função de contenção de pressão"@pt-br ,
+                             "pressure containment function"@en ;
+                  skos:definition "A containment function borne by petroleum production equipment whose realization constitutes the retention of fluid within a defined pressure boundary to prevent uncontrolled release."@en .
+
+
 ###  https://www.inf.ufrgs.br/ontologies/copi/CableBundle
 copi:CableBundle rdf:type owl:Class ;
                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/Assembly> ;
@@ -16595,22 +16611,6 @@ copi:PowerTransmissionProcess rdf:type owl:Class ;
                                                                    "A PlannedProcess in which mechanical energy is transmitted through rotational motion from one component to another via a rotating shaft, enabling the transfer of torque and angular velocity to mounted components."@en ,
                                                                    "A PlannedProcess in which mechanical power is transferred from one rotating or reciprocating component to another through direct mechanical engagement, resulting in motion transmission and potentially torque or speed modification."@en ,
                                                                    "A PlannedProcess in which mechanical rotational energy is transmitted from a prime mover through a shaft to driven components, resulting in the transfer of torque and rotational motion necessary for equipment operation."@en .
-
-
-###  https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentFunction
-copi:PressureContainmentFunction rdf:type owl:Class ;
-                                 rdfs:subClassOf copi:COPI_0000025 ,
-                                                 [ rdf:type owl:Restriction ;
-                                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                                   owl:someValuesFrom copi:PressureContainmentProcess
-                                                 ] ,
-                                                 [ rdf:type owl:Restriction ;
-                                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                                   owl:allValuesFrom copi:PressureContainmentProcess
-                                                 ] ;
-                                 rdfs:label "função de contenção de pressão"@pt-br ,
-                                            "pressure containment function"@en ;
-                                 skos:definition "A containment function borne by petroleum production equipment whose realization constitutes the retention of fluid within a defined pressure boundary to prevent uncontrolled release."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentProcess
