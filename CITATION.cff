@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use COPI, please cite it using the metadata below."
+title: "COPI: Core Ontology for Petroleum Installations"
+abstract: >-
+  A BFO 2020 / IOF-Core-grounded domain ontology for process-industry
+  equipment and operations in petroleum production installations.
+type: dataset
+authors:
+  - family-names: "Oyhenard dos Santos"
+    given-names: "Nicolau"
+  - family-names: "Antunes"
+    given-names: "Cauã"
+  - family-names: "Petry"
+    given-names: "Rafael"
+  - family-names: "Rojas"
+    given-names: "Haroldo"
+  - family-names: "Romeu"
+    given-names: "Régis"
+  - family-names: "Abel"
+    given-names: "Mara"
+version: "2026-07-07"
+date-released: "2026-07-07"
+license: CC-BY-4.0
+url: "https://www.inf.ufrgs.br/ontologies/copi/"
+repository-code: "https://github.com/INF-UFRGS-Ontologies/COPI"
+keywords:
+  - ontology
+  - BFO
+  - IOF-Core
+  - petroleum installations
+  - industrial equipment

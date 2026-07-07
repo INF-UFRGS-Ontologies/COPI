@@ -1,0 +1,37 @@
+{
+  "title": "COPI: Core Ontology for Petroleum Installations",
+  "description": "<p>A BFO 2020 / IOF-Core-grounded domain ontology for process-industry equipment and operations in petroleum production installations. ODK-managed, OWL 2 DL, published under a stable IRI with OBO-Foundry-aligned numeric identifiers. Canonical IRI: https://www.inf.ufrgs.br/ontologies/copi/</p>",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "version": "2026-07-07",
+  "language": "eng",
+  "keywords": [
+    "ontology",
+    "BFO",
+    "IOF-Core",
+    "petroleum installations",
+    "industrial equipment",
+    "OWL 2 DL"
+  ],
+  "creators": [
+    { "name": "Oyhenard dos Santos, Nicolau", "affiliation": "Instituto de Informática, UFRGS" },
+    { "name": "Antunes, Cauã", "affiliation": "Instituto de Informática, UFRGS" },
+    { "name": "Petry, Rafael", "affiliation": "Instituto de Informática, UFRGS" },
+    { "name": "Rojas, Haroldo", "affiliation": "Instituto de Informática, UFRGS" },
+    { "name": "Romeu, Régis", "affiliation": "Instituto de Informática, UFRGS" },
+    { "name": "Abel, Mara", "affiliation": "Instituto de Informática, UFRGS" }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://www.inf.ufrgs.br/ontologies/copi/",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/INF-UFRGS-Ontologies/COPI",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    }
+  ]
+}
