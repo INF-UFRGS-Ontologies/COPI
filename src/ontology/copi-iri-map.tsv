@@ -1,10 +1,12 @@
-# COPI IRI map: readable → numeric (380 entries, next free COPI_0000381)
+# COPI IRI map: readable → numeric (385 entries, next free COPI_0000386)
 # Generated 2026-06-25 — extended with 174 new equipment class IRIs (COPI_0000205–COPI_0000378)
+# 2026-06-26 — added HeatTransferProcess alias → COPI_0000004 (enables guard-12 inference)
 old_iri	new_iri
 https://www.inf.ufrgs.br/ontologies/copi/Operation	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000001
 https://www.inf.ufrgs.br/ontologies/copi/participatesIn	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000002
 https://www.inf.ufrgs.br/ontologies/copi/MomentumTransfer	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003
 https://www.inf.ufrgs.br/ontologies/copi/HeatTransfer	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004
+https://www.inf.ufrgs.br/ontologies/copi/HeatTransferProcess	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004
 https://www.inf.ufrgs.br/ontologies/copi/MassTransfer	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005
 https://www.inf.ufrgs.br/ontologies/copi/MechanicalSeparation	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006
 https://www.inf.ufrgs.br/ontologies/copi/ChemicalReaction	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007
@@ -381,3 +383,7 @@ https://www.inf.ufrgs.br/ontologies/copi/Wellhead	https://www.inf.ufrgs.br/ontol
 https://www.inf.ufrgs.br/ontologies/copi/Wireline	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000378
 https://www.inf.ufrgs.br/ontologies/copi/Absorber	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000379
 https://www.inf.ufrgs.br/ontologies/copi/TemperatureElement	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000380
+https://www.inf.ufrgs.br/ontologies/copi/PressureContainmentFunction	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000381
+https://www.inf.ufrgs.br/ontologies/copi/ElectricalCurrent	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000383
+https://www.inf.ufrgs.br/ontologies/copi/MechanicalForce	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000384
+https://www.inf.ufrgs.br/ontologies/copi/MechanicalLoad	https://www.inf.ufrgs.br/ontologies/copi/COPI_0000385
