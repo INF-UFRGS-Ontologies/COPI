@@ -16,7 +16,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-07-13/copi.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-07-17/copi.owl"/>
         <dcterms:bibliographicCitation>Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press.</dcterms:bibliographicCitation>
         <dcterms:contributor>Cauã Antunes</dcterms:contributor>
         <dcterms:contributor>Haroldo Rojas</dcterms:contributor>
@@ -39,7 +39,7 @@
         <bibo:status>unstable</bibo:status>
         <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>
-        <owl:versionInfo>2026-07-13</owl:versionInfo>
+        <owl:versionInfo>2026-07-17</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
@@ -10496,6 +10496,70 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     
 
 
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000075 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000075">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000069"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000069"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">absorber</rdfs:label>
+        <rdfs:label xml:lang="pt-br">absorvedor</rdfs:label>
+        <skos:definition xml:lang="en">An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase.</skos:definition>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x(Absorber(x) ↔ (PressureVessel(x) ∧ ∃f(GasAbsorptionFunction(f) ∧ bearerOf(x,f))))</annotation:firstOrderLogicAxiom>
+        <annotation:naturalLanguageDefinition xml:lang="en">An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um absorvedor é um vaso de pressão que realiza uma função de absorção para transferência seletiva de massa de componentes de uma mistura fluida para uma fase absorvente.</annotation:naturalLanguageDefinition>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every absorber is a pressure vessel that has a gas-absorption function whose realization absorbs specific components from a fluid mixture through mass transfer to an absorbent phase</annotation:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="pt-br">elemento de temperatura</rdfs:label>
+        <rdfs:label xml:lang="en">temperature element</rdfs:label>
+        <skos:definition xml:lang="en">A temperature element is an instrument that bears a temperature sensing function.</skos:definition>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x(TemperatureElement(x) ↔ DetectingElement(x) ∧ ∃f(TemperatureSensingFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
+        <annotation:naturalLanguageDefinition xml:lang="en">A temperature element is an instrument that bears a temperature sensing function.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um elemento de temperatura é um instrumento que possui uma função de sensoreamento de temperatura.</annotation:naturalLanguageDefinition>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every temperature element is a detecting element that has the function to sense temperature</annotation:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077">
@@ -11735,6 +11799,23 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <annotation:naturalLanguageDefinition xml:lang="en">A humidity analyser is an instrument designed to measure and indicate humidity or moisture content in process streams or environments.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">Um analisador de umidade é um analisador de processo que é projetado para medir e indicar o conteúdo de umidade ou vapor d&apos;água em correntes de processo ou ambientes.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every humidity analyser is a process analyzer that has the function to measure humidity content.</annotation:semiFormalNaturalLanguageAxiom>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000126 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000126">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+        <rdfs:label xml:lang="pt-br">filtro em linha</rdfs:label>
+        <rdfs:label xml:lang="en">in line filter</rdfs:label>
+        <skos:definition xml:lang="en">An in-line filter is a filter that is installed directly within a fluid line and supported by connected piping or equipment, designed to remove particles or contaminants from fluid streams during normal flow operations.</skos:definition>
+        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (InLineFilter(x) → Filter(x) ∧ ∃m,e (InLineInstallation(m) ∧ ConnectedEquipment(e) ∧ hasInstallationMethod(x,m) ∧ supportedBy(x,e)))</annotation:firstOrderLogicAxiom>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">An in-line filter is a filter that is installed directly within a fluid line and supported by connected piping or equipment, designed to remove particles or contaminants from fluid streams during normal flow operations.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um filtro em linha é um filtro que é instalado diretamente dentro de uma linha de fluido e suportado por tubulações ou equipamentos conectados, projetado para remover partículas ou contaminantes de correntes de fluido durante operações normais de fluxo.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">Using necessary conditions because this is a constructive type defined by physical installation configuration. Under OWA, any filter with in-line connections and piping support could be classified as in-line filter, but specialized hybrid equipment or custom installations might have these features without belonging to the standard in-line filter maintenance category. Starting with necessary conditions protects against false positives.</annotation:primitiveRationale>
+        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every in-line filter is a filter that has an in-line installation method and is supported by connected equipment.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
 
@@ -17884,7 +17965,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000380"/>
+                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
                         <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/TemperatureMeasurementFunction"/>
@@ -17892,7 +17973,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000380"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -18500,70 +18581,6 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <skos:definition xml:lang="en">A wireline is an electrical cable that bears a wireline logging function for lowering tools into wellbores and transmitting data about wellbore conditions.</skos:definition>
         <annotation:naturalLanguageDefinition xml:lang="en">A wireline is an electrical cable that bears a wireline logging function for lowering tools into wellbores and transmitting data about wellbore conditions.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">Um wireline é um cabo elétrico que possui uma função de perfilagem wireline para descer ferramentas em poços e transmitir dados sobre as condições do poço.</annotation:naturalLanguageDefinition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000379 -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000379">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000069"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000069"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">absorber</rdfs:label>
-        <rdfs:label xml:lang="pt-br">absorvedor</rdfs:label>
-        <skos:definition xml:lang="en">An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase.</skos:definition>
-        <annotation:firstOrderLogicAxiom xml:lang="en">∀x(Absorber(x) ↔ (PressureVessel(x) ∧ ∃f(GasAbsorptionFunction(f) ∧ bearerOf(x,f))))</annotation:firstOrderLogicAxiom>
-        <annotation:naturalLanguageDefinition xml:lang="en">An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um absorvedor é um vaso de pressão que realiza uma função de absorção para transferência seletiva de massa de componentes de uma mistura fluida para uma fase absorvente.</annotation:naturalLanguageDefinition>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every absorber is a pressure vessel that has a gas-absorption function whose realization absorbs specific components from a fluid mixture through mass transfer to an absorbent phase</annotation:semiFormalNaturalLanguageAxiom>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000380 -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000380">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="pt-br">elemento de temperatura</rdfs:label>
-        <rdfs:label xml:lang="en">temperature element</rdfs:label>
-        <skos:definition xml:lang="en">A temperature element is an instrument that bears a temperature sensing function.</skos:definition>
-        <annotation:firstOrderLogicAxiom xml:lang="en">∀x(TemperatureElement(x) ↔ DetectingElement(x) ∧ ∃f(TemperatureSensingFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
-        <annotation:naturalLanguageDefinition xml:lang="en">A temperature element is an instrument that bears a temperature sensing function.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um elemento de temperatura é um instrumento que possui uma função de sensoreamento de temperatura.</annotation:naturalLanguageDefinition>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every temperature element is a detecting element that has the function to sense temperature</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
 
@@ -22233,23 +22250,6 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:label xml:lang="pt-br">fluido de hidrocarboneto</rdfs:label>
         <rdfs:label xml:lang="en">hydrocarbon fluid</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a fluid consisting primarily of hydrocarbon compounds produced from or processed in a petroleum production system.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/InLineFilter -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/InLineFilter">
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
-        <rdfs:label xml:lang="pt-br">filtro em linha</rdfs:label>
-        <rdfs:label xml:lang="en">in line filter</rdfs:label>
-        <skos:definition xml:lang="en">An in-line filter is a filter that is installed directly within a fluid line and supported by connected piping or equipment, designed to remove particles or contaminants from fluid streams during normal flow operations.</skos:definition>
-        <annotation:firstOrderLogicAxiom xml:lang="en">∀x (InLineFilter(x) → Filter(x) ∧ ∃m,e (InLineInstallation(m) ∧ ConnectedEquipment(e) ∧ hasInstallationMethod(x,m) ∧ supportedBy(x,e)))</annotation:firstOrderLogicAxiom>
-        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">An in-line filter is a filter that is installed directly within a fluid line and supported by connected piping or equipment, designed to remove particles or contaminants from fluid streams during normal flow operations.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um filtro em linha é um filtro que é instalado diretamente dentro de uma linha de fluido e suportado por tubulações ou equipamentos conectados, projetado para remover partículas ou contaminantes de correntes de fluido durante operações normais de fluxo.</annotation:naturalLanguageDefinition>
-        <annotation:primitiveRationale xml:lang="en">Using necessary conditions because this is a constructive type defined by physical installation configuration. Under OWA, any filter with in-line connections and piping support could be classified as in-line filter, but specialized hybrid equipment or custom installations might have these features without belonging to the standard in-line filter maintenance category. Starting with necessary conditions protects against false positives.</annotation:primitiveRationale>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every in-line filter is a filter that has an in-line installation method and is supported by connected equipment.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
 

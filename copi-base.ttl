@@ -15,7 +15,7 @@
 @base <https://www.inf.ufrgs.br/ontologies/copi/copi-base.ttl> .
 
 <https://www.inf.ufrgs.br/ontologies/copi/copi-base.ttl> rdf:type owl:Ontology ;
-                                                          owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-07-13/copi-base.ttl> ;
+                                                          owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-07-17/copi-base.ttl> ;
                                                           dce:type <http://purl.obolibrary.org/obo/IAO_8000001> ;
                                                           dcterms:bibliographicCitation "Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press." ;
                                                           dcterms:contributor "Cauã Antunes" ,
@@ -39,7 +39,7 @@
                                                           bibo:status "unstable" ;
                                                           vann:preferredNamespacePrefix "copi" ;
                                                           vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI ;
-                                                          owl:versionInfo "2026-07-13" ;
+                                                          owl:versionInfo "2026-07-17" ;
                                                           skos:scopeNote "Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia."@pt-br ,
                                                                          "COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos."@pt-br ,
                                                                          "COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en ,
@@ -2288,6 +2288,54 @@ copi:COPI_0000074 rdf:type owl:Class ;
                   annotation:semiFormalNaturalLanguageAxiom "Every shell and tube heat exchanger is a heat exchanger that has a tube bundle as component part and has a shell as component part, where the tube bundle is spatially contained within the shell."@en .
 
 
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000075
+copi:COPI_0000075 rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( copi:COPI_0000090
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
+                                                               owl:someValuesFrom copi:COPI_0000069
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf copi:COPI_0000090 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
+                                    owl:someValuesFrom copi:COPI_0000069
+                                  ] ;
+                  rdfs:label "absorber"@en ,
+                             "absorvedor"@pt-br ;
+                  skos:definition "An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase."@en ;
+                  annotation:firstOrderLogicAxiom "∀x(Absorber(x) ↔ (PressureVessel(x) ∧ ∃f(GasAbsorptionFunction(f) ∧ bearerOf(x,f))))"@en ;
+                  annotation:naturalLanguageDefinition "An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase."@en ,
+                                                       "Um absorvedor é um vaso de pressão que realiza uma função de absorção para transferência seletiva de massa de componentes de uma mistura fluida para uma fase absorvente."@pt-br ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every absorber is a pressure vessel that has a gas-absorption function whose realization absorbs specific components from a fluid mixture through mass transfer to an absorbent phase"@en .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076
+copi:COPI_0000076 rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( copi:COPI_0000091
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
+                                                               owl:someValuesFrom copi:COPI_0000070
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf copi:COPI_0000091 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
+                                    owl:someValuesFrom copi:COPI_0000070
+                                  ] ;
+                  rdfs:label "elemento de temperatura"@pt-br ,
+                             "temperature element"@en ;
+                  skos:definition "A temperature element is an instrument that bears a temperature sensing function."@en ;
+                  annotation:firstOrderLogicAxiom "∀x(TemperatureElement(x) ↔ DetectingElement(x) ∧ ∃f(TemperatureSensingFunction(f) ∧ bearerOf(x,f)))"@en ;
+                  annotation:naturalLanguageDefinition "A temperature element is an instrument that bears a temperature sensing function."@en ,
+                                                       "Um elemento de temperatura é um instrumento que possui uma função de sensoreamento de temperatura."@pt-br ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every temperature element is a detecting element that has the function to sense temperature"@en .
+
+
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077
 copi:COPI_0000077 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000023 ,
@@ -3250,6 +3298,20 @@ copi:COPI_0000125 rdf:type owl:Class ;
                   annotation:naturalLanguageDefinition "A humidity analyser is an instrument designed to measure and indicate humidity or moisture content in process streams or environments."@en ,
                                                        "Um analisador de umidade é um analisador de processo que é projetado para medir e indicar o conteúdo de umidade ou vapor d'água em correntes de processo ou ambientes."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every humidity analyser is a process analyzer that has the function to measure humidity content."@en .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000126
+copi:COPI_0000126 rdf:type owl:Class ;
+                  rdfs:subClassOf copi:COPI_0000081 ;
+                  rdfs:label "filtro em linha"@pt-br ,
+                             "in line filter"@en ;
+                  skos:definition "An in-line filter is a filter that is installed directly within a fluid line and supported by connected piping or equipment, designed to remove particles or contaminants from fluid streams during normal flow operations."@en ;
+                  annotation:firstOrderLogicAxiom "∀x (InLineFilter(x) → Filter(x) ∧ ∃m,e (InLineInstallation(m) ∧ ConnectedEquipment(e) ∧ hasInstallationMethod(x,m) ∧ supportedBy(x,e)))"@en ;
+                  annotation:isPrimitive "true"^^xsd:boolean ;
+                  annotation:naturalLanguageDefinition "An in-line filter is a filter that is installed directly within a fluid line and supported by connected piping or equipment, designed to remove particles or contaminants from fluid streams during normal flow operations."@en ,
+                                                       "Um filtro em linha é um filtro que é instalado diretamente dentro de uma linha de fluido e suportado por tubulações ou equipamentos conectados, projetado para remover partículas ou contaminantes de correntes de fluido durante operações normais de fluxo."@pt-br ;
+                  annotation:primitiveRationale "Using necessary conditions because this is a constructive type defined by physical installation configuration. Under OWA, any filter with in-line connections and piping support could be classified as in-line filter, but specialized hybrid equipment or custom installations might have these features without belonging to the standard in-line filter maintenance category. Starting with necessary conditions protects against false positives."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every in-line filter is a filter that has an in-line installation method and is supported by connected equipment."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127
@@ -7872,7 +7934,7 @@ copi:COPI_0000357 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000358
 copi:COPI_0000358 rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( copi:COPI_0000380
+                  owl:equivalentClass [ owl:intersectionOf ( copi:COPI_0000076
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                                                owl:someValuesFrom copi:TemperatureMeasurementFunction
@@ -7880,7 +7942,7 @@ copi:COPI_0000358 rdf:type owl:Class ;
                                                            ) ;
                                         rdf:type owl:Class
                                       ] ;
-                  rdfs:subClassOf copi:COPI_0000380 ,
+                  rdfs:subClassOf copi:COPI_0000076 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:TemperatureMeasurementFunction
@@ -8343,54 +8405,6 @@ copi:COPI_0000378 rdf:type owl:Class ;
                   skos:definition "A wireline is an electrical cable that bears a wireline logging function for lowering tools into wellbores and transmitting data about wellbore conditions."@en ;
                   annotation:naturalLanguageDefinition "A wireline is an electrical cable that bears a wireline logging function for lowering tools into wellbores and transmitting data about wellbore conditions."@en ,
                                                        "Um wireline é um cabo elétrico que possui uma função de perfilagem wireline para descer ferramentas em poços e transmitir dados sobre as condições do poço."@pt-br .
-
-
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000379
-copi:COPI_0000379 rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( copi:COPI_0000090
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                                               owl:someValuesFrom copi:COPI_0000069
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf copi:COPI_0000090 ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                    owl:someValuesFrom copi:COPI_0000069
-                                  ] ;
-                  rdfs:label "absorber"@en ,
-                             "absorvedor"@pt-br ;
-                  skos:definition "An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(Absorber(x) ↔ (PressureVessel(x) ∧ ∃f(GasAbsorptionFunction(f) ∧ bearerOf(x,f))))"@en ;
-                  annotation:naturalLanguageDefinition "An absorber is a pressure vessel that realizes an absorption function for selective mass transfer of components from a fluid mixture into an absorbent phase."@en ,
-                                                       "Um absorvedor é um vaso de pressão que realiza uma função de absorção para transferência seletiva de massa de componentes de uma mistura fluida para uma fase absorvente."@pt-br ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every absorber is a pressure vessel that has a gas-absorption function whose realization absorbs specific components from a fluid mixture through mass transfer to an absorbent phase"@en .
-
-
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000380
-copi:COPI_0000380 rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( copi:COPI_0000091
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                                               owl:someValuesFrom copi:COPI_0000070
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf copi:COPI_0000091 ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                    owl:someValuesFrom copi:COPI_0000070
-                                  ] ;
-                  rdfs:label "elemento de temperatura"@pt-br ,
-                             "temperature element"@en ;
-                  skos:definition "A temperature element is an instrument that bears a temperature sensing function."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(TemperatureElement(x) ↔ DetectingElement(x) ∧ ∃f(TemperatureSensingFunction(f) ∧ bearerOf(x,f)))"@en ;
-                  annotation:naturalLanguageDefinition "A temperature element is an instrument that bears a temperature sensing function."@en ,
-                                                       "Um elemento de temperatura é um instrumento que possui uma função de sensoreamento de temperatura."@pt-br ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every temperature element is a detecting element that has the function to sense temperature"@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000381
@@ -10991,20 +11005,6 @@ copi:HydrocarbonFluid rdf:type owl:Class ;
                       rdfs:label "fluido de hidrocarboneto"@pt-br ,
                                  "hydrocarbon fluid"@en ;
                       skos:definition "A material artifact that constitutes a fluid consisting primarily of hydrocarbon compounds produced from or processed in a petroleum production system."@en .
-
-
-###  https://www.inf.ufrgs.br/ontologies/copi/InLineFilter
-copi:InLineFilter rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000081 ;
-                  rdfs:label "filtro em linha"@pt-br ,
-                             "in line filter"@en ;
-                  skos:definition "An in-line filter is a filter that is installed directly within a fluid line and supported by connected piping or equipment, designed to remove particles or contaminants from fluid streams during normal flow operations."@en ;
-                  annotation:firstOrderLogicAxiom "∀x (InLineFilter(x) → Filter(x) ∧ ∃m,e (InLineInstallation(m) ∧ ConnectedEquipment(e) ∧ hasInstallationMethod(x,m) ∧ supportedBy(x,e)))"@en ;
-                  annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "An in-line filter is a filter that is installed directly within a fluid line and supported by connected piping or equipment, designed to remove particles or contaminants from fluid streams during normal flow operations."@en ,
-                                                       "Um filtro em linha é um filtro que é instalado diretamente dentro de uma linha de fluido e suportado por tubulações ou equipamentos conectados, projetado para remover partículas ou contaminantes de correntes de fluido durante operações normais de fluxo."@pt-br ;
-                  annotation:primitiveRationale "Using necessary conditions because this is a constructive type defined by physical installation configuration. Under OWA, any filter with in-line connections and piping support could be classified as in-line filter, but specialized hybrid equipment or custom installations might have these features without belonging to the standard in-line filter maintenance category. Starting with necessary conditions protects against false positives."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every in-line filter is a filter that has an in-line installation method and is supported by connected equipment."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/IndicationProcess
