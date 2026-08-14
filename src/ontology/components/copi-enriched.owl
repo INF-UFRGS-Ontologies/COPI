@@ -32,7 +32,7 @@
     <dcterms:title xml:lang="pt-br">Ontologia Core para Instalações de Petróleo (COPI)</dcterms:title>
     <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl"/>
     <owl:imports rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/"/>
-    <owl:versionInfo>1.1.0-114-g93cfc45</owl:versionInfo>
+    <owl:versionInfo>1.1.0-116-g7e648bd</owl:versionInfo>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
     <skos:scopeNote xml:lang="en">Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.</skos:scopeNote>
@@ -5443,7 +5443,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">measuring element</rdfs:label>
     <rdfs:label xml:lang="pt-br">elemento de medição</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
     <skos:definition xml:lang="en">A material artifact that constitutes a primary measurement element within petroleum production instrumentation that directly responds to the measured variable.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000574">
