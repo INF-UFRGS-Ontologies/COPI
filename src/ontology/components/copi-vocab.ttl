@@ -638,3 +638,233 @@ copi:COPI_0000385 a owl:Class ;
     iof-av:semiFormalNaturalLanguageAxiom "if q is a 'mechanical load' then q is a 'quality'"@en ,
         "se q é uma 'carga mecânica' então q é uma 'qualidade'"@pt-br ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+#==============================================================================
+# ODR-022 — Participant substance vocabulary (COPI_0000386-0000400)
+#
+# Canonical domain substances consolidated from the readable-name stubs that
+# copi-enriched.owl previously shipped. Anchored under the ODR-010 PortionOfFluid
+# hierarchy (COPI_0000037-0000040) rather than bfo:FiatObjectPart: fluids lack the
+# internal unity BFO requires of Object and its fiat parts (Smith 2010).
+#==============================================================================
+
+copi:COPI_0000386 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000039 ;
+    rdfs:label "portion of air"@en , "porção de ar"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of gas consisting of atmospheric air, whether ambient, compressed, dried or humid, participating in an equipment-realizing process."@en ,
+        "Uma porção de gás constituída de ar atmosférico, seja ambiente, comprimido, seco ou úmido, que participa de um processo realizado por equipamento."@pt-br ;
+    rdfs:comment "A portion of gas consisting of atmospheric air, whether ambient, compressed, dried or humid, participating in an equipment-realizing process."@en ,
+                 "Uma porção de gás constituída de ar atmosférico, seja ambiente, comprimido, seco ou úmido, que participa de um processo realizado por equipamento."@pt-br ;
+    iof-av:firstOrderLogicAxiom "PortionOfAir(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'portion of air' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000387 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
+    rdfs:label "portion of water"@en , "porção de água"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of fluid consisting predominantly of water, in any phase, participating in an equipment-realizing process."@en ,
+        "Uma porção de fluido constituída predominantemente de água, em qualquer fase, que participa de um processo realizado por equipamento."@pt-br ;
+    rdfs:comment "A portion of fluid consisting predominantly of water, in any phase, participating in an equipment-realizing process."@en ,
+                 "Uma porção de fluido constituída predominantemente de água, em qualquer fase, que participa de um processo realizado por equipamento."@pt-br ;
+    iof-av:firstOrderLogicAxiom "PortionOfWater(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'portion of water' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000388 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
+    rdfs:label "portion of oil"@en , "porção de óleo"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of fluid consisting predominantly of liquid hydrocarbons, participating in an equipment-realizing process."@en ,
+        "Uma porção de fluido constituída predominantemente de hidrocarbonetos líquidos, que participa de um processo realizado por equipamento."@pt-br ;
+    rdfs:comment "A portion of fluid consisting predominantly of liquid hydrocarbons, participating in an equipment-realizing process."@en ,
+                 "Uma porção de fluido constituída predominantemente de hidrocarbonetos líquidos, que participa de um processo realizado por equipamento."@pt-br ;
+    iof-av:firstOrderLogicAxiom "PortionOfOil(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'portion of oil' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000389 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
+    rdfs:label "hydrocarbon fluid"@en , "fluido de hidrocarboneto"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of fluid whose principal constituents are hydrocarbon compounds, in liquid, gaseous or multiphase state."@en ,
+        "Uma porção de fluido cujos constituintes principais são compostos de hidrocarbonetos, em estado líquido, gasoso ou multifásico."@pt-br ;
+    rdfs:comment "A portion of fluid whose principal constituents are hydrocarbon compounds, in liquid, gaseous or multiphase state."@en ,
+                 "Uma porção de fluido cujos constituintes principais são compostos de hidrocarbonetos, em estado líquido, gasoso ou multifásico."@pt-br ;
+    iof-av:firstOrderLogicAxiom "HydrocarbonFluid(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'hydrocarbon fluid' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000390 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
+    rdfs:label "formation fluid"@en , "fluido de formação"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of fluid produced from or residing in a subsurface geological formation, typically a mixture of hydrocarbons, water and dissolved gas."@en ,
+        "Uma porção de fluido produzida a partir de, ou residente em, uma formação geológica de subsuperfície, tipicamente uma mistura de hidrocarbonetos, água e gás dissolvido."@pt-br ;
+    rdfs:comment "A portion of fluid produced from or residing in a subsurface geological formation, typically a mixture of hydrocarbons, water and dissolved gas."@en ,
+                 "Uma porção de fluido produzida a partir de, ou residente em, uma formação geológica de subsuperfície, tipicamente uma mistura de hidrocarbonetos, água e gás dissolvido."@pt-br ;
+    iof-av:firstOrderLogicAxiom "FormationFluid(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'formation fluid' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000391 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
+    rdfs:label "drilling fluid"@en , "fluido de perfuração"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of fluid circulated through a wellbore during drilling to transport cuttings, control formation pressure and cool the drill bit."@en ,
+        "Uma porção de fluido circulada através de um poço durante a perfuração para transportar cascalhos, controlar a pressão da formação e resfriar a broca."@pt-br ;
+    rdfs:comment "A portion of fluid circulated through a wellbore during drilling to transport cuttings, control formation pressure and cool the drill bit."@en ,
+                 "Uma porção de fluido circulada através de um poço durante a perfuração para transportar cascalhos, controlar a pressão da formação e resfriar a broca."@pt-br ;
+    iof-av:firstOrderLogicAxiom "DrillingFluid(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'drilling fluid' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000392 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000038 ;
+    rdfs:label "hydraulic fluid"@en , "fluido hidráulico"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of liquid used as the working medium for transmitting power in a hydraulic system."@en ,
+        "Uma porção de líquido utilizada como meio de trabalho para transmitir potência em um sistema hidráulico."@pt-br ;
+    rdfs:comment "A portion of liquid used as the working medium for transmitting power in a hydraulic system."@en ,
+                 "Uma porção de líquido utilizada como meio de trabalho para transmitir potência em um sistema hidráulico."@pt-br ;
+    iof-av:firstOrderLogicAxiom "HydraulicFluid(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'hydraulic fluid' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000393 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
+    rdfs:label "fuel portion"@en , "porção de combustível"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of fluid supplied to a combustion process as the source of chemical energy, in gaseous or liquid form."@en ,
+        "Uma porção de fluido fornecida a um processo de combustão como fonte de energia química, em forma gasosa ou líquida."@pt-br ;
+    rdfs:comment "A portion of fluid supplied to a combustion process as the source of chemical energy, in gaseous or liquid form."@en ,
+                 "Uma porção de fluido fornecida a um processo de combustão como fonte de energia química, em forma gasosa ou líquida."@pt-br ;
+    iof-av:firstOrderLogicAxiom "FuelPortion(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'fuel portion' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000394 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000039 ;
+    rdfs:label "exhaust gas"@en , "gás de exaustão"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of gas discharged from a combustion process, comprising the gaseous products of that combustion."@en ,
+        "Uma porção de gás descarregada de um processo de combustão, compreendendo os produtos gasosos dessa combustão."@pt-br ;
+    rdfs:comment "A portion of gas discharged from a combustion process, comprising the gaseous products of that combustion."@en ,
+                 "Uma porção de gás descarregada de um processo de combustão, compreendendo os produtos gasosos dessa combustão."@pt-br ;
+    iof-av:firstOrderLogicAxiom "ExhaustGas(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'exhaust gas' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000395 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
+    rdfs:label "combustion product"@en , "produto de combustão"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of fluid produced by a combustion process, comprising the material outputs of the oxidation reaction."@en ,
+        "Uma porção de fluido produzida por um processo de combustão, compreendendo as saídas materiais da reação de oxidação."@pt-br ;
+    rdfs:comment "A portion of fluid produced by a combustion process, comprising the material outputs of the oxidation reaction."@en ,
+                 "Uma porção de fluido produzida por um processo de combustão, compreendendo as saídas materiais da reação de oxidação."@pt-br ;
+    iof-av:firstOrderLogicAxiom "CombustionProduct(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'combustion product' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000396 a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000040 ;
+    rdfs:label "waste material"@en , "material residual"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A material entity discharged from an equipment-realizing process as an unwanted by-product, in any phase."@en ,
+        "Uma entidade material descartada de um processo realizado por equipamento como subproduto indesejado, em qualquer fase."@pt-br ;
+    rdfs:comment "A material entity discharged from an equipment-realizing process as an unwanted by-product, in any phase."@en ,
+                 "Uma entidade material descartada de um processo realizado por equipamento como subproduto indesejado, em qualquer fase."@pt-br ;
+    iof-av:firstOrderLogicAxiom "WasteMaterial(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'waste material' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000397 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
+    rdfs:label "heat transfer medium"@en , "meio de transferência de calor"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of fluid whose role in a process is to carry thermal energy to or from another material entity, whether as coolant or as heating medium."@en ,
+        "Uma porção de fluido cujo papel em um processo é transportar energia térmica para ou de outra entidade material, seja como refrigerante ou como meio de aquecimento."@pt-br ;
+    rdfs:comment "A portion of fluid whose role in a process is to carry thermal energy to or from another material entity, whether as coolant or as heating medium."@en ,
+                 "Uma porção de fluido cujo papel em um processo é transportar energia térmica para ou de outra entidade material, seja como refrigerante ou como meio de aquecimento."@pt-br ;
+    iof-av:firstOrderLogicAxiom "HeatTransferMedium(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'heat transfer medium' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000398 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000037 ;
+    rdfs:label "carrier fluid"@en , "fluido de arraste"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of fluid that conveys another substance through a process without itself being the subject of the transformation."@en ,
+        "Uma porção de fluido que transporta outra substância através de um processo sem ser, ela própria, objeto da transformação."@pt-br ;
+    rdfs:comment "A portion of fluid that conveys another substance through a process without itself being the subject of the transformation."@en ,
+                 "Uma porção de fluido que transporta outra substância através de um processo sem ser, ela própria, objeto da transformação."@pt-br ;
+    iof-av:firstOrderLogicAxiom "CarrierFluid(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'carrier fluid' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000399 a owl:Class ;
+    rdfs:subClassOf copi:COPI_0000040 ;
+    rdfs:label "rock cuttings"@en , "cascalhos de perfuração"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A portion of solid consisting of rock fragments produced by the action of a drill bit and transported to surface by drilling fluid."@en ,
+        "Uma porção de sólido constituída de fragmentos de rocha produzidos pela ação da broca e transportados à superfície pelo fluido de perfuração."@pt-br ;
+    rdfs:comment "A portion of solid consisting of rock fragments produced by the action of a drill bit and transported to surface by drilling fluid."@en ,
+                 "Uma porção de sólido constituída de fragmentos de rocha produzidos pela ação da broca e transportados à superfície pelo fluido de perfuração."@pt-br ;
+    iof-av:firstOrderLogicAxiom "RockCuttings(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'rock cuttings' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000400 a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000040 ;
+    rdfs:label "removed material"@en , "material removido"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A material entity separated from a process stream and discharged, comprising contaminants, corrosion products and filtered constituents."@en ,
+        "Uma entidade material separada de uma corrente de processo e descartada, compreendendo contaminantes, produtos de corrosão e constituintes filtrados."@pt-br ;
+    rdfs:comment "A material entity separated from a process stream and discharged, comprising contaminants, corrosion products and filtered constituents."@en ,
+                 "Uma entidade material separada de uma corrente de processo e descartada, compreendendo contaminantes, produtos de corrosão e constituintes filtrados."@pt-br ;
+    iof-av:firstOrderLogicAxiom "RemovedMaterial(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'removed material' then x is a portion of matter"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+
+#==============================================================================
+# ODR-022 — Measurement results and qualities (COPI_0000401-0000403)
+#==============================================================================
+
+copi:COPI_0000401 a owl:Class ;
+    rdfs:subClassOf iof-constr:MeasurementInformationContentEntity ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty iof-constr:describes ;
+        owl:someValuesFrom copi:COPI_0000057 ] ;
+    rdfs:label "vibration measurement result"@en , "resultado de medição de vibração"@pt-br ;
+    iof-av:naturalLanguageDefinition "Measurement information content entity describing a vibration quality of some material entity."@en ,
+        "Entidade de conteúdo informacional de medição que descreve uma qualidade de vibração de alguma entidade material."@pt-br ;
+    rdfs:comment "Measurement information content entity describing a vibration quality of some material entity."@en ,
+                 "Entidade de conteúdo informacional de medição que descreve uma qualidade de vibração de alguma entidade material."@pt-br ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000402 a owl:Class ;
+    rdfs:subClassOf iof-constr:MeasurementInformationContentEntity ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty iof-constr:describes ;
+        owl:someValuesFrom copi:COPI_0000403 ] ;
+    rdfs:label "position measurement result"@en , "resultado de medição de posição"@pt-br ;
+    iof-av:naturalLanguageDefinition "Measurement information content entity describing a position quality of some material entity."@en ,
+        "Entidade de conteúdo informacional de medição que descreve uma qualidade de posição de alguma entidade material."@pt-br ;
+    rdfs:comment "Measurement information content entity describing a position quality of some material entity."@en ,
+                 "Entidade de conteúdo informacional de medição que descreve uma qualidade de posição de alguma entidade material."@pt-br ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000403 a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000019 ;
+    rdfs:label "position"@en , "posição"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A quality inhering in a material entity that represents its spatial location or displacement relative to a reference."@en ,
+        "Uma qualidade inerente a uma entidade material que representa sua localização espacial ou deslocamento em relação a uma referência."@pt-br ;
+    rdfs:comment "A quality inhering in a material entity that represents its spatial location or displacement relative to a reference."@en ,
+                 "Uma qualidade inerente a uma entidade material que representa sua localização espacial ou deslocamento em relação a uma referência."@pt-br ;
+    iof-av:firstOrderLogicAxiom "Position(q) → Quality(q)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if q is a 'position' then q is a 'quality'"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
