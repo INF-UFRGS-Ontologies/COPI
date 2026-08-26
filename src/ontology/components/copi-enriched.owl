@@ -26,13 +26,13 @@
     <dcterms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants, developed using the five-step RDL enrichment method.</dcterms:description>
     <dcterms:isPartOf rdf:resource="https://inf.ufrgs.br/projetos/OntoKG"/>
     <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-14</dcterms:modified>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-26</dcterms:modified>
     <dcterms:publisher xml:lang="en">Universidade Federal do Rio Grande do Sul (UFRGS)</dcterms:publisher>
     <dcterms:title xml:lang="en">Core Ontology for Petroleum Installations (COPI)</dcterms:title>
     <dcterms:title xml:lang="pt-br">Ontologia Core para Instalações de Petróleo (COPI)</dcterms:title>
     <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl"/>
     <owl:imports rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/"/>
-    <owl:versionInfo>1.1.0-116-g7e648bd</owl:versionInfo>
+    <owl:versionInfo>1.1.0-122-g907e74f</owl:versionInfo>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
     <skos:scopeNote xml:lang="en">Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.</skos:scopeNote>
@@ -14887,5 +14887,3533 @@
     <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
     <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001726">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001727">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001728">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001729">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001730">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001731">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001732">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001733">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001734">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001735">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001736">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001737">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001738">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001739">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001740">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001741">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001742">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001743">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001744">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001745">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001746">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001747">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:nodeID="n001761"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001748">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+    <rdf:rest rdf:nodeID="n002301"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001749">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001750">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001751">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001752">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001753">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001754">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001755">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001756">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001757">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001758">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001759">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001760">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001761">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001762">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001763">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001764">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001765">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001766">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001767">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001768">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001769">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001770">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001771">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001772">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:nodeID="n001741"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001773">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+    <rdf:rest rdf:nodeID="n002299"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001774">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001775">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074"/>
+    <rdf:rest rdf:nodeID="n001980"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001776">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001777">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
+    <rdf:rest rdf:nodeID="n001986"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001778">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
+    <rdf:rest rdf:nodeID="n001900"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001779">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
+    <rdf:rest rdf:nodeID="n001946"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001780">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001781">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001782">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001783">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001784">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001785">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001786">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001787">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001788">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001789">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001790">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:nodeID="n001740"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001791">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:nodeID="n001770"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001792">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+    <rdf:rest rdf:nodeID="n002298"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001793">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001794">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001795">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001796">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001797">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001798">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001799">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001800">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001801">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001802">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:nodeID="n001738"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001803">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:nodeID="n001752"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001804">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+    <rdf:rest rdf:nodeID="n001840"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001805">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001806">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001807">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001808">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001809">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001810">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001811">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001812">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001813">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001814">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001815">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:nodeID="n002224"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001816">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+    <rdf:rest rdf:nodeID="n001825"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001817">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001818">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001819">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001820">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001821">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001822">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
+    <rdf:rest rdf:nodeID="n001890"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001823">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001824">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001825">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001826">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001827">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001828">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001829">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001830">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001831">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001832">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001833">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001834">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001835">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001836">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001837">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001838">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001839">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001840">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001841">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+    <rdf:rest rdf:nodeID="n002225"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001842">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001843">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001844">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
+    <rdf:rest rdf:nodeID="n001916"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001845">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
+    <rdf:rest rdf:nodeID="n001928"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001846">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
+    <rdf:rest rdf:nodeID="n001855"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001847">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001848">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001849">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001850">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001851">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
+    <rdf:rest rdf:nodeID="n001922"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001852">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
+    <rdf:rest rdf:nodeID="n001859"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001853">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000098"/>
+    <rdf:rest rdf:nodeID="n001896"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001854">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001855">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001856">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
+    <rdf:rest rdf:nodeID="n001843"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001857">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
+    <rdf:rest rdf:nodeID="n001917"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001858">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
+    <rdf:rest rdf:nodeID="n001927"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001859">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001860">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001861">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001862">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001863">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
+    <rdf:rest rdf:nodeID="n001850"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001864">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
+    <rdf:rest rdf:nodeID="n001919"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001865">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
+    <rdf:rest rdf:nodeID="n001933"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001866">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001867">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001868">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001869">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001870">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001871">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102"/>
+    <rdf:rest rdf:nodeID="n002268"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001872">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001873">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001874">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001875">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104"/>
+    <rdf:rest rdf:nodeID="n001895"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001876">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104"/>
+    <rdf:rest rdf:nodeID="n001971"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001877">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104"/>
+    <rdf:rest rdf:nodeID="n002014"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001878">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000106"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001879">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000106"/>
+    <rdf:rest rdf:nodeID="n002186"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001880">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000107"/>
+    <rdf:rest rdf:nodeID="n002091"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001881">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000107"/>
+    <rdf:rest rdf:nodeID="n001793"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001882">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
+    <rdf:rest rdf:nodeID="n001848"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001883">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
+    <rdf:rest rdf:nodeID="n001920"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001884">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
+    <rdf:rest rdf:nodeID="n001862"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001885">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
+    <rdf:rest rdf:nodeID="n001932"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001886">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
+    <rdf:rest rdf:nodeID="n001982"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001887">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000112"/>
+    <rdf:rest rdf:nodeID="n001973"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001888">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001889">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001890">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001891">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001892">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001893">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001894">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
+    <rdf:rest rdf:nodeID="n001818"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001895">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000114"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001896">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001897">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
+    <rdf:rest rdf:nodeID="n001730"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001898">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
+    <rdf:rest rdf:nodeID="n001764"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001899">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000116"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001900">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000116"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001901">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000117"/>
+    <rdf:rest rdf:nodeID="n001902"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001902">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001903">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001904">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001905">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001906">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001907">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001908">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001909">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001910">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001911">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001912">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001913">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:nodeID="n001998"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001914">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:nodeID="n002023"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001915">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
+    <rdf:rest rdf:nodeID="n001959"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001916">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001917">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001918">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001919">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001920">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001921">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001922">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001923">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
+    <rdf:rest rdf:nodeID="n001847"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001924">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
+    <rdf:rest rdf:nodeID="n001860"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001925">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
+    <rdf:rest rdf:nodeID="n001974"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001926">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000121"/>
+    <rdf:rest rdf:nodeID="n001826"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001927">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001928">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001929">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
+    <rdf:rest rdf:nodeID="n001842"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001930">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
+    <rdf:rest rdf:nodeID="n001854"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001931">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
+    <rdf:rest rdf:nodeID="n001918"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001932">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000123"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001933">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000123"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001934">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001935">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001936">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001937">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001938">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124"/>
+    <rdf:rest rdf:nodeID="n002109"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001939">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
+    <rdf:rest rdf:nodeID="n002035"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001940">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
+    <rdf:rest rdf:nodeID="n002005"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001941">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
+    <rdf:rest rdf:nodeID="n002180"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001942">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001943">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+    <rdf:rest rdf:nodeID="n002042"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001944">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+    <rdf:rest rdf:nodeID="n002106"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001945">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
+    <rdf:rest rdf:nodeID="n002054"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001946">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001947">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001948">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
+    <rdf:rest rdf:nodeID="n002006"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001949">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
+    <rdf:rest rdf:nodeID="n002027"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001950">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
+    <rdf:rest rdf:nodeID="n001962"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001951">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
+    <rdf:rest rdf:nodeID="n002022"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001952">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
+    <rdf:rest rdf:nodeID="n001994"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001953">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130"/>
+    <rdf:rest rdf:nodeID="n002175"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001954">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130"/>
+    <rdf:rest rdf:nodeID="n001992"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001955">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001956">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001957">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001958">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001959">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001960">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001961">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001962">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001963">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001964">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001965">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:nodeID="n002000"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001966">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:nodeID="n002024"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001967">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+    <rdf:rest rdf:nodeID="n001909"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001968">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
+    <rdf:rest rdf:nodeID="n001906"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001969">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
+    <rdf:rest rdf:nodeID="n002028"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001970">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
+    <rdf:rest rdf:nodeID="n002001"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001971">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001972">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001973">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001974">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000134"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001975">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
+    <rdf:rest rdf:nodeID="n001784"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001976">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
+    <rdf:rest rdf:nodeID="n002245"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001977">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
+    <rdf:rest rdf:nodeID="n001800"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001978">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000137"/>
+    <rdf:rest rdf:nodeID="n002177"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001979">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000138"/>
+    <rdf:rest rdf:nodeID="n002021"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001980">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000139"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001981">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000139"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001982">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001983">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
+    <rdf:rest rdf:nodeID="n001849"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001984">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
+    <rdf:rest rdf:nodeID="n001921"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001985">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
+    <rdf:rest rdf:nodeID="n001861"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001986">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001987">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
+    <rdf:rest rdf:nodeID="n001776"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001988">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
+    <rdf:rest rdf:nodeID="n001899"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001989">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
+    <rdf:rest rdf:nodeID="n001947"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001990">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001991">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001992">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001993">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001994">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001995">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
+    <rdf:rest rdf:nodeID="n002003"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001996">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001997">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001998">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n001999">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002000">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002001">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002002">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002003">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002004">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002005">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002006">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002007">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002008">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:nodeID="n001905"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002009">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:nodeID="n002036"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002010">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+    <rdf:rest rdf:nodeID="n001956"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002011">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000145"/>
+    <rdf:rest rdf:nodeID="n001873"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002012">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000146"/>
+    <rdf:rest rdf:nodeID="n002179"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002013">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000148"/>
+    <rdf:rest rdf:nodeID="n001874"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002014">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000149"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002015">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000150"/>
+    <rdf:rest rdf:nodeID="n001972"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002016">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000151"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002017">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000151"/>
+    <rdf:rest rdf:nodeID="n002221"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002018">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
+    <rdf:rest rdf:nodeID="n001834"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002019">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
+    <rdf:rest rdf:nodeID="n001744"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002020">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
+    <rdf:rest rdf:nodeID="n001751"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002021">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000153"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002022">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000154"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002023">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002024">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002025">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002026">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002027">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002028">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002029">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002030">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002031">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002032">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002033">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002034">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002035">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002036">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002037">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002038">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:nodeID="n001996"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002039">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:nodeID="n001911"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002040">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+    <rdf:rest rdf:nodeID="n001957"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002041">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000156"/>
+    <rdf:rest rdf:nodeID="n002055"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002042">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002043">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+    <rdf:rest rdf:nodeID="n002057"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002044">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
+    <rdf:rest rdf:nodeID="n001787"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002045">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
+    <rdf:rest rdf:nodeID="n001733"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002046">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
+    <rdf:rest rdf:nodeID="n001762"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002047">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
+    <rdf:rest rdf:nodeID="n002004"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002048">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
+    <rdf:rest rdf:nodeID="n002032"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002049">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
+    <rdf:rest rdf:nodeID="n001907"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002050">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
+    <rdf:rest rdf:nodeID="n001838"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002051">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
+    <rdf:rest rdf:nodeID="n001728"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002052">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
+    <rdf:rest rdf:nodeID="n001749"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002053">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
+    <rdf:rest rdf:nodeID="n002302"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002054">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002055">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002056">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002057">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002058">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000208"/>
+    <rdf:rest rdf:nodeID="n002083"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002059">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000209"/>
+    <rdf:rest rdf:nodeID="n001774"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002060">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000210"/>
+    <rdf:rest rdf:nodeID="n002025"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002061">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
+    <rdf:rest rdf:nodeID="n001997"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002062">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
+    <rdf:rest rdf:nodeID="n002034"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002063">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
+    <rdf:rest rdf:nodeID="n001910"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002064">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
+    <rdf:rest rdf:nodeID="n001961"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002065">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
+    <rdf:rest rdf:nodeID="n002244"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002066">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
+    <rdf:rest rdf:nodeID="n001734"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002067">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
+    <rdf:rest rdf:nodeID="n001766"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002068">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
+    <rdf:rest rdf:nodeID="n001824"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002069">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
+    <rdf:rest rdf:nodeID="n001780"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002070">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
+    <rdf:rest rdf:nodeID="n001726"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002071">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
+    <rdf:rest rdf:nodeID="n001828"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002072">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
+    <rdf:rest rdf:nodeID="n001756"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002073">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
+    <rdf:rest rdf:nodeID="n001829"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002074">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
+    <rdf:rest rdf:nodeID="n001807"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002075">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
+    <rdf:rest rdf:nodeID="n001760"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002076">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002077">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002078">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002079">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217"/>
+    <rdf:rest rdf:nodeID="n002101"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002080">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217"/>
+    <rdf:rest rdf:nodeID="n002108"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002081">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000221"/>
+    <rdf:rest rdf:nodeID="n002241"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002082">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002083">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002084">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002085">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002086">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002087">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002088">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002089">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002090">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002091">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002092">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002093">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002094">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:nodeID="n002223"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002095">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
+    <rdf:rest rdf:nodeID="n002141"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002096">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002097">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
+    <rdf:rest rdf:nodeID="n001809"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002098">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
+    <rdf:rest rdf:nodeID="n001827"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002099">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
+    <rdf:rest rdf:nodeID="n001768"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002100">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000229"/>
+    <rdf:rest rdf:nodeID="n002123"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002101">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000232"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002102">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
+    <rdf:rest rdf:nodeID="n002031"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002103">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
+    <rdf:rest rdf:nodeID="n002002"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002104">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
+    <rdf:rest rdf:nodeID="n001908"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002105">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
+    <rdf:rest rdf:nodeID="n001963"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002106">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000234"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002107">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000234"/>
+    <rdf:rest rdf:nodeID="n001942"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002108">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000235"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002109">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000235"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002110">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000235"/>
+    <rdf:rest rdf:nodeID="n001937"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002111">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000236"/>
+    <rdf:rest rdf:nodeID="n001935"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002112">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000236"/>
+    <rdf:rest rdf:nodeID="n002078"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002113">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000238"/>
+    <rdf:rest rdf:nodeID="n001806"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002114">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000240"/>
+    <rdf:rest rdf:nodeID="n001797"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002115">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000240"/>
+    <rdf:rest rdf:nodeID="n002088"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002116">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000241"/>
+    <rdf:rest rdf:nodeID="n002226"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002117">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000241"/>
+    <rdf:rest rdf:nodeID="n001934"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002118">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
+    <rdf:rest rdf:nodeID="n001936"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002119">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
+    <rdf:rest rdf:nodeID="n001743"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002120">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
+    <rdf:rest rdf:nodeID="n001759"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002121">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000244"/>
+    <rdf:rest rdf:nodeID="n001796"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002122">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000244"/>
+    <rdf:rest rdf:nodeID="n002087"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002123">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002124">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002125">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
+    <rdf:rest rdf:nodeID="n002178"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002126">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
+    <rdf:rest rdf:nodeID="n001993"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002127">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
+    <rdf:rest rdf:nodeID="n002030"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002128">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000246"/>
+    <rdf:rest rdf:nodeID="n002056"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002129">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
+    <rdf:rest rdf:nodeID="n002176"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002130">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
+    <rdf:rest rdf:nodeID="n001991"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002131">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
+    <rdf:rest rdf:nodeID="n002124"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002132">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000249"/>
+    <rdf:rest rdf:nodeID="n001870"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002133">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000249"/>
+    <rdf:rest rdf:nodeID="n002195"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002134">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000250"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002135">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000250"/>
+    <rdf:rest rdf:nodeID="n002190"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002136">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000252"/>
+    <rdf:rest rdf:nodeID="n002184"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002137">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000252"/>
+    <rdf:rest rdf:nodeID="n002214"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002138">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000253"/>
+    <rdf:rest rdf:nodeID="n002232"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002139">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000255"/>
+    <rdf:rest rdf:nodeID="n001801"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002140">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000255"/>
+    <rdf:rest rdf:nodeID="n002090"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002141">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002142">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
+    <rdf:rest rdf:nodeID="n001795"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002143">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
+    <rdf:rest rdf:nodeID="n002092"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002144">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000259"/>
+    <rdf:rest rdf:nodeID="n001868"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002145">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000259"/>
+    <rdf:rest rdf:nodeID="n002269"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002146">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002147">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002148">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
+    <rdf:rest rdf:nodeID="n002258"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002149">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
+    <rdf:rest rdf:nodeID="n002200"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002150">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000261"/>
+    <rdf:rest rdf:nodeID="n001892"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002151">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000261"/>
+    <rdf:rest rdf:nodeID="n001820"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002152">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264"/>
+    <rdf:rest rdf:nodeID="n001888"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002153">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264"/>
+    <rdf:rest rdf:nodeID="n002262"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002154">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000266"/>
+    <rdf:rest rdf:nodeID="n002155"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002155">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000268"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002156">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000268"/>
+    <rdf:rest rdf:nodeID="n002085"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002157">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000268"/>
+    <rdf:rest rdf:nodeID="n002208"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002158">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000269"/>
+    <rdf:rest rdf:nodeID="n001981"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002159">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000271"/>
+    <rdf:rest rdf:nodeID="n002160"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002160">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000272"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002161">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
+    <rdf:rest rdf:nodeID="n002243"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002162">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
+    <rdf:rest rdf:nodeID="n001785"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002163">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
+    <rdf:rest rdf:nodeID="n001735"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002164">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
+    <rdf:rest rdf:nodeID="n001808"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002165">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
+    <rdf:rest rdf:nodeID="n001837"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002166">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
+    <rdf:rest rdf:nodeID="n001771"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002167">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
+    <rdf:rest rdf:nodeID="n001742"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002168">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
+    <rdf:rest rdf:nodeID="n001839"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002169">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
+    <rdf:rest rdf:nodeID="n001814"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002170">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
+    <rdf:rest rdf:nodeID="n001765"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002171">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
+    <rdf:rest rdf:nodeID="n001731"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002172">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
+    <rdf:rest rdf:nodeID="n001794"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002173">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
+    <rdf:rest rdf:nodeID="n002086"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002174">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
+    <rdf:rest rdf:nodeID="n002206"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002175">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002176">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002177">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002178">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002179">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002180">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002181">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+    <rdf:rest rdf:nodeID="n001999"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002182">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+    <rdf:rest rdf:nodeID="n002033"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002183">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+    <rdf:rest rdf:nodeID="n001964"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002184">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000279"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002185">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000281"/>
+    <rdf:rest rdf:nodeID="n002076"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002186">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000282"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002187">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000282"/>
+    <rdf:rest rdf:nodeID="n002276"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002188">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000283"/>
+    <rdf:rest rdf:nodeID="n002084"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002189">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000285"/>
+    <rdf:rest rdf:nodeID="n002134"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002190">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000286"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002191">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
+    <rdf:rest rdf:nodeID="n001788"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002192">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
+    <rdf:rest rdf:nodeID="n001746"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002193">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
+    <rdf:rest rdf:nodeID="n001754"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002194">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000289"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002195">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000289"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002196">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000289"/>
+    <rdf:rest rdf:nodeID="n001869"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002197">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000292"/>
+    <rdf:rest rdf:nodeID="n002082"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002198">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000292"/>
+    <rdf:rest rdf:nodeID="n002207"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002199">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000296"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002200">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000298"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002201">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000298"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002202">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000298"/>
+    <rdf:rest rdf:nodeID="n002147"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002203">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000298"/>
+    <rdf:rest rdf:nodeID="n002259"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002204">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000299"/>
+    <rdf:rest rdf:nodeID="n001889"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002205">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000300"/>
+    <rdf:rest rdf:nodeID="n001867"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002206">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002207">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002208">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002209">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
+    <rdf:rest rdf:nodeID="n002089"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002210">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000303"/>
+    <rdf:rest rdf:nodeID="n002077"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002211">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
+    <rdf:rest rdf:nodeID="n001757"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002212">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
+    <rdf:rest rdf:nodeID="n001729"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002213">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
+    <rdf:rest rdf:nodeID="n001832"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002214">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000309"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002215">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
+    <rdf:rest rdf:nodeID="n001903"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002216">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
+    <rdf:rest rdf:nodeID="n002029"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002217">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
+    <rdf:rest rdf:nodeID="n001958"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002218">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
+    <rdf:rest rdf:nodeID="n001736"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002219">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
+    <rdf:rest rdf:nodeID="n001750"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002220">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
+    <rdf:rest rdf:nodeID="n001835"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002221">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002222">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002223">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002224">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002225">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002226">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002227">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+    <rdf:rest rdf:nodeID="n001805"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002228">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+    <rdf:rest rdf:nodeID="n001732"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002229">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+    <rdf:rest rdf:nodeID="n001763"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002230">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000315"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002231">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000315"/>
+    <rdf:rest rdf:nodeID="n002300"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002232">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000316"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002233">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000316"/>
+    <rdf:rest rdf:nodeID="n001786"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002234">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000318"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002235">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000318"/>
+    <rdf:rest rdf:nodeID="n002236"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002236">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000319"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002237">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000319"/>
+    <rdf:rest rdf:nodeID="n002234"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002238">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
+    <rdf:rest rdf:nodeID="n001798"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002239">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
+    <rdf:rest rdf:nodeID="n001810"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002240">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
+    <rdf:rest rdf:nodeID="n001783"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002241">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002242">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002243">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002244">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002245">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002246">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+    <rdf:rest rdf:nodeID="n001789"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002247">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+    <rdf:rest rdf:nodeID="n001737"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002248">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+    <rdf:rest rdf:nodeID="n001753"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002249">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000323"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002250">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000323"/>
+    <rdf:rest rdf:nodeID="n002253"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002251">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000323"/>
+    <rdf:rest rdf:nodeID="n002252"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002252">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000324"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002253">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000325"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002254">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000325"/>
+    <rdf:rest rdf:nodeID="n002249"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002255">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002256">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326"/>
+    <rdf:rest rdf:nodeID="n001813"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002257">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326"/>
+    <rdf:rest rdf:nodeID="n001830"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002258">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002259">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002260">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
+    <rdf:rest rdf:nodeID="n002146"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002261">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
+    <rdf:rest rdf:nodeID="n002201"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002262">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000328"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002263">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000328"/>
+    <rdf:rest rdf:nodeID="n001893"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002264">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
+    <rdf:rest rdf:nodeID="n002037"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002265">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
+    <rdf:rest rdf:nodeID="n002007"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002266">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
+    <rdf:rest rdf:nodeID="n001912"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002267">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
+    <rdf:rest rdf:nodeID="n001955"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002268">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000331"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002269">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000331"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002270">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
+    <rdf:rest rdf:nodeID="n002026"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002271">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
+    <rdf:rest rdf:nodeID="n001904"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002272">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
+    <rdf:rest rdf:nodeID="n001960"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002273">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002274">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337"/>
+    <rdf:rest rdf:nodeID="n001866"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002275">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337"/>
+    <rdf:rest rdf:nodeID="n002194"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002276">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002277">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
+    <rdf:rest rdf:nodeID="n001821"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002278">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
+    <rdf:rest rdf:nodeID="n002230"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002279">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000341"/>
+    <rdf:rest rdf:nodeID="n002273"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002280">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
+    <rdf:rest rdf:nodeID="n001872"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002281">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
+    <rdf:rest rdf:nodeID="n001823"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002282">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
+    <rdf:rest rdf:nodeID="n001990"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002283">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000344"/>
+    <rdf:rest rdf:nodeID="n001799"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002284">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000344"/>
+    <rdf:rest rdf:nodeID="n001812"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002285">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
+    <rdf:rest rdf:nodeID="n001769"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002286">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
+    <rdf:rest rdf:nodeID="n001745"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002287">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
+    <rdf:rest rdf:nodeID="n001836"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002288">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000347"/>
+    <rdf:rest rdf:nodeID="n002093"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002289">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
+    <rdf:rest rdf:nodeID="n001781"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002290">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
+    <rdf:rest rdf:nodeID="n001727"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002291">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
+    <rdf:rest rdf:nodeID="n001755"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002292">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
+    <rdf:rest rdf:nodeID="n001831"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002293">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000357"/>
+    <rdf:rest rdf:nodeID="n001817"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002294">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000357"/>
+    <rdf:rest rdf:nodeID="n001891"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002295">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000361"/>
+    <rdf:rest rdf:nodeID="n002222"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002296">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000364"/>
+    <rdf:rest rdf:nodeID="n002096"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002297">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000364"/>
+    <rdf:rest rdf:nodeID="n001782"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002298">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002299">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002300">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002301">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002302">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002303">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
+    <rdf:rest rdf:nodeID="n001739"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002304">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
+    <rdf:rest rdf:nodeID="n001758"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002305">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000367"/>
+    <rdf:rest rdf:nodeID="n002242"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002306">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000367"/>
+    <rdf:rest rdf:nodeID="n002199"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002307">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000368"/>
+    <rdf:rest rdf:nodeID="n001819"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002308">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000368"/>
+    <rdf:rest rdf:nodeID="n001878"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002309">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000375"/>
+    <rdf:rest rdf:nodeID="n002255"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002310">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000375"/>
+    <rdf:rest rdf:nodeID="n002016"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002311">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
+    <rdf:rest rdf:nodeID="n001811"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002312">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
+    <rdf:rest rdf:nodeID="n001833"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002313">
+    <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
+    <rdf:rest rdf:nodeID="n001767"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002314">
+    <owl:members rdf:nodeID="n002157"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002315">
+    <owl:members rdf:nodeID="n002158"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002316">
+    <owl:members rdf:nodeID="n002061"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002317">
+    <owl:members rdf:nodeID="n002159"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002318">
+    <owl:members rdf:nodeID="n002161"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002319">
+    <owl:members rdf:nodeID="n002162"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002320">
+    <owl:members rdf:nodeID="n002163"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002321">
+    <owl:members rdf:nodeID="n002062"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002322">
+    <owl:members rdf:nodeID="n002164"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002323">
+    <owl:members rdf:nodeID="n002165"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002324">
+    <owl:members rdf:nodeID="n002166"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002325">
+    <owl:members rdf:nodeID="n002167"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002326">
+    <owl:members rdf:nodeID="n002168"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002327">
+    <owl:members rdf:nodeID="n002169"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002328">
+    <owl:members rdf:nodeID="n002170"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002329">
+    <owl:members rdf:nodeID="n002171"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002330">
+    <owl:members rdf:nodeID="n002063"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002331">
+    <owl:members rdf:nodeID="n002172"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002332">
+    <owl:members rdf:nodeID="n002173"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002333">
+    <owl:members rdf:nodeID="n002174"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002334">
+    <owl:members rdf:nodeID="n002064"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002335">
+    <owl:members rdf:nodeID="n001901"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002336">
+    <owl:members rdf:nodeID="n002181"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002337">
+    <owl:members rdf:nodeID="n002182"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002338">
+    <owl:members rdf:nodeID="n002183"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002339">
+    <owl:members rdf:nodeID="n001913"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002340">
+    <owl:members rdf:nodeID="n001914"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002341">
+    <owl:members rdf:nodeID="n001915"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002342">
+    <owl:members rdf:nodeID="n002185"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002343">
+    <owl:members rdf:nodeID="n001844"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002344">
+    <owl:members rdf:nodeID="n002187"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002345">
+    <owl:members rdf:nodeID="n002188"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002346">
+    <owl:members rdf:nodeID="n001845"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002347">
+    <owl:members rdf:nodeID="n002189"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002348">
+    <owl:members rdf:nodeID="n002191"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002349">
+    <owl:members rdf:nodeID="n002192"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002350">
+    <owl:members rdf:nodeID="n001846"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002351">
+    <owl:members rdf:nodeID="n002193"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002352">
+    <owl:members rdf:nodeID="n001923"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002353">
+    <owl:members rdf:nodeID="n001924"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002354">
+    <owl:members rdf:nodeID="n001925"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002355">
+    <owl:members rdf:nodeID="n002196"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002356">
+    <owl:members rdf:nodeID="n001926"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002357">
+    <owl:members rdf:nodeID="n001929"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002358">
+    <owl:members rdf:nodeID="n001930"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002359">
+    <owl:members rdf:nodeID="n001931"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002360">
+    <owl:members rdf:nodeID="n001851"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002361">
+    <owl:members rdf:nodeID="n002197"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002362">
+    <owl:members rdf:nodeID="n002198"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002363">
+    <owl:members rdf:nodeID="n001841"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002364">
+    <owl:members rdf:nodeID="n001852"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002365">
+    <owl:members rdf:nodeID="n001938"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002366">
+    <owl:members rdf:nodeID="n001939"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002367">
+    <owl:members rdf:nodeID="n001940"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002368">
+    <owl:members rdf:nodeID="n001941"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002369">
+    <owl:members rdf:nodeID="n002202"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002370">
+    <owl:members rdf:nodeID="n002203"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002371">
+    <owl:members rdf:nodeID="n002204"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002372">
+    <owl:members rdf:nodeID="n002065"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002373">
+    <owl:members rdf:nodeID="n002205"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002374">
+    <owl:members rdf:nodeID="n002209"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002375">
+    <owl:members rdf:nodeID="n002066"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002376">
+    <owl:members rdf:nodeID="n002210"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002377">
+    <owl:members rdf:nodeID="n001943"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002378">
+    <owl:members rdf:nodeID="n001944"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002379">
+    <owl:members rdf:nodeID="n001945"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002380">
+    <owl:members rdf:nodeID="n002067"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002381">
+    <owl:members rdf:nodeID="n002068"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002382">
+    <owl:members rdf:nodeID="n002211"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002383">
+    <owl:members rdf:nodeID="n002212"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002384">
+    <owl:members rdf:nodeID="n002213"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002385">
+    <owl:members rdf:nodeID="n001948"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002386">
+    <owl:members rdf:nodeID="n001949"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002387">
+    <owl:members rdf:nodeID="n001950"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002388">
+    <owl:members rdf:nodeID="n001951"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002389">
+    <owl:members rdf:nodeID="n001952"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002390">
+    <owl:members rdf:nodeID="n001953"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002391">
+    <owl:members rdf:nodeID="n001954"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002392">
+    <owl:members rdf:nodeID="n001965"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002393">
+    <owl:members rdf:nodeID="n001966"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002394">
+    <owl:members rdf:nodeID="n001967"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002395">
+    <owl:members rdf:nodeID="n001968"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002396">
+    <owl:members rdf:nodeID="n001969"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002397">
+    <owl:members rdf:nodeID="n001970"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002398">
+    <owl:members rdf:nodeID="n002069"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002399">
+    <owl:members rdf:nodeID="n002215"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002400">
+    <owl:members rdf:nodeID="n002216"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002401">
+    <owl:members rdf:nodeID="n002217"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002402">
+    <owl:members rdf:nodeID="n002070"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002403">
+    <owl:members rdf:nodeID="n002218"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002404">
+    <owl:members rdf:nodeID="n002219"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002405">
+    <owl:members rdf:nodeID="n002220"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002406">
+    <owl:members rdf:nodeID="n002071"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002407">
+    <owl:members rdf:nodeID="n002227"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002408">
+    <owl:members rdf:nodeID="n002228"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002409">
+    <owl:members rdf:nodeID="n002229"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002410">
+    <owl:members rdf:nodeID="n002231"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002411">
+    <owl:members rdf:nodeID="n002072"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002412">
+    <owl:members rdf:nodeID="n002233"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002413">
+    <owl:members rdf:nodeID="n001975"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002414">
+    <owl:members rdf:nodeID="n001976"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002415">
+    <owl:members rdf:nodeID="n001977"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002416">
+    <owl:members rdf:nodeID="n001978"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002417">
+    <owl:members rdf:nodeID="n002235"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002418">
+    <owl:members rdf:nodeID="n002237"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002419">
+    <owl:members rdf:nodeID="n002238"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002420">
+    <owl:members rdf:nodeID="n002239"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002421">
+    <owl:members rdf:nodeID="n002240"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002422">
+    <owl:members rdf:nodeID="n002246"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002423">
+    <owl:members rdf:nodeID="n002247"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002424">
+    <owl:members rdf:nodeID="n002248"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002425">
+    <owl:members rdf:nodeID="n002250"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002426">
+    <owl:members rdf:nodeID="n002251"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002427">
+    <owl:members rdf:nodeID="n002254"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002428">
+    <owl:members rdf:nodeID="n002256"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002429">
+    <owl:members rdf:nodeID="n002257"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002430">
+    <owl:members rdf:nodeID="n002073"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002431">
+    <owl:members rdf:nodeID="n001979"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002432">
+    <owl:members rdf:nodeID="n001983"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002433">
+    <owl:members rdf:nodeID="n001984"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002434">
+    <owl:members rdf:nodeID="n001985"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002435">
+    <owl:members rdf:nodeID="n002074"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002436">
+    <owl:members rdf:nodeID="n002260"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002437">
+    <owl:members rdf:nodeID="n002261"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002438">
+    <owl:members rdf:nodeID="n002263"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002439">
+    <owl:members rdf:nodeID="n002075"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002440">
+    <owl:members rdf:nodeID="n002264"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002441">
+    <owl:members rdf:nodeID="n002265"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002442">
+    <owl:members rdf:nodeID="n002266"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002443">
+    <owl:members rdf:nodeID="n002267"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002444">
+    <owl:members rdf:nodeID="n001987"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002445">
+    <owl:members rdf:nodeID="n001988"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002446">
+    <owl:members rdf:nodeID="n001989"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002447">
+    <owl:members rdf:nodeID="n001995"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002448">
+    <owl:members rdf:nodeID="n002270"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002449">
+    <owl:members rdf:nodeID="n002271"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002450">
+    <owl:members rdf:nodeID="n002272"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002451">
+    <owl:members rdf:nodeID="n002008"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002452">
+    <owl:members rdf:nodeID="n002009"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002453">
+    <owl:members rdf:nodeID="n002010"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002454">
+    <owl:members rdf:nodeID="n001747"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002455">
+    <owl:members rdf:nodeID="n001748"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002456">
+    <owl:members rdf:nodeID="n002274"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002457">
+    <owl:members rdf:nodeID="n002275"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002458">
+    <owl:members rdf:nodeID="n002277"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002459">
+    <owl:members rdf:nodeID="n002278"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002460">
+    <owl:members rdf:nodeID="n002011"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002461">
+    <owl:members rdf:nodeID="n002012"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002462">
+    <owl:members rdf:nodeID="n002279"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002463">
+    <owl:members rdf:nodeID="n002280"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002464">
+    <owl:members rdf:nodeID="n002281"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002465">
+    <owl:members rdf:nodeID="n002282"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002466">
+    <owl:members rdf:nodeID="n001853"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002467">
+    <owl:members rdf:nodeID="n002013"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002468">
+    <owl:members rdf:nodeID="n002283"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002469">
+    <owl:members rdf:nodeID="n002284"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002470">
+    <owl:members rdf:nodeID="n002285"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002471">
+    <owl:members rdf:nodeID="n002286"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002472">
+    <owl:members rdf:nodeID="n002287"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002473">
+    <owl:members rdf:nodeID="n001815"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002474">
+    <owl:members rdf:nodeID="n001816"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002475">
+    <owl:members rdf:nodeID="n002288"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002476">
+    <owl:members rdf:nodeID="n001775"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002477">
+    <owl:members rdf:nodeID="n002079"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002478">
+    <owl:members rdf:nodeID="n002015"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002479">
+    <owl:members rdf:nodeID="n002080"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002480">
+    <owl:members rdf:nodeID="n002289"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002481">
+    <owl:members rdf:nodeID="n002290"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002482">
+    <owl:members rdf:nodeID="n002291"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002483">
+    <owl:members rdf:nodeID="n002292"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002484">
+    <owl:members rdf:nodeID="n002017"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002485">
+    <owl:members rdf:nodeID="n002018"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002486">
+    <owl:members rdf:nodeID="n002019"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002487">
+    <owl:members rdf:nodeID="n002020"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002488">
+    <owl:members rdf:nodeID="n002293"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002489">
+    <owl:members rdf:nodeID="n002294"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002490">
+    <owl:members rdf:nodeID="n001777"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002491">
+    <owl:members rdf:nodeID="n001778"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002492">
+    <owl:members rdf:nodeID="n001779"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002493">
+    <owl:members rdf:nodeID="n002038"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002494">
+    <owl:members rdf:nodeID="n002039"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002495">
+    <owl:members rdf:nodeID="n002040"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002496">
+    <owl:members rdf:nodeID="n002041"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002497">
+    <owl:members rdf:nodeID="n002295"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002498">
+    <owl:members rdf:nodeID="n001822"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002499">
+    <owl:members rdf:nodeID="n002043"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002500">
+    <owl:members rdf:nodeID="n002296"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002501">
+    <owl:members rdf:nodeID="n002297"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002502">
+    <owl:members rdf:nodeID="n002303"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002503">
+    <owl:members rdf:nodeID="n002304"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002504">
+    <owl:members rdf:nodeID="n002305"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002505">
+    <owl:members rdf:nodeID="n002306"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002506">
+    <owl:members rdf:nodeID="n002307"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002507">
+    <owl:members rdf:nodeID="n002308"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002508">
+    <owl:members rdf:nodeID="n001790"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002509">
+    <owl:members rdf:nodeID="n001791"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002510">
+    <owl:members rdf:nodeID="n001792"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002511">
+    <owl:members rdf:nodeID="n002044"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002512">
+    <owl:members rdf:nodeID="n002045"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002513">
+    <owl:members rdf:nodeID="n002046"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002514">
+    <owl:members rdf:nodeID="n002047"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002515">
+    <owl:members rdf:nodeID="n002048"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002516">
+    <owl:members rdf:nodeID="n002049"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002517">
+    <owl:members rdf:nodeID="n002309"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002518">
+    <owl:members rdf:nodeID="n002310"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002519">
+    <owl:members rdf:nodeID="n002311"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002520">
+    <owl:members rdf:nodeID="n002312"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002521">
+    <owl:members rdf:nodeID="n002313"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002522">
+    <owl:members rdf:nodeID="n002050"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002523">
+    <owl:members rdf:nodeID="n001856"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002524">
+    <owl:members rdf:nodeID="n001857"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002525">
+    <owl:members rdf:nodeID="n001858"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002526">
+    <owl:members rdf:nodeID="n001863"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002527">
+    <owl:members rdf:nodeID="n001864"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002528">
+    <owl:members rdf:nodeID="n001865"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002529">
+    <owl:members rdf:nodeID="n002051"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002530">
+    <owl:members rdf:nodeID="n002081"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002531">
+    <owl:members rdf:nodeID="n002052"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002532">
+    <owl:members rdf:nodeID="n001871"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002533">
+    <owl:members rdf:nodeID="n002094"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002534">
+    <owl:members rdf:nodeID="n002095"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002535">
+    <owl:members rdf:nodeID="n002053"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002536">
+    <owl:members rdf:nodeID="n001875"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002537">
+    <owl:members rdf:nodeID="n001876"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002538">
+    <owl:members rdf:nodeID="n001877"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002539">
+    <owl:members rdf:nodeID="n002097"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002540">
+    <owl:members rdf:nodeID="n002098"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002541">
+    <owl:members rdf:nodeID="n002099"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002542">
+    <owl:members rdf:nodeID="n002100"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002543">
+    <owl:members rdf:nodeID="n001879"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002544">
+    <owl:members rdf:nodeID="n001880"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002545">
+    <owl:members rdf:nodeID="n001881"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002546">
+    <owl:members rdf:nodeID="n001772"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002547">
+    <owl:members rdf:nodeID="n001773"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002548">
+    <owl:members rdf:nodeID="n002102"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002549">
+    <owl:members rdf:nodeID="n002103"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002550">
+    <owl:members rdf:nodeID="n002104"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002551">
+    <owl:members rdf:nodeID="n002105"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002552">
+    <owl:members rdf:nodeID="n002107"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002553">
+    <owl:members rdf:nodeID="n002110"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002554">
+    <owl:members rdf:nodeID="n002111"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002555">
+    <owl:members rdf:nodeID="n002112"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002556">
+    <owl:members rdf:nodeID="n002058"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002557">
+    <owl:members rdf:nodeID="n002113"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002558">
+    <owl:members rdf:nodeID="n002114"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002559">
+    <owl:members rdf:nodeID="n002115"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002560">
+    <owl:members rdf:nodeID="n002116"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002561">
+    <owl:members rdf:nodeID="n002117"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002562">
+    <owl:members rdf:nodeID="n002118"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002563">
+    <owl:members rdf:nodeID="n002119"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002564">
+    <owl:members rdf:nodeID="n002120"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002565">
+    <owl:members rdf:nodeID="n002121"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002566">
+    <owl:members rdf:nodeID="n002122"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002567">
+    <owl:members rdf:nodeID="n002125"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002568">
+    <owl:members rdf:nodeID="n002059"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002569">
+    <owl:members rdf:nodeID="n002126"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002570">
+    <owl:members rdf:nodeID="n002127"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002571">
+    <owl:members rdf:nodeID="n002128"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002572">
+    <owl:members rdf:nodeID="n002129"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002573">
+    <owl:members rdf:nodeID="n002130"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002574">
+    <owl:members rdf:nodeID="n002131"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002575">
+    <owl:members rdf:nodeID="n002132"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002576">
+    <owl:members rdf:nodeID="n002133"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002577">
+    <owl:members rdf:nodeID="n001882"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002578">
+    <owl:members rdf:nodeID="n001883"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002579">
+    <owl:members rdf:nodeID="n001884"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002580">
+    <owl:members rdf:nodeID="n001885"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002581">
+    <owl:members rdf:nodeID="n002060"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002582">
+    <owl:members rdf:nodeID="n001886"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002583">
+    <owl:members rdf:nodeID="n002135"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002584">
+    <owl:members rdf:nodeID="n002136"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002585">
+    <owl:members rdf:nodeID="n002137"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002586">
+    <owl:members rdf:nodeID="n002138"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002587">
+    <owl:members rdf:nodeID="n002139"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002588">
+    <owl:members rdf:nodeID="n002140"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002589">
+    <owl:members rdf:nodeID="n001887"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002590">
+    <owl:members rdf:nodeID="n002142"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002591">
+    <owl:members rdf:nodeID="n002143"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002592">
+    <owl:members rdf:nodeID="n002144"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002593">
+    <owl:members rdf:nodeID="n002145"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002594">
+    <owl:members rdf:nodeID="n002148"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002595">
+    <owl:members rdf:nodeID="n002149"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002596">
+    <owl:members rdf:nodeID="n002150"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002597">
+    <owl:members rdf:nodeID="n002151"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002598">
+    <owl:members rdf:nodeID="n001894"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002599">
+    <owl:members rdf:nodeID="n002152"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002600">
+    <owl:members rdf:nodeID="n002153"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002601">
+    <owl:members rdf:nodeID="n001897"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002602">
+    <owl:members rdf:nodeID="n001898"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002603">
+    <owl:members rdf:nodeID="n001802"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002604">
+    <owl:members rdf:nodeID="n001803"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002605">
+    <owl:members rdf:nodeID="n001804"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002606">
+    <owl:members rdf:nodeID="n002154"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n002607">
+    <owl:members rdf:nodeID="n002156"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
   </rdf:Description>
 </rdf:RDF>
