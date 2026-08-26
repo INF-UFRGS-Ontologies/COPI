@@ -16,7 +16,7 @@
 @base <https://www.inf.ufrgs.br/ontologies/copi/> .
 
 <https://www.inf.ufrgs.br/ontologies/copi/> rdf:type owl:Ontology ;
-                                             owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-08-16/copi.ttl> ;
+                                             owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-08-26/copi.ttl> ;
                                              dcterms:bibliographicCitation "Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press." ;
                                              dcterms:contributor "Cauã Antunes" ,
                                                                  "Haroldo Rojas" ,
@@ -39,7 +39,7 @@
                                              bibo:status "unstable" ;
                                              vann:preferredNamespacePrefix "copi" ;
                                              vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI ;
-                                             owl:versionInfo "2026-08-16" ;
+                                             owl:versionInfo "2026-08-26" ;
                                              skos:scopeNote "Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia."@pt-br ,
                                                             "COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos."@pt-br ,
                                                             "COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en ,
@@ -7563,6 +7563,27 @@ copi:COPI_0000072 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000066
                                   ] ;
+                  owl:disjointWith copi:COPI_0000073 ,
+                                   copi:COPI_0000077 ,
+                                   copi:COPI_0000081 ,
+                                   copi:COPI_0000115 ,
+                                   copi:COPI_0000152 ,
+                                   copi:COPI_0000158 ,
+                                   copi:COPI_0000206 ,
+                                   copi:COPI_0000214 ,
+                                   copi:COPI_0000215 ,
+                                   copi:COPI_0000243 ,
+                                   copi:COPI_0000273 ,
+                                   copi:COPI_0000274 ,
+                                   copi:COPI_0000275 ,
+                                   copi:COPI_0000287 ,
+                                   copi:COPI_0000308 ,
+                                   copi:COPI_0000313 ,
+                                   copi:COPI_0000314 ,
+                                   copi:COPI_0000321 ,
+                                   copi:COPI_0000345 ,
+                                   copi:COPI_0000354 ,
+                                   copi:COPI_0000366 ;
                   rdfs:label "bomba"@pt-br ,
                              "pump"@en ;
                   skos:definition "A pump is an assembly that bears the designed function of adding mechanical energy to fluid for pressurization and transport."@en ;
@@ -7587,6 +7608,28 @@ copi:COPI_0000073 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000067
                                   ] ;
+                  owl:disjointWith copi:COPI_0000077 ,
+                                   copi:COPI_0000081 ,
+                                   copi:COPI_0000115 ,
+                                   copi:COPI_0000152 ,
+                                   copi:COPI_0000158 ,
+                                   copi:COPI_0000206 ,
+                                   copi:COPI_0000214 ,
+                                   copi:COPI_0000215 ,
+                                   copi:COPI_0000216 ,
+                                   copi:COPI_0000228 ,
+                                   copi:COPI_0000243 ,
+                                   copi:COPI_0000274 ,
+                                   copi:COPI_0000275 ,
+                                   copi:COPI_0000287 ,
+                                   copi:COPI_0000308 ,
+                                   copi:COPI_0000313 ,
+                                   copi:COPI_0000314 ,
+                                   copi:COPI_0000321 ,
+                                   copi:COPI_0000345 ,
+                                   copi:COPI_0000354 ,
+                                   copi:COPI_0000366 ,
+                                   copi:COPI_0000377 ;
                   rdfs:label "compressor"@en ,
                              "compressor"@pt-br ;
                   skos:altLabel "COMPRESSOR"@en ;
@@ -7608,6 +7651,8 @@ copi:COPI_0000074 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:TubeBundle
                                   ] ;
+                  owl:disjointWith copi:COPI_0000139 ,
+                                   copi:COPI_0000209 ;
                   rdfs:label "shell and tube heat exchanger"@en ,
                              "trocador de calor de casco e tubos"@pt-br ;
                   skos:definition "A shell and tube heat exchanger is a heat exchanger that has a tube bundle spatially contained within a surrounding shell."@en ;
@@ -7658,6 +7703,9 @@ copi:COPI_0000076 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000070
                                   ] ;
+                  owl:disjointWith copi:COPI_0000116 ,
+                                   copi:COPI_0000128 ,
+                                   copi:COPI_0000142 ;
                   rdfs:label "elemento de temperatura"@pt-br ,
                              "temperature element"@en ;
                   skos:definition "A temperature element is an instrument that bears a temperature sensing function."@en ;
@@ -7674,6 +7722,17 @@ copi:COPI_0000077 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000026
                                   ] ;
+                  owl:disjointWith copi:COPI_0000136 ,
+                                   copi:COPI_0000158 ,
+                                   copi:COPI_0000215 ,
+                                   copi:COPI_0000273 ,
+                                   copi:COPI_0000287 ,
+                                   copi:COPI_0000316 ,
+                                   copi:COPI_0000320 ,
+                                   copi:COPI_0000321 ,
+                                   copi:COPI_0000354 ,
+                                   copi:COPI_0000364 ,
+                                   copi:COPI_0000366 ;
                   rdfs:label "valve"@en ,
                              "válvula"@pt-br ;
                   skos:definition "A valve is an assembly that bears a flow control function to permit, obstruct, regulate, or divert fluid streams."@en ;
@@ -7718,6 +7777,16 @@ copi:COPI_0000081 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000194
                                   ] ;
+                  owl:disjointWith copi:COPI_0000092 ,
+                                   copi:COPI_0000107 ,
+                                   copi:COPI_0000136 ,
+                                   copi:COPI_0000240 ,
+                                   copi:COPI_0000244 ,
+                                   copi:COPI_0000255 ,
+                                   copi:COPI_0000258 ,
+                                   copi:COPI_0000276 ,
+                                   copi:COPI_0000320 ,
+                                   copi:COPI_0000344 ;
                   rdfs:label "filter"@en ,
                              "filtro"@pt-br ;
                   skos:definition "A filter is a separator that bears a filtration function to selectively remove unwanted constituents from a fluid stream using a filter element within a filter housing."@en ;
@@ -7763,6 +7832,17 @@ copi:COPI_0000084 rdf:type owl:Class ;
                                       ] ;
                   rdfs:subClassOf copi:COPI_0000152 ,
                                   copi:COPI_0000158 ;
+                  owl:disjointWith copi:COPI_0000092 ,
+                                   copi:COPI_0000216 ,
+                                   copi:COPI_0000228 ,
+                                   copi:COPI_0000238 ,
+                                   copi:COPI_0000274 ,
+                                   copi:COPI_0000275 ,
+                                   copi:COPI_0000314 ,
+                                   copi:COPI_0000320 ,
+                                   copi:COPI_0000326 ,
+                                   copi:COPI_0000344 ,
+                                   copi:COPI_0000377 ;
                   rdfs:label "separador"@pt-br ,
                              "separator"@en ;
                   skos:definition "A separator is a vessel that bears a SeparationFunction - designed to separate different substances or phases from a mixed fluid stream into distinct output streams."@en ;
@@ -7815,6 +7895,11 @@ copi:COPI_0000086 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000199
                                   ] ;
+                  owl:disjointWith copi:COPI_0000113 ,
+                                   copi:COPI_0000261 ,
+                                   copi:COPI_0000338 ,
+                                   copi:COPI_0000357 ,
+                                   copi:COPI_0000368 ;
                   rdfs:label "transformador"@pt-br ,
                              "transformer"@en ;
                   skos:definition "A transformer is an electrical equipment that transforms electrical power from one circuit to another at the same frequency through electromagnetic induction using windings and a magnetic core."@en ;
@@ -7830,6 +7915,7 @@ copi:COPI_0000087 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000027
                                   ] ;
+                  owl:disjointWith copi:COPI_0000343 ;
                   rdfs:label "control valve"@en ,
                              "válvula de controle"@pt-br ;
                   skos:altLabel "CONTROL VALVE"@en ;
@@ -7937,6 +8023,22 @@ copi:COPI_0000092 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000068
                                   ] ;
+                  owl:disjointWith copi:COPI_0000121 ,
+                                   copi:COPI_0000152 ,
+                                   copi:COPI_0000206 ,
+                                   copi:COPI_0000214 ,
+                                   copi:COPI_0000215 ,
+                                   copi:COPI_0000216 ,
+                                   copi:COPI_0000228 ,
+                                   copi:COPI_0000274 ,
+                                   copi:COPI_0000275 ,
+                                   copi:COPI_0000308 ,
+                                   copi:COPI_0000313 ,
+                                   copi:COPI_0000314 ,
+                                   copi:COPI_0000326 ,
+                                   copi:COPI_0000345 ,
+                                   copi:COPI_0000354 ,
+                                   copi:COPI_0000377 ;
                   rdfs:label "heat exchanger"@en ,
                              "trocador de calor"@pt-br ;
                   skos:definition "A heat exchanger is a pressure vessel that bears the designed function of transferring thermal energy between two or more fluid streams while maintaining their separation."@en ;
@@ -7963,6 +8065,9 @@ copi:COPI_0000093 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094
 copi:COPI_0000094 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000087 ;
+                  owl:disjointWith copi:COPI_0000099 ,
+                                   copi:COPI_0000119 ,
+                                   copi:COPI_0000122 ;
                   rdfs:label "ball control valve"@en ,
                              "válvula de controle esférica"@pt-br ;
                   skos:definition "A ball control valve is a control valve that uses a spherical ball closure element with rotary actuation to modulate fluid flow in response to control signals."@en ;
@@ -7977,6 +8082,10 @@ copi:COPI_0000094 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095
 copi:COPI_0000095 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000077 ;
+                  owl:disjointWith copi:COPI_0000100 ,
+                                   copi:COPI_0000108 ,
+                                   copi:COPI_0000120 ,
+                                   copi:COPI_0000140 ;
                   rdfs:label "ball valve"@en ,
                              "válvula esfera"@pt-br ;
                   skos:altLabel "BALL VALVE"@en ,
@@ -8032,6 +8141,7 @@ copi:COPI_0000097 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000098
 copi:COPI_0000098 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000073 ;
+                  owl:disjointWith copi:COPI_0000115 ;
                   rdfs:label "blower"@en ,
                              "soprador"@pt-br ;
                   skos:altLabel "BLOWER"@en ,
@@ -8051,6 +8161,8 @@ copi:COPI_0000099 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000207
                                   ] ;
+                  owl:disjointWith copi:COPI_0000119 ,
+                                   copi:COPI_0000122 ;
                   rdfs:label "butterfly control valve"@en ,
                              "válvula borboleta de controle"@pt-br ;
                   skos:definition "A butterfly control valve is a control valve that has a rotating disc closure mechanism and bears a process-controlled flow function enabling automated flow modulation in response to external control signals."@en ;
@@ -8065,6 +8177,10 @@ copi:COPI_0000099 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100
 copi:COPI_0000100 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000077 ;
+                  owl:disjointWith copi:COPI_0000108 ,
+                                   copi:COPI_0000120 ,
+                                   copi:COPI_0000123 ,
+                                   copi:COPI_0000140 ;
                   rdfs:label "butterfly valve"@en ,
                              "válvula borboleta"@pt-br ;
                   skos:altLabel "BUTTERFLY VALVE"@en ,
@@ -8101,6 +8217,12 @@ copi:COPI_0000101 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102
 copi:COPI_0000102 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000072 ;
+                  owl:disjointWith copi:COPI_0000249 ,
+                                   copi:COPI_0000259 ,
+                                   copi:COPI_0000289 ,
+                                   copi:COPI_0000300 ,
+                                   copi:COPI_0000331 ,
+                                   copi:COPI_0000337 ;
                   rdfs:label "bomba centrífuga"@pt-br ,
                              "centrifugal pump"@en ;
                   skos:altLabel "CENTRIFUGAL PUMP"@en ;
@@ -8128,6 +8250,9 @@ copi:COPI_0000103 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000161
                                   ] ;
+                  owl:disjointWith copi:COPI_0000145 ,
+                                   copi:COPI_0000148 ,
+                                   copi:COPI_0000343 ;
                   rdfs:label "check valve"@en ,
                              "válvula de retenção"@pt-br ;
                   skos:altLabel "CHECK VALVE"@en ;
@@ -8145,6 +8270,9 @@ copi:COPI_0000104 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000207
                                   ] ;
+                  owl:disjointWith copi:COPI_0000114 ,
+                                   copi:COPI_0000133 ,
+                                   copi:COPI_0000149 ;
                   rdfs:label "choke control valve"@en ,
                              "válvula de controle de choke"@pt-br ;
                   skos:definition "A choke control valve is a control valve that has a choke geometry component for pressure reduction through flow restriction."@en ;
@@ -8196,6 +8324,8 @@ copi:COPI_0000106 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000200
                                   ] ;
+                  owl:disjointWith copi:COPI_0000282 ,
+                                   copi:COPI_0000368 ;
                   rdfs:label "circuit breaker"@en ,
                              "disjuntor"@pt-br ;
                   skos:altLabel "CIRCUIT BREAKER"@en ;
@@ -8219,6 +8349,7 @@ copi:COPI_0000107 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000196
                                   ] ;
+                  owl:disjointWith copi:COPI_0000225 ;
                   rdfs:label "coalescedor"@pt-br ,
                              "coalescer"@en ;
                   skos:definition "A coalescer is a separator that uses coalescence media to promote droplet merger in immiscible liquid mixtures, enabling gravity-based separation where the less dense liquid phase can be skimmed off."@en ;
@@ -8235,6 +8366,9 @@ copi:COPI_0000108 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000329
                                   ] ;
+                  owl:disjointWith copi:COPI_0000120 ,
+                                   copi:COPI_0000123 ,
+                                   copi:COPI_0000140 ;
                   rdfs:label "diaphragm valve"@en ,
                              "válvula de diafragma"@pt-br ;
                   skos:definition "A diaphragm valve is a valve that uses a resilient diaphragm forced against a port as its closure mechanism to control fluid flow."@en ;
@@ -8329,6 +8463,7 @@ copi:COPI_0000112 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000170
                                   ] ;
+                  owl:disjointWith copi:COPI_0000133 ;
                   rdfs:label "down hole safety valve"@en ,
                              "válvula de segurança de fundo de poço"@pt-br ;
                   skos:definition "A down hole safety valve is a safety valve that bears a subsurface safety function for pressure relief and flow control operations in wellbore or other subsurface environments."@en ;
@@ -8353,6 +8488,11 @@ copi:COPI_0000113 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000193
                                   ] ;
+                  owl:disjointWith copi:COPI_0000261 ,
+                                   copi:COPI_0000264 ,
+                                   copi:COPI_0000299 ,
+                                   copi:COPI_0000328 ,
+                                   copi:COPI_0000357 ;
                   rdfs:label "electric motor"@en ,
                              "motor elétrico"@pt-br ;
                   skos:definition "An electric motor is an assembly that bears an electric-to-mechanical energy conversion function and has both a stator and rotor as essential components."@en ;
@@ -8417,6 +8557,7 @@ copi:COPI_0000116 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000174
                                   ] ;
+                  owl:disjointWith copi:COPI_0000142 ;
                   rdfs:label "elemento de vazão"@pt-br ,
                              "flow element"@en ;
                   skos:definition "A flow element is an instrument that has the function to measure flow rates in a flowstream and produce signals proportional to the measured flow."@en ;
@@ -8450,6 +8591,7 @@ copi:COPI_0000117 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000171
                                   ] ;
+                  owl:disjointWith copi:COPI_0000118 ;
                   rdfs:label "flow indicator"@en ,
                              "indicador de fluxo"@pt-br ;
                   skos:definition "A flow indicator is an indicator that is designed to indicate flow rates using a flow element and display element."@en ;
@@ -8474,6 +8616,16 @@ copi:COPI_0000118 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000185
                                   ] ;
+                  owl:disjointWith copi:COPI_0000131 ,
+                                   copi:COPI_0000132 ,
+                                   copi:COPI_0000144 ,
+                                   copi:COPI_0000155 ,
+                                   copi:COPI_0000159 ,
+                                   copi:COPI_0000213 ,
+                                   copi:COPI_0000233 ,
+                                   copi:COPI_0000310 ,
+                                   copi:COPI_0000330 ,
+                                   copi:COPI_0000334 ;
                   rdfs:label "flow transmitter"@en ,
                              "transmissor de fluxo"@pt-br ;
                   skos:definition "A flow transmitter is a transmitter that produces standardized output signals proportional to flow measurements from flow sensing elements."@en ;
@@ -8484,6 +8636,7 @@ copi:COPI_0000118 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119
 copi:COPI_0000119 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000087 ;
+                  owl:disjointWith copi:COPI_0000122 ;
                   rdfs:label "gate control valve"@en ,
                              "válvula de controle tipo gaveta"@pt-br ;
                   skos:definition "A gate control valve is a control valve that uses a gate or wedge closure element moving perpendicular to the flow path to modulate fluid flow in response to control signals."@en ;
@@ -8502,6 +8655,8 @@ copi:COPI_0000120 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000371
                                   ] ;
+                  owl:disjointWith copi:COPI_0000134 ,
+                                   copi:COPI_0000140 ;
                   rdfs:label "gate valve"@en ,
                              "válvula gaveta"@pt-br ;
                   skos:definition "A gate valve is a valve that has a gate or disc closure member with linear motion parallel to the plane of flat seats, which are transverse to the direction of flow."@en ;
@@ -8576,6 +8731,10 @@ copi:COPI_0000124 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000190
                                   ] ;
+                  owl:disjointWith copi:COPI_0000235 ,
+                                   copi:COPI_0000236 ,
+                                   copi:COPI_0000241 ,
+                                   copi:COPI_0000243 ;
                   rdfs:label "aquecedor"@pt-br ,
                              "heater"@en ;
                   skos:definition "A heater is an assembly that bears a heating function to add thermal energy to a medium."@en ;
@@ -8600,6 +8759,9 @@ copi:COPI_0000125 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000180
                                   ] ;
+                  owl:disjointWith copi:COPI_0000144 ,
+                                   copi:COPI_0000155 ,
+                                   copi:COPI_0000278 ;
                   rdfs:label "analisador de umidade"@pt-br ,
                              "humidity analyser"@en ;
                   skos:definition "A humidity analyser is an instrument designed to measure and indicate humidity or moisture content in process streams or environments."@en ;
@@ -8638,6 +8800,9 @@ copi:COPI_0000127 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000028
                                   ] ;
+                  owl:disjointWith copi:COPI_0000157 ,
+                                   copi:COPI_0000207 ,
+                                   copi:COPI_0000234 ;
                   rdfs:label "indicador"@pt-br ,
                              "indicator"@en ;
                   skos:definition "An indicator is an instrument that displays or shows the value or status of a measured variable or condition to make it perceptible to operators."@en ;
@@ -8662,6 +8827,9 @@ copi:COPI_0000128 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000176
                                   ] ;
+                  owl:disjointWith copi:COPI_0000142 ,
+                                   copi:COPI_0000144 ,
+                                   copi:COPI_0000155 ;
                   rdfs:label "elemento de nível"@pt-br ,
                              "level element"@en ;
                   skos:altLabel "LEVEL MEASURING ELEMENT"@en ;
@@ -8687,6 +8855,9 @@ copi:COPI_0000129 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000172
                                   ] ;
+                  owl:disjointWith copi:COPI_0000131 ,
+                                   copi:COPI_0000143 ,
+                                   copi:COPI_0000154 ;
                   rdfs:label "indicador de nível"@pt-br ,
                              "level indicator"@en ;
                   skos:definition "A level indicator is an indicator that measures and locally displays the level of liquid or bulk solid material in a vessel or tank."@en ;
@@ -8708,6 +8879,8 @@ copi:COPI_0000130 rdf:type owl:Class ;
                                       ] ;
                   rdfs:subClassOf copi:COPI_0000085 ,
                                   copi:COPI_0000129 ;
+                  owl:disjointWith copi:COPI_0000143 ,
+                                   copi:COPI_0000278 ;
                   rdfs:label "level sight glass"@en ,
                              "visor de nível"@pt-br ;
                   skos:definition "A level sight glass is a sight glass that bears a designed function to indicate liquid level through visual inspection."@en ;
@@ -8732,6 +8905,14 @@ copi:COPI_0000131 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000187
                                   ] ;
+                  owl:disjointWith copi:COPI_0000144 ,
+                                   copi:COPI_0000155 ,
+                                   copi:COPI_0000213 ,
+                                   copi:COPI_0000233 ,
+                                   copi:COPI_0000278 ,
+                                   copi:COPI_0000310 ,
+                                   copi:COPI_0000330 ,
+                                   copi:COPI_0000334 ;
                   rdfs:label "level transmitter"@en ,
                              "transmissor de nível"@pt-br ;
                   skos:definition "A level transmitter is a transmitter that measures the level (height) of liquid or bulk solid material in a container and produces a standardized electrical output signal proportional to the measured level."@en ;
@@ -8754,6 +8935,8 @@ copi:COPI_0000132 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000183
                                   ] ;
+                  owl:disjointWith copi:COPI_0000144 ,
+                                   copi:COPI_0000155 ;
                   rdfs:label "limit switch"@en ,
                              "limit switch"@pt-br ;
                   skos:definition "A limit switch is an instrument that bears a position limit detection function, mechanically actuated by object motion to provide electrical switching signals when predetermined position limits are reached."@en ;
@@ -8764,6 +8947,7 @@ copi:COPI_0000132 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133
 copi:COPI_0000133 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000077 ;
+                  owl:disjointWith copi:COPI_0000150 ;
                   rdfs:label "manual valve"@en ,
                              "válvula manual"@pt-br ;
                   skos:definition "A manual valve is a valve that has a manual actuator requiring hand power for operation."@en ;
@@ -8820,6 +9004,7 @@ copi:COPI_0000136 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000360
                                   ] ;
+                  owl:disjointWith copi:COPI_0000321 ;
                   rdfs:label "orifice plate"@en ,
                              "placa de orifício"@pt-br ;
                   skos:definition "An orifice plate is a flow element that consists of a thin plate with a specified hole through which fluid flows to create differential pressure for flow rate measurement."@en ;
@@ -8846,6 +9031,7 @@ copi:COPI_0000137 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000181
                                   ] ;
+                  owl:disjointWith copi:COPI_0000278 ;
                   rdfs:label "medidor de sequência de fases"@pt-br ,
                              "phase sequence meter"@en ;
                   skos:definition "A phase sequence meter is an electric measuring instrument that bears a phase sequence measurement function to determine and indicate the sequence in which the instantaneous voltages of phase conductors reach their maximum value in a polyphase electrical system."@en ;
@@ -8858,6 +9044,7 @@ copi:COPI_0000137 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000138
 copi:COPI_0000138 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000103 ;
+                  owl:disjointWith copi:COPI_0000153 ;
                   rdfs:label "piston check valve"@en ,
                              "válvula de retenção tipo pistão"@pt-br ;
                   skos:definition "A piston check valve is a check valve that has a piston-type closure member that moves linearly along the flow axis under gravity or spring loading to prevent backflow."@en ;
@@ -8876,6 +9063,7 @@ copi:COPI_0000139 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000294
                                   ] ;
+                  owl:disjointWith copi:COPI_0000269 ;
                   rdfs:label "plate heat exchanger"@en ,
                              "trocador de calor de placas"@pt-br ;
                   skos:definition "A plate heat exchanger is a heat exchanger that has heat transfer plates as its primary heat transfer surface."@en ;
@@ -8954,6 +9142,10 @@ copi:COPI_0000143 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000178
                                   ] ;
+                  owl:disjointWith copi:COPI_0000144 ,
+                                   copi:COPI_0000245 ,
+                                   copi:COPI_0000247 ,
+                                   copi:COPI_0000343 ;
                   rdfs:label "manômetro"@pt-br ,
                              "pressure gauge"@en ;
                   skos:definition "A pressure gauge is an indicator that bears the function of measuring and displaying pressure values."@en ;
@@ -8978,6 +9170,12 @@ copi:COPI_0000144 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000031
                                   ] ;
+                  owl:disjointWith copi:COPI_0000155 ,
+                                   copi:COPI_0000159 ,
+                                   copi:COPI_0000213 ,
+                                   copi:COPI_0000233 ,
+                                   copi:COPI_0000278 ,
+                                   copi:COPI_0000330 ;
                   rdfs:label "pressure transmitter"@en ,
                              "transmissor de pressão"@pt-br ;
                   skos:definition "A pressure transmitter is a transmitter that converts pressure measurements into standardized output signals for transmission to control or monitoring systems."@en ;
@@ -9025,6 +9223,7 @@ copi:COPI_0000146 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000163
                                   ] ;
+                  owl:disjointWith copi:COPI_0000278 ;
                   rdfs:label "orifício de restrição"@pt-br ,
                              "restriction orifice"@en ;
                   skos:definition "A restriction orifice is a flow modification accessory that bears the function to restrict fluid flow by creating controlled pressure drop through geometric constriction."@en ;
@@ -9121,6 +9320,8 @@ copi:COPI_0000151 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000197
                                   ] ;
+                  owl:disjointWith copi:COPI_0000314 ,
+                                   copi:COPI_0000375 ;
                   rdfs:label "storage tank"@en ,
                              "tanque de armazenamento"@pt-br ;
                   skos:altLabel "tank"@en ;
@@ -9207,6 +9408,15 @@ copi:COPI_0000155 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000188
                                   ] ;
+                  owl:disjointWith copi:COPI_0000159 ,
+                                   copi:COPI_0000210 ,
+                                   copi:COPI_0000213 ,
+                                   copi:COPI_0000233 ,
+                                   copi:COPI_0000245 ,
+                                   copi:COPI_0000278 ,
+                                   copi:COPI_0000310 ,
+                                   copi:COPI_0000330 ,
+                                   copi:COPI_0000334 ;
                   rdfs:label "temperature transmitter"@en ,
                              "transmissor de temperatura"@pt-br ;
                   skos:definition "A temperature transmitter is a transmitter that measures temperature and produces a standardized output signal dependent on the received input signal from a temperature element."@en ;
@@ -9223,6 +9433,7 @@ copi:COPI_0000156 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000201
                                   ] ;
+                  owl:disjointWith copi:COPI_0000207 ;
                   rdfs:label "poço termométrico"@pt-br ,
                              "thermowell"@en ;
                   skos:definition "A thermowell is an instrument that is a pressure-tight receptacle adapted to receive a temperature sensing element, provided with external threads or other means for pressure-tight attachment to a vessel or pipe."@en ;
@@ -9253,6 +9464,7 @@ copi:COPI_0000157 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000030
                                   ] ;
+                  owl:disjointWith copi:COPI_0000207 ;
                   rdfs:label "transmissor"@pt-br ,
                              "transmitter"@en ;
                   skos:definition "A transmitter is an instrument that bears a signal transmission function, receiving process variable signals from sensors and converting them into standardized output signals for transmission to control systems."@en ;
@@ -9953,6 +10165,7 @@ copi:COPI_0000206 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000405
                                   ] ;
+                  owl:disjointWith copi:COPI_0000366 ;
                   rdfs:label "accumulator"@en ,
                              "acumulador"@pt-br ;
                   skos:altLabel "ACCUMULATOR"@en ,
@@ -9979,6 +10192,7 @@ copi:COPI_0000207 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000407
                                   ] ;
+                  owl:disjointWith copi:COPI_0000246 ;
                   rdfs:label "actuator"@en ,
                              "atuador"@pt-br ;
                   skos:altLabel "ACTUATOR"@en ,
@@ -10011,6 +10225,7 @@ copi:COPI_0000208 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000409
                                   ] ;
+                  owl:disjointWith copi:COPI_0000225 ;
                   rdfs:label "agitador"@pt-br ,
                              "agitator"@en ;
                   skos:definition "An agitator is a mixer that stirs or shakes fluids by reaction force from moving vanes."@en ;
@@ -10130,6 +10345,7 @@ copi:COPI_0000214 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000197
                                   ] ;
+                  owl:disjointWith copi:COPI_0000321 ;
                   rdfs:label "bacia"@pt-br ,
                              "basin"@en ;
                   skos:altLabel "BASIN"@en ,
@@ -10217,6 +10433,11 @@ copi:COPI_0000217 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000417
                                   ] ;
+                  owl:disjointWith copi:COPI_0000232 ,
+                                   copi:COPI_0000235 ,
+                                   copi:COPI_0000236 ,
+                                   copi:COPI_0000281 ,
+                                   copi:COPI_0000303 ;
                   rdfs:label "boiler"@en ,
                              "caldeira"@pt-br ;
                   skos:definition "A boiler is a heater that brings a liquid to its boiling point through indirect contact heat exchange, producing steam or vapor."@en ;
@@ -10337,6 +10558,7 @@ copi:COPI_0000221 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000425
                                   ] ;
+                  owl:disjointWith copi:COPI_0000321 ;
                   rdfs:label "bandeja de cabos"@pt-br ,
                              "cable tray"@en ;
                   skos:definition "A cable tray is an assembly that bears a cable support function and consists of a continuous base with raised edges, forming a rigid structural system for securely supporting and routing electrical cables."@en ;
@@ -10417,6 +10639,17 @@ copi:COPI_0000224 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225
 copi:COPI_0000225 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000084 ;
+                  owl:disjointWith copi:COPI_0000240 ,
+                                   copi:COPI_0000244 ,
+                                   copi:COPI_0000255 ,
+                                   copi:COPI_0000258 ,
+                                   copi:COPI_0000268 ,
+                                   copi:COPI_0000276 ,
+                                   copi:COPI_0000283 ,
+                                   copi:COPI_0000292 ,
+                                   copi:COPI_0000301 ,
+                                   copi:COPI_0000314 ,
+                                   copi:COPI_0000347 ;
                   rdfs:label "centrifuge"@en ,
                              "centrífuga"@pt-br ;
                   skos:altLabel "CENTRIFUGE"@en ;
@@ -10496,6 +10729,7 @@ copi:COPI_0000228 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000693
                                   ] ;
+                  owl:disjointWith copi:COPI_0000364 ;
                   rdfs:label "christmas tree"@en ,
                              "árvore de natal"@pt-br ;
                   skos:altLabel "CHRISTMAS TREE"@en ;
@@ -10521,6 +10755,7 @@ copi:COPI_0000229 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000430
                                   ] ;
+                  owl:disjointWith copi:COPI_0000245 ;
                   rdfs:label "chromatograph"@en ,
                              "cromatógrafo"@pt-br ;
                   skos:definition "A chromatograph is a process analyzer that bears a chromatographic analysis function."@en ;
@@ -10779,6 +11014,7 @@ copi:COPI_0000241 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000455
                                   ] ;
+                  owl:disjointWith copi:COPI_0000314 ;
                   rdfs:label "degaseificador"@pt-br ,
                              "degasser"@en ;
                   skos:definition "A degasser is a separator that removes gases from drilling fluids by realizing a degassing function."@en ;
@@ -10875,6 +11111,8 @@ copi:COPI_0000245 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000463
                                   ] ;
+                  owl:disjointWith copi:COPI_0000247 ,
+                                   copi:COPI_0000278 ;
                   rdfs:label "densitometer"@en ,
                              "densitômetro"@pt-br ;
                   skos:definition "A densitometer is an instrument that bears a density measurement function."@en ;
@@ -10929,6 +11167,7 @@ copi:COPI_0000247 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000467
                                   ] ;
+                  owl:disjointWith copi:COPI_0000278 ;
                   rdfs:label "analisador de ponto de orvalho"@pt-br ,
                              "dew point analyser"@en ;
                   skos:definition "A dew point analyser is an instrument that bears a dew point measurement function."@en ;
@@ -10961,6 +11200,7 @@ copi:COPI_0000249 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000519
                                   ] ;
+                  owl:disjointWith copi:COPI_0000289 ;
                   rdfs:label "bomba de diafragma"@pt-br ,
                              "diaphragm pump"@en ;
                   skos:definition "A diaphragm pump is a reciprocating pump that uses flexible diaphragms to displace liquid and seal the pumped fluid from atmospheric leakage."@en ;
@@ -10983,6 +11223,8 @@ copi:COPI_0000250 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:Piston
                                   ] ;
+                  owl:disjointWith copi:COPI_0000285 ,
+                                   copi:COPI_0000286 ;
                   rdfs:label "diesel engine"@en ,
                              "motor diesel"@pt-br ;
                   skos:definition "A diesel engine is an engine that ignites fuel through compression heat rather than spark ignition, requiring compression ignition and fuel injection systems."@en ;
@@ -11029,6 +11271,8 @@ copi:COPI_0000252 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000471
                                   ] ;
+                  owl:disjointWith copi:COPI_0000279 ,
+                                   copi:COPI_0000309 ;
                   rdfs:label "differential pressure switch"@en ,
                              "interruptor de pressão diferencial"@pt-br ;
                   skos:definition "A differential pressure switch is a pressure switch that bears a differential pressure switching function to switch or provide on/off signals when the measured differential pressure between two inputs reaches a pre-set value."@en ;
@@ -11061,6 +11305,7 @@ copi:COPI_0000253 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000502
                                   ] ;
+                  owl:disjointWith copi:COPI_0000316 ;
                   rdfs:label "diffuser"@en ,
                              "difusor"@pt-br ;
                   skos:definition "A diffuser is an assembly that has the designed function of converting kinetic energy of fluid flow into pressure energy through controlled deceleration in a diverging passage."@en ;
@@ -11193,6 +11438,7 @@ copi:COPI_0000259 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000658
                                   ] ;
+                  owl:disjointWith copi:COPI_0000331 ;
                   rdfs:label "eductor"@en ,
                              "edutor"@pt-br ;
                   skos:definition "An eductor is a pump that uses a high-pressure motive fluid jet to create a low-pressure zone that entrains and moves a second fluid via momentum transfer."@en ;
@@ -11211,6 +11457,8 @@ copi:COPI_0000260 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
                                     owl:someValuesFrom copi:COPI_0000058
                                   ] ;
+                  owl:disjointWith copi:COPI_0000298 ,
+                                   copi:COPI_0000327 ;
                   rdfs:label "atuador elétrico"@pt-br ,
                              "electric actuator"@en ;
                   skos:definition "An electric actuator is an actuator that converts electrical energy to mechanical movement through an electric-to-mechanical converter component and operates via electrical signal input."@en ;
@@ -11293,6 +11541,7 @@ copi:COPI_0000263 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264
 copi:COPI_0000264 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000315 ;
+                  owl:disjointWith copi:COPI_0000328 ;
                   rdfs:label "engine"@en ,
                              "motor"@pt-br ;
                   skos:definition "An engine is a motor that converts chemical fuel energy into mechanical force and motion through combustion processes."@en ;
@@ -11328,6 +11577,7 @@ copi:COPI_0000265 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000266
 copi:COPI_0000266 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000081 ;
+                  owl:disjointWith copi:COPI_0000268 ;
                   rdfs:label "cartucho de filtro"@pt-br ,
                              "filter cartridge"@en ;
                   skos:definition "A filter cartridge is a filter that has a replaceable filter medium in a cartridge form factor designed for insertion into and removal from a filter housing."@en ;
@@ -11360,6 +11610,7 @@ copi:COPI_0000268 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:FilterMedium
                                   ] ;
+                  owl:disjointWith copi:COPI_0000301 ;
                   rdfs:label "filter press"@en ,
                              "prensa filtrante"@pt-br ;
                   skos:definition "A filter press is a filter that applies mechanical compression force to enhance the separation of substances through a pressurized filtration process."@en ;
@@ -11428,6 +11679,7 @@ copi:COPI_0000271 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000513
                                   ] ;
+                  owl:disjointWith copi:COPI_0000272 ;
                   rdfs:label "arrestador de chama"@pt-br ,
                              "flame arrestor"@en ;
                   skos:definition "A flame arrestor is a safety device that bears a flame arrest function to prevent flames from entering a system through an opening."@en ;
@@ -11462,6 +11714,7 @@ copi:COPI_0000272 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273
 copi:COPI_0000273 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000238 ;
+                  owl:disjointWith copi:COPI_0000321 ;
                   rdfs:label "flange"@en ,
                              "flange"@pt-br ;
                   skos:definition "A flange is a material artifact characterized by a projecting flat rim, plate, collar, or rib geometry, designed to provide mechanical connection between components."@en ;
@@ -11523,6 +11776,7 @@ copi:COPI_0000276 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000517
                                   ] ;
+                  owl:disjointWith copi:COPI_0000301 ;
                   rdfs:label "flash drum"@en ,
                              "tambor de flash"@pt-br ;
                   skos:definition "A flash drum is a separator that performs flash vaporization to separate lighter components (which vaporize and are drawn off at the top) from heavier components (which remain liquid and are drawn off at the bottom)."@en ;
@@ -11646,6 +11900,7 @@ copi:COPI_0000282 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000588
                                   ] ;
+                  owl:disjointWith copi:COPI_0000338 ;
                   rdfs:label "fuse"@en ,
                              "fusível"@pt-br ;
                   skos:definition "A fuse is an electrical equipment that protects circuits by interrupting current flow through the intentional melting of a fusible element when current exceeds specified values for a sufficient duration."@en ;
@@ -11786,6 +12041,7 @@ copi:COPI_0000289 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000335
                                   ] ;
+                  owl:disjointWith copi:COPI_0000337 ;
                   rdfs:label "bomba de engrenagem"@pt-br ,
                              "gear pump"@en ;
                   skos:definition "A gear pump is a pump that contains gear teeth within a casing or enclosure to transport liquid at relatively high back pressures through meshing action."@en ;
@@ -11846,6 +12102,7 @@ copi:COPI_0000292 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000546
                                   ] ;
+                  owl:disjointWith copi:COPI_0000301 ;
                   rdfs:label "gravity separator"@en ,
                              "separador gravitacional"@pt-br ;
                   skos:definition "A gravity separator is a separator that performs separation based on differences in specific gravity of the substances being separated."@en ;
@@ -11913,6 +12170,7 @@ copi:COPI_0000295 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000296
 copi:COPI_0000296 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000321 ;
+                  owl:disjointWith copi:COPI_0000367 ;
                   rdfs:label "hose"@en ,
                              "mangueira"@pt-br ;
                   skos:definition "A hose is a flexible pipe designed to conduct liquids under pressure while accommodating positional movement and bending."@en ;
@@ -11949,6 +12207,7 @@ copi:COPI_0000298 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
                                     owl:someValuesFrom copi:COPI_0000384
                                   ] ;
+                  owl:disjointWith copi:COPI_0000327 ;
                   rdfs:label "atuador hidráulico"@pt-br ,
                              "hydraulic actuator"@en ;
                   skos:definition "A hydraulic actuator is an actuator that converts hydraulic fluid pressure into mechanical motion through hydraulic power transmission."@en ;
@@ -12311,6 +12570,7 @@ copi:COPI_0000314 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000578
                                   ] ;
+                  owl:disjointWith copi:COPI_0000361 ;
                   rdfs:label "misturador"@pt-br ,
                              "mixer"@en ;
                   skos:definition "A mixer is an assembly that has the designed function to blend or combine two or more fluid ingredients into a homogeneous mixture."@en ;
@@ -12335,6 +12595,8 @@ copi:COPI_0000315 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000574
                                   ] ;
+                  owl:disjointWith copi:COPI_0000338 ,
+                                   copi:COPI_0000366 ;
                   rdfs:label "motor"@en ,
                              "motor"@pt-br ;
                   skos:definition "A motor is an assembly that bears a mechanical energy generation function to convert electrical, chemical, pneumatic, or hydraulic energy into rotational mechanical energy."@en ;
@@ -12395,6 +12657,7 @@ copi:COPI_0000318 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000592
                                   ] ;
+                  owl:disjointWith copi:COPI_0000319 ;
                   rdfs:label "lançador de pig"@pt-br ,
                              "pig launcher"@en ;
                   skos:definition "A pig launcher is a vessel that bears a pig launching function for inserting pipeline pigs into pipeline systems."@en ;
@@ -12475,6 +12738,7 @@ copi:COPI_0000321 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000529
                                   ] ;
+                  owl:disjointWith copi:COPI_0000367 ;
                   rdfs:label "pipe"@en ,
                              "tubo"@pt-br ;
                   skos:definition "A pipe is a material artifact characterized by tubular geometry and longitudinal extent, designed to conduct liquid, gaseous or finely divided solid materials from one location to another, or to serve structural purposes."@en ;
@@ -12503,6 +12767,8 @@ copi:COPI_0000322 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000323
 copi:COPI_0000323 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000321 ;
+                  owl:disjointWith copi:COPI_0000324 ,
+                                   copi:COPI_0000325 ;
                   rdfs:label "cotovelo de tubulação"@pt-br ,
                              "pipe elbow"@en ;
                   skos:definition "A pipe elbow is a pipe that has curved geometry enabling directional changes in pipe runs between 0 and 135 degrees."@en ;
@@ -12569,6 +12835,7 @@ copi:COPI_0000326 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtSomeTime> ;
                                     owl:someValuesFrom copi:COPI_0000321
                                   ] ;
+                  owl:disjointWith copi:COPI_0000375 ;
                   rdfs:label "pipeline"@en ,
                              "pipeline"@pt-br ;
                   skos:definition "A pipeline is an engineered system that bears a fluid transport function, consisting of pipes and possibly including pumps, valves, and control devices, designed for conveying liquids, gases, or finely divided solids between locations."@en ;
@@ -12773,6 +13040,7 @@ copi:COPI_0000336 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337
 copi:COPI_0000337 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000072 ;
+                  owl:disjointWith copi:COPI_0000341 ;
                   rdfs:label "bomba alternativa"@pt-br ,
                              "reciprocating pump"@en ;
                   skos:definition "A reciprocating pump is a pump that contains pistons or plungers designed to move in a reciprocating motion within cylindrical chambers to displace fluid through positive displacement action."@en ;

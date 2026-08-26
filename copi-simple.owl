@@ -16,7 +16,7 @@
      xmlns:schema="https://schema.org/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-simple.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-08-16/copi-simple.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-08-26/copi-simple.owl"/>
         <terms:bibliographicCitation>Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press.</terms:bibliographicCitation>
         <terms:contributor>Cauã Antunes</terms:contributor>
         <terms:contributor>Haroldo Rojas</terms:contributor>
@@ -39,7 +39,7 @@
         <bibo:status>unstable</bibo:status>
         <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>
-        <owl:versionInfo>2026-08-16</owl:versionInfo>
+        <owl:versionInfo>2026-08-26</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
@@ -3989,6 +3989,27 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000066"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
         <rdfs:label xml:lang="pt-br">bomba</rdfs:label>
         <rdfs:label xml:lang="en">pump</rdfs:label>
         <skos:definition xml:lang="en">A pump is an assembly that bears the designed function of adding mechanical energy to fluid for pressurization and transport.</skos:definition>
@@ -4009,6 +4030,28 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000067"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
         <rdfs:label xml:lang="en">compressor</rdfs:label>
         <rdfs:label xml:lang="pt-br">compressor</rdfs:label>
         <skos:altLabel xml:lang="en">COMPRESSOR</skos:altLabel>
@@ -4037,6 +4080,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/TubeBundle"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000139"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000209"/>
         <rdfs:label xml:lang="en">shell and tube heat exchanger</rdfs:label>
         <rdfs:label xml:lang="pt-br">trocador de calor de casco e tubos</rdfs:label>
         <skos:definition xml:lang="en">A shell and tube heat exchanger is a heat exchanger that has a tube bundle spatially contained within a surrounding shell.</skos:definition>
@@ -4081,6 +4126,9 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000070"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000116"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
         <rdfs:label xml:lang="pt-br">elemento de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature element</rdfs:label>
         <skos:definition xml:lang="en">A temperature element is an instrument that bears a temperature sensing function.</skos:definition>
@@ -4102,6 +4150,17 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000316"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000364"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
         <rdfs:label xml:lang="en">valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula</rdfs:label>
         <skos:definition xml:lang="en">A valve is an assembly that bears a flow control function to permit, obstruct, regulate, or divert fluid streams.</skos:definition>
@@ -4148,6 +4207,16 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000194"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000107"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000240"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000244"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000255"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000344"/>
         <rdfs:label xml:lang="en">filter</rdfs:label>
         <rdfs:label xml:lang="pt-br">filtro</rdfs:label>
         <skos:definition xml:lang="en">A filter is a separator that bears a filtration function to selectively remove unwanted constituents from a fluid stream using a filter element within a filter housing.</skos:definition>
@@ -4185,6 +4254,17 @@ Units of Measure: Km, Kg, G</skos:example>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000238"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000344"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
         <rdfs:label xml:lang="pt-br">separador</rdfs:label>
         <rdfs:label xml:lang="en">separator</rdfs:label>
         <skos:definition xml:lang="en">A separator is a vessel that bears a SeparationFunction - designed to separate different substances or phases from a mixed fluid stream into distinct output streams.</skos:definition>
@@ -4232,6 +4312,11 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000199"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000261"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000357"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000368"/>
         <rdfs:label xml:lang="pt-br">transformador</rdfs:label>
         <rdfs:label xml:lang="en">transformer</rdfs:label>
         <skos:definition xml:lang="en">A transformer is an electrical equipment that transforms electrical power from one circuit to another at the same frequency through electromagnetic induction using windings and a magnetic core.</skos:definition>
@@ -4251,6 +4336,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
         <rdfs:label xml:lang="en">control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle</rdfs:label>
         <skos:altLabel xml:lang="en">CONTROL VALVE</skos:altLabel>
@@ -4352,6 +4438,22 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000068"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000121"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
         <rdfs:label xml:lang="en">heat exchanger</rdfs:label>
         <rdfs:label xml:lang="pt-br">trocador de calor</rdfs:label>
         <skos:definition xml:lang="en">A heat exchanger is a pressure vessel that bears the designed function of transferring thermal energy between two or more fluid streams while maintaining their separation.</skos:definition>
@@ -4384,6 +4486,9 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
         <rdfs:label xml:lang="en">ball control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle esférica</rdfs:label>
         <skos:definition xml:lang="en">A ball control valve is a control valve that uses a spherical ball closure element with rotary actuation to modulate fluid flow in response to control signals.</skos:definition>
@@ -4401,6 +4506,10 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
         <rdfs:label xml:lang="en">ball valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula esfera</rdfs:label>
         <skos:altLabel xml:lang="en">BALL VALVE</skos:altLabel>
@@ -4459,6 +4568,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000098">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
         <rdfs:label xml:lang="en">blower</rdfs:label>
         <rdfs:label xml:lang="pt-br">soprador</rdfs:label>
         <skos:altLabel xml:lang="en">BLOWER</skos:altLabel>
@@ -4483,6 +4593,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
         <rdfs:label xml:lang="en">butterfly control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula borboleta de controle</rdfs:label>
         <skos:definition xml:lang="en">A butterfly control valve is a control valve that has a rotating disc closure mechanism and bears a process-controlled flow function enabling automated flow modulation in response to external control signals.</skos:definition>
@@ -4500,6 +4612,10 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000123"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
         <rdfs:label xml:lang="en">butterfly valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula borboleta</rdfs:label>
         <skos:altLabel xml:lang="en">BUTTERFLY VALVE</skos:altLabel>
@@ -4544,6 +4660,12 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000249"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000259"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000289"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000300"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000331"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337"/>
         <rdfs:label xml:lang="pt-br">bomba centrífuga</rdfs:label>
         <rdfs:label xml:lang="en">centrifugal pump</rdfs:label>
         <skos:altLabel xml:lang="en">CENTRIFUGAL PUMP</skos:altLabel>
@@ -4568,6 +4690,9 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000161"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000145"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000148"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
         <rdfs:label xml:lang="en">check valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de retenção</rdfs:label>
         <skos:altLabel xml:lang="en">CHECK VALVE</skos:altLabel>
@@ -4590,6 +4715,9 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000114"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000149"/>
         <rdfs:label xml:lang="en">choke control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle de choke</rdfs:label>
         <skos:definition xml:lang="en">A choke control valve is a control valve that has a choke geometry component for pressure reduction through flow restriction.</skos:definition>
@@ -4634,6 +4762,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000200"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000282"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000368"/>
         <rdfs:label xml:lang="en">circuit breaker</rdfs:label>
         <rdfs:label xml:lang="pt-br">disjuntor</rdfs:label>
         <skos:altLabel xml:lang="en">CIRCUIT BREAKER</skos:altLabel>
@@ -4654,6 +4784,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000196"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
         <rdfs:label xml:lang="pt-br">coalescedor</rdfs:label>
         <rdfs:label xml:lang="en">coalescer</rdfs:label>
         <skos:definition xml:lang="en">A coalescer is a separator that uses coalescence media to promote droplet merger in immiscible liquid mixtures, enabling gravity-based separation where the less dense liquid phase can be skimmed off.</skos:definition>
@@ -4675,6 +4806,9 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000329"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000123"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
         <rdfs:label xml:lang="en">diaphragm valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de diafragma</rdfs:label>
         <skos:definition xml:lang="en">A diaphragm valve is a valve that uses a resilient diaphragm forced against a port as its closure mechanism to control fluid flow.</skos:definition>
@@ -4759,6 +4893,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000170"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133"/>
         <rdfs:label xml:lang="en">down hole safety valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de segurança de fundo de poço</rdfs:label>
         <skos:definition xml:lang="en">A down hole safety valve is a safety valve that bears a subsurface safety function for pressure relief and flow control operations in wellbore or other subsurface environments.</skos:definition>
@@ -4779,6 +4914,11 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000193"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000261"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000299"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000328"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000357"/>
         <rdfs:label xml:lang="en">electric motor</rdfs:label>
         <rdfs:label xml:lang="pt-br">motor elétrico</rdfs:label>
         <skos:definition xml:lang="en">An electric motor is an assembly that bears an electric-to-mechanical energy conversion function and has both a stator and rotor as essential components.</skos:definition>
@@ -4841,6 +4981,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000174"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
         <rdfs:label xml:lang="pt-br">elemento de vazão</rdfs:label>
         <rdfs:label xml:lang="en">flow element</rdfs:label>
         <skos:definition xml:lang="en">A flow element is an instrument that has the function to measure flow rates in a flowstream and produce signals proportional to the measured flow.</skos:definition>
@@ -4869,6 +5010,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000171"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
         <rdfs:label xml:lang="en">flow indicator</rdfs:label>
         <rdfs:label xml:lang="pt-br">indicador de fluxo</rdfs:label>
         <skos:definition xml:lang="en">A flow indicator is an indicator that is designed to indicate flow rates using a flow element and display element.</skos:definition>
@@ -4890,6 +5032,16 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000185"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
         <rdfs:label xml:lang="en">flow transmitter</rdfs:label>
         <rdfs:label xml:lang="pt-br">transmissor de fluxo</rdfs:label>
         <skos:definition xml:lang="en">A flow transmitter is a transmitter that produces standardized output signals proportional to flow measurements from flow sensing elements.</skos:definition>
@@ -4903,6 +5055,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
         <rdfs:label xml:lang="en">gate control valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de controle tipo gaveta</rdfs:label>
         <skos:definition xml:lang="en">A gate control valve is a control valve that uses a gate or wedge closure element moving perpendicular to the flow path to modulate fluid flow in response to control signals.</skos:definition>
@@ -4926,6 +5079,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000371"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000134"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
         <rdfs:label xml:lang="en">gate valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula gaveta</rdfs:label>
         <skos:definition xml:lang="en">A gate valve is a valve that has a gate or disc closure member with linear motion parallel to the plane of flat seats, which are transverse to the direction of flow.</skos:definition>
@@ -5008,6 +5163,10 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000190"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000235"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000236"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000241"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
         <rdfs:label xml:lang="pt-br">aquecedor</rdfs:label>
         <rdfs:label xml:lang="en">heater</rdfs:label>
         <skos:definition xml:lang="en">A heater is an assembly that bears a heating function to add thermal energy to a medium.</skos:definition>
@@ -5029,6 +5188,9 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000180"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
         <rdfs:label xml:lang="pt-br">analisador de umidade</rdfs:label>
         <rdfs:label xml:lang="en">humidity analyser</rdfs:label>
         <skos:definition xml:lang="en">A humidity analyser is an instrument designed to measure and indicate humidity or moisture content in process streams or environments.</skos:definition>
@@ -5067,6 +5229,9 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000028"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000234"/>
         <rdfs:label xml:lang="pt-br">indicador</rdfs:label>
         <rdfs:label xml:lang="en">indicator</rdfs:label>
         <skos:definition xml:lang="en">An indicator is an instrument that displays or shows the value or status of a measured variable or condition to make it perceptible to operators.</skos:definition>
@@ -5088,6 +5253,9 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000176"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
         <rdfs:label xml:lang="pt-br">elemento de nível</rdfs:label>
         <rdfs:label xml:lang="en">level element</rdfs:label>
         <skos:altLabel xml:lang="en">LEVEL MEASURING ELEMENT</skos:altLabel>
@@ -5110,6 +5278,9 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000172"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000154"/>
         <rdfs:label xml:lang="pt-br">indicador de nível</rdfs:label>
         <rdfs:label xml:lang="en">level indicator</rdfs:label>
         <skos:definition xml:lang="en">A level indicator is an indicator that measures and locally displays the level of liquid or bulk solid material in a vessel or tank.</skos:definition>
@@ -5126,6 +5297,8 @@ Units of Measure: Km, Kg, G</skos:example>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000085"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
         <rdfs:label xml:lang="en">level sight glass</rdfs:label>
         <rdfs:label xml:lang="pt-br">visor de nível</rdfs:label>
         <skos:definition xml:lang="en">A level sight glass is a sight glass that bears a designed function to indicate liquid level through visual inspection.</skos:definition>
@@ -5147,6 +5320,14 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000187"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
         <rdfs:label xml:lang="en">level transmitter</rdfs:label>
         <rdfs:label xml:lang="pt-br">transmissor de nível</rdfs:label>
         <skos:definition xml:lang="en">A level transmitter is a transmitter that measures the level (height) of liquid or bulk solid material in a container and produces a standardized electrical output signal proportional to the measured level.</skos:definition>
@@ -5166,6 +5347,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000183"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
         <rdfs:label xml:lang="en">limit switch</rdfs:label>
         <rdfs:label xml:lang="pt-br">limit switch</rdfs:label>
         <skos:definition xml:lang="en">A limit switch is an instrument that bears a position limit detection function, mechanically actuated by object motion to provide electrical switching signals when predetermined position limits are reached.</skos:definition>
@@ -5179,6 +5362,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000150"/>
         <rdfs:label xml:lang="en">manual valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula manual</rdfs:label>
         <skos:definition xml:lang="en">A manual valve is a valve that has a manual actuator requiring hand power for operation.</skos:definition>
@@ -5240,6 +5424,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000360"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
         <rdfs:label xml:lang="en">orifice plate</rdfs:label>
         <rdfs:label xml:lang="pt-br">placa de orifício</rdfs:label>
         <skos:definition xml:lang="en">An orifice plate is a flow element that consists of a thin plate with a specified hole through which fluid flows to create differential pressure for flow rate measurement.</skos:definition>
@@ -5263,6 +5448,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000181"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
         <rdfs:label xml:lang="pt-br">medidor de sequência de fases</rdfs:label>
         <rdfs:label xml:lang="en">phase sequence meter</rdfs:label>
         <skos:definition xml:lang="en">A phase sequence meter is an electric measuring instrument that bears a phase sequence measurement function to determine and indicate the sequence in which the instantaneous voltages of phase conductors reach their maximum value in a polyphase electrical system.</skos:definition>
@@ -5278,6 +5464,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000138">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000153"/>
         <rdfs:label xml:lang="en">piston check valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de retenção tipo pistão</rdfs:label>
         <skos:definition xml:lang="en">A piston check valve is a check valve that has a piston-type closure member that moves linearly along the flow axis under gravity or spring loading to prevent backflow.</skos:definition>
@@ -5301,6 +5488,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000294"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000269"/>
         <rdfs:label xml:lang="en">plate heat exchanger</rdfs:label>
         <rdfs:label xml:lang="pt-br">trocador de calor de placas</rdfs:label>
         <skos:definition xml:lang="en">A plate heat exchanger is a heat exchanger that has heat transfer plates as its primary heat transfer surface.</skos:definition>
@@ -5381,6 +5569,10 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000178"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
         <rdfs:label xml:lang="pt-br">manômetro</rdfs:label>
         <rdfs:label xml:lang="en">pressure gauge</rdfs:label>
         <skos:definition xml:lang="en">A pressure gauge is an indicator that bears the function of measuring and displaying pressure values.</skos:definition>
@@ -5402,6 +5594,12 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000031"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
         <rdfs:label xml:lang="en">pressure transmitter</rdfs:label>
         <rdfs:label xml:lang="pt-br">transmissor de pressão</rdfs:label>
         <skos:definition xml:lang="en">A pressure transmitter is a transmitter that converts pressure measurements into standardized output signals for transmission to control or monitoring systems.</skos:definition>
@@ -5443,6 +5641,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000163"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
         <rdfs:label xml:lang="pt-br">orifício de restrição</rdfs:label>
         <rdfs:label xml:lang="en">restriction orifice</rdfs:label>
         <skos:definition xml:lang="en">A restriction orifice is a flow modification accessory that bears the function to restrict fluid flow by creating controlled pressure drop through geometric constriction.</skos:definition>
@@ -5546,6 +5745,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000197"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000375"/>
         <rdfs:label xml:lang="en">storage tank</rdfs:label>
         <rdfs:label xml:lang="pt-br">tanque de armazenamento</rdfs:label>
         <skos:altLabel xml:lang="en">tank</skos:altLabel>
@@ -5625,6 +5826,15 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000188"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000210"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
         <rdfs:label xml:lang="en">temperature transmitter</rdfs:label>
         <rdfs:label xml:lang="pt-br">transmissor de temperatura</rdfs:label>
         <skos:definition xml:lang="en">A temperature transmitter is a transmitter that measures temperature and produces a standardized output signal dependent on the received input signal from a temperature element.</skos:definition>
@@ -5646,6 +5856,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000201"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
         <rdfs:label xml:lang="pt-br">poço termométrico</rdfs:label>
         <rdfs:label xml:lang="en">thermowell</rdfs:label>
         <skos:definition xml:lang="en">A thermowell is an instrument that is a pressure-tight receptacle adapted to receive a temperature sensing element, provided with external threads or other means for pressure-tight attachment to a vessel or pipe.</skos:definition>
@@ -5675,6 +5886,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000030"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
         <rdfs:label xml:lang="pt-br">transmissor</rdfs:label>
         <rdfs:label xml:lang="en">transmitter</rdfs:label>
         <skos:definition xml:lang="en">A transmitter is an instrument that bears a signal transmission function, receiving process variable signals from sensors and converting them into standardized output signals for transmission to control systems.</skos:definition>
@@ -6602,6 +6814,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000405"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
         <rdfs:label xml:lang="en">accumulator</rdfs:label>
         <rdfs:label xml:lang="pt-br">acumulador</rdfs:label>
         <skos:altLabel xml:lang="en">ACCUMULATOR</skos:altLabel>
@@ -6624,6 +6837,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000407"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000246"/>
         <rdfs:label xml:lang="en">actuator</rdfs:label>
         <rdfs:label xml:lang="pt-br">atuador</rdfs:label>
         <skos:altLabel xml:lang="en">ACTUATOR</skos:altLabel>
@@ -6651,6 +6865,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000409"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
         <rdfs:label xml:lang="pt-br">agitador</rdfs:label>
         <rdfs:label xml:lang="en">agitator</rdfs:label>
         <skos:definition xml:lang="en">An agitator is a mixer that stirs or shakes fluids by reaction force from moving vanes.</skos:definition>
@@ -6779,6 +6994,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000197"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
         <rdfs:label xml:lang="pt-br">bacia</rdfs:label>
         <rdfs:label xml:lang="en">basin</rdfs:label>
         <skos:altLabel xml:lang="en">BASIN</skos:altLabel>
@@ -6856,6 +7072,11 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000417"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000232"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000235"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000236"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000281"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000303"/>
         <rdfs:label xml:lang="en">boiler</rdfs:label>
         <rdfs:label xml:lang="pt-br">caldeira</rdfs:label>
         <skos:definition xml:lang="en">A boiler is a heater that brings a liquid to its boiling point through indirect contact heat exchange, producing steam or vapor.</skos:definition>
@@ -6955,6 +7176,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000425"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
         <rdfs:label xml:lang="pt-br">bandeja de cabos</rdfs:label>
         <rdfs:label xml:lang="en">cable tray</rdfs:label>
         <skos:definition xml:lang="en">A cable tray is an assembly that bears a cable support function and consists of a continuous base with raised edges, forming a rigid structural system for securely supporting and routing electrical cables.</skos:definition>
@@ -7041,6 +7263,17 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000240"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000244"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000255"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000268"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000283"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000292"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000347"/>
         <rdfs:label xml:lang="en">centrifuge</rdfs:label>
         <rdfs:label xml:lang="pt-br">centrífuga</rdfs:label>
         <skos:altLabel xml:lang="en">CENTRIFUGE</skos:altLabel>
@@ -7122,6 +7355,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000693"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000364"/>
         <rdfs:label xml:lang="en">christmas tree</rdfs:label>
         <rdfs:label xml:lang="pt-br">árvore de natal</rdfs:label>
         <skos:altLabel xml:lang="en">CHRISTMAS TREE</skos:altLabel>
@@ -7144,6 +7378,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000430"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
         <rdfs:label xml:lang="en">chromatograph</rdfs:label>
         <rdfs:label xml:lang="pt-br">cromatógrafo</rdfs:label>
         <skos:definition xml:lang="en">A chromatograph is a process analyzer that bears a chromatographic analysis function.</skos:definition>
@@ -7383,6 +7618,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000455"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
         <rdfs:label xml:lang="pt-br">degaseificador</rdfs:label>
         <rdfs:label xml:lang="en">degasser</rdfs:label>
         <skos:definition xml:lang="en">A degasser is a separator that removes gases from drilling fluids by realizing a degassing function.</skos:definition>
@@ -7466,6 +7702,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000463"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
         <rdfs:label xml:lang="en">densitometer</rdfs:label>
         <rdfs:label xml:lang="pt-br">densitômetro</rdfs:label>
         <skos:definition xml:lang="en">A densitometer is an instrument that bears a density measurement function.</skos:definition>
@@ -7512,6 +7750,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000467"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
         <rdfs:label xml:lang="pt-br">analisador de ponto de orvalho</rdfs:label>
         <rdfs:label xml:lang="en">dew point analyser</rdfs:label>
         <skos:definition xml:lang="en">A dew point analyser is an instrument that bears a dew point measurement function.</skos:definition>
@@ -7554,6 +7793,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000519"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000289"/>
         <rdfs:label xml:lang="pt-br">bomba de diafragma</rdfs:label>
         <rdfs:label xml:lang="en">diaphragm pump</rdfs:label>
         <skos:definition xml:lang="en">A diaphragm pump is a reciprocating pump that uses flexible diaphragms to displace liquid and seal the pumped fluid from atmospheric leakage.</skos:definition>
@@ -7583,6 +7823,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Piston"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000285"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000286"/>
         <rdfs:label xml:lang="en">diesel engine</rdfs:label>
         <rdfs:label xml:lang="pt-br">motor diesel</rdfs:label>
         <skos:definition xml:lang="en">A diesel engine is an engine that ignites fuel through compression heat rather than spark ignition, requiring compression ignition and fuel injection systems.</skos:definition>
@@ -7623,6 +7865,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000471"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000279"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000309"/>
         <rdfs:label xml:lang="en">differential pressure switch</rdfs:label>
         <rdfs:label xml:lang="pt-br">interruptor de pressão diferencial</rdfs:label>
         <skos:definition xml:lang="en">A differential pressure switch is a pressure switch that bears a differential pressure switching function to switch or provide on/off signals when the measured differential pressure between two inputs reaches a pre-set value.</skos:definition>
@@ -7649,6 +7893,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000502"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000316"/>
         <rdfs:label xml:lang="en">diffuser</rdfs:label>
         <rdfs:label xml:lang="pt-br">difusor</rdfs:label>
         <skos:definition xml:lang="en">A diffuser is an assembly that has the designed function of converting kinetic energy of fluid flow into pressure energy through controlled deceleration in a diverging passage.</skos:definition>
@@ -7778,6 +8023,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000658"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000331"/>
         <rdfs:label xml:lang="en">eductor</rdfs:label>
         <rdfs:label xml:lang="pt-br">edutor</rdfs:label>
         <skos:definition xml:lang="en">An eductor is a pump that uses a high-pressure motive fluid jet to create a low-pressure zone that entrains and moves a second fluid via momentum transfer.</skos:definition>
@@ -7801,6 +8047,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000058"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000298"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
         <rdfs:label xml:lang="pt-br">atuador elétrico</rdfs:label>
         <rdfs:label xml:lang="en">electric actuator</rdfs:label>
         <skos:definition xml:lang="en">An electric actuator is an actuator that converts electrical energy to mechanical movement through an electric-to-mechanical converter component and operates via electrical signal input.</skos:definition>
@@ -7887,6 +8135,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000315"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000328"/>
         <rdfs:label xml:lang="en">engine</rdfs:label>
         <rdfs:label xml:lang="pt-br">motor</rdfs:label>
         <skos:definition xml:lang="en">An engine is a motor that converts chemical fuel energy into mechanical force and motion through combustion processes.</skos:definition>
@@ -7921,6 +8170,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000266">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000268"/>
         <rdfs:label xml:lang="pt-br">cartucho de filtro</rdfs:label>
         <rdfs:label xml:lang="en">filter cartridge</rdfs:label>
         <skos:definition xml:lang="en">A filter cartridge is a filter that has a replaceable filter medium in a cartridge form factor designed for insertion into and removal from a filter housing.</skos:definition>
@@ -7961,6 +8211,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/FilterMedium"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
         <rdfs:label xml:lang="en">filter press</rdfs:label>
         <rdfs:label xml:lang="pt-br">prensa filtrante</rdfs:label>
         <skos:definition xml:lang="en">A filter press is a filter that applies mechanical compression force to enhance the separation of substances through a pressurized filtration process.</skos:definition>
@@ -8027,6 +8278,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000513"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000272"/>
         <rdfs:label xml:lang="pt-br">arrestador de chama</rdfs:label>
         <rdfs:label xml:lang="en">flame arrestor</rdfs:label>
         <skos:definition xml:lang="en">A flame arrestor is a safety device that bears a flame arrest function to prevent flames from entering a system through an opening.</skos:definition>
@@ -8061,6 +8313,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000238"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
         <rdfs:label xml:lang="en">flange</rdfs:label>
         <rdfs:label xml:lang="pt-br">flange</rdfs:label>
         <skos:definition xml:lang="en">A flange is a material artifact characterized by a projecting flat rim, plate, collar, or rib geometry, designed to provide mechanical connection between components.</skos:definition>
@@ -8129,6 +8382,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000517"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
         <rdfs:label xml:lang="en">flash drum</rdfs:label>
         <rdfs:label xml:lang="pt-br">tambor de flash</rdfs:label>
         <skos:definition xml:lang="en">A flash drum is a separator that performs flash vaporization to separate lighter components (which vaporize and are drawn off at the top) from heavier components (which remain liquid and are drawn off at the bottom).</skos:definition>
@@ -8257,6 +8511,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000588"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
         <rdfs:label xml:lang="en">fuse</rdfs:label>
         <rdfs:label xml:lang="pt-br">fusível</rdfs:label>
         <skos:definition xml:lang="en">A fuse is an electrical equipment that protects circuits by interrupting current flow through the intentional melting of a fusible element when current exceeds specified values for a sufficient duration.</skos:definition>
@@ -8407,6 +8662,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000335"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337"/>
         <rdfs:label xml:lang="pt-br">bomba de engrenagem</rdfs:label>
         <rdfs:label xml:lang="en">gear pump</rdfs:label>
         <skos:definition xml:lang="en">A gear pump is a pump that contains gear teeth within a casing or enclosure to transport liquid at relatively high back pressures through meshing action.</skos:definition>
@@ -8474,6 +8730,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000546"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
         <rdfs:label xml:lang="en">gravity separator</rdfs:label>
         <rdfs:label xml:lang="pt-br">separador gravitacional</rdfs:label>
         <skos:definition xml:lang="en">A gravity separator is a separator that performs separation based on differences in specific gravity of the substances being separated.</skos:definition>
@@ -8549,6 +8806,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000296">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000367"/>
         <rdfs:label xml:lang="en">hose</rdfs:label>
         <rdfs:label xml:lang="pt-br">mangueira</rdfs:label>
         <skos:definition xml:lang="en">A hose is a flexible pipe designed to conduct liquids under pressure while accommodating positional movement and bending.</skos:definition>
@@ -8594,6 +8852,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000384"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
         <rdfs:label xml:lang="pt-br">atuador hidráulico</rdfs:label>
         <rdfs:label xml:lang="en">hydraulic actuator</rdfs:label>
         <skos:definition xml:lang="en">A hydraulic actuator is an actuator that converts hydraulic fluid pressure into mechanical motion through hydraulic power transmission.</skos:definition>
@@ -8964,6 +9223,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000578"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000361"/>
         <rdfs:label xml:lang="pt-br">misturador</rdfs:label>
         <rdfs:label xml:lang="en">mixer</rdfs:label>
         <skos:definition xml:lang="en">A mixer is an assembly that has the designed function to blend or combine two or more fluid ingredients into a homogeneous mixture.</skos:definition>
@@ -8984,6 +9244,8 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000574"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
         <rdfs:label xml:lang="en">motor</rdfs:label>
         <rdfs:label xml:lang="pt-br">motor</rdfs:label>
         <skos:definition xml:lang="en">A motor is an assembly that bears a mechanical energy generation function to convert electrical, chemical, pneumatic, or hydraulic energy into rotational mechanical energy.</skos:definition>
@@ -9040,6 +9302,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000592"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000319"/>
         <rdfs:label xml:lang="pt-br">lançador de pig</rdfs:label>
         <rdfs:label xml:lang="en">pig launcher</rdfs:label>
         <skos:definition xml:lang="en">A pig launcher is a vessel that bears a pig launching function for inserting pipeline pigs into pipeline systems.</skos:definition>
@@ -9113,6 +9376,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000529"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000367"/>
         <rdfs:label xml:lang="en">pipe</rdfs:label>
         <rdfs:label xml:lang="pt-br">tubo</rdfs:label>
         <skos:definition xml:lang="en">A pipe is a material artifact characterized by tubular geometry and longitudinal extent, designed to conduct liquid, gaseous or finely divided solid materials from one location to another, or to serve structural purposes.</skos:definition>
@@ -9147,6 +9411,8 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000323">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000324"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000325"/>
         <rdfs:label xml:lang="pt-br">cotovelo de tubulação</rdfs:label>
         <rdfs:label xml:lang="en">pipe elbow</rdfs:label>
         <skos:definition xml:lang="en">A pipe elbow is a pipe that has curved geometry enabling directional changes in pipe runs between 0 and 135 degrees.</skos:definition>
@@ -9215,6 +9481,7 @@ Units of Measure: Km, Kg, G</skos:example>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000375"/>
         <rdfs:label xml:lang="en">pipeline</rdfs:label>
         <rdfs:label xml:lang="pt-br">pipeline</rdfs:label>
         <skos:definition xml:lang="en">A pipeline is an engineered system that bears a fluid transport function, consisting of pipes and possibly including pumps, valves, and control devices, designed for conveying liquids, gases, or finely divided solids between locations.</skos:definition>
@@ -9436,6 +9703,7 @@ Units of Measure: Km, Kg, G</skos:example>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
+        <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000341"/>
         <rdfs:label xml:lang="pt-br">bomba alternativa</rdfs:label>
         <rdfs:label xml:lang="en">reciprocating pump</rdfs:label>
         <skos:definition xml:lang="en">A reciprocating pump is a pump that contains pistons or plungers designed to move in a reciprocating motion within cylindrical chambers to displace fluid through positive displacement action.</skos:definition>
