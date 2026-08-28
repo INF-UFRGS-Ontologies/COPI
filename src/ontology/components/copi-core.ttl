@@ -368,23 +368,6 @@ copi:COPI_0000089 a owl:Class ;
     iof-av:semiFormalNaturalLanguageDefinition "x is a 'heat exchange' if and only if x is a 'heat transfer' in which two distinct fluid inputs each give rise to a corresponding fluid output of identical composition, with no constituent transferred between streams"@en,
         "x é uma 'troca de calor' se e somente se x é uma 'transferência de calor' na qual dois fluidos de entrada distintos dão origem cada um a um fluido de saída correspondente de composição idêntica, sem transferência de constituinte entre as correntes"@pt-br .
 
-copi:COPI_0000091 a owl:Class ;
-    rdfs:label "instrument"@en,
-        "instrumento"@pt-br ;
-    dcterms:source "ODR-018" ;
-    rdfs:comment "A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item."@en,
-        "Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta."@pt-br ;
-    rdfs:isDefinedBy copi:copi-core ;
-    rdfs:subClassOf iof-constr:MaterialArtifact ;
-    iof-av:firstOrderLogicAxiom "∀x (Instrument(x) → MaterialArtifact(x))" ;
-    iof-av:isPrimitive true ;
-    iof-av:naturalLanguageDefinition "A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item."@en,
-        "Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta."@pt-br ;
-    iof-av:primitiveRationale "The sensing-or-measuring structural differentia is expressed informally in the NLD; OWL carries only the genus (MaterialArtifact). The structural axis (Instrument) is orthogonal to the functional axis (MeasurementInstrument); an artifact is both simultaneously — intended (ODR-018)."@en,
-        "A diferença estrutural de detecção-ou-medição é expressa informalmente na NLD; OWL carrega apenas o gênero (MaterialArtifact). O eixo estrutural (Instrument) é ortogonal ao eixo funcional (MeasurementInstrument); um artefato é ambos simultaneamente — intencional (ODR-018)."@pt-br ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is an 'instrument' then x is a 'material artifact'"@en,
-        "se x é um 'instrumento', então x é um 'artefato material'"@pt-br .
-
 copi:COPI_0000006 a owl:Class ;
     rdfs:label "mechanical separation"@en,
         "separação mecânica"@pt-br ;
