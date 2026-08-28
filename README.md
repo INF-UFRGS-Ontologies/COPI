@@ -71,7 +71,7 @@ paper below.
 > **Nicolau Oyhenard dos Santos, Cauã Antunes, Mara Abel, João Netto.**
 > *Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes.*
 > To appear in *Formal Ontology in Information Systems (FOIS 2026)*, Frontiers in Artificial
-> Intelligence and Applications, IOS Press. (Accepted; camera-ready in preparation — a DOI/link will be
+> Intelligence and Applications, IOS Press. (Accepted; camera-ready submitted — a DOI/link will be
 > added once the proceedings are published.)
 
 The paper presents the enrichment method summarized above and applies it to ten equipment types central
