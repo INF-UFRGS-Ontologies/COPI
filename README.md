@@ -34,6 +34,71 @@ COPI is a domain-core ontology for petroleum production plants. It provides a do
 
 ---
 
+## Method — enriching flat reference data with BFO/IOF-Core axioms
+
+Standards such as ISO 15926-4, CFIHOS, and DEXPI each provide equipment classes for the same physical
+things — a pump, a valve, a separator — but their definitions are natural-language tautologies with no
+formal axioms. ISO 15926-4's own definition of `PUMP` is representative: *"A `<PUMP>` is a
+`<FunctionalObject>` that is capable of `<PUMPING>` but may require parts and subsystems for that
+capability."* This tells a reasoner nothing about what the class necessarily has or how it differs from
+a compressor or a valve, and it gives no principled way to compare the same class across standards.
+
+COPI classes are produced by an **enrichment method** that grounds each equipment universal in [BFO
+2020](https://github.com/bfo-ontology/bfo-2020), using [IOF-Core](https://spec.industrialontologies.org/ontology/202601/core/Core/)
+as the mid-level vocabulary. Two constructs do the work:
+
+- **Identity-giving function** — a subtype of `DesignedFunction` that grounds the identity of the
+  equipment universal in its designed purpose, rather than in an arbitrary taxonomic label.
+- **Process participation signature** — the typed pattern of inputs, outputs, and transformation that
+  the process realizing that function exhibits.
+
+Together these give a **principled disjointness criterion**: two equipment universals are disjoint when
+their signatures are physically incompatible, not by stipulation. In practice, each equipment cluster is
+axiomatized in five steps — identity-giving function, genus (most specific known superclass), differentia
+(the OWL restriction distinguishing it from genus siblings), necessary parts
+(`hasComponentPartAtAllTimes` restrictions universal to every instance), and the process participation
+signature — using [COPIeditor](https://github.com/n0santos/COPIeditor), an LLM-assisted axiomatization
+workbench built for this project, with every proposal reviewed by a domain expert before release. See
+[`PIPELINE.md`](PIPELINE.md) for the full editing-to-release workflow.
+
+The method is described in full, and evaluated against ten petroleum-production equipment types, in the
+paper below.
+
+---
+
+## Publication
+
+> **Nicolau Oyhenard dos Santos, Cauã Antunes, Mara Abel, João Netto.**
+> *Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes.*
+> To appear in *Formal Ontology in Information Systems (FOIS 2026)*, Frontiers in Artificial
+> Intelligence and Applications, IOS Press. (Accepted; camera-ready in preparation — a DOI/link will be
+> added once the proceedings are published.)
+
+The paper presents the enrichment method summarized above and applies it to ten equipment types central
+to petroleum production (pump, valve, separator, heat exchanger, compressor, sensor, pressure vessel,
+filter, pipe, column), producing a proof-of-concept OWL 2 DL ontology with 95 named classes, 16
+disjointness axioms, and SKOS links to ISO 15926-4, DEXPI, and CFIHOS — evaluated through consistency
+checking, instance-level classification tests, and competency questions. The full COPI ontology in this
+repository extends that proof of concept to the broader equipment population described below.
+
+```bibtex
+@inproceedings{santos2026axiomatizing,
+  author    = {Santos, Nicolau O. and Antunes, Cau{\~a} and
+               Abel, Mara and Netto, Jo{\~a}o},
+  title     = {Axiomatizing Industrial Reference Data: A {BFO}/{IOF-Core}
+               Enrichment of {ISO}~15926-4 Equipment Classes},
+  booktitle = {Formal Ontology in Information Systems (FOIS 2026)},
+  series    = {Frontiers in Artificial Intelligence and Applications},
+  publisher = {IOS Press},
+  year      = {2026},
+  note      = {Forthcoming}
+}
+```
+
+See also [`CITATION.cff`](CITATION.cff) for citing the ontology artefact itself.
+
+---
+
 ## Standards alignment
 
 COPI is designed to be correlatable and alignable with:
