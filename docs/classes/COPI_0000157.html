@@ -203,9 +203,9 @@
 <body>
 <nav class="doc-nav">
   <div class="container-fluid px-4 d-flex align-items-center gap-3">
-    <a href="../docs.html" style="display:flex;align-items:center;text-decoration:none;color:rgba(255,255,255,.85);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="14 8 80 92" width="28" height="34" style="vertical-align:middle;margin-right:.35rem;flex-shrink:0;"><polygon points="54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31" fill="#0e2040"/><g stroke="#38bdf8" stroke-width="1" stroke-opacity="0.45" fill="none"><line x1="54" y1="27" x2="54" y2="54"/><line x1="77.4" y1="40.5" x2="54" y2="54"/><line x1="77.4" y1="67.5" x2="54" y2="54"/><line x1="54" y1="81" x2="54" y2="54"/><line x1="30.6" y1="67.5" x2="54" y2="54"/><line x1="30.6" y1="40.5" x2="54" y2="54"/></g><circle cx="54" cy="54" r="10" fill="#07101e" stroke="#2563eb" stroke-width="1.6"/><path d="M 54,45 C 60,48 60,52 60,53 A 6,6 0 0,1 48,53 C 48,52 48,48 54,45 Z" fill="#f59e0b"/><polygon points="54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31" fill="none" stroke="#2563eb" stroke-width="2" stroke-opacity="0.72"/></svg><strong>COPI</strong></a>
+    <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;color:rgba(255,255,255,.85);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="14 8 80 92" width="28" height="34" style="vertical-align:middle;margin-right:.35rem;flex-shrink:0;"><polygon points="54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31" fill="#0e2040"/><g stroke="#38bdf8" stroke-width="1" stroke-opacity="0.45" fill="none"><line x1="54" y1="27" x2="54" y2="54"/><line x1="77.4" y1="40.5" x2="54" y2="54"/><line x1="77.4" y1="67.5" x2="54" y2="54"/><line x1="54" y1="81" x2="54" y2="54"/><line x1="30.6" y1="67.5" x2="54" y2="54"/><line x1="30.6" y1="40.5" x2="54" y2="54"/></g><circle cx="54" cy="54" r="10" fill="#07101e" stroke="#2563eb" stroke-width="1.6"/><path d="M 54,45 C 60,48 60,52 60,53 A 6,6 0 0,1 48,53 C 48,52 48,48 54,45 Z" fill="#f59e0b"/><polygon points="54,8 93.8,31 93.8,77 54,100 14.2,77 14.2,31" fill="none" stroke="#2563eb" stroke-width="2" stroke-opacity="0.72"/></svg><strong>COPI</strong></a>
     <span style="opacity:.3">·</span>
-    <a href="../docs.html"><span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span></a>
+    <a href="../index.html"><span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span></a>
     <span style="opacity:.3">·</span>
     <a href="https://github.com/INF-UFRGS-Ontologies/copi" target="_blank" rel="noopener"
        style="color:rgba(255,255,255,.55);font-size:.8rem;">GitHub ↗</a>
@@ -223,7 +223,7 @@
 <div class="d-flex justify-content-between align-items-center mb-3 no-print"
      style="font-family:system-ui,sans-serif;font-size:.83rem;">
   <div class="d-flex gap-2 align-items-center text-muted">
-    <a href="../docs.html" class="text-muted text-decoration-none">← <span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span></a>
+    <a href="../index.html" class="text-muted text-decoration-none">← <span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span></a>
   </div>
 </div>
 
@@ -259,11 +259,11 @@
         <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every transmitter is an instrument that has the function of signal transmission and has a sensor element and signal conditioner and transmission module and receives process variable inputs and produces standardized signal outputs.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (Transmitter(x) ↔ Instrument(x) ∧ ∃f (SignalTransmissionFunction(f) ∧ bearerOf(x,f)) ∧ ∃bearerOf.SignalTransmissionFunction ⊓ ∃hasInput.ProcessVariableSignal ⊓ ∃hasOutput.StandardizedSignal) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (Transmitter(x) ↔ Instrument(x) ∧ ∃f (SignalTransmissionFunction(f) ∧ bearerOf(x,f)) ∧ ∃bearerOf.SignalTransmissionFunction ⊓ ∃hasInput.ProcessVariableSignal ⊓ ∃hasOutput.InformationContentEntity) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Function axiom: SignalTransmissionFunction]</span>∀f (SignalTransmissionFunction(f) → ∀p (realizedIn(f,p) → SignalTransmissionProcess(p)) ∧ ∃p (SignalTransmissionProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((Transmitter(x) ∧ SignalTransmissionFunction(f) ∧ bearerOf(x,f)) →
-      ∃m (ProcessVariable(m) ∧ participatesIn(m,f)) ∧
-      ∃e (StandardizedSignal(e) ∧ participatesIn(e,f)) ∧
+      ∃m (MeasurementInformationContentEntity(m) ∧ participatesIn(m,f)) ∧
+      ∃e (InformationContentEntity(e) ∧ participatesIn(e,f)) ∧
       processType(f,MeasurementTransduction)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
         </div>
@@ -293,7 +293,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-104-g4d16eff&quot; ;
+    owl:versionInfo &quot;1.1.0-126-gac19a70&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -306,7 +306,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-07-13&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-03&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -342,12 +342,12 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasInput ;
-        owl:someValuesFrom :ProcessVariable
+        owl:someValuesFrom :MeasurementInformationContentEntity
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasSpecifiedOutput ;
-        owl:someValuesFrom :StandardizedSignal
+        owl:someValuesFrom :InformationContentEntity
     ] .
 
 ### Equipment universal: Transmitter
@@ -414,7 +414,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="step-block-header">
     <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
-  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.SignalTransmissionFunction ⊓ ∃hasInput.ProcessVariableSignal ⊓ ∃hasOutput.StandardizedSignal</code></div><p style="font-size:.88rem;color:#374151;">A transmitter is distinguished from other instruments by its function of receiving process variable signals and converting them into standardized output signals for transmission to control systems or displays.</p><div class="rationale">The differentia focuses on the signal conversion and transmission capability that distinguishes transmitters from other measurement instruments. The requirement for standardized output signals (typically 4-20mA, digital protocols) is a key distinguishing characteristic.</div></div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.SignalTransmissionFunction ⊓ ∃hasInput.ProcessVariableSignal ⊓ ∃hasOutput.InformationContentEntity</code></div><p style="font-size:.88rem;color:#374151;">A transmitter is distinguished from other instruments by its function of receiving process variable signals and converting them into standardized output signals for transmission to control systems or displays.</p><div class="rationale">The differentia focuses on the signal conversion and transmission capability that distinguishes transmitters from other measurement instruments. The requirement for standardized output signals (typically 4-20mA, digital protocols) is a key distinguishing characteristic.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
@@ -428,14 +428,14 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 <div class="doc-section">
   <div class="doc-section-title"><span class="t-en">Process Participation Signature</span><span class="t-pt">Assinatura de Participação em Processo</span></div>
   <div class="sig-grid">
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;ProcessVariable&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;measurable physical quantity&#x27;}</div></div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;StandardizedSignal&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;4-20mA, digital protocol, or pneumatic&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;MeasurementInformationContentEntity&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;measurable physical quantity&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;InformationContentEntity&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;4-20mA, digital protocol, or pneumatic&#x27;}</div></div>
     <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">process variable signal transduction and conditioning</div></div>
   </div>
   <div class="rationale mt-2">Transmitters consistently transform physical process variables into standardized electrical, pneumatic, or digital signals suitable for transmission to control systems, displays, or data acquisition systems.</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">Actuator</span></div><div class="rationale mt-2">C4: Actuator. Transmitters are sensing/measurement devices with signal outputs, while actuators and final control elements receive control signals and perform physical actions on the process. Their process signatures are fundamentally incompatible.</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000157</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-09</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-07-12</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-07-13</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000157</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-09</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-08-07</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-03</td></tr></tbody></table></div>
 
     </div>
 
