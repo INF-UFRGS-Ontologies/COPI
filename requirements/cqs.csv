@@ -1,2 +1,177 @@
 id,text,formal_expr,status,linked_classes,notes,created_at
 1,What is a valve?,,answered,valve,Required formal definition,2026-04-08
+2,What is a pump?,,answered,pump,,2026-04-28
+3,What is a compressor?,,answered,compressor,,2026-04-28
+4,What is a turbine?,,open,turbine,,2026-04-28
+5,What is a portion of fluid?,,open,,,2026-04-28
+6,What are all the subclasses of Valve recognised in COPI?,,answered,valve; manual valve; control valve; check valve; safety valve; safety relief valve; relief valve; ball valve; gate valve; globe valve; butterfly valve; diaphragm valve; needle valve; plug valve; angle valve; choke valve; blow down valve; emergency shut down valve; solenoid valve; self-operating valve; on-off control valve; ball control valve; gate control valve; globe control valve; butterfly control valve; choke control valve; down hole safety valve,taxonomy,2026-05-03
+7,Which equipment classes in COPI have iof:Assembly as their BFO genus root?,,answered,valve; manual valve; control valve; check valve; pump; compressor; heat exchanger; pressure vessel; storage tank; absorber; vessel,taxonomy,2026-05-03
+8,Which equipment classes in COPI have iof:MaterialArtifact as their BFO genus root?,,answered,orifice plate; restriction orifice; thermowell; level sight glass; flow element; temperature element; pressure element; level element,taxonomy,2026-05-03
+9,Which equipment classes in COPI are defined with equivalent (sufficient + necessary) conditions?,,answered,control valve; emergency shut down valve; blow down valve; safety valve; check valve; pump; compressor; absorber; transmitter; on-off control valve,taxonomy — axiom mode,2026-05-03
+10,Which equipment classes in COPI use necessary-only (primitive) conditions?,,answered,ball valve; gate valve; globe valve; butterfly valve; needle valve; plug valve; angle valve; diaphragm valve; choke valve; ball control valve; gate control valve; globe control valve; butterfly control valve; choke control valve; centrifugal pump; centrifugal compressor; plate heat exchanger; gearbox,taxonomy — axiom mode,2026-05-03
+11,Can the same individual be simultaneously classified as a Pump and as a Compressor?,∃x (Pump(x) ∧ Compressor(x)) → ⊥,answered,pump; compressor,disjointness,2026-05-03
+12,Which equipment classes in COPI bear a FluidFlowControlFunction as identity-giving function?,,answered,control valve; ball control valve; gate control valve; globe control valve; butterfly control valve; choke control valve; on-off control valve,functional classification,2026-05-03
+13,Which equipment classes bear a SafetyFunction as identity-giving function?,,answered,safety valve; safety relief valve; relief valve; emergency shut down valve; blow down valve; down hole safety valve,functional classification,2026-05-03
+14,Which equipment classes in COPI participate in a SeparationProcess?,,answered,absorber; vessel; pressure vessel,process participation,2026-05-03
+15,What planned processes involve Transmitters as measurement participants?,,answered,transmitter; pressure transmitter; temperature transmitter; flow transmitter; level transmitter; differential pressure transmitter; vibration transmitter,process participation,2026-05-03
+16,What is the identity-giving function of a control valve?,"∃f (FlowControlFunction(f) ∧ bearerOf(controlValve, f))",answered,control valve,,2026-05-03
+17,What distinguishes an on-off control valve from a proportional control valve?,,answered,on-off control valve; control valve,functional differentia: BinaryFlowControlFunction vs ContinuousFlowControlFunction,2026-05-03
+18,What distinguishes a safety valve from a safety relief valve?,,answered,safety valve; safety relief valve,safety valve: gas/vapour only; safety relief valve: liquid or two-phase,2026-05-03
+19,What distinguishes a safety valve from a relief valve?,,answered,safety valve; relief valve,relief valve: opens proportionally; safety valve: snap-action full opening,2026-05-03
+20,Can a check valve simultaneously be a control valve?,∃x (CheckValve(x) ∧ ControlValve(x)) → ⊥,answered,check valve; control valve,disjointness test,2026-05-03
+21,What is the genus of a solenoid valve?,,answered,solenoid valve; valve,,2026-05-03
+22,What distinguishes a choke valve from a generic control valve?,,answered,choke valve; control valve,constructive differentia: choke mechanism (bean/disc with fixed orifice),2026-05-03
+23,What is the identity-giving function of a blow down valve?,,answered,blow down valve,,2026-05-03
+24,What distinguishes a self-operating valve from an actuated control valve?,,answered,self-operating valve; control valve,self-operating: uses process variable (pressure/temperature) directly as actuation energy,2026-05-03
+25,What distinguishes a gate valve from a globe valve constructively?,,answered,gate valve; globe valve,"gate: sliding gate disc, full-bore; globe: disc moves perpendicular to seat",2026-05-03
+26,What are the necessary parts of an emergency shut-down valve?,,answered,emergency shut down valve,"valve body, actuator, position sensor",2026-05-03
+27,What distinguishes a ball valve from a butterfly valve?,,answered,ball valve; butterfly valve,constructive: ball uses spherical closure element; butterfly uses disc rotating on shaft,2026-05-03
+28,Is a diaphragm valve a type of manual valve or a type of control valve?,,answered,diaphragm valve; manual valve; control valve,can be either — depends on actuation; ontology models it as valve subtype,2026-05-03
+29,What is the identity-giving function of a check valve?,"∃f (UnidirectionalFlowPermissionFunction(f) ∧ bearerOf(checkValve, f))",answered,check valve; piston check valve; swing check valve; wafer check valve,,2026-05-03
+30,What distinguishes a block-and-bleed valve from a double-block-and-bleed valve?,,answered,block and bleed valve; double block and bleed valve,number of isolation seals: one vs two independent block valves,2026-05-03
+31,What is the identity-giving function of a centrifugal pump?,"∃f (FluidTransferFunction(f) ∧ bearerOf(centrifugalPump, f))",answered,centrifugal pump; pump,realized in a CentrifugalFluidPumpingProcess,2026-05-03
+32,What are the necessary parts of a centrifugal pump?,,answered,centrifugal pump,"impeller, casing, shaft, mechanical seal, bearings",2026-05-03
+33,What distinguishes a centrifugal pump from a positive displacement pump?,,answered,centrifugal pump,constructive differentia: centrifugal uses rotating impeller; PD uses reciprocating or rotary element,2026-05-03
+34,What is the identity-giving function of a centrifugal compressor?,"∃f (GasCompressionFunction(f) ∧ bearerOf(centrifugalCompressor, f))",answered,centrifugal compressor; compressor,,2026-05-03
+35,What are the necessary parts of a compressor?,,answered,compressor; centrifugal compressor,"inlet, outlet, compression element, driver coupling, lubrication system",2026-05-03
+36,What distinguishes a centrifugal compressor from a reciprocating compressor?,,answered,centrifugal compressor,constructive: centrifugal uses impeller(s); reciprocating uses pistons,2026-05-03
+37,What planned process does a pump necessarily participate in as the primary agent?,"∃x∃p (Pump(x) ∧ FluidPumpingProcess(p) ∧ participatesIn(x,p))",answered,pump; centrifugal pump,,2026-05-03
+38,What is the identity-giving function of a heat exchanger?,"∃f (HeatTransferFunction(f) ∧ bearerOf(heatExchanger, f))",answered,heat exchanger,,2026-05-03
+39,What distinguishes a plate heat exchanger from a shell-and-tube heat exchanger?,,answered,plate heat exchanger; heat exchanger,constructive differentia: plate uses corrugated plates; shell-and-tube uses tubes inside shell,2026-05-03
+40,What is the genus of a plate heat exchanger?,,answered,plate heat exchanger; heat exchanger,,2026-05-03
+41,Is a heater a subtype of heat exchanger in COPI?,,answered,heater; heat exchanger,heater adds energy to one fluid only; heat exchanger transfers between two streams,2026-05-03
+42,What process does a heat exchanger participate in?,"∃x∃p (HeatExchanger(x) ∧ HeatTransferProcess(p) ∧ participatesIn(x,p))",answered,heat exchanger; plate heat exchanger,,2026-05-03
+43,What is the difference between a pressure vessel and a storage tank in COPI?,,answered,pressure vessel; storage tank; vessel,pressure vessel operates above atmospheric; storage tank is atmospheric,2026-05-03
+44,Is an absorber a subtype of pressure vessel in COPI?,∀x (Absorber(x) → PressureVessel(x)),answered,absorber; pressure vessel,,2026-05-03
+45,What distinguishes an absorber from a separator?,,answered,absorber,absorber: mass transfer between phases; separator: physical phase separation only,2026-05-03
+46,What is the identity-giving function of an absorber?,"∃f (AbsorptionFunction(f) ∧ bearerOf(absorber, f))",answered,absorber,,2026-05-03
+47,Is a storage tank necessarily a pressure vessel?,∀x (StorageTank(x) → PressureVessel(x)) ?,answered,storage tank; pressure vessel,expected answer: no — storage tanks typically operate at atmospheric pressure,2026-05-03
+48,What distinguishes a Transmitter from a local Indicator?,,answered,transmitter; indicator; pressure transmitter; pressure gauge; temperature transmitter; temperature indicator,transmitter sends signal to remote system; indicator only displays locally,2026-05-03
+49,What is the measurand of a differential pressure transmitter?,,answered,differential pressure transmitter,,2026-05-03
+50,What is the measurand of a vibration transmitter?,,answered,vibration transmitter,"displacement, velocity, or acceleration of vibration",2026-05-03
+51,What distinguishes a temperature element from a temperature transmitter?,,answered,temperature element; temperature transmitter,element is the sensing component; transmitter includes signal conditioning and output,2026-05-03
+52,What distinguishes a pressure gauge from a pressure transmitter?,,answered,pressure gauge; pressure transmitter,gauge: local mechanical display; transmitter: converts to electrical signal,2026-05-03
+53,What distinguishes a level sight glass from a level transmitter?,,answered,level sight glass; level transmitter; level indicator,sight glass: visual direct observation; transmitter: converts to electrical signal,2026-05-03
+54,What is the designed function of a thermowell?,"∃f (TemperatureElementProtectionFunction(f) ∧ bearerOf(thermowell, f))",answered,thermowell; temperature element,protects temperature sensing element from process fluid while allowing thermal contact,2026-05-03
+55,What is the designed function of a limit switch?,"∃f (PositionDetectionFunction(f) ∧ bearerOf(limitSwitch, f))",answered,limit switch,detects open/closed position of a valve or mechanical device,2026-05-03
+56,What is the designed function of a humidity analyser?,,answered,humidity analyser,measures water content / dew point in a gas stream,2026-05-03
+57,What is the designed function of a phase sequence meter?,,answered,phase sequence meter,measures shaft rotational speed / phase reference for vibration analysis (keyphasor),2026-05-03
+58,What is the identity-giving function of a flow indicator?,,answered,flow indicator; indicator,,2026-05-03
+59,What is the difference between an orifice plate and a restriction orifice?,,answered,orifice plate; restriction orifice,orifice plate: used with differential pressure transmitter to measure flow; restriction orifice: reduces flow to a fixed value,2026-05-03
+60,What is the genus of an orifice plate in COPI?,,answered,orifice plate; flow element,,2026-05-03
+61,What is the identity-giving function of an orifice plate?,"∃f (FlowMeasurementFunction(f) ∧ bearerOf(orificePlate, f))",answered,orifice plate,creates calibrated pressure differential for flow calculation,2026-05-03
+62,What is the identity-giving function of a restriction orifice?,"∃f (FlowRestrictionFunction(f) ∧ bearerOf(restrictionOrifice, f))",answered,restriction orifice,limits flow to a pre-determined maximum regardless of upstream pressure variation,2026-05-03
+63,What is the genus of a coalescer in COPI?,,answered,coalescer; pressure vessel,coalescer is a pressure vessel whose function is coalescence of liquid droplets from gas,2026-05-03
+64,What is the identity-giving function of a coalescer?,"∃f (CoalescenceFunction(f) ∧ bearerOf(coalescer, f))",answered,coalescer,,2026-05-03
+65,What distinguishes an in-line strainer from a coalescing filter?,,answered,strainer; coalescer,strainer: removes solid particles by mechanical screening; coalescer: agglomerates liquid droplets from gas phase,2026-05-03
+66,What type of process does a filter participate in?,"∃x∃p (Filter(x) ∧ FiltrationProcess(p) ∧ participatesIn(x,p))",answered,coalescer; strainer,,2026-05-03
+67,What is the identity-giving function of an electric motor?,"∃f (ElectromechanicalConversionFunction(f) ∧ bearerOf(electricMotor, f))",answered,electric motor,converts electrical energy to mechanical rotational energy,2026-05-03
+68,What is the genus of a gearbox in COPI?,,answered,gearbox,assembly whose function is to transmit and transform mechanical power between shafts,2026-05-03
+69,What is the identity-giving function of a gearbox?,"∃f (MechanicalPowerTransmissionFunction(f) ∧ bearerOf(gearbox, f))",answered,gearbox,,2026-05-03
+70,What is the identity-giving function of a fan or blower?,"∃f (GasCirculationFunction(f) ∧ bearerOf(fan, f))",answered,fan; blower,moves gas at low pressure rise; blower operates at intermediate pressure ratios,2026-05-03
+71,What process does a fan participate in?,,answered,fan; blower,,2026-05-03
+72,Is an electric motor an Assembly or a MaterialArtifact in BFO terms?,,answered,electric motor,"expected: Assembly — composed of stator, rotor, bearings, housing, terminal box",2026-05-03
+73,What is a angle valve body?,,open,angle valve body; angle valve,,2026-05-04
+74,Is a angle valve body a necessary component of every angle valve?,,open,angle valve body; angle valve,,2026-05-04
+75,What is a centrifugal compressor casing?,,open,centrifugal compressor casing; centrifugal compressor,,2026-05-04
+76,Is a centrifugal compressor casing a necessary component of every centrifugal compressor?,,open,centrifugal compressor casing; centrifugal compressor,,2026-05-04
+77,What is a check valve body?,,open,check valve body; check valve,,2026-05-04
+78,Is a check valve body a necessary component of every check valve?,,open,check valve body; check valve,,2026-05-04
+79,What is a check valve closure member?,,open,check valve closure member; check valve; wafer check valve,,2026-05-04
+80,Which COPI equipment classes require a check valve closure member as a necessary component? (candidates: check valve and wafer check valve),,open,check valve closure member; check valve; wafer check valve,,2026-05-04
+81,What is a compressor casing?,,open,compressor casing; compressor,,2026-05-04
+82,Is a compressor casing a necessary component of every compressor?,,open,compressor casing; compressor,,2026-05-04
+83,What is a diaphragm actuator?,,open,diaphragm actuator; diaphragm valve,,2026-05-04
+84,Is a diaphragm actuator a necessary component of every diaphragm valve?,,open,diaphragm actuator; diaphragm valve,,2026-05-04
+85,What is a differential pressure measuring element?,,open,differential pressure measuring element; differential pressure gauge,,2026-05-04
+86,Is a differential pressure measuring element a necessary component of every differential pressure gauge?,,open,differential pressure measuring element; differential pressure gauge,,2026-05-04
+87,What is a display?,,open,display; indicator,,2026-05-04
+88,Is a display a necessary component of every indicator?,,open,display; indicator,,2026-05-04
+89,What is a drive shaft?,,open,drive shaft; pump,,2026-05-04
+90,Is a drive shaft a necessary component of every pump?,,open,drive shaft; pump,,2026-05-04
+91,What is a electrical connection?,,open,electrical connection; solenoid valve,,2026-05-04
+92,Is a electrical connection a necessary component of every solenoid valve?,,open,electrical connection; solenoid valve,,2026-05-04
+93,What is a electrical connector?,,open,electrical connector; phase sequence meter,,2026-05-04
+94,Is a electrical connector a necessary component of every phase sequence meter?,,open,electrical connector; phase sequence meter,,2026-05-04
+95,What is a filter element?,,open,filter element; in-line filter,,2026-05-04
+96,Is a filter element a necessary component of every in-line filter?,,open,filter element; in-line filter,,2026-05-04
+97,What is a flow measuring element?,,open,flow measuring element; flow indicator,,2026-05-04
+98,Is a flow measuring element a necessary component of every flow indicator?,,open,flow measuring element; flow indicator,,2026-05-04
+99,What is a gear casing?,,open,gear casing; gearbox,,2026-05-04
+100,Is a gear casing a necessary component of every gearbox?,,open,gear casing; gearbox,,2026-05-04
+101,What is a gear wheel?,,open,gear wheel; gearbox,,2026-05-04
+102,Is a gear wheel a necessary component of every gearbox?,,open,gear wheel; gearbox,,2026-05-04
+103,What is a globe valve body?,,open,globe valve body; globe control valve,,2026-05-04
+104,Is a globe valve body a necessary component of every globe control valve?,,open,globe valve body; globe control valve,,2026-05-04
+105,What is a heat transfer plate?,,open,heat transfer plate; plate heat exchanger,,2026-05-04
+106,Is a heat transfer plate a necessary component of every plate heat exchanger?,,open,heat transfer plate; plate heat exchanger,,2026-05-04
+107,What is a housing?,,open,housing; blower; humidity analyser; pressure gauge,,2026-05-04
+108,"Which COPI equipment classes require a housing as a necessary component? (candidates: blower, humidity analyser and pressure gauge)",,open,housing; blower; humidity analyser; pressure gauge,,2026-05-04
+109,What is a input shaft?,,open,input shaft; gearbox,,2026-05-04
+110,Is a input shaft a necessary component of every gearbox?,,open,input shaft; gearbox,,2026-05-04
+111,What is a manual actuator?,,open,manual actuator; manual valve,,2026-05-04
+112,Is a manual actuator a necessary component of every manual valve?,,open,manual actuator; manual valve,,2026-05-04
+113,What is a output shaft?,,open,output shaft; gearbox,,2026-05-04
+114,Is a output shaft a necessary component of every gearbox?,,open,output shaft; gearbox,,2026-05-04
+115,What is a port?,,open,port; diaphragm valve,,2026-05-04
+116,Is a port a necessary component of every diaphragm valve?,,open,port; diaphragm valve,,2026-05-04
+117,What is a power transformer primary winding?,,open,power transformer primary winding; power transformer,,2026-05-04
+118,Is a power transformer primary winding a necessary component of every power transformer?,,open,power transformer primary winding; power transformer,,2026-05-04
+119,What is a power transformer secondary winding?,,open,power transformer secondary winding; power transformer,,2026-05-04
+120,Is a power transformer secondary winding a necessary component of every power transformer?,,open,power transformer secondary winding; power transformer,,2026-05-04
+121,What is a pump casing?,,open,pump casing; pump,,2026-05-04
+122,Is a pump casing a necessary component of every pump?,,open,pump casing; pump,,2026-05-04
+123,What is a pump shaft?,,open,pump shaft; centrifugal pump,,2026-05-04
+124,Is a pump shaft a necessary component of every centrifugal pump?,,open,pump shaft; centrifugal pump,,2026-05-04
+125,What is a rotary actuator?,,open,rotary actuator; ball control valve,,2026-05-04
+126,Is a rotary actuator a necessary component of every ball control valve?,,open,rotary actuator; ball control valve,,2026-05-04
+127,What is a rotor?,,open,rotor; electric motor,,2026-05-04
+128,Is a rotor a necessary component of every electric motor?,,open,rotor; electric motor,,2026-05-04
+129,What is a seat?,,open,seat; valve,,2026-05-04
+130,Is a seat a necessary component of every valve?,,open,seat; valve,,2026-05-04
+131,What is a shaft?,,open,shaft; blower,,2026-05-04
+132,Is a shaft a necessary component of every blower?,,open,shaft; blower,,2026-05-04
+133,What is a solenoid actuator?,,open,solenoid actuator; solenoid valve,,2026-05-04
+134,Is a solenoid actuator a necessary component of every solenoid valve?,,open,solenoid actuator; solenoid valve,,2026-05-04
+135,What is a stator?,,open,stator; electric motor,,2026-05-04
+136,Is a stator a necessary component of every electric motor?,,open,stator; electric motor,,2026-05-04
+137,What is a switch contact?,,open,switch contact; limit switch,,2026-05-04
+138,Is a switch contact a necessary component of every limit switch?,,open,switch contact; limit switch,,2026-05-04
+139,What is a thermowell stem?,,open,thermowell stem; thermowell,,2026-05-04
+140,Is a thermowell stem a necessary component of every thermowell?,,open,thermowell stem; thermowell,,2026-05-04
+141,What is a thin plate?,,open,thin plate; orifice plate,,2026-05-04
+142,Is a thin plate a necessary component of every orifice plate?,,open,thin plate; orifice plate,,2026-05-04
+143,What is a transmitter housing?,,open,transmitter housing; vibration transmitter,,2026-05-04
+144,Is a transmitter housing a necessary component of every vibration transmitter?,,open,transmitter housing; vibration transmitter,,2026-05-04
+145,What is a valve body?,,open,valve body; blow down valve; butterfly control valve; double block and bleed valve; safety relief valve; self-operating valve; valve,,2026-05-04
+146,"Which COPI equipment classes require a valve body as a necessary component? (candidates: blow down valve, butterfly control valve, double block and bleed valve, safety relief valve, self-operating valve and valve)",,open,valve body; blow down valve; butterfly control valve; double block and bleed valve; safety relief valve; self-operating valve; valve,,2026-05-04
+147,What is a valve seat?,,open,valve seat; ball control valve; ball valve; check valve; gate valve; plug valve; swing check valve,,2026-05-04
+148,"Which COPI equipment classes require a valve seat as a necessary component? (candidates: ball control valve, ball valve, check valve, gate valve, plug valve and swing check valve)",,open,valve seat; ball control valve; ball valve; check valve; gate valve; plug valve; swing check valve,,2026-05-04
+149,What is a valve stem?,,open,valve stem; ball valve; gate control valve; globe control valve; globe valve,,2026-05-04
+150,"Which COPI equipment classes require a valve stem as a necessary component? (candidates: ball valve, gate control valve, globe control valve and globe valve)",,open,valve stem; ball valve; gate control valve; globe control valve; globe valve,,2026-05-04
+151,What is a vessel head?,,open,vessel head; vessel,,2026-05-04
+152,Is a vessel head a necessary component of every vessel?,,open,vessel head; vessel,,2026-05-04
+153,What is a vessel shell?,,open,vessel shell; vessel,,2026-05-04
+154,Is a vessel shell a necessary component of every vessel?,,open,vessel shell; vessel,,2026-05-04
+155,What is a closure member?,,open,closure member; wafer check valve,,2026-05-04
+156,Is closure member the correct genus for wafer check valve in the COPI ontology?,,open,closure member; wafer check valve,,2026-05-04
+157,What is a electric measuring instrument?,,open,electric measuring instrument; phase sequence meter,,2026-05-04
+158,Is electric measuring instrument the correct genus for phase sequence meter in the COPI ontology?,,open,electric measuring instrument; phase sequence meter,,2026-05-04
+159,What is a electrical switching device?,,open,electrical switching device; circuit breaker,,2026-05-04
+160,Is electrical switching device the correct genus for circuit breaker in the COPI ontology?,,open,electrical switching device; circuit breaker,,2026-05-04
+161,What is a flow modification accessory?,,open,flow modification accessory; restriction orifice,,2026-05-04
+162,Is flow modification accessory the correct genus for restriction orifice in the COPI ontology?,,open,flow modification accessory; restriction orifice,,2026-05-04
+165,What is a materialartifact?,,open,materialartifact; instrument; strainer,,2026-05-04
+166,"Which classes have materialartifact as their genus? (candidates: instrument, strainer)",,open,materialartifact; instrument; strainer,,2026-05-04
+167,What is a primary winding?,,open,primary winding; power transformer,,2026-05-04
+168,Is primary winding the correct genus for power transformer in the COPI ontology?,,open,primary winding; power transformer,,2026-05-04
+169,What is a process analyzer?,,open,process analyzer; humidity analyser,,2026-05-04
+170,Is process analyzer the correct genus for humidity analyser in the COPI ontology?,,open,process analyzer; humidity analyser,,2026-05-04
+171,What is a rotating shaft?,,open,rotating shaft; centrifugal pump,,2026-05-04
+172,Is rotating shaft the correct genus for centrifugal pump in the COPI ontology?,,open,rotating shaft; centrifugal pump,,2026-05-04
+173,What is a secondary winding?,,open,secondary winding; power transformer,,2026-05-04
+174,Is secondary winding the correct genus for power transformer in the COPI ontology?,,open,secondary winding; power transformer,,2026-05-04
+175,What is a sight glass?,,open,sight glass; level sight glass,,2026-05-04
+176,Is sight glass the correct genus for level sight glass in the COPI ontology?,,open,sight glass; level sight glass,,2026-05-04
+177,What is a valve closure member?,,open,valve closure member; check valve,,2026-05-04
+178,Is valve closure member the correct genus for check valve in the COPI ontology?,,open,valve closure member; check valve,,2026-05-04
