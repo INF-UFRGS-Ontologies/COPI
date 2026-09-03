@@ -16,7 +16,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-full.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-08-28/copi-full.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-03/copi-full.owl"/>
         <dcterms:bibliographicCitation>Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press.</dcterms:bibliographicCitation>
         <dcterms:contributor>Cauã Antunes</dcterms:contributor>
         <dcterms:contributor>Haroldo Rojas</dcterms:contributor>
@@ -39,7 +39,7 @@
         <bibo:status>unstable</bibo:status>
         <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>
-        <owl:versionInfo>2026-08-28</owl:versionInfo>
+        <owl:versionInfo>2026-09-03</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
@@ -9967,7 +9967,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/TubeBundle"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000732"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000139"/>
@@ -13626,7 +13626,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                     <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/DrillBit"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000723"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -13639,7 +13639,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/DrillBit"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000723"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -13948,11 +13948,11 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                     <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/MasterValve"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000728"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/WingValve"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000734"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -13965,13 +13965,13 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/MasterValve"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000728"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/WingValve"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000734"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -14629,7 +14629,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Piston"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000730"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000285"/>
@@ -15138,7 +15138,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/FilterMedium"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000725"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
@@ -15162,7 +15162,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/FinnedTube"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000726"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">finned tube heat exchanger</rdfs:label>
@@ -15556,7 +15556,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                     <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000246"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/GasDetectingMeasuringElement"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000727"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -15569,7 +15569,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/GasDetectingMeasuringElement"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000727"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -16302,7 +16302,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Chamber"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000722"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -17518,7 +17518,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtSomeTime"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/StatorWinding"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000731"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -17580,11 +17580,11 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/ElectricalSwitch"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000724"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Panel"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000729"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -17609,13 +17609,13 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/ElectricalSwitch"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000724"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/Panel"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000729"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -17817,7 +17817,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                     <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/TubingBowl"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000733"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -17830,7 +17830,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/TubingBowl"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000733"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -17893,7 +17893,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/TubeBundle"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000732"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -21028,7 +21028,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000044"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -21237,7 +21237,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000520 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000520">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -21770,6 +21770,12 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000039"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000051"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">gas detection process</rdfs:label>
@@ -22360,9 +22366,20 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000573">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000712"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">elemento de medição</rdfs:label>
         <rdfs:label xml:lang="en">measuring element</rdfs:label>
+        <skos:definition xml:lang="en">A material artifact that bears a property measurement function, used for the measurement of a property and defined independently from the measuring instrument that handles that measurement result.</skos:definition>
         <skos:definition xml:lang="en">A material artifact that constitutes a primary measurement element within petroleum production instrumentation that directly responds to the measured variable.</skos:definition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that bears a property measurement function, used for the measurement of a property and defined independently from the measuring instrument that handles that measurement result.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que possui uma função de medição de propriedade, usado para a medição de uma propriedade e definido independentemente do instrumento de medição que trata esse resultado.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">Same-genus same-function (CLAUDE.md): the element&apos;s identity-giving function is the sensing captured by InstrumentationFunction, which its genus Instrument already bears, so equivalence would collapse the two. What distinguishes the element is stated by ISO 15926 relationally — it is &quot;defined independently from a MEASURING INSTRUMENT that is handling that measurement result&quot; — and a relational condition is not sufficient under OWA.</annotation:primitiveRationale>
     </owl:Class>
     
 
@@ -25071,31 +25088,460 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/Chamber -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000702 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/Chamber">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000702">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000703"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000703"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">extended surface heat transfer function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000703 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000703">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000397"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000397"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">extended surface heat transfer process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000704 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000704">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000705"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000705"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">flowline isolation function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000705 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000705">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000390"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000390"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">flowline isolation process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000706 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000706">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000707"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000707"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">instrument mounting function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000707 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000707">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
+                <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/construct/InformationContentEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000046"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">instrument mounting process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000708 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000708">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000709"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000709"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">multipath fluid conveyance function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000709 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000709">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">multipath fluid conveyance process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000710 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000710">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000711"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000711"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">primary well isolation function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000711 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000711">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000390"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000390"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">primary well isolation process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000712 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000712">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000713"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000713"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">property measurement function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000713 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000713">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
+                <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">property measurement process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000714 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000714">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000715"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000715"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">reciprocating displacement function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000715 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000715">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000037"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">reciprocating displacement process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000716 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000716">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000717"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000717"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">rock cutting function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000717 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000717">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000040"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000399"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">rock cutting process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000718 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000718">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000510"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000510"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">selective permeability function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000719 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000719">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:label xml:lang="en">tube</rdfs:label>
+        <rdfs:label xml:lang="pt-br">tubo</rdfs:label>
+        <skos:definition xml:lang="en">A material artifact that constitutes a cylindrical conduit used to convey fluid or provide structural support within petroleum production equipment.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000720 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000720">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/DesignedFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000721"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000721"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">tubing hanger seating function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000721 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000721">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:label xml:lang="en">tubing hanger seating process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000722 -->
+
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000722">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000022"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000025"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">chamber</rdfs:label>
         <rdfs:label xml:lang="pt-br">câmara</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes an enclosed space within petroleum production equipment in which a process such as separation, compression, or storage takes place.</skos:definition>
+        <skos:definition xml:lang="en">A material artifact that is an enclosed space within a larger artifact, bearing a containment function.</skos:definition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that is an enclosed space within a larger artifact, bearing a containment function.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que é um espaço fechado dentro de um artefato maior, possuindo uma função de contenção.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">ContainmentFunction is shared with every containing artifact in COPI, so it cannot be sufficient. Interiority is a relational condition, not a sufficient one.</annotation:primitiveRationale>
     </owl:Class>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/DrillBit -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000723 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/DrillBit">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000723">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                        <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000716"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000716"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">broca</rdfs:label>
         <rdfs:label xml:lang="en">drill bit</rdfs:label>
+        <skos:definition xml:lang="en">A material artifact that bears a rock cutting function, used to crush or cut formation rock in order to create a borehole.</skos:definition>
         <skos:definition xml:lang="en">A material artifact that constitutes the rotating cutting tool at the bottom of a drill string that fragments rock to advance the wellbore.</skos:definition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that bears a rock cutting function, used to crush or cut formation rock in order to create a borehole.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que possui uma função de corte de rocha, usado para triturar ou cortar rocha da formação a fim de criar um poço.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/ElectricalSwitch -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000724 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/ElectricalSwitch">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000724">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
         <rdfs:label xml:lang="pt-br">chave elétrica</rdfs:label>
         <rdfs:label xml:lang="en">electrical switch</rdfs:label>
@@ -25104,75 +25550,141 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/FilterMedium -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000725 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FilterMedium">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000725">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000718"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">filter medium</rdfs:label>
         <rdfs:label xml:lang="pt-br">meio filtrante</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the porous material through which a fluid stream passes to remove suspended particulates or liquid droplets in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A material artifact that is a permeable material used in a filtration device, through which filtrate passes and on which the filter cake is deposited.</skos:definition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that is a permeable material used in a filtration device, through which filtrate passes and on which the filter cake is deposited.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que é um material permeável usado em um dispositivo de filtração, através do qual passa o filtrado e sobre o qual se deposita a torta de filtração.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">The medium is a component of the filter, not a filter; the distinction rests on parthood, which is not a sufficient condition.</annotation:primitiveRationale>
     </owl:Class>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/FinnedTube -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000726 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/FinnedTube">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000726">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000702"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">finned tube</rdfs:label>
         <rdfs:label xml:lang="pt-br">tubo aletado</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a heat transfer tube with extended surfaces—fins—that increase the external surface area to enhance heat exchange with a gas stream.</skos:definition>
+        <skos:definition xml:lang="en">A material artifact that is a tube extended with one or more fins to increase its outer surface area, bearing an extended-surface heat transfer function.</skos:definition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that is a tube extended with one or more fins to increase its outer surface area, bearing an extended-surface heat transfer function.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que é um tubo estendido com uma ou mais aletas para aumentar sua área de superfície externa, possuindo uma função de transferência de calor por superfície estendida.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">The differentia is structural (presence of fins), so under OWA it cannot be a sufficient condition.</annotation:primitiveRationale>
     </owl:Class>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/GasDetectingMeasuringElement -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000727 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/GasDetectingMeasuringElement">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000727">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000573"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000543"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">elemento de medição de detecção de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas detecting measuring element</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a sensing element within petroleum production gas detection equipment that responds to the presence and concentration of a target gas.</skos:definition>
+        <skos:definition xml:lang="en">A measuring element that bears a gas detection function, used for detecting the presence of a specified concentration of a gas.</skos:definition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A measuring element that bears a gas detection function, used for detecting the presence of a specified concentration of a gas.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um elemento de medição que possui uma função de detecção de gás, usado para detectar a presença de uma concentração especificada de um gás.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">GasDetectionFunction is already the sufficient condition for the &apos;gas detector&apos; instrument. A measuring element bears it as a component; parthood is not a sufficient condition.</annotation:primitiveRationale>
     </owl:Class>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/MasterValve -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000728 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/MasterValve">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000728">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000710"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">master valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula mestra</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the main isolation valve at the base of a Christmas tree that controls fluid flow from the tubing head.</skos:definition>
+        <skos:definition xml:lang="en">A valve that bears a primary well isolation function and is a component of a christmas tree, controlling all flow from the wellbore.</skos:definition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A valve that bears a primary well isolation function and is a component of a christmas tree, controlling all flow from the wellbore.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula que possui uma função de isolamento primário do poço e é um componente de uma árvore de natal, controlando todo o fluxo do poço.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">The definition is partly positional (&apos;on the christmas tree&apos;, &apos;main shut-in valve on the well&apos;); under OWA a positional differentia cannot be sufficient.</annotation:primitiveRationale>
     </owl:Class>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/Panel -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000729 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/Panel">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000729">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000706"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">painel</rdfs:label>
         <rdfs:label xml:lang="en">panel</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a flat structural panel that provides a mounting surface for instrumentation, controls, or electrical equipment in a petroleum production installation.</skos:definition>
+        <skos:definition xml:lang="en">A material artifact that is a structure on which groups of instrument hardware are mounted and which houses the operator-process interface.</skos:definition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that is a structure on which groups of instrument hardware are mounted and which houses the operator-process interface.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que é uma estrutura sobre a qual grupos de instrumentos são montados e que abriga a interface operador-processo.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">The ISA definition is structure-led and enumerative (sections, cubicles, consoles, desks); no sufficient condition follows from it.</annotation:primitiveRationale>
     </owl:Class>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/Piston -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000730 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/Piston">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000730">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000714"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">piston</rdfs:label>
         <rdfs:label xml:lang="pt-br">pistão</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a sliding disc or cylinder that moves within a cylindrical bore to compress gas or transmit hydraulic force in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">A material artifact, normally cylindrical and provided with a closed end, that reciprocates within a hollow outer cylinder to change its internal volume in order to discharge pressurized liquid or gas.</skos:definition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact, normally cylindrical and provided with a closed end, that reciprocates within a hollow outer cylinder to change its internal volume in order to discharge pressurized liquid or gas.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material, normalmente cilíndrico e provido de uma extremidade fechada, que se move alternadamente dentro de um cilindro externo oco para alterar seu volume interno a fim de descarregar líquido ou gás pressurizado.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">Shape constraints in the source definition are constructive; under OWA they cannot be sufficient conditions.</annotation:primitiveRationale>
     </owl:Class>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/StatorWinding -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000731 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/StatorWinding">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000731">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
         <rdfs:label xml:lang="pt-br">enrolamento do estator</rdfs:label>
         <rdfs:label xml:lang="en">stator winding</rdfs:label>
@@ -25181,35 +25693,74 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/TubeBundle -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000732 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/TubeBundle">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000732">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000719"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000708"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">feixe tubular</rdfs:label>
         <rdfs:label xml:lang="en">tube bundle</rdfs:label>
         <skos:definition xml:lang="en">An assembly of heat transfer tubes, baffles, and tube sheets that forms the core of a shell-and-tube heat exchanger in petroleum production equipment.</skos:definition>
+        <skos:definition xml:lang="en">An assembly of several tubes assembled together, bearing a multipath fluid conveyance function that allows multiple flow paths from a single source.</skos:definition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">An assembly of several tubes assembled together, bearing a multipath fluid conveyance function that allows multiple flow paths from a single source.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma montagem de vários tubos reunidos, possuindo uma função de condução de fluido em múltiplos caminhos que permite vários percursos de fluxo a partir de uma única fonte.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">The differentia is the structural fact of several tubes assembled together; not sufficient under OWA.</annotation:primitiveRationale>
     </owl:Class>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/TubingBowl -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000733 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/TubingBowl">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000733">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000720"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">alojamento da coluna de produção</rdfs:label>
         <rdfs:label xml:lang="en">tubing bowl</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the bowl at the top of a wellhead housing in which the tubing hanger is seated and sealed.</skos:definition>
+        <skos:definition xml:lang="en">A material artifact that is the section of a tubing head which accommodates the tubing hanger, where it sets and seals.</skos:definition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that is the section of a tubing head which accommodates the tubing hanger, where it sets and seals.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que é a seção de uma cabeça de produção que acomoda o suspensor da coluna, onde este assenta e veda.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">Definition locates it within the wellhead rather than characterising it independently; parthood is not a sufficient condition.</annotation:primitiveRationale>
     </owl:Class>
     
 
 
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/WingValve -->
+    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000734 -->
 
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/WingValve">
+    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000734">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
+                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000704"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">válvula lateral</rdfs:label>
         <rdfs:label xml:lang="en">wing valve</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a flow control valve on the side outlet of a Christmas tree that directs well production to a flowline or test separator.</skos:definition>
+        <skos:definition xml:lang="en">A valve that bears a flowline isolation function and is a component of a christmas tree, located on the flow line downstream of the master valve.</skos:definition>
+        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
+        <annotation:naturalLanguageDefinition xml:lang="en">A valve that bears a flowline isolation function and is a component of a christmas tree, located on the flow line downstream of the master valve.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula que possui uma função de isolamento de linha de fluxo e é um componente de uma árvore de natal, localizada na linha de fluxo a jusante da válvula mestra.</annotation:naturalLanguageDefinition>
+        <annotation:primitiveRationale xml:lang="en">Definition is positional relative to the master valve and the flow line; not a sufficient condition under OWA.</annotation:primitiveRationale>
     </owl:Class>
     
 
