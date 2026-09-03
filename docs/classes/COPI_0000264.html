@@ -263,10 +263,9 @@
 <span class="fol-line"><span class="fol-label">[Function axiom: MechanicalEnergyGenerationFunction]</span>∀f (MechanicalEnergyGenerationFunction(f) → ∀p (realizedIn(f,p) → MechanicalEnergyGenerationProcess(p)) ∧ ∃p (MechanicalEnergyGenerationProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
 <span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (Engine(x) → ∃participatesIn.CombustionProcess) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((Engine(x) ∧ MechanicalEnergyGenerationFunction(f) ∧ bearerOf(x,f)) →
-      ∃m1 (ChemicalFuelPortion(m1) ∧ participatesIn(m1,f)) ∧
-      ∃m2 (AirPortion(m2) ∧ participatesIn(m2,f)) ∧
-      ∃e1 (MechanicalEnergyPortion(e1) ∧ participatesIn(e1,f)) ∧
-      ∃e2 (ExhaustGasPortion(e2) ∧ participatesIn(e2,f)) ∧
+      ∃m1 (FuelPortion(m1) ∧ participatesIn(m1,f)) ∧
+      ∃m2 (PortionOfAir(m2) ∧ participatesIn(m2,f)) ∧
+      ∃e (ExhaustGas(e) ∧ participatesIn(e,f)) ∧
       processType(f,ChemicalTransformation)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
         </div>
@@ -296,7 +295,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-104-g4d16eff&quot; ;
+    owl:versionInfo &quot;1.1.0-130-gcb44ee9&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -309,7 +308,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-07-13&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-03&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -343,22 +342,17 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasInput ;
-        owl:someValuesFrom :ChemicalFuelPortion
+        owl:someValuesFrom :FuelPortion
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasInput ;
-        owl:someValuesFrom :AirPortion
+        owl:someValuesFrom :PortionOfAir
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasSpecifiedOutput ;
-        owl:someValuesFrom :MechanicalEnergyPortion
-    ] ;
-    rdfs:subClassOf [
-        rdf:type owl:Restriction ;
-        owl:onProperty iof-core:hasSpecifiedOutput ;
-        owl:someValuesFrom :ExhaustGasPortion
+        owl:someValuesFrom :ExhaustGas
     ] .
 
 ### Equipment universal: Engine
@@ -375,7 +369,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     skos:definition &quot;An engine is a motor that converts chemical fuel energy into mechanical force and motion through combustion processes.&quot;@en ;
     iof-av:naturalLanguageDefinition &quot;Um motor é um motor que converte energia de combustível químico em força mecânica e movimento através de processos de combustão.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every Engine is a Motor that has function MechanicalEnergyGenerationFunction and has input ChemicalFuelPortion and participates in CombustionProcess.&quot;@en ;
-    iof-av:firstOrderLogicAxiom &quot;∀x (Engine(x) ↔ Motor(x) ∧ ∃f(MechanicalEnergyGenerationFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(ChemicalFuelPortion(p) ∧ hasInput(x,p)) ∧ ∃c(CombustionProcess(c) ∧ participatesIn(x,c)))&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x (Engine(x) ↔ Motor(x) ∧ ∃f(MechanicalEnergyGenerationFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(FuelPortion(p) ∧ hasInput(x,p)) ∧ ∃c(CombustionProcess(c) ∧ participatesIn(x,c)))&quot;@en ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
 
 # Disjointness: Engine and ElectricMotor
@@ -417,7 +411,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   </div>
   <div class="step-body">
     <div class="mb-2">
-      <span class="decision-value">motor</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
+      <span class="decision-value">Motor</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
     </div>
     <div class="rationale">ISO15926 explicitly states that an ENGINE is a MOTOR and a MACHINE. The &#x27;motor&#x27; class is already enriched in our ontology with MechanicalEnergyGenerationFunction. This creates a clean inheritance where engines are a specialized type of motor with additional constraints on the energy conversion mechanism.</div>
   </div>
@@ -440,14 +434,14 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 <div class="doc-section">
   <div class="doc-section-title"><span class="t-en">Process Participation Signature</span><span class="t-pt">Assinatura de Participação em Processo</span></div>
   <div class="sig-grid">
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;ChemicalFuelPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;combustible hydrocarbon or alternative fuel&#x27;}, {&#x27;type&#x27;: &#x27;AirPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;oxidizer for combustion&#x27;}</div></div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;MechanicalEnergyPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;rotational or reciprocating motion&#x27;}, {&#x27;type&#x27;: &#x27;ExhaustGasPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;combustion products&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;FuelPortion&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;combustible hydrocarbon or alternative fuel&#x27;}, {&#x27;type&#x27;: &#x27;PortionOfAir&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;oxidizer for combustion&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;ExhaustGas&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;combustion products&#x27;}</div></div>
     <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">chemical energy from fuel combustion converted to mechanical work with waste heat and exhaust products</div></div>
   </div>
   <div class="rationale mt-2">This signature captures the fundamental thermodynamic cycle of engines: fuel and air inputs undergo combustion to produce mechanical work output plus exhaust products. This distinguishes engines from other motors by the combustion-based energy conversion.</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">ElectricMotor</span> <span class="disjoint-pill">PneumaticMotor</span></div><div class="rationale mt-2">C2: PneumaticMotor. C4: ElectricMotor. Engines use chemical fuel combustion as energy source, which is incompatible with the electrical energy input of electric motors, pressurized fluid input of hydraulic motors, or compressed gas input of pneumatic motors. The energy conversion mechanisms are mutually exclusive.</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000264</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-28</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-07-13</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000264</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-08-07</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-03</td></tr></tbody></table></div>
 
     </div>
 
@@ -461,7 +455,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
           </div>
           <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
             <table class="meta-table">
-              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>motor</strong></td></tr>
+              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>Motor</strong></td></tr>
               <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">Assembly</span></td></tr>
               <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
               <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>MechanicalEnergyGenerationFunction</td></tr>
