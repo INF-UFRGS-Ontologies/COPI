@@ -259,7 +259,7 @@
         <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every flange is a material artifact that has a projecting flat rim geometry and has the function of mechanically connecting components.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (Flange(x) → MaterialArtifact(x) ∧ ∃f (ConnectionFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (Flange(x) → Coupling(x) ∧ ∃f (ConnectionFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Function axiom: ConnectionFunction]</span>∀f (ConnectionFunction(f) → ∀p (realizedIn(f,p) → ConnectionProcess(p)) ∧ ∃p (ConnectionProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
 <span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (Flange(x) → ∃hasCharacteristic.ProjectingFlatRimGeometry ⊓ ∃bearerOf.ConnectionFunction) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((Flange(x) ∧ ConnectionFunction(f) ∧ bearerOf(x,f)) →
@@ -294,7 +294,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-104-g4d16eff&quot; ;
+    owl:versionInfo &quot;1.1.0-130-gcb44ee9&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -307,7 +307,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-07-13&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-03&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -351,7 +351,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 
 ### Equipment universal: Flange
 :Flange rdf:type owl:Class ;
-    rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:subClassOf :Coupling ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
@@ -410,9 +410,9 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   </div>
   <div class="step-body">
     <div class="mb-2">
-      <span class="decision-value">MaterialArtifact</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
+      <span class="decision-value">Coupling</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
     </div>
-    <div class="rationale">No appropriate domain-specific superclass exists in the parent_candidates. While &#x27;PipeFitting&#x27; from DEXPI could be considered, flange is more fundamental and appears in contexts beyond just pipe fittings (vessel flanges, equipment flanges). Flanges are essentially monolithic artifacts without removable subcomponents, making MaterialArtifact the appropriate BFO root rather than Assembly.</div>
+    <div class="rationale">A flange is a coupling: it is a material artifact bearing a ConnectionFunction, which is exactly the definition of Coupling. The subsumption was already entailed but never declared (ODR-022 §17); the projecting rim/plate/collar geometry is the differentia over that genus.</div>
   </div>
 </div>
 <div class="step-block step-3">
@@ -440,7 +440,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Flanges take two separate components and create a mechanically joined assembly through their bolted connection mechanism. The transformation is purely mechanical - no change in material properties or phase.</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">Pipe</span> <span class="disjoint-pill">Valve</span> <span class="disjoint-pill">Pump</span></div><div class="rationale mt-2">C1: Pipe. C?: Valve [kind_ambiguous]. C?: Pump [kind_ambiguous]. Pipes are conduits without projecting connection geometry; valves and pumps have incompatible process signatures focused on flow control and fluid movement respectively, rather than structural connection.</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000273</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-13</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-06-26</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-07-13</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000273</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-13</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-08-13</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-03</td></tr></tbody></table></div>
 
     </div>
 
@@ -454,7 +454,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
           </div>
           <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
             <table class="meta-table">
-              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>MaterialArtifact</strong></td></tr>
+              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>Coupling</strong></td></tr>
               <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">MaterialArtifact</span></td></tr>
               <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
               <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>ConnectionFunction</td></tr>
