@@ -10395,25 +10395,13 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                 <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000029"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dcterms:source>ODR-018</dcterms:source>
-        <rdfs:comment xml:lang="en">A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item.</rdfs:comment>
-        <rdfs:comment xml:lang="pt-br">Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/copi-core"/>
         <rdfs:label xml:lang="en">instrument</rdfs:label>
         <rdfs:label xml:lang="pt-br">instrumento</rdfs:label>
         <skos:definition xml:lang="en">An instrument is a material artifact that has the designed function to perform measurement, monitoring, or control of process variables.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x(Instrument(x) ↔ (Assembly(x) ∧ ∃f(InstrumentationFunction(f) ∧ hasFunction(x,f))))</annotation:firstOrderLogicAxiom>
-        <annotation:firstOrderLogicAxiom>∀x (Instrument(x) → MaterialArtifact(x))</annotation:firstOrderLogicAxiom>
-        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="en">An instrument is a material artifact that has the designed function to perform measurement, monitoring, or control of process variables.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">Um instrumento é um artefato material que tem a função projetada de realizar medição, monitoramento ou controle de variáveis de processo.</annotation:naturalLanguageDefinition>
-        <annotation:primitiveRationale xml:lang="pt-br">A diferença estrutural de detecção-ou-medição é expressa informalmente na NLD; OWL carrega apenas o gênero (MaterialArtifact). O eixo estrutural (Instrument) é ortogonal ao eixo funcional (MeasurementInstrument); um artefato é ambos simultaneamente — intencional (ODR-018).</annotation:primitiveRationale>
-        <annotation:primitiveRationale xml:lang="en">The sensing-or-measuring structural differentia is expressed informally in the NLD; OWL carries only the genus (MaterialArtifact). The structural axis (Instrument) is orthogonal to the functional axis (MeasurementInstrument); an artifact is both simultaneously — intended (ODR-018).</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every instrument is a material artifact that has an instrumentation function, and every material artifact that has an instrumentation function is an instrument.</annotation:semiFormalNaturalLanguageAxiom>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">if x is an &apos;instrument&apos; then x is a &apos;material artifact&apos;</annotation:semiFormalNaturalLanguageAxiom>
-        <annotation:semiFormalNaturalLanguageAxiom xml:lang="pt-br">se x é um &apos;instrumento&apos;, então x é um &apos;artefato material&apos;</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
 

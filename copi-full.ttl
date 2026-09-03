@@ -7986,25 +7986,13 @@ copi:COPI_0000091 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000029
                                   ] ;
-                  dcterms:source "ODR-018" ;
-                  rdfs:comment "A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item."@en ,
-                               "Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta."@pt-br ;
-                  rdfs:isDefinedBy copi:copi-core ;
                   rdfs:label "instrument"@en ,
                              "instrumento"@pt-br ;
                   skos:definition "An instrument is a material artifact that has the designed function to perform measurement, monitoring, or control of process variables."@en ;
-                  annotation:firstOrderLogicAxiom "∀x (Instrument(x) → MaterialArtifact(x))" ,
-                                                  "∀x(Instrument(x) ↔ (Assembly(x) ∧ ∃f(InstrumentationFunction(f) ∧ hasFunction(x,f))))"@en ;
-                  annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A material artifact designed to sense, measure, or indicate a physical quantity of a process stream or plant item."@en ,
-                                                       "An instrument is a material artifact that has the designed function to perform measurement, monitoring, or control of process variables."@en ,
-                                                       "Um artefato material projetado para detectar, medir ou indicar uma grandeza física de uma corrente de processo ou item de planta."@pt-br ,
+                  annotation:firstOrderLogicAxiom "∀x(Instrument(x) ↔ (Assembly(x) ∧ ∃f(InstrumentationFunction(f) ∧ hasFunction(x,f))))"@en ;
+                  annotation:naturalLanguageDefinition "An instrument is a material artifact that has the designed function to perform measurement, monitoring, or control of process variables."@en ,
                                                        "Um instrumento é um artefato material que tem a função projetada de realizar medição, monitoramento ou controle de variáveis de processo."@pt-br ;
-                  annotation:primitiveRationale "A diferença estrutural de detecção-ou-medição é expressa informalmente na NLD; OWL carrega apenas o gênero (MaterialArtifact). O eixo estrutural (Instrument) é ortogonal ao eixo funcional (MeasurementInstrument); um artefato é ambos simultaneamente — intencional (ODR-018)."@pt-br ,
-                                                "The sensing-or-measuring structural differentia is expressed informally in the NLD; OWL carries only the genus (MaterialArtifact). The structural axis (Instrument) is orthogonal to the functional axis (MeasurementInstrument); an artifact is both simultaneously — intended (ODR-018)."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every instrument is a material artifact that has an instrumentation function, and every material artifact that has an instrumentation function is an instrument."@en ,
-                                                            "if x is an 'instrument' then x is a 'material artifact'"@en ,
-                                                            "se x é um 'instrumento', então x é um 'artefato material'"@pt-br .
+                  annotation:semiFormalNaturalLanguageAxiom "Every instrument is a material artifact that has an instrumentation function, and every material artifact that has an instrumentation function is an instrument."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092
