@@ -503,7 +503,7 @@ mirror-bfo: | $(TMPDIR)
 .PHONY: mirror-iof-core
 .PRECIOUS: $(MIRRORDIR)/iof-core.owl
 mirror-iof-core: | $(TMPDIR)
-	$(ROBOT) convert -I https://spec.industrialontologies.org/ontology/202602/core/Core/ -o $(TMPDIR)/$@.owl
+	$(ROBOT) convert -I https://spec.industrialontologies.org/ontology/202603/core/Core/ -o $(TMPDIR)/$@.owl
 
 
 $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)

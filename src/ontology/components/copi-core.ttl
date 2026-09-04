@@ -572,7 +572,7 @@ copi:copi-core a owl:Ontology ;
         "COPI Núcleo: uma camada núcleo para indústrias de processo em BFO"@pt-br ;
     rdfs:comment """COPI Core is the top-level layer of the Core Ontology for
 Petroleum Installations (COPI). It specialises BFO 2020 and reuses IOF-Core
-202602 to provide, for the process industries, two cross-cutting nine-member
+202603 to provide, for the process industries, two cross-cutting nine-member
 taxonomies linked by BFO function realization: nine OPERATION categories
 (occurrents equipment realizes) and nine EQUIPMENT categories (defined classes
 collecting the artifacts whose identity-giving designed function is realized in
@@ -580,7 +580,7 @@ the paired operation). Identity is carried by the LEAF UNIVERSALS, individuated
 by designed function; the categories are dispersive and intentionally NOT
 pairwise disjoint (selective partition)."""@en,
         """COPI Núcleo é a camada de topo da Ontologia Núcleo para Instalações de
-Petróleo (COPI). Especializa a BFO 2020 e reutiliza a IOF-Core 202602 para
+Petróleo (COPI). Especializa a BFO 2020 e reutiliza a IOF-Core 202603 para
 prover, às indústrias de processo, duas taxonomias cruzadas de nove membros
 ligadas pela realização de função da BFO: nove categorias de OPERAÇÃO
 (ocorrentes que o equipamento realiza) e nove categorias de EQUIPAMENTO (classes
@@ -597,6 +597,6 @@ deliberadamente NÃO disjuntas duas a duas (partição seletiva)."""@pt-br ;
     iof-av:explanatoryNote "Relation to iof:PieceOfEquipment (ODR-012 §3): a COPI equipment category instance that additionally bears an equipment role is entailed as an iof:PieceOfEquipment. The COPI categories are function-based (rigid, grounded in designed function); iof:PieceOfEquipment is role-based (anti-rigid, grounded in an equipment role). The two are orthogonal, complementary views of the same artifact: COPI function-based identity is the primary criterion; membership in iof:PieceOfEquipment follows contextually from role-bearing. No subClassOf is asserted between any COPI equipment category and iof:PieceOfEquipment."@en,
         "Relação com iof:PieceOfEquipment (ODR-012 §3): uma instância de categoria de equipamento COPI que adicionalmente porta um papel de equipamento é inferida como iof:PieceOfEquipment. As categorias COPI são baseadas em função (rígidas, fundamentadas na função projetada); iof:PieceOfEquipment é baseada em papel (anti-rígida, fundamentada em um papel de equipamento). As duas são visões ortogonais e complementares do mesmo artefato: a identidade baseada em função da COPI é o critério primário; a pertinência a iof:PieceOfEquipment decorre contextualmente do porte do papel. Nenhuma subClassOf é asserida entre qualquer categoria de equipamento COPI e iof:PieceOfEquipment."@pt-br ;
     iof-av:maturity iof-ind:Provisional ;
-    iof-av:usageNote "Load in Protégé; map the IOF import IRI to the local Core.rdf (202602) and ensure BFO 2020 resolves; run HermiT."@en,
-        "Carregue no Protégé; mapeie o IRI de importação da IOF para o Core.rdf local (202602) e garanta que a BFO 2020 resolva; rode o HermiT."@pt-br .
+    iof-av:usageNote "Load in Protégé; map the IOF import IRI to the local Core.rdf (202603) and ensure BFO 2020 resolves; run HermiT."@en,
+        "Carregue no Protégé; mapeie o IRI de importação da IOF para o Core.rdf local (202603) e garanta que a BFO 2020 resolva; rode o HermiT."@pt-br .
 
