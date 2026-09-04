@@ -66,7 +66,9 @@ paper below.
 
 ---
 
-## Publication
+## Publications
+
+### Axiomatizing Industrial Reference Data
 
 > **Nicolau Oyhenard dos Santos, Cauã Antunes, Mara Abel, João Netto.**
 > *Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes.*
@@ -87,6 +89,36 @@ repository extends that proof of concept to the broader equipment population des
                Abel, Mara and Netto, Jo{\~a}o},
   title     = {Axiomatizing Industrial Reference Data: A {BFO}/{IOF-Core}
                Enrichment of {ISO}~15926-4 Equipment Classes},
+  booktitle = {Formal Ontology in Information Systems (FOIS 2026)},
+  series    = {Frontiers in Artificial Intelligence and Applications},
+  publisher = {IOS Press},
+  year      = {2026},
+  note      = {Forthcoming}
+}
+```
+
+### An Ontology Design Pattern for Functional Locations
+
+> **Nicolau Oyhenard dos Santos, Haroldo Rojas, Cauã Roca Antunes, Fabrício H. Rodrigues, Régis Romeu,
+> Rafael H. Petry, Mara Abel, João César Netto.**
+> *An Ontology Design Pattern for Functional Locations in Industrial Asset Management.*
+> To appear in *Formal Ontology in Information Systems (FOIS 2026)*, Frontiers in Artificial
+> Intelligence and Applications, IOS Press. (Accepted; to be presented 21–25 September 2026 in
+> Vitória, ES, Brazil — a DOI/link will be added once the proceedings are published.)
+
+A companion FOIS 2026 paper proposing a reusable BFO/IOF-aligned ODP for functional locations in
+industrial asset management. The pattern's ontology is published separately at
+[`inf.ufrgs.br/ontologies/odp/functional-location`](https://www.inf.ufrgs.br/ontologies/odp/functional-location)
+([Zenodo DOI](https://doi.org/10.5281/zenodo.21072929)) and is not currently imported by COPI.
+
+```bibtex
+@inproceedings{santos2026functionallocations,
+  author    = {Santos, Nicolau O. and Rojas, Haroldo and
+               Antunes, Cau{\~a} Roca and Rodrigues, Fabr{\'i}cio H. and
+               Romeu, R{\'e}gis and Petry, Rafael H. and Abel, Mara and
+               Netto, Jo{\~a}o C{\'e}sar},
+  title     = {An Ontology Design Pattern for Functional Locations in
+               Industrial Asset Management},
   booktitle = {Formal Ontology in Information Systems (FOIS 2026)},
   series    = {Frontiers in Artificial Intelligence and Applications},
   publisher = {IOS Press},
