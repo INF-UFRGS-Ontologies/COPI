@@ -12831,6 +12831,7 @@ Units of Measure: Km, Kg, G</skos:example>
         <rdfs:label xml:lang="en">electrical conduction function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de condução elétrica</rdfs:label>
         <skos:definition xml:lang="en">A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a conductive pathway for electrical current within an electrical contact assembly.</skos:definition>
+        <skos:definition xml:lang="en">An electrical function borne by petroleum production equipment whose realization constitutes the provision of a conductive pathway that allows electrical current to pass between two conductive parts or pieces of electrical apparatus.</skos:definition>
         <annotation:naturalLanguageDefinition xml:lang="en">A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a conductive pathway for electrical current within an electrical contact assembly.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
@@ -12842,6 +12843,7 @@ Units of Measure: Km, Kg, G</skos:example>
         <rdfs:label xml:lang="en">electrical conduction process</rdfs:label>
         <rdfs:label xml:lang="pt-br">processo de condução elétrica</rdfs:label>
         <skos:definition xml:lang="en">A PlannedProcess in which electrical current is conducted through a conductive material part within an electrical switching or contact system.</skos:definition>
+        <skos:definition xml:lang="en">A planned process in which electrical current passes through a conductive pathway between two conductive parts or pieces of electrical apparatus in petroleum production equipment.</skos:definition>
         <annotation:naturalLanguageDefinition xml:lang="en">A PlannedProcess in which electrical current is conducted through a conductive material part within an electrical switching or contact system.</annotation:naturalLanguageDefinition>
     </owl:Class>
     

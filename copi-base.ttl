@@ -9929,7 +9929,8 @@ copi:COPI_0000492 rdf:type owl:Class ;
                                   ] ;
                   rdfs:label "electrical conduction function"@en ,
                              "função de condução elétrica"@pt-br ;
-                  skos:definition "A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a conductive pathway for electrical current within an electrical contact assembly."@en ;
+                  skos:definition "A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a conductive pathway for electrical current within an electrical contact assembly."@en ,
+                                  "An electrical function borne by petroleum production equipment whose realization constitutes the provision of a conductive pathway that allows electrical current to pass between two conductive parts or pieces of electrical apparatus."@en ;
                   annotation:naturalLanguageDefinition "A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a conductive pathway for electrical current within an electrical contact assembly."@en .
 
 
@@ -9938,7 +9939,8 @@ copi:COPI_0000493 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/PlannedProcess> ;
                   rdfs:label "electrical conduction process"@en ,
                              "processo de condução elétrica"@pt-br ;
-                  skos:definition "A PlannedProcess in which electrical current is conducted through a conductive material part within an electrical switching or contact system."@en ;
+                  skos:definition "A PlannedProcess in which electrical current is conducted through a conductive material part within an electrical switching or contact system."@en ,
+                                  "A planned process in which electrical current passes through a conductive pathway between two conductive parts or pieces of electrical apparatus in petroleum production equipment."@en ;
                   annotation:naturalLanguageDefinition "A PlannedProcess in which electrical current is conducted through a conductive material part within an electrical switching or contact system."@en .
 
 
