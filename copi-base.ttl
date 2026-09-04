@@ -15,7 +15,7 @@
 @base <https://www.inf.ufrgs.br/ontologies/copi/copi-base.ttl> .
 
 <https://www.inf.ufrgs.br/ontologies/copi/copi-base.ttl> rdf:type owl:Ontology ;
-                                                          owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-03/copi-base.ttl> ;
+                                                          owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-04/copi-base.ttl> ;
                                                           dce:type <http://purl.obolibrary.org/obo/IAO_8000001> ;
                                                           dcterms:bibliographicCitation "Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press." ;
                                                           dcterms:contributor "Cauã Antunes" ,
@@ -39,7 +39,7 @@
                                                           bibo:status "unstable" ;
                                                           vann:preferredNamespacePrefix "copi" ;
                                                           vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI ;
-                                                          owl:versionInfo "2026-09-03" ;
+                                                          owl:versionInfo "2026-09-04" ;
                                                           skos:scopeNote "Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia."@pt-br ,
                                                                          "COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos."@pt-br ,
                                                                          "COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en ,
@@ -4015,7 +4015,8 @@ copi:COPI_0000174 rdf:type owl:Class ;
                                     owl:allValuesFrom copi:COPI_0000522
                                   ] ;
                   rdfs:label "flow measurement function"@en ,
-                             "função de medição de fluxo"@pt-br .
+                             "função de medição de fluxo"@pt-br ;
+                  skos:definition "A measurement function borne by petroleum production equipment whose realization constitutes the determination of the flow rate of a process stream by sensing a flow-dependent physical effect."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000176
@@ -5765,26 +5766,6 @@ copi:COPI_0000261 rdf:type owl:Class ;
                   annotation:naturalLanguageDefinition "An electric generator is an assembly that bears the function of converting non-electric energy into electric energy"@en ,
                                                        "Um gerador elétrico é um conjunto que possui a função de converter energia não-elétrica em energia elétrica"@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every electric generator is an assembly that has the function to convert non-electric energy into electric energy"@en .
-
-
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000262
-copi:COPI_0000262 rdf:type owl:Class ;
-                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
-                                    owl:someValuesFrom copi:COPI_0000058
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
-                                    owl:someValuesFrom copi:COPI_0000492
-                                  ] ;
-                  rdfs:label "conexão elétrica"@pt-br ,
-                             "electrical connection"@en ;
-                  skos:definition "An electrical connection is a MaterialArtifact that bears an ElectricalConductionFunction and that provides a pathway for electrical current to pass from one electrical apparatus to another."@en ;
-                  annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "An electrical connection is a MaterialArtifact that bears an ElectricalConductionFunction and that provides a pathway for electrical current to pass from one electrical apparatus to another."@en ,
-                                                       "Uma conexão elétrica é um MaterialArtifact que possui uma ElectricalConductionFunction e que fornece um caminho para a corrente elétrica passar de um aparelho elétrico para outro."@pt-br ;
-                  annotation:primitiveRationale "Over-reaching equivalence (ODR-022 §17). A connection is the joining of conductors; conducting electricity is necessary for it but not sufficient. As equivalent it absorbed switch contact, which ISO defines as \"one of the conductive parts forming a contact assembly\" — a component, not a connection."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000263
@@ -9330,7 +9311,8 @@ copi:COPI_0000449 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000450
 copi:COPI_0000450 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/PlannedProcess> ;
-                  rdfs:label "current interruption by fusing"@en .
+                  rdfs:label "current interruption by fusing"@en ;
+                  skos:definition "A planned process in which electrical current in a circuit is interrupted through the intentional melting of a fusible element when the current exceeds a rated value for a sufficient duration."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000451
@@ -9947,10 +9929,8 @@ copi:COPI_0000492 rdf:type owl:Class ;
                                   ] ;
                   rdfs:label "electrical conduction function"@en ,
                              "função de condução elétrica"@pt-br ;
-                  skos:definition "A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a conductive pathway for electrical current within an electrical contact assembly."@en ,
-                                  "A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a pathway for electrical current to pass from one electrical apparatus to another, enabling electrical connectivity and power or signal transmission."@en ;
-                  annotation:naturalLanguageDefinition "A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a conductive pathway for electrical current within an electrical contact assembly."@en ,
-                                                       "A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a pathway for electrical current to pass from one electrical apparatus to another, enabling electrical connectivity and power or signal transmission."@en .
+                  skos:definition "A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a conductive pathway for electrical current within an electrical contact assembly."@en ;
+                  annotation:naturalLanguageDefinition "A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a conductive pathway for electrical current within an electrical contact assembly."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000493
@@ -9958,10 +9938,8 @@ copi:COPI_0000493 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/PlannedProcess> ;
                   rdfs:label "electrical conduction process"@en ,
                              "processo de condução elétrica"@pt-br ;
-                  skos:definition "A PlannedProcess in which electrical current is conducted through a conductive material part within an electrical switching or contact system."@en ,
-                                  "A PlannedProcess in which electrical current is conducted through an electrical connection from one electrical apparatus to another, resulting in the transmission of electrical power or signals between the connected devices."@en ;
-                  annotation:naturalLanguageDefinition "A PlannedProcess in which electrical current is conducted through a conductive material part within an electrical switching or contact system."@en ,
-                                                       "A PlannedProcess in which electrical current is conducted through an electrical connection from one electrical apparatus to another, resulting in the transmission of electrical power or signals between the connected devices."@en .
+                  skos:definition "A PlannedProcess in which electrical current is conducted through a conductive material part within an electrical switching or contact system."@en ;
+                  annotation:naturalLanguageDefinition "A PlannedProcess in which electrical current is conducted through a conductive material part within an electrical switching or contact system."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000494
@@ -10459,7 +10437,8 @@ copi:COPI_0000522 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000049
                                   ] ;
                   rdfs:label "flow measurement process"@en ,
-                             "processo de medição de fluxo"@pt-br .
+                             "processo de medição de fluxo"@pt-br ;
+                  skos:definition "A measurement process in which the flow rate of a process stream is determined by sensing a flow-dependent physical effect and expressing it as a quantitative value."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000523
@@ -11426,7 +11405,8 @@ copi:COPI_0000588 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000450
                                   ] ;
-                  rdfs:label "overcurrent protection by fusing function"@en .
+                  rdfs:label "overcurrent protection by fusing function"@en ;
+                  skos:definition "A circuit protection function borne by petroleum production equipment whose realization constitutes the interruption of electrical current in a circuit through the intentional melting of a fusible element when current exceeds a rated value."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000589
@@ -12095,7 +12075,8 @@ copi:COPI_0000631 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000629
                                   ] ;
                   rdfs:label "processo de vedação"@pt-br ,
-                             "sealing process"@en .
+                             "sealing process"@en ;
+                  skos:definition "A planned process in which a barrier is formed between two mating surfaces to prevent the leakage of fluid across a joint or interface in petroleum production equipment."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000632
@@ -12522,7 +12503,8 @@ copi:COPI_0000660 rdf:type owl:Class ;
 copi:COPI_0000661 rdf:type owl:Class ;
                   rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000024> ;
                   rdfs:label "superfície"@pt-br ,
-                             "surface"@en .
+                             "surface"@en ;
+                  skos:definition "A material artifact that constitutes a two-dimensional boundary of a solid body, such as the interior wall of a pipeline or vessel, participating in a process as the region of contact, deposit, or contamination."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000662
@@ -12822,7 +12804,8 @@ copi:COPI_0000683 rdf:type owl:Class ;
 copi:COPI_0000684 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
                   rdfs:label "câmara de vácuo de referência"@pt-br ,
-                             "vacuum reference chamber"@en .
+                             "vacuum reference chamber"@en ;
+                  skos:definition "A material artifact that constitutes a sealed chamber maintained at a vacuum reference, against which process pressure is compared to determine an absolute pressure measurement."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000685
@@ -13114,7 +13097,8 @@ copi:COPI_0000702 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000703
                                   ] ;
-                  rdfs:label "extended surface heat transfer function"@en .
+                  rdfs:label "extended surface heat transfer function"@en ;
+                  skos:definition "A heat transfer function borne by petroleum production equipment whose realization constitutes the enhancement of heat exchange between two fluids by increasing the effective surface area of a heat-transfer tube with fins."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000703
@@ -13128,7 +13112,8 @@ copi:COPI_0000703 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
                                     owl:someValuesFrom copi:COPI_0000397
                                   ] ;
-                  rdfs:label "extended surface heat transfer process"@en .
+                  rdfs:label "extended surface heat transfer process"@en ;
+                  skos:definition "A heat transfer process in which thermal energy is exchanged between two fluids across a tube surface whose effective area has been increased by fins to enhance the rate of heat transfer."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000704
@@ -13142,7 +13127,8 @@ copi:COPI_0000704 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000705
                                   ] ;
-                  rdfs:label "flowline isolation function"@en .
+                  rdfs:label "flowline isolation function"@en ;
+                  skos:definition "A well isolation function borne by petroleum production equipment whose realization constitutes the shutoff of flow between a wellbore and a lateral flowline connected to a wellhead or Christmas tree."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000705
@@ -13156,7 +13142,8 @@ copi:COPI_0000705 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ;
-                  rdfs:label "flowline isolation process"@en .
+                  rdfs:label "flowline isolation process"@en ;
+                  skos:definition "A planned process in which flow between a wellbore and a lateral flowline is shut off at a wellhead or Christmas tree."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000706
@@ -13170,7 +13157,8 @@ copi:COPI_0000706 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000707
                                   ] ;
-                  rdfs:label "instrument mounting function"@en .
+                  rdfs:label "instrument mounting function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the structural support and fixed positioning of one or more instruments to enable their correct operation, access, or protection."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000707
@@ -13184,7 +13172,8 @@ copi:COPI_0000707 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ;
-                  rdfs:label "instrument mounting process"@en .
+                  rdfs:label "instrument mounting process"@en ;
+                  skos:definition "A planned process in which one or more instruments are structurally supported and held in a fixed position by a mounting artifact to enable their correct operation, access, or protection."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000708
@@ -13198,7 +13187,8 @@ copi:COPI_0000708 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000709
                                   ] ;
-                  rdfs:label "multipath fluid conveyance function"@en .
+                  rdfs:label "multipath fluid conveyance function"@en ;
+                  skos:definition "A fluid conduction function borne by petroleum production equipment whose realization constitutes the simultaneous conveyance of fluid through multiple parallel flow paths within a single assembly."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000709
@@ -13212,7 +13202,8 @@ copi:COPI_0000709 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
-                  rdfs:label "multipath fluid conveyance process"@en .
+                  rdfs:label "multipath fluid conveyance process"@en ;
+                  skos:definition "A planned process in which fluid is conveyed simultaneously through multiple parallel flow paths within a single tube or cable assembly."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000710
@@ -13226,7 +13217,8 @@ copi:COPI_0000710 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000711
                                   ] ;
-                  rdfs:label "primary well isolation function"@en .
+                  rdfs:label "primary well isolation function"@en ;
+                  skos:definition "A well isolation function borne by petroleum production equipment whose realization constitutes the primary, full-bore shutoff of flow between a wellbore and the surface production system."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000711
@@ -13240,7 +13232,8 @@ copi:COPI_0000711 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ;
-                  rdfs:label "primary well isolation process"@en .
+                  rdfs:label "primary well isolation process"@en ;
+                  skos:definition "A planned process in which flow between a wellbore and the surface production system is fully shut off at the primary isolation point of a wellhead or Christmas tree."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000712
@@ -13254,7 +13247,8 @@ copi:COPI_0000712 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000713
                                   ] ;
-                  rdfs:label "property measurement function"@en .
+                  rdfs:label "property measurement function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the sensing of a physical or chemical property of an entity, independently of any instrument that subsequently handles the resulting measurement result."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000713
@@ -13268,7 +13262,8 @@ copi:COPI_0000713 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
                                     owl:someValuesFrom <https://spec.industrialontologies.org/ontology/construct/MeasurementInformationContentEntity>
                                   ] ;
-                  rdfs:label "property measurement process"@en .
+                  rdfs:label "property measurement process"@en ;
+                  skos:definition "A planned process in which a physical or chemical property of an entity is sensed and transduced into a measurement result, independently of the equipment handling that result."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000714
@@ -13282,7 +13277,8 @@ copi:COPI_0000714 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000715
                                   ] ;
-                  rdfs:label "reciprocating displacement function"@en .
+                  rdfs:label "reciprocating displacement function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the cyclic linear displacement of a fluid volume through the reciprocating motion of a component within a cylinder."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000715
@@ -13296,7 +13292,8 @@ copi:COPI_0000715 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
-                  rdfs:label "reciprocating displacement process"@en .
+                  rdfs:label "reciprocating displacement process"@en ;
+                  skos:definition "A planned process in which a cylinder's internal volume is cyclically changed by reciprocating linear motion to displace and pressurise a fluid."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000716
@@ -13310,7 +13307,8 @@ copi:COPI_0000716 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000717
                                   ] ;
-                  rdfs:label "rock cutting function"@en .
+                  rdfs:label "rock cutting function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the mechanical disintegration of subsurface rock through cutting, crushing, or shearing action to advance a wellbore."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000717
@@ -13324,7 +13322,8 @@ copi:COPI_0000717 rdf:type owl:Class ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
                                     owl:someValuesFrom copi:COPI_0000399
                                   ] ;
-                  rdfs:label "rock cutting process"@en .
+                  rdfs:label "rock cutting process"@en ;
+                  skos:definition "A planned process in which subsurface rock is mechanically disintegrated through cutting, crushing, or shearing action by a drill bit to advance a wellbore."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000718
@@ -13338,7 +13337,8 @@ copi:COPI_0000718 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000510
                                   ] ;
-                  rdfs:label "selective permeability function"@en .
+                  rdfs:label "selective permeability function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the selective passage of fluid constituents through a porous medium while retaining particulate or liquid contaminants above a defined size."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000719
@@ -13360,13 +13360,15 @@ copi:COPI_0000720 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000721
                                   ] ;
-                  rdfs:label "tubing hanger seating function"@en .
+                  rdfs:label "tubing hanger seating function"@en ;
+                  skos:definition "A designed function borne by petroleum production equipment whose realization constitutes the reception, positioning, and sealed support of a tubing hanger to suspend and seal the production tubing string at the wellhead."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000721
 copi:COPI_0000721 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/PlannedProcess> ;
-                  rdfs:label "tubing hanger seating process"@en .
+                  rdfs:label "tubing hanger seating process"@en ;
+                  skos:definition "A planned process in which a tubing hanger is received, positioned, and sealed within a wellhead housing to suspend and seal the production tubing string."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000722

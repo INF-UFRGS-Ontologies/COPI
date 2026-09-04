@@ -16,7 +16,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-full.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-03/copi-full.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-04/copi-full.owl"/>
         <dcterms:bibliographicCitation>Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press.</dcterms:bibliographicCitation>
         <dcterms:contributor>Cauã Antunes</dcterms:contributor>
         <dcterms:contributor>Haroldo Rojas</dcterms:contributor>
@@ -39,7 +39,7 @@
         <bibo:status>unstable</bibo:status>
         <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>
-        <owl:versionInfo>2026-09-03</owl:versionInfo>
+        <owl:versionInfo>2026-09-04</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
@@ -12651,6 +12651,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">flow measurement function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de medição de fluxo</rdfs:label>
+        <skos:definition xml:lang="en">A measurement function borne by petroleum production equipment whose realization constitutes the determination of the flow rate of a process stream by sensing a flow-dependent physical effect.</skos:definition>
     </owl:Class>
     
 
@@ -14982,33 +14983,6 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <annotation:naturalLanguageDefinition xml:lang="en">An electric generator is an assembly that bears the function of converting non-electric energy into electric energy</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">Um gerador elétrico é um conjunto que possui a função de converter energia não-elétrica em energia elétrica</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every electric generator is an assembly that has the function to convert non-electric energy into electric energy</annotation:semiFormalNaturalLanguageAxiom>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000262 -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000262">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000196"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000058"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
-                <owl:someValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000492"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="pt-br">conexão elétrica</rdfs:label>
-        <rdfs:label xml:lang="en">electrical connection</rdfs:label>
-        <skos:definition xml:lang="en">An electrical connection is a MaterialArtifact that bears an ElectricalConductionFunction and that provides a pathway for electrical current to pass from one electrical apparatus to another.</skos:definition>
-        <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">An electrical connection is a MaterialArtifact that bears an ElectricalConductionFunction and that provides a pathway for electrical current to pass from one electrical apparatus to another.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma conexão elétrica é um MaterialArtifact que possui uma ElectricalConductionFunction e que fornece um caminho para a corrente elétrica passar de um aparelho elétrico para outro.</annotation:naturalLanguageDefinition>
-        <annotation:primitiveRationale xml:lang="en">Over-reaching equivalence (ODR-022 §17). A connection is the joining of conductors; conducting electricity is necessary for it but not sufficient. As equivalent it absorbed switch contact, which ISO defines as &quot;one of the conductive parts forming a contact assembly&quot; — a component, not a connection.</annotation:primitiveRationale>
     </owl:Class>
     
 
@@ -19714,6 +19688,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000450">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
         <rdfs:label xml:lang="en">current interruption by fusing</rdfs:label>
+        <skos:definition xml:lang="en">A planned process in which electrical current in a circuit is interrupted through the intentional melting of a fusible element when the current exceeds a rated value for a sufficient duration.</skos:definition>
     </owl:Class>
     
 
@@ -20597,9 +20572,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:label xml:lang="en">electrical conduction function</rdfs:label>
         <rdfs:label xml:lang="pt-br">função de condução elétrica</rdfs:label>
         <skos:definition xml:lang="en">A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a conductive pathway for electrical current within an electrical contact assembly.</skos:definition>
-        <skos:definition xml:lang="en">A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a pathway for electrical current to pass from one electrical apparatus to another, enabling electrical connectivity and power or signal transmission.</skos:definition>
         <annotation:naturalLanguageDefinition xml:lang="en">A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a conductive pathway for electrical current within an electrical contact assembly.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="en">A DesignedFunction that is realized in an ElectricalConductionProcess and that consists in providing a pathway for electrical current to pass from one electrical apparatus to another, enabling electrical connectivity and power or signal transmission.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -20611,9 +20584,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:label xml:lang="en">electrical conduction process</rdfs:label>
         <rdfs:label xml:lang="pt-br">processo de condução elétrica</rdfs:label>
         <skos:definition xml:lang="en">A PlannedProcess in which electrical current is conducted through a conductive material part within an electrical switching or contact system.</skos:definition>
-        <skos:definition xml:lang="en">A PlannedProcess in which electrical current is conducted through an electrical connection from one electrical apparatus to another, resulting in the transmission of electrical power or signals between the connected devices.</skos:definition>
         <annotation:naturalLanguageDefinition xml:lang="en">A PlannedProcess in which electrical current is conducted through a conductive material part within an electrical switching or contact system.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="en">A PlannedProcess in which electrical current is conducted through an electrical connection from one electrical apparatus to another, resulting in the transmission of electrical power or signals between the connected devices.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -21313,6 +21284,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">flow measurement process</rdfs:label>
         <rdfs:label xml:lang="pt-br">processo de medição de fluxo</rdfs:label>
+        <skos:definition xml:lang="en">A measurement process in which the flow rate of a process stream is determined by sensing a flow-dependent physical effect and expressing it as a quantitative value.</skos:definition>
     </owl:Class>
     
 
@@ -22693,6 +22665,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">overcurrent protection by fusing function</rdfs:label>
+        <skos:definition xml:lang="en">A circuit protection function borne by petroleum production equipment whose realization constitutes the interruption of electrical current in a circuit through the intentional melting of a fusible element when current exceeds a rated value.</skos:definition>
     </owl:Class>
     
 
@@ -23647,6 +23620,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">processo de vedação</rdfs:label>
         <rdfs:label xml:lang="en">sealing process</rdfs:label>
+        <skos:definition xml:lang="en">A planned process in which a barrier is formed between two mating surfaces to prevent the leakage of fluid across a joint or interface in petroleum production equipment.</skos:definition>
     </owl:Class>
     
 
@@ -24256,6 +24230,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <rdfs:label xml:lang="pt-br">superfície</rdfs:label>
         <rdfs:label xml:lang="en">surface</rdfs:label>
+        <skos:definition xml:lang="en">A material artifact that constitutes a two-dimensional boundary of a solid body, such as the interior wall of a pipeline or vessel, participating in a process as the region of contact, deposit, or contamination.</skos:definition>
     </owl:Class>
     
 
@@ -24685,6 +24660,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
         <rdfs:label xml:lang="pt-br">câmara de vácuo de referência</rdfs:label>
         <rdfs:label xml:lang="en">vacuum reference chamber</rdfs:label>
+        <skos:definition xml:lang="en">A material artifact that constitutes a sealed chamber maintained at a vacuum reference, against which process pressure is compared to determine an absolute pressure measurement.</skos:definition>
     </owl:Class>
     
 
@@ -25105,6 +25081,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">extended surface heat transfer function</rdfs:label>
+        <skos:definition xml:lang="en">A heat transfer function borne by petroleum production equipment whose realization constitutes the enhancement of heat exchange between two fluids by increasing the effective surface area of a heat-transfer tube with fins.</skos:definition>
     </owl:Class>
     
 
@@ -25126,6 +25103,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">extended surface heat transfer process</rdfs:label>
+        <skos:definition xml:lang="en">A heat transfer process in which thermal energy is exchanged between two fluids across a tube surface whose effective area has been increased by fins to enhance the rate of heat transfer.</skos:definition>
     </owl:Class>
     
 
@@ -25147,6 +25125,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">flowline isolation function</rdfs:label>
+        <skos:definition xml:lang="en">A well isolation function borne by petroleum production equipment whose realization constitutes the shutoff of flow between a wellbore and a lateral flowline connected to a wellhead or Christmas tree.</skos:definition>
     </owl:Class>
     
 
@@ -25168,6 +25147,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">flowline isolation process</rdfs:label>
+        <skos:definition xml:lang="en">A planned process in which flow between a wellbore and a lateral flowline is shut off at a wellhead or Christmas tree.</skos:definition>
     </owl:Class>
     
 
@@ -25189,6 +25169,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">instrument mounting function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the structural support and fixed positioning of one or more instruments to enable their correct operation, access, or protection.</skos:definition>
     </owl:Class>
     
 
@@ -25210,6 +25191,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">instrument mounting process</rdfs:label>
+        <skos:definition xml:lang="en">A planned process in which one or more instruments are structurally supported and held in a fixed position by a mounting artifact to enable their correct operation, access, or protection.</skos:definition>
     </owl:Class>
     
 
@@ -25231,6 +25213,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">multipath fluid conveyance function</rdfs:label>
+        <skos:definition xml:lang="en">A fluid conduction function borne by petroleum production equipment whose realization constitutes the simultaneous conveyance of fluid through multiple parallel flow paths within a single assembly.</skos:definition>
     </owl:Class>
     
 
@@ -25252,6 +25235,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">multipath fluid conveyance process</rdfs:label>
+        <skos:definition xml:lang="en">A planned process in which fluid is conveyed simultaneously through multiple parallel flow paths within a single tube or cable assembly.</skos:definition>
     </owl:Class>
     
 
@@ -25273,6 +25257,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">primary well isolation function</rdfs:label>
+        <skos:definition xml:lang="en">A well isolation function borne by petroleum production equipment whose realization constitutes the primary, full-bore shutoff of flow between a wellbore and the surface production system.</skos:definition>
     </owl:Class>
     
 
@@ -25294,6 +25279,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">primary well isolation process</rdfs:label>
+        <skos:definition xml:lang="en">A planned process in which flow between a wellbore and the surface production system is fully shut off at the primary isolation point of a wellhead or Christmas tree.</skos:definition>
     </owl:Class>
     
 
@@ -25315,6 +25301,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">property measurement function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the sensing of a physical or chemical property of an entity, independently of any instrument that subsequently handles the resulting measurement result.</skos:definition>
     </owl:Class>
     
 
@@ -25336,6 +25323,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">property measurement process</rdfs:label>
+        <skos:definition xml:lang="en">A planned process in which a physical or chemical property of an entity is sensed and transduced into a measurement result, independently of the equipment handling that result.</skos:definition>
     </owl:Class>
     
 
@@ -25357,6 +25345,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">reciprocating displacement function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the cyclic linear displacement of a fluid volume through the reciprocating motion of a component within a cylinder.</skos:definition>
     </owl:Class>
     
 
@@ -25378,6 +25367,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">reciprocating displacement process</rdfs:label>
+        <skos:definition xml:lang="en">A planned process in which a cylinder&apos;s internal volume is cyclically changed by reciprocating linear motion to displace and pressurise a fluid.</skos:definition>
     </owl:Class>
     
 
@@ -25399,6 +25389,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">rock cutting function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the mechanical disintegration of subsurface rock through cutting, crushing, or shearing action to advance a wellbore.</skos:definition>
     </owl:Class>
     
 
@@ -25420,6 +25411,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">rock cutting process</rdfs:label>
+        <skos:definition xml:lang="en">A planned process in which subsurface rock is mechanically disintegrated through cutting, crushing, or shearing action by a drill bit to advance a wellbore.</skos:definition>
     </owl:Class>
     
 
@@ -25441,6 +25433,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">selective permeability function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the selective passage of fluid constituents through a porous medium while retaining particulate or liquid contaminants above a defined size.</skos:definition>
     </owl:Class>
     
 
@@ -25473,6 +25466,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">tubing hanger seating function</rdfs:label>
+        <skos:definition xml:lang="en">A designed function borne by petroleum production equipment whose realization constitutes the reception, positioning, and sealed support of a tubing hanger to suspend and seal the production tubing string at the wellhead.</skos:definition>
     </owl:Class>
     
 
@@ -25482,6 +25476,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000721">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
         <rdfs:label xml:lang="en">tubing hanger seating process</rdfs:label>
+        <skos:definition xml:lang="en">A planned process in which a tubing hanger is received, positioned, and sealed within a wellhead housing to suspend and seal the production tubing string.</skos:definition>
     </owl:Class>
     
 
