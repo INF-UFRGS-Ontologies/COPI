@@ -26,13 +26,13 @@
     <dcterms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants, developed using the five-step RDL enrichment method.</dcterms:description>
     <dcterms:isPartOf rdf:resource="https://inf.ufrgs.br/projetos/OntoKG"/>
     <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-04</dcterms:modified>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-08</dcterms:modified>
     <dcterms:publisher xml:lang="en">Universidade Federal do Rio Grande do Sul (UFRGS)</dcterms:publisher>
     <dcterms:title xml:lang="en">Core Ontology for Petroleum Installations (COPI)</dcterms:title>
     <dcterms:title xml:lang="pt-br">Ontologia Core para Instalações de Petróleo (COPI)</dcterms:title>
     <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl"/>
     <owl:imports rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/"/>
-    <owl:versionInfo>1.1.0-134-g6e3b4fb</owl:versionInfo>
+    <owl:versionInfo>1.1.0-141-gcaa7567</owl:versionInfo>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
     <skos:scopeNote xml:lang="en">Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.</skos:scopeNote>
@@ -3706,7 +3706,7 @@
     <rdfs:subClassOf rdf:nodeID="n000977"/>
     <rdfs:subClassOf rdf:nodeID="n000978"/>
     <rdfs:subClassOf rdf:nodeID="n000979"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
     <skos:definition xml:lang="en">A planned process in which one or more gaseous components are transferred from a gas phase into a liquid absorbent phase through contact in petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000405">
@@ -3724,7 +3724,7 @@
     <rdfs:label xml:lang="pt-br">processo de acumulação</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n000982"/>
     <rdfs:subClassOf rdf:nodeID="n000983"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
     <skos:definition xml:lang="en">A planned process in which fluid is collected and temporarily held in a vessel to buffer flow variations or build up inventory in a petroleum production system.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000407">
@@ -3795,7 +3795,7 @@
     <rdfs:label xml:lang="pt-br">processo de agitação</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001011"/>
     <rdfs:subClassOf rdf:nodeID="n001012"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which a liquid is mechanically stirred or agitated to promote mixing, heat transfer, or suspension of solids in petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000411">
@@ -3828,7 +3828,7 @@
     <rdfs:label xml:lang="en">axial displacement transmission process</rdfs:label>
     <rdfs:label xml:lang="pt-br">processo de transmissão de deslocamento axial</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001017"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the axial displacement of a rotating shaft is measured and the corresponding signal transmitted to a remote monitoring system.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000415">
@@ -3846,7 +3846,7 @@
     <rdfs:subClassOf rdf:nodeID="n001025"/>
     <rdfs:subClassOf rdf:nodeID="n001026"/>
     <rdfs:subClassOf rdf:nodeID="n001027"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A PlannedProcess in which fluid flow reversal is prevented by a closure member that moves to block the flow path when upstream pressure falls below downstream pressure or when flow attempts to reverse direction.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000416">
@@ -3875,7 +3875,7 @@
     <rdfs:subClassOf rdf:nodeID="n001033"/>
     <rdfs:subClassOf rdf:nodeID="n001034"/>
     <rdfs:subClassOf rdf:nodeID="n001035"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000008"/>
     <skos:definition xml:lang="en">A planned process in which a liquid is converted into vapour by supplying thermal energy at or above its boiling point in petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000419">
@@ -3990,7 +3990,7 @@
     <rdfs:subClassOf rdf:nodeID="n001057"/>
     <rdfs:subClassOf rdf:nodeID="n001058"/>
     <rdfs:subClassOf rdf:nodeID="n001059"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the chemical components of a sample are separated and quantified by their differential migration through a stationary phase in petroleum production instrumentation.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000432">
@@ -4000,7 +4000,7 @@
     <rdfs:subClassOf rdf:nodeID="n001060"/>
     <rdfs:subClassOf rdf:nodeID="n001061"/>
     <rdfs:subClassOf rdf:nodeID="n001062"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
     <skos:definition xml:lang="en">A planned process in which dispersed droplets of one phase aggregate within another to form larger droplets that can be more readily separated from the continuous phase.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000433">
@@ -4019,7 +4019,7 @@
     <rdfs:subClassOf rdf:nodeID="n001065"/>
     <rdfs:subClassOf rdf:nodeID="n001066"/>
     <rdfs:subClassOf rdf:nodeID="n001067"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007"/>
     <skos:definition xml:lang="en">A planned process in which a fuel reacts exothermically with an oxidant to produce heat and combustion products in petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000435">
@@ -4032,7 +4032,7 @@
     <rdfs:subClassOf rdf:nodeID="n001071"/>
     <rdfs:subClassOf rdf:nodeID="n001072"/>
     <rdfs:subClassOf rdf:nodeID="n001073"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which the pressure of a gas is increased by reducing its volume through mechanical work applied by petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000436">
@@ -4059,7 +4059,7 @@
     <rdfs:subClassOf rdf:nodeID="n001077"/>
     <rdfs:subClassOf rdf:nodeID="n001078"/>
     <rdfs:subClassOf rdf:nodeID="n001079"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000008"/>
     <skos:definition xml:lang="en">A planned process in which a vapour is converted into liquid by removing thermal energy until the substance reaches its dew point in petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000439">
@@ -4117,7 +4117,7 @@
     <rdfs:subClassOf rdf:nodeID="n001097"/>
     <rdfs:subClassOf rdf:nodeID="n001098"/>
     <rdfs:subClassOf rdf:nodeID="n001099"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
     <skos:definition xml:lang="en">A PlannedProcess in which a container artifact encloses and maintains internal components or fluids within its structural boundaries, providing physical separation from the external environment.</skos:definition>
     <skos:definition xml:lang="en">A PlannedProcess in which a structural boundary maintains separation between internal contents and external environment, preventing uncontrolled release while withstanding internal pressure loads.</skos:definition>
     <skos:definition xml:lang="en">A PlannedProcess in which material is enclosed and retained within a defined spatial boundary by a containing artifact.</skos:definition>
@@ -4178,7 +4178,7 @@
     <rdfs:subClassOf rdf:nodeID="n001114"/>
     <rdfs:subClassOf rdf:nodeID="n001115"/>
     <rdfs:subClassOf rdf:nodeID="n001116"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
     <skos:definition xml:lang="en">A planned process in which thermal energy is removed from a process stream or equipment component to reduce its temperature in petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000450">
@@ -4219,7 +4219,7 @@
     <rdfs:subClassOf rdf:nodeID="n001121"/>
     <rdfs:subClassOf rdf:nodeID="n001122"/>
     <rdfs:subClassOf rdf:nodeID="n001123"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
     <skos:definition xml:lang="en">A planned process in which dissolved oxygen and other non-condensable gases are removed from a liquid stream in petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000455">
@@ -4238,7 +4238,7 @@
     <rdfs:subClassOf rdf:nodeID="n001126"/>
     <rdfs:subClassOf rdf:nodeID="n001127"/>
     <rdfs:subClassOf rdf:nodeID="n001128"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
     <skos:definition xml:lang="en">A planned process in which dissolved or entrained gases are removed from a liquid to reduce their concentration below a specified level.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000457">
@@ -4257,7 +4257,7 @@
     <rdfs:subClassOf rdf:nodeID="n001131"/>
     <rdfs:subClassOf rdf:nodeID="n001132"/>
     <rdfs:subClassOf rdf:nodeID="n001133"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
     <skos:definition xml:lang="en">A planned process in which water vapour is removed from a gas stream to reduce its relative humidity or dew point to a specified level.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000459">
@@ -4276,7 +4276,7 @@
     <rdfs:subClassOf rdf:nodeID="n001136"/>
     <rdfs:subClassOf rdf:nodeID="n001137"/>
     <rdfs:subClassOf rdf:nodeID="n001138"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
     <skos:definition xml:lang="en">A planned process in which water is removed from a fluid stream by adsorption, absorption, or distillation to meet product specification limits.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000461">
@@ -4295,7 +4295,7 @@
     <rdfs:subClassOf rdf:nodeID="n001141"/>
     <rdfs:subClassOf rdf:nodeID="n001142"/>
     <rdfs:subClassOf rdf:nodeID="n001143"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
     <skos:definition xml:lang="en">A planned process in which entrained liquid droplets are coalesced and removed from a gas stream by petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000463">
@@ -4313,7 +4313,7 @@
     <rdfs:label xml:lang="pt-br">processo de medição de densidade</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001146"/>
     <rdfs:subClassOf rdf:nodeID="n001147"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the mass per unit volume of a fluid stream or substance is measured by petroleum production instrumentation.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000465">
@@ -4330,7 +4330,7 @@
     <rdfs:label xml:lang="en">detection process</rdfs:label>
     <rdfs:label xml:lang="pt-br">processo de detecção</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001150"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the presence, concentration, or state of a physical or chemical entity is sensed and identified by petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000467">
@@ -4348,7 +4348,7 @@
     <rdfs:label xml:lang="pt-br">processo de medição de ponto de orvalho</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001153"/>
     <rdfs:subClassOf rdf:nodeID="n001154"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the temperature at which a gas mixture begins to condense is measured by petroleum production instrumentation.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000469">
@@ -4369,7 +4369,7 @@
     <rdfs:subClassOf rdf:nodeID="n001158"/>
     <rdfs:subClassOf rdf:nodeID="n001159"/>
     <rdfs:subClassOf rdf:nodeID="n001160"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A PlannedProcess in which a differential pressure measuring element senses the pressure difference between two fluid inputs, producing a mechanical deflection or signal proportional to the differential pressure for measurement purposes.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000471">
@@ -4387,7 +4387,7 @@
     <rdfs:label xml:lang="pt-br">processo de chaveamento por pressão diferencial</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001163"/>
     <rdfs:subClassOf rdf:nodeID="n001164"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which a discrete switching signal is generated when the differential pressure between two process points crosses a defined threshold.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000473">
@@ -4417,7 +4417,7 @@
     <rdfs:subClassOf rdf:nodeID="n001171"/>
     <rdfs:subClassOf rdf:nodeID="n001172"/>
     <rdfs:subClassOf rdf:nodeID="n001173"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
     <skos:definition xml:lang="en">A planned process in which a liquid mixture is separated into fractions of differing volatilities by successive vaporisation and condensation in petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000476">
@@ -4442,7 +4442,7 @@
     <rdfs:label xml:lang="pt-br">processo de desvio de fluxo</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001176"/>
     <rdfs:subClassOf rdf:nodeID="n001177"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A planned process in which fluid flow is redirected from one path to one or more alternative downstream paths by petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000479">
@@ -4502,7 +4502,7 @@
     <rdfs:subClassOf rdf:nodeID="n001186"/>
     <rdfs:subClassOf rdf:nodeID="n001187"/>
     <rdfs:subClassOf rdf:nodeID="n001188"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
     <skos:definition xml:lang="en">A planned process in which moisture or solvent is removed from a solid, liquid, or gas stream by thermal, adsorptive, or other means.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000486">
@@ -4611,7 +4611,7 @@
     <rdfs:label xml:lang="en">electrochemical oxidation process</rdfs:label>
     <rdfs:label xml:lang="pt-br">processo de oxidação eletroquímica</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001197"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007"/>
     <skos:definition xml:lang="en">A planned process in which a material is oxidised at an electrode surface through an electrochemical reaction, such as in cathodic protection or electrochemical sensing.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000499">
@@ -4620,7 +4620,7 @@
     <rdfs:label xml:lang="pt-br">processo de parada de emergência</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001198"/>
     <rdfs:subClassOf rdf:nodeID="n001199"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A planned process in which process flows or equipment are rapidly and automatically isolated in response to a detected hazardous condition.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000500">
@@ -4689,6 +4689,7 @@
     <rdfs:subClassOf rdf:nodeID="n001229"/>
     <rdfs:subClassOf rdf:nodeID="n001230"/>
     <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
     <skos:definition xml:lang="en">A PlannedProcess in which a body or housing artifact provides structural containment and protection for internal mechanical components or assemblies.</skos:definition>
     <skos:definition xml:lang="en">A PlannedProcess in which a casing provides protective containment around internal components, maintaining their operational environment and structural integrity while allowing controlled access for maintenance.</skos:definition>
     <skos:definition xml:lang="en">A PlannedProcess in which a casing provides protective containment around mechanical components while enabling controlled fluid passage through designed openings and maintaining pressure boundaries.</skos:definition>
@@ -4713,7 +4714,7 @@
     <rdfs:label xml:lang="pt-br">processo de difusão de energia</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001233"/>
     <rdfs:subClassOf rdf:nodeID="n001234"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which thermal, acoustic, or kinetic energy is dispersed over a larger volume or surface to reduce its local intensity.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000504">
@@ -4749,7 +4750,7 @@
     <rdfs:label xml:lang="pt-br">processo de transferência de energia</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001241"/>
     <rdfs:subClassOf rdf:nodeID="n001242"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which energy in the form of heat, work, or electromagnetic radiation is transferred from one medium or system to another.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000508">
@@ -4792,7 +4793,7 @@
     <rdfs:subClassOf rdf:nodeID="n001261"/>
     <rdfs:subClassOf rdf:nodeID="n001262"/>
     <rdfs:subClassOf rdf:nodeID="n001263"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
     <skos:definition xml:lang="en">A PlannedProcess in which particles, contaminants, or unwanted substances are selectively retained from a fluid stream by a filter element through mechanical screening or other separation mechanisms while clean fluid passes through.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000511">
@@ -4867,7 +4868,7 @@
     <rdfs:subClassOf rdf:nodeID="n001280"/>
     <rdfs:subClassOf rdf:nodeID="n001281"/>
     <rdfs:subClassOf rdf:nodeID="n001282"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000008"/>
     <skos:definition xml:lang="en">A planned process in which a pressurised liquid stream is partially vaporised as a result of a rapid reduction in pressure.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000519">
@@ -4966,7 +4967,7 @@
     <rdfs:label xml:lang="pt-br">processo de modificação de fluxo</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001333"/>
     <rdfs:subClassOf rdf:nodeID="n001334"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A PlannedProcess in which the characteristics of fluid flow are altered by a flow modification accessory, resulting in changes to flow patterns, velocity profiles, turbulence levels, or pressure drop characteristics while the fluid passes through or around the device.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000525">
@@ -4975,7 +4976,7 @@
     <rdfs:label xml:lang="pt-br">processo de restrição de fluxo</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001335"/>
     <rdfs:subClassOf rdf:nodeID="n001336"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A planned process in which the flow rate or pressure of a fluid stream is reduced in a controlled manner by introducing a fixed or variable resistance.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000526">
@@ -5002,7 +5003,7 @@
     <rdfs:label xml:lang="pt-br">processo de chaveamento de fluxo</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001341"/>
     <rdfs:subClassOf rdf:nodeID="n001342"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which a discrete switching signal is generated when the flow rate of a process stream crosses a defined threshold.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000529">
@@ -5048,7 +5049,7 @@
     <rdfs:subClassOf rdf:nodeID="n001372"/>
     <rdfs:subClassOf rdf:nodeID="n001373"/>
     <rdfs:subClassOf rdf:nodeID="n001374"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which a fluid is conveyed from one location to another through containment structures while maintaining flow direction and preventing leakage.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000531">
@@ -5066,7 +5067,7 @@
     <rdfs:label xml:lang="pt-br">processo de direcionamento de fluido</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001377"/>
     <rdfs:subClassOf rdf:nodeID="n001378"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which fluid flow is guided or steered in a defined direction within a process system.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000533">
@@ -5088,7 +5089,7 @@
     <rdfs:subClassOf rdf:nodeID="n001384"/>
     <rdfs:subClassOf rdf:nodeID="n001385"/>
     <rdfs:subClassOf rdf:nodeID="n001386"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which a fluid stream is split and delivered to multiple downstream points in defined proportions.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000535">
@@ -5124,7 +5125,7 @@
     <rdfs:subClassOf rdf:nodeID="n001392"/>
     <rdfs:subClassOf rdf:nodeID="n001393"/>
     <rdfs:subClassOf rdf:nodeID="n001394"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which a fluid is conveyed over distance by exploiting pressure differentials, gravity, or energy imparted by petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000539">
@@ -5141,7 +5142,7 @@
     <rdfs:label xml:lang="en">force to electrical transduction process</rdfs:label>
     <rdfs:label xml:lang="pt-br">processo de transdução força-elétrica</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001397"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which a mechanical force or pressure is converted into a proportional electrical signal by petroleum production instrumentation.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000541">
@@ -5182,7 +5183,7 @@
     <rdfs:subClassOf rdf:nodeID="n001405"/>
     <rdfs:subClassOf rdf:nodeID="n001406"/>
     <rdfs:subClassOf rdf:nodeID="n001407"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000466"/>
     <skos:definition xml:lang="en">A detection process in which the presence or concentration of a specific gas or vapour in the surrounding atmosphere is sensed and identified.</skos:definition>
   </rdf:Description>
@@ -5192,7 +5193,7 @@
     <rdfs:label xml:lang="pt-br">processo de movimentação de gás</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001408"/>
     <rdfs:subClassOf rdf:nodeID="n001409"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which gas is transported from one location to another by imparting kinetic or pressure energy to the gas stream.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000546">
@@ -5219,7 +5220,7 @@
     <rdfs:label xml:lang="pt-br">processo de aquecimento</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001414"/>
     <rdfs:subClassOf rdf:nodeID="n001415"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
     <skos:definition xml:lang="en">A planned process in which thermal energy is transferred to a process stream or vessel to raise its temperature.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000549">
@@ -5229,7 +5230,7 @@
     <rdfs:subClassOf rdf:nodeID="n001416"/>
     <rdfs:subClassOf rdf:nodeID="n001417"/>
     <rdfs:subClassOf rdf:nodeID="n001418"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the moisture content or relative humidity of a gas stream is measured by petroleum production instrumentation.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000550">
@@ -5256,7 +5257,7 @@
     <rdfs:label xml:lang="pt-br">processo de indicação</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001423"/>
     <rdfs:subClassOf rdf:nodeID="n001424"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the value of a process variable is measured and displayed locally or transmitted to enable monitoring.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000554">
@@ -5276,7 +5277,7 @@
     <rdfs:label xml:lang="pt-br">processo de exibição de informação</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001427"/>
     <rdfs:subClassOf rdf:nodeID="n001428"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A PlannedProcess in which information is visually presented or exhibited by a display device to operators or users, enabling communication, monitoring, or decision-making activities.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000556">
@@ -5298,7 +5299,7 @@
     <rdfs:subClassOf rdf:nodeID="n001434"/>
     <rdfs:subClassOf rdf:nodeID="n001435"/>
     <rdfs:subClassOf rdf:nodeID="n001436"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which a fluid, chemical, or material is introduced into a process stream, vessel, or wellbore under controlled conditions.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000558">
@@ -5307,7 +5308,7 @@
     <rdfs:label xml:lang="pt-br">processo de instrumentação</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001437"/>
     <rdfs:subClassOf rdf:nodeID="n001438"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which physical process variables are measured, transmitted, or controlled by instrumentation to enable monitoring and regulation of petroleum production operations.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000559">
@@ -5355,7 +5356,7 @@
     <rdfs:label xml:lang="pt-br">processo de detecção de nível</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001448"/>
     <rdfs:subClassOf rdf:nodeID="n001449"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the fluid level within a vessel is detected as reaching a defined high or low threshold.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000564">
@@ -5367,7 +5368,7 @@
     <rdfs:subClassOf rdf:nodeID="n001452"/>
     <rdfs:subClassOf rdf:nodeID="n001453"/>
     <rdfs:subClassOf rdf:nodeID="n001454"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the fluid level within a vessel or container is measured and displayed locally or transmitted to a remote monitoring system.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000565">
@@ -5376,7 +5377,7 @@
     <rdfs:label xml:lang="pt-br">processo de medição e transmissão de nível</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001455"/>
     <rdfs:subClassOf rdf:nodeID="n001456"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the fluid level within a vessel is measured and the corresponding signal transmitted to a remote control or monitoring system.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000566">
@@ -5394,7 +5395,7 @@
     <rdfs:label xml:lang="pt-br">processo de chaveamento de nível</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001459"/>
     <rdfs:subClassOf rdf:nodeID="n001460"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which a discrete switching signal is generated when the fluid level in a vessel crosses a defined high or low threshold.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000568">
@@ -5428,13 +5429,6 @@
     <rdfs:label xml:lang="pt-br">superfície de encaixe</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
     <skos:definition xml:lang="en">A material artifact that constitutes a machined surface that mates with a corresponding surface of another component to form a seal or mechanical joint in petroleum production equipment.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000572">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">measurement process</rdfs:label>
-    <rdfs:label xml:lang="pt-br">processo de medição</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
-    <skos:definition xml:lang="en">A planned process in which the value of a physical or chemical quantity is determined and expressed as a numerical value with an associated unit.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000573">
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
@@ -5513,7 +5507,7 @@
     <rdfs:label xml:lang="pt-br">processo de mistura</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001489"/>
     <rdfs:subClassOf rdf:nodeID="n001490"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which two or more fluid streams or components are combined and blended to achieve a homogeneous mixture.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000580">
@@ -5598,7 +5592,7 @@
     <rdfs:label xml:lang="pt-br">processo de medição de sequência de fases</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001505"/>
     <rdfs:subClassOf rdf:nodeID="n001506"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the phase sequence of an alternating-current electrical supply is measured and verified by petroleum production instrumentation.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000590">
@@ -5675,7 +5669,7 @@
     <rdfs:label xml:lang="pt-br">processo de corte de tubulação</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001526"/>
     <rdfs:subClassOf rdf:nodeID="n001527"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A planned process in which a tubular string within a wellbore is mechanically cut to enable emergency well control.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000598">
@@ -5708,7 +5702,7 @@
     <rdfs:label xml:lang="en">position limit detection process</rdfs:label>
     <rdfs:label xml:lang="pt-br">processo de detecção de limite de posição</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001532"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the end-of-travel or open or closed position of a moving mechanical component is detected and signalled.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000602">
@@ -5717,7 +5711,7 @@
     <rdfs:label xml:lang="pt-br">processo de medição e transmissão de posição</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001533"/>
     <rdfs:subClassOf rdf:nodeID="n001534"/>
-    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000572"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A measurement process in which the position of a mechanical component is measured and the corresponding signal transmitted to a remote control or monitoring system.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000603">
@@ -5753,7 +5747,7 @@
     <rdfs:label xml:lang="pt-br">processo de contenção de pressão</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001537"/>
     <rdfs:subClassOf rdf:nodeID="n001538"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
     <skos:definition xml:lang="en">A planned process in which a fluid is held within a defined pressure boundary to prevent uncontrolled release to the environment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000606">
@@ -5772,7 +5766,7 @@
     <rdfs:subClassOf rdf:nodeID="n001541"/>
     <rdfs:subClassOf rdf:nodeID="n001542"/>
     <rdfs:subClassOf rdf:nodeID="n001543"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which process pressure is measured and both displayed locally and transmitted as a standardised signal to a remote monitoring system.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000608">
@@ -5781,7 +5775,7 @@
     <rdfs:label xml:lang="pt-br">processo de medição de pressão</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001544"/>
     <rdfs:subClassOf rdf:nodeID="n001545"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the absolute or gauge pressure of a process stream is measured and expressed as a quantitative value.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000609">
@@ -5790,7 +5784,7 @@
     <rdfs:label xml:lang="pt-br">processo de redução de pressão</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001546"/>
     <rdfs:subClassOf rdf:nodeID="n001547"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A planned process in which the pressure of a fluid is reduced from a higher upstream value to a controlled lower downstream value.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000610">
@@ -5801,7 +5795,7 @@
     <rdfs:subClassOf rdf:nodeID="n001549"/>
     <rdfs:subClassOf rdf:nodeID="n001550"/>
     <rdfs:subClassOf rdf:nodeID="n001551"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A planned process in which a flow path is automatically opened to discharge fluid when process pressure exceeds a defined set point, protecting equipment from overpressure.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000611">
@@ -5809,7 +5803,7 @@
     <rdfs:label xml:lang="en">pressure sensing process</rdfs:label>
     <rdfs:label xml:lang="pt-br">processo de sensoriamento de pressão</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001552"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which fluid pressure is detected and converted into a measurable electrical or pneumatic signal.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000612">
@@ -5834,7 +5828,7 @@
     <rdfs:label xml:lang="pt-br">processo de transmissão de pressão</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001555"/>
     <rdfs:subClassOf rdf:nodeID="n001556"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which a standardised signal representing a measured pressure value is transmitted to a remote control or monitoring system.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000615">
@@ -5865,7 +5859,7 @@
     <rdfs:subClassOf rdf:nodeID="n001571"/>
     <rdfs:subClassOf rdf:nodeID="n001572"/>
     <rdfs:subClassOf rdf:nodeID="n001573"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which mechanical energy is imparted to a fluid to increase its pressure, velocity, or elevation.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000617">
@@ -5882,7 +5876,7 @@
     <rdfs:subClassOf rdf:nodeID="n001574"/>
     <rdfs:subClassOf rdf:nodeID="n001575"/>
     <rdfs:subClassOf rdf:nodeID="n001576"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A planned process in which pressure within a process system is discharged at an accelerated rate to a safe destination in an emergency.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000619">
@@ -5923,7 +5917,7 @@
     <rdfs:subClassOf rdf:nodeID="n001587"/>
     <rdfs:subClassOf rdf:nodeID="n001588"/>
     <rdfs:subClassOf rdf:nodeID="n001589"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000008"/>
     <skos:definition xml:lang="en">A planned process in which liquid at the base of a distillation column is partially vaporised by the supply of heat to drive vapour upward through the column.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000623">
@@ -5955,7 +5949,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">rotational energy transfer process</rdfs:label>
     <rdfs:label xml:lang="pt-br">processo de transferência de energia rotacional</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A PlannedProcess in which a rotor transfers mechanical energy through its rotational motion, enabling the operation of rotating machinery such as motors, compressors, pumps, and turbines.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000627">
@@ -6048,7 +6042,7 @@
     <rdfs:subClassOf rdf:nodeID="n001618"/>
     <rdfs:subClassOf rdf:nodeID="n001619"/>
     <rdfs:subClassOf rdf:nodeID="n001620"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
     <skos:definition xml:lang="en">A planned process in which a heterogeneous mixture is divided into two or more fractions of differing composition by exploiting differences in physical properties.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000636">
@@ -6066,7 +6060,7 @@
     <rdfs:label xml:lang="pt-br">processo de agitação mecânica</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001623"/>
     <rdfs:subClassOf rdf:nodeID="n001624"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
     <skos:definition xml:lang="en">A planned process in which oscillating mechanical motion is applied to a screen or separator to promote the separation of solids from a fluid.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000638">
@@ -6116,7 +6110,7 @@
     <rdfs:label xml:lang="pt-br">processo de armazenamento de sólidos a granel</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001631"/>
     <rdfs:subClassOf rdf:nodeID="n001632"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
     <skos:definition xml:lang="en">A planned process in which solid bulk materials such as catalyst, proppant, or chemical reagents are contained and held for subsequent use.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000644">
@@ -6134,7 +6128,7 @@
     <rdfs:label xml:lang="pt-br">processo de armazenamento e distribuição de sólidos</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001635"/>
     <rdfs:subClassOf rdf:nodeID="n001636"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
     <skos:definition xml:lang="en">A planned process in which solid materials are stored and dispensed in metered quantities into a process stream.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000646">
@@ -6188,7 +6182,7 @@
     <rdfs:subClassOf rdf:nodeID="n001644"/>
     <rdfs:subClassOf rdf:nodeID="n001645"/>
     <rdfs:subClassOf rdf:nodeID="n001646"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
     <skos:definition xml:lang="en">A planned process in which a fluid or material is held within a contained space for a defined period before further processing or distribution.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000652">
@@ -6285,7 +6279,7 @@
     <rdfs:label xml:lang="pt-br">processo de indicação de temperatura</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001662"/>
     <rdfs:subClassOf rdf:nodeID="n001663"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the temperature of a process stream or equipment surface is measured and displayed locally or transmitted to a remote monitoring system.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000663">
@@ -6294,7 +6288,7 @@
     <rdfs:label xml:lang="pt-br">processo de medição e transmissão de temperatura</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001664"/>
     <rdfs:subClassOf rdf:nodeID="n001665"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which process temperature is measured and the corresponding signal transmitted to a remote control or monitoring system.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000666">
@@ -6302,7 +6296,7 @@
     <rdfs:label xml:lang="en">temperature sensing process</rdfs:label>
     <rdfs:label xml:lang="pt-br">processo de sensoriamento de temperatura</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001666"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which thermal energy is detected and converted into a measurable signal representing the temperature of a process stream or component.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000667">
@@ -6366,7 +6360,7 @@
     <rdfs:label xml:lang="pt-br">processo de transdução</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001679"/>
     <rdfs:subClassOf rdf:nodeID="n001680"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which one form of physical signal or energy is converted into another form suitable for measurement or transmission.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000674">
@@ -6468,7 +6462,7 @@
     <rdfs:label xml:lang="pt-br">processo de medição e transmissão de vibração</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001697"/>
     <rdfs:subClassOf rdf:nodeID="n001698"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which the amplitude or frequency of mechanical vibration is measured and the corresponding signal transmitted to a remote monitoring system.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000686">
@@ -6508,7 +6502,7 @@
     <rdfs:subClassOf rdf:nodeID="n001706"/>
     <rdfs:subClassOf rdf:nodeID="n001707"/>
     <rdfs:subClassOf rdf:nodeID="n001708"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007"/>
     <skos:definition xml:lang="en">A planned process in which waste gases, liquids, or solids are thermally destroyed by controlled combustion in petroleum production equipment.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000690">
@@ -6517,7 +6511,7 @@
     <rdfs:label xml:lang="pt-br">processo de queima de gás residual</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001709"/>
     <rdfs:subClassOf rdf:nodeID="n001710"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007"/>
     <skos:definition xml:lang="en">A planned process in which surplus or waste gas is combusted in a flare or incinerator to destroy it safely and prevent atmospheric venting.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000691">
@@ -6537,7 +6531,7 @@
     <rdfs:label xml:lang="pt-br">processo de descarte de gás residual</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001715"/>
     <rdfs:subClassOf rdf:nodeID="n001716"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007"/>
     <skos:definition xml:lang="en">A planned process in which waste or surplus gas streams are safely disposed of by combustion, venting, or re-injection into a subsurface formation.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000693">
@@ -6555,7 +6549,7 @@
     <rdfs:label xml:lang="pt-br">processo de controle de fluido de poço</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001719"/>
     <rdfs:subClassOf rdf:nodeID="n001720"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A planned process in which the flow of fluids from a well is regulated to maintain production targets and prevent uncontrolled release.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000695">
@@ -6573,7 +6567,7 @@
     <rdfs:label xml:lang="pt-br">processo de controle de superfície do poço</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001723"/>
     <rdfs:subClassOf rdf:nodeID="n001724"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A planned process in which wellbore conditions are controlled from surface to manage production flow, monitor well integrity, and enable intervention operations.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000697">
@@ -6599,7 +6593,7 @@
     <rdfs:subClassOf rdf:nodeID="n001727"/>
     <rdfs:subClassOf rdf:nodeID="n001728"/>
     <rdfs:subClassOf rdf:nodeID="n001729"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which measurement tools are lowered into a well on a wireline cable to acquire subsurface formation and wellbore data.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000700">
@@ -6615,7 +6609,7 @@
     <rdfs:label xml:lang="en">surface sealing process</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001730"/>
     <rdfs:subClassOf rdf:nodeID="n001731"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A PlannedProcess in which the flow of fluid through a conduit is regulated, directed, or interrupted by mechanical means, typically involving the movement of closure elements against seating surfaces to modify flow passages.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000702">
@@ -6631,7 +6625,7 @@
     <rdfs:label xml:lang="en">extended surface heat transfer process</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001734"/>
     <rdfs:subClassOf rdf:nodeID="n001735"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
     <skos:definition xml:lang="en">A heat transfer process in which thermal energy is exchanged between two fluids across a tube surface whose effective area has been increased by fins to enhance the rate of heat transfer.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000704">
@@ -6647,7 +6641,7 @@
     <rdfs:label xml:lang="en">flowline isolation process</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001738"/>
     <rdfs:subClassOf rdf:nodeID="n001739"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A planned process in which flow between a wellbore and a lateral flowline is shut off at a wellhead or Christmas tree.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000706">
@@ -6679,7 +6673,7 @@
     <rdfs:label xml:lang="en">multipath fluid conveyance process</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001746"/>
     <rdfs:subClassOf rdf:nodeID="n001747"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which fluid is conveyed simultaneously through multiple parallel flow paths within a single tube or cable assembly.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000710">
@@ -6695,7 +6689,7 @@
     <rdfs:label xml:lang="en">primary well isolation process</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001750"/>
     <rdfs:subClassOf rdf:nodeID="n001751"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
     <skos:definition xml:lang="en">A planned process in which flow between a wellbore and the surface production system is fully shut off at the primary isolation point of a wellhead or Christmas tree.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000712">
@@ -6711,7 +6705,7 @@
     <rdfs:label xml:lang="en">property measurement process</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001754"/>
     <rdfs:subClassOf rdf:nodeID="n001755"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
     <skos:definition xml:lang="en">A planned process in which a physical or chemical property of an entity is sensed and transduced into a measurement result, independently of the equipment handling that result.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000714">
@@ -6727,7 +6721,7 @@
     <rdfs:label xml:lang="en">reciprocating displacement process</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001758"/>
     <rdfs:subClassOf rdf:nodeID="n001759"/>
-    <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+    <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
     <skos:definition xml:lang="en">A planned process in which a cylinder's internal volume is cyclically changed by reciprocating linear motion to displace and pressurise a fluid.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000716">
@@ -15485,11 +15479,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001804">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
-    <rdf:rest rdf:nodeID="n001826"/>
+    <rdf:rest rdf:nodeID="n001816"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001805">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
-    <rdf:rest rdf:nodeID="n002358"/>
+    <rdf:rest rdf:nodeID="n002356"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001806">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
@@ -15585,11 +15579,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001829">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
-    <rdf:rest rdf:nodeID="n001788"/>
+    <rdf:rest rdf:nodeID="n001799"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001830">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
-    <rdf:rest rdf:nodeID="n002359"/>
+    <rdf:rest rdf:nodeID="n002355"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001831">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074"/>
@@ -15609,11 +15603,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001835">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
-    <rdf:rest rdf:nodeID="n001957"/>
+    <rdf:rest rdf:nodeID="n001956"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001836">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
-    <rdf:rest rdf:nodeID="n002003"/>
+    <rdf:rest rdf:nodeID="n002004"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001837">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
@@ -15657,15 +15651,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001847">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <rdf:rest rdf:nodeID="n001790"/>
+    <rdf:rest rdf:nodeID="n001800"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001848">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <rdf:rest rdf:nodeID="n001815"/>
+    <rdf:rest rdf:nodeID="n001826"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001849">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <rdf:rest rdf:nodeID="n002356"/>
+    <rdf:rest rdf:nodeID="n002358"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001850">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
@@ -15705,15 +15699,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001859">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
-    <rdf:rest rdf:nodeID="n001799"/>
+    <rdf:rest rdf:nodeID="n001785"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001860">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
-    <rdf:rest rdf:nodeID="n001814"/>
+    <rdf:rest rdf:nodeID="n001817"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001861">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
-    <rdf:rest rdf:nodeID="n001896"/>
+    <rdf:rest rdf:nodeID="n001886"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001862">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
@@ -15757,11 +15751,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001872">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
-    <rdf:rest rdf:nodeID="n002280"/>
+    <rdf:rest rdf:nodeID="n002278"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001873">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
-    <rdf:rest rdf:nodeID="n001884"/>
+    <rdf:rest rdf:nodeID="n001894"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001874">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
@@ -15785,7 +15779,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001879">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
-    <rdf:rest rdf:nodeID="n001946"/>
+    <rdf:rest rdf:nodeID="n001948"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001880">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
@@ -15861,7 +15855,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001898">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
-    <rdf:rest rdf:nodeID="n002279"/>
+    <rdf:rest rdf:nodeID="n002283"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001899">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
@@ -15881,7 +15875,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001903">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
-    <rdf:rest rdf:nodeID="n001912"/>
+    <rdf:rest rdf:nodeID="n001911"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001904">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
@@ -15901,11 +15895,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001908">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
-    <rdf:rest rdf:nodeID="n001978"/>
+    <rdf:rest rdf:nodeID="n001979"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001909">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
-    <rdf:rest rdf:nodeID="n001919"/>
+    <rdf:rest rdf:nodeID="n001917"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001910">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000098"/>
@@ -15921,11 +15915,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001913">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
-    <rdf:rest rdf:nodeID="n001900"/>
+    <rdf:rest rdf:nodeID="n001899"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001914">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
-    <rdf:rest rdf:nodeID="n001975"/>
+    <rdf:rest rdf:nodeID="n001973"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001915">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
@@ -15949,11 +15943,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001920">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
-    <rdf:rest rdf:nodeID="n001906"/>
+    <rdf:rest rdf:nodeID="n001905"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001921">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
-    <rdf:rest rdf:nodeID="n001976"/>
+    <rdf:rest rdf:nodeID="n001978"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001922">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
@@ -15981,7 +15975,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001928">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102"/>
-    <rdf:rest rdf:nodeID="n002325"/>
+    <rdf:rest rdf:nodeID="n002326"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001929">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
@@ -16001,7 +15995,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001933">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104"/>
-    <rdf:rest rdf:nodeID="n002030"/>
+    <rdf:rest rdf:nodeID="n002028"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001934">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000104"/>
@@ -16017,15 +16011,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001937">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000107"/>
-    <rdf:rest rdf:nodeID="n002150"/>
+    <rdf:rest rdf:nodeID="n002146"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001938">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000107"/>
-    <rdf:rest rdf:nodeID="n001852"/>
+    <rdf:rest rdf:nodeID="n001854"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001939">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
-    <rdf:rest rdf:nodeID="n001904"/>
+    <rdf:rest rdf:nodeID="n001907"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001940">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
@@ -16033,7 +16027,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001941">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
-    <rdf:rest rdf:nodeID="n001916"/>
+    <rdf:rest rdf:nodeID="n001918"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001942">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
@@ -16045,7 +16039,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001944">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000112"/>
-    <rdf:rest rdf:nodeID="n002028"/>
+    <rdf:rest rdf:nodeID="n002030"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001945">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
@@ -16073,7 +16067,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001951">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
-    <rdf:rest rdf:nodeID="n001876"/>
+    <rdf:rest rdf:nodeID="n001874"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001952">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000114"/>
@@ -16085,11 +16079,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001954">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
-    <rdf:rest rdf:nodeID="n001798"/>
+    <rdf:rest rdf:nodeID="n001802"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001955">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
-    <rdf:rest rdf:nodeID="n001824"/>
+    <rdf:rest rdf:nodeID="n001823"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001956">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000116"/>
@@ -16101,7 +16095,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001958">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000117"/>
-    <rdf:rest rdf:nodeID="n001969"/>
+    <rdf:rest rdf:nodeID="n001962"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001959">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
@@ -16153,11 +16147,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001971">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
-    <rdf:rest rdf:nodeID="n002090"/>
+    <rdf:rest rdf:nodeID="n002091"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001972">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
-    <rdf:rest rdf:nodeID="n002012"/>
+    <rdf:rest rdf:nodeID="n002013"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001973">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119"/>
@@ -16189,11 +16183,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001980">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
-    <rdf:rest rdf:nodeID="n001905"/>
+    <rdf:rest rdf:nodeID="n001906"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001981">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
-    <rdf:rest rdf:nodeID="n001918"/>
+    <rdf:rest rdf:nodeID="n001916"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001982">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
@@ -16201,7 +16195,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001983">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000121"/>
-    <rdf:rest rdf:nodeID="n001882"/>
+    <rdf:rest rdf:nodeID="n001890"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001984">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
@@ -16213,15 +16207,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001986">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
-    <rdf:rest rdf:nodeID="n001899"/>
+    <rdf:rest rdf:nodeID="n001900"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001987">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
-    <rdf:rest rdf:nodeID="n001911"/>
+    <rdf:rest rdf:nodeID="n001912"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001988">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
-    <rdf:rest rdf:nodeID="n001973"/>
+    <rdf:rest rdf:nodeID="n001975"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001989">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000123"/>
@@ -16249,11 +16243,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001995">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124"/>
-    <rdf:rest rdf:nodeID="n002165"/>
+    <rdf:rest rdf:nodeID="n002166"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001996">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
-    <rdf:rest rdf:nodeID="n002086"/>
+    <rdf:rest rdf:nodeID="n002088"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001997">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
@@ -16261,7 +16255,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001998">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
-    <rdf:rest rdf:nodeID="n002232"/>
+    <rdf:rest rdf:nodeID="n002233"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001999">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
@@ -16289,15 +16283,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002005">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
-    <rdf:rest rdf:nodeID="n002056"/>
+    <rdf:rest rdf:nodeID="n002058"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002006">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
-    <rdf:rest rdf:nodeID="n002088"/>
+    <rdf:rest rdf:nodeID="n002089"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002007">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
-    <rdf:rest rdf:nodeID="n002018"/>
+    <rdf:rest rdf:nodeID="n002020"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002008">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
@@ -16305,15 +16299,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002009">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
-    <rdf:rest rdf:nodeID="n002048"/>
+    <rdf:rest rdf:nodeID="n002049"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002010">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130"/>
-    <rdf:rest rdf:nodeID="n002235"/>
+    <rdf:rest rdf:nodeID="n002234"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002011">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130"/>
-    <rdf:rest rdf:nodeID="n002051"/>
+    <rdf:rest rdf:nodeID="n002047"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002012">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
@@ -16361,23 +16355,23 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002023">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
-    <rdf:rest rdf:nodeID="n002089"/>
+    <rdf:rest rdf:nodeID="n002084"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002024">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
-    <rdf:rest rdf:nodeID="n001961"/>
+    <rdf:rest rdf:nodeID="n001959"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002025">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
-    <rdf:rest rdf:nodeID="n001968"/>
+    <rdf:rest rdf:nodeID="n001961"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002026">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
-    <rdf:rest rdf:nodeID="n002080"/>
+    <rdf:rest rdf:nodeID="n002085"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002027">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
-    <rdf:rest rdf:nodeID="n002059"/>
+    <rdf:rest rdf:nodeID="n002064"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002028">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133"/>
@@ -16401,15 +16395,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002033">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
-    <rdf:rest rdf:nodeID="n002301"/>
+    <rdf:rest rdf:nodeID="n002300"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002034">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
-    <rdf:rest rdf:nodeID="n001855"/>
+    <rdf:rest rdf:nodeID="n001853"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002035">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000137"/>
-    <rdf:rest rdf:nodeID="n002234"/>
+    <rdf:rest rdf:nodeID="n002232"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002036">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000138"/>
@@ -16429,15 +16423,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002040">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
-    <rdf:rest rdf:nodeID="n001907"/>
+    <rdf:rest rdf:nodeID="n001904"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002041">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
-    <rdf:rest rdf:nodeID="n001979"/>
+    <rdf:rest rdf:nodeID="n001976"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002042">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
-    <rdf:rest rdf:nodeID="n001917"/>
+    <rdf:rest rdf:nodeID="n001919"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002043">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
@@ -16449,11 +16443,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002045">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
-    <rdf:rest rdf:nodeID="n001956"/>
+    <rdf:rest rdf:nodeID="n001957"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002046">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
-    <rdf:rest rdf:nodeID="n002004"/>
+    <rdf:rest rdf:nodeID="n002003"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002047">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
@@ -16477,7 +16471,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002052">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
-    <rdf:rest rdf:nodeID="n002053"/>
+    <rdf:rest rdf:nodeID="n002061"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002053">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
@@ -16529,27 +16523,27 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002065">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
-    <rdf:rest rdf:nodeID="n001967"/>
+    <rdf:rest rdf:nodeID="n001960"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002066">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
-    <rdf:rest rdf:nodeID="n002091"/>
+    <rdf:rest rdf:nodeID="n002081"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002067">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
-    <rdf:rest rdf:nodeID="n002021"/>
+    <rdf:rest rdf:nodeID="n002015"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002068">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000145"/>
-    <rdf:rest rdf:nodeID="n001931"/>
+    <rdf:rest rdf:nodeID="n001930"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002069">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000146"/>
-    <rdf:rest rdf:nodeID="n002237"/>
+    <rdf:rest rdf:nodeID="n002236"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002070">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000148"/>
-    <rdf:rest rdf:nodeID="n001930"/>
+    <rdf:rest rdf:nodeID="n001931"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002071">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000149"/>
@@ -16569,15 +16563,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002075">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
-    <rdf:rest rdf:nodeID="n001886"/>
+    <rdf:rest rdf:nodeID="n001893"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002076">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
-    <rdf:rest rdf:nodeID="n001789"/>
+    <rdf:rest rdf:nodeID="n001794"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002077">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
-    <rdf:rest rdf:nodeID="n001808"/>
+    <rdf:rest rdf:nodeID="n001807"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002078">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000153"/>
@@ -16649,19 +16643,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002095">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
-    <rdf:rest rdf:nodeID="n002058"/>
+    <rdf:rest rdf:nodeID="n002057"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002096">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
-    <rdf:rest rdf:nodeID="n001960"/>
+    <rdf:rest rdf:nodeID="n001966"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002097">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
-    <rdf:rest rdf:nodeID="n002020"/>
+    <rdf:rest rdf:nodeID="n002017"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002098">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000156"/>
-    <rdf:rest rdf:nodeID="n002111"/>
+    <rdf:rest rdf:nodeID="n002114"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002099">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
@@ -16669,47 +16663,47 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002100">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
-    <rdf:rest rdf:nodeID="n002113"/>
+    <rdf:rest rdf:nodeID="n002111"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002101">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
-    <rdf:rest rdf:nodeID="n001840"/>
+    <rdf:rest rdf:nodeID="n001841"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002102">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
-    <rdf:rest rdf:nodeID="n001793"/>
+    <rdf:rest rdf:nodeID="n001790"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002103">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
-    <rdf:rest rdf:nodeID="n001825"/>
+    <rdf:rest rdf:nodeID="n001827"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002104">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
-    <rdf:rest rdf:nodeID="n002060"/>
+    <rdf:rest rdf:nodeID="n002054"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002105">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
-    <rdf:rest rdf:nodeID="n002092"/>
+    <rdf:rest rdf:nodeID="n002094"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002106">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
-    <rdf:rest rdf:nodeID="n001964"/>
+    <rdf:rest rdf:nodeID="n001968"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002107">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
-    <rdf:rest rdf:nodeID="n001891"/>
+    <rdf:rest rdf:nodeID="n001889"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002108">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
-    <rdf:rest rdf:nodeID="n001786"/>
+    <rdf:rest rdf:nodeID="n001792"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002109">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
-    <rdf:rest rdf:nodeID="n001806"/>
+    <rdf:rest rdf:nodeID="n001814"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002110">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
-    <rdf:rest rdf:nodeID="n002357"/>
+    <rdf:rest rdf:nodeID="n002359"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002111">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
@@ -16729,7 +16723,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002115">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000208"/>
-    <rdf:rest rdf:nodeID="n002148"/>
+    <rdf:rest rdf:nodeID="n002142"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002116">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000209"/>
@@ -16737,23 +16731,23 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002117">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000210"/>
-    <rdf:rest rdf:nodeID="n002094"/>
+    <rdf:rest rdf:nodeID="n002087"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002118">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n002054"/>
+    <rdf:rest rdf:nodeID="n002053"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002119">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n002083"/>
+    <rdf:rest rdf:nodeID="n002093"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002120">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n001962"/>
+    <rdf:rest rdf:nodeID="n001969"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002121">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n002014"/>
+    <rdf:rest rdf:nodeID="n002016"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002122">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
@@ -16761,35 +16755,35 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002123">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
-    <rdf:rest rdf:nodeID="n001795"/>
+    <rdf:rest rdf:nodeID="n001786"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002124">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
-    <rdf:rest rdf:nodeID="n001813"/>
+    <rdf:rest rdf:nodeID="n001825"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002125">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
-    <rdf:rest rdf:nodeID="n001888"/>
+    <rdf:rest rdf:nodeID="n001895"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002126">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
-    <rdf:rest rdf:nodeID="n001842"/>
+    <rdf:rest rdf:nodeID="n001838"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002127">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
-    <rdf:rest rdf:nodeID="n001791"/>
+    <rdf:rest rdf:nodeID="n001801"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002128">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
-    <rdf:rest rdf:nodeID="n001897"/>
+    <rdf:rest rdf:nodeID="n001892"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002129">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
-    <rdf:rest rdf:nodeID="n001821"/>
+    <rdf:rest rdf:nodeID="n001822"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002130">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
-    <rdf:rest rdf:nodeID="n001890"/>
+    <rdf:rest rdf:nodeID="n001897"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002131">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
@@ -16797,7 +16791,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002132">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
-    <rdf:rest rdf:nodeID="n001819"/>
+    <rdf:rest rdf:nodeID="n001820"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002133">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217"/>
@@ -16817,7 +16811,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002137">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217"/>
-    <rdf:rest rdf:nodeID="n002166"/>
+    <rdf:rest rdf:nodeID="n002165"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002138">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000221"/>
@@ -16873,7 +16867,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002151">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
-    <rdf:rest rdf:nodeID="n002282"/>
+    <rdf:rest rdf:nodeID="n002279"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002152">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
@@ -16885,15 +16879,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002154">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
-    <rdf:rest rdf:nodeID="n001863"/>
+    <rdf:rest rdf:nodeID="n001866"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002155">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
-    <rdf:rest rdf:nodeID="n001883"/>
+    <rdf:rest rdf:nodeID="n001896"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002156">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
-    <rdf:rest rdf:nodeID="n001809"/>
+    <rdf:rest rdf:nodeID="n001811"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002157">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000229"/>
@@ -16905,19 +16899,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002159">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
-    <rdf:rest rdf:nodeID="n002081"/>
+    <rdf:rest rdf:nodeID="n002090"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002160">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
-    <rdf:rest rdf:nodeID="n002064"/>
+    <rdf:rest rdf:nodeID="n002059"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002161">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
-    <rdf:rest rdf:nodeID="n001963"/>
+    <rdf:rest rdf:nodeID="n001964"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002162">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
-    <rdf:rest rdf:nodeID="n002019"/>
+    <rdf:rest rdf:nodeID="n002018"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002163">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000234"/>
@@ -16937,15 +16931,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002167">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000235"/>
-    <rdf:rest rdf:nodeID="n001993"/>
+    <rdf:rest rdf:nodeID="n001994"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002168">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000236"/>
-    <rdf:rest rdf:nodeID="n001994"/>
+    <rdf:rest rdf:nodeID="n001991"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002169">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000236"/>
-    <rdf:rest rdf:nodeID="n002133"/>
+    <rdf:rest rdf:nodeID="n002135"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002170">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000238"/>
@@ -16953,19 +16947,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002171">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000240"/>
-    <rdf:rest rdf:nodeID="n001857"/>
+    <rdf:rest rdf:nodeID="n001856"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002172">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000240"/>
-    <rdf:rest rdf:nodeID="n002147"/>
+    <rdf:rest rdf:nodeID="n002143"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002173">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000241"/>
-    <rdf:rest rdf:nodeID="n002278"/>
+    <rdf:rest rdf:nodeID="n002282"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002174">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000241"/>
-    <rdf:rest rdf:nodeID="n001991"/>
+    <rdf:rest rdf:nodeID="n001993"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002175">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
@@ -16973,19 +16967,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002176">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
-    <rdf:rest rdf:nodeID="n001785"/>
+    <rdf:rest rdf:nodeID="n001787"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002177">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
-    <rdf:rest rdf:nodeID="n001827"/>
+    <rdf:rest rdf:nodeID="n001815"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002178">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000244"/>
-    <rdf:rest rdf:nodeID="n001854"/>
+    <rdf:rest rdf:nodeID="n001857"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002179">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000244"/>
-    <rdf:rest rdf:nodeID="n002144"/>
+    <rdf:rest rdf:nodeID="n002149"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002180">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
@@ -16997,27 +16991,27 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002182">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
-    <rdf:rest rdf:nodeID="n002236"/>
+    <rdf:rest rdf:nodeID="n002237"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002183">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
-    <rdf:rest rdf:nodeID="n002049"/>
+    <rdf:rest rdf:nodeID="n002050"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002184">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
-    <rdf:rest rdf:nodeID="n002084"/>
+    <rdf:rest rdf:nodeID="n002082"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002185">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000246"/>
-    <rdf:rest rdf:nodeID="n002114"/>
+    <rdf:rest rdf:nodeID="n002113"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002186">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
-    <rdf:rest rdf:nodeID="n002233"/>
+    <rdf:rest rdf:nodeID="n002235"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002187">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
-    <rdf:rest rdf:nodeID="n002050"/>
+    <rdf:rest rdf:nodeID="n002051"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002188">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
@@ -17029,7 +17023,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002190">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000249"/>
-    <rdf:rest rdf:nodeID="n002252"/>
+    <rdf:rest rdf:nodeID="n002251"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002191">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000250"/>
@@ -17053,11 +17047,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002196">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000255"/>
-    <rdf:rest rdf:nodeID="n001856"/>
+    <rdf:rest rdf:nodeID="n001850"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002197">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000255"/>
-    <rdf:rest rdf:nodeID="n002142"/>
+    <rdf:rest rdf:nodeID="n002145"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002198">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
@@ -17065,19 +17059,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002199">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
-    <rdf:rest rdf:nodeID="n001853"/>
+    <rdf:rest rdf:nodeID="n001851"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002200">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
-    <rdf:rest rdf:nodeID="n002149"/>
+    <rdf:rest rdf:nodeID="n002144"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002201">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000259"/>
-    <rdf:rest rdf:nodeID="n001924"/>
+    <rdf:rest rdf:nodeID="n001926"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002202">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000259"/>
-    <rdf:rest rdf:nodeID="n002326"/>
+    <rdf:rest rdf:nodeID="n002325"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002203">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
@@ -17089,7 +17083,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002205">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
-    <rdf:rest rdf:nodeID="n002315"/>
+    <rdf:rest rdf:nodeID="n002316"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002206">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
@@ -17097,15 +17091,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002207">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000261"/>
-    <rdf:rest rdf:nodeID="n001945"/>
+    <rdf:rest rdf:nodeID="n001947"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002208">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000261"/>
-    <rdf:rest rdf:nodeID="n001874"/>
+    <rdf:rest rdf:nodeID="n001875"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002209">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264"/>
-    <rdf:rest rdf:nodeID="n001949"/>
+    <rdf:rest rdf:nodeID="n001950"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002210">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264"/>
@@ -17121,7 +17115,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002213">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000268"/>
-    <rdf:rest rdf:nodeID="n002146"/>
+    <rdf:rest rdf:nodeID="n002140"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002214">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000268"/>
@@ -17145,51 +17139,51 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002219">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
-    <rdf:rest rdf:nodeID="n001838"/>
+    <rdf:rest rdf:nodeID="n001842"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002220">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
-    <rdf:rest rdf:nodeID="n001792"/>
+    <rdf:rest rdf:nodeID="n001789"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002221">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n001862"/>
+    <rdf:rest rdf:nodeID="n001865"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002222">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n001889"/>
+    <rdf:rest rdf:nodeID="n001891"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002223">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n001817"/>
+    <rdf:rest rdf:nodeID="n001819"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002224">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n001783"/>
+    <rdf:rest rdf:nodeID="n001797"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002225">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
-    <rdf:rest rdf:nodeID="n001881"/>
+    <rdf:rest rdf:nodeID="n001884"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002226">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
-    <rdf:rest rdf:nodeID="n001866"/>
+    <rdf:rest rdf:nodeID="n001871"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002227">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
-    <rdf:rest rdf:nodeID="n001823"/>
+    <rdf:rest rdf:nodeID="n001812"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002228">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
-    <rdf:rest rdf:nodeID="n001794"/>
+    <rdf:rest rdf:nodeID="n001793"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002229">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
-    <rdf:rest rdf:nodeID="n001850"/>
+    <rdf:rest rdf:nodeID="n001855"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002230">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
-    <rdf:rest rdf:nodeID="n002140"/>
+    <rdf:rest rdf:nodeID="n002147"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002231">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
@@ -17221,15 +17215,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002238">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
-    <rdf:rest rdf:nodeID="n002061"/>
+    <rdf:rest rdf:nodeID="n002056"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002239">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
-    <rdf:rest rdf:nodeID="n002085"/>
+    <rdf:rest rdf:nodeID="n002092"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002240">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
-    <rdf:rest rdf:nodeID="n002017"/>
+    <rdf:rest rdf:nodeID="n002012"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002241">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000279"/>
@@ -17249,7 +17243,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002245">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000283"/>
-    <rdf:rest rdf:nodeID="n002139"/>
+    <rdf:rest rdf:nodeID="n002150"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002246">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000285"/>
@@ -17261,15 +17255,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002248">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
-    <rdf:rest rdf:nodeID="n001846"/>
+    <rdf:rest rdf:nodeID="n001845"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002249">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
-    <rdf:rest rdf:nodeID="n001796"/>
+    <rdf:rest rdf:nodeID="n001788"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002250">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
-    <rdf:rest rdf:nodeID="n001828"/>
+    <rdf:rest rdf:nodeID="n001809"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002251">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000289"/>
@@ -17285,7 +17279,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002254">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000292"/>
-    <rdf:rest rdf:nodeID="n002143"/>
+    <rdf:rest rdf:nodeID="n002148"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002255">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000292"/>
@@ -17305,19 +17299,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002259">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000298"/>
-    <rdf:rest rdf:nodeID="n002203"/>
+    <rdf:rest rdf:nodeID="n002204"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002260">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000298"/>
-    <rdf:rest rdf:nodeID="n002316"/>
+    <rdf:rest rdf:nodeID="n002315"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002261">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000299"/>
-    <rdf:rest rdf:nodeID="n001950"/>
+    <rdf:rest rdf:nodeID="n001949"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002262">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000300"/>
-    <rdf:rest rdf:nodeID="n001927"/>
+    <rdf:rest rdf:nodeID="n001924"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002263">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
@@ -17333,23 +17327,23 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002266">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
-    <rdf:rest rdf:nodeID="n002145"/>
+    <rdf:rest rdf:nodeID="n002139"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002267">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000303"/>
-    <rdf:rest rdf:nodeID="n002135"/>
+    <rdf:rest rdf:nodeID="n002133"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002268">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
-    <rdf:rest rdf:nodeID="n001812"/>
+    <rdf:rest rdf:nodeID="n001806"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002269">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
-    <rdf:rest rdf:nodeID="n001787"/>
+    <rdf:rest rdf:nodeID="n001783"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002270">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
-    <rdf:rest rdf:nodeID="n001892"/>
+    <rdf:rest rdf:nodeID="n001885"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002271">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000309"/>
@@ -17357,27 +17351,27 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002272">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
-    <rdf:rest rdf:nodeID="n001965"/>
+    <rdf:rest rdf:nodeID="n001963"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002273">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
-    <rdf:rest rdf:nodeID="n002087"/>
+    <rdf:rest rdf:nodeID="n002086"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002274">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
-    <rdf:rest rdf:nodeID="n002015"/>
+    <rdf:rest rdf:nodeID="n002021"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002275">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
-    <rdf:rest rdf:nodeID="n001800"/>
+    <rdf:rest rdf:nodeID="n001803"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002276">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
-    <rdf:rest rdf:nodeID="n001820"/>
+    <rdf:rest rdf:nodeID="n001813"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002277">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
-    <rdf:rest rdf:nodeID="n001887"/>
+    <rdf:rest rdf:nodeID="n001883"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002278">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
@@ -17405,15 +17399,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002284">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
-    <rdf:rest rdf:nodeID="n001868"/>
+    <rdf:rest rdf:nodeID="n001862"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002285">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
-    <rdf:rest rdf:nodeID="n001801"/>
+    <rdf:rest rdf:nodeID="n001798"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002286">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
-    <rdf:rest rdf:nodeID="n001818"/>
+    <rdf:rest rdf:nodeID="n001821"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002287">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000315"/>
@@ -17421,7 +17415,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002288">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000315"/>
-    <rdf:rest rdf:nodeID="n002355"/>
+    <rdf:rest rdf:nodeID="n002357"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002289">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000316"/>
@@ -17429,7 +17423,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002290">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000316"/>
-    <rdf:rest rdf:nodeID="n001839"/>
+    <rdf:rest rdf:nodeID="n001840"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002291">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000318"/>
@@ -17453,11 +17447,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002296">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
-    <rdf:rest rdf:nodeID="n001871"/>
+    <rdf:rest rdf:nodeID="n001869"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002297">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
-    <rdf:rest rdf:nodeID="n001845"/>
+    <rdf:rest rdf:nodeID="n001846"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002298">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
@@ -17485,7 +17479,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002304">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
-    <rdf:rest rdf:nodeID="n001803"/>
+    <rdf:rest rdf:nodeID="n001795"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002305">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
@@ -17521,11 +17515,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002313">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326"/>
-    <rdf:rest rdf:nodeID="n001865"/>
+    <rdf:rest rdf:nodeID="n001863"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002314">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326"/>
-    <rdf:rest rdf:nodeID="n001885"/>
+    <rdf:rest rdf:nodeID="n001881"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002315">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
@@ -17537,7 +17531,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002317">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
-    <rdf:rest rdf:nodeID="n002204"/>
+    <rdf:rest rdf:nodeID="n002203"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002318">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
@@ -17549,23 +17543,23 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002320">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000328"/>
-    <rdf:rest rdf:nodeID="n001948"/>
+    <rdf:rest rdf:nodeID="n001945"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002321">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n002082"/>
+    <rdf:rest rdf:nodeID="n002083"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002322">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n002057"/>
+    <rdf:rest rdf:nodeID="n002060"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002323">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n001966"/>
+    <rdf:rest rdf:nodeID="n001967"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002324">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n002016"/>
+    <rdf:rest rdf:nodeID="n002014"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002325">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000331"/>
@@ -17577,15 +17571,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002327">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
-    <rdf:rest rdf:nodeID="n002093"/>
+    <rdf:rest rdf:nodeID="n002080"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002328">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
-    <rdf:rest rdf:nodeID="n001959"/>
+    <rdf:rest rdf:nodeID="n001965"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002329">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
-    <rdf:rest rdf:nodeID="n002013"/>
+    <rdf:rest rdf:nodeID="n002019"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002330">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337"/>
@@ -17593,11 +17587,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002331">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337"/>
-    <rdf:rest rdf:nodeID="n001926"/>
+    <rdf:rest rdf:nodeID="n001927"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002332">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337"/>
-    <rdf:rest rdf:nodeID="n002251"/>
+    <rdf:rest rdf:nodeID="n002252"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002333">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
@@ -17605,7 +17599,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002334">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
-    <rdf:rest rdf:nodeID="n001875"/>
+    <rdf:rest rdf:nodeID="n001877"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002335">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
@@ -17625,27 +17619,27 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002339">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
-    <rdf:rest rdf:nodeID="n002047"/>
+    <rdf:rest rdf:nodeID="n002048"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002340">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000344"/>
-    <rdf:rest rdf:nodeID="n001851"/>
+    <rdf:rest rdf:nodeID="n001852"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002341">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000344"/>
-    <rdf:rest rdf:nodeID="n001869"/>
+    <rdf:rest rdf:nodeID="n001868"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002342">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
-    <rdf:rest rdf:nodeID="n001811"/>
+    <rdf:rest rdf:nodeID="n001818"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002343">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
-    <rdf:rest rdf:nodeID="n001797"/>
+    <rdf:rest rdf:nodeID="n001796"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002344">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
-    <rdf:rest rdf:nodeID="n001894"/>
+    <rdf:rest rdf:nodeID="n001888"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002345">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000347"/>
@@ -17653,31 +17647,31 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002346">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n001841"/>
+    <rdf:rest rdf:nodeID="n001839"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002347">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n001802"/>
+    <rdf:rest rdf:nodeID="n001791"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002348">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n001816"/>
+    <rdf:rest rdf:nodeID="n001828"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002349">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n001895"/>
+    <rdf:rest rdf:nodeID="n001887"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002350">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000357"/>
-    <rdf:rest rdf:nodeID="n001877"/>
+    <rdf:rest rdf:nodeID="n001878"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002351">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000357"/>
-    <rdf:rest rdf:nodeID="n001947"/>
+    <rdf:rest rdf:nodeID="n001946"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002352">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000361"/>
-    <rdf:rest rdf:nodeID="n002283"/>
+    <rdf:rest rdf:nodeID="n002280"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002353">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000364"/>
@@ -17713,11 +17707,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002361">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
-    <rdf:rest rdf:nodeID="n001822"/>
+    <rdf:rest rdf:nodeID="n001824"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002362">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000367"/>
-    <rdf:rest rdf:nodeID="n002300"/>
+    <rdf:rest rdf:nodeID="n002301"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002363">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000367"/>
@@ -17725,7 +17719,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002364">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000368"/>
-    <rdf:rest rdf:nodeID="n001878"/>
+    <rdf:rest rdf:nodeID="n001876"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002365">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000368"/>
@@ -17745,11 +17739,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002369">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
-    <rdf:rest rdf:nodeID="n001893"/>
+    <rdf:rest rdf:nodeID="n001882"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002370">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
-    <rdf:rest rdf:nodeID="n001807"/>
+    <rdf:rest rdf:nodeID="n001808"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002371">
     <owl:members rdf:nodeID="n002213"/>
