@@ -16,7 +16,7 @@
 @base <https://www.inf.ufrgs.br/ontologies/copi/copi-simple.ttl> .
 
 <https://www.inf.ufrgs.br/ontologies/copi/copi-simple.ttl> rdf:type owl:Ontology ;
-                                                            owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-04/copi-simple.ttl> ;
+                                                            owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-08/copi-simple.ttl> ;
                                                             terms:bibliographicCitation "Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press." ;
                                                             terms:contributor "Cauã Antunes" ,
                                                                               "Haroldo Rojas" ,
@@ -39,7 +39,7 @@
                                                             bibo:status "unstable" ;
                                                             vann:preferredNamespacePrefix "copi" ;
                                                             vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI ;
-                                                            owl:versionInfo "2026-09-04" ;
+                                                            owl:versionInfo "2026-09-08" ;
                                                             skos:scopeNote "Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia."@pt-br ,
                                                                            "COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos."@pt-br ,
                                                                            "COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en ,
@@ -3255,7 +3255,8 @@ copi:COPI_0000070 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072
 copi:COPI_0000072 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000066
                                   ] ;
@@ -3291,7 +3292,8 @@ copi:COPI_0000072 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073
 copi:COPI_0000073 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000067
                                   ] ;
@@ -3353,7 +3355,8 @@ copi:COPI_0000074 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000075
 copi:COPI_0000075 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000090 ,
+                  rdfs:subClassOf copi:COPI_0000018 ,
+                                  copi:COPI_0000090 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000069
@@ -4035,7 +4038,8 @@ copi:COPI_0000114 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115
 copi:COPI_0000115 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000191
                                   ] ;
@@ -4195,7 +4199,8 @@ copi:COPI_0000123 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124
 copi:COPI_0000124 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000017 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000190
                                   ] ;
@@ -4675,7 +4680,8 @@ copi:COPI_0000151 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152
 copi:COPI_0000152 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000019 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000195
                                   ] ;
@@ -5521,7 +5527,8 @@ copi:COPI_0000211 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000212
 copi:COPI_0000212 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000020 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
                                     owl:someValuesFrom copi:COPI_0000383
                                   ] ,
@@ -5615,7 +5622,8 @@ copi:COPI_0000216 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217
 copi:COPI_0000217 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000124 ,
+                  rdfs:subClassOf copi:COPI_0000021 ,
+                                  copi:COPI_0000124 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000417
@@ -5670,7 +5678,8 @@ copi:COPI_0000219 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000220
 copi:COPI_0000220 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000124 ,
+                  rdfs:subClassOf copi:COPI_0000020 ,
+                                  copi:COPI_0000124 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000433
@@ -5710,7 +5719,8 @@ copi:COPI_0000221 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000222
 copi:COPI_0000222 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000022 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000500
                                   ] ;
@@ -5826,7 +5836,8 @@ copi:COPI_0000227 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228
 copi:COPI_0000228 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000023 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000728
                                   ] ,
@@ -5899,7 +5910,8 @@ copi:COPI_0000231 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000232
 copi:COPI_0000232 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000092 ,
+                  rdfs:subClassOf copi:COPI_0000021 ,
+                                  copi:COPI_0000092 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000437
@@ -6019,7 +6031,8 @@ copi:COPI_0000239 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000240
 copi:COPI_0000240 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000084 ,
+                  rdfs:subClassOf copi:COPI_0000018 ,
+                                  copi:COPI_0000084 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000453
@@ -6035,7 +6048,8 @@ copi:COPI_0000240 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000241
 copi:COPI_0000241 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000084 ,
+                  rdfs:subClassOf copi:COPI_0000018 ,
+                                  copi:COPI_0000084 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000455
@@ -6052,7 +6066,8 @@ copi:COPI_0000241 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000242
 copi:COPI_0000242 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000018 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000457
                                   ] ;
@@ -6067,7 +6082,8 @@ copi:COPI_0000242 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243
 copi:COPI_0000243 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000084 ,
+                  rdfs:subClassOf copi:COPI_0000018 ,
+                                  copi:COPI_0000084 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000459
@@ -6241,7 +6257,8 @@ copi:COPI_0000252 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000253
 copi:COPI_0000253 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000476
                                   ] ,
@@ -6277,7 +6294,8 @@ copi:COPI_0000254 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000255
 copi:COPI_0000255 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000084 ,
+                  rdfs:subClassOf copi:COPI_0000018 ,
+                                  copi:COPI_0000084 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000474
@@ -6293,7 +6311,8 @@ copi:COPI_0000255 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000256
 copi:COPI_0000256 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000023 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000477
                                   ] ;
@@ -6327,7 +6346,8 @@ copi:COPI_0000257 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258
 copi:COPI_0000258 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000018 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000484
                                   ] ;
@@ -6601,7 +6621,8 @@ copi:COPI_0000275 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276
 copi:COPI_0000276 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000084 ,
+                  rdfs:subClassOf copi:COPI_0000021 ,
+                                  copi:COPI_0000084 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000517
@@ -6785,7 +6806,8 @@ copi:COPI_0000286 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287
 copi:COPI_0000287 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000023 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000630
                                   ] ;
@@ -6948,7 +6970,8 @@ copi:COPI_0000296 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000297
 copi:COPI_0000297 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000022 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000500
                                   ] ;
@@ -7035,7 +7058,8 @@ copi:COPI_0000301 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000302
 copi:COPI_0000302 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000624
                                   ] ,
@@ -7056,7 +7080,8 @@ copi:COPI_0000302 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000303
 copi:COPI_0000303 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000281 ,
+                  rdfs:subClassOf copi:COPI_0000020 ,
+                                  copi:COPI_0000281 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000688
@@ -7116,7 +7141,8 @@ copi:COPI_0000306 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000307
 copi:COPI_0000307 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000092 ,
+                  rdfs:subClassOf copi:COPI_0000021 ,
+                                  copi:COPI_0000092 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000634
@@ -7190,7 +7216,8 @@ copi:COPI_0000310 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000311
 copi:COPI_0000311 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000535
                                   ] ,
@@ -7245,7 +7272,8 @@ copi:COPI_0000313 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314
 copi:COPI_0000314 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000578
                                   ] ;
@@ -7278,7 +7306,8 @@ copi:COPI_0000315 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000316
 copi:COPI_0000316 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000531
                                   ] ;
@@ -7361,7 +7390,8 @@ copi:COPI_0000320 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321
 copi:COPI_0000321 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000529
                                   ] ;
@@ -7703,7 +7733,8 @@ copi:COPI_0000341 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000342
 copi:COPI_0000342 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
                                     owl:someValuesFrom copi:COPI_0000059
                                   ] ,
@@ -7722,7 +7753,8 @@ copi:COPI_0000342 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343
 copi:COPI_0000343 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000091 ,
+                  rdfs:subClassOf copi:COPI_0000023 ,
+                                  copi:COPI_0000091 ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000169
@@ -7785,7 +7817,8 @@ copi:COPI_0000346 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000347
 copi:COPI_0000347 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000019 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000636
                                   ] ;
@@ -7800,7 +7833,8 @@ copi:COPI_0000347 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000348
 copi:COPI_0000348 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000023 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000638
                                   ] ,
@@ -8050,7 +8084,8 @@ copi:COPI_0000362 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000363
 copi:COPI_0000363 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000022 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000500
                                   ] ;
@@ -8192,7 +8227,8 @@ copi:COPI_0000370 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000371
 copi:COPI_0000371 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000023 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
                                     owl:someValuesFrom copi:COPI_0000059
                                   ] ,
@@ -8293,7 +8329,8 @@ copi:COPI_0000376 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377
 copi:COPI_0000377 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000023 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000697
                                   ] ,
@@ -8312,7 +8349,8 @@ copi:COPI_0000377 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000378
 copi:COPI_0000378 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000024 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
                                     owl:someValuesFrom copi:COPI_0000384
                                   ] ,
@@ -8661,7 +8699,8 @@ copi:COPI_0000403 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000404
 copi:COPI_0000404 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000005 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000041
                                   ] ,
@@ -8699,7 +8738,8 @@ copi:COPI_0000405 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000406
 copi:COPI_0000406 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000009 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -8781,7 +8821,8 @@ copi:COPI_0000409 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000410
 copi:COPI_0000410 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -8840,7 +8881,8 @@ copi:COPI_0000414 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000415
 copi:COPI_0000415 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -8891,7 +8933,8 @@ copi:COPI_0000417 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000418
 copi:COPI_0000418 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000008 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
@@ -9090,7 +9133,8 @@ copi:COPI_0000431 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000432
 copi:COPI_0000432 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000006 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
@@ -9120,7 +9164,8 @@ copi:COPI_0000433 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000434
 copi:COPI_0000434 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000007 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000386
                                   ] ,
@@ -9139,7 +9184,8 @@ copi:COPI_0000434 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000435
 copi:COPI_0000435 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
@@ -9176,7 +9222,8 @@ copi:COPI_0000437 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000438
 copi:COPI_0000438 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000008 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
@@ -9249,7 +9296,8 @@ copi:COPI_0000442 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000443
 copi:COPI_0000443 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000009 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -9328,7 +9376,8 @@ copi:COPI_0000448 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000449
 copi:COPI_0000449 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000004 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
@@ -9394,7 +9443,8 @@ copi:COPI_0000453 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000454
 copi:COPI_0000454 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000005 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
@@ -9428,7 +9478,8 @@ copi:COPI_0000455 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000456
 copi:COPI_0000456 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000005 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000391
                                   ] ,
@@ -9462,7 +9513,8 @@ copi:COPI_0000457 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000458
 copi:COPI_0000458 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000005 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000386
                                   ] ,
@@ -9496,7 +9548,8 @@ copi:COPI_0000459 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000460
 copi:COPI_0000460 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000005 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -9526,7 +9579,8 @@ copi:COPI_0000461 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000462
 copi:COPI_0000462 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000006 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
@@ -9700,7 +9754,8 @@ copi:COPI_0000474 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000475
 copi:COPI_0000475 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000005 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
@@ -9737,7 +9792,8 @@ copi:COPI_0000477 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000478
 copi:COPI_0000478 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -9826,7 +9882,8 @@ copi:COPI_0000484 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000485
 copi:COPI_0000485 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000005 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
@@ -9963,7 +10020,8 @@ copi:COPI_0000497 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000498
 copi:COPI_0000498 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000007 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
                                     owl:someValuesFrom copi:COPI_0000400
                                   ] ;
@@ -9974,7 +10032,8 @@ copi:COPI_0000498 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000499
 copi:COPI_0000499 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -10019,7 +10078,8 @@ copi:COPI_0000500 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000501
 copi:COPI_0000501 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000009 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -10080,7 +10140,8 @@ copi:COPI_0000502 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000503
 copi:COPI_0000503 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -10140,7 +10201,8 @@ copi:COPI_0000506 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000507
 copi:COPI_0000507 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -10177,7 +10239,8 @@ copi:COPI_0000509 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000510
 copi:COPI_0000510 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000006 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
@@ -10294,7 +10357,8 @@ copi:COPI_0000517 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000518
 copi:COPI_0000518 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000008 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
@@ -10390,7 +10454,8 @@ copi:COPI_0000523 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000524
 copi:COPI_0000524 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -10406,7 +10471,8 @@ copi:COPI_0000524 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000525
 copi:COPI_0000525 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -10474,7 +10540,8 @@ copi:COPI_0000529 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000530
 copi:COPI_0000530 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -10504,7 +10571,8 @@ copi:COPI_0000531 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000532
 copi:COPI_0000532 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -10534,7 +10602,8 @@ copi:COPI_0000533 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000534
 copi:COPI_0000534 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -10579,7 +10648,8 @@ copi:COPI_0000537 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000538
 copi:COPI_0000538 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000389
                                   ] ,
@@ -10672,7 +10742,8 @@ copi:COPI_0000544 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000545
 copi:COPI_0000545 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
@@ -10711,7 +10782,8 @@ copi:COPI_0000547 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000548
 copi:COPI_0000548 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000004 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -10827,7 +10899,8 @@ copi:COPI_0000556 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000557
 copi:COPI_0000557 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
@@ -11010,13 +11083,6 @@ copi:COPI_0000571 rdf:type owl:Class ;
                   skos:definition "A material artifact that constitutes a machined surface that mates with a corresponding surface of another component to form a seal or mechanical joint in petroleum production equipment."@en .
 
 
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000572
-copi:COPI_0000572 rdf:type owl:Class ;
-                  rdfs:label "measurement process"@en ,
-                             "processo de medição"@pt-br ;
-                  skos:definition "A planned process in which the value of a physical or chemical quantity is determined and expressed as a numerical value with an associated unit."@en .
-
-
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000573
 copi:COPI_0000573 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000091 ,
@@ -11107,7 +11173,8 @@ copi:COPI_0000578 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000579
 copi:COPI_0000579 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -11368,7 +11435,8 @@ copi:COPI_0000596 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000597
 copi:COPI_0000597 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000650
                                   ] ,
@@ -11427,8 +11495,7 @@ copi:COPI_0000601 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000602
 copi:COPI_0000602 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000572 ,
-                                  [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000402
                                   ] ;
@@ -11473,7 +11540,8 @@ copi:COPI_0000604 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000605
 copi:COPI_0000605 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000009 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -11533,7 +11601,8 @@ copi:COPI_0000608 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000609
 copi:COPI_0000609 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -11548,7 +11617,8 @@ copi:COPI_0000609 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000610
 copi:COPI_0000610 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -11607,7 +11677,8 @@ copi:COPI_0000615 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000616
 copi:COPI_0000616 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
@@ -11633,7 +11704,8 @@ copi:COPI_0000617 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000618
 copi:COPI_0000618 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -11695,7 +11767,8 @@ copi:COPI_0000621 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000622
 copi:COPI_0000622 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000008 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
@@ -11752,6 +11825,7 @@ copi:COPI_0000625 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000626
 copi:COPI_0000626 rdf:type owl:Class ;
+                  rdfs:subClassOf copi:COPI_0000003 ;
                   rdfs:label "processo de transferência de energia rotacional"@pt-br ,
                              "rotational energy transfer process"@en ;
                   skos:definition "A PlannedProcess in which a rotor transfers mechanical energy through its rotational motion, enabling the operation of rotating machinery such as motors, compressors, pumps, and turbines."@en ;
@@ -11861,7 +11935,8 @@ copi:COPI_0000634 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000635
 copi:COPI_0000635 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000006 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
@@ -11911,6 +11986,7 @@ copi:COPI_0000636 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000637
 copi:COPI_0000637 rdf:type owl:Class ;
+                  rdfs:subClassOf copi:COPI_0000006 ;
                   rdfs:label "processo de agitação mecânica"@pt-br ,
                              "shaking process"@en ;
                   skos:definition "A planned process in which oscillating mechanical motion is applied to a screen or separator to promote the separation of solids from a fluid."@en .
@@ -11969,7 +12045,8 @@ copi:COPI_0000642 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000643
 copi:COPI_0000643 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000009 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ,
@@ -11999,7 +12076,8 @@ copi:COPI_0000644 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000645
 copi:COPI_0000645 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000009 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ,
@@ -12067,7 +12145,8 @@ copi:COPI_0000650 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000651
 copi:COPI_0000651 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000009 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -12537,7 +12616,8 @@ copi:COPI_0000688 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000689
 copi:COPI_0000689 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000007 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
@@ -12560,7 +12640,8 @@ copi:COPI_0000689 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000690
 copi:COPI_0000690 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000007 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000396
                                   ] ,
@@ -12598,7 +12679,8 @@ copi:COPI_0000691 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000692
 copi:COPI_0000692 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000007 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
@@ -12628,7 +12710,8 @@ copi:COPI_0000693 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000694
 copi:COPI_0000694 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ,
@@ -12658,7 +12741,8 @@ copi:COPI_0000695 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000696
 copi:COPI_0000696 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ,
@@ -12713,7 +12797,8 @@ copi:COPI_0000700 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000701
 copi:COPI_0000701 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -12742,7 +12827,8 @@ copi:COPI_0000702 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000703
 copi:COPI_0000703 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000004 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000397
                                   ] ,
@@ -12770,7 +12856,8 @@ copi:COPI_0000704 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000705
 copi:COPI_0000705 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ,
@@ -12822,7 +12909,8 @@ copi:COPI_0000708 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000709
 copi:COPI_0000709 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -12850,7 +12938,8 @@ copi:COPI_0000710 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000711
 copi:COPI_0000711 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000010 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ,
@@ -12903,7 +12992,8 @@ copi:COPI_0000714 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000715
 copi:COPI_0000715 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000003 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasInput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
@@ -13024,7 +13114,8 @@ copi:COPI_0000724 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000725
 copi:COPI_0000725 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000019 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000718
                                   ] ;
@@ -13040,7 +13131,8 @@ copi:COPI_0000725 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000726
 copi:COPI_0000726 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000017 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000702
                                   ] ;
@@ -13106,7 +13198,8 @@ copi:COPI_0000729 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000730
 copi:COPI_0000730 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000714
                                   ] ;
@@ -13129,7 +13222,8 @@ copi:COPI_0000731 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000732
 copi:COPI_0000732 rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf copi:COPI_0000016 ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000719
                                   ] ,

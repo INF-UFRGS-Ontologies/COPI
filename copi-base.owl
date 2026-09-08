@@ -15,7 +15,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-base.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-04/copi-base.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-08/copi-base.owl"/>
         <dce:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
         <dcterms:bibliographicCitation>Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press.</dcterms:bibliographicCitation>
         <dcterms:contributor>Cauã Antunes</dcterms:contributor>
@@ -39,7 +39,7 @@
         <bibo:status>unstable</bibo:status>
         <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>
-        <owl:versionInfo>2026-09-04</owl:versionInfo>
+        <owl:versionInfo>2026-09-08</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
@@ -2364,6 +2364,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -2417,6 +2418,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -2502,6 +2504,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000018"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000090"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -3575,6 +3578,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -3817,6 +3821,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000017"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -4610,7 +4615,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000019"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -5918,6 +5923,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000020"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000196"/>
@@ -6098,6 +6104,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000021"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -6209,6 +6216,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000020"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -6284,6 +6292,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000222">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000022"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -6466,6 +6475,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
@@ -6597,6 +6607,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000021"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -6821,6 +6832,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000018"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -6853,6 +6865,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000018"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -6887,6 +6900,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000018"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -6918,6 +6932,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000018"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -7232,6 +7247,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
@@ -7302,6 +7318,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000018"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -7334,7 +7351,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -7394,6 +7411,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000018"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -7827,6 +7845,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000021"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -8132,7 +8151,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -8363,6 +8382,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000297">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000022"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -8497,6 +8517,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000302">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
@@ -8536,6 +8557,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000020"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000281"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -8636,6 +8658,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000307 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000307">
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000021"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -8770,6 +8793,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000311">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
@@ -8868,6 +8892,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -8934,7 +8959,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -9087,7 +9112,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -9608,6 +9633,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000342">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000196"/>
@@ -9645,6 +9671,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -9753,6 +9780,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000019"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -9789,6 +9817,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
@@ -10224,6 +10253,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000363">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000022"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -10471,7 +10501,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000371 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000371">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000196"/>
@@ -10635,6 +10665,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000023"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
@@ -10676,7 +10707,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000024"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000196"/>
@@ -11117,7 +11148,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000404 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000404">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -11175,7 +11206,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000406 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000406">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -11293,7 +11324,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000410 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000410">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -11373,7 +11404,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000414 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000414">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
@@ -11390,7 +11421,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000415 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000415">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -11466,7 +11497,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000418 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000418">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000008"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -11747,7 +11778,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000431 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000431">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -11770,7 +11801,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000432 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000432">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -11816,7 +11847,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000434 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000434">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -11845,7 +11876,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000435 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000435">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -11902,7 +11933,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000438 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000438">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000008"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12029,7 +12060,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000443 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000443">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12154,7 +12185,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000449 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000449">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12256,7 +12287,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000454 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000454">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12308,7 +12339,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000456 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000456">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12360,7 +12391,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000458 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000458">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12412,7 +12443,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000460 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000460">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12458,7 +12489,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000462 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000462">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12510,7 +12541,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000464 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000464">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12556,7 +12587,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000466 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000466">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
@@ -12596,7 +12627,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000468 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000468">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12642,7 +12673,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000470 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000470">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12695,7 +12726,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000472 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000472">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12752,7 +12783,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000475 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000475">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12809,7 +12840,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000478 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000478">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -12946,7 +12977,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000485 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000485">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000005"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -13158,7 +13189,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000498 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000498">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
@@ -13175,7 +13206,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000499 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000499">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -13236,7 +13267,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000501 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000501">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -13339,7 +13370,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000503 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000503">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -13431,7 +13462,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000507 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000507">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -13500,7 +13531,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000510 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000510">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -13673,7 +13704,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000518 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000518">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000008"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -13821,7 +13852,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000524 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000524">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -13845,7 +13876,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000525 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000525">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -13914,7 +13945,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000528 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000528">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -13960,7 +13991,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000530 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000530">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14006,7 +14037,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000532 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000532">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14052,7 +14083,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000534 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000534">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14120,7 +14151,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000538 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000538">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14166,7 +14197,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000540 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000540">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
@@ -14265,7 +14296,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000545 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000545">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14322,7 +14353,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000548 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000548">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14345,7 +14376,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000549 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000549">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14420,7 +14451,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000552 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000552">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14467,7 +14498,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000555 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000555">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14514,7 +14545,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000557 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000557">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14537,7 +14568,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000558 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000558">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14642,7 +14673,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000563 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000563">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14665,7 +14696,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000564 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000564">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14694,7 +14725,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000565 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000565">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14740,7 +14771,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000567 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000567">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -14824,17 +14855,6 @@
         <rdfs:label xml:lang="en">mating surface</rdfs:label>
         <rdfs:label xml:lang="pt-br">superfície de encaixe</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a machined surface that mates with a corresponding surface of another component to form a seal or mechanical joint in petroleum production equipment.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000572 -->
-
-    <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000572">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
-        <rdfs:label xml:lang="en">measurement process</rdfs:label>
-        <rdfs:label xml:lang="pt-br">processo de medição</rdfs:label>
-        <skos:definition xml:lang="en">A planned process in which the value of a physical or chemical quantity is determined and expressed as a numerical value with an associated unit.</skos:definition>
     </owl:Class>
     
 
@@ -14973,7 +14993,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000579 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000579">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15178,7 +15198,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000589 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000589">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15392,7 +15412,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000597 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000597">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15472,7 +15492,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000601 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000601">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
@@ -15489,7 +15509,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000602 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000602">
-        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000572"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15557,7 +15577,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000605 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000605">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15603,7 +15623,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000607 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000607">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15626,7 +15646,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000608 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000608">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15649,7 +15669,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000609 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000609">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15672,7 +15692,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000610 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000610">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15695,7 +15715,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000611 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000611">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
@@ -15746,7 +15766,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000614 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000614">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15780,7 +15800,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000616 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000616">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15820,7 +15840,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000618 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000618">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15912,7 +15932,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000622 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000622">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000008"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -15999,7 +16019,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000626 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000626">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:label xml:lang="pt-br">processo de transferência de energia rotacional</rdfs:label>
         <rdfs:label xml:lang="en">rotational energy transfer process</rdfs:label>
         <skos:definition xml:lang="en">A PlannedProcess in which a rotor transfers mechanical energy through its rotational motion, enabling the operation of rotating machinery such as motors, compressors, pumps, and turbines.</skos:definition>
@@ -16166,7 +16186,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000635 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000635">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -16242,7 +16262,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000637 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000637">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000006"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -16356,7 +16376,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000643 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000643">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -16402,7 +16422,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000645 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000645">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -16518,7 +16538,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000651 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000651">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000009"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -16743,7 +16763,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000662 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000662">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
@@ -16766,7 +16786,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000663 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000663">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -16789,7 +16809,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000666 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000666">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput"/>
@@ -16933,7 +16953,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000673 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000673">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17173,7 +17193,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000685 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000685">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17267,7 +17287,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000689 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000689">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17302,7 +17322,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000690 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000690">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17360,7 +17380,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000692 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000692">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000007"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17406,7 +17426,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000694 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000694">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17452,7 +17472,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000696 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000696">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17509,7 +17529,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000699 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000699">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17549,7 +17569,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000701 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000701">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17594,7 +17614,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000703 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000703">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000004"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17638,7 +17658,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000705 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000705">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17726,7 +17746,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000709 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000709">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17770,7 +17790,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000711 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000711">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17814,7 +17834,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000713 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000713">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MeasurementProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -17858,7 +17878,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000715 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000715">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/PlannedProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasInput"/>
@@ -18053,7 +18073,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000725 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000725">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000019"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -18075,7 +18095,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000726 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000726">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000017"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -18163,7 +18183,7 @@
     <!-- https://www.inf.ufrgs.br/ontologies/copi/COPI_0000730 -->
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000730">
-        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasFunction"/>
@@ -18197,6 +18217,7 @@
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000732">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/Assembly"/>
+        <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes"/>
