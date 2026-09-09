@@ -167,6 +167,38 @@
   .source-card-header{display:flex;justify-content:space-between;align-items:center;padding:.5rem .9rem;
                       background:#f8f9fa;border-bottom:1px solid var(--border);font-family:system-ui,sans-serif;}
   .source-card-body{padding:.75rem .9rem;font-size:.88rem;}
+  /* Layered-source provenance (tier / secondary_coverage / candidate_parts) */
+  .tier-badge{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;
+              letter-spacing:.04em;padding:.1rem .5rem;border-radius:4px;color:#fff;}
+  .tier-badge.tier-primary{background:#2563eb;}
+  .tier-badge.tier-secondary{background:#64748b;}
+  .tier-badge.tier-tertiary{background:#d97706;}
+  .coverage-badge{display:inline-block;font-size:.68rem;padding:.1rem .5rem;border-radius:4px;color:#fff;}
+  .coverage-badge.coverage-full{background:#16a34a;}
+  .coverage-badge.coverage-partial{background:#d97706;}
+  .coverage-badge.coverage-none{background:#94a3b8;}
+  .provenance-row{font-size:.75rem;display:flex;gap:.4rem;align-items:baseline;flex-wrap:wrap;
+                   margin-bottom:.35rem;}
+  .provenance-quote{font-size:.78rem;color:#374151;margin:.15rem 0 .5rem 0;padding-left:.6rem;
+                     border-left:2px solid var(--border);}
+  .candidate-part-row{font-size:.78rem;margin-bottom:.3rem;}
+  .conflict-banner{border-radius:8px;padding:.75rem 1rem;margin-bottom:1.25rem;font-size:.85rem;}
+  .conflict-banner.has-conflict{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;}
+  .conflict-banner.no-conflict{background:#f8fafc;border:1px dashed var(--border);color:var(--muted);}
+  /* Click-to-reveal help icon — reusable anywhere a term needs a short explanation
+     without cluttering the page by default. No JS: <details>/<summary>, same
+     mechanism already used for "excluded definitions" elsewhere on this page. */
+  .help-popover{display:inline-block;vertical-align:middle;margin-left:.3rem;}
+  .help-popover summary{list-style:none;}
+  .help-popover summary::-webkit-details-marker{display:none;}
+  .help-icon{display:inline-flex;align-items:center;justify-content:center;width:1.05rem;height:1.05rem;
+             border-radius:50%;background:var(--border);color:var(--muted);font-size:.68rem;
+             font-weight:700;font-family:system-ui,sans-serif;cursor:pointer;user-select:none;}
+  .help-icon:hover{background:#cbd5e1;color:#374151;}
+  .help-popover[open] .help-icon{background:#64748b;color:#fff;}
+  .help-content{display:block;font-size:.72rem;color:#374151;background:#f8fafc;
+                border:1px solid var(--border);border-radius:6px;padding:.5rem .65rem;
+                margin-top:.35rem;max-width:320px;line-height:1.45;font-family:system-ui,sans-serif;}
   @media (min-width:992px){.sidebar-sticky{position:sticky;top:1rem;}}
   @media print{.doc-nav,.no-print{display:none!important;}body{font-size:13px;}}
   /* Language toggle */
@@ -223,7 +255,7 @@
 <div class="d-flex justify-content-between align-items-center mb-3 no-print"
      style="font-size:.83rem;">
   <span class="text-muted" style="font-family:system-ui,sans-serif;">
-    <span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span> · <span class="t-en">Version</span><span class="t-pt">Versão</span> 2026-09-04
+    <span class="t-en">Class Reference</span><span class="t-pt">Referência de Classes</span> · <span class="t-en">Version</span><span class="t-pt">Versão</span> 2026-09-09
   </span>
 </div>
 
@@ -239,11 +271,11 @@
       <div class="hero-meta-strip">
         <span><strong>333</strong> <span class="t-en">classes</span><span class="t-pt">classes</span></span>
         <span><strong>6</strong> <span class="t-en">properties</span><span class="t-pt">propriedades</span></span>
-        <span><strong>1133</strong> <span class="t-en">axioms</span><span class="t-pt">axiomas</span></span>
+        <span><strong>1143</strong> <span class="t-en">axioms</span><span class="t-pt">axiomas</span></span>
         <span>BFO 2020</span>
         <span>IOF-Core 202603</span>
         <span>CC BY 4.0</span>
-        <span>2026-09-04</span>
+        <span>2026-09-09</span>
         <a href="https://github.com/INF-UFRGS-Ontologies/copi" target="_blank" rel="noopener"
            style="color:rgba(255,255,255,.45);text-decoration:none;">GitHub ↗</a>
       </div>
@@ -2042,7 +2074,7 @@
     <div style="flex:1;min-width:0;">
       <div class="class-def t-en">An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other.</div>
       <div class="class-def t-pt" style="border-left-color:#059669;">Uma válvula angular é uma válvula que tem portas da válvula que não estão alinhadas, mas dispostas em ângulo uma em relação à outra.</div>
-      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Valve</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div></div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Valve</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div><div class="meta-item"><strong>Necessary parts:</strong> AngleValveBody</div></div>
     </div>
   </div>
 </div>
@@ -2160,7 +2192,7 @@
     <div style="flex:1;min-width:0;">
       <div class="class-def t-en">A ball valve is a valve that controls fluid flow using a spherical ball closure member that rotates approximately 90 degrees to align or misalign its flow passage with the valve body ports.</div>
       <div class="class-def t-pt" style="border-left-color:#059669;">Uma válvula esfera é uma válvula que controla o fluxo de fluidos usando um elemento de fechamento esférico que gira aproximadamente 90 graus para alinhar ou desalinhar sua passagem de fluxo com as portas do corpo da válvula.</div>
-      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Valve</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">GateValve, ButterflyValve</span></div></div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Valve</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div><div class="meta-item"><strong>Necessary parts:</strong> BallValveClosureMember</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">GateValve, ButterflyValve</span></div></div>
     </div>
   </div>
 </div>
@@ -2385,7 +2417,7 @@
     <div style="flex:1;min-width:0;">
       <div class="class-def t-en">A butterfly valve is a valve that has a disc-type closure member with a shaft parallel to the plane of the disc and an axis of rotation transverse to the flow direction.</div>
       <div class="class-def t-pt" style="border-left-color:#059669;">Uma válvula borboleta é uma válvula que possui um membro de fechamento tipo disco com haste paralela ao plano do disco e eixo de rotação transversal à direção do fluxo.</div>
-      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Valve</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">BallValve, GateValve, GlobeValve</span></div></div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Valve</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div><div class="meta-item"><strong>Necessary parts:</strong> ButterflyValveClosureMember</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">BallValve, GateValve, GlobeValve</span></div></div>
     </div>
   </div>
 </div>
@@ -3601,7 +3633,7 @@
     <div style="flex:1;min-width:0;">
       <div class="class-def t-en">A globe valve is a valve characterized by a closure member (disc or plug) that operates with linear motion perpendicular to a seat that is oriented normal to the fluid flow path.</div>
       <div class="class-def t-pt" style="border-left-color:#059669;">Uma válvula globo é uma válvula caracterizada por um elemento de fechamento (disco ou tampão) que opera com movimento linear perpendicular a uma sede orientada normal ao caminho do fluxo do fluido.</div>
-      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Valve</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div></div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Valve</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div><div class="meta-item"><strong>Necessary parts:</strong> GlobeValveClosureMember</div></div>
     </div>
   </div>
 </div>
@@ -4072,7 +4104,7 @@
     <div style="flex:1;min-width:0;">
       <div class="class-def t-en">A needle valve is a valve that has a conical needle-shaped closure member that seats into a small orifice to provide precise flow control.</div>
       <div class="class-def t-pt" style="border-left-color:#059669;">Uma válvula agulha é uma válvula que possui um membro de fechamento cônico em forma de agulha que se assenta em um pequeno orifício para fornecer controle preciso de fluxo.</div>
-      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Valve</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div></div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Valve</div><div class="meta-item"><strong>Function:</strong> FlowControlFunction</div><div class="meta-item"><strong>Necessary parts:</strong> Plug</div></div>
     </div>
   </div>
 </div>
@@ -4366,7 +4398,7 @@
     <div style="flex:1;min-width:0;">
       <div class="class-def t-en">A piston check valve is a check valve that has a piston-type closure member that moves linearly along the flow axis under gravity or spring loading to prevent backflow.</div>
       <div class="class-def t-pt" style="border-left-color:#059669;">Uma válvula de retenção tipo pistão é uma válvula de retenção que possui um elemento de fechamento tipo pistão que se move linearmente ao longo do eixo de fluxo sob ação da gravidade ou mola para prevenir refluxo.</div>
-      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> CheckValve</div><div class="meta-item"><strong>Function:</strong> BackflowPreventionFunction</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">SwingCheckValve</span></div></div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> CheckValve</div><div class="meta-item"><strong>Function:</strong> BackflowPreventionFunction</div><div class="meta-item"><strong>Necessary parts:</strong> Piston</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">SwingCheckValve</span></div></div>
     </div>
   </div>
 </div>
@@ -5206,7 +5238,7 @@
     <div style="flex:1;min-width:0;">
       <div class="class-def t-en">A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses.</div>
       <div class="class-def t-pt" style="border-left-color:#059669;">Uma válvula de retenção basculante é uma válvula de retenção que possui um elemento de fechamento consistindo de um disco que gira livremente em um mecanismo de dobradiça e abre automaticamente quando o fluxo é estabelecido e fecha automaticamente quando o fluxo cessa ou se inverte.</div>
-      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> CheckValve</div><div class="meta-item"><strong>Function:</strong> BackflowPreventionFunction</div></div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> CheckValve</div><div class="meta-item"><strong>Function:</strong> BackflowPreventionFunction</div><div class="meta-item"><strong>Necessary parts:</strong> SwingCheckValveBody</div></div>
     </div>
   </div>
 </div>
@@ -5867,7 +5899,7 @@
     <div style="flex:1;min-width:0;">
       <div class="class-def t-en">A wafer check valve is a check valve that has a wafer pattern valve body designed for mounting between flanges.</div>
       <div class="class-def t-pt" style="border-left-color:#059669;">Uma válvula de retenção wafer é uma válvula de retenção que possui um corpo de válvula padrão wafer projetado para montagem entre flanges.</div>
-      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> CheckValve</div><div class="meta-item"><strong>Function:</strong> BackflowPreventionFunction</div></div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> CheckValve</div><div class="meta-item"><strong>Function:</strong> BackflowPreventionFunction</div><div class="meta-item"><strong>Necessary parts:</strong> WaferCheckValveBody</div></div>
     </div>
   </div>
 </div>
@@ -7871,7 +7903,7 @@
     <div style="flex:1;min-width:0;">
       <div class="class-def t-en">A centrifugal pump is a pump that uses centrifugal force generated by rotating impellers with vanes to increase fluid pressure through a volute casing.</div>
       <div class="class-def t-pt" style="border-left-color:#059669;">Uma bomba centrífuga é uma bomba que usa força centrífuga gerada por impulsores rotativos com pás para aumentar a pressão do fluido através de uma carcaça voluta.</div>
-      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Pump</div><div class="meta-item"><strong>Function:</strong> PumpingFunction</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">PositiveDisplacementPump</span></div></div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Pump</div><div class="meta-item"><strong>Function:</strong> PumpingFunction</div><div class="meta-item"><strong>Necessary parts:</strong> Impeller, Volute</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">PositiveDisplacementPump</span></div></div>
     </div>
   </div>
 </div>
@@ -14565,7 +14597,7 @@
     <div style="flex:1;min-width:0;">
       <div class="class-def t-en">A casing that surrounds an impeller and has integral suction and discharge nozzles as structural components, typically applied in centrifugal pumps.</div>
       <div class="class-def t-pt" style="border-left-color:#059669;">Um invólucro que envolve um impulsor e possui bocais de sucção e descarga integrais como componentes estruturais, tipicamente aplicado em bombas centrífugas.</div>
-      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Casing</div><div class="meta-item"><strong>Function:</strong> EnclosureFunction</div></div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Casing</div><div class="meta-item"><strong>Function:</strong> EnclosureFunction</div><div class="meta-item"><strong>Necessary parts:</strong> SuctionNozzle</div></div>
     </div>
   </div>
 </div>
@@ -14592,7 +14624,7 @@
     <div style="flex:1;min-width:0;">
       <div class="class-def t-en">A reciprocating pump is a pump that contains pistons or plungers designed to move in a reciprocating motion within cylindrical chambers to displace fluid through positive displacement action.</div>
       <div class="class-def t-pt" style="border-left-color:#059669;">Uma bomba alternativa é uma bomba que contém pistões ou êmbolos projetados para se moverem em movimento alternativo dentro de câmaras cilíndricas para deslocar fluido através de ação de deslocamento positivo.</div>
-      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Pump</div><div class="meta-item"><strong>Function:</strong> PumpingFunction</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">centrifugal pump, gear pump</span></div></div>
+      <div class="class-meta"><div class="meta-item"><strong>Genus:</strong> Pump</div><div class="meta-item"><strong>Function:</strong> PumpingFunction</div><div class="meta-item"><strong>Necessary parts:</strong> Piston</div><div class="meta-item"><strong>Disjoint with:</strong> <span style="font-family:monospace;font-size:.78rem;color:#475569;">centrifugal pump, gear pump</span></div></div>
     </div>
   </div>
 </div>

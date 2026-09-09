@@ -167,6 +167,38 @@
   .source-card-header{display:flex;justify-content:space-between;align-items:center;padding:.5rem .9rem;
                       background:#f8f9fa;border-bottom:1px solid var(--border);font-family:system-ui,sans-serif;}
   .source-card-body{padding:.75rem .9rem;font-size:.88rem;}
+  /* Layered-source provenance (tier / secondary_coverage / candidate_parts) */
+  .tier-badge{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;
+              letter-spacing:.04em;padding:.1rem .5rem;border-radius:4px;color:#fff;}
+  .tier-badge.tier-primary{background:#2563eb;}
+  .tier-badge.tier-secondary{background:#64748b;}
+  .tier-badge.tier-tertiary{background:#d97706;}
+  .coverage-badge{display:inline-block;font-size:.68rem;padding:.1rem .5rem;border-radius:4px;color:#fff;}
+  .coverage-badge.coverage-full{background:#16a34a;}
+  .coverage-badge.coverage-partial{background:#d97706;}
+  .coverage-badge.coverage-none{background:#94a3b8;}
+  .provenance-row{font-size:.75rem;display:flex;gap:.4rem;align-items:baseline;flex-wrap:wrap;
+                   margin-bottom:.35rem;}
+  .provenance-quote{font-size:.78rem;color:#374151;margin:.15rem 0 .5rem 0;padding-left:.6rem;
+                     border-left:2px solid var(--border);}
+  .candidate-part-row{font-size:.78rem;margin-bottom:.3rem;}
+  .conflict-banner{border-radius:8px;padding:.75rem 1rem;margin-bottom:1.25rem;font-size:.85rem;}
+  .conflict-banner.has-conflict{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;}
+  .conflict-banner.no-conflict{background:#f8fafc;border:1px dashed var(--border);color:var(--muted);}
+  /* Click-to-reveal help icon — reusable anywhere a term needs a short explanation
+     without cluttering the page by default. No JS: <details>/<summary>, same
+     mechanism already used for "excluded definitions" elsewhere on this page. */
+  .help-popover{display:inline-block;vertical-align:middle;margin-left:.3rem;}
+  .help-popover summary{list-style:none;}
+  .help-popover summary::-webkit-details-marker{display:none;}
+  .help-icon{display:inline-flex;align-items:center;justify-content:center;width:1.05rem;height:1.05rem;
+             border-radius:50%;background:var(--border);color:var(--muted);font-size:.68rem;
+             font-weight:700;font-family:system-ui,sans-serif;cursor:pointer;user-select:none;}
+  .help-icon:hover{background:#cbd5e1;color:#374151;}
+  .help-popover[open] .help-icon{background:#64748b;color:#fff;}
+  .help-content{display:block;font-size:.72rem;color:#374151;background:#f8fafc;
+                border:1px solid var(--border);border-radius:6px;padding:.5rem .65rem;
+                margin-top:.35rem;max-width:320px;line-height:1.45;font-family:system-ui,sans-serif;}
   @media (min-width:992px){.sidebar-sticky{position:sticky;top:1rem;}}
   @media print{.doc-nav,.no-print{display:none!important;}body{font-size:13px;}}
   /* Language toggle */
@@ -252,6 +284,8 @@
         </div>
       </div>
 
+      
+
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
         <div class="nl-def"><div class="lang-tag">EN</div>A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Uma válvula de retenção basculante é uma válvula de retenção que possui um elemento de fechamento consistindo de um disco que gira livremente em um mecanismo de dobradiça e abre automaticamente quando o fluxo é estabelecido e fecha automaticamente quando o fluxo cessa ou se inverte.</div>
@@ -259,12 +293,13 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every swing check valve is a check valve that has a hinged disc as component part and has a swing arm as component part</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every swing check valve is a check valve that has a backflow prevention function and has a swing check valve body as a component part.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
           <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (SwingCheckValve(x) → CheckValve(x) ∧ ∃f (BackflowPreventionFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Function axiom: BackflowPreventionFunction]</span>∀f (BackflowPreventionFunction(f) → ∀p (realizedIn(f,p) → BackflowPreventionProcess(p)) ∧ ∃p (BackflowPreventionProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
 <span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (SwingCheckValve(x) → ∃hasComponentPartAtAllTimes.HingedDisc ⊓ ∃hasComponentPartAtAllTimes.SwingArm) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
+<span class="fol-line"><span class="fol-label">[Necessary part: SwingCheckValveBody]</span>∀x (SwingCheckValve(x) → ∃p (SwingCheckValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((SwingCheckValve(x) ∧ BackflowPreventionFunction(f) ∧ bearerOf(x,f)) →
       ∃m (PortionOfFluid(m) ∧ participatesIn(m,f)) ∧
       ∃e (PortionOfFluid(e) ∧ participatesIn(e,f)) ∧
@@ -297,7 +332,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-134-g6e3b4fb&quot; ;
+    owl:versionInfo &quot;1.1.0-148-g66065e7&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -310,7 +345,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-04&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-09&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -336,9 +371,11 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 
 ### Process type
 :BackflowPreventionProcess rdf:type owl:Class ;
-    rdfs:subClassOf iof-core:PlannedProcess ;
+    rdfs:subClassOf :FlowControl ;
     rdfs:label &quot;backflow prevention process&quot;@en ;
     rdfs:label &quot;processo de prevenção de refluxo&quot;@pt-br .
+
+:FlowControl rdf:type owl:Class .
 
 :BackflowPreventionProcess
     rdfs:subClassOf [
@@ -360,15 +397,24 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
         owl:someValuesFrom :BackflowPreventionFunction
     ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasComponentPartAtAllTimes ;
+        owl:someValuesFrom :SwingCheckValveBody
+    ] ;
     rdfs:label &quot;swing check valve&quot;@en ;
     rdfs:label &quot;válvula de retenção basculante&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses.&quot;@en ;
     skos:definition &quot;A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses.&quot;@en ;
     iof-av:naturalLanguageDefinition &quot;Uma válvula de retenção basculante é uma válvula de retenção que possui um elemento de fechamento consistindo de um disco que gira livremente em um mecanismo de dobradiça e abre automaticamente quando o fluxo é estabelecido e fecha automaticamente quando o fluxo cessa ou se inverte.&quot;@pt-br ;
-    iof-av:semiFormalNaturalLanguageAxiom &quot;Every swing check valve is a check valve that has a hinged disc as component part and has a swing arm as component part&quot;@en ;
-    iof-av:firstOrderLogicAxiom &quot;∀x(SwingCheckValve(x) → CheckValve(x) ∧ ∃d(HingedDisc(d) ∧ hasComponentPartAtAllTimes(x,d)) ∧ ∃a(SwingArm(a) ∧ hasComponentPartAtAllTimes(x,a)))&quot;@en ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every swing check valve is a check valve that has a backflow prevention function and has a swing check valve body as a component part.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x (SwingCheckValve(x) → (CheckValve(x) ∧ ∃f(BackflowPreventionFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(SwingCheckValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))))&quot;@en ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
     iof-av:primitiveRationale &quot;Using necessary conditions for this constructive type to avoid false positives under OWA. Any artifact with a hinged disc mechanism should not automatically be classified as a swing check valve without domain expert validation, as specialized equipment may contain swing mechanisms but serve different primary functions.&quot;@en ;
+
+:SwingCheckValveBody rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;swing check valve body&quot;@en .
 </div></div>
       </div>
 
@@ -389,7 +435,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
         <span class="decision-value">BackflowPreventionProcess</span>
-        <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ FlowControl</span>
       </div>
     </div>
     <div class="rationale">The identity-giving function is inherited from check valve - preventing reverse flow. This is the same function as already enriched check valve class, so reusing the exact function name.</div>
@@ -416,7 +462,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="step-block-header">
     <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
-  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No necessary parts recorded.</p><div class="rationale mt-2">These parts are structurally necessary for the swing check mechanism to function. The hinged disc and swing arm constitute the core differentiating mechanism, while the valve seat is required for sealing.</div></div>
+  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>SwingCheckValveBody</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">These parts are structurally necessary for the swing check mechanism to function. The hinged disc and swing arm constitute the core differentiating mechanism, while the valve seat is required for sealing.</div></div>
 </div>
       </div>
 
@@ -431,7 +477,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Single inlet/outlet with automatic closure mechanism that prevents reverse flow while allowing forward flow. The transformation is purely directional control without changing fluid properties.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000153</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000153</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-08-07</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-04</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000153</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000153</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-09</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-09</td></tr></tbody></table></div>
 
     </div>
 
@@ -453,7 +499,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
               <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
               <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>BackflowPreventionFunction</td></tr>
               <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>BackflowPreventionProcess</td></tr>
-              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>
+              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>1</td></tr>
             </table>
           </div>
         </div>
@@ -513,6 +559,12 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   </div>
 </div>
 </div>
+        
+<div class="doc-section">
+  <div class="doc-section-title"><span class="t-en">Provenance tiers</span><span class="t-pt">Camadas de proveniência</span> </div>
+  <div class="provenance-row"><span class="tier-badge tier-primary">primary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">iso15926</span></div><div class="provenance-quote">A &lt;SWING CHECK VALVE&gt; is an &lt;ARTEFACT&gt; and a &lt;CHECK VALVE&gt; where the closure member is a disc which swings freely on a hinge and which opens automatically when flow is established and closes automatically when flow ceases or is reversed</div><div class="provenance-row"><span class="tier-badge tier-secondary">secondary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">cfihos</span></div><div class="provenance-quote">A check valve that is a check valve where the closure member is a disc which swings freely on a hinge and which opens automatically when flow is established and closes automatically when flow ceases or is reversed.</div><div class="provenance-row"><span class="tier-badge tier-secondary">secondary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">slb_glossary</span></div><div class="provenance-quote">A check valve in which the closure element is a hinged clapper that swings or rotates about a supporting shaft.</div><div class="provenance-row"><span class="tier-badge tier-secondary">secondary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">posc_caesar</span></div><div class="provenance-quote">A check valve that is a check valve where the closure member is a disc which swings freely on a hinge and which opens automatically when flow is established and closes automatically when flow ceases or is reversed.</div><div class="provenance-row"><span class="tier-badge tier-secondary">secondary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">iso15926</span><span class="text-muted" style="font-size:.68rem;">[structure]</span></div><div class="provenance-quote">A &lt;SWING CHECK VALVE BODY&gt; is a &lt;CHECK VALVE BODY&gt; that is intended for a swing check valve.</div>
+</div>
+        
       </div>
     </div>
   </div>

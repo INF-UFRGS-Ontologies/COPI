@@ -167,6 +167,38 @@
   .source-card-header{display:flex;justify-content:space-between;align-items:center;padding:.5rem .9rem;
                       background:#f8f9fa;border-bottom:1px solid var(--border);font-family:system-ui,sans-serif;}
   .source-card-body{padding:.75rem .9rem;font-size:.88rem;}
+  /* Layered-source provenance (tier / secondary_coverage / candidate_parts) */
+  .tier-badge{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;
+              letter-spacing:.04em;padding:.1rem .5rem;border-radius:4px;color:#fff;}
+  .tier-badge.tier-primary{background:#2563eb;}
+  .tier-badge.tier-secondary{background:#64748b;}
+  .tier-badge.tier-tertiary{background:#d97706;}
+  .coverage-badge{display:inline-block;font-size:.68rem;padding:.1rem .5rem;border-radius:4px;color:#fff;}
+  .coverage-badge.coverage-full{background:#16a34a;}
+  .coverage-badge.coverage-partial{background:#d97706;}
+  .coverage-badge.coverage-none{background:#94a3b8;}
+  .provenance-row{font-size:.75rem;display:flex;gap:.4rem;align-items:baseline;flex-wrap:wrap;
+                   margin-bottom:.35rem;}
+  .provenance-quote{font-size:.78rem;color:#374151;margin:.15rem 0 .5rem 0;padding-left:.6rem;
+                     border-left:2px solid var(--border);}
+  .candidate-part-row{font-size:.78rem;margin-bottom:.3rem;}
+  .conflict-banner{border-radius:8px;padding:.75rem 1rem;margin-bottom:1.25rem;font-size:.85rem;}
+  .conflict-banner.has-conflict{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;}
+  .conflict-banner.no-conflict{background:#f8fafc;border:1px dashed var(--border);color:var(--muted);}
+  /* Click-to-reveal help icon — reusable anywhere a term needs a short explanation
+     without cluttering the page by default. No JS: <details>/<summary>, same
+     mechanism already used for "excluded definitions" elsewhere on this page. */
+  .help-popover{display:inline-block;vertical-align:middle;margin-left:.3rem;}
+  .help-popover summary{list-style:none;}
+  .help-popover summary::-webkit-details-marker{display:none;}
+  .help-icon{display:inline-flex;align-items:center;justify-content:center;width:1.05rem;height:1.05rem;
+             border-radius:50%;background:var(--border);color:var(--muted);font-size:.68rem;
+             font-weight:700;font-family:system-ui,sans-serif;cursor:pointer;user-select:none;}
+  .help-icon:hover{background:#cbd5e1;color:#374151;}
+  .help-popover[open] .help-icon{background:#64748b;color:#fff;}
+  .help-content{display:block;font-size:.72rem;color:#374151;background:#f8fafc;
+                border:1px solid var(--border);border-radius:6px;padding:.5rem .65rem;
+                margin-top:.35rem;max-width:320px;line-height:1.45;font-family:system-ui,sans-serif;}
   @media (min-width:992px){.sidebar-sticky{position:sticky;top:1rem;}}
   @media print{.doc-nav,.no-print{display:none!important;}body{font-size:13px;}}
   /* Language toggle */
@@ -249,6 +281,8 @@
         </div>
       </div>
 
+      
+
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
         <div class="nl-def"><div class="lang-tag">EN</div>A pipe tee is a pipe fitting that has three fluid ports arranged in T-shaped configuration, with one branch port perpendicular to two run ports, designed to realize fluid conduction function through flow division or combination.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um tê de tubulação é uma conexão de tubulação que possui três portas de fluido dispostas em configuração em formato de T, com uma porta de ramal perpendicular a duas portas de passagem, projetada para realizar função de condução de fluido através de divisão ou combinação de fluxo.</div>
@@ -256,7 +290,7 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every pipe tee is a pipe that has exactly three fluid ports arranged in T-configuration and bears a fluid conduction function</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every pipe tee is a pipe that bears a fluid conduction function and has a branch port as a component part at all times.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
           <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (PipeTee(x) → Pipe(x) ∧ ∃f (FluidConductionFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
@@ -295,7 +329,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-134-g6e3b4fb&quot; ;
+    owl:versionInfo &quot;1.1.0-148-g66065e7&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -308,7 +342,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-04&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-09&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -334,9 +368,11 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 
 ### Process type
 :FluidConductionProcess rdf:type owl:Class ;
-    rdfs:subClassOf iof-core:PlannedProcess ;
+    rdfs:subClassOf :MomentumTransfer ;
     rdfs:label &quot;fluid conduction process&quot;@en ;
     rdfs:label &quot;processo de condução de fluido&quot;@pt-br .
+
+:MomentumTransfer rdf:type owl:Class .
 
 :FluidConductionProcess
     rdfs:subClassOf [
@@ -368,8 +404,8 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:naturalLanguageDefinition &quot;A pipe tee is a pipe fitting that has three fluid ports arranged in T-shaped configuration, with one branch port perpendicular to two run ports, designed to realize fluid conduction function through flow division or combination.&quot;@en ;
     skos:definition &quot;A pipe tee is a pipe fitting that has three fluid ports arranged in T-shaped configuration, with one branch port perpendicular to two run ports, designed to realize fluid conduction function through flow division or combination.&quot;@en ;
     iof-av:naturalLanguageDefinition &quot;Um tê de tubulação é uma conexão de tubulação que possui três portas de fluido dispostas em configuração em formato de T, com uma porta de ramal perpendicular a duas portas de passagem, projetada para realizar função de condução de fluido através de divisão ou combinação de fluxo.&quot;@pt-br ;
-    iof-av:semiFormalNaturalLanguageAxiom &quot;Every pipe tee is a pipe that has exactly three fluid ports arranged in T-configuration and bears a fluid conduction function&quot;@en ;
-    iof-av:firstOrderLogicAxiom &quot;∀x(PipeTee(x) → Pipe(x) ∧ ∃p1,p2,p3(BranchPort(p1) ∧ RunPort(p2) ∧ RunPort(p3) ∧ hasPartAtAllTimes(x,p1) ∧ hasPartAtAllTimes(x,p2) ∧ hasPartAtAllTimes(x,p3) ∧ perpendicularTo(p1,p2) ∧ perpendicularTo(p1,p3)))&quot;@en ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every pipe tee is a pipe that bears a fluid conduction function and has a branch port as a component part at all times.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x(PipeTee(x) → Pipe(x) ∧ ∃f(FluidConductionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(BranchPort(p) ∧ hasComponentPartAtAllTimes(x,p)))&quot;@en ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
     iof-av:primitiveRationale &quot;Using necessary conditions for this constructive type. The T-shaped geometric configuration with three specific ports is a structural differentia that is harder to make sufficient under OWA. Custom manifolds or complex fittings might contain T-shaped passages but should not be automatically classified as standard pipe tees without domain expert validation.&quot;@en ;
 
@@ -401,7 +437,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
         <span class="decision-value">FluidConductionProcess</span>
-        <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ MomentumTransfer</span>
       </div>
     </div>
     <div class="rationale">Like other pipe fittings, the pipe tee&#x27;s basic function is to conduct fluid while enabling flow division/combining. This is the same generic function as pipes and pipe elbows - it provides a conduit for fluid flow. The T-shape configuration enables branching but the identity-giving function is still fluid conduction.</div>
@@ -443,7 +479,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">A pipe tee can operate in combining mode (two inlets, one outlet) or dividing mode (one inlet, two outlets), enabling fluid distribution or collection without altering the fluid properties.</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">pipe elbow</span></div><div class="rationale mt-2">C1: pipe elbow. Incompatible geometric configurations - T-shaped branching versus curved two-port flow path. Cannot have both three-port T-geometry and two-port curved geometry simultaneously.</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000325</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000325</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-08-07</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-04</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000325</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000325</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-09</td></tr></tbody></table></div>
 
     </div>
 
@@ -510,6 +546,12 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   </div>
 </div>
 </div>
+        
+<div class="doc-section">
+  <div class="doc-section-title"><span class="t-en">Provenance tiers</span><span class="t-pt">Camadas de proveniência</span> </div>
+  <div class="provenance-row"><span class="tier-badge tier-primary">primary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">iso15926</span></div><div class="provenance-quote">A &lt;PIPE TEE&gt; is a &lt;PIPING COMPONENT&gt; and a &lt;PIPING NETWORK NODE&gt; and three piping ends in T-shape, including a branch at 90 degrees</div><div class="provenance-row"><span class="tier-badge tier-secondary">secondary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">cfihos</span></div><div class="provenance-quote">A physical object that has three piping ends in T-shape, including a branch at 90 degrees.</div><div class="provenance-row"><span class="tier-badge tier-secondary">secondary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">posc_caesar</span></div><div class="provenance-quote">An &#x27;artefact&#x27; that has three piping ends in T-shape, including a branch at 90 degrees.</div>
+</div>
+        
       </div>
     </div>
   </div>
