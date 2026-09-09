@@ -113,10 +113,13 @@ jobs:
             fname=$(basename "$f")
             local_bytes=$(stat -c%s "$f")
             echo "Uploading $fname ($local_bytes bytes)..."
+            # ssh-dss dropped from HostKeyAlgorithms: OpenSSH 9.8+ (this runner: 10.2)
+            # refuses it as an unknown algorithm name outright ("Bad key types"),
+            # not just deprecates it. ssh-rsa alone is enough for this server's host key.
             SSHPASS="${FTP_PASS}" sshpass -e scp \
               -o StrictHostKeyChecking=no \
               -o UserKnownHostsFile=/dev/null \
-              -o HostKeyAlgorithms=+ssh-rsa,ssh-dss \
+              -o HostKeyAlgorithms=+ssh-rsa \
               "$f" "ontokg@${DEPLOY_HOST}:../ontologies/public_html/copi/${fname}" \
               || { echo "  FAILED (scp exited $?)"; exit 1; }
             echo "  OK"
