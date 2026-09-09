@@ -32,7 +32,7 @@
     <dcterms:title xml:lang="pt-br">Ontologia Core para Instalações de Petróleo (COPI)</dcterms:title>
     <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl"/>
     <owl:imports rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/"/>
-    <owl:versionInfo>1.1.0-146-g8dd5709</owl:versionInfo>
+    <owl:versionInfo>1.1.0-148-g66065e7</owl:versionInfo>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
     <skos:scopeNote xml:lang="en">Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.</skos:scopeNote>
@@ -15596,11 +15596,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001816">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
-    <rdf:rest rdf:nodeID="n001834"/>
+    <rdf:rest rdf:nodeID="n001838"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001817">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
-    <rdf:rest rdf:nodeID="n002369"/>
+    <rdf:rest rdf:nodeID="n002368"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001818">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
@@ -15696,7 +15696,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001841">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
-    <rdf:rest rdf:nodeID="n001810"/>
+    <rdf:rest rdf:nodeID="n001808"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001842">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
@@ -15708,7 +15708,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001844">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074"/>
-    <rdf:rest rdf:nodeID="n002049"/>
+    <rdf:rest rdf:nodeID="n002050"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001845">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
@@ -15720,11 +15720,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001847">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
-    <rdf:rest rdf:nodeID="n001968"/>
+    <rdf:rest rdf:nodeID="n001969"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001848">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
-    <rdf:rest rdf:nodeID="n002016"/>
+    <rdf:rest rdf:nodeID="n002015"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001849">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
@@ -15768,15 +15768,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001859">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <rdf:rest rdf:nodeID="n001807"/>
+    <rdf:rest rdf:nodeID="n001799"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001860">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <rdf:rest rdf:nodeID="n001827"/>
+    <rdf:rest rdf:nodeID="n001834"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001861">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <rdf:rest rdf:nodeID="n002371"/>
+    <rdf:rest rdf:nodeID="n002369"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001862">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
@@ -15820,11 +15820,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001872">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
-    <rdf:rest rdf:nodeID="n001832"/>
+    <rdf:rest rdf:nodeID="n001829"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001873">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
-    <rdf:rest rdf:nodeID="n001908"/>
+    <rdf:rest rdf:nodeID="n001898"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001874">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
@@ -15868,11 +15868,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001884">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
-    <rdf:rest rdf:nodeID="n002290"/>
+    <rdf:rest rdf:nodeID="n002291"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001885">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
-    <rdf:rest rdf:nodeID="n001897"/>
+    <rdf:rest rdf:nodeID="n001904"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001886">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
@@ -15896,7 +15896,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001891">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
-    <rdf:rest rdf:nodeID="n001959"/>
+    <rdf:rest rdf:nodeID="n001957"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001892">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
@@ -15972,7 +15972,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001910">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
-    <rdf:rest rdf:nodeID="n002291"/>
+    <rdf:rest rdf:nodeID="n002292"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001911">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
@@ -15984,11 +15984,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001913">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
-    <rdf:rest rdf:nodeID="n001986"/>
+    <rdf:rest rdf:nodeID="n001987"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001914">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
-    <rdf:rest rdf:nodeID="n001996"/>
+    <rdf:rest rdf:nodeID="n001997"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001915">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
@@ -16016,7 +16016,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001921">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
-    <rdf:rest rdf:nodeID="n001929"/>
+    <rdf:rest rdf:nodeID="n001931"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001922">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000098"/>
@@ -16032,15 +16032,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001925">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
-    <rdf:rest rdf:nodeID="n001911"/>
+    <rdf:rest rdf:nodeID="n001912"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001926">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
-    <rdf:rest rdf:nodeID="n001987"/>
+    <rdf:rest rdf:nodeID="n001985"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001927">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
-    <rdf:rest rdf:nodeID="n001997"/>
+    <rdf:rest rdf:nodeID="n001996"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001928">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
@@ -16060,15 +16060,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001932">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
-    <rdf:rest rdf:nodeID="n001916"/>
+    <rdf:rest rdf:nodeID="n001918"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001933">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
-    <rdf:rest rdf:nodeID="n001990"/>
+    <rdf:rest rdf:nodeID="n001988"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001934">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
-    <rdf:rest rdf:nodeID="n002001"/>
+    <rdf:rest rdf:nodeID="n002002"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001935">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102"/>
@@ -16092,7 +16092,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001940">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102"/>
-    <rdf:rest rdf:nodeID="n002337"/>
+    <rdf:rest rdf:nodeID="n002338"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001941">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
@@ -16128,15 +16128,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001949">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000107"/>
-    <rdf:rest rdf:nodeID="n002160"/>
+    <rdf:rest rdf:nodeID="n002155"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001950">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000107"/>
-    <rdf:rest rdf:nodeID="n001862"/>
+    <rdf:rest rdf:nodeID="n001867"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001951">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
-    <rdf:rest rdf:nodeID="n001917"/>
+    <rdf:rest rdf:nodeID="n001916"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001952">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
@@ -16144,11 +16144,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001953">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
-    <rdf:rest rdf:nodeID="n001928"/>
+    <rdf:rest rdf:nodeID="n001930"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001954">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
-    <rdf:rest rdf:nodeID="n002002"/>
+    <rdf:rest rdf:nodeID="n002001"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001955">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
@@ -16156,7 +16156,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001956">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000112"/>
-    <rdf:rest rdf:nodeID="n002041"/>
+    <rdf:rest rdf:nodeID="n002042"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001957">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
@@ -16184,7 +16184,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001963">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
-    <rdf:rest rdf:nodeID="n001887"/>
+    <rdf:rest rdf:nodeID="n001890"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001964">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000114"/>
@@ -16196,11 +16196,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001966">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
-    <rdf:rest rdf:nodeID="n001796"/>
+    <rdf:rest rdf:nodeID="n001804"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001967">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
-    <rdf:rest rdf:nodeID="n001828"/>
+    <rdf:rest rdf:nodeID="n001832"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001968">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000116"/>
@@ -16212,7 +16212,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001970">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000117"/>
-    <rdf:rest rdf:nodeID="n001976"/>
+    <rdf:rest rdf:nodeID="n001978"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001971">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
@@ -16260,15 +16260,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001982">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
-    <rdf:rest rdf:nodeID="n002066"/>
+    <rdf:rest rdf:nodeID="n002069"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001983">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
-    <rdf:rest rdf:nodeID="n002104"/>
+    <rdf:rest rdf:nodeID="n002094"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001984">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
-    <rdf:rest rdf:nodeID="n002028"/>
+    <rdf:rest rdf:nodeID="n002029"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001985">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119"/>
@@ -16304,7 +16304,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001993">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
-    <rdf:rest rdf:nodeID="n001931"/>
+    <rdf:rest rdf:nodeID="n001929"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001994">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
@@ -16312,7 +16312,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001995">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000121"/>
-    <rdf:rest rdf:nodeID="n001894"/>
+    <rdf:rest rdf:nodeID="n001896"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001996">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
@@ -16324,7 +16324,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001998">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
-    <rdf:rest rdf:nodeID="n001912"/>
+    <rdf:rest rdf:nodeID="n001911"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001999">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
@@ -16332,7 +16332,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002000">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
-    <rdf:rest rdf:nodeID="n001985"/>
+    <rdf:rest rdf:nodeID="n001986"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002001">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000123"/>
@@ -16364,15 +16364,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002008">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
-    <rdf:rest rdf:nodeID="n002099"/>
+    <rdf:rest rdf:nodeID="n002092"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002009">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
-    <rdf:rest rdf:nodeID="n002076"/>
+    <rdf:rest rdf:nodeID="n002066"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002010">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
-    <rdf:rest rdf:nodeID="n002248"/>
+    <rdf:rest rdf:nodeID="n002244"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002011">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
@@ -16388,7 +16388,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002014">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
-    <rdf:rest rdf:nodeID="n002123"/>
+    <rdf:rest rdf:nodeID="n002125"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002015">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
@@ -16400,15 +16400,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002017">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
-    <rdf:rest rdf:nodeID="n002075"/>
+    <rdf:rest rdf:nodeID="n002074"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002018">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
-    <rdf:rest rdf:nodeID="n002095"/>
+    <rdf:rest rdf:nodeID="n002096"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002019">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
-    <rdf:rest rdf:nodeID="n002024"/>
+    <rdf:rest rdf:nodeID="n002032"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002020">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
@@ -16416,11 +16416,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002021">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
-    <rdf:rest rdf:nodeID="n002062"/>
+    <rdf:rest rdf:nodeID="n002059"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002022">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130"/>
-    <rdf:rest rdf:nodeID="n002247"/>
+    <rdf:rest rdf:nodeID="n002249"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002023">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130"/>
@@ -16468,15 +16468,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002034">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
-    <rdf:rest rdf:nodeID="n002065"/>
+    <rdf:rest rdf:nodeID="n002070"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002035">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
-    <rdf:rest rdf:nodeID="n002096"/>
+    <rdf:rest rdf:nodeID="n002097"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002036">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
-    <rdf:rest rdf:nodeID="n001977"/>
+    <rdf:rest rdf:nodeID="n001976"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002037">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
@@ -16484,11 +16484,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002038">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
-    <rdf:rest rdf:nodeID="n002093"/>
+    <rdf:rest rdf:nodeID="n002098"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002039">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
-    <rdf:rest rdf:nodeID="n002068"/>
+    <rdf:rest rdf:nodeID="n002075"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002040">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133"/>
@@ -16508,19 +16508,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002044">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
-    <rdf:rest rdf:nodeID="n001855"/>
+    <rdf:rest rdf:nodeID="n001849"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002045">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
-    <rdf:rest rdf:nodeID="n002312"/>
+    <rdf:rest rdf:nodeID="n002310"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002046">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
-    <rdf:rest rdf:nodeID="n001867"/>
+    <rdf:rest rdf:nodeID="n001870"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002047">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000137"/>
-    <rdf:rest rdf:nodeID="n002245"/>
+    <rdf:rest rdf:nodeID="n002248"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002048">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000138"/>
@@ -16540,15 +16540,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002052">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
-    <rdf:rest rdf:nodeID="n001918"/>
+    <rdf:rest rdf:nodeID="n001917"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002053">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
-    <rdf:rest rdf:nodeID="n001988"/>
+    <rdf:rest rdf:nodeID="n001990"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002054">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
-    <rdf:rest rdf:nodeID="n001930"/>
+    <rdf:rest rdf:nodeID="n001928"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002055">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
@@ -16560,11 +16560,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002057">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
-    <rdf:rest rdf:nodeID="n001969"/>
+    <rdf:rest rdf:nodeID="n001968"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002058">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
-    <rdf:rest rdf:nodeID="n002015"/>
+    <rdf:rest rdf:nodeID="n002016"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002059">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
@@ -16588,7 +16588,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002064">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
-    <rdf:rest rdf:nodeID="n002071"/>
+    <rdf:rest rdf:nodeID="n002067"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002065">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
@@ -16640,27 +16640,27 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002077">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
-    <rdf:rest rdf:nodeID="n001975"/>
+    <rdf:rest rdf:nodeID="n001979"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002078">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
-    <rdf:rest rdf:nodeID="n002098"/>
+    <rdf:rest rdf:nodeID="n002095"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002079">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
-    <rdf:rest rdf:nodeID="n002027"/>
+    <rdf:rest rdf:nodeID="n002030"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002080">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000145"/>
-    <rdf:rest rdf:nodeID="n001943"/>
+    <rdf:rest rdf:nodeID="n001941"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002081">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000146"/>
-    <rdf:rest rdf:nodeID="n002244"/>
+    <rdf:rest rdf:nodeID="n002247"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002082">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000148"/>
-    <rdf:rest rdf:nodeID="n001942"/>
+    <rdf:rest rdf:nodeID="n001943"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002083">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000149"/>
@@ -16668,7 +16668,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002084">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000150"/>
-    <rdf:rest rdf:nodeID="n002042"/>
+    <rdf:rest rdf:nodeID="n002041"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002085">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000151"/>
@@ -16676,19 +16676,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002086">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000151"/>
-    <rdf:rest rdf:nodeID="n002292"/>
+    <rdf:rest rdf:nodeID="n002295"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002087">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
-    <rdf:rest rdf:nodeID="n001905"/>
+    <rdf:rest rdf:nodeID="n001907"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002088">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
-    <rdf:rest rdf:nodeID="n001806"/>
+    <rdf:rest rdf:nodeID="n001809"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002089">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
-    <rdf:rest rdf:nodeID="n001829"/>
+    <rdf:rest rdf:nodeID="n001831"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002090">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000153"/>
@@ -16760,19 +16760,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002107">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
-    <rdf:rest rdf:nodeID="n002072"/>
+    <rdf:rest rdf:nodeID="n002065"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002108">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
-    <rdf:rest rdf:nodeID="n001979"/>
+    <rdf:rest rdf:nodeID="n001971"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002109">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
-    <rdf:rest rdf:nodeID="n002025"/>
+    <rdf:rest rdf:nodeID="n002028"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002110">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000156"/>
-    <rdf:rest rdf:nodeID="n002125"/>
+    <rdf:rest rdf:nodeID="n002123"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002111">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
@@ -16780,35 +16780,35 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002112">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
-    <rdf:rest rdf:nodeID="n002124"/>
+    <rdf:rest rdf:nodeID="n002126"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002113">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
-    <rdf:rest rdf:nodeID="n001858"/>
+    <rdf:rest rdf:nodeID="n001852"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002114">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
-    <rdf:rest rdf:nodeID="n001804"/>
+    <rdf:rest rdf:nodeID="n001802"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002115">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
-    <rdf:rest rdf:nodeID="n001831"/>
+    <rdf:rest rdf:nodeID="n001833"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002116">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
-    <rdf:rest rdf:nodeID="n002067"/>
+    <rdf:rest rdf:nodeID="n002068"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002117">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
-    <rdf:rest rdf:nodeID="n002103"/>
+    <rdf:rest rdf:nodeID="n002104"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002118">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
-    <rdf:rest rdf:nodeID="n001972"/>
+    <rdf:rest rdf:nodeID="n001977"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002119">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
-    <rdf:rest rdf:nodeID="n001899"/>
+    <rdf:rest rdf:nodeID="n001895"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002120">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
@@ -16816,11 +16816,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002121">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
-    <rdf:rest rdf:nodeID="n001820"/>
+    <rdf:rest rdf:nodeID="n001819"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002122">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
-    <rdf:rest rdf:nodeID="n002368"/>
+    <rdf:rest rdf:nodeID="n002371"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002123">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
@@ -16840,7 +16840,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002127">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000208"/>
-    <rdf:rest rdf:nodeID="n002158"/>
+    <rdf:rest rdf:nodeID="n002160"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002128">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000209"/>
@@ -16848,67 +16848,67 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002129">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000210"/>
-    <rdf:rest rdf:nodeID="n002094"/>
+    <rdf:rest rdf:nodeID="n002101"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002130">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n002069"/>
+    <rdf:rest rdf:nodeID="n002073"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002131">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n002101"/>
+    <rdf:rest rdf:nodeID="n002100"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002132">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n001981"/>
+    <rdf:rest rdf:nodeID="n001980"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002133">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n002026"/>
+    <rdf:rest rdf:nodeID="n002033"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002134">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
-    <rdf:rest rdf:nodeID="n002314"/>
+    <rdf:rest rdf:nodeID="n002312"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002135">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
-    <rdf:rest rdf:nodeID="n001797"/>
+    <rdf:rest rdf:nodeID="n001813"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002136">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
-    <rdf:rest rdf:nodeID="n001826"/>
+    <rdf:rest rdf:nodeID="n001822"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002137">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
-    <rdf:rest rdf:nodeID="n001902"/>
+    <rdf:rest rdf:nodeID="n001899"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002138">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
-    <rdf:rest rdf:nodeID="n001852"/>
+    <rdf:rest rdf:nodeID="n001856"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002139">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
-    <rdf:rest rdf:nodeID="n001795"/>
+    <rdf:rest rdf:nodeID="n001800"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002140">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
-    <rdf:rest rdf:nodeID="n001906"/>
+    <rdf:rest rdf:nodeID="n001903"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002141">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
-    <rdf:rest rdf:nodeID="n001833"/>
+    <rdf:rest rdf:nodeID="n001824"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002142">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
-    <rdf:rest rdf:nodeID="n001898"/>
+    <rdf:rest rdf:nodeID="n001894"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002143">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
-    <rdf:rest rdf:nodeID="n001876"/>
+    <rdf:rest rdf:nodeID="n001880"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002144">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
-    <rdf:rest rdf:nodeID="n001830"/>
+    <rdf:rest rdf:nodeID="n001837"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002145">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217"/>
@@ -16932,7 +16932,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002150">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000221"/>
-    <rdf:rest rdf:nodeID="n002310"/>
+    <rdf:rest rdf:nodeID="n002314"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002151">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
@@ -16984,7 +16984,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002163">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
-    <rdf:rest rdf:nodeID="n002295"/>
+    <rdf:rest rdf:nodeID="n002294"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002164">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
@@ -17000,15 +17000,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002167">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
-    <rdf:rest rdf:nodeID="n001904"/>
+    <rdf:rest rdf:nodeID="n001901"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002168">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
-    <rdf:rest rdf:nodeID="n001836"/>
+    <rdf:rest rdf:nodeID="n001820"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002169">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000229"/>
-    <rdf:rest rdf:nodeID="n002192"/>
+    <rdf:rest rdf:nodeID="n002193"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002170">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000232"/>
@@ -17020,15 +17020,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002172">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
-    <rdf:rest rdf:nodeID="n002074"/>
+    <rdf:rest rdf:nodeID="n002072"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002173">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
-    <rdf:rest rdf:nodeID="n001980"/>
+    <rdf:rest rdf:nodeID="n001981"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002174">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
-    <rdf:rest rdf:nodeID="n002031"/>
+    <rdf:rest rdf:nodeID="n002025"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002175">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000234"/>
@@ -17048,11 +17048,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002179">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000235"/>
-    <rdf:rest rdf:nodeID="n002005"/>
+    <rdf:rest rdf:nodeID="n002006"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002180">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000236"/>
-    <rdf:rest rdf:nodeID="n002004"/>
+    <rdf:rest rdf:nodeID="n002005"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002181">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000236"/>
@@ -17060,15 +17060,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002182">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000238"/>
-    <rdf:rest rdf:nodeID="n001874"/>
+    <rdf:rest rdf:nodeID="n001876"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002183">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000240"/>
-    <rdf:rest rdf:nodeID="n001866"/>
+    <rdf:rest rdf:nodeID="n001869"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002184">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000240"/>
-    <rdf:rest rdf:nodeID="n002156"/>
+    <rdf:rest rdf:nodeID="n002151"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002185">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000241"/>
@@ -17080,19 +17080,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002187">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
-    <rdf:rest rdf:nodeID="n002006"/>
+    <rdf:rest rdf:nodeID="n002004"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002188">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
-    <rdf:rest rdf:nodeID="n001815"/>
+    <rdf:rest rdf:nodeID="n001803"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002189">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
-    <rdf:rest rdf:nodeID="n001837"/>
+    <rdf:rest rdf:nodeID="n001826"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002190">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000244"/>
-    <rdf:rest rdf:nodeID="n001869"/>
+    <rdf:rest rdf:nodeID="n001863"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002191">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000244"/>
@@ -17108,7 +17108,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002194">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
-    <rdf:rest rdf:nodeID="n002249"/>
+    <rdf:rest rdf:nodeID="n002246"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002195">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
@@ -17116,27 +17116,27 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002196">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
-    <rdf:rest rdf:nodeID="n002092"/>
+    <rdf:rest rdf:nodeID="n002103"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002197">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000246"/>
-    <rdf:rest rdf:nodeID="n002126"/>
+    <rdf:rest rdf:nodeID="n002124"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002198">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
-    <rdf:rest rdf:nodeID="n002246"/>
+    <rdf:rest rdf:nodeID="n002245"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002199">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
-    <rdf:rest rdf:nodeID="n002063"/>
+    <rdf:rest rdf:nodeID="n002062"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002200">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
-    <rdf:rest rdf:nodeID="n002193"/>
+    <rdf:rest rdf:nodeID="n002192"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002201">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000249"/>
-    <rdf:rest rdf:nodeID="n001937"/>
+    <rdf:rest rdf:nodeID="n001938"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002202">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000249"/>
@@ -17164,11 +17164,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002208">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000255"/>
-    <rdf:rest rdf:nodeID="n001863"/>
+    <rdf:rest rdf:nodeID="n001868"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002209">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000255"/>
-    <rdf:rest rdf:nodeID="n002154"/>
+    <rdf:rest rdf:nodeID="n002152"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002210">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
@@ -17176,19 +17176,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002211">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
-    <rdf:rest rdf:nodeID="n001868"/>
+    <rdf:rest rdf:nodeID="n001866"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002212">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
-    <rdf:rest rdf:nodeID="n002152"/>
+    <rdf:rest rdf:nodeID="n002156"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002213">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000259"/>
-    <rdf:rest rdf:nodeID="n001938"/>
+    <rdf:rest rdf:nodeID="n001937"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002214">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000259"/>
-    <rdf:rest rdf:nodeID="n002338"/>
+    <rdf:rest rdf:nodeID="n002337"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002215">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
@@ -17200,7 +17200,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002217">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
-    <rdf:rest rdf:nodeID="n002328"/>
+    <rdf:rest rdf:nodeID="n002327"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002218">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
@@ -17208,15 +17208,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002219">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000261"/>
-    <rdf:rest rdf:nodeID="n001960"/>
+    <rdf:rest rdf:nodeID="n001959"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002220">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000261"/>
-    <rdf:rest rdf:nodeID="n001888"/>
+    <rdf:rest rdf:nodeID="n001887"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002221">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264"/>
-    <rdf:rest rdf:nodeID="n001962"/>
+    <rdf:rest rdf:nodeID="n001960"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002222">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264"/>
@@ -17232,15 +17232,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002225">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000268"/>
-    <rdf:rest rdf:nodeID="n002161"/>
+    <rdf:rest rdf:nodeID="n002158"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002226">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000268"/>
-    <rdf:rest rdf:nodeID="n002275"/>
+    <rdf:rest rdf:nodeID="n002276"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002227">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000269"/>
-    <rdf:rest rdf:nodeID="n002050"/>
+    <rdf:rest rdf:nodeID="n002049"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002228">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000271"/>
@@ -17252,59 +17252,59 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002230">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
-    <rdf:rest rdf:nodeID="n002313"/>
+    <rdf:rest rdf:nodeID="n002311"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002231">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
-    <rdf:rest rdf:nodeID="n001856"/>
+    <rdf:rest rdf:nodeID="n001854"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002232">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
-    <rdf:rest rdf:nodeID="n001805"/>
+    <rdf:rest rdf:nodeID="n001810"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002233">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n001880"/>
+    <rdf:rest rdf:nodeID="n001877"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002234">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n001909"/>
+    <rdf:rest rdf:nodeID="n001893"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002235">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n001819"/>
+    <rdf:rest rdf:nodeID="n001823"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002236">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n001803"/>
+    <rdf:rest rdf:nodeID="n001797"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002237">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
-    <rdf:rest rdf:nodeID="n001907"/>
+    <rdf:rest rdf:nodeID="n001905"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002238">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
-    <rdf:rest rdf:nodeID="n001878"/>
+    <rdf:rest rdf:nodeID="n001883"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002239">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
-    <rdf:rest rdf:nodeID="n001824"/>
+    <rdf:rest rdf:nodeID="n001818"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002240">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
-    <rdf:rest rdf:nodeID="n001800"/>
+    <rdf:rest rdf:nodeID="n001815"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002241">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
-    <rdf:rest rdf:nodeID="n001870"/>
+    <rdf:rest rdf:nodeID="n001864"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002242">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
-    <rdf:rest rdf:nodeID="n002153"/>
+    <rdf:rest rdf:nodeID="n002161"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002243">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
-    <rdf:rest rdf:nodeID="n002276"/>
+    <rdf:rest rdf:nodeID="n002277"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002244">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
@@ -17332,7 +17332,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002250">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
-    <rdf:rest rdf:nodeID="n002073"/>
+    <rdf:rest rdf:nodeID="n002076"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002251">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
@@ -17340,7 +17340,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002252">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
-    <rdf:rest rdf:nodeID="n002033"/>
+    <rdf:rest rdf:nodeID="n002026"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002253">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000279"/>
@@ -17360,7 +17360,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002257">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000283"/>
-    <rdf:rest rdf:nodeID="n002151"/>
+    <rdf:rest rdf:nodeID="n002154"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002258">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000285"/>
@@ -17372,15 +17372,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002260">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
-    <rdf:rest rdf:nodeID="n001854"/>
+    <rdf:rest rdf:nodeID="n001857"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002261">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
-    <rdf:rest rdf:nodeID="n001811"/>
+    <rdf:rest rdf:nodeID="n001806"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002262">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
-    <rdf:rest rdf:nodeID="n001825"/>
+    <rdf:rest rdf:nodeID="n001821"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002263">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000289"/>
@@ -17392,15 +17392,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002265">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000289"/>
-    <rdf:rest rdf:nodeID="n001936"/>
+    <rdf:rest rdf:nodeID="n001935"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002266">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000292"/>
-    <rdf:rest rdf:nodeID="n002155"/>
+    <rdf:rest rdf:nodeID="n002162"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002267">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000292"/>
-    <rdf:rest rdf:nodeID="n002277"/>
+    <rdf:rest rdf:nodeID="n002275"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002268">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000296"/>
@@ -17416,11 +17416,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002271">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000298"/>
-    <rdf:rest rdf:nodeID="n002215"/>
+    <rdf:rest rdf:nodeID="n002216"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002272">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000298"/>
-    <rdf:rest rdf:nodeID="n002327"/>
+    <rdf:rest rdf:nodeID="n002328"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002273">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000299"/>
@@ -17428,7 +17428,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002274">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000300"/>
-    <rdf:rest rdf:nodeID="n001935"/>
+    <rdf:rest rdf:nodeID="n001936"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002275">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
@@ -17452,11 +17452,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002280">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
-    <rdf:rest rdf:nodeID="n001818"/>
+    <rdf:rest rdf:nodeID="n001840"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002281">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
-    <rdf:rest rdf:nodeID="n001812"/>
+    <rdf:rest rdf:nodeID="n001798"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002282">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
@@ -17468,27 +17468,27 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002284">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
-    <rdf:rest rdf:nodeID="n001973"/>
+    <rdf:rest rdf:nodeID="n001975"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002285">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
-    <rdf:rest rdf:nodeID="n002097"/>
+    <rdf:rest rdf:nodeID="n002099"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002286">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
-    <rdf:rest rdf:nodeID="n002030"/>
+    <rdf:rest rdf:nodeID="n002024"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002287">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
-    <rdf:rest rdf:nodeID="n001798"/>
+    <rdf:rest rdf:nodeID="n001805"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002288">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
-    <rdf:rest rdf:nodeID="n001822"/>
+    <rdf:rest rdf:nodeID="n001836"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002289">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
-    <rdf:rest rdf:nodeID="n001896"/>
+    <rdf:rest rdf:nodeID="n001908"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002290">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
@@ -17516,15 +17516,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002296">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
-    <rdf:rest rdf:nodeID="n001877"/>
+    <rdf:rest rdf:nodeID="n001874"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002297">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
-    <rdf:rest rdf:nodeID="n001808"/>
+    <rdf:rest rdf:nodeID="n001812"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002298">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
-    <rdf:rest rdf:nodeID="n001821"/>
+    <rdf:rest rdf:nodeID="n001825"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002299">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000315"/>
@@ -17540,7 +17540,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002302">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000316"/>
-    <rdf:rest rdf:nodeID="n001849"/>
+    <rdf:rest rdf:nodeID="n001858"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002303">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000318"/>
@@ -17560,15 +17560,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002307">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
-    <rdf:rest rdf:nodeID="n001864"/>
+    <rdf:rest rdf:nodeID="n001862"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002308">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
-    <rdf:rest rdf:nodeID="n001881"/>
+    <rdf:rest rdf:nodeID="n001882"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002309">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
-    <rdf:rest rdf:nodeID="n001857"/>
+    <rdf:rest rdf:nodeID="n001851"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002310">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
@@ -17592,15 +17592,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002315">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
-    <rdf:rest rdf:nodeID="n001851"/>
+    <rdf:rest rdf:nodeID="n001853"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002316">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
-    <rdf:rest rdf:nodeID="n001809"/>
+    <rdf:rest rdf:nodeID="n001811"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002317">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
-    <rdf:rest rdf:nodeID="n001823"/>
+    <rdf:rest rdf:nodeID="n001827"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002318">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000323"/>
@@ -17632,11 +17632,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002325">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326"/>
-    <rdf:rest rdf:nodeID="n001882"/>
+    <rdf:rest rdf:nodeID="n001878"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002326">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326"/>
-    <rdf:rest rdf:nodeID="n001893"/>
+    <rdf:rest rdf:nodeID="n001897"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002327">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
@@ -17648,7 +17648,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002329">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
-    <rdf:rest rdf:nodeID="n002216"/>
+    <rdf:rest rdf:nodeID="n002215"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002330">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
@@ -17660,23 +17660,23 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002332">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000328"/>
-    <rdf:rest rdf:nodeID="n001957"/>
+    <rdf:rest rdf:nodeID="n001961"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002333">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n002106"/>
+    <rdf:rest rdf:nodeID="n002093"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002334">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n002070"/>
+    <rdf:rest rdf:nodeID="n002071"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002335">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n001978"/>
+    <rdf:rest rdf:nodeID="n001973"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002336">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n002032"/>
+    <rdf:rest rdf:nodeID="n002027"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002337">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000331"/>
@@ -17688,15 +17688,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002339">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
-    <rdf:rest rdf:nodeID="n002100"/>
+    <rdf:rest rdf:nodeID="n002106"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002340">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
-    <rdf:rest rdf:nodeID="n001971"/>
+    <rdf:rest rdf:nodeID="n001972"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002341">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
-    <rdf:rest rdf:nodeID="n002029"/>
+    <rdf:rest rdf:nodeID="n002031"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002342">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337"/>
@@ -17716,7 +17716,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002346">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
-    <rdf:rest rdf:nodeID="n001886"/>
+    <rdf:rest rdf:nodeID="n001888"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002347">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
@@ -17728,7 +17728,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002349">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
-    <rdf:rest rdf:nodeID="n001941"/>
+    <rdf:rest rdf:nodeID="n001942"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002350">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
@@ -17736,7 +17736,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002351">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
-    <rdf:rest rdf:nodeID="n002059"/>
+    <rdf:rest rdf:nodeID="n002063"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002352">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000344"/>
@@ -17748,47 +17748,47 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002354">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
-    <rdf:rest rdf:nodeID="n001838"/>
+    <rdf:rest rdf:nodeID="n001839"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002355">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
-    <rdf:rest rdf:nodeID="n001802"/>
+    <rdf:rest rdf:nodeID="n001796"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002356">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
-    <rdf:rest rdf:nodeID="n001903"/>
+    <rdf:rest rdf:nodeID="n001902"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002357">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000347"/>
-    <rdf:rest rdf:nodeID="n002162"/>
+    <rdf:rest rdf:nodeID="n002153"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002358">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n001853"/>
+    <rdf:rest rdf:nodeID="n001850"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002359">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n001813"/>
+    <rdf:rest rdf:nodeID="n001807"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002360">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n001839"/>
+    <rdf:rest rdf:nodeID="n001830"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002361">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n001901"/>
+    <rdf:rest rdf:nodeID="n001909"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002362">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000357"/>
-    <rdf:rest rdf:nodeID="n001889"/>
+    <rdf:rest rdf:nodeID="n001886"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002363">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000357"/>
-    <rdf:rest rdf:nodeID="n001961"/>
+    <rdf:rest rdf:nodeID="n001962"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002364">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000361"/>
-    <rdf:rest rdf:nodeID="n002294"/>
+    <rdf:rest rdf:nodeID="n002290"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002365">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000364"/>
@@ -17796,7 +17796,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002366">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000364"/>
-    <rdf:rest rdf:nodeID="n001850"/>
+    <rdf:rest rdf:nodeID="n001855"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002367">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
@@ -17820,15 +17820,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002372">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
-    <rdf:rest rdf:nodeID="n001799"/>
+    <rdf:rest rdf:nodeID="n001795"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002373">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
-    <rdf:rest rdf:nodeID="n001835"/>
+    <rdf:rest rdf:nodeID="n001828"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002374">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000367"/>
-    <rdf:rest rdf:nodeID="n002311"/>
+    <rdf:rest rdf:nodeID="n002313"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002375">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000367"/>
@@ -17836,7 +17836,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002376">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000368"/>
-    <rdf:rest rdf:nodeID="n001890"/>
+    <rdf:rest rdf:nodeID="n001889"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002377">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000368"/>
@@ -17852,15 +17852,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002380">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
-    <rdf:rest rdf:nodeID="n001883"/>
+    <rdf:rest rdf:nodeID="n001881"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002381">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
-    <rdf:rest rdf:nodeID="n001895"/>
+    <rdf:rest rdf:nodeID="n001906"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002382">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
-    <rdf:rest rdf:nodeID="n001840"/>
+    <rdf:rest rdf:nodeID="n001835"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002383">
     <owl:members rdf:nodeID="n002225"/>
