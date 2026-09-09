@@ -15,7 +15,7 @@
 @base <https://www.inf.ufrgs.br/ontologies/copi/copi-base.ttl> .
 
 <https://www.inf.ufrgs.br/ontologies/copi/copi-base.ttl> rdf:type owl:Ontology ;
-                                                          owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-08/copi-base.ttl> ;
+                                                          owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-09/copi-base.ttl> ;
                                                           dce:type <http://purl.obolibrary.org/obo/IAO_8000001> ;
                                                           dcterms:bibliographicCitation "Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press." ;
                                                           dcterms:contributor "Cauã Antunes" ,
@@ -39,7 +39,7 @@
                                                           bibo:status "unstable" ;
                                                           vann:preferredNamespacePrefix "copi" ;
                                                           vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI ;
-                                                          owl:versionInfo "2026-09-08" ;
+                                                          owl:versionInfo "2026-09-09" ;
                                                           skos:scopeNote "Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia."@pt-br ,
                                                                          "COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos."@pt-br ,
                                                                          "COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en ,
@@ -2328,16 +2328,20 @@ copi:COPI_0000092 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000093
 copi:COPI_0000093 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000077 ;
+                  rdfs:subClassOf copi:COPI_0000077 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000211
+                                  ] ;
                   rdfs:label "angle valve"@en ,
                              "válvula angular"@pt-br ;
                   skos:definition "An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other."@en ;
-                  annotation:firstOrderLogicAxiom "∀x (AngleValve(x) → Valve(x) ∧ ∃p (hasPart(x,p) ∧ NonInlinePortArrangement(p)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x (AngleValve(x) → (Valve(x) ∧ ∃f(FlowControlFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(AngleValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other."@en ,
                                                        "Uma válvula angular é uma válvula que tem portas da válvula que não estão alinhadas, mas dispostas em ângulo uma em relação à outra."@pt-br ;
                   annotation:primitiveRationale "Constructive type defined by geometric configuration. Under OWA, sufficient conditions for non-inline port arrangement could lead to false positives where complex multi-port manifolds or specialized valves with angular components get incorrectly classified as standard angle valves."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every angle valve is a valve that has a non-inline port arrangement."@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every angle valve is a valve that has a flow control function and has an angle valve body as a component part."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094
@@ -2359,7 +2363,11 @@ copi:COPI_0000094 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095
 copi:COPI_0000095 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000077 ;
+                  rdfs:subClassOf copi:COPI_0000077 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000735
+                                  ] ;
                   owl:disjointWith copi:COPI_0000100 ,
                                    copi:COPI_0000108 ,
                                    copi:COPI_0000120 ,
@@ -2370,12 +2378,12 @@ copi:COPI_0000095 rdf:type owl:Class ;
                                 "Ball Valve"@en ,
                                 "Ball valve"@en ;
                   skos:definition "A ball valve is a valve that controls fluid flow using a spherical ball closure member that rotates approximately 90 degrees to align or misalign its flow passage with the valve body ports."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(BallValve(x) → Valve(x) ∧ ∃y(BallClosure(y) ∧ hasComponentPartAtAllTimes(x,y)) ∧ ∃z(RotationalMotionProcess(z) ∧ participatesIn(x,z)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x (BallValve(x) → (Valve(x) ∧ ∃f(FlowControlFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(BallValveClosureMember(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A ball valve is a valve that controls fluid flow using a spherical ball closure member that rotates approximately 90 degrees to align or misalign its flow passage with the valve body ports."@en ,
                                                        "Uma válvula esfera é uma válvula que controla o fluxo de fluidos usando um elemento de fechamento esférico que gira aproximadamente 90 graus para alinhar ou desalinhar sua passagem de fluxo com as portas do corpo da válvula."@pt-br ;
                   annotation:primitiveRationale "As a constructive type defined by physical mechanism, sufficient conditions are omitted to avoid false positives under Open World Assumption. Complex multi-way valves or specialized equipment containing ball mechanisms should not be automatically classified as standard ball valves without domain expert validation."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every ball valve is a valve that has a ball closure component and participates in rotational motion processes"@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every ball valve is a valve that has a flow control function and has a ball valve closure member as a component part."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000096
@@ -2454,7 +2462,11 @@ copi:COPI_0000099 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100
 copi:COPI_0000100 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000077 ;
+                  rdfs:subClassOf copi:COPI_0000077 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000736
+                                  ] ;
                   owl:disjointWith copi:COPI_0000108 ,
                                    copi:COPI_0000120 ,
                                    copi:COPI_0000123 ,
@@ -2465,12 +2477,12 @@ copi:COPI_0000100 rdf:type owl:Class ;
                                 "Butterfly Valve"@en ,
                                 "Butterfly valve"@en ;
                   skos:definition "A butterfly valve is a valve that has a disc-type closure member with a shaft parallel to the plane of the disc and an axis of rotation transverse to the flow direction."@en ;
-                  annotation:firstOrderLogicAxiom "∀x (ButterflyValve(x) → Valve(x) ∧ ∃y(DiscTypeClosure(y) ∧ hasComponentPartAtAllTimes(x,y)) ∧ ∃z(TransverseRotationAxis(z) ∧ hasComponentPartAtAllTimes(x,z)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x (ButterflyValve(x) → (Valve(x) ∧ ∃f(FlowControlFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(ButterflyValveClosureMember(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A butterfly valve is a valve that has a disc-type closure member with a shaft parallel to the plane of the disc and an axis of rotation transverse to the flow direction."@en ,
                                                        "Uma válvula borboleta é uma válvula que possui um membro de fechamento tipo disco com haste paralela ao plano do disco e eixo de rotação transversal à direção do fluxo."@pt-br ;
                   annotation:primitiveRationale "This is a constructive classification based on physical mechanism. Under the Open World Assumption, any artifact with a disc-type closure and transverse rotation axis would be forced into the ButterflyValve class, including specialized hybrid equipment or custom manifolds containing butterfly mechanisms that should not be classified as standard butterfly valves for maintenance purposes."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every butterfly valve is a valve that has a disc-type closure member and has a transverse rotation axis."@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every butterfly valve is a valve that has a flow control function and has a butterfly valve closure member as a component part."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000101
@@ -2494,7 +2506,15 @@ copi:COPI_0000101 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102
 copi:COPI_0000102 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000072 ;
+                  rdfs:subClassOf copi:COPI_0000072 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000302
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000741
+                                  ] ;
                   owl:disjointWith copi:COPI_0000249 ,
                                    copi:COPI_0000259 ,
                                    copi:COPI_0000289 ,
@@ -2505,12 +2525,12 @@ copi:COPI_0000102 rdf:type owl:Class ;
                              "centrifugal pump"@en ;
                   skos:altLabel "CENTRIFUGAL PUMP"@en ;
                   skos:definition "A centrifugal pump is a pump that uses centrifugal force generated by rotating impellers with vanes to increase fluid pressure through a volute casing."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(CentrifugalPump(x) → Pump(x) ∧ ∃y(CentrifugalImpeller(y) ∧ hasComponentPartAtAllTimes(x,y)) ∧ ∃z(VoluteCasing(z) ∧ hasComponentPartAtAllTimes(x,z)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x (CentrifugalPump(x) → (Pump(x) ∧ ∃f(PumpingFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(Impeller(p) ∧ hasComponentPartAtAllTimes(x,p)) ∧ ∃q(Volute(q) ∧ hasComponentPartAtAllTimes(x,q))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A centrifugal pump is a pump that uses centrifugal force generated by rotating impellers with vanes to increase fluid pressure through a volute casing."@en ,
                                                        "Uma bomba centrífuga é uma bomba que usa força centrífuga gerada por impulsores rotativos com pás para aumentar a pressão do fluido através de uma carcaça voluta."@pt-br ;
                   annotation:primitiveRationale "Constructive classification based on physical mechanism. Under Open World Assumption, any equipment with centrifugal impellers and volute casing could be inferred as a standard centrifugal pump, potentially misclassifying specialized hybrid equipment or complex pump systems that contain centrifugal stages but serve different operational roles."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every centrifugal pump is a pump that has a centrifugal impeller as component part at all times and has a volute casing as component part at all times."@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every centrifugal pump is a pump that has a pumping function and has an impeller and a volute as component parts."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103
@@ -2983,16 +3003,20 @@ copi:COPI_0000122 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000123
 copi:COPI_0000123 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000077 ;
+                  rdfs:subClassOf copi:COPI_0000077 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000737
+                                  ] ;
                   rdfs:label "globe valve"@en ,
                              "válvula globo"@pt-br ;
                   skos:definition "A globe valve is a valve characterized by a closure member (disc or plug) that operates with linear motion perpendicular to a seat that is oriented normal to the fluid flow path."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(GlobeValve(x) → Valve(x) ∧ ∃y,z(hasComponentPartAtAllTimes(x,y) ∧ LinearMotionClosure(y) ∧ hasComponentPartAtAllTimes(x,z) ∧ NormalSeat(z)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x (GlobeValve(x) → (Valve(x) ∧ ∃f(FlowControlFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(GlobeValveClosureMember(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A globe valve is a valve characterized by a closure member (disc or plug) that operates with linear motion perpendicular to a seat that is oriented normal to the fluid flow path."@en ,
                                                        "Uma válvula globo é uma válvula caracterizada por um elemento de fechamento (disco ou tampão) que opera com movimento linear perpendicular a uma sede orientada normal ao caminho do fluxo do fluido."@pt-br ;
                   annotation:primitiveRationale "Using necessary conditions for this constructive type. Under OWA, making the structural differentia sufficient could force classification of specialized equipment containing linear motion closures (like complex multi-way valves or custom manifolds) as standard globe valves when they may warrant distinct maintenance categories."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every globe valve is a valve that has as component part at all times a linear motion closure and a normal seat."@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every globe valve is a valve that has a flow control function and has a globe valve closure member as a component part."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124
@@ -3163,6 +3187,8 @@ copi:COPI_0000130 rdf:type owl:Class ;
                                    copi:COPI_0000278 ;
                   rdfs:label "level sight glass"@en ,
                              "visor de nível"@pt-br ;
+                  skos:altLabel "glass level gauge"@en ,
+                                "level gauge glass"@en ;
                   skos:definition "A level sight glass is a sight glass that bears a designed function to indicate liquid level through visual inspection."@en ;
                   annotation:firstOrderLogicAxiom "∀x (LevelSightGlass(x) ↔ SightGlass(x) ∧ ∃f (LevelIndicationFunction(f) ∧ hasFunction(x,f)))"@en ;
                   annotation:naturalLanguageDefinition "A level sight glass is a sight glass that bears a designed function to indicate liquid level through visual inspection."@en ,
@@ -3241,16 +3267,20 @@ copi:COPI_0000133 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000134
 copi:COPI_0000134 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000077 ;
+                  rdfs:subClassOf copi:COPI_0000077 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000742
+                                  ] ;
                   rdfs:label "needle valve"@en ,
                              "válvula agulha"@pt-br ;
                   skos:definition "A needle valve is a valve that has a conical needle-shaped closure member that seats into a small orifice to provide precise flow control."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(NeedleValve(x) → Valve(x) ∧ ∃y(NeedlePlug(y) ∧ hasComponentPartAtAllTimes(x,y)) ∧ ∃z(SmallOrificeSeat(z) ∧ hasComponentPartAtAllTimes(x,z)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x (NeedleValve(x) → (Valve(x) ∧ ∃f(FlowControlFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(Plug(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A needle valve is a valve that has a conical needle-shaped closure member that seats into a small orifice to provide precise flow control."@en ,
                                                        "Uma válvula agulha é uma válvula que possui um membro de fechamento cônico em forma de agulha que se assenta em um pequeno orifício para fornecer controle preciso de fluxo."@pt-br ;
                   annotation:primitiveRationale "As a constructive type defined by specific structural features (needle plug geometry), providing sufficient conditions under the Open World Assumption could lead to over-classification. Complex valve assemblies or custom equipment containing needle-like mechanisms might be incorrectly classified as standard needle valves for maintenance purposes."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every needle valve is a valve that has a needle plug component and has a small orifice seat component."@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every needle valve is a valve that has a flow control function and has a plug as a component part."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000135
@@ -3323,17 +3353,21 @@ copi:COPI_0000137 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000138
 copi:COPI_0000138 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000103 ;
+                  rdfs:subClassOf copi:COPI_0000103 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000730
+                                  ] ;
                   owl:disjointWith copi:COPI_0000153 ;
                   rdfs:label "piston check valve"@en ,
                              "válvula de retenção tipo pistão"@pt-br ;
                   skos:definition "A piston check valve is a check valve that has a piston-type closure member that moves linearly along the flow axis under gravity or spring loading to prevent backflow."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(PistonCheckValve(x) → CheckValve(x) ∧ ∃y(PistonClosure(y) ∧ hasComponentPartAtAllTimes(x,y)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x (PistonCheckValve(x) → (CheckValve(x) ∧ ∃f(BackflowPreventionFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(Piston(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A piston check valve is a check valve that has a piston-type closure member that moves linearly along the flow axis under gravity or spring loading to prevent backflow."@en ,
                                                        "Uma válvula de retenção tipo pistão é uma válvula de retenção que possui um elemento de fechamento tipo pistão que se move linearmente ao longo do eixo de fluxo sob ação da gravidade ou mola para prevenir refluxo."@pt-br ;
                   annotation:primitiveRationale "Using necessary conditions because this is a constructive type defined by physical mechanism. Under Open World Assumption, any artifact with a piston closure could potentially be classified as piston check valve, but specialized hybrid valves or custom manifolds containing piston mechanisms should not be automatically asserted into this standard maintenance category without domain expert validation."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every piston check valve is a check valve that has a piston closure as component part."@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every piston check valve is a check valve that has a backflow prevention function and has a piston as a component part."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000139
@@ -3639,16 +3673,20 @@ copi:COPI_0000152 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000153
 copi:COPI_0000153 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000103 ;
+                  rdfs:subClassOf copi:COPI_0000103 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000740
+                                  ] ;
                   rdfs:label "swing check valve"@en ,
                              "válvula de retenção basculante"@pt-br ;
                   skos:definition "A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(SwingCheckValve(x) → CheckValve(x) ∧ ∃d(HingedDisc(d) ∧ hasComponentPartAtAllTimes(x,d)) ∧ ∃a(SwingArm(a) ∧ hasComponentPartAtAllTimes(x,a)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x (SwingCheckValve(x) → (CheckValve(x) ∧ ∃f(BackflowPreventionFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(SwingCheckValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses."@en ,
                                                        "Uma válvula de retenção basculante é uma válvula de retenção que possui um elemento de fechamento consistindo de um disco que gira livremente em um mecanismo de dobradiça e abre automaticamente quando o fluxo é estabelecido e fecha automaticamente quando o fluxo cessa ou se inverte."@pt-br ;
                   annotation:primitiveRationale "Using necessary conditions for this constructive type to avoid false positives under OWA. Any artifact with a hinged disc mechanism should not automatically be classified as a swing check valve without domain expert validation, as specialized equipment may contain swing mechanisms but serve different primary functions."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every swing check valve is a check valve that has a hinged disc as component part and has a swing arm as component part"@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every swing check valve is a check valve that has a backflow prevention function and has a swing check valve body as a component part."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000154
@@ -3803,16 +3841,20 @@ copi:COPI_0000159 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000160
 copi:COPI_0000160 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000103 ;
+                  rdfs:subClassOf copi:COPI_0000103 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000739
+                                  ] ;
                   rdfs:label "válvula de retenção wafer"@pt-br ,
                              "wafer check valve"@en ;
                   skos:definition "A wafer check valve is a check valve that has a wafer pattern valve body designed for mounting between flanges."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(WaferCheckValve(x) → CheckValve(x) ∧ ∃y(WaferPatternValveBody(y) ∧ hasComponentPartAtAllTimes(x,y)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x (WaferCheckValve(x) → (CheckValve(x) ∧ ∃f(BackflowPreventionFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(WaferCheckValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A wafer check valve is a check valve that has a wafer pattern valve body designed for mounting between flanges."@en ,
                                                        "Uma válvula de retenção wafer é uma válvula de retenção que possui um corpo de válvula padrão wafer projetado para montagem entre flanges."@pt-br ;
                   annotation:primitiveRationale "Using necessary conditions because this is a constructive subtype (both functional and structural aspects). The wafer pattern mounting configuration is a structural differentia that, while characteristic, may have edge cases or specialized variants that should not be automatically classified without expert validation. The structural differentia should be confirmed as both necessary and sufficient in industrial practice before upgrading to equivalent mode."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every wafer check valve is a check valve that has a wafer pattern valve body as component part at all times."@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every wafer check valve is a check valve that has a backflow prevention function and has a wafer check valve body as a component part."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000161
@@ -4694,10 +4736,10 @@ copi:COPI_0000216 rdf:type owl:Class ;
                   skos:altLabel "BELL NIPPLE"@en ,
                                 "Bell nipple"@en ;
                   skos:definition "A bell nipple is a pipe that conducts drilling fluids in drilling operations and is characterized by an enlarged diameter that serves as a funnel and a location at the wellhead assembly."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(BellNipple(x) ↔ (Pipe(x) ∧ ∃f(DrillingFluidConductionFunction(f) ∧ bearerOf(x,f)) ∧ ∃s(EnlargedDiameter(s) ∧ hasCharacteristicShape(x,s)) ∧ ∃l(WellheadAssembly(l) ∧ hasLocation(x,l))))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x(BellNipple(x) ↔ (Pipe(x) ∧ ∃f(DrillingFluidConductionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(SideOutlet(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:naturalLanguageDefinition "A bell nipple is a pipe that conducts drilling fluids in drilling operations and is characterized by an enlarged diameter that serves as a funnel and a location at the wellhead assembly."@en ,
                                                        "Um bell nipple é um tubo que conduz fluidos de perfuração em operações de perfuração e é caracterizado por um diâmetro alargado que serve como funil e uma localização no conjunto da cabeça do poço."@pt-br ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every bell nipple is a pipe that bears a DrillingFluidConductionFunction and has an enlarged diameter shape and is located at a wellhead assembly."@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every bell nipple is a pipe that bears a DrillingFluidConductionFunction and has a side outlet as a component part at all times."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217
@@ -5601,7 +5643,7 @@ copi:COPI_0000253 rdf:type owl:Class ;
                   rdfs:label "diffuser"@en ,
                              "difusor"@pt-br ;
                   skos:definition "A diffuser is an assembly that has the designed function of converting kinetic energy of fluid flow into pressure energy through controlled deceleration in a diverging passage."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(Diffuser(x) ↔ Assembly(x) ∧ ∃f(EnergyDiffusionFunction(f) ∧ bearerOf(x,f)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x(Diffuser(x) ↔ Assembly(x) ∧ ∃f(EnergyDiffusionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(DivergingChannel(p) ∧ hasComponentPartAtAllTimes(x,p)))"@en ;
                   annotation:naturalLanguageDefinition "A diffuser is an assembly that has the designed function of converting kinetic energy of fluid flow into pressure energy through controlled deceleration in a diverging passage."@en ,
                                                        "Um difusor é um conjunto que tem a função projetada de converter energia cinética do fluxo de fluido em energia de pressão através de desaceleração controlada em uma passagem divergente."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every diffuser is an assembly that bears an energy diffusion function and has a diverging channel as component part at all times."@en .
@@ -6223,7 +6265,7 @@ copi:COPI_0000284 rdf:type owl:Class ;
                   rdfs:label "detector de gás"@pt-br ,
                              "gas detector"@en ;
                   skos:definition "A gas detector is a detector that has the designed function to sense the presence of a specified concentration of a gas."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(GasDetector(x) ↔ (Detector(x) ∧ ∃f(GasDetectionFunction(f) ∧ bearerOf(x,f))))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x(GasDetector(x) ↔ (Detector(x) ∧ ∃f(GasDetectionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(GasDetectingMeasuringElement(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:naturalLanguageDefinition "A gas detector is a detector that has the designed function to sense the presence of a specified concentration of a gas."@en ,
                                                        "Um detector de gás é um detector que tem a função projetada de detectar a presença de uma concentração especificada de um gás."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every gas detector is a detector that bears a GasDetectionFunction and has a GasDetectingMeasuringElement as component part at all times."@en .
@@ -7085,12 +7127,12 @@ copi:COPI_0000325 rdf:type owl:Class ;
                   rdfs:label "pipe tee"@en ,
                              "tê de tubulação"@pt-br ;
                   skos:definition "A pipe tee is a pipe fitting that has three fluid ports arranged in T-shaped configuration, with one branch port perpendicular to two run ports, designed to realize fluid conduction function through flow division or combination."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(PipeTee(x) → Pipe(x) ∧ ∃p1,p2,p3(BranchPort(p1) ∧ RunPort(p2) ∧ RunPort(p3) ∧ hasPartAtAllTimes(x,p1) ∧ hasPartAtAllTimes(x,p2) ∧ hasPartAtAllTimes(x,p3) ∧ perpendicularTo(p1,p2) ∧ perpendicularTo(p1,p3)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x(PipeTee(x) → Pipe(x) ∧ ∃f(FluidConductionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(BranchPort(p) ∧ hasComponentPartAtAllTimes(x,p)))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A pipe tee is a pipe fitting that has three fluid ports arranged in T-shaped configuration, with one branch port perpendicular to two run ports, designed to realize fluid conduction function through flow division or combination."@en ,
                                                        "Um tê de tubulação é uma conexão de tubulação que possui três portas de fluido dispostas em configuração em formato de T, com uma porta de ramal perpendicular a duas portas de passagem, projetada para realizar função de condução de fluido através de divisão ou combinação de fluxo."@pt-br ;
                   annotation:primitiveRationale "Using necessary conditions for this constructive type. The T-shaped geometric configuration with three specific ports is a structural differentia that is harder to make sufficient under OWA. Custom manifolds or complex fittings might contain T-shaped passages but should not be automatically classified as standard pipe tees without domain expert validation."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every pipe tee is a pipe that has exactly three fluid ports arranged in T-configuration and bears a fluid conduction function"@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every pipe tee is a pipe that bears a fluid conduction function and has a branch port as a component part at all times."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326
@@ -7120,7 +7162,7 @@ copi:COPI_0000326 rdf:type owl:Class ;
                   rdfs:label "pipeline"@en ,
                              "pipeline"@pt-br ;
                   skos:definition "A pipeline is an engineered system that bears a fluid transport function, consisting of pipes and possibly including pumps, valves, and control devices, designed for conveying liquids, gases, or finely divided solids between locations."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(Pipeline(x) ↔ EngineeredSystem(x) ∧ ∃f(FluidTransportFunction(f) ∧ bearerOf(x,f)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x(Pipeline(x) ↔ EngineeredSystem(x) ∧ ∃f(FluidTransportFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(Pipe(p) ∧ hasComponentPartAtSomeTime(x,p)))"@en ;
                   annotation:naturalLanguageDefinition "A pipeline is an engineered system that bears a fluid transport function, consisting of pipes and possibly including pumps, valves, and control devices, designed for conveying liquids, gases, or finely divided solids between locations."@en ,
                                                        "Um pipeline é um sistema engenheirado que possui uma função de transporte de fluidos, consistindo de tubos e possivelmente incluindo bombas, válvulas e dispositivos de controle, projetado para transportar líquidos, gases ou sólidos finamente divididos entre locais."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every pipeline is an engineered system that bears a fluid transport function and has pipe as a component part at some time."@en .
@@ -7286,16 +7328,20 @@ copi:COPI_0000334 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000335
 copi:COPI_0000335 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000222 ;
+                  rdfs:subClassOf copi:COPI_0000222 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000738
+                                  ] ;
                   rdfs:label "carcaça de bomba"@pt-br ,
                              "pump casing"@en ;
                   skos:definition "A casing that surrounds an impeller and has integral suction and discharge nozzles as structural components, typically applied in centrifugal pumps."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(PumpCasing(x) → Casing(x) ∧ ∃y(Impeller(y) ∧ surrounds(x,y)) ∧ ∃z(SuctionNozzle(z) ∧ hasComponentPartAtAllTimes(x,z)) ∧ ∃w(DischargeNozzle(w) ∧ hasComponentPartAtAllTimes(x,w)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x (PumpCasing(x) → (Casing(x) ∧ ∃f(EnclosureFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(SuctionNozzle(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A casing that surrounds an impeller and has integral suction and discharge nozzles as structural components, typically applied in centrifugal pumps."@en ,
                                                        "Um invólucro que envolve um impulsor e possui bocais de sucção e descarga integrais como componentes estruturais, tipicamente aplicado em bombas centrífugas."@pt-br ;
                   annotation:primitiveRationale "Constructive type based on physical configuration. Under Open World Assumption, structural characteristics are harder to make sufficient - any assembly with an impeller and integral nozzles might be classified as a pump casing even if it serves a different specialized purpose. Starting with necessary conditions protects against false positives."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every pump casing is a casing that surrounds an impeller and has integral suction and discharge nozzles forming part of its structure."@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every pump casing is a casing that has an enclosure function and has a suction nozzle as a component part."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000336
@@ -7320,17 +7366,21 @@ copi:COPI_0000336 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337
 copi:COPI_0000337 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000072 ;
+                  rdfs:subClassOf copi:COPI_0000072 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000730
+                                  ] ;
                   owl:disjointWith copi:COPI_0000341 ;
                   rdfs:label "bomba alternativa"@pt-br ,
                              "reciprocating pump"@en ;
                   skos:definition "A reciprocating pump is a pump that contains pistons or plungers designed to move in a reciprocating motion within cylindrical chambers to displace fluid through positive displacement action."@en ;
-                  annotation:firstOrderLogicAxiom "∀x(ReciprocatingPump(x) → Pump(x) ∧ ∃m(ReciprocatingDisplacementMechanism(m) ∧ hasComponentPartAtAllTimes(x,m)) ∧ ∃p(PistonOrPlunger(p) ∧ hasComponentPartAtAllTimes(x,p)) ∧ ∃c(CylindricalChamber(c) ∧ hasComponentPartAtAllTimes(x,c)))"@en ;
+                  annotation:firstOrderLogicAxiom "∀x (ReciprocatingPump(x) → (Pump(x) ∧ ∃f(PumpingFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(Piston(p) ∧ hasComponentPartAtAllTimes(x,p))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A reciprocating pump is a pump that contains pistons or plungers designed to move in a reciprocating motion within cylindrical chambers to displace fluid through positive displacement action."@en ,
                                                        "Uma bomba alternativa é uma bomba que contém pistões ou êmbolos projetados para se moverem em movimento alternativo dentro de câmaras cilíndricas para deslocar fluido através de ação de deslocamento positivo."@pt-br ;
                   annotation:primitiveRationale "Using necessary conditions for this constructive type. Under Open World Assumption, asserting equivalence based on structural differentia could lead to false positives where complex equipment containing reciprocating elements (like reciprocating compressors with auxiliary pumps, or hybrid systems) might be incorrectly classified as standard reciprocating pumps. The structural mechanism is necessary but sufficient conditions require domain expert validation."@en ;
-                  annotation:semiFormalNaturalLanguageAxiom "Every reciprocating pump is a pump that has as component part at all times a reciprocating displacement mechanism and has as component part at all times pistons or plungers and has as component part at all times cylindrical chambers."@en .
+                  annotation:semiFormalNaturalLanguageAxiom "Every reciprocating pump is a pump that has a pumping function and has a piston as a component part."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338
@@ -13608,6 +13658,55 @@ copi:COPI_0000734 rdf:type owl:Class ;
                   annotation:naturalLanguageDefinition "A valve that bears a flowline isolation function and is a component of a christmas tree, located on the flow line downstream of the master valve."@en ,
                                                        "Uma válvula que possui uma função de isolamento de linha de fluxo e é um componente de uma árvore de natal, localizada na linha de fluxo a jusante da válvula mestra."@pt-br ;
                   annotation:primitiveRationale "Definition is positional relative to the master valve and the flow line; not a sufficient condition under OWA."@en .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000735
+copi:COPI_0000735 rdf:type owl:Class ;
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
+                  rdfs:label "ball valve closure member"@en .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000736
+copi:COPI_0000736 rdf:type owl:Class ;
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
+                  rdfs:label "butterfly valve closure member"@en .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000737
+copi:COPI_0000737 rdf:type owl:Class ;
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
+                  rdfs:label "globe valve closure member"@en .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000738
+copi:COPI_0000738 rdf:type owl:Class ;
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
+                  rdfs:label "bocal de sucção"@pt-br ,
+                             "suction nozzle"@en .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000739
+copi:COPI_0000739 rdf:type owl:Class ;
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
+                  rdfs:label "wafer check valve body"@en .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000740
+copi:COPI_0000740 rdf:type owl:Class ;
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
+                  rdfs:label "swing check valve body"@en .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000741
+copi:COPI_0000741 rdf:type owl:Class ;
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
+                  rdfs:label "volute"@en .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000742
+copi:COPI_0000742 rdf:type owl:Class ;
+                  rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
+                  rdfs:label "plug"@en .
 
 
 ###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi
