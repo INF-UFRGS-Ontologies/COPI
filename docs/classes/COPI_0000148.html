@@ -228,6 +228,33 @@
   /* ── Layer legend in TOC: coloured dot before each layer link ──────── */
   .toc-layer-dot{display:inline-block;width:7px;height:7px;border-radius:50%;
                  margin-right:.4rem;vertical-align:middle;flex-shrink:0;}
+  /* ── Suggestion box: floating button opens a pre-filled GitHub issue ── */
+  .suggest-fab{position:fixed;right:1.25rem;bottom:1.25rem;z-index:1000;
+               background:var(--accent2);color:#fff;border:none;border-radius:999px;
+               padding:.6rem 1.1rem;font-family:system-ui,sans-serif;font-size:.82rem;
+               font-weight:600;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer;
+               display:flex;align-items:center;gap:.4rem;transition:transform .15s,box-shadow .15s;}
+  .suggest-fab:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.3);}
+  .suggest-modal-backdrop{display:none;position:fixed;inset:0;z-index:1001;
+                          background:rgba(10,22,40,.55);align-items:center;justify-content:center;padding:1rem;}
+  .suggest-modal{background:#fff;border-radius:8px;max-width:480px;width:100%;
+                 padding:1.5rem 1.6rem;box-shadow:0 24px 60px rgba(0,0,0,.35);
+                 font-family:system-ui,sans-serif;}
+  .suggest-modal h3{font-family:system-ui,sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.3rem;}
+  .suggest-modal-hint{font-size:.8rem;color:var(--muted);margin-bottom:1rem;}
+  .suggest-modal label{display:block;font-size:.78rem;font-weight:600;color:#374151;
+                       margin-bottom:.25rem;margin-top:.85rem;}
+  .suggest-modal input,.suggest-modal textarea{width:100%;border:1px solid var(--border);
+                       border-radius:5px;padding:.45rem .6rem;font-family:system-ui,sans-serif;
+                       font-size:.85rem;resize:vertical;}
+  .suggest-modal input:focus,.suggest-modal textarea:focus{outline:2px solid var(--accent2);
+                       outline-offset:1px;}
+  .suggest-modal-actions{display:flex;justify-content:flex-end;gap:.6rem;margin-top:1.25rem;}
+  .suggest-btn-cancel{background:none;border:none;color:var(--muted);font-size:.82rem;
+                      font-weight:600;cursor:pointer;padding:.5rem .7rem;}
+  .suggest-btn-submit{background:var(--accent2);color:#fff;border:none;border-radius:5px;
+                      font-size:.82rem;font-weight:600;cursor:pointer;padding:.5rem 1rem;}
+  .suggest-btn-submit:hover{background:#1d4ed8;}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
 </style>
 
@@ -362,7 +389,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-148-g66065e7&quot; ;
+    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -375,7 +402,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-09&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -503,7 +530,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Safety valves take high-pressure fluid input and rapidly discharge it to reduce system pressure below dangerous levels. The transformation is specifically pressure reduction for emergency protection, distinguishing it from gradual pressure control or process regulation.</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">CheckValve</span></div><div class="rationale mt-2">C2: check valve. Check valves prevent backflow (unidirectional flow control) while safety valves provide pressure relief (emergency pressure protection). These have incompatible process signatures - one prevents reverse flow, the other enables emergency discharge regardless of flow direction.</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000148</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000148</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-09</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000148</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000148</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
 
     </div>
 
@@ -649,5 +676,61 @@ document.addEventListener('click',function(e){
   }
 });
 </script>
+
+<button id="suggestFab" class="suggest-fab no-print" onclick="openSuggestModal()"
+        title="Suggest a change / Sugerir uma mudança">
+  💬 <span class="t-en">Suggest a change</span><span class="t-pt">Sugerir mudança</span>
+</button>
+<div id="suggestBackdrop" class="suggest-modal-backdrop no-print"
+     onclick="if(event.target===this)closeSuggestModal()">
+  <div class="suggest-modal">
+    <h3><span class="t-en">Suggest a change</span><span class="t-pt">Sugerir uma mudança</span></h3>
+    <p class="suggest-modal-hint">
+      <span class="t-en">Opens a pre-filled GitHub issue on the COPI repo — nothing is sent until you submit it there.</span>
+      <span class="t-pt">Abre uma issue pré-preenchida no repositório do COPI — nada é enviado até você confirmar lá.</span>
+    </p>
+    <label for="suggestTitle"><span class="t-en">Title</span><span class="t-pt">Título</span></label>
+    <input id="suggestTitle" type="text" maxlength="200"
+           placeholder="e.g. Definition for X seems too narrow / p.ex. Definição de X parece restritiva demais">
+    <label for="suggestBody"><span class="t-en">Description</span><span class="t-pt">Descrição</span></label>
+    <textarea id="suggestBody" rows="5"
+              placeholder="What would you change, and why? / O que você mudaria, e por quê?"></textarea>
+    <div class="suggest-modal-actions">
+      <button class="suggest-btn-cancel" onclick="closeSuggestModal()">
+        <span class="t-en">Cancel</span><span class="t-pt">Cancelar</span>
+      </button>
+      <button class="suggest-btn-submit" onclick="submitSuggestion()">
+        <span class="t-en">Open GitHub issue ↗</span><span class="t-pt">Abrir issue no GitHub ↗</span>
+      </button>
+    </div>
+  </div>
+</div>
+<script>
+function openSuggestModal(){
+  document.getElementById('suggestBackdrop').style.display='flex';
+  document.getElementById('suggestTitle').focus();
+}
+function closeSuggestModal(){
+  document.getElementById('suggestBackdrop').style.display='none';
+}
+function submitSuggestion(){
+  var titleEl=document.getElementById('suggestTitle');
+  var bodyEl=document.getElementById('suggestBody');
+  var title=titleEl.value.trim()||('Suggestion: '+document.title);
+  var desc=bodyEl.value.trim();
+  var body=(desc?desc+'\n\n':'')+'---\nPage: '+window.location.href;
+  var url='https://github.com/INF-UFRGS-Ontologies/COPI/issues/new'
+    +'?title='+encodeURIComponent(title)
+    +'&body='+encodeURIComponent(body)
+    +'&labels='+encodeURIComponent('suggestion');
+  window.open(url,'_blank','noopener');
+  titleEl.value='';bodyEl.value='';
+  closeSuggestModal();
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){var b=document.getElementById('suggestBackdrop');if(b&&b.style.display==='flex')closeSuggestModal();}
+});
+</script>
+
 </body>
 </html>
