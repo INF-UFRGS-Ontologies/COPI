@@ -109,7 +109,9 @@ repository extends that proof of concept to the broader equipment population des
 A companion FOIS 2026 paper proposing a reusable BFO/IOF-aligned ODP for functional locations in
 industrial asset management. The pattern's ontology is published separately at
 [`inf.ufrgs.br/ontologies/odp/functional-location`](https://www.inf.ufrgs.br/ontologies/odp/functional-location)
-([Zenodo DOI](https://doi.org/10.5281/zenodo.21072929)) and is not currently imported by COPI.
+([Zenodo DOI](https://doi.org/10.5281/zenodo.21072929)) and remains the citable form of the pattern.
+It has since been migrated into COPI as the **`copi-floc`** module — see
+[Functional location module](#functional-location-module-copi-floc) below.
 
 ```bibtex
 @inproceedings{santos2026functionallocations,
@@ -128,6 +130,44 @@ industrial asset management. The pattern's ontology is published separately at
 ```
 
 See also [`CITATION.cff`](CITATION.cff) for citing the ontology artefact itself.
+
+---
+
+## Functional location module (`copi-floc`)
+
+`copi-floc` carries the functional-location pattern inside COPI. A functional location is a
+persistent **site** whose boundaries are fixed by delimiting material entities, not by the
+equipment occupying it, which is what lets a position keep its identity, its history and its data
+across equipment replacement.
+
+The module keeps four concerns apart: the site and its hierarchy; the two identifiers that
+designate it (the location code — *where* in the breakdown — and the equipment tag — *what kind*
+of item is expected); the specification stating what the position requires; and the installation
+periods through which artifacts occupy the site over time.
+
+It imports **BFO 2020 and IOF-Core 202603 only** — no equipment classes, no observation
+vocabulary, no maintenance records — so it can be imported on its own by ontologies outside oil
+and gas, and it is also merged into the `copi-*` release artefacts as a COPI component.
+
+| Resource | Location |
+|---|---|
+| Term reference (EN/PT-BR) | [`copi/docs/copi-floc.html`](https://www.inf.ufrgs.br/ontologies/copi/docs/copi-floc.html) |
+| Standalone artefact | `copi-floc.owl` / `copi-floc.ttl` |
+| Editable component | `src/ontology/components/copi-floc.ttl` |
+| Correspondence with ODP-FL v0.8 | `src/ontology/copi-floc-odp-map.sssom.tsv` |
+
+The module is **provisional** (`iof-av:maturity iof-ind:Provisional`). Two gaps are recorded in
+the header of the component file and are not resolved: identifiers still commit to a designated
+site, which misrepresents a position that is designed but never built; and the content of a
+position's requirement — a class plus property-value pairs with units and a revision, in the
+shape CFIHOS and SAP PM classification give it — is not modelled yet.
+
+Regenerate the term reference after editing the component:
+
+```bash
+python3 scripts/gen_floc_docs.py           # writes docs/copi-floc.html
+python3 scripts/gen_floc_docs.py --check   # fails if the page is stale
+```
 
 ---
 
@@ -155,6 +195,7 @@ Artefacts are published at `https://www.inf.ufrgs.br/ontologies/copi/` and gener
 | `copi-base.owl` / `copi-base.ttl` | Base artefact (no imports merged) |
 | `copi-full.owl` / `copi-full.ttl` | Full artefact (imports merged) |
 | `copi-simple.owl` / `copi-simple.ttl` | Simplified artefact |
+| `copi-floc.owl` / `copi-floc.ttl` | Functional location module, standalone (imports **not** merged) |
 
 ---
 
@@ -163,7 +204,8 @@ Artefacts are published at `https://www.inf.ufrgs.br/ontologies/copi/` and gener
 ```
 COPI/
 ├── src/ontology/       # Ontology source (OWL, imports, mirrors, Makefile)
-├── docs/               # Static HTML documentation, class pages
+├── scripts/            # Helper scripts (FOL enrichment, module documentation)
+├── docs/               # Static HTML documentation, class pages, module reference
 ├── requirements/       # ORSD, competency questions (cqs.csv)
 ├── LICENSE
 └── README.md

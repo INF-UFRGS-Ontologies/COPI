@@ -100,6 +100,7 @@ ODK writes the following artefacts directly to the **repository root** (configur
 | `copi-base.owl` / `copi-base.ttl` | Base (no imports merged) |
 | `copi-full.owl` / `copi-full.ttl` | Full (explicit imports merged) |
 | `copi-simple.owl` / `copi-simple.ttl` | Simplified (inferred hierarchy only) |
+| `copi-floc.owl` / `copi-floc.ttl` | Functional location module, standalone (imports kept, not merged) |
 
 The job then commits these artefacts back to `main` with `[skip ci]` (to avoid re-triggering the workflow) and creates a **GitHub Release** tagged `vYYYY-MM-DD` with all 8 files attached as downloadable assets.
 
@@ -113,6 +114,23 @@ Transfers files to the UFRGS ontologies web server (host stored in the `DEPLOY_H
 | `copi-*.owl/ttl` | `public_html/copi/` | `https://www.inf.ufrgs.br/ontologies/copi/copi-base.owl` etc. |
 | `copi.owl`, `copi.ttl` | `public_html/` | `https://www.inf.ufrgs.br/ontologies/copi.owl` |
 | All artefacts | `public_html/copi/releases/YYYY-MM-DD/` | `https://www.inf.ufrgs.br/ontologies/copi/releases/2026-04-15/copi.owl` |
+
+---
+
+### Module artefacts
+
+`copi-floc` is both a COPI component (merged into the `copi-*` artefacts through `copi-edit.owl`)
+and a module published on its own, for importers that want the functional-location pattern without
+COPI's equipment taxonomy. The `modules` target builds it, and `all_odk` depends on it, so a normal
+release produces it alongside everything else:
+
+```bash
+cd src/ontology && make modules      # copi-floc.owl + copi-floc.ttl
+```
+
+Unlike `copi-full`, the module keeps its `owl:imports` of BFO 2020 and IOF-Core rather than merging
+them. Its term reference at `docs/copi-floc.html` is generated from the component by
+`scripts/gen_floc_docs.py` and uploaded with the rest of `docs/`.
 
 ---
 

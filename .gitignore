@@ -70,3 +70,8 @@ src/patterns/all_pattern_terms.txt
 src/ontology/tmp/
 src/ontology/reports/
 **/.DS_Store
+
+# Build products of the copi-floc module target; the released copies live at the
+# repository root and are committed by the release workflow.
+src/ontology/copi-floc.owl
+src/ontology/copi-floc.ttl

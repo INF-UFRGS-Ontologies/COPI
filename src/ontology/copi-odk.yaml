@@ -49,3 +49,4 @@ components:
     - filename: copi-core.ttl
     - filename: copi-vocab.ttl
     - filename: copi-enriched.owl
+    - filename: copi-floc.ttl

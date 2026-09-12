@@ -1,0 +1,639 @@
+@prefix copi: <https://www.inf.ufrgs.br/ontologies/copi/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iof-av: <https://spec.industrialontologies.org/ontology/annotation/> .
+@prefix iof-constr: <https://spec.industrialontologies.org/ontology/construct/> .
+@prefix iof-ind: <https://spec.industrialontologies.org/ontology/individual/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#==============================================================================
+# COPI-FLOC — functional location module (DRAFT)
+#
+# Migrated from ODP-FL v0.8 (../ODP-FunctionalLocations/functional-location.ttl,
+# https://www.inf.ufrgs.br/ontologies/odp/functional-location/0.8).
+#
+# Imports BFO 2020 and IOF Core 202603 only — no IAO, no copi-core, no SOSA.
+# IDs: block COPI_0009001–COPI_0009099 reserved for this module, kept clear of
+# the sequential allocator in COPIeditor/scripts/regen_enriched_owl.py
+# (max(copi-iri-map.tsv) + 1).
+#
+# Left out of v0.8 on purpose (destination in brackets):
+#   fl:Sensor, fl:Valve, fl:SeparationEquipment, fl:GasLiquidSeparator,
+#   fl:*Function (4 classes), fl:hostedBy                     [copi-core / vocab]
+#   fl:TimeStampedMeasuredDataset, fl:indexedBySite,
+#   fl:hasSeriesLabel, fl:storedAt                             [copi-floc-sosa]
+#   fl:MaintenanceNote, fl:noteText, fl:noteTimestamp,
+#   fl:performedAt, fl:performedAtLocation                     [maintenance bridge]
+#   fl:RequiredRole, fl:requiresFunction, fl:requiresRole      [see PENDING 2]
+#   all named individuals                                      [test ABox]
+#
+# PENDING (agreed 2026-09-11, not resolved here):
+#  1. Design phase. copi:COPI_0009008/0009007 are iof:PhysicalLocationIdentifier,
+#     and iof:Identifier is subClassOf (designates some Entity), so a tag still
+#     commits to a designated site. A cancelled project therefore still entails a
+#     site. Depends on the stratified (FunctionalPositionSpecification /
+#     InstallationSite) decision.
+#  2. Requirement content. A real position requirement is a class plus a set of
+#     property-value pairs with units and a revision (CFIHOS tag class + tag
+#     properties; SAP PM functional-location classification + characteristics),
+#     carried by dated documents (datasheet, line list, piping class). Model that
+#     before claiming CQ-07/CQ-08. copi:COPI_0009009 is kept as the anchor only.
+#  3. IDs COPI_0009029 (requires function) and COPI_0009030 (requires role) are
+#     retired within this draft and must not be reused.
+#==============================================================================
+
+copi:copi-floc a owl:Ontology ;
+    owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-10/copi-floc> ;
+    owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo.owl>,
+        <https://spec.industrialontologies.org/ontology/core/Core/> ;
+    owl:versionInfo "0.1.0-draft (copi-floc; migrated from ODP-FL v0.8)" ;
+    dcterms:title "COPI Functional Location: a content pattern for functional locations in BFO/IOF"@en,
+        "COPI Local de Instalação: um padrão de conteúdo para locais de instalação em BFO/IOF"@pt-br ;
+    dcterms:creator "Nicolau Oyhenard dos Santos" ;
+    dcterms:contributor "Cauã Antunes",
+        "Haroldo Rojas",
+        "Joel Carbonera",
+        "Mara Abel",
+        "Rafael Petry",
+        "Regis Romeu" ;
+    dcterms:created "2025-12-17"^^xsd:date ;
+    dcterms:modified "2026-09-10"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher "Institute of Informatics, Federal University of Rio Grande do Sul (UFRGS)"@en ;
+    dcterms:source <https://www.inf.ufrgs.br/ontologies/odp/functional-location/0.8> ;
+    rdfs:comment """COPI Functional Location (copi-floc) models a functional location as a
+persistent bfo:Site whose boundaries are fixed by delimiting material entities,
+not by the equipment that occupies it. The pattern separates four concerns: the
+site itself, organised in a hierarchy; two identifiers that both designate the
+site (the functional location code, WHERE in the breakdown, and the equipment
+tag, WHAT kind of item is expected); the specification that prescribes what the
+position requires; and the material artifacts that are installed at the site
+over time through installation periods. The module imports only BFO 2020 and
+IOF Core 202603 and can be imported on its own; equipment types, sensor observations and maintenance
+records are attached through copi-core and separate bridge modules."""@en,
+        """COPI Local de Instalação (copi-floc) modela um local de instalação como um
+bfo:Site persistente cujos limites são fixados por entidades materiais
+delimitadoras, e não pelo equipamento que o ocupa. O padrão separa quatro
+preocupações: o próprio sítio, organizado em uma hierarquia; dois
+identificadores que designam o sítio (o código do local de instalação, ONDE na
+estrutura, e a tag de equipamento, QUE tipo de item é esperado); a
+especificação que prescreve o que a posição requer; e os artefatos materiais
+instalados no sítio ao longo do tempo por meio de períodos de instalação. O
+módulo importa apenas BFO 2020 e IOF Core 202603 e pode ser importado
+isoladamente; tipos de equipamento,
+observações de sensores e registros de manutenção são ligados via copi-core e
+módulos-ponte separados."""@pt-br ;
+    iof-av:copyright "Copyright (c) 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Released under CC BY 4.0. Portions derived from ODP-FL v0.8, Copyright (c) 2025-2026 Nicolau Santos, Cauã Antunes, Haroldo Rojas, Joel Carbonera, Mara Abel, Rafael Petry, Regis Romeu, used under the MIT License."@en ;
+    iof-av:maturity iof-ind:Provisional .
+
+#==============================================================================
+# CLASSES
+#==============================================================================
+
+# functional location
+copi:COPI_0009001 a owl:Class ;
+    rdfs:label "functional location"@en,
+        "local de instalação"@pt-br ;
+    skos:altLabel "FL"@en,
+        "installation position"@en,
+        "tag location"@en,
+        "LI"@pt-br,
+        "posição de instalação"@pt-br ;
+    rdfs:subClassOf obo:BFO_0000029,
+        [ a owl:Restriction ;
+            owl:onProperty copi:COPI_0009020 ;
+            owl:someValuesFrom obo:BFO_0000040 ] ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:FunctionalLocation" ;
+    rdfs:comment "A site that is a persistent position in an industrial facility's functional hierarchy at which a maintainable item is or can be installed, and whose boundaries are determined in relation to delimiting material entities rather than by the item that may occupy it."@en,
+        "Um sítio que é uma posição persistente na hierarquia funcional de uma instalação industrial, na qual um item manutenível está ou pode ser instalado, e cujos limites são determinados em relação a entidades materiais delimitadoras e não pelo item que possa ocupá-lo."@pt-br ;
+    skos:example "the site for pressure transmitter PT-23424 in the gas dehydration system"@en,
+        "o sítio para o transmissor de pressão PT-23424 no sistema de desidratação de gás"@pt-br ;
+    iof-av:adaptedFrom "ISO 14224:2016 — 'a position in a functional hierarchy where a maintainable item is or can be installed'" ;
+    iof-av:explanatoryNote "bfo:Site is chosen by elimination: a material entity does not persist when the position is empty; a role requires a bearer and so does not persist either; an information content entity cannot answer spatial queries; a spatial region is not relative to the plant structure. Only a site meets all four requirements."@en,
+        "bfo:Site é escolhido por eliminação: uma entidade material não persiste quando a posição está vazia; um papel requer um portador e também não persiste; uma entidade de conteúdo informacional não responde a consultas espaciais; uma região espacial não é relativa à estrutura da planta. Apenas o sítio atende aos quatro requisitos."@pt-br ;
+    iof-av:usageNote "A functional location persists when empty: when the equipment is removed, the nozzles, flanges and foundation bolts remain, so the site boundaries stay anchored."@en,
+        "Um local de instalação persiste quando vazio: quando o equipamento é removido, os bocais, flanges e chumbadores permanecem, e os limites do sítio continuam ancorados."@pt-br ;
+    iof-av:firstOrderLogicAxiom "FunctionalLocation(x) → Site(x) ∧ ∃y(MaterialEntity(y) ∧ hasBoundaryDeterminedBy(x,y))" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'functional location' then x is a 'site' that 'has boundary determined by' some 'material entity'"@en,
+        "se x é um 'local de instalação' então x é um 'sítio' que 'tem limite determinado por' alguma 'entidade material'"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Persistence through equipment replacement and position within a functional hierarchy are identity conditions that OWL 2 DL cannot state as sufficient conditions; the OWL form carries the genus and the boundary restriction only."@en,
+        "A persistência através da substituição de equipamento e a posição numa hierarquia funcional são condições de identidade que o OWL 2 DL não expressa como condições suficientes; a forma OWL carrega apenas o gênero e a restrição de limite."@pt-br ;
+    iof-av:naturalLanguageDefinition "A site that is a persistent position in an industrial facility's functional hierarchy at which a maintainable item is or can be installed, and whose boundaries are determined in relation to delimiting material entities rather than by the item that may occupy it."@en,
+        "Um sítio que é uma posição persistente na hierarquia funcional de uma instalação industrial, na qual um item manutenível está ou pode ser instalado, e cujos limites são determinados em relação a entidades materiais delimitadoras e não pelo item que possa ocupá-lo."@pt-br .
+
+# plant site
+copi:COPI_0009002 a owl:Class ;
+    rdfs:label "plant site"@en,
+        "sítio da planta"@pt-br ;
+    rdfs:subClassOf copi:COPI_0009001 ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:PlantSite" ;
+    rdfs:comment "A functional location at the top of a facility's functional hierarchy, standing for an entire plant or installation."@en,
+        "Um local de instalação no topo da hierarquia funcional de uma instalação, representando uma planta ou instalação inteira."@pt-br ;
+    skos:example "offshore platform FPSO Atlântida (synthetic)"@en ;
+    iof-av:adaptedFrom "ISO 14224:2016 taxonomy, level 4 (plant/unit)" ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A functional location at the top of a facility's functional hierarchy, standing for an entire plant or installation."@en,
+        "Um local de instalação no topo da hierarquia funcional de uma instalação, representando uma planta ou instalação inteira."@pt-br .
+
+# system site
+copi:COPI_0009003 a owl:Class ;
+    rdfs:label "system site"@en,
+        "sítio do sistema"@pt-br ;
+    rdfs:subClassOf copi:COPI_0009001,
+        [ a owl:Restriction ;
+            owl:onProperty copi:COPI_0009021 ;
+            owl:someValuesFrom copi:COPI_0009002 ] ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:SystemSite" ;
+    rdfs:comment "A functional location that stands for a major system within a plant site."@en,
+        "Um local de instalação que representa um sistema principal dentro de um sítio da planta."@pt-br ;
+    skos:example "gas dehydration system site within FPSO Atlântida (synthetic)"@en ;
+    iof-av:adaptedFrom "ISO 14224:2016 taxonomy, level 5 (section/system)" ;
+    iof-av:firstOrderLogicAxiom "SystemSite(x) → FunctionalLocation(x) ∧ ∃y(PlantSite(y) ∧ partOfSystemSite(x,y))" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'system site' then x is a 'functional location' that is 'part of system site' some 'plant site'"@en,
+        "se x é um 'sítio do sistema' então x é um 'local de instalação' que é 'parte de sítio do sistema' de algum 'sítio da planta'"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A functional location that stands for a major system within a plant site."@en,
+        "Um local de instalação que representa um sistema principal dentro de um sítio da planta."@pt-br .
+
+# subsystem site
+copi:COPI_0009004 a owl:Class ;
+    rdfs:label "subsystem site"@en,
+        "sítio do subsistema"@pt-br ;
+    rdfs:subClassOf copi:COPI_0009001,
+        [ a owl:Restriction ;
+            owl:onProperty copi:COPI_0009021 ;
+            owl:someValuesFrom copi:COPI_0009003 ] ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:SubsystemSite" ;
+    rdfs:comment "A functional location that stands for a subsystem within a system site."@en,
+        "Um local de instalação que representa um subsistema dentro de um sítio do sistema."@pt-br ;
+    skos:example "inlet separator subsystem site within the gas dehydration system (synthetic)"@en ;
+    iof-av:explanatoryNote "No ISO 14224:2016 taxonomic level matches this class: level 7 (subunit) lies below the equipment unit, not above it. The class models the organisation-specific intermediate level found in CMMS functional-location structures (e.g., SAP PM) between system and equipment unit."@en,
+        "Nenhum nível taxonômico da ISO 14224:2016 corresponde a esta classe: o nível 7 (subunidade) fica abaixo da unidade de equipamento, não acima. A classe modela o nível intermediário específico da organização encontrado em estruturas de locais de instalação de sistemas CMMS (p. ex., SAP PM) entre sistema e unidade de equipamento."@pt-br ;
+    iof-av:firstOrderLogicAxiom "SubsystemSite(x) → FunctionalLocation(x) ∧ ∃y(SystemSite(y) ∧ partOfSystemSite(x,y))" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'subsystem site' then x is a 'functional location' that is 'part of system site' some 'system site'"@en,
+        "se x é um 'sítio do subsistema' então x é um 'local de instalação' que é 'parte de sítio do sistema' de algum 'sítio do sistema'"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A functional location that stands for a subsystem within a system site."@en,
+        "Um local de instalação que representa um subsistema dentro de um sítio do sistema."@pt-br .
+
+# equipment unit site
+copi:COPI_0009005 a owl:Class ;
+    rdfs:label "equipment unit site"@en,
+        "sítio da unidade de equipamento"@pt-br ;
+    rdfs:subClassOf copi:COPI_0009001,
+        [ a owl:Restriction ;
+            owl:onProperty copi:COPI_0009021 ;
+            owl:someValuesFrom copi:COPI_0009004 ] ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:EquipmentUnitSite" ;
+    rdfs:comment "A functional location at which an equipment unit is or can be installed, within a subsystem site."@en,
+        "Um local de instalação no qual uma unidade de equipamento está ou pode ser instalada, dentro de um sítio do subsistema."@pt-br ;
+    iof-av:adaptedFrom "ISO 14224:2016 taxonomy, level 6 (equipment class/unit)" ;
+    iof-av:firstOrderLogicAxiom "EquipmentUnitSite(x) → FunctionalLocation(x) ∧ ∃y(SubsystemSite(y) ∧ partOfSystemSite(x,y))" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is an 'equipment unit site' then x is a 'functional location' that is 'part of system site' some 'subsystem site'"@en,
+        "se x é um 'sítio da unidade de equipamento' então x é um 'local de instalação' que é 'parte de sítio do sistema' de algum 'sítio do subsistema'"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A functional location at which an equipment unit is or can be installed, within a subsystem site."@en,
+        "Um local de instalação no qual uma unidade de equipamento está ou pode ser instalada, dentro de um sítio do subsistema."@pt-br .
+
+# maintainable item site
+copi:COPI_0009006 a owl:Class ;
+    rdfs:label "maintainable item site"@en,
+        "sítio do item manutenível"@pt-br ;
+    rdfs:subClassOf copi:COPI_0009001,
+        [ a owl:Restriction ;
+            owl:onProperty copi:COPI_0009021 ;
+            owl:someValuesFrom copi:COPI_0009005 ] ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:MaintainableItemSite" ;
+    rdfs:comment "A functional location at the lowest level of the functional hierarchy, at which a single maintainable item is or can be installed."@en,
+        "Um local de instalação no nível mais baixo da hierarquia funcional, no qual um único item manutenível está ou pode ser instalado."@pt-br ;
+    skos:example "the site for pressure transmitter PT-23424 (synthetic)"@en ;
+    iof-av:adaptedFrom "ISO 14224:2016 taxonomy, level 8 (component/maintainable item)" ;
+    iof-av:firstOrderLogicAxiom "MaintainableItemSite(x) → FunctionalLocation(x) ∧ ∃y(EquipmentUnitSite(y) ∧ partOfSystemSite(x,y))" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'maintainable item site' then x is a 'functional location' that is 'part of system site' some 'equipment unit site'"@en,
+        "se x é um 'sítio do item manutenível' então x é um 'local de instalação' que é 'parte de sítio do sistema' de algum 'sítio da unidade de equipamento'"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A functional location at the lowest level of the functional hierarchy, at which a single maintainable item is or can be installed."@en,
+        "Um local de instalação no nível mais baixo da hierarquia funcional, no qual um único item manutenível está ou pode ser instalado."@pt-br .
+
+# functional location code
+copi:COPI_0009007 a owl:Class ;
+    rdfs:label "functional location code"@en,
+        "código do local de instalação"@pt-br ;
+    skos:altLabel "FL code"@en,
+        "código LI"@pt-br ;
+    rdfs:subClassOf iof-constr:PhysicalLocationIdentifier,
+        [ a owl:Restriction ;
+            owl:onProperty copi:COPI_0009023 ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass copi:COPI_0009001 ] ;
+    owl:disjointWith copi:COPI_0009008 ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:FunctionalLocationCode" ;
+    rdfs:comment "A physical location identifier that designates exactly one functional location by encoding its place in the facility's hierarchical breakdown, one segment per hierarchy level."@en,
+        "Um identificador de localização física que designa exatamente um local de instalação codificando sua posição na estrutura hierárquica da instalação, um segmento por nível da hierarquia."@pt-br ;
+    skos:example "30142.FSGE.FEW.10.01.1 (synthetic)",
+        "30234.FSFS.FWSF.10.01.01 (synthetic)" ;
+    iof-av:adaptedFrom "CMMS functional-location coding (e.g., SAP PM), aligned with the ISO 14224:2016 taxonomy" ;
+    iof-av:explanatoryNote "Distinct from the equipment tag: the code says WHERE the position sits in the breakdown, the tag says WHAT kind of item is expected there. Both designate the same functional location. ISO 14224 fixes the taxonomy levels, not the code syntax."@en,
+        "Distinto da tag de equipamento: o código diz ONDE a posição está na estrutura, a tag diz QUE tipo de item é esperado ali. Ambos designam o mesmo local de instalação. A ISO 14224 fixa os níveis da taxonomia, não a sintaxe do código."@pt-br ;
+    iof-av:usageNote "ODP-FL v0.8 placed this class under iao:CentrallyRegisteredIdentifier because the CMMS acts as registration authority. IOF Core has no centrally-registered-identifier class; the registry role is left to the deployment."@en ;
+    iof-av:firstOrderLogicAxiom "FunctionalLocationCode(x) → PhysicalLocationIdentifier(x) ∧ ∃!y(FunctionalLocation(y) ∧ identifies(x,y)) ∧ ¬EquipmentTag(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'functional location code' then x is a 'physical location identifier' that 'identifies' exactly one 'functional location' and x is not an 'equipment tag'"@en,
+        "se x é um 'código do local de instalação' então x é um 'identificador de localização física' que 'identifica' exatamente um 'local de instalação' e x não é uma 'tag de equipamento'"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A physical location identifier that designates exactly one functional location by encoding its place in the facility's hierarchical breakdown, one segment per hierarchy level."@en,
+        "Um identificador de localização física que designa exatamente um local de instalação codificando sua posição na estrutura hierárquica da instalação, um segmento por nível da hierarquia."@pt-br .
+
+# equipment tag
+copi:COPI_0009008 a owl:Class ;
+    rdfs:label "equipment tag"@en,
+        "tag de equipamento"@pt-br ;
+    skos:altLabel "tag"@en,
+        "tag"@pt-br ;
+    rdfs:subClassOf iof-constr:PhysicalLocationIdentifier,
+        [ a owl:Restriction ;
+            owl:onProperty copi:COPI_0009024 ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass copi:COPI_0009001 ] ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:EquipmentTag" ;
+    rdfs:comment "A physical location identifier that designates exactly one functional location through an industrial naming convention whose prefix encodes the kind of item expected at the position. The tag designates the position, not the equipment installed there."@en,
+        "Um identificador de localização física que designa exatamente um local de instalação por meio de uma convenção industrial de nomenclatura cujo prefixo codifica o tipo de item esperado na posição. A tag designa a posição, não o equipamento ali instalado."@pt-br ;
+    skos:example "PT-23424 (pressure transmitter position)"@en,
+        "XV-23423 (control valve position)"@en ;
+    iof-av:explanatoryNote "Prefix conventions: XV = control valve, PSV = pressure safety valve, PT = pressure transmitter, FT = flow transmitter, LV = level valve. The prefix summarises the functional classification in the specification; it does not replace it."@en,
+        "Convenções de prefixo: XV = válvula de controle, PSV = válvula de segurança de pressão, PT = transmissor de pressão, FT = transmissor de vazão, LV = válvula de nível. O prefixo resume a classificação funcional da especificação; não a substitui."@pt-br ;
+    iof-av:usageNote "When engineers say 'valve XV-23424' they mean 'the item currently installed at the position designated by XV-23424'. That shorthand is captured by the derived relation copi:hasTag, not by making the tag designate the equipment."@en,
+        "Quando engenheiros dizem 'válvula XV-23424' querem dizer 'o item atualmente instalado na posição designada por XV-23424'. Essa abreviação é capturada pela relação derivada copi:hasTag, e não fazendo a tag designar o equipamento."@pt-br ;
+    iof-av:firstOrderLogicAxiom "EquipmentTag(x) → PhysicalLocationIdentifier(x) ∧ ∃!y(FunctionalLocation(y) ∧ identifiesLocation(x,y))" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is an 'equipment tag' then x is a 'physical location identifier' that 'identifies location' exactly one 'functional location'"@en,
+        "se x é uma 'tag de equipamento' então x é um 'identificador de localização física' que 'identifica local' de exatamente um 'local de instalação'"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A physical location identifier that designates exactly one functional location through an industrial naming convention whose prefix encodes the kind of item expected at the position. The tag designates the position, not the equipment installed there."@en,
+        "Um identificador de localização física que designa exatamente um local de instalação por meio de uma convenção industrial de nomenclatura cujo prefixo codifica o tipo de item esperado na posição. A tag designa a posição, não o equipamento ali instalado."@pt-br .
+
+# functional location specification
+copi:COPI_0009009 a owl:Class ;
+    rdfs:label "functional location specification"@en,
+        "especificação do local de instalação"@pt-br ;
+    skos:altLabel "FL specification"@en,
+        "especificação LI"@pt-br ;
+    rdfs:subClassOf iof-constr:RequirementSpecification ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:FunctionalLocationSpecification" ;
+    rdfs:comment "A requirement specification that states the requirements a material artifact must meet to be installed at a functional location."@en,
+        "Uma especificação de requisitos que declara os requisitos que um artefato material deve atender para ser instalado em um local de instalação."@pt-br ;
+    skos:example "the instrument datasheet for position PT-23424: pressure sensing duty, 0–350 bar, ATEX Zone 1"@en,
+        "a folha de dados de instrumento da posição PT-23424: serviço de medição de pressão, 0–350 bar, ATEX Zona 1"@pt-br ;
+    iof-av:explanatoryNote "Placed under iof:RequirementSpecification so that CQ-08 ('does the installed item satisfy the requirements of its functional location?') is asked with iof:satisfiesRequirement."@en,
+        "Colocada sob iof:RequirementSpecification para que a CQ-08 ('o item instalado satisfaz os requisitos do seu local de instalação?') seja consultada com iof:satisfiesRequirement."@pt-br ;
+    iof-av:usageNote "No existential restriction is asserted on this class. v0.8 required an instance of bfo:Function (fl:requiresFunction), which forced a function instance with no bearer whenever the position was empty — the very case the pattern exists to represent."@en,
+        "Nenhuma restrição existencial é asserida nesta classe. A v0.8 exigia uma instância de bfo:Function (fl:requiresFunction), o que forçava uma instância de função sem portador sempre que a posição estivesse vazia — justamente o caso que o padrão existe para representar."@pt-br,
+        "NOT YET GROUNDED IN A SOURCE: none of the 17 OBDA mappings of the deployed OntoKG pipeline produces an instance of this class, and none of the four source tables carries one. The real counterpart is the position's class plus its required property values (CFIHOS tag class and tag properties; SAP PM functional-location classification and characteristics), carried by dated documents. See PENDING 2 in the file header. The expected item class, which IS in the source (tb_locais.class_code), is carried by copi:COPI_0009033 on the position itself."@en ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A requirement specification that states the requirements a material artifact must meet to be installed at a functional location."@en,
+        "Uma especificação de requisitos que declara os requisitos que um artefato material deve atender para ser instalado em um local de instalação."@pt-br .
+
+# installation period
+copi:COPI_0009010 a owl:Class ;
+    rdfs:label "installation period"@en,
+        "período de instalação"@pt-br ;
+    rdfs:subClassOf obo:BFO_0000015,
+        [ a owl:Restriction ;
+            owl:onProperty copi:COPI_0009031 ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass iof-constr:MaterialArtifact ],
+        [ a owl:Restriction ;
+            owl:onProperty copi:COPI_0009032 ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass copi:COPI_0009001 ] ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    rdfs:comment "A process during which one material artifact occupies one functional location, bounded by the moment it is installed and the moment it is removed."@en,
+        "Um processo durante o qual um artefato material ocupa um local de instalação, delimitado pelo momento em que é instalado e pelo momento em que é removido."@pt-br ;
+    skos:example "pump EQ-0001 at position 30234.TEG.CIRC.02.01 from 2018-03-01 to 2022-07-14"@en,
+        "bomba EQ-0001 na posição 30234.TEG.CIRC.02.01 de 2018-03-01 a 2022-07-14"@pt-br ;
+    iof-av:explanatoryNote "Introduced in place of the v0.8 encoding, which made fl:installedAt functional and put fl:installedDate and fl:removedDate on the artifact as functional data properties. That encoding allowed one installation per artifact for its whole life: a rotable spare returning from the workshop to a second position made the ontology inconsistent. The dates belong to the period, where being functional is correct."@en,
+        "Introduzida no lugar da codificação da v0.8, que fazia fl:installedAt funcional e punha fl:installedDate e fl:removedDate no artefato como propriedades de dados funcionais. Aquela codificação permitia uma única instalação por artefato em toda a sua vida: um sobressalente rotativo que voltasse da oficina para uma segunda posição tornava a ontologia inconsistente. As datas pertencem ao período, onde ser funcional é o comportamento correto."@pt-br ;
+    iof-av:usageNote "The item currently installed at a position is the one whose installation period has no removed date. That is a closed-world reading, so it is a query (SPARQL FILTER NOT EXISTS), not an axiom."@en,
+        "O item atualmente instalado numa posição é aquele cujo período de instalação não tem data de remoção. Essa é uma leitura de mundo fechado, portanto é uma consulta (SPARQL FILTER NOT EXISTS), e não um axioma."@pt-br ;
+    iof-av:firstOrderLogicAxiom "InstallationPeriod(x) → Process(x) ∧ ∃!y(MaterialArtifact(y) ∧ installationOf(x,y)) ∧ ∃!z(FunctionalLocation(z) ∧ installationSite(x,z))" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is an 'installation period' then x is a 'process' that is the 'installation of' exactly one 'material artifact' and has 'installation site' exactly one 'functional location'"@en,
+        "se x é um 'período de instalação' então x é um 'processo' que é a 'instalação de' exatamente um 'artefato material' e tem 'sítio de instalação' exatamente um 'local de instalação'"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "A process during which one material artifact occupies one functional location, bounded by the moment it is installed and the moment it is removed."@en,
+        "Um processo durante o qual um artefato material ocupa um local de instalação, delimitado pelo momento em que é instalado e pelo momento em que é removido."@pt-br .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( copi:COPI_0009002 copi:COPI_0009003 copi:COPI_0009004 copi:COPI_0009005 copi:COPI_0009006 ) .
+
+#==============================================================================
+# OBJECT PROPERTIES
+#==============================================================================
+
+# has boundary determined by
+copi:COPI_0009020 a owl:ObjectProperty ;
+    rdfs:label "has boundary determined by"@en,
+        "tem limite determinado por"@pt-br ;
+    rdfs:domain copi:COPI_0009001 ;
+    rdfs:range obo:BFO_0000040 ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:hasBoundaryDeterminedBy" ;
+    rdfs:comment "Relation from a functional location to a material entity that provides the reference frame fixing the functional location's boundaries."@en,
+        "Relação de um local de instalação para uma entidade material que fornece o referencial que fixa os limites do local de instalação."@pt-br ;
+    skos:example "the PT-23424 site has boundary determined by the Deck C mounting structure"@en ;
+    iof-av:explanatoryNote "Range widened from bfo:Object (v0.8 OWL) to bfo:MaterialEntity, to match the v0.8 first-order axiom: delimiting structures such as a deck frame with its brackets are often object aggregates or fiat parts, not objects."@en,
+        "Imagem ampliada de bfo:Object (OWL da v0.8) para bfo:MaterialEntity, para coincidir com o axioma de primeira ordem da v0.8: estruturas delimitadoras como uma estrutura de convés com seus suportes são frequentemente agregados de objetos ou partes fiat, e não objetos."@pt-br ;
+    iof-av:usageNote "Implements BFO site semantics: a site's boundaries are determined in relation to material entities without coinciding with them."@en ;
+    iof-av:firstOrderLogicAxiom "hasBoundaryDeterminedBy(x,y) → FunctionalLocation(x) ∧ MaterialEntity(y)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x 'has boundary determined by' y then x is a 'functional location' and y is a 'material entity'"@en,
+        "se x 'tem limite determinado por' y então x é um 'local de instalação' e y é uma 'entidade material'"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "Relation from a functional location to a material entity that provides the reference frame fixing the functional location's boundaries."@en,
+        "Relação de um local de instalação para uma entidade material que fornece o referencial que fixa os limites do local de instalação."@pt-br .
+
+# part of system site
+copi:COPI_0009021 a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:label "part of system site"@en,
+        "parte de sítio do sistema"@pt-br ;
+    rdfs:subPropertyOf obo:BFO_0000176 ;
+    owl:inverseOf copi:COPI_0009022 ;
+    rdfs:domain copi:COPI_0009001 ;
+    rdfs:range copi:COPI_0009001 ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:partOfSystemSite" ;
+    rdfs:comment "Relation between two functional locations such that the first is a part of the second in the facility's functional hierarchy. Transitive, so queries can cross hierarchy levels."@en,
+        "Relação entre dois locais de instalação tal que o primeiro é parte do segundo na hierarquia funcional da instalação. Transitiva, permitindo consultas através dos níveis da hierarquia."@pt-br ;
+    skos:example "a maintainable item site is part of system site its equipment unit site"@en ;
+    iof-av:explanatoryNote "Specialises bfo:continuant part of (BFO_0000176). v0.8 used BFO_0000050 (part of), which BFO 2020 core does not declare."@en ;
+    iof-av:firstOrderLogicAxiom "partOfSystemSite(x,y) → FunctionalLocation(x) ∧ FunctionalLocation(y) ∧ continuantPartOf(x,y)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is 'part of system site' y then x and y are 'functional location's and x is 'continuant part of' y"@en,
+        "se x é 'parte de sítio do sistema' de y então x e y são 'locais de instalação' e x é 'parte continuante de' y"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "Relation between two functional locations such that the first is a part of the second in the facility's functional hierarchy."@en,
+        "Relação entre dois locais de instalação tal que o primeiro é parte do segundo na hierarquia funcional da instalação."@pt-br .
+
+# has system site part
+copi:COPI_0009022 a owl:ObjectProperty ;
+    rdfs:label "has system site part"@en,
+        "tem parte de sítio do sistema"@pt-br ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:hasSystemSitePart" ;
+    rdfs:comment "Inverse of 'part of system site'."@en,
+        "Inversa de 'parte de sítio do sistema'."@pt-br ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "Inverse of 'part of system site'."@en,
+        "Inversa de 'parte de sítio do sistema'."@pt-br .
+
+# identifies
+copi:COPI_0009023 a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "identifies"@en,
+        "identifica"@pt-br ;
+    rdfs:subPropertyOf iof-constr:designates ;
+    rdfs:domain copi:COPI_0009007 ;
+    rdfs:range copi:COPI_0009001 ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:identifies" ;
+    rdfs:comment "Relation from a functional location code to the single functional location it designates within the facility's hierarchy."@en,
+        "Relação de um código do local de instalação para o único local de instalação que ele designa dentro da hierarquia da instalação."@pt-br ;
+    iof-av:explanatoryNote "Specialises iof:designates (unique distinction), which replaces iao:denotes from v0.8."@en ;
+    iof-av:firstOrderLogicAxiom "identifies(x,y) → FunctionalLocationCode(x) ∧ FunctionalLocation(y) ∧ designates(x,y) ∧ ∀z(identifies(x,z) → z = y)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x 'identifies' y then x is a 'functional location code', y is a 'functional location', x 'designates' y, and x identifies nothing other than y"@en,
+        "se x 'identifica' y então x é um 'código do local de instalação', y é um 'local de instalação', x 'designa' y, e x não identifica nada além de y"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "Relation from a functional location code to the single functional location it designates within the facility's hierarchy."@en,
+        "Relação de um código do local de instalação para o único local de instalação que ele designa dentro da hierarquia da instalação."@pt-br .
+
+# identifies location
+copi:COPI_0009024 a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "identifies location"@en,
+        "identifica local"@pt-br ;
+    rdfs:subPropertyOf iof-constr:designates ;
+    owl:inverseOf copi:COPI_0009025 ;
+    rdfs:domain copi:COPI_0009008 ;
+    rdfs:range copi:COPI_0009001 ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:identifiesLocation" ;
+    rdfs:comment "Relation from an equipment tag to the single functional location it designates, the position where an item of the kind encoded by the tag prefix is or can be installed."@en,
+        "Relação de uma tag de equipamento para o único local de instalação que ela designa, a posição onde um item do tipo codificado pelo prefixo da tag está ou pode ser instalado."@pt-br ;
+    iof-av:explanatoryNote "Key design decision: the tag designates the functional location (the position), NOT the physical equipment. Tag and equipment are related only through the site, via the copi:hasTag chain."@en,
+        "Decisão de projeto central: a tag designa o local de instalação (a posição), NÃO o equipamento físico. Tag e equipamento se relacionam apenas através do sítio, pela cadeia copi:hasTag."@pt-br ;
+    iof-av:firstOrderLogicAxiom "identifiesLocation(x,y) → EquipmentTag(x) ∧ FunctionalLocation(y) ∧ designates(x,y) ∧ ∀z(identifiesLocation(x,z) → z = y)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x 'identifies location' y then x is an 'equipment tag', y is a 'functional location', x 'designates' y, and x identifies no location other than y"@en,
+        "se x 'identifica local' y então x é uma 'tag de equipamento', y é um 'local de instalação', x 'designa' y, e x não identifica nenhum local além de y"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "Relation from an equipment tag to the single functional location it designates, the position where an item of the kind encoded by the tag prefix is or can be installed."@en,
+        "Relação de uma tag de equipamento para o único local de instalação que ela designa, a posição onde um item do tipo codificado pelo prefixo da tag está ou pode ser instalado."@pt-br .
+
+# location identified by
+copi:COPI_0009025 a owl:ObjectProperty ;
+    rdfs:label "location identified by"@en,
+        "local identificado por"@pt-br ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:locationIdentifiedBy" ;
+    rdfs:comment "Inverse of 'identifies location': relation from a functional location to the equipment tag that designates it."@en,
+        "Inversa de 'identifica local': relação de um local de instalação para a tag de equipamento que o designa."@pt-br ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "Inverse of 'identifies location': relation from a functional location to the equipment tag that designates it."@en,
+        "Inversa de 'identifica local': relação de um local de instalação para a tag de equipamento que o designa."@pt-br .
+
+# has tag
+copi:COPI_0009026 a owl:ObjectProperty ;
+    rdfs:label "has tag"@en,
+        "tem tag"@pt-br ;
+    rdfs:domain iof-constr:MaterialArtifact ;
+    rdfs:range copi:COPI_0009008 ;
+    owl:propertyChainAxiom ( copi:COPI_0009027 copi:COPI_0009025 ) ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:hasTag" ;
+    rdfs:comment "Derived relation from a material artifact to the equipment tag of a functional location at which the artifact is installed at some time. Entailed by the chain installedAt ∘ locationIdentifiedBy; not meant to be asserted."@en,
+        "Relação derivada de um artefato material para a tag de equipamento de um local de instalação no qual o artefato está instalado em algum tempo. Inferida pela cadeia installedAt ∘ locationIdentifiedBy; não deve ser assertada."@pt-br ;
+    iof-av:explanatoryNote "Captures the industrial shorthand 'valve XV-23424' = 'the valve currently installed at the position designated by XV-23424'. The tag keeps designating the position; this relation only records that the artifact occupied the position at some time — for the current occupant, filter by the installation period with no removed date."@en,
+        "Captura a abreviação industrial 'válvula XV-23424' = 'a válvula atualmente instalada na posição designada por XV-23424'. A tag continua designando a posição; esta relação apenas registra que o artefato ocupou a posição em algum tempo — para o ocupante atual, filtre pelo período de instalação sem data de remoção."@pt-br ;
+    iof-av:firstOrderLogicDefinition "hasTag(x,y) ↔ ∃z(FunctionalLocation(z) ∧ installedAt(x,z) ∧ identifiesLocation(y,z))" ;
+    iof-av:semiFormalNaturalLanguageDefinition "x 'has tag' y if and only if there is a 'functional location' z such that x is 'installed at' z and y 'identifies location' z"@en,
+        "x 'tem tag' y se e somente se existe um 'local de instalação' z tal que x está 'instalado em' z e y 'identifica local' z"@pt-br ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "Derived relation from a material artifact to the equipment tag of the functional location where the artifact is installed."@en,
+        "Relação derivada de um artefato material para a tag de equipamento do local de instalação onde o artefato está instalado."@pt-br .
+
+# installed at (at some time)
+copi:COPI_0009027 a owl:ObjectProperty ;
+    rdfs:label "installed at"@en,
+        "instalado em"@pt-br ;
+    rdfs:subPropertyOf obo:BFO_0000171 ;
+    rdfs:domain iof-constr:MaterialArtifact ;
+    rdfs:range copi:COPI_0009001 ;
+    owl:propertyChainAxiom ( [ owl:inverseOf copi:COPI_0009031 ] copi:COPI_0009032 ) ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:installedAt" ;
+    rdfs:comment "Relation from a material artifact to a functional location at which it is installed at some time. Entailed by the chain inverse(installation of) ∘ installation site, so it holds for every installation period of the artifact, past or current."@en,
+        "Relação de um artefato material para um local de instalação no qual ele está instalado em algum tempo. Inferida pela cadeia inversa de 'instalação de' composta com 'sítio de instalação', valendo para todo período de instalação do artefato, passado ou atual."@pt-br ;
+    skos:example "pump EQ-0001 installed at position A (2018–2022) and, after refurbishment, at position B (2024–)"@en ;
+    iof-av:explanatoryNote "Not functional. v0.8 made it functional (and equivalently asserted installedAt some Thing ⊑ installedAt max 1 FunctionalLocation), which made a rotable spare reinstalled at a second position inconsistent."@en,
+        "Não é funcional. A v0.8 a fazia funcional (e, de forma equivalente, asseria installedAt some Thing ⊑ installedAt max 1 FunctionalLocation), o que tornava inconsistente um sobressalente rotativo reinstalado numa segunda posição."@pt-br ;
+    iof-av:usageNote "Reads 'at some time', following the IOF naming convention (componentPartOfAtSomeTime). For the item installed now, query the installation period with no removed date; for the item installed on a given date, query the period whose interval contains it."@en,
+        "Lê-se 'em algum tempo', seguindo a convenção de nomes do IOF (componentPartOfAtSomeTime). Para o item instalado agora, consulte o período de instalação sem data de remoção; para o item instalado numa data dada, consulte o período cujo intervalo a contém."@pt-br ;
+    iof-av:firstOrderLogicAxiom "installedAt(x,y) → MaterialArtifact(x) ∧ FunctionalLocation(y) ∧ ∃p(InstallationPeriod(p) ∧ installationOf(p,x) ∧ installationSite(p,y))" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is 'installed at' y then there is an 'installation period' that is the 'installation of' x and has 'installation site' y"@en,
+        "se x está 'instalado em' y então existe um 'período de instalação' que é a 'instalação de' x e tem 'sítio de instalação' y"@pt-br ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "Relation from a material artifact to a functional location at which it is installed at some time."@en,
+        "Relação de um artefato material para um local de instalação no qual ele está instalado em algum tempo."@pt-br .
+
+# specifies location
+copi:COPI_0009028 a owl:ObjectProperty ;
+    rdfs:label "specifies location"@en,
+        "especifica local"@pt-br ;
+    rdfs:subPropertyOf iof-constr:isAbout ;
+    rdfs:domain copi:COPI_0009009 ;
+    rdfs:range copi:COPI_0009001 ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:specifiesLocation" ;
+    rdfs:comment "Relation from a functional location specification to the functional location whose requirements it states."@en,
+        "Relação de uma especificação do local de instalação para o local de instalação cujos requisitos ela declara."@pt-br ;
+    iof-av:firstOrderLogicAxiom "specifiesLocation(x,y) → FunctionalLocationSpecification(x) ∧ FunctionalLocation(y) ∧ isAbout(x,y)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x 'specifies location' y then x is a 'functional location specification', y is a 'functional location', and x 'is about' y"@en,
+        "se x 'especifica local' y então x é uma 'especificação do local de instalação', y é um 'local de instalação', e x 'é sobre' y"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "Relation from a functional location specification to the functional location whose requirements it states."@en,
+        "Relação de uma especificação do local de instalação para o local de instalação cujos requisitos ela declara."@pt-br .
+
+# installation of
+copi:COPI_0009031 a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "installation of"@en,
+        "instalação de"@pt-br ;
+    rdfs:subPropertyOf obo:BFO_0000057 ;
+    rdfs:domain copi:COPI_0009010 ;
+    rdfs:range iof-constr:MaterialArtifact ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    rdfs:comment "Relation from an installation period to the single material artifact that occupies the functional location during that period."@en,
+        "Relação de um período de instalação para o único artefato material que ocupa o local de instalação durante esse período."@pt-br ;
+    iof-av:explanatoryNote "Specialises bfo:has participant (BFO_0000057). Functional: one period concerns one artifact; an artifact with several installations has several periods."@en,
+        "Especializa bfo:has participant (BFO_0000057). Funcional: um período diz respeito a um artefato; um artefato com várias instalações tem vários períodos."@pt-br ;
+    iof-av:firstOrderLogicAxiom "installationOf(x,y) → InstallationPeriod(x) ∧ MaterialArtifact(y) ∧ hasParticipant(x,y)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is the 'installation of' y then x is an 'installation period', y is a 'material artifact', and x 'has participant' y"@en,
+        "se x é a 'instalação de' y então x é um 'período de instalação', y é um 'artefato material', e x 'tem participante' y"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "Relation from an installation period to the single material artifact that occupies the functional location during that period."@en,
+        "Relação de um período de instalação para o único artefato material que ocupa o local de instalação durante esse período."@pt-br .
+
+# installation site
+copi:COPI_0009032 a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "installation site"@en,
+        "sítio de instalação"@pt-br ;
+    rdfs:subPropertyOf obo:BFO_0000066 ;
+    rdfs:domain copi:COPI_0009010 ;
+    rdfs:range copi:COPI_0009001 ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    rdfs:comment "Relation from an installation period to the single functional location occupied during that period."@en,
+        "Relação de um período de instalação para o único local de instalação ocupado durante esse período."@pt-br ;
+    iof-av:explanatoryNote "Specialises bfo:occurs in (BFO_0000066), whose range already admits sites. Functional: a period concerns one position; an artifact moved to another position starts a new period."@en,
+        "Especializa bfo:occurs in (BFO_0000066), cuja imagem já admite sítios. Funcional: um período diz respeito a uma posição; um artefato movido para outra posição inicia um novo período."@pt-br ;
+    iof-av:firstOrderLogicAxiom "installationSite(x,y) → InstallationPeriod(x) ∧ FunctionalLocation(y) ∧ occursIn(x,y)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x has 'installation site' y then x is an 'installation period', y is a 'functional location', and x 'occurs in' y"@en,
+        "se x tem 'sítio de instalação' y então x é um 'período de instalação', y é um 'local de instalação', e x 'ocorre em' y"@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "Relation from an installation period to the single functional location occupied during that period."@en,
+        "Relação de um período de instalação para o único local de instalação ocupado durante esse período."@pt-br .
+
+# expects item type
+copi:COPI_0009033 a owl:ObjectProperty ;
+    rdfs:label "expects item type"@en,
+        "espera tipo de item"@pt-br ;
+    rdfs:domain copi:COPI_0009001 ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:EquipmentTag prefix conventions (tag prefix encodes the expected item type)" ;
+    rdfs:comment "Relation from a functional location to the class of material artifact that may be installed there. The value is a class IRI, used as an individual (OWL 2 punning); no range is declared."@en,
+        "Relação de um local de instalação para a classe de artefato material que pode ali ser instalada. O valor é o IRI de uma classe, usado como indivíduo (punning do OWL 2); nenhuma imagem é declarada."@pt-br ;
+    skos:example "copi:COPI_0009001 instance 30234.TEG.CIRC.02.01 expects item type copi:COPI_0000155"@en ;
+    iof-av:explanatoryNote "This is the one requirement slot with a source: the equipment-class code sits on the position row (tb_locais.class_code) in the deployed OntoKG pipeline, and is the SAP PM functional-location class / CFIHOS tag class. The pipeline currently asserts that class of the installed equipment instead, which is the position/item conflation this pattern exists to prevent."@en,
+        "Este é o único slot de requisito com fonte: o código de classe de equipamento está na linha da posição (tb_locais.class_code) no pipeline OntoKG implantado, e corresponde à classe do local de instalação no SAP PM e à classe de tag do CFIHOS. Hoje o pipeline asserta essa classe do equipamento instalado, que é justamente a confusão entre posição e item que este padrão existe para evitar."@pt-br ;
+    iof-av:usageNote "The required function is NOT a separate slot: COPI equipment categories are defined by their identity-giving function, so the function follows from the expected class through copi-core. Conformance is a closed-world check, e.g. ASK { ?p copi:COPI_0009032 ?fl ; copi:COPI_0009031 ?item . ?fl copi:COPI_0009033 ?C . FILTER NOT EXISTS { ?item rdf:type/rdfs:subClassOf* ?C } }."@en,
+        "A função requerida NÃO é um slot separado: as categorias de equipamento da COPI são definidas pela função identitária, então a função decorre da classe esperada via copi-core. A conformidade é uma checagem de mundo fechado, com a consulta acima."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:naturalLanguageDefinition "Relation from a functional location to the class of material artifact that may be installed there."@en,
+        "Relação de um local de instalação para a classe de artefato material que pode ali ser instalada."@pt-br .
+
+#==============================================================================
+# DATA PROPERTIES
+#==============================================================================
+
+# has coordinate X
+copi:COPI_0009040 a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "has coordinate X"@en,
+        "tem coordenada X"@pt-br ;
+    rdfs:domain copi:COPI_0009001 ;
+    rdfs:range xsd:double ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:hasCoordinateX" ;
+    rdfs:comment "The X coordinate of a functional location in the reference frame of the material entity that determines its boundary."@en,
+        "A coordenada X de um local de instalação no referencial da entidade material que determina seu limite."@pt-br ;
+    iof-av:naturalLanguageDefinition "The X coordinate of a functional location in the reference frame of the material entity that determines its boundary."@en,
+        "A coordenada X de um local de instalação no referencial da entidade material que determina seu limite."@pt-br .
+
+# has coordinate Y
+copi:COPI_0009041 a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "has coordinate Y"@en,
+        "tem coordenada Y"@pt-br ;
+    rdfs:domain copi:COPI_0009001 ;
+    rdfs:range xsd:double ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:hasCoordinateY" ;
+    rdfs:comment "The Y coordinate of a functional location in the reference frame of the material entity that determines its boundary."@en,
+        "A coordenada Y de um local de instalação no referencial da entidade material que determina seu limite."@pt-br ;
+    iof-av:naturalLanguageDefinition "The Y coordinate of a functional location in the reference frame of the material entity that determines its boundary."@en,
+        "A coordenada Y de um local de instalação no referencial da entidade material que determina seu limite."@pt-br .
+
+# has coordinate Z
+copi:COPI_0009042 a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "has coordinate Z"@en,
+        "tem coordenada Z"@pt-br ;
+    rdfs:domain copi:COPI_0009001 ;
+    rdfs:range xsd:double ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:hasCoordinateZ" ;
+    rdfs:comment "The Z coordinate (elevation) of a functional location in the reference frame of the material entity that determines its boundary."@en,
+        "A coordenada Z (elevação) de um local de instalação no referencial da entidade material que determina seu limite."@pt-br ;
+    skos:example "+12.6 m (Deck C level, synthetic)"@en ;
+    iof-av:naturalLanguageDefinition "The Z coordinate (elevation) of a functional location in the reference frame of the material entity that determines its boundary."@en,
+        "A coordenada Z (elevação) de um local de instalação no referencial da entidade material que determina seu limite."@pt-br .
+
+# installed date
+copi:COPI_0009043 a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "installed date"@en,
+        "data de instalação"@pt-br ;
+    rdfs:domain copi:COPI_0009010 ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:installedDate (domain moved from the artifact to the installation period)" ;
+    rdfs:comment "The time at which the installation period began, that is, when the artifact was installed at the functional location."@en,
+        "O instante em que o período de instalação começou, isto é, quando o artefato foi instalado no local de instalação."@pt-br ;
+    iof-av:explanatoryNote "In v0.8 this was a functional data property of the artifact, which allowed a single installation date per artifact for its whole life. On the period, being functional is correct."@en,
+        "Na v0.8 esta era uma propriedade de dados funcional do artefato, o que permitia uma única data de instalação por artefato em toda a sua vida. No período, ser funcional é o comportamento correto."@pt-br ;
+    iof-av:naturalLanguageDefinition "The time at which the installation period began."@en,
+        "O instante em que o período de instalação começou."@pt-br .
+
+# removed date
+copi:COPI_0009044 a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "removed date"@en,
+        "data de remoção"@pt-br ;
+    rdfs:domain copi:COPI_0009010 ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy copi:copi-floc ;
+    dcterms:source "ODP-FL v0.8: fl:removedDate (domain moved from the artifact to the installation period)" ;
+    rdfs:comment "The time at which the installation period ended, that is, when the artifact was removed from the functional location. No value means the period is still open."@en,
+        "O instante em que o período de instalação terminou, isto é, quando o artefato foi removido do local de instalação. A ausência de valor indica que o período continua aberto."@pt-br ;
+    iof-av:usageNote "'No value means still installed' is a closed-world reading; under OWL's open world it holds only in the application layer (e.g. SPARQL FILTER NOT EXISTS)."@en ;
+    iof-av:naturalLanguageDefinition "The time at which the installation period ended. No value means the period is still open."@en,
+        "O instante em que o período de instalação terminou. A ausência de valor indica que o período continua aberto."@pt-br .

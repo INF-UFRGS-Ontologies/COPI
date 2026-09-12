@@ -1,0 +1,49 @@
+#curie_map:
+#  fl: https://www.inf.ufrgs.br/ontologies/odp/functional-location#
+#  copi: https://www.inf.ufrgs.br/ontologies/copi/
+#  skos: http://www.w3.org/2004/02/skos/core#
+#  semapv: https://w3id.org/semapv/vocab/
+#mapping_set_id: https://www.inf.ufrgs.br/ontologies/copi/copi-floc-odp-map.sssom.tsv
+#mapping_set_title: COPI-FLOC to ODP-FL v0.8 term correspondence
+#license: https://creativecommons.org/licenses/by/4.0/
+#subject_source: https://www.inf.ufrgs.br/ontologies/odp/functional-location/0.8
+#object_source: https://www.inf.ufrgs.br/ontologies/copi/copi-floc
+#comment: Term-by-term correspondence between the FOIS 2026 functional-location
+#  design pattern (ODP-FL v0.8) and the COPI module migrated from it, so the
+#  published pattern IRIs keep resolving to their COPI counterparts. exactMatch
+#  means the reading is unchanged; closeMatch flags a re-parenting or a changed
+#  domain, spelled out per row. Terms of v0.8 with NO counterpart are deliberately
+#  absent from the module: fl:Equipment, fl:Sensor, fl:Valve,
+#  fl:SeparationEquipment, fl:GasLiquidSeparator, fl:SeparationFunction,
+#  fl:GasLiquidSeparationFunction, fl:FlowRegulationFunction,
+#  fl:PressureSensingFunction (equipment and function classes, which belong to
+#  copi-core); fl:TimeStampedMeasuredDataset, fl:indexedBySite, fl:hasSeriesLabel,
+#  fl:storedAt (observation bridge); fl:MaintenanceNote, fl:noteText,
+#  fl:noteTimestamp, fl:performedAt, fl:performedAtLocation (maintenance bridge);
+#  fl:hostedBy; fl:RequiredRole, fl:requiresFunction, fl:requiresRole (replaced by
+#  the expected item class on the position, copi:COPI_0009033).
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	comment
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#FunctionalLocation	FunctionalLocation	skos:exactMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009001	functional location	semapv:ManualMappingCuration	
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#PlantSite	PlantSite	skos:exactMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009002	plant site	semapv:ManualMappingCuration	
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#SystemSite	SystemSite	skos:exactMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009003	system site	semapv:ManualMappingCuration	
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#SubsystemSite	SubsystemSite	skos:exactMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009004	subsystem site	semapv:ManualMappingCuration	
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#EquipmentUnitSite	EquipmentUnitSite	skos:exactMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009005	equipment unit site	semapv:ManualMappingCuration	
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#MaintainableItemSite	MaintainableItemSite	skos:exactMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009006	maintainable item site	semapv:ManualMappingCuration	
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#FunctionalLocationCode	FunctionalLocationCode	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009007	functional location code	semapv:ManualMappingCuration	re-parented from iao:CentrallyRegisteredIdentifier to iof:PhysicalLocationIdentifier
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#EquipmentTag	EquipmentTag	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009008	equipment tag	semapv:ManualMappingCuration	re-parented from iao:CentrallyRegisteredIdentifier to iof:PhysicalLocationIdentifier
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#FunctionalLocationSpecification	FunctionalLocationSpecification	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009009	functional location specification	semapv:ManualMappingCuration	v0.8 asserted requiresFunction some Function and specifiesLocation some FunctionalLocation; both existentials were dropped
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#hasBoundaryDeterminedBy	hasBoundaryDeterminedBy	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009020	has boundary determined by	semapv:ManualMappingCuration	range widened from bfo:Object to bfo:MaterialEntity, matching the v0.8 first-order axiom
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#partOfSystemSite	partOfSystemSite	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009021	part of system site	semapv:ManualMappingCuration	specialises BFO_0000176 (continuant part of); v0.8 used BFO_0000050, undeclared in BFO 2020 core
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#hasSystemSitePart	hasSystemSitePart	skos:exactMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009022	has system site part	semapv:ManualMappingCuration	
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#identifies	identifies	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009023	identifies	semapv:ManualMappingCuration	specialises iof:designates; v0.8 specialised iao:denotes
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#identifiesLocation	identifiesLocation	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009024	identifies location	semapv:ManualMappingCuration	specialises iof:designates; v0.8 specialised iao:denotes
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#locationIdentifiedBy	locationIdentifiedBy	skos:exactMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009025	location identified by	semapv:ManualMappingCuration	
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#hasTag	hasTag	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009026	has tag	semapv:ManualMappingCuration	reads 'at some time': entailed for every installation period, not only the current one
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#installedAt	installedAt	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009027	installed at	semapv:ManualMappingCuration	no longer functional; derived from installation periods and reads 'at some time'
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#specifiesLocation	specifiesLocation	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009028	specifies location	semapv:ManualMappingCuration	specialises iof:isAbout
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#EquipmentTag	EquipmentTag	skos:relatedMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009033	expects item type	semapv:ManualMappingCuration	new slot: carries the expected item class that v0.8 left implicit in the tag prefix convention
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#hasCoordinateX	hasCoordinateX	skos:exactMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009040	has coordinate X	semapv:ManualMappingCuration	
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#hasCoordinateY	hasCoordinateY	skos:exactMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009041	has coordinate Y	semapv:ManualMappingCuration	
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#hasCoordinateZ	hasCoordinateZ	skos:exactMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009042	has coordinate Z	semapv:ManualMappingCuration	
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#installedDate	installedDate	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009043	installed date	semapv:ManualMappingCuration	domain moved from the material artifact to the installation period
+https://www.inf.ufrgs.br/ontologies/odp/functional-location#removedDate	removedDate	skos:closeMatch	https://www.inf.ufrgs.br/ontologies/copi/COPI_0009044	removed date	semapv:ManualMappingCuration	domain moved from the material artifact to the installation period

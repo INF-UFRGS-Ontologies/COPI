@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                0083f8f2290fb2fbe404f54b4c7055d7911e22f73dccc88e2aae7d34c72e06a2
+CONFIG_HASH=                8b525c7fc5d2c1f322975ea8e2229e9672756973033888f3b54e9325808a023a
 
 
 # ----------------------------------------
@@ -57,7 +57,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 $(COMPONENTSDIR)/copi-core.ttl $(COMPONENTSDIR)/copi-vocab.ttl $(COMPONENTSDIR)/copi-enriched.owl 
+OTHER_SRC =                 $(COMPONENTSDIR)/copi-core.ttl $(COMPONENTSDIR)/copi-vocab.ttl $(COMPONENTSDIR)/copi-enriched.owl $(COMPONENTSDIR)/copi-floc.ttl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 

@@ -6,6 +6,7 @@
     <uri name="https://www.inf.ufrgs.br/ontologies/copi/components/copi-core.ttl" uri="components/copi-core.ttl" />
     <uri name="https://www.inf.ufrgs.br/ontologies/copi/components/copi-vocab.ttl" uri="components/copi-vocab.ttl" />
     <uri name="https://www.inf.ufrgs.br/ontologies/copi/components/copi-enriched.owl" uri="components/copi-enriched.owl" />
+    <uri name="https://www.inf.ufrgs.br/ontologies/copi/components/copi-floc.ttl" uri="components/copi-floc.ttl" />
     <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-idranges.owl" uri="copi-idranges.owl" />
   </group>
   <group id="upstream-mirrors" prefer="public">
@@ -17,5 +18,6 @@
     <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-core" uri="components/copi-core.ttl" />
     <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-vocab" uri="components/copi-vocab.ttl" />
     <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-enriched" uri="components/copi-enriched.owl" />
+    <uri name="https://www.inf.ufrgs.br/ontologies/copi/copi-floc" uri="components/copi-floc.ttl" />
   </group>
 </catalog>
