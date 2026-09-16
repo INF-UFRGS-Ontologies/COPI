@@ -353,7 +353,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -366,7 +366,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -389,16 +389,18 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     ] ;
     rdfs:label &quot;power transmission function&quot;@en ;
     rdfs:label &quot;função de transmissão de potência&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in a PowerTransmissionProcess and that consists in the capacity to transfer mechanical energy from a prime mover to one or more driven machines, maintaining rotational motion while potentially modifying torque and speed characteristics.&quot;@en ;
-    skos:definition &quot;A DesignedFunction that is realized in a PowerTransmissionProcess and that consists in the capacity to transfer mechanical energy from a prime mover to one or more driven machines, maintaining rotational motion while potentially modifying torque and speed characteristics.&quot;@en .
+    iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in a PowerTransmissionProcess and that consists in the capacity to transmit mechanical energy from a prime mover through rotational motion or to generate energy when acting as a driven element.&quot;@en ;
+    skos:definition &quot;A DesignedFunction that is realized in a PowerTransmissionProcess and that consists in the capacity to transmit mechanical energy from a prime mover through rotational motion or to generate energy when acting as a driven element.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma DesignedFunction que é realizada em um PowerTransmissionProcess e que consiste na capacidade de transmitir energia mecânica de um acionador por movimento rotativo, ou de gerar energia quando atua como elemento acionado.&quot;@pt-br .
 
 ### Process type
 :PowerTransmissionProcess rdf:type owl:Class ;
     rdfs:subClassOf iof-core:PlannedProcess ;
     rdfs:label &quot;power transmission process&quot;@en ;
     rdfs:label &quot;processo de transmissão de potência&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which mechanical energy is transferred from a prime mover through a rotating shaft to one or more driven machines, typically involving the conversion of torque and rotational speed to match operational requirements.&quot;@en ;
-    skos:definition &quot;A PlannedProcess in which mechanical energy is transferred from a prime mover through a rotating shaft to one or more driven machines, typically involving the conversion of torque and rotational speed to match operational requirements.&quot;@en .
+    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which mechanical energy is transmitted through rotational motion from one component to another via a rotating shaft, enabling the transfer of torque and angular velocity to mounted components.&quot;@en ;
+    skos:definition &quot;A PlannedProcess in which mechanical energy is transmitted through rotational motion from one component to another via a rotating shaft, enabling the transfer of torque and angular velocity to mounted components.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um PlannedProcess em que energia mecânica é transmitida por movimento rotativo de um componente a outro por meio de um eixo, permitindo a transferência de torque e velocidade angular aos componentes montados.&quot;@pt-br .
 
 ### Equipment universal: DriveShaft
 :DriveShaft rdf:type owl:Class ;
@@ -416,6 +418,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
     iof-av:primitiveRationale &quot;Over-reaching equivalence (ODR-022 §17). The definition adds \&quot;consists in a shaft-based system\&quot;, a structural condition beyond PowerTransmissionFunction. As equivalent it absorbed gear wheel, input shaft and output shaft, none of which is a drive shaft.&quot;@en ;
     rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty bfo:BFO_0000196 ; owl:someValuesFrom :COPI_0000059 ] ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/DRIVE_SHAFT&gt; .
 </div></div>
       </div>
 
@@ -478,7 +481,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">The signature reflects the core function: taking mechanical power from one source and distributing it to multiple destinations. The one-to-many distribution pattern distinguishes drive shaft from simple couplings or single-machine power transmission devices.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000257</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000257</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-04</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000257</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000257</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-04</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

@@ -355,7 +355,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -368,7 +368,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -390,17 +390,31 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :GasDetectionProcess
     ] ;
     rdfs:label &quot;gas detection function&quot;@en ;
-    rdfs:label &quot;função de detecção de gás&quot;@pt-br .
+    rdfs:label &quot;função de detecção de gás&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A detection function borne by petroleum production equipment whose realization constitutes the sensing and identification of the presence or concentration of a specific gas or vapour in the surrounding atmosphere.&quot;@en ;
+    skos:definition &quot;A detection function borne by petroleum production equipment whose realization constitutes the sensing and identification of the presence or concentration of a specific gas or vapour in the surrounding atmosphere.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma função de detecção portada por equipamento de produção de petróleo cuja realização consiste em detectar e identificar a presença ou a concentração de um gás ou vapor específico na atmosfera ao redor.&quot;@pt-br .
 
-:DetectionFunction rdf:type owl:Class .
+:DetectionFunction rdf:type owl:Class ;
+    rdfs:label &quot;função de detecção&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A designed function borne by petroleum production equipment whose realization constitutes the sensing and identification of the presence, concentration, or state of a physical or chemical entity.&quot;@en ;
+    skos:definition &quot;A designed function borne by petroleum production equipment whose realization constitutes the sensing and identification of the presence, concentration, or state of a physical or chemical entity.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma função projetada portada por equipamento de produção de petróleo cuja realização consiste em detectar e identificar a presença, a concentração ou o estado de uma entidade física ou química.&quot;@pt-br .
 
 ### Process type
 :GasDetectionProcess rdf:type owl:Class ;
     rdfs:subClassOf :DetectionProcess ;
     rdfs:label &quot;gas detection process&quot;@en ;
-    rdfs:label &quot;processo de detecção de gás&quot;@pt-br .
+    rdfs:label &quot;processo de detecção de gás&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A detection process in which the presence or concentration of a specific gas or vapour in the surrounding atmosphere is sensed and identified.&quot;@en ;
+    skos:definition &quot;A detection process in which the presence or concentration of a specific gas or vapour in the surrounding atmosphere is sensed and identified.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo de detecção em que a presença ou a concentração de um gás ou vapor específico na atmosfera ao redor é detectada e identificada.&quot;@pt-br .
 
-:DetectionProcess rdf:type owl:Class .
+:DetectionProcess rdf:type owl:Class ;
+    rdfs:label &quot;processo de detecção&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A planned process in which the presence, concentration, or state of a physical or chemical entity is sensed and identified by petroleum production equipment.&quot;@en ;
+    skos:definition &quot;A planned process in which the presence, concentration, or state of a physical or chemical entity is sensed and identified by petroleum production equipment.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo planejado em que a presença, a concentração ou o estado de uma entidade física ou química é detectado e identificado por equipamentos de produção de petróleo.&quot;@pt-br .
 
 :GasDetectionProcess
     rdfs:subClassOf [
@@ -439,11 +453,14 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:naturalLanguageDefinition &quot;Um detector de gás é um detector que tem a função projetada de detectar a presença de uma concentração especificada de um gás.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every gas detector is a detector that bears a GasDetectionFunction and has a GasDetectingMeasuringElement as component part at all times.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x(GasDetector(x) ↔ (Detector(x) ∧ ∃f(GasDetectionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(GasDetectingMeasuringElement(p) ∧ hasComponentPartAtAllTimes(x,p))))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/GAS_DETECTOR&gt; ;
+    dcterms:source &lt;https://www.jip36-cfihos.org/&gt; ;
+    dcterms:source &lt;http://rds.posccaesar.org/ontology/plm/rdl/PCA_100005924&gt; .
 
 :GasDetectingMeasuringElement rdf:type owl:Class ;
     rdfs:subClassOf :MeasuringElement ;
-    rdfs:label &quot;elemento de medição de detecção de gás&quot;@pt-br ;
-    rdfs:label &quot;gas detecting measuring element&quot;@en .
+    rdfs:label &quot;gas detecting measuring element&quot;@en ;
+    rdfs:label &quot;elemento de medição de detecção de gás&quot;@pt-br .
 </div></div>
       </div>
 
@@ -506,7 +523,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Gas detectors take atmospheric gas portions as input and produce detection signals indicating concentration levels. The transformation involves chemical or physical sensing mechanisms.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000284</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000284</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000284</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000284</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

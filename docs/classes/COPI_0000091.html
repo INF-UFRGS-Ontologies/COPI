@@ -362,7 +362,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -375,7 +375,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -403,7 +403,10 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 :InstrumentationProcess rdf:type owl:Class ;
     rdfs:subClassOf :MeasurementProcess ;
     rdfs:label &quot;instrumentation process&quot;@en ;
-    rdfs:label &quot;processo de instrumentação&quot;@pt-br .
+    rdfs:label &quot;processo de instrumentação&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A planned process in which physical process variables are measured, transmitted, or controlled by instrumentation to enable monitoring and regulation of petroleum production operations.&quot;@en ;
+    skos:definition &quot;A planned process in which physical process variables are measured, transmitted, or controlled by instrumentation to enable monitoring and regulation of petroleum production operations.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo planejado em que variáveis físicas do processo são medidas, transmitidas ou controladas por instrumentação para permitir o monitoramento e a regulação das operações de produção de petróleo.&quot;@pt-br .
 
 :MeasurementProcess rdf:type owl:Class .
 
@@ -439,6 +442,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:naturalLanguageDefinition &quot;Um instrumento é um artefato material que tem a função projetada de realizar medição, monitoramento ou controle de variáveis de processo.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every instrument is a material artifact that has an instrumentation function, and every material artifact that has an instrumentation function is an instrument.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x(Instrument(x) ↔ (Assembly(x) ∧ ∃f(InstrumentationFunction(f) ∧ hasFunction(x,f))))&quot;@en ;
+    dcterms:source &lt;https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa5&gt; .
 </div></div>
       </div>
 
@@ -501,7 +505,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Instruments take measurable process variables as inputs and produce information signals as outputs, enabling measurement, monitoring, and control functions. The core transformation is transduction from physical phenomena to information.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000091</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-02</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000091</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-02</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

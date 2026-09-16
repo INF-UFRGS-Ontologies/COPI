@@ -358,6 +358,7 @@
           <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (ThreeWayValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Function axiom: FlowControlFunction]</span>∀f (FlowControlFunction(f) → ∀p (realizedIn(f,p) → FlowControlProcess(p)) ∧ ∃p (FlowControlProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
 <span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (ThreeWayValve(x) → ∃hasComponentPartAtAllTimes.Port) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
+<span class="fol-line"><span class="fol-label">[Necessary part: Port]</span>∀x (ThreeWayValve(x) → ∃p (Port(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((ThreeWayValve(x) ∧ FlowControlFunction(f) ∧ bearerOf(x,f)) →
       ∃m (PortionOfFluid(m) ∧ participatesIn(m,f)) ∧
       ∃e (PortionOfFluid(e) ∧ participatesIn(e,f)) ∧
@@ -390,7 +391,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -403,7 +404,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -434,10 +435,12 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     rdfs:subClassOf :FlowControl ;
     rdfs:label &quot;flow control process&quot;@en ;
     rdfs:label &quot;processo de controle de fluxo&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which a valve permits, obstructs, regulates, or routes fluid flow between its ports.&quot;@en ;
-    skos:definition &quot;A PlannedProcess in which a valve permits, obstructs, regulates, or routes fluid flow between its ports.&quot;@en .
+    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which fluid flow is regulated, directed, or restricted through a valve body by positioning internal closure elements to achieve desired flow characteristics.&quot;@en ;
+    skos:definition &quot;A PlannedProcess in which fluid flow is regulated, directed, or restricted through a valve body by positioning internal closure elements to achieve desired flow characteristics.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um PlannedProcess em que o escoamento de fluido é regulado, direcionado ou restringido através do corpo de uma válvula pelo posicionamento de elementos internos de fechamento, obtendo as características de escoamento desejadas.&quot;@pt-br .
 
-:FlowControl rdf:type owl:Class .
+:FlowControl rdf:type owl:Class ;
+    rdfs:label &quot;processo de controle de fluxo&quot;@pt-br .
 
 :FlowControlProcess
     rdfs:subClassOf [
@@ -459,7 +462,13 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
         owl:someValuesFrom :FlowControlFunction
     ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasComponentPartAtAllTimes ;
+        owl:someValuesFrom :Port
+    ] ;
     rdfs:label &quot;three way valve&quot;@en ;
+    rdfs:label &quot;válvula de três vias&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A three way valve is a valve with three flow-path ports instead of the usual two, used to divert one inlet stream to either of two outlets or to mix two inlet streams into one outlet.&quot;@en ;
     skos:definition &quot;A three way valve is a valve with three flow-path ports instead of the usual two, used to divert one inlet stream to either of two outlets or to mix two inlet streams into one outlet.&quot;@en ;
     iof-av:naturalLanguageDefinition &quot;Uma valvula de tres vias e uma valvula com tres portas de passagem de fluxo em vez das duas usuais, usada para desviar um fluxo de entrada para uma de duas saidas ou para misturar dois fluxos de entrada em uma saida.&quot;@pt-br ;
@@ -467,6 +476,12 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:firstOrderLogicAxiom &quot;∀x (ThreeWayValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f)) ∧ ∃p (Port(p) ∧ hasComponentPartAtAllTimes(x,p)))&quot;@en ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
     iof-av:primitiveRationale &quot;Constructive type: under OWA, asserting sufficiency (equivalence) from a Port-existence differentia would risk misclassifying any valve that happens to assert a Port component (or any multi-port manifold-like fitting) as a ThreeWayValve. Necessary conditions only, pending expert review of whether the port-count distinction should ever be made sufficient.&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/THREE_WAY_VALVE&gt; .
+
+:Port rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;port&quot;@en ;
+    rdfs:label &quot;MaterialArtifact que possui uma InterfacingFunction e&quot;@pt-br .
 </div></div>
       </div>
 
@@ -514,7 +529,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="step-block-header">
     <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
-  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No necessary parts recorded.</p><div class="rationale mt-2">No subtype-specific necessary part beyond the generic &#x27;Port&#x27; referenced in the differentia is grounded verbatim for this term; asserting a specific closure mechanism would overreach, since three-way valves are built with multiple different closure types (ball, plug) per the gathered evidence.</div></div>
+  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>Port</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">Port grounded by triangulated tertiary sources (engineerfix.com: &#x27;This device features three distinct ports for fluid entry and exit.&#x27;; instrumentationtools.com: &#x27;This valve design has three ports on it&#x27;), consistent with the primary &#x27;three separate paths of flow&#x27;. Added 2026-09-15 so the differentia reaches the OWL.</div></div>
 </div>
       </div>
 
@@ -529,7 +544,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Same fluid-control signature family as generic Valve; the extra participant (second inlet or second outlet, depending on service) is what formally distinguishes this class from a two-port valve, mirroring how block and bleed valve&#x27;s extra bleed output is modeled at this level rather than via a part.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000788</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000788</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000788</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000788</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-15</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 
@@ -583,7 +598,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
               <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
               <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>FlowControlFunction</td></tr>
               <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>FlowControlProcess</td></tr>
-              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>
+              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>1</td></tr>
             </table>
           </div>
         </div>

@@ -296,7 +296,7 @@
           <div style="flex:1;">
             <div class="d-flex align-items-center gap-2 mb-1">
               <span class="status-pill status-validated">validated</span>
-              <span class="mode-pill mode-necessary">necessary</span>
+              <span class="mode-pill mode-equivalent">equivalent</span>
               <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000750</code>
             </div>
             <div class="ph-class-name">Coalescent Filter</div>
@@ -317,13 +317,12 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every coalescent filter is a filter that bears a filtration function and has a coalescing filter media as a component part, which merges entrained liquid droplets for drainage.</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every coalescent filter is a filter that bears a coalescing filtration function, and conversely, every filter that bears a coalescing filtration function is a coalescent filter.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (CoalescentFilter(x) → Filter(x) ∧ ∃f (FiltrationFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
-<span class="fol-line"><span class="fol-label">[Function axiom: FiltrationFunction]</span>∀f (FiltrationFunction(f) → ∀p (realizedIn(f,p) → FiltrationProcess(p)) ∧ ∃p (FiltrationProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (CoalescentFilter(x) → ∃hasComponentPartAtAllTimes.CoalescingFilterMedia) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
-<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((CoalescentFilter(x) ∧ FiltrationFunction(f) ∧ bearerOf(x,f)) →
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (CoalescentFilter(x) ↔ Filter(x) ∧ ∃f (CoalescingFiltrationFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+<span class="fol-line"><span class="fol-label">[Function axiom: CoalescingFiltrationFunction]</span>∀f (CoalescingFiltrationFunction(f) → ∀p (realizedIn(f,p) → CoalescingFiltrationProcess(p)) ∧ ∃p (CoalescingFiltrationProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((CoalescentFilter(x) ∧ CoalescingFiltrationFunction(f) ∧ bearerOf(x,f)) →
       ∃m (PortionOfGas(m) ∧ participatesIn(m,f)) ∧
       ∃e1 (PortionOfGas(e1) ∧ participatesIn(e1,f)) ∧
       ∃e2 (PortionOfLiquid(e2) ∧ participatesIn(e2,f)) ∧
@@ -356,7 +355,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -369,7 +368,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -378,34 +377,42 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     apv:MinAnnotationLength 20 .
 
 ### Identity-giving function
+:CoalescingFiltrationFunction rdf:type owl:Class ;
+    rdfs:subClassOf :FiltrationFunction ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
+        owl:allValuesFrom :CoalescingFiltrationProcess
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
+        owl:someValuesFrom :CoalescingFiltrationProcess
+    ] ;
+    rdfs:label &quot;coalescing filtration function&quot;@en ;
+    rdfs:label &quot;função de filtração por coalescência&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A FiltrationFunction that is realized in a CoalescingFiltrationProcess and that consists in removing entrained liquid particles from a gas stream by making them coalesce into drops that can be drained.&quot;@en ;
+    skos:definition &quot;A FiltrationFunction that is realized in a CoalescingFiltrationProcess and that consists in removing entrained liquid particles from a gas stream by making them coalesce into drops that can be drained.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma FiltrationFunction que é realizada em um CoalescingFiltrationProcess e que consiste em remover partículas líquidas arrastadas de uma corrente gasosa, fazendo-as coalescer em gotas que possam ser drenadas.&quot;@pt-br .
+
 :FiltrationFunction rdf:type owl:Class ;
-    rdfs:subClassOf iof-core:DesignedFunction ;
-    rdfs:subClassOf [
-        rdf:type owl:Restriction ;
-        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:allValuesFrom :FiltrationProcess
-    ] ;
-    rdfs:subClassOf [
-        rdf:type owl:Restriction ;
-        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:someValuesFrom :FiltrationProcess
-    ] ;
-    rdfs:label &quot;filtration function&quot;@en ;
     rdfs:label &quot;função de filtração&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in a FiltrationProcess and that consists in removing entrained contaminant particles or droplets from a fluid stream.&quot;@en ;
-    skos:definition &quot;A DesignedFunction that is realized in a FiltrationProcess and that consists in removing entrained contaminant particles or droplets from a fluid stream.&quot;@en .
+    iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in a FiltrationProcess and that consists in selectively retaining particles, contaminants, or unwanted substances from a fluid stream while allowing the clean fluid to pass through.&quot;@en ;
+    skos:definition &quot;A DesignedFunction that is realized in a FiltrationProcess and that consists in selectively retaining particles, contaminants, or unwanted substances from a fluid stream while allowing the clean fluid to pass through.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma DesignedFunction que é realizada em um FiltrationProcess e que consiste em reter seletivamente partículas, contaminantes ou substâncias indesejadas de uma corrente de fluido, deixando passar o fluido limpo.&quot;@pt-br .
 
 ### Process type
-:FiltrationProcess rdf:type owl:Class ;
+:CoalescingFiltrationProcess rdf:type owl:Class ;
     rdfs:subClassOf :MechanicalSeparation ;
-    rdfs:label &quot;filtration process&quot;@en ;
-    rdfs:label &quot;processo de filtração&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A MechanicalSeparation process in which liquid aerosol droplets entrained in a gas stream are made to coalesce into larger drops by passage through a layered media pack, then drained from the stream by gravity.&quot;@en ;
-    skos:definition &quot;A MechanicalSeparation process in which liquid aerosol droplets entrained in a gas stream are made to coalesce into larger drops by passage through a layered media pack, then drained from the stream by gravity.&quot;@en .
+    rdfs:label &quot;coalescing filtration process&quot;@en ;
+    rdfs:label &quot;processo de filtração por coalescência&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A MechanicalSeparation process in which liquid droplets entrained in a gas stream coalesce on a filter medium into larger drops that drain away, leaving the gas with reduced liquid content.&quot;@en ;
+    skos:definition &quot;A MechanicalSeparation process in which liquid droplets entrained in a gas stream coalesce on a filter medium into larger drops that drain away, leaving the gas with reduced liquid content.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo de MechanicalSeparation em que gotículas de líquido arrastadas por uma corrente gasosa coalescem em um meio filtrante formando gotas maiores que são drenadas, deixando o gás com teor de líquido reduzido.&quot;@pt-br .
 
 :MechanicalSeparation rdf:type owl:Class .
 
-:FiltrationProcess
+:CoalescingFiltrationProcess
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasInput ;
@@ -424,20 +431,25 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 
 ### Equipment universal: CoalescentFilter
 :CoalescentFilter rdf:type owl:Class ;
-    rdfs:subClassOf :Filter ;
-    rdfs:subClassOf [
+    owl:equivalentClass [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Filter
+            [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
-        owl:someValuesFrom :FiltrationFunction
+        owl:someValuesFrom :CoalescingFiltrationFunction
+    ]
+        )
     ] ;
     rdfs:label &quot;coalescent filter&quot;@en ;
+    rdfs:label &quot;filtro coalescedor&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A coalescent filter (coalescing filter) is a filter designed to remove liquid particles from a gas stream, using a layered coalescing media pack that merges small droplets into larger drops for gravity drainage.&quot;@en ;
     skos:definition &quot;A coalescent filter (coalescing filter) is a filter designed to remove liquid particles from a gas stream, using a layered coalescing media pack that merges small droplets into larger drops for gravity drainage.&quot;@en ;
     iof-av:naturalLanguageDefinition &quot;Um filtro coalescente e um filtro projetado para remover particulas liquidas de uma corrente de gas, usando um pacote de meio filtrante em camadas que funde pequenas goticulas em gotas maiores para drenagem por gravidade.&quot;@pt-br ;
-    iof-av:semiFormalNaturalLanguageAxiom &quot;Every coalescent filter is a filter that bears a filtration function and has a coalescing filter media as a component part, which merges entrained liquid droplets for drainage.&quot;@en ;
-    iof-av:firstOrderLogicAxiom &quot;∀x (CoalescentFilter(x) → Filter(x) ∧ ∃f (FiltrationFunction(f) ∧ bearerOf(x,f)) ∧ ∃m (CoalescingFilterMedia(m) ∧ hasComponentPartAtAllTimes(x,m)))&quot;@en ;
-    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
-    iof-av:primitiveRationale &quot;Constructive subtype reusing genus and function unchanged: sufficiency is not asserted so any filter incidentally described as having layered media is not automatically classified as a coalescing filter under OWA without the coalescence-specific drainage mechanism being confirmed.&quot;@en ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every coalescent filter is a filter that bears a coalescing filtration function, and conversely, every filter that bears a coalescing filtration function is a coalescent filter.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x (CoalescentFilter(x) ↔ Filter(x) ∧ ∃f (CoalescingFiltrationFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/COALESCENT_FILTER&gt; .
 </div></div>
       </div>
 
@@ -452,16 +464,16 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     <div class="row g-3 mb-2">
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Function class</div>
-        <span class="decision-value">FiltrationFunction</span>
-        <span class="text-muted" style="font-size:.8rem;"> ⊑ DesignedFunction</span>
+        <span class="decision-value">CoalescingFiltrationFunction</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ FiltrationFunction</span>
       </div>
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
-        <span class="decision-value">FiltrationProcess</span>
+        <span class="decision-value">CoalescingFiltrationProcess</span>
         <span class="text-muted" style="font-size:.8rem;"> ⊑ MechanicalSeparation</span>
       </div>
     </div>
-    <div class="rationale">Reused verbatim from the already-enriched genus &#x27;filter&#x27; per the constructive-type rule: a coalescent filter removes contaminants from a fluid stream like any filter, differing only in the mechanism (coalescence of liquid droplets vs. straining of solid particulates).</div>
+    <div class="rationale">Subtype case: ISO 15926-4 defines the class by purpose, &#x27;designed to remove liquid particles from a gas stream&#x27;. Every realisation is a filtration, not vice versa. Revised 2026-09-15: the previous part-based differentia (CoalescingFilterMedia) was hedged in its source and never reached the OWL.</div>
   </div>
 </div>
 <div class="step-block step-2">
@@ -479,7 +491,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="step-block-header">
     <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
-  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃hasComponentPartAtAllTimes.CoalescingFilterMedia</code></div><p style="font-size:.88rem;color:#374151;">Removes liquid particles/droplets from a gas stream specifically, via a layered coalescing media pack that merges small droplets into larger drops for gravity drainage -- as opposed to a generic filter, which strains out solid particulates.</p><div class="rationale">Two independent tertiary patents (triangulated) confirm the layered coalescing media pack as the defining structural element, distinguishing this from both a generic particulate Filter and the vessel-scale Coalescer.</div></div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.CoalescingFiltrationFunction</code></div><p style="font-size:.88rem;color:#374151;">A coalescent filter is the filter designed to remove liquid particles from a gas stream.</p><div class="rationale">Purpose-based differentia taken from the primary definition; the layered media construction remains a candidate part.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
@@ -500,7 +512,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Matches the canonical mechanical_filtration term (size/mechanism-based particle/droplet removal), same category as the genus Filter; two output streams (cleaned gas, drained liquid) reflect the coalescence-specific drainage step.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000750</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000750</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000750</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000750</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-15</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 
@@ -516,9 +528,9 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
             <table class="meta-table">
               <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>Filter</strong></td></tr>
               <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">Assembly</span></td></tr>
-              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
-              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>FiltrationFunction</td></tr>
-              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>FiltrationProcess</td></tr>
+              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-equivalent">equivalent</span></td></tr>
+              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>CoalescingFiltrationFunction</td></tr>
+              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>CoalescingFiltrationProcess</td></tr>
               <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>
             </table>
           </div>

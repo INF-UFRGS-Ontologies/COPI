@@ -296,7 +296,7 @@
           <div style="flex:1;">
             <div class="d-flex align-items-center gap-2 mb-1">
               <span class="status-pill status-validated">validated</span>
-              <span class="mode-pill mode-necessary">necessary</span>
+              <span class="mode-pill mode-equivalent">equivalent</span>
               <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000776</code>
             </div>
             <div class="ph-class-name">Sample Bomb</div>
@@ -317,14 +317,12 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every sample bomb is a sample vessel that bears a sample collection function and has a valve as a component part at each end, sized and rated for high-pressure gas.</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every sample bomb is a sample vessel that bears a gas sample collection function, and conversely, every sample vessel that bears a gas sample collection function is a sample bomb.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (SampleBomb(x) → SampleVessel(x) ∧ ∃f (SampleCollectionFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
-<span class="fol-line"><span class="fol-label">[Function axiom: SampleCollectionFunction]</span>∀f (SampleCollectionFunction(f) → ∀p (realizedIn(f,p) → SampleCollectionProcess(p)) ∧ ∃p (SampleCollectionProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (SampleBomb(x) → ∃hasComponentPartAtAllTimes.SampleCylinderValve) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: SampleCylinderValve]</span>∀x (SampleBomb(x) → ∃p (SampleCylinderValve(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
-<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((SampleBomb(x) ∧ SampleCollectionFunction(f) ∧ bearerOf(x,f)) →
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (SampleBomb(x) ↔ SampleVessel(x) ∧ ∃f (GasSampleCollectionFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+<span class="fol-line"><span class="fol-label">[Function axiom: GasSampleCollectionFunction]</span>∀f (GasSampleCollectionFunction(f) → ∀p (realizedIn(f,p) → GasSampleCollectionProcess(p)) ∧ ∃p (GasSampleCollectionProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((SampleBomb(x) ∧ GasSampleCollectionFunction(f) ∧ bearerOf(x,f)) →
       ∃m (PortionOfGas(m) ∧ participatesIn(m,f)) ∧
       ∃e (PortionOfGas(e) ∧ participatesIn(e,f)) ∧
       processType(f,Containment)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
@@ -356,7 +354,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -369,7 +367,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -378,34 +376,42 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     apv:MinAnnotationLength 20 .
 
 ### Identity-giving function
-:SampleCollectionFunction rdf:type owl:Class ;
-    rdfs:subClassOf :ContainmentFunction ;
+:GasSampleCollectionFunction rdf:type owl:Class ;
+    rdfs:subClassOf :SampleCollectionFunction ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:allValuesFrom :SampleCollectionProcess
+        owl:allValuesFrom :GasSampleCollectionProcess
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:someValuesFrom :SampleCollectionProcess
+        owl:someValuesFrom :GasSampleCollectionProcess
     ] ;
-    rdfs:label &quot;sample collection function&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;A ContainmentFunction subtype that is realized in a SampleCollectionProcess and that consists in receiving, holding, and preserving a process sample so it can be transported intact to analytical equipment.&quot;@en ;
-    skos:definition &quot;A ContainmentFunction subtype that is realized in a SampleCollectionProcess and that consists in receiving, holding, and preserving a process sample so it can be transported intact to analytical equipment.&quot;@en .
+    rdfs:label &quot;gas sample collection function&quot;@en ;
+    rdfs:label &quot;função de coleta de amostra de gás&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A SampleCollectionFunction that is realized in a GasSampleCollectionProcess and that consists in collecting, holding and transporting a high-pressure gas sample from the field to a laboratory without loss or contamination.&quot;@en ;
+    skos:definition &quot;A SampleCollectionFunction that is realized in a GasSampleCollectionProcess and that consists in collecting, holding and transporting a high-pressure gas sample from the field to a laboratory without loss or contamination.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma SampleCollectionFunction que é realizada em um GasSampleCollectionProcess e que consiste em coletar, reter e transportar uma amostra de gás a alta pressão do campo até um laboratório, sem perda ou contaminação.&quot;@pt-br .
 
-:ContainmentFunction rdf:type owl:Class .
+:SampleCollectionFunction rdf:type owl:Class ;
+    rdfs:label &quot;função de coleta de amostra&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A ContainmentFunction subtype that is realized in a SampleCollectionProcess and that consists in receiving, holding, and preserving a process sample so it can be transported intact to analytical equipment.&quot;@en ;
+    skos:definition &quot;A ContainmentFunction subtype that is realized in a SampleCollectionProcess and that consists in receiving, holding, and preserving a process sample so it can be transported intact to analytical equipment.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um subtipo de ContainmentFunction que é realizado em um SampleCollectionProcess e que consiste em receber, reter e preservar uma amostra de processo para que ela possa ser transportada intacta até o equipamento de análise.&quot;@pt-br .
 
 ### Process type
-:SampleCollectionProcess rdf:type owl:Class ;
+:GasSampleCollectionProcess rdf:type owl:Class ;
     rdfs:subClassOf :MaterialContainment ;
-    rdfs:label &quot;sample collection process&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which a sample is collected into a vessel, held there without loss or contamination, and transported to analytical equipment.&quot;@en ;
-    skos:definition &quot;A PlannedProcess in which a sample is collected into a vessel, held there without loss or contamination, and transported to analytical equipment.&quot;@en .
+    rdfs:label &quot;gas sample collection process&quot;@en ;
+    rdfs:label &quot;processo de coleta de amostra de gás&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A MaterialContainment process in which a high-pressure gas sample is drawn into a pressure-rated cylinder, held there without loss or contamination, and transported to a laboratory.&quot;@en ;
+    skos:definition &quot;A MaterialContainment process in which a high-pressure gas sample is drawn into a pressure-rated cylinder, held there without loss or contamination, and transported to a laboratory.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo de MaterialContainment em que uma amostra de gás a alta pressão é admitida em um cilindro projetado para pressão, mantida ali sem perda ou contaminação e transportada até um laboratório.&quot;@pt-br .
 
 :MaterialContainment rdf:type owl:Class .
 
-:SampleCollectionProcess
+:GasSampleCollectionProcess
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasInput ;
@@ -419,30 +425,25 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 
 ### Equipment universal: SampleBomb
 :SampleBomb rdf:type owl:Class ;
-    rdfs:subClassOf :SampleVessel ;
-    rdfs:subClassOf [
+    owl:equivalentClass [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :SampleVessel
+            [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
-        owl:someValuesFrom :SampleCollectionFunction
-    ] ;
-    rdfs:subClassOf [
-        rdf:type owl:Restriction ;
-        owl:onProperty iof-core:hasComponentPartAtAllTimes ;
-        owl:someValuesFrom :SampleCylinderValve
+        owl:someValuesFrom :GasSampleCollectionFunction
+    ]
+        )
     ] ;
     rdfs:label &quot;sample bomb&quot;@en ;
+    rdfs:label &quot;cilindro de amostragem&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A sample bomb (sampling cylinder) is a sample vessel constructed as a pressure-rated cylinder with a valve at each end, specially designed to collect, store, and transport high-pressure gas samples from the field to a laboratory.&quot;@en ;
     skos:definition &quot;A sample bomb (sampling cylinder) is a sample vessel constructed as a pressure-rated cylinder with a valve at each end, specially designed to collect, store, and transport high-pressure gas samples from the field to a laboratory.&quot;@en ;
     iof-av:naturalLanguageDefinition &quot;Um cilindro de amostragem (sample bomb) e um vaso de amostra construido como um cilindro classificado para pressao com uma valvula em cada extremidade, especialmente projetado para coletar, armazenar e transportar amostras de gas de alta pressao do campo ate um laboratorio.&quot;@pt-br ;
-    iof-av:semiFormalNaturalLanguageAxiom &quot;Every sample bomb is a sample vessel that bears a sample collection function and has a valve as a component part at each end, sized and rated for high-pressure gas.&quot;@en ;
-    iof-av:firstOrderLogicAxiom &quot;∀x (SampleBomb(x) → SampleVessel(x) ∧ ∃f (SampleCollectionFunction(f) ∧ bearerOf(x,f)) ∧ ∃v (SampleCylinderValve(v) ∧ hasComponentPartAtAllTimes(x,v)))&quot;@en ;
-    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
-    iof-av:primitiveRationale &quot;Constructive subtype reusing genus and function unchanged: sufficiency is not asserted so any small valved pressure cylinder used for an unrelated duty is not automatically classified as a sample bomb under OWA.&quot;@en ;
-
-:SampleCylinderValve rdf:type owl:Class ;
-    rdfs:subClassOf iof-core:MaterialArtifact ;
-    rdfs:label &quot;válvula de amostra de cilindro&quot;@pt-br ;
-    rdfs:label &quot;sample cylinder valve&quot;@en .
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every sample bomb is a sample vessel that bears a gas sample collection function, and conversely, every sample vessel that bears a gas sample collection function is a sample bomb.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x (SampleBomb(x) ↔ SampleVessel(x) ∧ ∃f (GasSampleCollectionFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
+    dcterms:source &lt;https://www.jip36-cfihos.org/&gt; .
 </div></div>
       </div>
 
@@ -457,16 +458,16 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     <div class="row g-3 mb-2">
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Function class</div>
-        <span class="decision-value">SampleCollectionFunction</span>
-        <span class="text-muted" style="font-size:.8rem;"> ⊑ ContainmentFunction</span>
+        <span class="decision-value">GasSampleCollectionFunction</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ SampleCollectionFunction</span>
       </div>
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
-        <span class="decision-value">SampleCollectionProcess</span>
+        <span class="decision-value">GasSampleCollectionProcess</span>
         <span class="text-muted" style="font-size:.8rem;"> ⊑ MaterialContainment</span>
       </div>
     </div>
-    <div class="rationale">Reused verbatim from the already-enriched genus &#x27;sample vessel&#x27; per the constructive-type rule: a sample bomb performs the same collection function, differing only in construction (pressure-rated cylinder for gas).</div>
+    <div class="rationale">Subtype case: the CFIHOS definition individuates the class by purpose, &#x27;specially designed to collect and store high pressure gas samples from the field &amp; transport the same to laboratories&#x27;. Every realisation is a sample collection, not vice versa. Revised 2026-09-15: the previous part-based differentia (SampleCylinderValve) described one construction among several, and the gas-specific signature written on the shared SampleCollectionProcess contaminated sample vessel.</div>
   </div>
 </div>
 <div class="step-block step-2">
@@ -484,13 +485,13 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="step-block-header">
     <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
-  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃hasComponentPartAtAllTimes.SampleCylinderValve</code></div><p style="font-size:.88rem;color:#374151;">A pressure-rated cylindrical body with a valve at each end, specifically constructed to hold a high-pressure gas sample -- as opposed to a generic sample vessel, which may be any container shape for any sample phase.</p><div class="rationale">Per CLAUDE.md&#x27;s same-genus-same-function rule, since genus=SampleVessel and function=SampleCollectionFunction are reused unchanged, axiom_mode must be &#x27;necessary&#x27;. The end-valve construction is the grounded structural differentia, triangulated across independent tertiary sources.</div></div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.GasSampleCollectionFunction</code></div><p style="font-size:.88rem;color:#374151;">A sample bomb is the sample vessel designed to collect, hold and transport high-pressure gas samples.</p><div class="rationale">The purpose stated by the source (high-pressure gas samples) is the only condition beyond the genus; valve arrangements vary across designs and are kept as candidate parts.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
     <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
-  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>SampleCylinderValve</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">Only the end valve is asserted as necessary; the floating piston seen in some designs is an implementation-specific variant, not universal across all sample bomb constructions gathered, so it is omitted rather than over-asserted.</div></div>
+  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No necessary parts recorded.</p><div class="rationale mt-2">SampleCylinderValve moved to candidate_parts: its only quote (&#x27;one is a plain single cavity cylinder with a valve at each end&#x27;) describes one cylinder type among several.</div></div>
 </div>
       </div>
 
@@ -505,7 +506,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Same passive-containment signature as the genus SampleVessel, narrowed to a gas-phase participant specifically.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000776</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000776</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000776</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000776</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-15</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 
@@ -521,10 +522,10 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
             <table class="meta-table">
               <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>SampleVessel</strong></td></tr>
               <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">Assembly</span></td></tr>
-              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
-              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>SampleCollectionFunction</td></tr>
-              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>SampleCollectionProcess</td></tr>
-              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>1</td></tr>
+              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-equivalent">equivalent</span></td></tr>
+              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>GasSampleCollectionFunction</td></tr>
+              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>GasSampleCollectionProcess</td></tr>
+              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>
             </table>
           </div>
         </div>
@@ -554,6 +555,10 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="provenance-row"><span class="tier-badge tier-primary">primary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">cfihos</span><span class="text-muted" style="font-size:.68rem;">[application, profile]</span></div><div class="provenance-quote">A cylinder that is specially designed to collect and store high pressure gas samples from the field &amp; transport the same to laboratories</div><div class="provenance-row"><span class="tier-badge tier-tertiary">tertiary</span><span class="text-muted">web_glossary</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">welker.com</span><span class="text-muted" style="font-size:.68rem;">[structure]</span></div><div class="provenance-quote">one is a plain single cavity cylinder with a valve at each end</div><div class="provenance-row"><span class="tier-badge tier-tertiary">tertiary</span><span class="text-muted">manufacturer_page</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">mechatest.com</span><span class="text-muted" style="font-size:.68rem;">[structure, parameter]</span></div><div class="provenance-quote">Welded stainless steel cylinders for obtaining representative samples of liquefied petroleum (LP) gases. Two-valve type (1/4 IPS), with 20% outage tube and built-in pressure relief valve factory preset between 540 to 600psi (38-42 kg/cm2).</div>
 </div>
         
+<div class="doc-section">
+  <div class="doc-section-title"><span class="t-en">Candidate parts (unconfirmed)</span><span class="t-pt">Partes candidatas (não confirmadas)</span></div>
+  <div class="candidate-part-row"><span class="fw-semibold">SampleCylinderValve</span></div>
+</div>
       </div>
     </div>
   </div>

@@ -357,7 +357,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -370,7 +370,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -392,13 +392,19 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :DrillingFluidConductionProcess
     ] ;
     rdfs:label &quot;drilling fluid conduction function&quot;@en ;
-    rdfs:label &quot;função de condução de fluido de perfuração&quot;@pt-br .
+    rdfs:label &quot;função de condução de fluido de perfuração&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A designed function borne by petroleum production equipment whose realization constitutes the circulation of drilling fluid from surface to the drill bit and back through the wellbore annulus.&quot;@en ;
+    skos:definition &quot;A designed function borne by petroleum production equipment whose realization constitutes the circulation of drilling fluid from surface to the drill bit and back through the wellbore annulus.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma função projetada portada por equipamento de produção de petróleo cuja realização consiste em circular fluido de perfuração da superfície até a broca e de volta pelo espaço anular do poço.&quot;@pt-br .
 
 ### Process type
 :DrillingFluidConductionProcess rdf:type owl:Class ;
     rdfs:subClassOf iof-core:PlannedProcess ;
     rdfs:label &quot;drilling fluid conduction process&quot;@en ;
-    rdfs:label &quot;processo de condução de fluido de perfuração&quot;@pt-br .
+    rdfs:label &quot;processo de condução de fluido de perfuração&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A planned process in which drilling fluid is circulated from the surface to the drill bit and returned through the wellbore annulus to remove cuttings and cool the bit.&quot;@en ;
+    skos:definition &quot;A planned process in which drilling fluid is circulated from the surface to the drill bit and returned through the wellbore annulus to remove cuttings and cool the bit.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo planejado em que fluido de perfuração é circulado da superfície até a broca e retorna pelo espaço anular do poço para remover cascalho e resfriar a broca.&quot;@pt-br .
 
 :DrillingFluidConductionProcess
     rdfs:subClassOf [
@@ -421,6 +427,11 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:onProperty iof-core:hasSpecifiedOutput ;
         owl:someValuesFrom :DrillingTool
     ] .
+
+:DrillingTool
+    iof-av:naturalLanguageDefinition &quot;A tool run in a wellbore on a drill string or wireline to perform or support a drilling operation, such as cutting, reaming, steering or measuring.&quot;@en ;
+    skos:definition &quot;A tool run in a wellbore on a drill string or wireline to perform or support a drilling operation, such as cutting, reaming, steering or measuring.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma ferramenta descida no poço em uma coluna de perfuração ou cabo para executar ou apoiar uma operação de perfuração, como corte, alargamento, direcionamento ou medição.&quot;@pt-br .
 
 ### Equipment universal: BellNipple
 :BellNipple rdf:type owl:Class ;
@@ -447,11 +458,18 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:naturalLanguageDefinition &quot;Um bell nipple é um tubo que conduz fluidos de perfuração em operações de perfuração e é caracterizado por um diâmetro alargado que serve como funil e uma localização no conjunto da cabeça do poço.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every bell nipple is a pipe that bears a DrillingFluidConductionFunction and has a side outlet as a component part at all times.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x(BellNipple(x) ↔ (Pipe(x) ∧ ∃f(DrillingFluidConductionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(SideOutlet(p) ∧ hasComponentPartAtAllTimes(x,p))))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/BELL_NIPPLE&gt; ;
+    dcterms:source &lt;https://www.jip36-cfihos.org/&gt; ;
+    dcterms:source &lt;https://glossary.slb.com/en/terms/b/bell_nipple&gt; ;
+    dcterms:source &lt;https://onepetro.org/search-results?page=1&amp;q=bell-nipple&gt; .
 
 :SideOutlet rdf:type owl:Class ;
     rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;side outlet&quot;@en ;
     rdfs:label &quot;saída lateral&quot;@pt-br ;
-    rdfs:label &quot;side outlet&quot;@en .
+    iof-av:naturalLanguageDefinition &quot;A material artifact that constitutes a lateral outlet port on a vessel or pipe fitting through which fluid is discharged from the side of the equipment.&quot;@en ;
+    skos:definition &quot;A material artifact that constitutes a lateral outlet port on a vessel or pipe fitting through which fluid is discharged from the side of the equipment.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um artefato material que é uma saída lateral em um vaso ou conexão de tubulação pela qual o fluido é descarregado pela lateral do equipamento.&quot;@pt-br .
 
 # Disjointness: BellNipple and HeatExchanger
 [] rdf:type owl:AllDisjointClasses ;
@@ -526,7 +544,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Bell nipple serves dual function: conducting drilling fluid return flow and providing guidance for drilling tools entering the wellbore. It performs spatial routing without material transformation.</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">heat exchanger</span> <span class="disjoint-pill">separator</span> <span class="disjoint-pill">compressor</span></div><div class="rationale mt-2">C4: heat exchanger, separator, compressor. Bell nipple has a pure conduction/guidance signature with no energy transfer, phase separation, or compression, making it incompatible with equipment that performs material or energy transformations.</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000216</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000216</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

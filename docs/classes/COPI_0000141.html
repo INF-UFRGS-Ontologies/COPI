@@ -353,7 +353,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -366,7 +366,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -388,13 +388,19 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :ElectricalPowerTransformationProcess
     ] ;
     rdfs:label &quot;electrical power transformation function&quot;@en ;
-    rdfs:label &quot;função de transformação de energia elétrica&quot;@pt-br .
+    rdfs:label &quot;função de transformação de energia elétrica&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in an ElectricalPowerTransformationProcess and that consists in converting electrical energy from one voltage level to another through electromagnetic induction, enabling power distribution and utilization at appropriate voltage levels.&quot;@en ;
+    skos:definition &quot;A DesignedFunction that is realized in an ElectricalPowerTransformationProcess and that consists in converting electrical energy from one voltage level to another through electromagnetic induction, enabling power distribution and utilization at appropriate voltage levels.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma DesignedFunction que é realizada em um ElectricalPowerTransformationProcess e que consiste em converter energia elétrica de um nível de tensão para outro por indução eletromagnética, permitindo a distribuição e o uso da energia em tensões adequadas.&quot;@pt-br .
 
 ### Process type
 :ElectricalPowerTransformationProcess rdf:type owl:Class ;
     rdfs:subClassOf iof-core:PlannedProcess ;
     rdfs:label &quot;electrical power transformation process&quot;@en ;
-    rdfs:label &quot;processo de transformação de energia elétrica&quot;@pt-br .
+    rdfs:label &quot;processo de transformação de energia elétrica&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which electrical energy is converted from one voltage level to another by a transformer through electromagnetic induction between primary and secondary windings, resulting in power transfer at the desired voltage level.&quot;@en ;
+    skos:definition &quot;A PlannedProcess in which electrical energy is converted from one voltage level to another by a transformer through electromagnetic induction between primary and secondary windings, resulting in power transfer at the desired voltage level.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um PlannedProcess em que energia elétrica é convertida de um nível de tensão para outro por um transformador, por indução eletromagnética entre os enrolamentos primário e secundário, resultando na transferência de potência na tensão desejada.&quot;@pt-br .
 
 ### Equipment universal: PowerTransformer
 :PowerTransformer rdf:type owl:Class ;
@@ -411,6 +417,8 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:naturalLanguageDefinition &quot;Um transformador de potência é um transformador que possui uma função de transformação de energia elétrica, realizada por indução eletromagnética para transformar sistemas de tensão e corrente alternadas para diferentes níveis na mesma frequência para fins de transmissão de energia.&quot;@pt-br ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
     rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty bfo:BFO_0000196 ; owl:someValuesFrom :COPI_0000058 ] ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/POWER_TRANSFORMER&gt; ;
+    dcterms:source &lt;http://rds.posccaesar.org/ontology/plm/rdl/PCA_100004106&gt; .
 </div></div>
       </div>
 
@@ -473,7 +481,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Power transformers transform AC electrical energy from one voltage/current level to another while maintaining power (minus losses) and frequency, specifically for power transmission applications.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000141</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000141</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-13</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000141</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000141</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-13</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

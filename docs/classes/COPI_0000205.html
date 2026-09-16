@@ -357,7 +357,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -370,7 +370,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -394,13 +394,17 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     rdfs:label &quot;pressure transmission function&quot;@en ;
     rdfs:label &quot;função de transmissão de pressão&quot;@pt-br .
 
-:SignalTransmissionFunction rdf:type owl:Class .
+:SignalTransmissionFunction rdf:type owl:Class ;
+    rdfs:label &quot;função de transmissão de sinal&quot;@pt-br .
 
 ### Process type
 :PressureTransmissionProcess rdf:type owl:Class ;
     rdfs:subClassOf :MeasurementProcess ;
     rdfs:label &quot;pressure transmission process&quot;@en ;
-    rdfs:label &quot;processo de transmissão de pressão&quot;@pt-br .
+    rdfs:label &quot;processo de transmissão de pressão&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A planned process in which a standardised signal representing a measured pressure value is transmitted to a remote control or monitoring system.&quot;@en ;
+    skos:definition &quot;A planned process in which a standardised signal representing a measured pressure value is transmitted to a remote control or monitoring system.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo planejado em que um sinal padronizado que representa um valor de pressão medido é transmitido a um sistema remoto de controle ou monitoramento.&quot;@pt-br .
 
 :MeasurementProcess rdf:type owl:Class .
 
@@ -443,16 +447,24 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:firstOrderLogicAxiom &quot;∀x (AbsolutePressureTransmitter(x) → PressureTransmitter(x) ∧ ∃y (VacuumReferenceChamber(y) ∧ hasComponentPartAtAllTimes(x,y)))&quot;@en ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
     iof-av:primitiveRationale &quot;Constructive classification based on vacuum reference chamber configuration. Under Open World Assumption, defining sufficient conditions could lead to unintended classification of complex instruments that contain vacuum chambers but serve different primary functions. The structural differentia is necessary but making it sufficient requires domain expert validation.&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/ABSOLUTE_PRESSURE_TRANSMITTER&gt; ;
+    dcterms:source &lt;https://www.jip36-cfihos.org/&gt; .
 
 :VacuumReferenceChamber rdf:type owl:Class ;
     rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;vacuum reference chamber&quot;@en ;
     rdfs:label &quot;câmara de vácuo de referência&quot;@pt-br ;
-    rdfs:label &quot;vacuum reference chamber&quot;@en .
+    iof-av:naturalLanguageDefinition &quot;A material artifact that constitutes a sealed chamber maintained at a vacuum reference, against which process pressure is compared to determine an absolute pressure measurement.&quot;@en ;
+    skos:definition &quot;A material artifact that constitutes a sealed chamber maintained at a vacuum reference, against which process pressure is compared to determine an absolute pressure measurement.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um artefato material que é uma câmara selada mantida em vácuo de referência, com a qual a pressão do processo é comparada para determinar uma medição de pressão absoluta.&quot;@pt-br .
 
 :PressureSensor rdf:type owl:Class ;
     rdfs:subClassOf iof-core:Assembly ;
+    rdfs:label &quot;pressure sensor&quot;@en ;
     rdfs:label &quot;sensor de pressão&quot;@pt-br ;
-    rdfs:label &quot;pressure sensor&quot;@en .
+    iof-av:naturalLanguageDefinition &quot;A material artifact that constitutes a sensing element assembly that measures fluid pressure and converts it into an electrical or pneumatic signal.&quot;@en ;
+    skos:definition &quot;A material artifact that constitutes a sensing element assembly that measures fluid pressure and converts it into an electrical or pneumatic signal.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um artefato material que é um conjunto de elemento sensor que mede a pressão de um fluido e a converte em um sinal elétrico ou pneumático.&quot;@pt-br .
 </div></div>
       </div>
 
@@ -515,7 +527,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Takes process fluid pressure as input and outputs electrical signal proportional to absolute pressure using vacuum chamber as reference.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000205</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000205</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000205</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000205</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

@@ -389,7 +389,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -402,7 +402,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -424,19 +424,25 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :RapidActuationProcess
     ] ;
     rdfs:label &quot;rapid actuation function&quot;@en ;
+    rdfs:label &quot;função de atuação rápida&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A FlowControlFunction that is realized in a RapidActuationProcess and that consists in opening or closing a valve&#x27;s flow path substantially faster than a conventional multi-turn valve of the same service, so that flow admission or interruption occurs with minimal actuation delay.&quot;@en ;
-    skos:definition &quot;A FlowControlFunction that is realized in a RapidActuationProcess and that consists in opening or closing a valve&#x27;s flow path substantially faster than a conventional multi-turn valve of the same service, so that flow admission or interruption occurs with minimal actuation delay.&quot;@en .
+    skos:definition &quot;A FlowControlFunction that is realized in a RapidActuationProcess and that consists in opening or closing a valve&#x27;s flow path substantially faster than a conventional multi-turn valve of the same service, so that flow admission or interruption occurs with minimal actuation delay.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma FlowControlFunction que é realizada em um RapidActuationProcess e que consiste em abrir ou fechar a passagem de escoamento de uma válvula de forma substancialmente mais rápida que uma válvula multivoltas convencional no mesmo serviço, de modo que a admissão ou interrupção do escoamento ocorra com atraso mínimo de atuação.&quot;@pt-br .
 
-:FlowControlFunction rdf:type owl:Class .
+:FlowControlFunction rdf:type owl:Class ;
+    rdfs:label &quot;função de controle de fluxo&quot;@pt-br .
 
 ### Process type
 :RapidActuationProcess rdf:type owl:Class ;
     rdfs:subClassOf :FlowControl ;
     rdfs:label &quot;rapid actuation process&quot;@en ;
+    rdfs:label &quot;processo de atuação rápida&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which a valve&#x27;s closure member is displaced from fully open to fully closed, or the reverse, within a short, bounded actuation time, admitting or interrupting fluid flow substantially faster than a comparable multi-turn valve operation would allow.&quot;@en ;
-    skos:definition &quot;A PlannedProcess in which a valve&#x27;s closure member is displaced from fully open to fully closed, or the reverse, within a short, bounded actuation time, admitting or interrupting fluid flow substantially faster than a comparable multi-turn valve operation would allow.&quot;@en .
+    skos:definition &quot;A PlannedProcess in which a valve&#x27;s closure member is displaced from fully open to fully closed, or the reverse, within a short, bounded actuation time, admitting or interrupting fluid flow substantially faster than a comparable multi-turn valve operation would allow.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um PlannedProcess em que o elemento de fechamento de uma válvula é deslocado de totalmente aberto a totalmente fechado, ou o inverso, em um tempo de atuação curto e limitado, admitindo ou interrompendo o escoamento de forma substancialmente mais rápida que a operação de uma válvula multivoltas comparável.&quot;@pt-br .
 
-:FlowControl rdf:type owl:Class .
+:FlowControl rdf:type owl:Class ;
+    rdfs:label &quot;processo de controle de fluxo&quot;@pt-br .
 
 :RapidActuationProcess
     rdfs:subClassOf [
@@ -464,11 +470,13 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         )
     ] ;
     rdfs:label &quot;quick acting valve&quot;@en ;
+    rdfs:label &quot;válvula de ação rápida&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A quick acting valve is a valve designed to open or close substantially faster than a conventional multi-turn valve of the same service, so as to admit or interrupt flow with minimal actuation delay.&quot;@en ;
     skos:definition &quot;A quick acting valve is a valve designed to open or close substantially faster than a conventional multi-turn valve of the same service, so as to admit or interrupt flow with minimal actuation delay.&quot;@en ;
     iof-av:naturalLanguageDefinition &quot;Uma valvula de acao rapida e uma valvula projetada para abrir ou fechar substancialmente mais rapido que uma valvula multivolta convencional de mesmo servico, de modo a admitir ou interromper o fluxo com atraso minimo de acionamento.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every quick acting valve is a valve that bears a rapid actuation function, and conversely.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x (QuickActingValve(x) ↔ Valve(x) ∧ ∃f (RapidActuationFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/QUICK_ACTING_VALVE&gt; .
 </div></div>
       </div>
 
@@ -531,7 +539,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Same fluid-control signature as generic Valve and its already-enriched siblings (manual valve, self-operating valve) which also reuse &#x27;flow_regulation&#x27; despite differing in actuation mechanism/source -- actuation speed does not change the ontological nature of the transformation, only its temporal profile.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000770</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000770</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000770</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000770</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-15</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

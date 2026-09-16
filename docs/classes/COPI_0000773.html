@@ -354,7 +354,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -367,7 +367,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -389,19 +389,25 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :QuickConnectionProcess
     ] ;
     rdfs:label &quot;quick connection function&quot;@en ;
+    rdfs:label &quot;função de conexão rápida&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A ConnectionFunction subtype that is realized in a QuickConnectionProcess and that consists in joining two parts, typically pipes, in a temporary connection that can be made and broken in a short time, without tools or extended procedure.&quot;@en ;
-    skos:definition &quot;A ConnectionFunction subtype that is realized in a QuickConnectionProcess and that consists in joining two parts, typically pipes, in a temporary connection that can be made and broken in a short time, without tools or extended procedure.&quot;@en .
+    skos:definition &quot;A ConnectionFunction subtype that is realized in a QuickConnectionProcess and that consists in joining two parts, typically pipes, in a temporary connection that can be made and broken in a short time, without tools or extended procedure.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um subtipo de ConnectionFunction que é realizado em um QuickConnectionProcess e que consiste em unir duas partes, tipicamente tubos, por uma conexão temporária que pode ser feita e desfeita em pouco tempo, sem ferramentas ou procedimento demorado.&quot;@pt-br .
 
-:ConnectionFunction rdf:type owl:Class .
+:ConnectionFunction rdf:type owl:Class ;
+    rdfs:label &quot;função de conexão&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A designed function borne by petroleum production equipment whose realization constitutes the mechanical or fluid joining of two or more components to allow the transfer of force, fluid, or signal between them.&quot;@en ;
+    skos:definition &quot;A designed function borne by petroleum production equipment whose realization constitutes the mechanical or fluid joining of two or more components to allow the transfer of force, fluid, or signal between them.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma função projetada portada por equipamento de produção de petróleo cuja realização consiste na união mecânica ou fluida de dois ou mais componentes, permitindo a transferência de força, fluido ou sinal entre eles.&quot;@pt-br .
 
 ### Process type
 :QuickConnectionProcess rdf:type owl:Class ;
-    rdfs:subClassOf :MomentumTransfer ;
+    rdfs:subClassOf iof-core:PlannedProcess ;
     rdfs:label &quot;quick connection process&quot;@en ;
+    rdfs:label &quot;processo de conexão rápida&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which two parts, typically pipe ends, are joined or separated quickly, without the extended procedure (e.g. bolting) a permanent connection would require.&quot;@en ;
-    skos:definition &quot;A PlannedProcess in which two parts, typically pipe ends, are joined or separated quickly, without the extended procedure (e.g. bolting) a permanent connection would require.&quot;@en .
-
-:MomentumTransfer rdf:type owl:Class .
+    skos:definition &quot;A PlannedProcess in which two parts, typically pipe ends, are joined or separated quickly, without the extended procedure (e.g. bolting) a permanent connection would require.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um PlannedProcess em que duas partes, tipicamente extremidades de tubo, são unidas ou separadas rapidamente, sem o procedimento demorado (como aparafusar) que uma conexão permanente exigiria.&quot;@pt-br .
 
 :QuickConnectionProcess
     rdfs:subClassOf [
@@ -429,11 +435,13 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         )
     ] ;
     rdfs:label &quot;quick connector&quot;@en ;
+    rdfs:label &quot;conector rápido&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A quick connector is a material artifact that bears a quick connection function: a temporary connection, typically between pipes, that can be connected and disconnected in a short time.&quot;@en ;
     skos:definition &quot;A quick connector is a material artifact that bears a quick connection function: a temporary connection, typically between pipes, that can be connected and disconnected in a short time.&quot;@en ;
     iof-av:naturalLanguageDefinition &quot;Um conector rapido e um artefato material que possui uma funcao de conexao rapida: uma conexao temporaria, tipicamente entre tubos, que pode ser conectada e desconectada em pouco tempo.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every quick connector is a material artifact that bears a quick connection function, and conversely.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x (QuickConnector(x) ↔ MaterialArtifact(x) ∧ ∃f (QuickConnectionFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/QUICK_CONNECTOR&gt; .
 </div></div>
       </div>
 
@@ -454,7 +462,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
         <span class="decision-value">QuickConnectionProcess</span>
-        <span class="text-muted" style="font-size:.8rem;"> ⊑ MomentumTransfer</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
       </div>
     </div>
     <div class="rationale">Flange&#x27;s ConnectionFunction is for semi-permanent bolted joints; a quick connector&#x27;s temporary, fast make/break capability is a genuine specialization of the general connection purpose, not co-extensional with it.</div>
@@ -496,7 +504,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">When engaged, the connector passes fluid through like any conduit joint; the speed of connect/disconnect is the differentiating trait, captured in the transformation phrase and Step 1&#x27;s function, not the transformation_kind category.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000773</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000773</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-09</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000773</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000773</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-09</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-15</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

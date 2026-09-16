@@ -308,11 +308,11 @@
         </div>
       </div>
 
-      
+      <div class="conflict-banner has-conflict"><strong>⚠ <span class="t-en">Conflicts with ISO 15926-4 primary definition</span><span class="t-pt">Conflita com a definição primária da ISO 15926-4</span></strong><div class="mt-1">ISO 15926-4 defines PROBE as an INSTRUMENTATION FUNCTION (&#x27;capable of obtaining specific information or physical samples&#x27;), i.e. a function, not a material artifact. COPI models probe as an Instrument bearing ProbingFunction, following industrial usage where &#x27;probe&#x27; names the inserted device; the ISO class would correspond to ProbingFunction itself.</div></div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>A probe is an instrument that bears a probing function: it obtains specific information about, or a physical sample of, a process medium -- typically by direct insertion or immersion -- for diagnostic or experimental purposes. An analyzer probe is a probe used to feed a process analyzer, most often by in-situ sensing directly within the process stream.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Uma sonda e um instrumento que possui uma funcao de sondagem: obtem informacao especifica sobre, ou uma amostra fisica de, um meio de processo -- tipicamente por insercao ou imersao direta -- para fins de diagnostico ou experimentais. Uma sonda de analisador e uma sonda usada para alimentar um analisador de processo, geralmente por sensoriamento in situ diretamente na corrente de processo.</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A probe is an instrument that bears a probing function: it obtains specific information about, or a physical sample of, a process medium for diagnostic or experimental purposes, typically by direct insertion or immersion.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Uma sonda é um instrumento que porta uma função de sondagem: obtém informação específica sobre um meio de processo, ou uma amostra física dele, para fins de diagnóstico ou experimentais, em geral por inserção ou imersão direta.</div>
       </div>
 
       <div class="doc-section">
@@ -354,7 +354,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -367,7 +367,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -389,15 +389,19 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :ProbingProcess
     ] ;
     rdfs:label &quot;probing function&quot;@en ;
+    rdfs:label &quot;função de sondagem&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in a ProbingProcess and that consists in obtaining specific information about, or a physical sample of, a process medium for diagnostic or experimental purposes, typically by direct insertion or immersion into that medium.&quot;@en ;
-    skos:definition &quot;A DesignedFunction that is realized in a ProbingProcess and that consists in obtaining specific information about, or a physical sample of, a process medium for diagnostic or experimental purposes, typically by direct insertion or immersion into that medium.&quot;@en .
+    skos:definition &quot;A DesignedFunction that is realized in a ProbingProcess and that consists in obtaining specific information about, or a physical sample of, a process medium for diagnostic or experimental purposes, typically by direct insertion or immersion into that medium.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma DesignedFunction que é realizada em um ProbingProcess e que consiste em obter informação específica sobre um meio de processo, ou uma amostra física dele, para fins de diagnóstico ou experimentais, em geral por inserção ou imersão direta nesse meio.&quot;@pt-br .
 
 ### Process type
 :ProbingProcess rdf:type owl:Class ;
     rdfs:subClassOf :MeasurementProcess ;
     rdfs:label &quot;probing process&quot;@en ;
+    rdfs:label &quot;processo de sondagem&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which a sensing or sampling element is inserted into or immersed in a process medium to obtain information about it or extract a physical sample, for diagnostic or experimental purposes.&quot;@en ;
-    skos:definition &quot;A PlannedProcess in which a sensing or sampling element is inserted into or immersed in a process medium to obtain information about it or extract a physical sample, for diagnostic or experimental purposes.&quot;@en .
+    skos:definition &quot;A PlannedProcess in which a sensing or sampling element is inserted into or immersed in a process medium to obtain information about it or extract a physical sample, for diagnostic or experimental purposes.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um PlannedProcess em que um elemento sensor ou de amostragem é inserido ou imerso em um meio de processo para obter informação sobre ele ou extrair uma amostra física, para fins de diagnóstico ou experimentais.&quot;@pt-br .
 
 :MeasurementProcess rdf:type owl:Class .
 
@@ -427,11 +431,13 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         )
     ] ;
     rdfs:label &quot;probe&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;A probe is an instrument that bears a probing function: it obtains specific information about, or a physical sample of, a process medium -- typically by direct insertion or immersion -- for diagnostic or experimental purposes. An analyzer probe is a probe used to feed a process analyzer, most often by in-situ sensing directly within the process stream.&quot;@en ;
-    skos:definition &quot;A probe is an instrument that bears a probing function: it obtains specific information about, or a physical sample of, a process medium -- typically by direct insertion or immersion -- for diagnostic or experimental purposes. An analyzer probe is a probe used to feed a process analyzer, most often by in-situ sensing directly within the process stream.&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;Uma sonda e um instrumento que possui uma funcao de sondagem: obtem informacao especifica sobre, ou uma amostra fisica de, um meio de processo -- tipicamente por insercao ou imersao direta -- para fins de diagnostico ou experimentais. Uma sonda de analisador e uma sonda usada para alimentar um analisador de processo, geralmente por sensoriamento in situ diretamente na corrente de processo.&quot;@pt-br ;
+    rdfs:label &quot;sonda&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A probe is an instrument that bears a probing function: it obtains specific information about, or a physical sample of, a process medium for diagnostic or experimental purposes, typically by direct insertion or immersion.&quot;@en ;
+    skos:definition &quot;A probe is an instrument that bears a probing function: it obtains specific information about, or a physical sample of, a process medium for diagnostic or experimental purposes, typically by direct insertion or immersion.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma sonda é um instrumento que porta uma função de sondagem: obtém informação específica sobre um meio de processo, ou uma amostra física dele, para fins de diagnóstico ou experimentais, em geral por inserção ou imersão direta.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every probe is an instrument that bears a probing function, and conversely.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x (Probe(x) ↔ Instrument(x) ∧ ∃f (ProbingFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/PROBE&gt; .
 </div></div>
       </div>
 
@@ -494,7 +500,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">The in-situ sensing case (the dominant real-world usage per the tertiary evidence, and matching the colleague&#x27;s &#x27;analyzer probe&#x27; framing) fits measurement_transduction; the physical-sample-extraction case is a secondary reading of the primary definition, noted in cross_standard_notes rather than driving the signature.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000766</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000766</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000766</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000766</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-15</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

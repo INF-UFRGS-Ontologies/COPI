@@ -356,7 +356,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -369,7 +369,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -391,13 +391,19 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :CableSupportProcess
     ] ;
     rdfs:label &quot;cable support function&quot;@en ;
-    rdfs:label &quot;função de suporte de cabos&quot;@pt-br .
+    rdfs:label &quot;função de suporte de cabos&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A designed function borne by petroleum production equipment whose realization constitutes the mechanical support and routing of cables to maintain their position and protect them from damage.&quot;@en ;
+    skos:definition &quot;A designed function borne by petroleum production equipment whose realization constitutes the mechanical support and routing of cables to maintain their position and protect them from damage.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma função projetada portada por equipamento de produção de petróleo cuja realização consiste em sustentar mecanicamente e encaminhar cabos, mantendo sua posição e protegendo-os contra danos.&quot;@pt-br .
 
 ### Process type
 :CableSupportProcess rdf:type owl:Class ;
     rdfs:subClassOf iof-core:PlannedProcess ;
     rdfs:label &quot;cable support process&quot;@en ;
-    rdfs:label &quot;processo de suporte de cabos&quot;@pt-br .
+    rdfs:label &quot;processo de suporte de cabos&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A planned process in which cables are mechanically supported and routed to maintain their position and protect them from damage in a petroleum production installation.&quot;@en ;
+    skos:definition &quot;A planned process in which cables are mechanically supported and routed to maintain their position and protect them from damage in a petroleum production installation.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo planejado em que cabos são sustentados mecanicamente e encaminhados, mantendo sua posição e protegendo-os contra danos em uma instalação de produção de petróleo.&quot;@pt-br .
 
 :CableSupportProcess
     rdfs:subClassOf [
@@ -410,6 +416,11 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:onProperty iof-core:hasSpecifiedOutput ;
         owl:someValuesFrom :ElectricalCable
     ] .
+
+:ElectricalCable
+    iof-av:naturalLanguageDefinition &quot;An assembly of one or more insulated electrical conductors, with any sheath or armour, used to carry electrical power or signals between equipment.&quot;@en ;
+    skos:definition &quot;An assembly of one or more insulated electrical conductors, with any sheath or armour, used to carry electrical power or signals between equipment.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um conjunto de um ou mais condutores elétricos isolados, com a eventual capa ou armadura, usado para conduzir energia elétrica ou sinais entre equipamentos.&quot;@pt-br .
 
 ### Equipment universal: CableTray
 :CableTray rdf:type owl:Class ;
@@ -441,16 +452,24 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:naturalLanguageDefinition &quot;Uma bandeja de cabos é um conjunto que possui função de suporte de cabos e consiste em uma base contínua com bordas elevadas, formando um sistema estrutural rígido para suportar e rotear cabos elétricos de forma segura.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every cable tray is an assembly that has the function to support cables and has a continuous base part and raised edge parts.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x(CableTray(x) ↔ Assembly(x) ∧ ∃f(CableSupportFunction(f) ∧ bearerOf(x,f)) ∧ ∃b(ContinuousBase(b) ∧ hasComponentPartAtAllTimes(x,b)) ∧ ∃e(RaisedEdge(e) ∧ hasComponentPartAtAllTimes(x,e)))&quot;@en ;
+    dcterms:source &lt;https://www.jip36-cfihos.org/&gt; ;
+    dcterms:source &lt;http://rds.posccaesar.org/ontology/plm/rdl/PCA_100005880&gt; .
 
 :ContinuousBase rdf:type owl:Class ;
     rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;continuous base&quot;@en ;
     rdfs:label &quot;base contínuo&quot;@pt-br ;
-    rdfs:label &quot;continuous base&quot;@en .
+    iof-av:naturalLanguageDefinition &quot;A material artifact that constitutes the base structure that provides continuous support for equipment or pipework in a petroleum production installation.&quot;@en ;
+    skos:definition &quot;A material artifact that constitutes the base structure that provides continuous support for equipment or pipework in a petroleum production installation.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um artefato material que é a estrutura de base que provê sustentação contínua para equipamentos ou tubulações em uma instalação de produção de petróleo.&quot;@pt-br .
 
 :RaisedEdge rdf:type owl:Class ;
     rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;raised edge&quot;@en ;
     rdfs:label &quot;borda saliente&quot;@pt-br ;
-    rdfs:label &quot;raised edge&quot;@en .
+    iof-av:naturalLanguageDefinition &quot;A material artifact that constitutes a raised rim or flange on a component of petroleum production equipment that provides a sealing surface or structural boundary.&quot;@en ;
+    skos:definition &quot;A material artifact that constitutes a raised rim or flange on a component of petroleum production equipment that provides a sealing surface or structural boundary.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um artefato material que é uma borda ou ressalto elevado em um componente de equipamento de produção de petróleo que provê uma superfície de vedação ou um limite estrutural.&quot;@pt-br .
 
 # Disjointness: CableTray and Pipe
 [] rdf:type owl:AllDisjointClasses ;
@@ -517,7 +536,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Cable tray receives loose cables as input and provides organized, supported cable arrangement as output through passive structural support</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">Pipe</span></div><div class="rationale mt-2">C4: Pipe. Cable tray has open-top configuration with raised edges, incompatible with enclosed conduit structure or fluid conduction function of pipes</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000221</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000221</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000221</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000221</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

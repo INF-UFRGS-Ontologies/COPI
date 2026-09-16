@@ -354,7 +354,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -367,7 +367,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -389,19 +389,25 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :SiphonicTransferProcess
     ] ;
     rdfs:label &quot;siphonic transfer function&quot;@en ;
+    rdfs:label &quot;função de transferência por sifão&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A FlowControlFunction subtype (specializing FluidConductionFunction) that is realized in a SiphonicTransferProcess and that consists in conveying liquid from a reservoir up over a crest and down to a lower discharge point, sustained by atmospheric pressure and gravity once the tube is primed, without continuous external power input.&quot;@en ;
-    skos:definition &quot;A FlowControlFunction subtype (specializing FluidConductionFunction) that is realized in a SiphonicTransferProcess and that consists in conveying liquid from a reservoir up over a crest and down to a lower discharge point, sustained by atmospheric pressure and gravity once the tube is primed, without continuous external power input.&quot;@en .
+    skos:definition &quot;A FlowControlFunction subtype (specializing FluidConductionFunction) that is realized in a SiphonicTransferProcess and that consists in conveying liquid from a reservoir up over a crest and down to a lower discharge point, sustained by atmospheric pressure and gravity once the tube is primed, without continuous external power input.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um subtipo de FluidConductionFunction que é realizado em um SiphonicTransferProcess e que consiste em conduzir líquido de um reservatório, subindo por cima de uma crista e descendo até um ponto de descarga mais baixo, sustentado pela pressão atmosférica e pela gravidade depois que o tubo é escorvado, sem aporte contínuo de energia externa.&quot;@pt-br .
 
-:FluidConductionFunction rdf:type owl:Class .
+:FluidConductionFunction rdf:type owl:Class ;
+    rdfs:label &quot;função de condução de fluido&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in a FluidConductionProcess and that consists in conveying a fluid from one point to another through an enclosed conduit.&quot;@en ;
+    skos:definition &quot;A DesignedFunction that is realized in a FluidConductionProcess and that consists in conveying a fluid from one point to another through an enclosed conduit.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma DesignedFunction que é realizada em um FluidConductionProcess e que consiste em conduzir um fluido de um ponto a outro por um conduto fechado.&quot;@pt-br .
 
 ### Process type
 :SiphonicTransferProcess rdf:type owl:Class ;
-    rdfs:subClassOf :MomentumTransfer ;
+    rdfs:subClassOf iof-core:PlannedProcess ;
     rdfs:label &quot;siphonic transfer process&quot;@en ;
+    rdfs:label &quot;processo de transferência por sifão&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which a primed column of liquid in a tube is driven from a source reservoir, over a crest above the source&#x27;s free surface, and down to a discharge point below it, by the head difference between the tube&#x27;s two legs and atmospheric pressure acting on the source surface.&quot;@en ;
-    skos:definition &quot;A PlannedProcess in which a primed column of liquid in a tube is driven from a source reservoir, over a crest above the source&#x27;s free surface, and down to a discharge point below it, by the head difference between the tube&#x27;s two legs and atmospheric pressure acting on the source surface.&quot;@en .
-
-:MomentumTransfer rdf:type owl:Class .
+    skos:definition &quot;A PlannedProcess in which a primed column of liquid in a tube is driven from a source reservoir, over a crest above the source&#x27;s free surface, and down to a discharge point below it, by the head difference between the tube&#x27;s two legs and atmospheric pressure acting on the source surface.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um PlannedProcess em que uma coluna de líquido escorvada dentro de um tubo é conduzida de um reservatório de origem, passando por uma crista acima da superfície livre da origem, até um ponto de descarga abaixo dela, pela diferença de carga entre os dois ramos do tubo e pela pressão atmosférica que atua sobre a superfície da origem.&quot;@pt-br .
 
 :SiphonicTransferProcess
     rdfs:subClassOf [
@@ -429,12 +435,14 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         )
     ] ;
     rdfs:label &quot;siphon&quot;@en ;
+    rdfs:label &quot;sifão&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A siphon is a pipe that bears a siphonic transfer function: once primed, it conveys liquid upward from a reservoir over a crest and down to a lower discharge point, sustained by atmospheric pressure and gravity without continuous external power.&quot;@en ;
     skos:definition &quot;A siphon is a pipe that bears a siphonic transfer function: once primed, it conveys liquid upward from a reservoir over a crest and down to a lower discharge point, sustained by atmospheric pressure and gravity without continuous external power.&quot;@en ;
     iof-av:naturalLanguageDefinition &quot;Um sifao e um tubo que possui uma funcao de transferencia sifonica: uma vez escorvado, conduz liquido para cima de um reservatorio sobre uma crista e para baixo ate um ponto de descarga mais baixo, sustentado por pressao atmosferica e gravidade sem energia externa continua.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every siphon is a pipe that bears a siphonic transfer function, and conversely.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x (Siphon(x) ↔ Pipe(x) ∧ ∃f (SiphonicTransferFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
     skos:altLabel &quot;syphon&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/SIPHON&gt; .
 </div></div>
       </div>
 
@@ -455,7 +463,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
         <span class="decision-value">SiphonicTransferProcess</span>
-        <span class="text-muted" style="font-size:.8rem;"> ⊑ MomentumTransfer</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
       </div>
     </div>
     <div class="rationale">The identity-giving trait is the unpowered, self-sustaining transfer capability itself (distinguishing it from a generic FluidConductionFunction-bearing Pipe, which does not inherently move liquid uphill), grounded verbatim in the primary definition and detailed by secondary/tertiary hydrostatics sources.</div>
@@ -497,7 +505,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Passive fluid transport (no mechanical work added, unlike a pump) fits the fluid_transport canonical term, same as the genus Pipe; the siphonic-specific detail (crossing a crest above the source) is captured in the transformation phrase and Step 3&#x27;s differentia rather than a distinct transformation_kind.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000782</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000782</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000782</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000782</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-15</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

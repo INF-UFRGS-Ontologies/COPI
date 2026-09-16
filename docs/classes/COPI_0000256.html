@@ -354,7 +354,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -367,7 +367,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -389,15 +389,22 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :DivertingProcess
     ] ;
     rdfs:label &quot;diverting function&quot;@en ;
-    rdfs:label &quot;função de desvio de fluxo&quot;@pt-br .
+    rdfs:label &quot;função de desvio de fluxo&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A designed function borne by petroleum production equipment whose realization constitutes the redirection of fluid flow from one path to one or more alternative downstream paths.&quot;@en ;
+    skos:definition &quot;A designed function borne by petroleum production equipment whose realization constitutes the redirection of fluid flow from one path to one or more alternative downstream paths.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma função projetada portada por equipamento de produção de petróleo cuja realização consiste em redirecionar o escoamento de um caminho para um ou mais caminhos alternativos a jusante.&quot;@pt-br .
 
 ### Process type
 :DivertingProcess rdf:type owl:Class ;
     rdfs:subClassOf :FlowControl ;
     rdfs:label &quot;diverting process&quot;@en ;
-    rdfs:label &quot;processo de desvio de fluxo&quot;@pt-br .
+    rdfs:label &quot;processo de desvio de fluxo&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A planned process in which fluid flow is redirected from one path to one or more alternative downstream paths by petroleum production equipment.&quot;@en ;
+    skos:definition &quot;A planned process in which fluid flow is redirected from one path to one or more alternative downstream paths by petroleum production equipment.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo planejado em que o escoamento é redirecionado de um caminho para um ou mais caminhos alternativos a jusante por equipamentos de produção de petróleo.&quot;@pt-br .
 
-:FlowControl rdf:type owl:Class .
+:FlowControl rdf:type owl:Class ;
+    rdfs:label &quot;processo de controle de fluxo&quot;@pt-br .
 
 :DivertingProcess
     rdfs:subClassOf [
@@ -431,6 +438,10 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:naturalLanguageDefinition &quot;Um diverter é um artefato material que possui uma função projetada para desviar ou redirecionar materiais, fluidos ou fluxos de seu curso esperado para caminhos ou destinos alternativos.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every diverter is a material artifact that has the function of diverting materials or flows from expected paths to alternative destinations.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x(Diverter(x) ↔ MaterialArtifact(x) ∧ ∃f(DivertingFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/DIVERTER&gt; ;
+    dcterms:source &lt;https://www.jip36-cfihos.org/&gt; ;
+    dcterms:source &lt;https://glossary.slb.com/en/terms/d/diverter&gt; ;
+    dcterms:source &lt;https://onepetro.org/search-results?page=1&amp;q=diverter&gt; .
 </div></div>
       </div>
 
@@ -493,7 +504,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Core process signature involves taking an input stream and redirecting it spatially. Output count can vary (1+ alternative paths). The material composition remains unchanged - only the flow direction/destination changes.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000256</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000256</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000256</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000256</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

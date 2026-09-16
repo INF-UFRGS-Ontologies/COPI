@@ -355,7 +355,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -368,7 +368,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -390,13 +390,19 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :FiltrationProcess
     ] ;
     rdfs:label &quot;filtration function&quot;@en ;
-    rdfs:label &quot;função de filtração&quot;@pt-br .
+    rdfs:label &quot;função de filtração&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in a FiltrationProcess and that consists in selectively retaining particles, contaminants, or unwanted substances from a fluid stream while allowing the clean fluid to pass through.&quot;@en ;
+    skos:definition &quot;A DesignedFunction that is realized in a FiltrationProcess and that consists in selectively retaining particles, contaminants, or unwanted substances from a fluid stream while allowing the clean fluid to pass through.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma DesignedFunction que é realizada em um FiltrationProcess e que consiste em reter seletivamente partículas, contaminantes ou substâncias indesejadas de uma corrente de fluido, deixando passar o fluido limpo.&quot;@pt-br .
 
 ### Process type
 :FiltrationProcess rdf:type owl:Class ;
     rdfs:subClassOf :MechanicalSeparation ;
     rdfs:label &quot;filtration process&quot;@en ;
-    rdfs:label &quot;processo de filtração&quot;@pt-br .
+    rdfs:label &quot;processo de filtração&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which particles, contaminants, or unwanted substances are selectively retained from a fluid stream by a filter element through mechanical screening or other separation mechanisms while clean fluid passes through.&quot;@en ;
+    skos:definition &quot;A PlannedProcess in which particles, contaminants, or unwanted substances are selectively retained from a fluid stream by a filter element through mechanical screening or other separation mechanisms while clean fluid passes through.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um PlannedProcess em que partículas, contaminantes ou substâncias indesejadas são retidos seletivamente de uma corrente de fluido por um elemento filtrante, por peneiramento mecânico ou outros mecanismos de separação, enquanto o fluido limpo passa.&quot;@pt-br .
 
 :MechanicalSeparation rdf:type owl:Class .
 
@@ -437,6 +443,12 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:naturalLanguageDefinition &quot;Um filtro é um separador que possui uma função de filtração para remover seletivamente constituintes indesejados de um fluxo de fluido usando um elemento filtrante dentro de um alojamento de filtro.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every filter is a separator that has a filtration function and has a filter element as component part and has a filter housing as component part&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x(Filter(x) ↔ (Separator(x) ∧ ∃f(FiltrationFunction(f) ∧ bearerOf(x,f)) ∧ ∃e(FilterElement(e) ∧ hasComponentPartAtAllTimes(x,e)) ∧ ∃h(FilterHousing(h) ∧ hasComponentPartAtAllTimes(x,h))))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/FILTER&gt; ;
+    dcterms:source &lt;https://www.jip36-cfihos.org/&gt; ;
+    dcterms:source &lt;https://gitlab.com/dexpi/Specification/-/blob/master/src/model&gt; ;
+    dcterms:source &lt;https://glossary.slb.com/en/terms/f/filter&gt; ;
+    dcterms:source &lt;https://glossary.slb.com/en/terms/f/filters&gt; ;
+    dcterms:source &lt;http://rds.posccaesar.org/ontology/plm/rdl/PCA_100005916&gt; .
 
 # Disjointness: Filter and Pump
 [] rdf:type owl:AllDisjointClasses ;
@@ -511,7 +523,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Filters transform a contaminated input stream into a cleaned output stream plus separated waste/retained material. Unlike bulk separators that separate phases, filters selectively remove specific constituents while preserving the primary fluid phase.</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">Pump</span> <span class="disjoint-pill">Compressor</span> <span class="disjoint-pill">HeatExchanger</span></div><div class="rationale mt-2">C4: Pump, Compressor, HeatExchanger. Filters have incompatible process signatures with pumps (no energy addition), compressors (no compression), and heat exchangers (no thermal transformation). The selective removal transformation is distinct from energy transfer, compression, or thermal processes.</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000081</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-13</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000081</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-13</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

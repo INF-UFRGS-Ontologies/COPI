@@ -324,8 +324,8 @@
 <span class="fol-line"><span class="fol-label">[Function axiom: PipeShearingFunction]</span>∀f (PipeShearingFunction(f) → ∀p (realizedIn(f,p) → PipeShearingProcess(p)) ∧ ∃p (PipeShearingProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
 <span class="fol-line"><span class="fol-label">[Necessary part: ShearingBlade]</span>∀x (ShearRam(x) → ∃p (ShearingBlade(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((ShearRam(x) ∧ PipeShearingFunction(f) ∧ bearerOf(x,f)) →
-      ∃m (SteelPipe(m) ∧ participatesIn(m,f)) ∧
-      ∃e (SteelPipe(e) ∧ participatesIn(e,f)) ∧
+      ∃m (Pipe(m) ∧ participatesIn(m,f)) ∧
+      ∃e (Pipe(e) ∧ participatesIn(e,f)) ∧
       processType(f,MechanicalSeparation)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
         </div>
@@ -355,7 +355,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -368,7 +368,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -390,26 +390,33 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :PipeShearingProcess
     ] ;
     rdfs:label &quot;pipe shearing function&quot;@en ;
-    rdfs:label &quot;função de corte de tubulação&quot;@pt-br .
+    rdfs:label &quot;função de corte de tubulação&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A designed function borne by petroleum production equipment whose realization constitutes the mechanical cutting of a tubular string within a wellbore to enable emergency well control.&quot;@en ;
+    skos:definition &quot;A designed function borne by petroleum production equipment whose realization constitutes the mechanical cutting of a tubular string within a wellbore to enable emergency well control.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma função projetada portada por equipamento de produção de petróleo cuja realização consiste no corte mecânico de uma coluna tubular dentro do poço para permitir o controle de poço em emergência.&quot;@pt-br .
 
 ### Process type
 :PipeShearingProcess rdf:type owl:Class ;
     rdfs:subClassOf :FlowControl ;
     rdfs:label &quot;pipe shearing process&quot;@en ;
-    rdfs:label &quot;processo de corte de tubulação&quot;@pt-br .
+    rdfs:label &quot;processo de corte de tubulação&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A planned process in which a tubular string within a wellbore is mechanically cut to enable emergency well control.&quot;@en ;
+    skos:definition &quot;A planned process in which a tubular string within a wellbore is mechanically cut to enable emergency well control.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo planejado em que uma coluna tubular dentro do poço é cortada mecanicamente para permitir o controle de poço em emergência.&quot;@pt-br .
 
-:FlowControl rdf:type owl:Class .
+:FlowControl rdf:type owl:Class ;
+    rdfs:label &quot;processo de controle de fluxo&quot;@pt-br .
 
 :PipeShearingProcess
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasInput ;
-        owl:someValuesFrom :SteelPipe
+        owl:someValuesFrom :Pipe
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasSpecifiedOutput ;
-        owl:someValuesFrom :SteelPipe
+        owl:someValuesFrom :Pipe
     ] .
 
 ### Equipment universal: ShearRam
@@ -437,11 +444,18 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:naturalLanguageDefinition &quot;Um aríete de corte é um aríete que possui função de corte de tubulação e tem lâminas de corte endurecidas projetadas para cortar a coluna de perfuração ou tubulação durante operações de prevenção de blowout.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every shear ram is a ram that has the function to shear pipe and has shearing blades as component parts at all times.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x(ShearRam(x) ↔ Ram(x) ∧ ∃f(PipeShearingFunction(f) ∧ bearerOf(x,f)) ∧ ∃b(ShearingBlade(b) ∧ hasComponentPartAtAllTimes(x,b)))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/SHEAR_RAM&gt; ;
+    dcterms:source &lt;https://www.jip36-cfihos.org/&gt; ;
+    dcterms:source &lt;https://glossary.slb.com/en/terms/s/shear_ram&gt; ;
+    dcterms:source &lt;https://onepetro.org/search-results?page=1&amp;q=shear-ram&gt; .
 
 :ShearingBlade rdf:type owl:Class ;
     rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;shearing blade&quot;@en ;
     rdfs:label &quot;lâmina de cisalhamento&quot;@pt-br ;
-    rdfs:label &quot;shearing blade&quot;@en .
+    iof-av:naturalLanguageDefinition &quot;A material artifact that constitutes the cutting blade of a shear ram in a blowout preventer that severs a tubular string for well control purposes.&quot;@en ;
+    skos:definition &quot;A material artifact that constitutes the cutting blade of a shear ram in a blowout preventer that severs a tubular string for well control purposes.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um artefato material que é a lâmina de corte da gaveta cisalhante de um preventor de erupção, que secciona uma coluna tubular para fins de controle de poço.&quot;@pt-br .
 </div></div>
       </div>
 
@@ -497,14 +511,14 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 <div class="doc-section">
   <div class="doc-section-title"><span class="t-en">Process Participation Signature</span><span class="t-pt">Assinatura de Participação em Processo</span></div>
   <div class="sig-grid">
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;SteelPipe&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;drillpipe or tubing within wellbore&#x27;}</div></div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;SteelPipe&#x27;, &#x27;count&#x27;: 2, &#x27;constraints&#x27;: &#x27;severed upper and lower pipe sections&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;Pipe&#x27;, &#x27;count&#x27;: 1, &#x27;constraints&#x27;: &#x27;drillpipe or tubing within wellbore&#x27;}</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;">{&#x27;type&#x27;: &#x27;Pipe&#x27;, &#x27;count&#x27;: 2, &#x27;constraints&#x27;: &#x27;severed upper and lower pipe sections&#x27;}</div></div>
     <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">mechanical cutting/shearing action separates continuous pipe into discrete sections</div></div>
   </div>
   <div class="rationale mt-2">The signature involves taking a continuous pipe and mechanically severing it into separate sections, enabling removal of the upper section while sealing the wellbore.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000348</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000348</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000348</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000348</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-14</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

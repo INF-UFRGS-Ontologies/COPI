@@ -312,15 +312,15 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>A flash drum is a separator that performs flash vaporization to separate lighter components (which vaporize and are drawn off at the top) from heavier components (which remain liquid and are drawn off at the bottom).</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um tambor de flash é um separador que realiza vaporização flash para separar componentes mais leves (que vaporizam e são retirados no topo) de componentes mais pesados (que permanecem líquidos e são retirados no fundo).</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A flash drum is a drum that performs flash vaporization to separate lighter components (which vaporize and are drawn off at the top) from heavier components (which remain liquid and are drawn off at the bottom).</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um tambor de flash é um tambor que realiza vaporização flash para separar componentes mais leves (que vaporizam e são retirados no topo) de componentes mais pesados (que permanecem líquidos e são retirados no fundo).</div>
       </div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every flash drum is a separator that bears a flash vaporization function and has a vapor outlet, liquid outlet, and feed inlet.</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every flash drum is a drum that bears a flash vaporization function.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (FlashDrum(x) ↔ Separator(x) ∧ ∃f (FlashVaporizationFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (FlashDrum(x) ↔ Drum(x) ∧ ∃f (FlashVaporizationFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Function axiom: FlashVaporizationFunction]</span>∀f (FlashVaporizationFunction(f) → ∀p (realizedIn(f,p) → FlashVaporizationProcess(p)) ∧ ∃p (FlashVaporizationProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((FlashDrum(x) ∧ FlashVaporizationFunction(f) ∧ bearerOf(x,f)) →
       ∃m (FluidMixture(m) ∧ participatesIn(m,f)) ∧
@@ -355,7 +355,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -368,7 +368,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -378,7 +378,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 
 ### Identity-giving function
 :FlashVaporizationFunction rdf:type owl:Class ;
-    rdfs:subClassOf iof-core:DesignedFunction ;
+    rdfs:subClassOf :GasDisengagementFunction ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
@@ -390,13 +390,25 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :FlashVaporizationProcess
     ] ;
     rdfs:label &quot;flash vaporization function&quot;@en ;
-    rdfs:label &quot;função de vaporização flash&quot;@pt-br .
+    rdfs:label &quot;função de vaporização flash&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A GasDisengagementFunction that is realized in a FlashVaporizationProcess and that consists in letting lighter products of a process stream flash off or vaporize in a drum, so that the vapour is drawn off at the top and the heavier liquid fractions at the bottom.&quot;@en ;
+    skos:definition &quot;A GasDisengagementFunction that is realized in a FlashVaporizationProcess and that consists in letting lighter products of a process stream flash off or vaporize in a drum, so that the vapour is drawn off at the top and the heavier liquid fractions at the bottom.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma GasDisengagementFunction que é realizada em um FlashVaporizationProcess e que consiste em permitir que os produtos mais leves de uma corrente de processo vaporizem instantaneamente em um tambor, de modo que o vapor é retirado no topo e as frações líquidas mais pesadas no fundo.&quot;@pt-br .
+
+:GasDisengagementFunction rdf:type owl:Class ;
+    rdfs:label &quot;função de liberação de gás&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A SeparationFunction that is realized in a GasDisengagementProcess and that consists in enabling gas or vapour to escape from a process fluid held in a vessel, so that the gas and the remaining liquid can be drawn off separately.&quot;@en ;
+    skos:definition &quot;A SeparationFunction that is realized in a GasDisengagementProcess and that consists in enabling gas or vapour to escape from a process fluid held in a vessel, so that the gas and the remaining liquid can be drawn off separately.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma SeparationFunction que é realizada em um GasDisengagementProcess e que consiste em permitir que gás ou vapor escape de um fluido de processo contido em um vaso, de modo que o gás e o líquido remanescente possam ser retirados separadamente.&quot;@pt-br .
 
 ### Process type
 :FlashVaporizationProcess rdf:type owl:Class ;
     rdfs:subClassOf :PhaseChange ;
     rdfs:label &quot;flash vaporization process&quot;@en ;
-    rdfs:label &quot;processo de vaporização flash&quot;@pt-br .
+    rdfs:label &quot;processo de vaporização flash&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A planned process in which a pressurised liquid stream is partially vaporised as a result of a rapid reduction in pressure.&quot;@en ;
+    skos:definition &quot;A planned process in which a pressurised liquid stream is partially vaporised as a result of a rapid reduction in pressure.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo planejado em que uma corrente líquida pressurizada é parcialmente vaporizada em consequência de uma redução rápida de pressão.&quot;@pt-br .
 
 :PhaseChange rdf:type owl:Class .
 
@@ -422,7 +434,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     owl:equivalentClass [
         rdf:type owl:Class ;
         owl:intersectionOf (
-            :Separator
+            :Drum
             [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
@@ -432,11 +444,13 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     ] ;
     rdfs:label &quot;flash drum&quot;@en ;
     rdfs:label &quot;tambor de flash&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A flash drum is a separator that performs flash vaporization to separate lighter components (which vaporize and are drawn off at the top) from heavier components (which remain liquid and are drawn off at the bottom).&quot;@en ;
-    skos:definition &quot;A flash drum is a separator that performs flash vaporization to separate lighter components (which vaporize and are drawn off at the top) from heavier components (which remain liquid and are drawn off at the bottom).&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;Um tambor de flash é um separador que realiza vaporização flash para separar componentes mais leves (que vaporizam e são retirados no topo) de componentes mais pesados (que permanecem líquidos e são retirados no fundo).&quot;@pt-br ;
-    iof-av:semiFormalNaturalLanguageAxiom &quot;Every flash drum is a separator that bears a flash vaporization function and has a vapor outlet, liquid outlet, and feed inlet.&quot;@en ;
-    iof-av:firstOrderLogicAxiom &quot;∀x(FlashDrum(x) ↔ Separator(x) ∧ ∃f(FlashVaporizationFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;A flash drum is a drum that performs flash vaporization to separate lighter components (which vaporize and are drawn off at the top) from heavier components (which remain liquid and are drawn off at the bottom).&quot;@en ;
+    skos:definition &quot;A flash drum is a drum that performs flash vaporization to separate lighter components (which vaporize and are drawn off at the top) from heavier components (which remain liquid and are drawn off at the bottom).&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um tambor de flash é um tambor que realiza vaporização flash para separar componentes mais leves (que vaporizam e são retirados no topo) de componentes mais pesados (que permanecem líquidos e são retirados no fundo).&quot;@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every flash drum is a drum that bears a flash vaporization function.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x(FlashDrum(x) ↔ Drum(x) ∧ ∃f(FlashVaporizationFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/FLASH_DRUM&gt; ;
+    dcterms:source &lt;https://www.jip36-cfihos.org/&gt; .
 
 # Disjointness: FlashDrum and Filter
 [] rdf:type owl:AllDisjointClasses ;
@@ -464,7 +478,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Function class</div>
         <span class="decision-value">FlashVaporizationFunction</span>
-        <span class="text-muted" style="font-size:.8rem;"> ⊑ DesignedFunction</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ GasDisengagementFunction</span>
       </div>
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
@@ -472,7 +486,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         <span class="text-muted" style="font-size:.8rem;"> ⊑ PhaseChange</span>
       </div>
     </div>
-    <div class="rationale">Flash vaporization is the identity-giving function - the process of sudden pressure/temperature change causing lighter components to vaporize while heavier components remain liquid. This is distinct from other separation functions like filtration or centrifugal separation.</div>
+    <div class="rationale">Flash vaporization is the identity-giving function - the process of sudden pressure/temperature change causing lighter components to vaporize while heavier components remain liquid. This is distinct from other separation functions like filtration or centrifugal separation. Re-parented DesignedFunction → GasDisengagementFunction on 2026-09-15 (reviewer decision), together with the genus change to Drum: lighter products flashing off and being drawn off at the top is gas/vapour disengaging from the process fluid. The process stays anchored in PhaseChange; COPI-Core operations are not disjoint, so FlashVaporizationProcess may also be a GasDisengagementProcess (MechanicalSeparation).</div>
   </div>
 </div>
 <div class="step-block step-2">
@@ -481,9 +495,9 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   </div>
   <div class="step-body">
     <div class="mb-2">
-      <span class="decision-value">Separator</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
+      <span class="decision-value">Drum</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
     </div>
-    <div class="rationale">Flash drum is clearly a type of separator (already enriched in our ontology) that performs phase separation. While it could be considered a vessel, Separator is more specific and captures the functional nature. The parent_candidates show VESSEL as a superclass, but Separator better captures the equipment category for industrial classification purposes.</div>
+    <div class="rationale">Re-parented Separator → Drum on 2026-09-15 by reviewer decision. The source label and definitions (&#x27;lighter products flash off or vaporize and are drawn off at the top&#x27;) place it under POSC Caesar Drum (&#x27;A vessel intended to enable gasses to escape from process fluids&#x27;); Drum (enriched, ⊑ Separator) is the genus proximum. The earlier Separator genus is preserved by subsumption.</div>
   </div>
 </div>
 <div class="step-block step-3">
@@ -511,7 +525,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Flash drums take a mixed or liquid stream and separate it into vapor (light components) and liquid (heavy components) through spontaneous vaporization. This signature is distinct from other separation processes.</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">Filter</span> <span class="disjoint-pill">Centrifuge</span> <span class="disjoint-pill">Hydrocyclone</span></div><div class="rationale mt-2">C1: Centrifuge. C2: Filter, Hydrocyclone. Flash drums use phase change separation which is incompatible with physical filtration (Filter), centrifugal force separation (Centrifuge), or cyclonic separation (Hydrocyclone). These represent fundamentally different separation mechanisms.</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000276</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000276</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-15</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 
@@ -525,7 +539,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
           </div>
           <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
             <table class="meta-table">
-              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>Separator</strong></td></tr>
+              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>Drum</strong></td></tr>
               <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">Assembly</span></td></tr>
               <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-equivalent">equivalent</span></td></tr>
               <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>FlashVaporizationFunction</td></tr>

@@ -355,7 +355,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -368,7 +368,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -390,13 +390,19 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :TubingSupportProcess
     ] ;
     rdfs:label &quot;tubing support function&quot;@en ;
-    rdfs:label &quot;função de suporte de coluna de produção&quot;@pt-br .
+    rdfs:label &quot;função de suporte de coluna de produção&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A designed function borne by petroleum production equipment whose realization constitutes the mechanical suspension and support of downhole tubing strings within a wellbore.&quot;@en ;
+    skos:definition &quot;A designed function borne by petroleum production equipment whose realization constitutes the mechanical suspension and support of downhole tubing strings within a wellbore.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma função projetada portada por equipamento de produção de petróleo cuja realização consiste em suspender e sustentar mecanicamente as colunas de produção dentro do poço.&quot;@pt-br .
 
 ### Process type
 :TubingSupportProcess rdf:type owl:Class ;
     rdfs:subClassOf iof-core:PlannedProcess ;
     rdfs:label &quot;tubing support process&quot;@en ;
-    rdfs:label &quot;processo de suporte de coluna de produção&quot;@pt-br .
+    rdfs:label &quot;processo de suporte de coluna de produção&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A planned process in which downhole tubing strings are mechanically suspended and supported within a wellbore.&quot;@en ;
+    skos:definition &quot;A planned process in which downhole tubing strings are mechanically suspended and supported within a wellbore.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo planejado em que colunas de produção são suspensas e sustentadas mecanicamente dentro do poço.&quot;@pt-br .
 
 :TubingSupportProcess
     rdfs:subClassOf [
@@ -409,6 +415,11 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:onProperty iof-core:hasSpecifiedOutput ;
         owl:someValuesFrom :TubingString
     ] .
+
+:TubingString
+    iof-av:naturalLanguageDefinition &quot;A string of production or injection tubing joints run inside a well&#x27;s casing to convey fluids between the reservoir and the surface.&quot;@en ;
+    skos:definition &quot;A string of production or injection tubing joints run inside a well&#x27;s casing to convey fluids between the reservoir and the surface.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma coluna de tubos de produção ou injeção descida por dentro do revestimento de um poço para conduzir fluidos entre o reservatório e a superfície.&quot;@pt-br .
 
 ### Equipment universal: TubingHanger
 :TubingHanger rdf:type owl:Class ;
@@ -435,11 +446,18 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:naturalLanguageDefinition &quot;Um suporte de coluna de produção é um conjunto que suporta colunas de produção em cabeças de poço com vedação integrada para isolar o conduto da coluna do anular.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every tubing hanger is an assembly that bears a tubing support function and has component parts including a sealing system, support mechanism, and tubing connection.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x(TubingHanger(x) ↔ (Assembly(x) ∧ ∃f(TubingSupportFunction(f) ∧ bearerOf(x,f)) ∧ ∃s(SealingSystem(s) ∧ hasComponentPartAtAllTimes(x,s)) ∧ ∃m(SupportMechanism(m) ∧ hasComponentPartAtAllTimes(x,m)) ∧ ∃c(TubingConnection(c) ∧ hasComponentPartAtAllTimes(x,c))))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/TUBING_HANGER&gt; ;
+    dcterms:source &lt;https://www.jip36-cfihos.org/&gt; ;
+    dcterms:source &lt;https://glossary.slb.com/en/terms/t/tubing_hanger&gt; ;
+    dcterms:source &lt;https://onepetro.org/search-results?page=1&amp;q=tubing-hanger&gt; .
 
 :SealingSystem rdf:type owl:Class ;
     rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:label &quot;sealing system&quot;@en ;
     rdfs:label &quot;sistema de vedação&quot;@pt-br ;
-    rdfs:label &quot;sealing system&quot;@en .
+    iof-av:naturalLanguageDefinition &quot;A material artifact that constitutes the assembly of seals, gaskets, and packing that prevents leakage between two components of petroleum production equipment.&quot;@en ;
+    skos:definition &quot;A material artifact that constitutes the assembly of seals, gaskets, and packing that prevents leakage between two components of petroleum production equipment.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um artefato material que é o conjunto de selos, juntas e gaxetas que impede vazamentos entre dois componentes de equipamentos de produção de petróleo.&quot;@pt-br .
 
 # Disjointness: TubingHanger and ChristmasTree
 [] rdf:type owl:AllDisjointClasses ;
@@ -510,7 +528,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">The tubing hanger receives a suspended tubing string and provides mechanical support while ensuring sealing isolation. No fluid transformation occurs - it&#x27;s a passive mechanical support system.</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">christmas tree</span> <span class="disjoint-pill">valve</span></div><div class="rationale mt-2">C2: christmas tree, valve. Incompatible process signatures: tubing hanger provides static mechanical support, while christmas tree provides active flow control, manifold provides flow distribution, and valves provide flow regulation</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000364</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000364</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000364</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000364</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-15</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

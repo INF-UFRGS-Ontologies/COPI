@@ -296,7 +296,7 @@
           <div style="flex:1;">
             <div class="d-flex align-items-center gap-2 mb-1">
               <span class="status-pill status-validated">validated</span>
-              <span class="mode-pill mode-necessary">necessary</span>
+              <span class="mode-pill mode-equivalent">equivalent</span>
               <code style="font-size:.72rem;background:#f3e8ff;color:#6b21a8;border-radius:4px;padding:.2rem .5rem;">COPI_0000779</code>
             </div>
             <div class="ph-class-name">Sample Cooler</div>
@@ -312,18 +312,17 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>A sample cooler is a cooler, typically a compact helical-coil-in-shell heat exchanger, sized to cool a diverted process sample stream to a safe handling temperature for representative laboratory or on-line analysis.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um resfriador de amostra e um resfriador, tipicamente um trocador de calor compacto de serpentina em casco, dimensionado para resfriar uma corrente de amostra desviada do processo ate uma temperatura segura de manuseio para analise laboratorial ou em linha representativa.</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A sample cooler is a cooler designed to cool a sample drawn from a process stream, so that it can be safely handled and analysed.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um resfriador de amostra é um resfriador projetado para resfriar uma amostra retirada de uma corrente de processo, de modo que ela possa ser manuseada e analisada com segurança.</div>
       </div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every sample cooler is a cooler that bears a cooling function and has a sample coil as a component part, sized to cool a small diverted process sample rather than the bulk process stream.</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every sample cooler is a cooler that bears a sample cooling function, and conversely, every cooler that bears a sample cooling function is a sample cooler.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (SampleCooler(x) → Cooler(x) ∧ ∃f (CoolingFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
-<span class="fol-line"><span class="fol-label">[Function axiom: CoolingFunction]</span>∀f (CoolingFunction(f) → ∀p (realizedIn(f,p) → CoolingProcess(p)) ∧ ∃p (CoolingProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (SampleCooler(x) → ∃hasComponentPartAtAllTimes.SampleCoil) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
-<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((SampleCooler(x) ∧ CoolingFunction(f) ∧ bearerOf(x,f)) →
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (SampleCooler(x) ↔ Cooler(x) ∧ ∃f (SampleCoolingFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+<span class="fol-line"><span class="fol-label">[Function axiom: SampleCoolingFunction]</span>∀f (SampleCoolingFunction(f) → ∀p (realizedIn(f,p) → SampleCoolingProcess(p)) ∧ ∃p (SampleCoolingProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((SampleCooler(x) ∧ SampleCoolingFunction(f) ∧ bearerOf(x,f)) →
       ∃m1 (PortionOfFluid(m1) ∧ participatesIn(m1,f)) ∧
       ∃m2 (PortionOfWater(m2) ∧ participatesIn(m2,f)) ∧
       ∃e1 (PortionOfFluid(e1) ∧ participatesIn(e1,f)) ∧
@@ -357,7 +356,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -370,7 +369,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -379,36 +378,43 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     apv:MinAnnotationLength 20 .
 
 ### Identity-giving function
-:CoolingFunction rdf:type owl:Class ;
-    rdfs:subClassOf :HeatTransferFunction ;
+:SampleCoolingFunction rdf:type owl:Class ;
+    rdfs:subClassOf :CoolingFunction ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:allValuesFrom :CoolingProcess
+        owl:allValuesFrom :SampleCoolingProcess
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty bfo:BFO_0000054 ;  # realizedIn
-        owl:someValuesFrom :CoolingProcess
+        owl:someValuesFrom :SampleCoolingProcess
     ] ;
-    rdfs:label &quot;cooling function&quot;@en ;
-    rdfs:label &quot;função de resfriamento&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in a CoolingProcess and that consists in removing heat from a fluid to reduce its temperature.&quot;@en ;
-    skos:definition &quot;A DesignedFunction that is realized in a CoolingProcess and that consists in removing heat from a fluid to reduce its temperature.&quot;@en .
+    rdfs:label &quot;sample cooling function&quot;@en ;
+    rdfs:label &quot;função de resfriamento de amostra&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A CoolingFunction that is realized in a SampleCoolingProcess and that consists in lowering the temperature of a sample drawn from a process stream so that it can be safely handled and analysed.&quot;@en ;
+    skos:definition &quot;A CoolingFunction that is realized in a SampleCoolingProcess and that consists in lowering the temperature of a sample drawn from a process stream so that it can be safely handled and analysed.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma CoolingFunction que é realizada em um SampleCoolingProcess e que consiste em reduzir a temperatura de uma amostra retirada de uma corrente de processo para que ela possa ser manuseada e analisada com segurança.&quot;@pt-br .
 
-:HeatTransferFunction rdf:type owl:Class .
+:CoolingFunction rdf:type owl:Class ;
+    rdfs:label &quot;função de resfriamento&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A designed function borne by petroleum production equipment whose realization constitutes the removal of thermal energy from a process stream or equipment component to reduce its temperature.&quot;@en ;
+    skos:definition &quot;A designed function borne by petroleum production equipment whose realization constitutes the removal of thermal energy from a process stream or equipment component to reduce its temperature.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma função projetada portada por equipamento de produção de petróleo cuja realização consiste em retirar energia térmica de uma corrente de processo ou de um componente de equipamento para reduzir sua temperatura.&quot;@pt-br .
 
 ### Process type
-:CoolingProcess rdf:type owl:Class ;
+:SampleCoolingProcess rdf:type owl:Class ;
     rdfs:subClassOf :HeatTransfer ;
-    rdfs:label &quot;cooling process&quot;@en ;
-    rdfs:label &quot;processo de resfriamento&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which heat is transferred from a warmer fluid to a cooling medium, reducing the warmer fluid&#x27;s temperature.&quot;@en ;
-    skos:definition &quot;A PlannedProcess in which heat is transferred from a warmer fluid to a cooling medium, reducing the warmer fluid&#x27;s temperature.&quot;@en .
+    rdfs:label &quot;sample cooling process&quot;@en ;
+    rdfs:label &quot;processo de resfriamento de amostra&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A HeatTransfer process in which heat is removed from a sample drawn from a process stream by a cooling medium, bringing the sample to a temperature at which it can be safely handled and analysed.&quot;@en ;
+    skos:definition &quot;A HeatTransfer process in which heat is removed from a sample drawn from a process stream by a cooling medium, bringing the sample to a temperature at which it can be safely handled and analysed.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um processo de HeatTransfer em que calor é retirado, por um meio de resfriamento, de uma amostra extraída de uma corrente de processo, levando-a a uma temperatura em que possa ser manuseada e analisada com segurança.&quot;@pt-br .
 
-:HeatTransfer rdf:type owl:Class .
+:HeatTransfer rdf:type owl:Class ;
+    rdfs:label &quot;processo de transferência de calor&quot;@pt-br .
 
-:CoolingProcess
+:SampleCoolingProcess
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasInput ;
@@ -432,20 +438,26 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 
 ### Equipment universal: SampleCooler
 :SampleCooler rdf:type owl:Class ;
-    rdfs:subClassOf :Cooler ;
-    rdfs:subClassOf [
+    owl:equivalentClass [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Cooler
+            [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
-        owl:someValuesFrom :CoolingFunction
+        owl:someValuesFrom :SampleCoolingFunction
+    ]
+        )
     ] ;
     rdfs:label &quot;sample cooler&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;A sample cooler is a cooler, typically a compact helical-coil-in-shell heat exchanger, sized to cool a diverted process sample stream to a safe handling temperature for representative laboratory or on-line analysis.&quot;@en ;
-    skos:definition &quot;A sample cooler is a cooler, typically a compact helical-coil-in-shell heat exchanger, sized to cool a diverted process sample stream to a safe handling temperature for representative laboratory or on-line analysis.&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;Um resfriador de amostra e um resfriador, tipicamente um trocador de calor compacto de serpentina em casco, dimensionado para resfriar uma corrente de amostra desviada do processo ate uma temperatura segura de manuseio para analise laboratorial ou em linha representativa.&quot;@pt-br ;
-    iof-av:semiFormalNaturalLanguageAxiom &quot;Every sample cooler is a cooler that bears a cooling function and has a sample coil as a component part, sized to cool a small diverted process sample rather than the bulk process stream.&quot;@en ;
-    iof-av:firstOrderLogicAxiom &quot;∀x (SampleCooler(x) → Cooler(x) ∧ ∃f (CoolingFunction(f) ∧ bearerOf(x,f)) ∧ ∃p (SampleCoil(p) ∧ hasComponentPartAtAllTimes(x,p)))&quot;@en ;
-    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
-    iof-av:primitiveRationale &quot;Constructive subtype reusing genus and function unchanged: sufficiency is not asserted so any small coil-in-shell heat exchanger used for an unrelated duty is not automatically classified as a sample cooler under OWA.&quot;@en ;
+    rdfs:label &quot;resfriador de amostra&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A sample cooler is a cooler designed to cool a sample drawn from a process stream, so that it can be safely handled and analysed.&quot;@en ;
+    skos:definition &quot;A sample cooler is a cooler designed to cool a sample drawn from a process stream, so that it can be safely handled and analysed.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um resfriador de amostra é um resfriador projetado para resfriar uma amostra retirada de uma corrente de processo, de modo que ela possa ser manuseada e analisada com segurança.&quot;@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every sample cooler is a cooler that bears a sample cooling function, and conversely, every cooler that bears a sample cooling function is a sample cooler.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;∀x (SampleCooler(x) ↔ Cooler(x) ∧ ∃f (SampleCoolingFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/SAMPLE_COOLER&gt; ;
+    dcterms:source &lt;https://www.jip36-cfihos.org/&gt; .
 </div></div>
       </div>
 
@@ -460,16 +472,16 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     <div class="row g-3 mb-2">
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Function class</div>
-        <span class="decision-value">CoolingFunction</span>
-        <span class="text-muted" style="font-size:.8rem;"> ⊑ HeatTransferFunction</span>
+        <span class="decision-value">SampleCoolingFunction</span>
+        <span class="text-muted" style="font-size:.8rem;"> ⊑ CoolingFunction</span>
       </div>
       <div class="col-sm-6">
         <div style="font-size:.72rem;font-family:system-ui;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem;">Realized in</div>
-        <span class="decision-value">CoolingProcess</span>
+        <span class="decision-value">SampleCoolingProcess</span>
         <span class="text-muted" style="font-size:.8rem;"> ⊑ HeatTransfer</span>
       </div>
     </div>
-    <div class="rationale">Reused verbatim from the already-enriched genus &#x27;cooler&#x27; per the constructive-type rule: a sample cooler performs the same cooling function, differing only in scale and application (a process sample, not a bulk process stream).</div>
+    <div class="rationale">Subtype case: both primary sources define the class only by purpose — ISO 15926-4 &#x27;intended for cooling a sample&#x27;, CFIHOS &#x27;A cooling device that is intended for cooling a sample&#x27;. Every realisation of cooling a sample is a cooling, not vice versa, so CoolingFunction (enriched, genus cooler) is the parent. Revised 2026-09-15: the earlier constructive differentia (SampleCoil) rested only on tertiary evidence describing one construction and never reached the OWL.</div>
   </div>
 </div>
 <div class="step-block step-2">
@@ -487,7 +499,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="step-block-header">
     <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
-  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃hasComponentPartAtAllTimes.SampleCoil</code></div><p style="font-size:.88rem;color:#374151;">A compact, coil-in-shell cooler sized to cool a small process sample stream (rather than a bulk process stream) for safe handling and representative laboratory or on-line analysis.</p><div class="rationale">Per CLAUDE.md&#x27;s same-genus-same-function rule, since genus=Cooler and function=CoolingFunction are reused unchanged, axiom_mode must be &#x27;necessary&#x27;. The coil construction is the grounded structural differentia; &#x27;intended for cooling a sample&#x27; (application) is captured in the NL definition and process signature rather than as a separate formal condition.</div></div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.SampleCoolingFunction</code></div><p style="font-size:.88rem;color:#374151;">A sample cooler is the cooler whose designed function is to cool a sample drawn from a process, rather than a bulk process stream.</p><div class="rationale">The only condition both primary sources state beyond the genus is the purpose, cooling a sample; the differentia is therefore the function subtype. The helical-coil-in-shell construction (tertiary) is one implementation and stays in candidate_parts.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
@@ -508,7 +520,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Standard two-stream heat-exchange signature, scaled to a small sample flow rather than bulk process flow; matches the generic Cooler&#x27;s transformation_kind.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000779</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000779</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000779</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000779</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-15</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 
@@ -524,9 +536,9 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
             <table class="meta-table">
               <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>Cooler</strong></td></tr>
               <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">Assembly</span></td></tr>
-              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
-              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>CoolingFunction</td></tr>
-              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>CoolingProcess</td></tr>
+              <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-equivalent">equivalent</span></td></tr>
+              <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>SampleCoolingFunction</td></tr>
+              <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>SampleCoolingProcess</td></tr>
               <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>
             </table>
           </div>

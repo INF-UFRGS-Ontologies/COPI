@@ -388,7 +388,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -401,7 +401,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -425,7 +425,8 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     rdfs:label &quot;force transmission function&quot;@en ;
     rdfs:label &quot;função de transmissão de força&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in a ForceTransmissionProcess and that consists in transmitting mechanical force or motion from one component to another through direct physical coupling.&quot;@en ;
-    skos:definition &quot;A DesignedFunction that is realized in a ForceTransmissionProcess and that consists in transmitting mechanical force or motion from one component to another through direct physical coupling.&quot;@en .
+    skos:definition &quot;A DesignedFunction that is realized in a ForceTransmissionProcess and that consists in transmitting mechanical force or motion from one component to another through direct physical coupling.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma DesignedFunction que é realizada em um ForceTransmissionProcess e que consiste em transmitir força ou movimento mecânico de um componente a outro por acoplamento físico direto.&quot;@pt-br .
 
 ### Process type
 :ForceTransmissionProcess rdf:type owl:Class ;
@@ -433,7 +434,8 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     rdfs:label &quot;force transmission process&quot;@en ;
     rdfs:label &quot;processo de transmissão de força&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which mechanical force or motion is transferred from an input component to an output component through direct physical coupling and mechanical linkage.&quot;@en ;
-    skos:definition &quot;A PlannedProcess in which mechanical force or motion is transferred from an input component to an output component through direct physical coupling and mechanical linkage.&quot;@en .
+    skos:definition &quot;A PlannedProcess in which mechanical force or motion is transferred from an input component to an output component through direct physical coupling and mechanical linkage.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um PlannedProcess em que força ou movimento mecânico é transferido de um componente de entrada para um componente de saída por acoplamento físico direto e ligação mecânica.&quot;@pt-br .
 
 ### Equipment universal: ValveStem
 :ValveStem rdf:type owl:Class ;
@@ -451,6 +453,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
     iof-av:primitiveRationale &quot;Constructive type defined by physical structure (rod/shaft mechanism). Under Open World Assumption, sufficient conditions would force any assembly with a valve stem seal and force transmission function to be classified as a valve stem, which could include complex multi-component assemblies, manifolds, or specialized valve mechanisms that contain these elements but should not be asserted into the standard valve stem maintenance category.&quot;@en ;
     rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty bfo:BFO_0000196 ; owl:someValuesFrom :COPI_0000059 ] ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/VALVE_STEM&gt; .
 </div></div>
       </div>
 
@@ -513,7 +516,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">The process signature reflects the valve stem&#x27;s role as a mechanical transmission link. Input is motion/force from the valve actuator, output is the same motion/force delivered to the closure member. The transformation is purely mechanical transmission without energy conversion, matching the controlled vocabulary term.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000372</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000372</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-04</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000372</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000372</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-04</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 

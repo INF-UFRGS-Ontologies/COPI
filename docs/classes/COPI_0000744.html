@@ -324,6 +324,7 @@
 <span class="fol-line"><span class="fol-label">[Function axiom: ClosureFunction]</span>∀f (ClosureFunction(f) → ∀p (realizedIn(f,p) → ClosureProcess(p)) ∧ ∃p (ClosureProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
 <span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (BlankingCapPipeUnion(x) → ∃hasComponentPartAtAllTimes.FemaleUnionSub ⊓ ∃hasComponentPartAtAllTimes.ThreadedPipeCap) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
 <span class="fol-line"><span class="fol-label">[Necessary part: FemaleUnionSub]</span>∀x (BlankingCapPipeUnion(x) → ∃p (FemaleUnionSub(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
+<span class="fol-line"><span class="fol-label">[Necessary part: ThreadedPipeCap]</span>∀x (BlankingCapPipeUnion(x) → ∃p (ThreadedPipeCap(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
 <span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((BlankingCapPipeUnion(x) ∧ ClosureFunction(f) ∧ bearerOf(x,f)) →
       processType(f,Containment)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
@@ -354,7 +355,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-151-g4cdb6dd&quot; ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -367,7 +368,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-11&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -389,15 +390,19 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:someValuesFrom :ClosureProcess
     ] ;
     rdfs:label &quot;closure function&quot;@en ;
+    rdfs:label &quot;função de fechamento&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in a ClosureProcess and that consists in covering or capping the top or end of an artefact, protecting or sealing it from the surrounding environment.&quot;@en ;
-    skos:definition &quot;A DesignedFunction that is realized in a ClosureProcess and that consists in covering or capping the top or end of an artefact, protecting or sealing it from the surrounding environment.&quot;@en .
+    skos:definition &quot;A DesignedFunction that is realized in a ClosureProcess and that consists in covering or capping the top or end of an artefact, protecting or sealing it from the surrounding environment.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma DesignedFunction que é realizada em um ClosureProcess e que consiste em cobrir ou tampar o topo ou a extremidade de um artefato, protegendo-o ou vedando-o em relação ao ambiente.&quot;@pt-br .
 
 ### Process type
 :ClosureProcess rdf:type owl:Class ;
     rdfs:subClassOf :MaterialContainment ;
     rdfs:label &quot;closure process&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;A MaterialContainment process in which a threaded cap is screwed onto a female union sub fitted to a pipe end, closing off fluid flow through that end.&quot;@en ;
-    skos:definition &quot;A MaterialContainment process in which a threaded cap is screwed onto a female union sub fitted to a pipe end, closing off fluid flow through that end.&quot;@en .
+    rdfs:label &quot;processo de fechamento&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which a cap is fitted over the top or end of an artefact, covering or sealing it.&quot;@en ;
+    skos:definition &quot;A PlannedProcess in which a cap is fitted over the top or end of an artefact, covering or sealing it.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um PlannedProcess em que uma tampa é colocada sobre o topo ou a extremidade de um artefato, cobrindo-o ou vedando-o.&quot;@pt-br .
 
 :MaterialContainment rdf:type owl:Class .
 
@@ -414,7 +419,13 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         owl:onProperty iof-core:hasComponentPartAtAllTimes ;
         owl:someValuesFrom :FemaleUnionSub
     ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasComponentPartAtAllTimes ;
+        owl:someValuesFrom :ThreadedPipeCap
+    ] ;
     rdfs:label &quot;blanking cap pipe union&quot;@en ;
+    rdfs:label &quot;tampão cego com união&quot;@pt-br ;
     iof-av:naturalLanguageDefinition &quot;A blanking cap pipe union (end of line terminator) is a cap assembly consisting of a female union sub with a threaded end, permanently fitted to a pipe, and a threaded cap screwed onto it to close off fluid flow at the end of a line.&quot;@en ;
     skos:definition &quot;A blanking cap pipe union (end of line terminator) is a cap assembly consisting of a female union sub with a threaded end, permanently fitted to a pipe, and a threaded cap screwed onto it to close off fluid flow at the end of a line.&quot;@en ;
     iof-av:naturalLanguageDefinition &quot;Um conjunto de tampa cega de uniao de tubo (terminador de fim de linha) e um conjunto de tampa formado por uma luva de uniao femea com extremidade rosqueada, fixada permanentemente a um tubo, e uma tampa rosqueada aparafusada sobre ela para fechar o fluxo de fluido na extremidade de uma linha.&quot;@pt-br ;
@@ -422,10 +433,20 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     iof-av:firstOrderLogicAxiom &quot;∀x (BlankingCapPipeUnion(x) → Cap(x) ∧ ∃f (ClosureFunction(f) ∧ bearerOf(x,f)) ∧ ∃u (FemaleUnionSub(u) ∧ hasComponentPartAtAllTimes(x,u)) ∧ ∃c (ThreadedPipeCap(c) ∧ hasComponentPartAtAllTimes(x,c)))&quot;@en ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
     iof-av:primitiveRationale &quot;Constructive subtype reusing genus and function unchanged: sufficiency is not asserted so that any two-component threaded closure is not automatically classified into this specific union-sub-plus-cap assembly without confirmation.&quot;@en ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/BLANKING_CAP_PIPE_UNION&gt; .
 
 :FemaleUnionSub rdf:type owl:Class ;
     rdfs:subClassOf iof-core:MaterialArtifact ;
-    rdfs:label &quot;female union sub&quot;@en .
+    rdfs:label &quot;female union sub&quot;@en ;
+    rdfs:label &quot;luva de união fêmea&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;The female-threaded half of a pipe union, fitted to a pipe end, onto which a mating threaded component such as a cap is screwed.&quot;@en ;
+    skos:definition &quot;The female-threaded half of a pipe union, fitted to a pipe end, onto which a mating threaded component such as a cap is screwed.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;A metade com rosca fêmea de uma união de tubo, fixada a uma extremidade de tubo, sobre a qual se rosqueia um componente correspondente, como uma tampa.&quot;@pt-br .
+
+:ThreadedPipeCap rdf:type owl:Class ;
+    rdfs:subClassOf :PipeCap ;
+    rdfs:label &quot;threaded pipe cap&quot;@en ;
+    rdfs:label &quot;tampão rosqueado de tubo&quot;@pt-br .
 </div></div>
       </div>
 
@@ -473,7 +494,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="step-block-header">
     <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
-  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>FemaleUnionSub</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">Only FemaleUnionSub is asserted as a structured necessary_parts entry. The definition&#x27;s &#x27;threaded cap&#x27; component is this session&#x27;s own already-enriched ThreadedPipeCap class (id 1128) -- deliberately NOT re-declared here as a necessary_parts stub, to avoid emitting a second, redundant owl:Class declaration for an IRI that already carries its own full axiom set elsewhere in the same published file; the relationship is documented in differentia_nl/cross_standard_notes as prose instead.</div></div>
+  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td>FemaleUnionSub</td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr><tr><td>ThreadedPipeCap</td><td>PipeCap</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">FemaleUnionSub and ThreadedPipeCap are both named in the primary definition (&#x27;an assembly of a female union sub with threaded end and a threaded cap that is screwed onto the union sub&#x27;). ThreadedPipeCap was previously kept out of necessary_parts to avoid a second owl:Class declaration for an enriched IRI; that concern does not hold (the stub merges with the enriched class, parent PipeCap is consistent), and without it the differentia never reached the OWL. Added 2026-09-15.</div></div>
 </div>
       </div>
 
@@ -488,7 +509,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Same passive-closure signature as the genus Cap.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000744</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000744</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000744</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000744</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>validated</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-09-10</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-15</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 
@@ -507,7 +528,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
               <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
               <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>ClosureFunction</td></tr>
               <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>ClosureProcess</td></tr>
-              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>1</td></tr>
+              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>2</td></tr>
             </table>
           </div>
         </div>

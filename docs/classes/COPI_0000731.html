@@ -327,7 +327,113 @@
       processType(f,ElectricalPowerConversion)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
 </div>
         </div>
-        <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block"># Error generating Turtle: &#x27;str&#x27; object has no attribute &#x27;get&#x27;</div></div>
+        <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
+@prefix :         &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
+@prefix owl:      &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf:      &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs:     &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd:      &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix bfo:      &lt;http://purl.obolibrary.org/obo/&gt; .
+@prefix iof-core: &lt;https://spec.industrialontologies.org/ontology/construct/&gt; .
+@prefix iof-av:   &lt;https://spec.industrialontologies.org/ontology/annotation/&gt; .
+@prefix skos:     &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix qudt:     &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix dcterms:  &lt;http://purl.org/dc/terms/&gt; .
+@prefix foaf:     &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix apv:      &lt;http://inf.ufrgs.br/ontologies/apv#&gt; .
+
+### COPI — Core Ontology for Petroleum Installations
+### Class module: StatorWinding
+&lt;https://www.inf.ufrgs.br/ontologies/copi&gt;
+    rdf:type owl:Ontology ;
+    dcterms:title &quot;Core Ontology for Petroleum Installations (COPI)&quot;@en ;
+    dcterms:title &quot;Ontologia Core para Instalações de Petróleo (COPI)&quot;@pt-br ;
+    dcterms:description &quot;BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants, developed using the five-step RDL enrichment method.&quot;@en ;
+    skos:scopeNote &quot;Material artifacts (bfo:material_entity) that (i) are part of a petroleum production plant, and (ii) bear at least one function whose realization involves the transport (e.g. production and injection), processing (separation and other processes), control, monitoring, measurement, containment or offloading of material or energy.&quot;@en ;
+    skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
+    skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
+    skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
+    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
+    owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
+    owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
+    dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
+    dcterms:contributor &quot;Cauã Antunes&quot; ;
+    dcterms:contributor &quot;Haroldo Rojas&quot; ;
+    dcterms:contributor &quot;Rafael Petry&quot; ;
+    dcterms:contributor &quot;Régis Romeu&quot; ;
+    dcterms:contributor &quot;Mara Abel&quot; ;
+    dcterms:isPartOf &lt;https://inf.ufrgs.br/projetos/OntoKG&gt; ;
+    dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
+    dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
+    dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-09-16&quot;^^xsd:date ;
+    apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
+    apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
+    apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
+
+iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
+    apv:MinAnnotationLength 20 .
+
+### Identity-giving function
+:ElectromagneticFieldGenerationFunction rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:DesignedFunction ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
+        owl:allValuesFrom :ElectromagneticFieldGenerationProcess
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty bfo:BFO_0000054 ;  # realizedIn
+        owl:someValuesFrom :ElectromagneticFieldGenerationProcess
+    ] ;
+    rdfs:label &quot;electromagnetic field generation function&quot;@en ;
+    rdfs:label &quot;função de geração de campo eletromagnético&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A DesignedFunction that is realized in an ElectromagneticFieldGenerationProcess and that consists in producing a magnetic field when electrical current flows through a conductor arrangement, as in the winding of an electrical machine.&quot;@en ;
+    skos:definition &quot;A DesignedFunction that is realized in an ElectromagneticFieldGenerationProcess and that consists in producing a magnetic field when electrical current flows through a conductor arrangement, as in the winding of an electrical machine.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma DesignedFunction que é realizada em um ElectromagneticFieldGenerationProcess e que consiste em produzir um campo magnético quando corrente elétrica percorre um arranjo de condutores, como no enrolamento de uma máquina elétrica.&quot;@pt-br .
+
+### Process type
+:ElectromagneticFieldGenerationProcess rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:PlannedProcess ;
+    rdfs:label &quot;electromagnetic field generation process&quot;@en ;
+    rdfs:label &quot;processo de geração de campo eletromagnético&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A PlannedProcess in which electrical current flowing through a winding or other conductor arrangement produces a magnetic field that can do work, such as driving the rotor of an electrical machine.&quot;@en ;
+    skos:definition &quot;A PlannedProcess in which electrical current flowing through a winding or other conductor arrangement produces a magnetic field that can do work, such as driving the rotor of an electrical machine.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um PlannedProcess em que a corrente elétrica que percorre um enrolamento ou outro arranjo de condutores produz um campo magnético capaz de realizar trabalho, como acionar o rotor de uma máquina elétrica.&quot;@pt-br .
+
+### Equipment universal: StatorWinding
+:StatorWinding rdf:type owl:Class ;
+    rdfs:subClassOf iof-core:MaterialArtifact ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
+        owl:someValuesFrom :ElectromagneticFieldGenerationFunction
+    ] ;
+    rdfs:label &quot;stator winding&quot;@en ;
+    rdfs:label &quot;enrolamento do estator&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A material artifact that is a winding on the stator of a machine, bearing an electromagnetic field generation function.&quot;@en ;
+    skos:definition &quot;A material artifact that is a winding on the stator of a machine, bearing an electromagnetic field generation function.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um artefato material que é um enrolamento no estator de uma máquina, possuindo uma função de geração de campo eletromagnético.&quot;@pt-br ;
+    iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
+    iof-av:primitiveRationale &quot;Differentia is positional (on the stator, not the rotor); positional conditions are not sufficient under OWA.&quot;@en ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty bfo:BFO_0000086 ;  # has quality
+        owl:someValuesFrom :ElectricalCurrent
+    ] ;
+    dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/STATOR_WINDING&gt; .
+
+:ElectricalCurrent rdf:type owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000019 ;  # Quality
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty bfo:BFO_0000052 ;  # inheres in
+        owl:someValuesFrom :StatorWinding
+    ] ;
+    rdfs:label &quot;corrente elétrico&quot;@pt-br ;
+    rdfs:label &quot;electricalcurrent&quot;@en .
+</div></div>
       </div>
 
       <div class="doc-section">
@@ -389,7 +495,7 @@
   
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000731</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000731</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-08-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-opus-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-11</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000731</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000731</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-08-08</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-opus-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-16</td></tr></tbody></table></div>
 
     </div>
 
