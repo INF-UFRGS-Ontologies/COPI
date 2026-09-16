@@ -109,10 +109,16 @@ jobs:
 
       - name: Transfer OWL/TTL variants to copi/ folder
         run: |
-          # index.php and .htaccess are listed explicitly: the canonical folder was
-          # only ever updated with *.owl/*.ttl, so changes to content negotiation or
-          # to the media types Apache serves never reached it from CI.
-          for f in copi-stage/*.owl copi-stage/*.ttl copi-stage/index.php copi-stage/.htaccess; do
+          # index.php is listed explicitly: the canonical folder was only ever
+          # updated with *.owl/*.ttl, so changes to content negotiation never
+          # reached it from CI.
+          #
+          # .htaccess is NOT uploaded here. The live copy is owned by another
+          # account, so scp as ontokg fails with "Permission denied" and takes
+          # the whole job down with it; the server ignores it anyway
+          # (AllowOverride), and index.php sets the media types itself. It still
+          # travels in the releases/ snapshot below.
+          for f in copi-stage/*.owl copi-stage/*.ttl copi-stage/index.php; do
             fname=$(basename "$f")
             local_bytes=$(stat -c%s "$f")
             echo "Uploading $fname ($local_bytes bytes)..."
