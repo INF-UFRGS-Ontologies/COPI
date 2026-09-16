@@ -1,0 +1,15 @@
+# Media types for the COPI artefacts served from this directory.
+#
+# Without these, Apache serves copi.owl / copi.ttl as application/octet-stream,
+# and tools that parse the ontology from its IRI (FOOPS!, among others) cannot
+# tell what format they received and give up. index.php also serves the RDF
+# files itself with the right header, so content negotiation on the ontology
+# IRI keeps working even where AllowOverride prevents this file from applying.
+
+AddType application/rdf+xml .owl .rdf
+AddType text/turtle .ttl
+AddType application/n-triples .nt
+AddType application/ld+json .jsonld
+AddType text/csv .csv
+
+AddCharset UTF-8 .ttl .nt
