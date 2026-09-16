@@ -90,7 +90,7 @@ jobs:
              copi-base.owl copi-base.ttl \
              copi-full.owl copi-full.ttl \
              copi-simple.owl copi-simple.ttl \
-             index.php \
+             index.php .htaccess \
              copi-stage/
           ls -la copi-stage/
 
@@ -109,7 +109,10 @@ jobs:
 
       - name: Transfer OWL/TTL variants to copi/ folder
         run: |
-          for f in copi-stage/*.owl copi-stage/*.ttl; do
+          # index.php and .htaccess are listed explicitly: the canonical folder was
+          # only ever updated with *.owl/*.ttl, so changes to content negotiation or
+          # to the media types Apache serves never reached it from CI.
+          for f in copi-stage/*.owl copi-stage/*.ttl copi-stage/index.php copi-stage/.htaccess; do
             fname=$(basename "$f")
             local_bytes=$(stat -c%s "$f")
             echo "Uploading $fname ($local_bytes bytes)..."
