@@ -3906,11 +3906,11 @@
         <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="en">gate valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula gaveta</rdfs:label>
-        <skos:definition xml:lang="en">A gate valve is a valve that has a gate or disc closure member with linear motion parallel to the plane of flat seats, which are transverse to the direction of flow.</skos:definition>
+        <skos:definition xml:lang="en">A gate valve is a valve whose closure member is a gate or disc driven straight across the bore, seating against two faces set at right angles to the flow.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (GateValve(x) → (Valve(x) ∧ ∃g(GateClosure(g) ∧ hasComponentPartAtAllTimes(x,g)) ∧ ∃m(LinearActuationMechanism(m) ∧ hasComponentPartAtAllTimes(x,m))))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A gate valve is a valve that has a gate or disc closure member with linear motion parallel to the plane of flat seats, which are transverse to the direction of flow.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula gaveta é uma válvula que possui um membro de fechamento tipo gaveta ou disco com movimento linear paralelo ao plano dos assentos planos, que são transversais à direção do fluxo.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A gate valve is a valve whose closure member is a gate or disc driven straight across the bore, seating against two faces set at right angles to the flow.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula gaveta é uma válvula cujo elemento de fechamento é uma gaveta ou disco deslocado em linha reta através da passagem, apoiando-se em duas faces dispostas perpendicularmente ao escoamento.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Constructive classification based on physical mechanism. Under OWA, defining sufficient conditions for structural features like &apos;linear sliding gate&apos; risks false positives from complex hybrid equipment or custom manifolds that contain gate mechanisms but should not be classified as standard gate valves. Necessary conditions provide safer classification that can be validated by domain experts.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every gate valve is a valve that has a gate closure component and a linear actuation mechanism.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -6217,10 +6217,10 @@
         <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="pt-br">agitador</rdfs:label>
         <rdfs:label xml:lang="en">agitator</rdfs:label>
-        <skos:definition xml:lang="en">An agitator is a mixer that stirs or shakes fluids by reaction force from moving vanes.</skos:definition>
+        <skos:definition xml:lang="en">An agitator is a mixer that keeps a fluid in motion by driving vanes through it.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x(Agitator(x) ↔ Mixer(x) ∧ ∃f(AgitationFunction(f) ∧ bearerOf(x,f)) ∧ ∃v(MovingVane(v) ∧ hasComponentPartAtAllTimes(x,v)))</annotation:firstOrderLogicAxiom>
-        <annotation:naturalLanguageDefinition xml:lang="en">An agitator is a mixer that stirs or shakes fluids by reaction force from moving vanes.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um agitador é um misturador que mexe ou agita fluidos por força de reação de palhetas móveis.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">An agitator is a mixer that keeps a fluid in motion by driving vanes through it.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um agitador é um misturador que mantém um fluido em movimento acionando palhetas através dele.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every agitator is a mixer that has the function to agitate fluids and has moving vanes as component parts at all times.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     

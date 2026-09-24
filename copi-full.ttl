@@ -9163,11 +9163,11 @@ copi:COPI_0000120 rdf:type owl:Class ;
                                  <https://www.jip36-cfihos.org/> ;
                   rdfs:label "gate valve"@en ,
                              "válvula gaveta"@pt-br ;
-                  skos:definition "A gate valve is a valve that has a gate or disc closure member with linear motion parallel to the plane of flat seats, which are transverse to the direction of flow."@en ;
+                  skos:definition "A gate valve is a valve whose closure member is a gate or disc driven straight across the bore, seating against two faces set at right angles to the flow."@en ;
                   annotation:firstOrderLogicAxiom "∀x (GateValve(x) → (Valve(x) ∧ ∃g(GateClosure(g) ∧ hasComponentPartAtAllTimes(x,g)) ∧ ∃m(LinearActuationMechanism(m) ∧ hasComponentPartAtAllTimes(x,m))))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A gate valve is a valve that has a gate or disc closure member with linear motion parallel to the plane of flat seats, which are transverse to the direction of flow."@en ,
-                                                       "Uma válvula gaveta é uma válvula que possui um membro de fechamento tipo gaveta ou disco com movimento linear paralelo ao plano dos assentos planos, que são transversais à direção do fluxo."@pt-br ;
+                  annotation:naturalLanguageDefinition "A gate valve is a valve whose closure member is a gate or disc driven straight across the bore, seating against two faces set at right angles to the flow."@en ,
+                                                       "Uma válvula gaveta é uma válvula cujo elemento de fechamento é uma gaveta ou disco deslocado em linha reta através da passagem, apoiando-se em duas faces dispostas perpendicularmente ao escoamento."@pt-br ;
                   annotation:primitiveRationale "Constructive classification based on physical mechanism. Under OWA, defining sufficient conditions for structural features like 'linear sliding gate' risks false positives from complex hybrid equipment or custom manifolds that contain gate mechanisms but should not be classified as standard gate valves. Necessary conditions provide safer classification that can be validated by domain experts."@en ;
                   annotation:semiFormalNaturalLanguageAxiom "Every gate valve is a valve that has a gate closure component and a linear actuation mechanism."@en .
 
@@ -10928,10 +10928,10 @@ copi:COPI_0000208 rdf:type owl:Class ;
                                  <https://www.jip36-cfihos.org/> ;
                   rdfs:label "agitador"@pt-br ,
                              "agitator"@en ;
-                  skos:definition "An agitator is a mixer that stirs or shakes fluids by reaction force from moving vanes."@en ;
+                  skos:definition "An agitator is a mixer that keeps a fluid in motion by driving vanes through it."@en ;
                   annotation:firstOrderLogicAxiom "∀x(Agitator(x) ↔ Mixer(x) ∧ ∃f(AgitationFunction(f) ∧ bearerOf(x,f)) ∧ ∃v(MovingVane(v) ∧ hasComponentPartAtAllTimes(x,v)))"@en ;
-                  annotation:naturalLanguageDefinition "An agitator is a mixer that stirs or shakes fluids by reaction force from moving vanes."@en ,
-                                                       "Um agitador é um misturador que mexe ou agita fluidos por força de reação de palhetas móveis."@pt-br ;
+                  annotation:naturalLanguageDefinition "An agitator is a mixer that keeps a fluid in motion by driving vanes through it."@en ,
+                                                       "Um agitador é um misturador que mantém um fluido em movimento acionando palhetas através dele."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every agitator is a mixer that has the function to agitate fluids and has moving vanes as component parts at all times."@en .
 
 
