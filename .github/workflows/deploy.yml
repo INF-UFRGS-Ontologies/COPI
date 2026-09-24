@@ -152,26 +152,19 @@ jobs:
       - name: Transfer versioned snapshot to copi/releases/
         run: |
           echo "Uploading copi-stage/ to releases/${RELEASE_DATE}/ ..."
-          # The batch goes in a file, not on stdin: with `-b -` sftp reads the
-          # batch from the same stdin sshpass needs for the password prompt, and
-          # the login fails with "Permission denied (publickey,password)".
-          cat > /tmp/release.sftp <<SFTP
-          cd ../ontologies/public_html/copi/releases
-          -mkdir ${RELEASE_DATE}
-          cd ${RELEASE_DATE}
-          lcd copi-stage
-          put *
-          ls -la
-          bye
-          SFTP
-          SSHPASS="${FTP_PASS}" sshpass -e sftp \
+          # scp -r, not sftp: `sftp -b` turns BatchMode on, which disables the
+          # password prompt altogether, so sshpass has nothing to answer and the
+          # login fails with "Permission denied (publickey,password)" even though
+          # the scp steps above authenticate with the same credentials.
+          # Copying the staging directory under the release name makes scp create
+          # the remote directory, which scp cannot do on its own.
+          rm -rf "${RELEASE_DATE}" && cp -r copi-stage "${RELEASE_DATE}"
+          SSHPASS="${FTP_PASS}" sshpass -e scp -r \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             -o HostKeyAlgorithms=+ssh-rsa \
-            -o PreferredAuthentications=password \
-            -o PubkeyAuthentication=no \
-            -b /tmp/release.sftp "ontokg@${DEPLOY_HOST}" \
-            || { echo "FAILED (sftp exited $?)"; exit 1; }
+            "${RELEASE_DATE}" "ontokg@${DEPLOY_HOST}:../ontologies/public_html/copi/releases/" \
+            || { echo "FAILED (scp exited $?)"; exit 1; }
           echo "  OK"
         env:
           FTP_PASS: ${{ secrets.FTP }}
