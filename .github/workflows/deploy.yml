@@ -152,11 +152,10 @@ jobs:
       - name: Transfer versioned snapshot to copi/releases/
         run: |
           echo "Uploading copi-stage/ to releases/${RELEASE_DATE}/ ..."
-          SSHPASS="${FTP_PASS}" sshpass -e sftp \
-            -o StrictHostKeyChecking=no \
-            -o UserKnownHostsFile=/dev/null \
-            -o HostKeyAlgorithms=+ssh-rsa \
-            -b - "ontokg@${DEPLOY_HOST}" <<SFTP || { echo "FAILED (sftp exited $?)"; exit 1; }
+          # The batch goes in a file, not on stdin: with `-b -` sftp reads the
+          # batch from the same stdin sshpass needs for the password prompt, and
+          # the login fails with "Permission denied (publickey,password)".
+          cat > /tmp/release.sftp <<SFTP
           cd ../ontologies/public_html/copi/releases
           -mkdir ${RELEASE_DATE}
           cd ${RELEASE_DATE}
@@ -165,6 +164,14 @@ jobs:
           ls -la
           bye
           SFTP
+          SSHPASS="${FTP_PASS}" sshpass -e sftp \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            -o HostKeyAlgorithms=+ssh-rsa \
+            -o PreferredAuthentications=password \
+            -o PubkeyAuthentication=no \
+            -b /tmp/release.sftp "ontokg@${DEPLOY_HOST}" \
+            || { echo "FAILED (sftp exited $?)"; exit 1; }
           echo "  OK"
         env:
           FTP_PASS: ${{ secrets.FTP }}
