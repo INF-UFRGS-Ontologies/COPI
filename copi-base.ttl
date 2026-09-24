@@ -5357,7 +5357,7 @@ copi:COPI_0000226 rdf:type owl:Class ;
                                   ] ;
                   dcterms:source <https://standards.iso.org/iso/15926/-4/reference-data-item/CHECK_VALVE_BODY> ;
                   rdfs:label "check valve body"@en ,
-                             "corpo de válvula"@pt-br ;
+                             "corpo de válvula de retenção"@pt-br ;
                   skos:definition "A valve body that is specifically designed to accommodate and house the internal mechanisms of a check valve within a pressure-containing boundary."@en ;
                   annotation:firstOrderLogicAxiom "∀x(CheckValveBody(x) → ValveBody(x) ∧ ∃y(CheckValve(y) ∧ designedFor(x,y)))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
@@ -13610,7 +13610,7 @@ copi:COPI_0000657 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000658
 copi:COPI_0000658 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000536 ;
-                  rdfs:label "bocal de sucção"@pt-br ,
+                  rdfs:label "porta de sucção"@pt-br ,
                              "suction port"@en ;
                   skos:definition "A material artifact that constitutes the port at which fluid enters the suction side of a pump, compressor, or ejector in petroleum production equipment."@en ;
                   annotation:naturalLanguageDefinition "A material artifact that constitutes the port at which fluid enters the suction side of a pump, compressor, or ejector in petroleum production equipment."@en ,
@@ -14621,7 +14621,7 @@ copi:COPI_0000718 rdf:type owl:Class ;
 copi:COPI_0000719 rdf:type owl:Class ;
                   rdfs:subClassOf <https://spec.industrialontologies.org/ontology/construct/MaterialArtifact> ;
                   rdfs:label "tube"@en ,
-                             "tubo"@pt-br ;
+                             "tubo de equipamento"@pt-br ;
                   skos:definition "A material artifact that constitutes a cylindrical conduit used to convey fluid or provide structural support within petroleum production equipment."@en ;
                   annotation:naturalLanguageDefinition "A material artifact that constitutes a cylindrical conduit used to convey fluid or provide structural support within petroleum production equipment."@en ,
                                                        "Um artefato material que é um conduto cilíndrico usado para conduzir fluido ou prover sustentação estrutural em equipamentos de produção de petróleo."@pt-br .
@@ -15238,7 +15238,7 @@ copi:COPI_0000758 rdf:type owl:Class ;
                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
                                     owl:allValuesFrom copi:COPI_0000759
                                   ] ;
-                  rdfs:label "função de medição de umidade"@pt-br ,
+                  rdfs:label "função de medição de teor de umidade"@pt-br ,
                              "moisture measurement function"@en ;
                   skos:definition "A DesignedFunction that is realized in a MoistureMeasurementProcess and that consists in measuring and indicating the moisture content of a sample or medium."@en ;
                   annotation:naturalLanguageDefinition "A DesignedFunction that is realized in a MoistureMeasurementProcess and that consists in measuring and indicating the moisture content of a sample or medium."@en ,
@@ -15261,7 +15261,7 @@ copi:COPI_0000759 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ;
                   rdfs:label "moisture measurement process"@en ,
-                             "processo de medição de umidade"@pt-br ;
+                             "processo de medição de teor de umidade"@pt-br ;
                   skos:definition "A PlannedProcess in which a moisture sensing element detects moisture content and a digital display presents the measured value."@en ;
                   annotation:naturalLanguageDefinition "A PlannedProcess in which a moisture sensing element detects moisture content and a digital display presents the measured value."@en ,
                                                        "Um PlannedProcess em que um elemento sensor de umidade detecta o teor de umidade e um mostrador digital apresenta o valor medido."@pt-br .

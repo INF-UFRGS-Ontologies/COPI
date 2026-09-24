@@ -14802,7 +14802,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
         </rdfs:subClassOf>
         <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/CHECK_VALVE_BODY"/>
         <rdfs:label xml:lang="en">check valve body</rdfs:label>
-        <rdfs:label xml:lang="pt-br">corpo de válvula</rdfs:label>
+        <rdfs:label xml:lang="pt-br">corpo de válvula de retenção</rdfs:label>
         <skos:definition xml:lang="en">A valve body that is specifically designed to accommodate and house the internal mechanisms of a check valve within a pressure-containing boundary.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x(CheckValveBody(x) → ValveBody(x) ∧ ∃y(CheckValve(y) ∧ designedFor(x,y)))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
@@ -25775,7 +25775,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
 
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000658">
         <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000536"/>
-        <rdfs:label xml:lang="pt-br">bocal de sucção</rdfs:label>
+        <rdfs:label xml:lang="pt-br">porta de sucção</rdfs:label>
         <rdfs:label xml:lang="en">suction port</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the port at which fluid enters the suction side of a pump, compressor, or ejector in petroleum production equipment.</skos:definition>
         <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that constitutes the port at which fluid enters the suction side of a pump, compressor, or ejector in petroleum production equipment.</annotation:naturalLanguageDefinition>
@@ -27174,7 +27174,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
     <owl:Class rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000719">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
         <rdfs:label xml:lang="en">tube</rdfs:label>
-        <rdfs:label xml:lang="pt-br">tubo</rdfs:label>
+        <rdfs:label xml:lang="pt-br">tubo de equipamento</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a cylindrical conduit used to convey fluid or provide structural support within petroleum production equipment.</skos:definition>
         <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that constitutes a cylindrical conduit used to convey fluid or provide structural support within petroleum production equipment.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que é um conduto cilíndrico usado para conduzir fluido ou prover sustentação estrutural em equipamentos de produção de petróleo.</annotation:naturalLanguageDefinition>
@@ -27981,7 +27981,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
                 <owl:allValuesFrom rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000759"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="pt-br">função de medição de umidade</rdfs:label>
+        <rdfs:label xml:lang="pt-br">função de medição de teor de umidade</rdfs:label>
         <rdfs:label xml:lang="en">moisture measurement function</rdfs:label>
         <skos:definition xml:lang="en">A DesignedFunction that is realized in a MoistureMeasurementProcess and that consists in measuring and indicating the moisture content of a sample or medium.</skos:definition>
         <annotation:naturalLanguageDefinition xml:lang="en">A DesignedFunction that is realized in a MoistureMeasurementProcess and that consists in measuring and indicating the moisture content of a sample or medium.</annotation:naturalLanguageDefinition>
@@ -28013,7 +28013,7 @@ NL definition: OAGIS and CCO</annotation:adaptedFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">moisture measurement process</rdfs:label>
-        <rdfs:label xml:lang="pt-br">processo de medição de umidade</rdfs:label>
+        <rdfs:label xml:lang="pt-br">processo de medição de teor de umidade</rdfs:label>
         <skos:definition xml:lang="en">A PlannedProcess in which a moisture sensing element detects moisture content and a digital display presents the measured value.</skos:definition>
         <annotation:naturalLanguageDefinition xml:lang="en">A PlannedProcess in which a moisture sensing element detects moisture content and a digital display presents the measured value.</annotation:naturalLanguageDefinition>
         <annotation:naturalLanguageDefinition xml:lang="pt-br">Um PlannedProcess em que um elemento sensor de umidade detecta o teor de umidade e um mostrador digital apresenta o valor medido.</annotation:naturalLanguageDefinition>
