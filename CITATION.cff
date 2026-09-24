@@ -18,8 +18,8 @@ authors:
     given-names: "Régis"
   - family-names: "Abel"
     given-names: "Mara"
-version: "2026-07-07"
-date-released: "2026-07-07"
+version: "2026-09-24"
+date-released: "2026-09-24"
 license: CC-BY-4.0
 url: "https://www.inf.ufrgs.br/ontologies/copi/"
 repository-code: "https://github.com/INF-UFRGS-Ontologies/COPI"
