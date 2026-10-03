@@ -16,7 +16,7 @@
      xmlns:schema="https://schema.org/"
      xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
     <owl:Ontology rdf:about="https://www.inf.ufrgs.br/ontologies/copi/copi-simple.owl">
-        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-24/copi-simple.owl"/>
+        <owl:versionIRI rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-10-03/copi-simple.owl"/>
         <terms:bibliographicCitation>Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press.</terms:bibliographicCitation>
         <terms:contributor>Cauã Antunes</terms:contributor>
         <terms:contributor>Haroldo Rojas</terms:contributor>
@@ -40,7 +40,7 @@
         <vann:preferredNamespacePrefix>copi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.inf.ufrgs.br/ontologies/copi/</vann:preferredNamespaceUri>
         <owl:priorVersion rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-16/copi.owl"/>
-        <owl:versionInfo>2026-09-24</owl:versionInfo>
+        <owl:versionInfo>2026-10-03</owl:versionInfo>
         <skos:scopeNote xml:lang="pt-br">Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.</skos:scopeNote>
         <skos:scopeNote xml:lang="pt-br">COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.</skos:scopeNote>
         <skos:scopeNote xml:lang="en">COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.</skos:scopeNote>
@@ -4369,11 +4369,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/VALVE_BODY"/>
         <rdfs:label xml:lang="pt-br">corpo de válvula</rdfs:label>
         <rdfs:label xml:lang="en">valve body</rdfs:label>
-        <skos:definition xml:lang="en">A ValveComponent that bears a ContainmentFunction and that serves as the main fluid and pressure containing component of a valve, housing and supporting the working components.</skos:definition>
+        <skos:definition xml:lang="en">A ValveComponent that bears a ContainmentFunction: the shell that retains the pressurised fluid inside a valve and carries its internal parts.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x(ValveBody(x) → ValveComponent(x) ∧ ∃f(ContainmentFunction(f) ∧ bearerOf(x,f)) ∧ ∃y(WorkingComponent(y) ∧ houses(x,y)))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A ValveComponent that bears a ContainmentFunction and that serves as the main fluid and pressure containing component of a valve, housing and supporting the working components.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um ValveComponent que porta uma ContainmentFunction e que serve como o principal componente de contenção de fluido e pressão de uma válvula, alojando e suportando os componentes de trabalho.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A ValveComponent that bears a ContainmentFunction: the shell that retains the pressurised fluid inside a valve and carries its internal parts.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um ValveComponent que porta uma ContainmentFunction: o invólucro que retém o fluido pressurizado dentro de uma válvula e sustenta suas peças internas.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Constructive type - the structural characteristics of being the main pressure-containing housing component are necessary conditions but may not be sufficient under OWA, as various specialized valve body configurations exist that might contain additional components or have hybrid designs that could lead to false positive classifications.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every valve body is a valve component that contains and supports valve working components and bears the function of fluid and pressure containment.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -4676,11 +4676,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/ANGLE_VALVE"/>
         <rdfs:label xml:lang="en">angle valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula angular</rdfs:label>
-        <skos:definition xml:lang="en">An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other.</skos:definition>
+        <skos:definition xml:lang="en">An angle valve is a valve whose inlet and outlet face in different directions, turning the flow as it passes through.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (AngleValve(x) → (Valve(x) ∧ ∃f(FlowControlFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(AngleValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula angular é uma válvula que tem portas da válvula que não estão alinhadas, mas dispostas em ângulo uma em relação à outra.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">An angle valve is a valve whose inlet and outlet face in different directions, turning the flow as it passes through.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula angular é uma válvula cuja entrada e saída apontam em direções diferentes, desviando o escoamento ao atravessá-la.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Constructive type defined by geometric configuration. Under OWA, sufficient conditions for non-inline port arrangement could lead to false positives where complex multi-port manifolds or specialized valves with angular components get incorrectly classified as standard angle valves.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every angle valve is a valve that has a flow control function and has an angle valve body as a component part.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -4752,11 +4752,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="en">block and bleed valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de bloqueio e sangria</rdfs:label>
-        <skos:definition xml:lang="en">A block and bleed valve is a valve that has one seat which provides a seal, and a bleeder line and valve that are tapped into the valve bonnet for controlled venting of downstream pressure.</skos:definition>
+        <skos:definition xml:lang="en">A block and bleed valve is a valve with a single sealing seat together with a small vent connection and its own valve, through which pressure trapped beyond the seat can be released under control.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x(BlockAndBleedValve(x) → Valve(x) ∧ ∃s(SingleSeat(s) ∧ hasComponentPartAtAllTimes(x,s)) ∧ ∃l(BleederLine(l) ∧ hasComponentPartAtAllTimes(x,l)) ∧ ∃v(BleederValve(v) ∧ hasComponentPartAtAllTimes(x,v)))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A block and bleed valve is a valve that has one seat which provides a seal, and a bleeder line and valve that are tapped into the valve bonnet for controlled venting of downstream pressure.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de bloqueio e sangria é uma válvula que possui um assento que fornece vedação, e uma linha de sangria e válvula que são conectadas ao castelo da válvula para ventilação controlada da pressão a jusante.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A block and bleed valve is a valve with a single sealing seat together with a small vent connection and its own valve, through which pressure trapped beyond the seat can be released under control.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de bloqueio e sangria é uma válvula com um único assento de vedação, acompanhada de uma pequena conexão de dreno e sua própria válvula, pela qual a pressão retida além do assento pode ser aliviada de forma controlada.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Constructive types require necessary conditions only due to Open World Assumption. The structural differentia (single seat + bleeder system) could theoretically be present in specialized equipment that should not be classified as a standard block and bleed valve without domain expert validation.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every block and bleed valve is a valve that has component parts: exactly one seat, a bleeder line, and a bleeder valve integrated into the bonnet.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -4798,11 +4798,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <rdfs:label xml:lang="pt-br">soprador</rdfs:label>
         <skos:altLabel xml:lang="en">BLOWER</skos:altLabel>
         <skos:altLabel xml:lang="en">Blower</skos:altLabel>
-        <skos:definition xml:lang="en">A blower is a compressor that compresses and supplies air or gas at medium pressure and medium volume flow.</skos:definition>
+        <skos:definition xml:lang="en">A blower is a compressor that raises air or gas above the pressure a fan can deliver while staying well below process-compressor duty, at correspondingly large flows.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Blower(x) ↔ (Compressor(x) ∧ ∃f,p,v (CompressionFunction(f) ∧ bearerOf(x,f) ∧ MediumPressureRange(p) ∧ MediumVolumeFlowRange(v) ∧ hasOperatingParameter(x,p) ∧ hasOperatingParameter(x,v))))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A blower is a compressor that compresses and supplies air or gas at medium pressure and medium volume flow.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um soprador é um compressor que comprime e fornece ar ou gás em pressão média e vazão volumétrica média.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A blower is a compressor that raises air or gas above the pressure a fan can deliver while staying well below process-compressor duty, at correspondingly large flows.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um soprador é um compressor que eleva ar ou gás acima da pressão que um ventilador alcança, mantendo-se bem abaixo do serviço de um compressor de processo, com vazões correspondentemente grandes.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every blower is a compressor that has the function of compressing gas and operates at medium pressure and medium volume flow ranges.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
@@ -4859,11 +4859,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <skos:altLabel xml:lang="en">BUTTERFLY VALVE</skos:altLabel>
         <skos:altLabel xml:lang="en">Butterfly Valve</skos:altLabel>
         <skos:altLabel xml:lang="en">Butterfly valve</skos:altLabel>
-        <skos:definition xml:lang="en">A butterfly valve is a valve that has a disc-type closure member with a shaft parallel to the plane of the disc and an axis of rotation transverse to the flow direction.</skos:definition>
+        <skos:definition xml:lang="en">A butterfly valve is a valve closed by a disc that turns on a shaft lying in the plane of the disc, the shaft crossing the bore so the disc swings into and out of the stream.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (ButterflyValve(x) → (Valve(x) ∧ ∃f(FlowControlFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(ButterflyValveClosureMember(p) ∧ hasComponentPartAtAllTimes(x,p))))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A butterfly valve is a valve that has a disc-type closure member with a shaft parallel to the plane of the disc and an axis of rotation transverse to the flow direction.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula borboleta é uma válvula que possui um membro de fechamento tipo disco com haste paralela ao plano do disco e eixo de rotação transversal à direção do fluxo.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A butterfly valve is a valve closed by a disc that turns on a shaft lying in the plane of the disc, the shaft crossing the bore so the disc swings into and out of the stream.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula borboleta é uma válvula fechada por um disco que gira em um eixo situado no plano do disco; o eixo atravessa a passagem, de modo que o disco entra e sai da corrente.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">This is a constructive classification based on physical mechanism. Under the Open World Assumption, any artifact with a disc-type closure and transverse rotation axis would be forced into the ButterflyValve class, including specialized hybrid equipment or custom manifolds containing butterfly mechanisms that should not be classified as standard butterfly valves for maintenance purposes.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every butterfly valve is a valve that has a flow control function and has a butterfly valve closure member as a component part.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -5153,11 +5153,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="en">double block and bleed valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de bloqueio duplo e sangria</rdfs:label>
-        <skos:definition xml:lang="en">A double block and bleed valve is a valve that incorporates two seats each providing sealing capability and includes a means of venting the space between the seats.</skos:definition>
+        <skos:definition xml:lang="en">A double block and bleed valve is a valve with two sealing seats and a connection through which the space between them can be drained or vented.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (DoubleBlockAndBleedValve(x) → (Valve(x) ∧ ∃p,s,b (PrimarySeat(p) ∧ SecondarySeat(s) ∧ BleedPort(b) ∧ hasComponentPartAtAllTimes(x,p) ∧ hasComponentPartAtAllTimes(x,s) ∧ hasComponentPartAtAllTimes(x,b))))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A double block and bleed valve is a valve that incorporates two seats each providing sealing capability and includes a means of venting the space between the seats.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de bloqueio duplo e sangria é uma válvula que incorpora duas sedes, cada uma proporcionando capacidade de vedação, e inclui um meio de ventilação do espaço entre as sedes.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A double block and bleed valve is a valve with two sealing seats and a connection through which the space between them can be drained or vented.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de bloqueio duplo e sangria é uma válvula com dois assentos de vedação e uma conexão pela qual o espaço entre eles pode ser drenado ou ventilado.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Constructive basis - the structural differentia (dual seats plus bleed port) defines necessary conditions, but under OWA we cannot assert that ANY artifact with these structural components is definitively a double block and bleed valve, as specialized multi-way valves or custom manifolds might contain similar mechanisms without being standard maintenance categories.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every double block and bleed valve is a valve that has a primary seat and has a secondary seat and has a bleed port.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -5615,10 +5615,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <owl:disjointWith rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000154"/>
         <rdfs:label xml:lang="pt-br">indicador de nível</rdfs:label>
         <rdfs:label xml:lang="en">level indicator</rdfs:label>
-        <skos:definition xml:lang="en">A level indicator is an indicator that measures and locally displays the level of liquid or bulk solid material in a vessel or tank.</skos:definition>
+        <skos:definition xml:lang="en">A level indicator is an indicator that shows, where it is installed, how far a vessel or tank is filled.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (LevelIndicator(x) ↔ (Indicator(x) ∧ ∃f (LevelIndicationFunction(f) ∧ hasFunction(x,f))))</annotation:firstOrderLogicAxiom>
-        <annotation:naturalLanguageDefinition xml:lang="en">A level indicator is an indicator that measures and locally displays the level of liquid or bulk solid material in a vessel or tank.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um indicador de nível é um indicador que mede e exibe localmente o nível de material líquido ou sólido a granel em um vaso ou tanque.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A level indicator is an indicator that shows, where it is installed, how far a vessel or tank is filled.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um indicador de nível é um indicador que mostra, no ponto onde está instalado, até onde um vaso ou tanque está cheio.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every level indicator is an indicator that has the function to measure and locally indicate level.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
@@ -6202,11 +6202,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="en">swing check valve</rdfs:label>
         <rdfs:label xml:lang="pt-br">válvula de retenção basculante</rdfs:label>
-        <skos:definition xml:lang="en">A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses.</skos:definition>
+        <skos:definition xml:lang="en">A swing check valve is a check valve whose disc hangs from a hinge: forward flow pushes it aside, and when the flow stops or turns back the disc falls onto the seat.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (SwingCheckValve(x) → (CheckValve(x) ∧ ∃f(BackflowPreventionFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(SwingCheckValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de retenção basculante é uma válvula de retenção que possui um elemento de fechamento consistindo de um disco que gira livremente em um mecanismo de dobradiça e abre automaticamente quando o fluxo é estabelecido e fecha automaticamente quando o fluxo cessa ou se inverte.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A swing check valve is a check valve whose disc hangs from a hinge: forward flow pushes it aside, and when the flow stops or turns back the disc falls onto the seat.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de retenção basculante é uma válvula de retenção cujo disco pende de uma dobradiça: o escoamento direto o afasta, e quando o escoamento cessa ou se inverte o disco cai sobre a sede.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Using necessary conditions for this constructive type to avoid false positives under OWA. Any artifact with a hinged disc mechanism should not automatically be classified as a swing check valve without domain expert validation, as specialized equipment may contain swing mechanisms but serve different primary functions.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every swing check valve is a check valve that has a backflow prevention function and has a swing check valve body as a component part.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -6225,9 +6225,9 @@ Units of Measure: Km, Kg, G</skos:example>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">indicador de temperatura</rdfs:label>
         <rdfs:label xml:lang="en">temperature indicator</rdfs:label>
-        <skos:definition xml:lang="en">A temperature indicator is an indicator that measures temperature and displays the measured value locally at the instrument location.</skos:definition>
-        <annotation:naturalLanguageDefinition xml:lang="en">A temperature indicator is an indicator that measures temperature and displays the measured value locally at the instrument location.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um indicador de temperatura é um indicador que mede temperatura e exibe o valor medido localmente na localização do instrumento.</annotation:naturalLanguageDefinition>
+        <skos:definition xml:lang="en">A temperature indicator is an indicator that shows the temperature it senses, read at the instrument itself.</skos:definition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A temperature indicator is an indicator that shows the temperature it senses, read at the instrument itself.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um indicador de temperatura é um indicador que mostra a temperatura que detecta, lida no próprio instrumento.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -6282,11 +6282,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="pt-br">poço termométrico</rdfs:label>
         <rdfs:label xml:lang="en">thermowell</rdfs:label>
-        <skos:definition xml:lang="en">A thermowell is an instrument that is a pressure-tight receptacle adapted to receive a temperature sensing element, provided with external threads or other means for pressure-tight attachment to a vessel or pipe.</skos:definition>
+        <skos:definition xml:lang="en">A thermowell is an instrument that encloses a temperature sensor in a closed well, so the sensor reads the process fluid without being wetted by it, and that screws or bolts into the wall of a vessel or pipe without breaking its pressure boundary.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Thermowell(x) → Instrument(x) ∧ ∃r,c,f (PressureTightReceptacle(r) ∧ ProcessConnection(c) ∧ TemperatureSensorProtectionFunction(f) ∧ hasComponentPartAtAllTimes(x,r) ∧ hasComponentPartAtAllTimes(x,c) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A thermowell is an instrument that is a pressure-tight receptacle adapted to receive a temperature sensing element, provided with external threads or other means for pressure-tight attachment to a vessel or pipe.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um poço termométrico é um instrumento que é um receptáculo resistente à pressão adaptado para receber um elemento sensor de temperatura, provido com roscas externas ou outros meios para fixação resistente à pressão a um vaso ou tubulação.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A thermowell is an instrument that encloses a temperature sensor in a closed well, so the sensor reads the process fluid without being wetted by it, and that screws or bolts into the wall of a vessel or pipe without breaking its pressure boundary.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um poço termométrico é um instrumento que aloja um sensor de temperatura em um tubo fechado, de modo que o sensor leia o fluido de processo sem ficar em contato com ele, e que se fixa por rosca ou flange à parede de um vaso ou tubulação sem romper sua barreira de pressão.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Thermowell has constructive classification basis. The structural differentia (pressure-tight receptacle with process connection) defines necessary conditions, but making these sufficient under OWA could lead to false classifications of other threaded pressure-tight devices that happen to contain receptacles but are not intended as thermowells.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every thermowell is an instrument that has a pressure-tight receptacle as component part and has a process connection as component part and is designed for temperature sensing elements.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -7476,9 +7476,9 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="en">anode</rdfs:label>
         <rdfs:label xml:lang="pt-br">ânodo</rdfs:label>
-        <skos:definition xml:lang="en">An anode is electrical equipment that bears the function of serving as the positive electrode in electrochemical processes, capable of emitting positive charge carriers to and/or receiving negative charge carriers from a medium of lower conductivity.</skos:definition>
-        <annotation:naturalLanguageDefinition xml:lang="en">An anode is electrical equipment that bears the function of serving as the positive electrode in electrochemical processes, capable of emitting positive charge carriers to and/or receiving negative charge carriers from a medium of lower conductivity.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um ânodo é um equipamento elétrico que possui a função de servir como eletrodo positivo em processos eletroquímicos, capaz de emitir portadores de carga positiva para e/ou receber portadores de carga negativa de um meio de menor condutividade.</annotation:naturalLanguageDefinition>
+        <skos:definition xml:lang="en">An anode is electrical equipment that acts as the positive electrode of an electrochemical circuit, taking up the current that crosses the surrounding medium.</skos:definition>
+        <annotation:naturalLanguageDefinition xml:lang="en">An anode is electrical equipment that acts as the positive electrode of an electrochemical circuit, taking up the current that crosses the surrounding medium.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um ânodo é um equipamento elétrico que atua como eletrodo positivo de um circuito eletroquímico, recebendo a corrente que atravessa o meio ao redor.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -8981,11 +8981,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="en">flange</rdfs:label>
         <rdfs:label xml:lang="pt-br">flange</rdfs:label>
-        <skos:definition xml:lang="en">A flange is a material artifact characterized by a projecting flat rim, plate, collar, or rib geometry, designed to provide mechanical connection between components.</skos:definition>
+        <skos:definition xml:lang="en">A flange is a material artifact whose working feature is a flat ring standing out from a body, drilled or faced so that two components can be drawn together at it.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x(Flange(x) → MaterialArtifact(x) ∧ ∃g(ProjectingFlatRimGeometry(g) ∧ hasCharacteristic(x,g)) ∧ ∃f(MechanicalConnectionFunction(f) ∧ hasFunction(x,f)))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A flange is a material artifact characterized by a projecting flat rim, plate, collar, or rib geometry, designed to provide mechanical connection between components.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um flange é um artefato material caracterizado por uma geometria de aro plano projetante, placa, colar ou nervura, projetado para fornecer conexão mecânica entre componentes.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A flange is a material artifact whose working feature is a flat ring standing out from a body, drilled or faced so that two components can be drawn together at it.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um flange é um artefato material cuja característica funcional é um anel plano que se projeta de um corpo, furado ou faceado para que dois componentes sejam unidos nele.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Using necessary conditions because this is a constructive type defined by structural geometry. Under OWA, any artifact with projecting flat rim geometry would be forced into the flange category, which could incorrectly classify specialized equipment or complex assemblies that contain flange-like features but serve different primary functions.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every flange is a material artifact that has a projecting flat rim geometry and has the function of mechanically connecting components.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -9251,10 +9251,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="pt-br">detector de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas detector</rdfs:label>
-        <skos:definition xml:lang="en">A gas detector is a detector that has the designed function to sense the presence of a specified concentration of a gas.</skos:definition>
+        <skos:definition xml:lang="en">A gas detector is a detector designed to signal when a given gas reaches a defined concentration in the surrounding atmosphere.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x(GasDetector(x) ↔ (Detector(x) ∧ ∃f(GasDetectionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(GasDetectingMeasuringElement(p) ∧ hasComponentPartAtAllTimes(x,p))))</annotation:firstOrderLogicAxiom>
-        <annotation:naturalLanguageDefinition xml:lang="en">A gas detector is a detector that has the designed function to sense the presence of a specified concentration of a gas.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um detector de gás é um detector que tem a função projetada de detectar a presença de uma concentração especificada de um gás.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A gas detector is a detector designed to signal when a given gas reaches a defined concentration in the surrounding atmosphere.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um detector de gás é um detector projetado para sinalizar quando um gás atinge uma concentração definida na atmosfera ao redor.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every gas detector is a detector that bears a GasDetectionFunction and has a GasDetectingMeasuringElement as component part at all times.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
@@ -9374,11 +9374,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/GEAR_PUMP"/>
         <rdfs:label xml:lang="pt-br">bomba de engrenagem</rdfs:label>
         <rdfs:label xml:lang="en">gear pump</rdfs:label>
-        <skos:definition xml:lang="en">A gear pump is a pump that contains gear teeth within a casing or enclosure to transport liquid at relatively high back pressures through meshing action.</skos:definition>
+        <skos:definition xml:lang="en">A gear pump is a pump in which meshing gears carry liquid around the casing wall from suction to discharge, sustaining pressure at the outlet.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (GearPump(x) → Pump(x) ∧ ∃g,c (GearMechanism(g) ∧ PumpCasing(c) ∧ hasComponentPartAtAllTimes(x,g) ∧ hasComponentPartAtAllTimes(x,c)))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A gear pump is a pump that contains gear teeth within a casing or enclosure to transport liquid at relatively high back pressures through meshing action.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma bomba de engrenagem é uma bomba que contém dentes de engrenagem dentro de um invólucro ou carcaça para transportar líquido em pressões de retorno relativamente altas através de ação de engrenamento.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A gear pump is a pump in which meshing gears carry liquid around the casing wall from suction to discharge, sustaining pressure at the outlet.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma bomba de engrenagem é uma bomba em que engrenagens engrenadas levam o líquido junto à parede da carcaça, da sucção até a descarga, sustentando a pressão na saída.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Using necessary conditions for this constructive type. While the gear mechanism is definitionally necessary for gear pumps, making it sufficient under OWA could lead to false positives - any complex equipment containing gears (like gearboxes with integrated pumps or multi-function units) might be incorrectly classified as standard gear pumps for maintenance purposes.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every gear pump is a pump that has as component part at all times a gear mechanism and a pump casing, and bears a pumping function.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -9487,11 +9487,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/HEAT_TRANSFER_PLATE"/>
         <rdfs:label xml:lang="pt-br">MaterialArtifact que possui uma HeatTransferFunction e</rdfs:label>
         <rdfs:label xml:lang="en">heat transfer plate</rdfs:label>
-        <skos:definition xml:lang="en">A MaterialArtifact that bears a HeatTransferFunction and that is intended to be used in a non-tubular heat exchanger to segregate two fluid media while facilitating thermal energy transfer between them.</skos:definition>
+        <skos:definition xml:lang="en">A MaterialArtifact that bears a HeatTransferFunction: a plate that keeps two fluid streams apart in a plate exchanger while conducting heat from one to the other.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x(HeatTransferPlate(x) → MaterialArtifact(x) ∧ ∃f(HeatTransferFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(MediaSeparationProcess(p) ∧ participatesIn(x,p)))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that bears a HeatTransferFunction and that is intended to be used in a non-tubular heat exchanger to segregate two fluid media while facilitating thermal energy transfer between them.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que possui uma HeatTransferFunction e que é destinado a ser usado em um trocador de calor não tubular para segregar dois meios fluidos enquanto facilita a transferência de energia térmica entre eles.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that bears a HeatTransferFunction: a plate that keeps two fluid streams apart in a plate exchanger while conducting heat from one to the other.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que porta uma HeatTransferFunction: uma placa que mantém separadas duas correntes de fluido em um trocador de placas enquanto conduz calor de uma para a outra.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Constructive classification basis requires necessary conditions only. Under OWA, sufficient conditions for &apos;plate geometry used in non-tubular heat exchangers&apos; could lead to false positives - other components with plate-like surfaces might be incorrectly classified as heat transfer plates without domain expert validation of the structural and application-specific criteria.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every heat transfer plate is a MaterialArtifact that bears a HeatTransferFunction and participates in segregating two fluid media in a non-tubular heat exchanger.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -9842,10 +9842,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="en">knock out drum</rdfs:label>
         <rdfs:label xml:lang="pt-br">vaso separador de condensado</rdfs:label>
-        <skos:definition xml:lang="en">A knock out drum is a drum designed to separate relatively small quantities of liquid from a vapor stream through gravitational and momentum-based phase separation.</skos:definition>
+        <skos:definition xml:lang="en">A knock out drum is a drum that takes the small amount of liquid carried by a vapour stream out of it, by gravity and by the inertia of the droplets.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x(KnockOutDrum(x) ↔ Drum(x) ∧ ∃f(KnockOutSeparationFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
-        <annotation:naturalLanguageDefinition xml:lang="en">A knock out drum is a drum designed to separate relatively small quantities of liquid from a vapor stream through gravitational and momentum-based phase separation.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um vaso separador de condensado é um tambor projetado para separar quantidades relativamente pequenas de líquido de uma corrente de vapor através de separação de fases gravitacional e baseada em momento.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A knock out drum is a drum that takes the small amount of liquid carried by a vapour stream out of it, by gravity and by the inertia of the droplets.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um vaso separador de condensado é um tambor que retira de uma corrente de vapor a pequena quantidade de líquido que ela carrega, por gravidade e pela inércia das gotículas.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every knock out drum is a drum that bears a knock out separation function, which is realized in processes that separate small quantities of liquid from vapor streams.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
@@ -10207,11 +10207,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="pt-br">curva de tubo</rdfs:label>
         <rdfs:label xml:lang="en">pipe bend</rdfs:label>
-        <skos:definition xml:lang="en">A pipe bend is a pipe that has a curved geometry to change piping direction with a non-standard radius.</skos:definition>
+        <skos:definition xml:lang="en">A pipe bend is a pipe curved along its length so that a run changes direction over a radius other than the standard fitting radii.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (PipeBend(x) → Pipe(x) ∧ ∃g (CurvedGeometry(g) ∧ hasQuality(x,g)) ∧ ∃r (NonStandardBendRadius(r) ∧ hasQuality(x,r)))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A pipe bend is a pipe that has a curved geometry to change piping direction with a non-standard radius.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma curva de tubo é um tubo que possui geometria curvada para mudar a direção da tubulação com um raio não padrão.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A pipe bend is a pipe curved along its length so that a run changes direction over a radius other than the standard fitting radii.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma curva de tubo é um tubo encurvado ao longo de seu comprimento, de modo que o trecho muda de direção com um raio diferente dos raios padronizados de conexões.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Using necessary conditions for this constructive type. While the curved geometry with non-standard radius is distinctive, making it sufficient under OWA could force classification of complex piping assemblies or custom manifolds containing bent sections into this maintenance category inappropriately.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every pipe bend is a pipe that has curved geometry and has non-standard bend radius.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -10248,11 +10248,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="en">pipe reducer</rdfs:label>
         <rdfs:label xml:lang="pt-br">redutor de tubulação</rdfs:label>
-        <skos:definition xml:lang="en">A pipe reducer is a pipe that has different nominal pipe sizes at its two ends, intended to connect pipes or piping components of different sizes.</skos:definition>
+        <skos:definition xml:lang="en">A pipe reducer is a pipe whose two ends differ in nominal size, joining runs or fittings of one size to another.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (PipeReducer(x) → Pipe(x) ∧ ∃i,o (InletEnd(i) ∧ OutletEnd(o) ∧ hasComponentPartAtAllTimes(x,i) ∧ hasComponentPartAtAllTimes(x,o) ∧ DifferentNominalPipeSizes(i,o)))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A pipe reducer is a pipe that has different nominal pipe sizes at its two ends, intended to connect pipes or piping components of different sizes.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um redutor de tubulação é um tubo que possui tamanhos nominais diferentes de tubulação em suas duas extremidades, destinado a conectar tubos ou componentes de tubulação de tamanhos diferentes.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A pipe reducer is a pipe whose two ends differ in nominal size, joining runs or fittings of one size to another.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um redutor é um tubo cujas duas extremidades têm diâmetros nominais diferentes, ligando trechos ou acessórios de um tamanho a outro.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">As a constructive type defined by geometric configuration, sufficient conditions are omitted under the Open World Assumption to prevent false positives. Complex assemblies or custom manifolds containing size transitions should not be automatically classified as standard pipe reducers without explicit assertion.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every pipe reducer is a pipe that has an inlet end and outlet end with different nominal pipe sizes</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -10369,10 +10369,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/PORT"/>
         <rdfs:label xml:lang="pt-br">MaterialArtifact que possui uma InterfacingFunction e</rdfs:label>
         <rdfs:label xml:lang="en">port</rdfs:label>
-        <skos:definition xml:lang="en">A MaterialArtifact that bears an InterfacingFunction and that is capable of providing a point of interface for communication with another object.</skos:definition>
+        <skos:definition xml:lang="en">A MaterialArtifact that bears an InterfacingFunction: the place at which one object is reached by another for exchange of material, energy or signal.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x(Port(x) ↔ (MaterialArtifact(x) ∧ ∃f(InterfacingFunction(f) ∧ bearerOf(x,f))))</annotation:firstOrderLogicAxiom>
-        <annotation:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that bears an InterfacingFunction and that is capable of providing a point of interface for communication with another object.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que possui uma InterfacingFunction e que é capaz de fornecer um ponto de interface para comunicação com outro objeto.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that bears an InterfacingFunction: the place at which one object is reached by another for exchange of material, energy or signal.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que porta uma InterfacingFunction: o lugar em que um objeto é alcançado por outro para troca de material, energia ou sinal.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Port ≡ MaterialArtifact ⊓ ∃bearerOf.InterfacingFunction</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
@@ -10668,11 +10668,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="pt-br">bomba rotativa</rdfs:label>
         <rdfs:label xml:lang="en">rotary pump</rdfs:label>
-        <skos:definition xml:lang="en">A rotary pump is a positive displacement pump that contains a chamber with gears, cams, screws, vanes, plungers or similar elements actuated by relative rotation of the drive shaft or casing, and which has no separate inlet and outlet valves.</skos:definition>
+        <skos:definition xml:lang="en">A rotary pump is a positive displacement pump in which rotating elements — gears, lobes, screws, vanes and the like — sweep the liquid from suction to discharge, so no inlet or outlet valves are needed.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (RotaryPump(x) → PositiveDisplacementPump(x) ∧ ∃y (RotaryDisplacementMechanism(y) ∧ hasComponentPartAtAllTimes(x,y)) ∧ ¬∃z (SeparateInletValve(z) ∧ hasComponentPartAtAllTimes(x,z)) ∧ ¬∃w (SeparateOutletValve(w) ∧ hasComponentPartAtAllTimes(x,w)))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A rotary pump is a positive displacement pump that contains a chamber with gears, cams, screws, vanes, plungers or similar elements actuated by relative rotation of the drive shaft or casing, and which has no separate inlet and outlet valves.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma bomba rotativa é uma bomba de deslocamento positivo que contém uma câmara com engrenagens, cames, parafusos, palhetas, êmbolos ou elementos similares acionados pela rotação relativa do eixo de acionamento ou carcaça, e que não possui válvulas separadas de entrada e saída.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A rotary pump is a positive displacement pump in which rotating elements — gears, lobes, screws, vanes and the like — sweep the liquid from suction to discharge, so no inlet or outlet valves are needed.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma bomba rotativa é uma bomba de deslocamento positivo em que elementos giratórios — engrenagens, lóbulos, parafusos, palhetas e afins — varrem o líquido da sucção até a descarga, dispensando válvulas de entrada e saída.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Using necessary conditions for this constructive type. While the rotary mechanism is clearly necessary for rotary pumps, making it sufficient under OWA could lead to false positives where complex equipment containing rotary elements (like gearboxes with pumping side-effects or hybrid machines) might be misclassified as standard rotary pumps. The constructive differentia should be validated by domain experts before upgrading to equivalence.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every rotary pump is a positive displacement pump that has a rotary displacement mechanism as component part and lacks separate inlet and outlet valves.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -10973,10 +10973,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/SOLENOID_ACTUATOR"/>
         <rdfs:label xml:lang="pt-br">atuador solenoide</rdfs:label>
         <rdfs:label xml:lang="en">solenoid actuator</rdfs:label>
-        <skos:definition xml:lang="en">A solenoid actuator is an electric actuator that utilizes a continuous duty linear solenoid to convert electrical energy into mechanical power via a plunger with an axial stroke in either a push or pull action.</skos:definition>
+        <skos:definition xml:lang="en">A solenoid actuator is an electric actuator in which current through a coil drives a plunger along its axis, pushing or pulling the driven element while the coil stays energised.</skos:definition>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A solenoid actuator is an electric actuator that utilizes a continuous duty linear solenoid to convert electrical energy into mechanical power via a plunger with an axial stroke in either a push or pull action.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um atuador solenoide é um atuador elétrico que utiliza um solenoide linear de serviço contínuo para converter energia elétrica em energia mecânica através de um êmbolo com curso axial em ação de empurrar ou puxar.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A solenoid actuator is an electric actuator in which current through a coil drives a plunger along its axis, pushing or pulling the driven element while the coil stays energised.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um atuador solenoide é um atuador elétrico em que a corrente em uma bobina desloca um êmbolo ao longo de seu eixo, empurrando ou puxando o elemento acionado enquanto a bobina permanece energizada.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Constructive type defined by solenoid mechanism. Under OWA, sufficient conditions would force any device with solenoid and plunger components to be classified as a solenoid actuator, potentially misclassifying complex hybrid devices or specialized equipment containing solenoid components but serving different primary functions.</annotation:primitiveRationale>
     </owl:Class>
     
@@ -11054,10 +11054,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/SWITCH_CONTACT"/>
         <rdfs:label xml:lang="pt-br">contato de chave</rdfs:label>
         <rdfs:label xml:lang="en">switch contact</rdfs:label>
-        <skos:definition xml:lang="en">A switch contact is an electrical contact that is one of the conductive parts forming a contact assembly.</skos:definition>
+        <skos:definition xml:lang="en">A switch contact is an electrical contact: one of the conducting pieces that meet or part to close or open a circuit.</skos:definition>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A switch contact is an electrical contact that is one of the conductive parts forming a contact assembly.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um contato de chave é um contato elétrico que é uma das partes condutoras que formam um conjunto de contato.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A switch contact is an electrical contact: one of the conducting pieces that meet or part to close or open a circuit.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um contato de chave é um contato elétrico: uma das peças condutoras que se encostam ou se afastam para fechar ou abrir um circuito.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">Constructive type based on structural role as a conductive part. Under OWA, asserting sufficient conditions could incorrectly classify any conductive part of an electrical contact as a switch contact, when there may be other specialized conductive components (bus bars, terminals, etc.) that serve different structural roles.</annotation:primitiveRationale>
     </owl:Class>
     
@@ -11193,10 +11193,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa5"/>
         <rdfs:label xml:lang="en">transducer</rdfs:label>
         <rdfs:label xml:lang="pt-br">transdutor</rdfs:label>
-        <skos:definition xml:lang="en">A transducer is an instrument that bears a TransductionFunction to convert information from one form or magnitude of energy to another form or magnitude.</skos:definition>
+        <skos:definition xml:lang="en">A transducer is an instrument that bears a TransductionFunction: it takes a quantity in one physical form and renders it in another, suitable for measurement or transmission.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Transducer(x) ↔ Instrument(x) ∧ ∃f (TransductionFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
-        <annotation:naturalLanguageDefinition xml:lang="en">A transducer is an instrument that bears a TransductionFunction to convert information from one form or magnitude of energy to another form or magnitude.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um transdutor é um instrumento que possui uma FunçãoDeTransdução para converter informação de uma forma ou magnitude de energia para outra forma ou magnitude.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A transducer is an instrument that bears a TransductionFunction: it takes a quantity in one physical form and renders it in another, suitable for measurement or transmission.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um transdutor é um instrumento que porta uma TransductionFunction: toma uma grandeza em uma forma física e a entrega em outra, adequada para medição ou transmissão.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every transducer is an instrument that has the designed function to convert energy or signal forms while preserving information content.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
@@ -11276,10 +11276,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/TUBING_HEAD"/>
         <rdfs:label xml:lang="pt-br">cabeça de coluna</rdfs:label>
         <rdfs:label xml:lang="en">tubing head</rdfs:label>
-        <skos:definition xml:lang="en">A tubing head is a wellhead component that supports the tubing hanger and provides a connection interface for attaching the Christmas tree to the wellhead assembly.</skos:definition>
+        <skos:definition xml:lang="en">A tubing head is a wellhead component that seats the tubing hanger and carries the connection on which the Christmas tree is mounted.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x(TubingHead(x) ↔ WellheadComponent(x) ∧ ∃f(TubingSupportAndConnectionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p1(TubingBowl(p1) ∧ hasComponentPartAtAllTimes(x,p1)) ∧ ∃p2(ChristmasTreeConnectionInterface(p2) ∧ hasComponentPartAtAllTimes(x,p2)))</annotation:firstOrderLogicAxiom>
-        <annotation:naturalLanguageDefinition xml:lang="en">A tubing head is a wellhead component that supports the tubing hanger and provides a connection interface for attaching the Christmas tree to the wellhead assembly.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma cabeça de coluna é um componente de cabeça de poço que suporta o suspensor de coluna e fornece uma interface de conexão para fixar a árvore de natal ao conjunto de cabeça de poço.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A tubing head is a wellhead component that seats the tubing hanger and carries the connection on which the Christmas tree is mounted.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma cabeça de coluna é um componente de cabeça de poço que assenta o suspensor da coluna e provê a conexão sobre a qual a árvore de natal é montada.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every tubing head is a wellhead component that bears a tubing support and connection function, has a tubing bowl as component part, and has a Christmas tree connection interface as component part.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
@@ -11404,11 +11404,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/VALVE_CLOSURE_MEMBER"/>
         <rdfs:label xml:lang="pt-br">membro de fechamento de válvula</rdfs:label>
         <rdfs:label xml:lang="en">valve closure member</rdfs:label>
-        <skos:definition xml:lang="en">A MaterialArtifact that is a component part of a valve and that is positioned in the flow stream to permit, obstruct, divert or regulate flow through mechanical positioning.</skos:definition>
+        <skos:definition xml:lang="en">A MaterialArtifact that is a component part of a valve and sits in the flow path, where its position decides whether fluid passes, is throttled, or is sent to another port.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (ValveClosureMember(x) → MaterialArtifact(x) ∧ ∃v (Valve(v) ∧ isComponentPartOf(x,v)) ∧ ∃p (FlowControlProcess(p) ∧ participatesIn(x,p)) ∧ ∃q (PositionableInFlowStream(q) ∧ hasQuality(x,q)))</annotation:firstOrderLogicAxiom>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that is a component part of a valve and that is positioned in the flow stream to permit, obstruct, divert or regulate flow through mechanical positioning.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que é uma parte componente de uma válvula e que é posicionado no fluxo para permitir, obstruir, desviar ou regular o fluxo através de posicionamento mecânico.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that is a component part of a valve and sits in the flow path, where its position decides whether fluid passes, is throttled, or is sent to another port.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que é parte componente de uma válvula e ocupa o caminho do escoamento, onde sua posição decide se o fluido passa, é estrangulado ou é enviado a outra via.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">As a constructive type defined by physical configuration and mechanical role, the valve closure member should use necessary conditions. The structural differentia (being positioned in flow stream) is harder to make sufficient under OWA - other components or hybrid devices might satisfy the conditions but not be classified as standard valve closure members.</annotation:primitiveRationale>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every valve closure member is a material artifact that is a component part of some valve and participates in flow control processes by being positioned within the flow stream.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
@@ -15466,10 +15466,10 @@ Units of Measure: Km, Kg, G</skos:example>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="pt-br">função de separação knock-out</rdfs:label>
         <rdfs:label xml:lang="en">knock out separation function</rdfs:label>
-        <skos:definition xml:lang="en">A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in separating relatively small quantities of liquid from a vapour stream held in a drum, so that the liquid is removed and the vapour leaves with reduced liquid content.</skos:definition>
+        <skos:definition xml:lang="en">A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in taking the small amount of liquid carried by a vapour stream out of it, so the vapour leaves with less liquid in it.</skos:definition>
         <skos:definition xml:lang="en">A separation function borne by petroleum production equipment whose realization constitutes the removal of entrained liquid droplets from a gas stream by gravity or inertial impingement.</skos:definition>
-        <annotation:naturalLanguageDefinition xml:lang="en">A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in separating relatively small quantities of liquid from a vapour stream held in a drum, so that the liquid is removed and the vapour leaves with reduced liquid content.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma GasDisengagementFunction que é realizada em um KnockOutSeparationProcess e que consiste em separar quantidades relativamente pequenas de líquido de uma corrente de vapor contida em um tambor, de modo que o líquido é removido e o vapor sai com teor de líquido reduzido.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in taking the small amount of liquid carried by a vapour stream out of it, so the vapour leaves with less liquid in it.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma GasDisengagementFunction que é realizada em um KnockOutSeparationProcess e que consiste em retirar de uma corrente de vapor a pequena quantidade de líquido que ela carrega, de modo que o vapor saia com menos líquido.</annotation:naturalLanguageDefinition>
     </owl:Class>
     
 
@@ -18832,10 +18832,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <rdfs:label xml:lang="en">filter medium</rdfs:label>
         <rdfs:label xml:lang="pt-br">meio filtrante</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes the porous material through which a fluid stream passes to remove suspended particulates or liquid droplets in petroleum production equipment.</skos:definition>
-        <skos:definition xml:lang="en">A material artifact that is a permeable material used in a filtration device, through which filtrate passes and on which the filter cake is deposited.</skos:definition>
+        <skos:definition xml:lang="en">A material artifact whose pores let a fluid through while holding back the particles it carries, which accumulate on its surface.</skos:definition>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that is a permeable material used in a filtration device, through which filtrate passes and on which the filter cake is deposited.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que é um material permeável usado em um dispositivo de filtração, através do qual passa o filtrado e sobre o qual se deposita a torta de filtração.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact whose pores let a fluid through while holding back the particles it carries, which accumulate on its surface.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material cujos poros deixam passar um fluido e retêm as partículas que ele carrega, as quais se acumulam em sua superfície.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">The medium is a component of the filter, not a filter; the distinction rests on parthood, which is not a sufficient condition.</annotation:primitiveRationale>
     </owl:Class>
     
@@ -18854,11 +18854,11 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/FINNED_TUBE"/>
         <rdfs:label xml:lang="en">finned tube</rdfs:label>
         <rdfs:label xml:lang="pt-br">tubo aletado</rdfs:label>
+        <skos:definition xml:lang="en">A material artifact that bears an extended-surface heat transfer function: a tube carrying fins that enlarge the area it exposes to the surrounding fluid.</skos:definition>
         <skos:definition xml:lang="en">A material artifact that constitutes a heat transfer tube with extended surfaces—fins—that increase the external surface area to enhance heat exchange with a gas stream.</skos:definition>
-        <skos:definition xml:lang="en">A material artifact that is a tube extended with one or more fins to increase its outer surface area, bearing an extended-surface heat transfer function.</skos:definition>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that is a tube extended with one or more fins to increase its outer surface area, bearing an extended-surface heat transfer function.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que é um tubo estendido com uma ou mais aletas para aumentar sua área de superfície externa, possuindo uma função de transferência de calor por superfície estendida.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A material artifact that bears an extended-surface heat transfer function: a tube carrying fins that enlarge the area it exposes to the surrounding fluid.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que porta uma função de transferência de calor por superfície estendida: um tubo com aletas que ampliam a área exposta ao fluido ao redor.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">The differentia is structural (presence of fins), so under OWA it cannot be a sufficient condition.</annotation:primitiveRationale>
     </owl:Class>
     
@@ -18878,10 +18878,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <rdfs:label xml:lang="pt-br">elemento de medição de detecção de gás</rdfs:label>
         <rdfs:label xml:lang="en">gas detecting measuring element</rdfs:label>
         <skos:definition xml:lang="en">A material artifact that constitutes a sensing element within petroleum production gas detection equipment that responds to the presence and concentration of a target gas.</skos:definition>
-        <skos:definition xml:lang="en">A measuring element that bears a gas detection function, used for detecting the presence of a specified concentration of a gas.</skos:definition>
+        <skos:definition xml:lang="en">A measuring element that bears a gas detection function: it responds when the gas it is meant to watch for reaches the concentration set for it.</skos:definition>
         <annotation:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</annotation:isPrimitive>
-        <annotation:naturalLanguageDefinition xml:lang="en">A measuring element that bears a gas detection function, used for detecting the presence of a specified concentration of a gas.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um elemento de medição que possui uma função de detecção de gás, usado para detectar a presença de uma concentração especificada de um gás.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A measuring element that bears a gas detection function: it responds when the gas it is meant to watch for reaches the concentration set for it.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um elemento de medição que porta uma função de detecção de gás: responde quando o gás que deve vigiar atinge a concentração definida para ele.</annotation:naturalLanguageDefinition>
         <annotation:primitiveRationale xml:lang="en">GasDetectionFunction is already the sufficient condition for the &apos;gas detector&apos; instrument. A measuring element bears it as a component; parthood is not a sufficient condition.</annotation:primitiveRationale>
     </owl:Class>
     
@@ -19237,10 +19237,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://www.jip36-cfihos.org/"/>
         <rdfs:label xml:lang="en">cap</rdfs:label>
         <rdfs:label xml:lang="pt-br">tampa</rdfs:label>
-        <skos:definition xml:lang="en">A cap is a material artifact that bears a closure function: a hood or covering for the top or end of something.</skos:definition>
+        <skos:definition xml:lang="en">A cap is a material artifact that bears a closure function: a piece fitted over an opening or an end to close it off.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (Cap(x) ↔ MaterialArtifact(x) ∧ ∃f (ClosureFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
-        <annotation:naturalLanguageDefinition xml:lang="en">A cap is a material artifact that bears a closure function: a hood or covering for the top or end of something.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma tampa e um artefato material que possui uma funcao de fechamento: um capuz ou cobertura para o topo ou extremidade de algo.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A cap is a material artifact that bears a closure function: a piece fitted over an opening or an end to close it off.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Uma tampa é um artefato material que porta uma função de fechamento: uma peça encaixada sobre uma abertura ou extremidade para fechá-la.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every cap is a material artifact that bears a closure function, and conversely.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
@@ -19308,10 +19308,10 @@ Units of Measure: Km, Kg, G</skos:example>
         <terms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/COALESCENT_FILTER"/>
         <rdfs:label xml:lang="en">coalescent filter</rdfs:label>
         <rdfs:label xml:lang="pt-br">filtro coalescedor</rdfs:label>
-        <skos:definition xml:lang="en">A coalescent filter (coalescing filter) is a filter designed to remove liquid particles from a gas stream, using a layered coalescing media pack that merges small droplets into larger drops for gravity drainage.</skos:definition>
+        <skos:definition xml:lang="en">A coalescent filter is a filter whose purpose is to take entrained liquid out of a gas, by merging the droplets into drops large enough to drain away.</skos:definition>
         <annotation:firstOrderLogicAxiom xml:lang="en">∀x (CoalescentFilter(x) ↔ Filter(x) ∧ ∃f (CoalescingFiltrationFunction(f) ∧ bearerOf(x,f)))</annotation:firstOrderLogicAxiom>
-        <annotation:naturalLanguageDefinition xml:lang="en">A coalescent filter (coalescing filter) is a filter designed to remove liquid particles from a gas stream, using a layered coalescing media pack that merges small droplets into larger drops for gravity drainage.</annotation:naturalLanguageDefinition>
-        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um filtro coalescente e um filtro projetado para remover particulas liquidas de uma corrente de gas, usando um pacote de meio filtrante em camadas que funde pequenas goticulas em gotas maiores para drenagem por gravidade.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="en">A coalescent filter is a filter whose purpose is to take entrained liquid out of a gas, by merging the droplets into drops large enough to drain away.</annotation:naturalLanguageDefinition>
+        <annotation:naturalLanguageDefinition xml:lang="pt-br">Um filtro coalescedor é um filtro cuja finalidade é retirar o líquido arrastado por um gás, unindo as gotículas em gotas grandes o bastante para escoarem.</annotation:naturalLanguageDefinition>
         <annotation:semiFormalNaturalLanguageAxiom xml:lang="en">Every coalescent filter is a filter that bears a coalescing filtration function, and conversely, every filter that bears a coalescing filtration function is a coalescent filter.</annotation:semiFormalNaturalLanguageAxiom>
     </owl:Class>
     
