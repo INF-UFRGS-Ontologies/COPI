@@ -152,19 +152,26 @@ jobs:
       - name: Transfer versioned snapshot to copi/releases/
         run: |
           echo "Uploading copi-stage/ to releases/${RELEASE_DATE}/ ..."
-          # scp -r, not sftp: `sftp -b` turns BatchMode on, which disables the
-          # password prompt altogether, so sshpass has nothing to answer and the
-          # login fails with "Permission denied (publickey,password)" even though
-          # the scp steps above authenticate with the same credentials.
-          # Copying the staging directory under the release name makes scp create
-          # the remote directory, which scp cannot do on its own.
-          rm -rf "${RELEASE_DATE}" && cp -r copi-stage "${RELEASE_DATE}"
-          SSHPASS="${FTP_PASS}" sshpass -e scp -r \
+          # sftp, because the release directory may not exist yet and scp (SFTP-
+          # backed since OpenSSH 9) resolves the remote path with realpath and
+          # refuses to create it: "No such file ... path canonicalization failed".
+          # `-b` implies BatchMode=yes, which switches the password prompt off and
+          # leaves sshpass nothing to answer, so BatchMode is turned back on.
+          cat > /tmp/release.sftp <<SFTP
+          cd ../ontologies/public_html/copi/releases
+          -mkdir ${RELEASE_DATE}
+          cd ${RELEASE_DATE}
+          lcd copi-stage
+          put *
+          bye
+          SFTP
+          SSHPASS="${FTP_PASS}" sshpass -e sftp \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             -o HostKeyAlgorithms=+ssh-rsa \
-            "${RELEASE_DATE}" "ontokg@${DEPLOY_HOST}:../ontologies/public_html/copi/releases/" \
-            || { echo "FAILED (scp exited $?)"; exit 1; }
+            -o BatchMode=no \
+            -b /tmp/release.sftp "ontokg@${DEPLOY_HOST}" \
+            || { echo "FAILED (sftp exited $?)"; exit 1; }
           echo "  OK"
         env:
           FTP_PASS: ${{ secrets.FTP }}
