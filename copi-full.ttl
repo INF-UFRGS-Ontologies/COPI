@@ -36,6 +36,7 @@
                                                                          <https://spec.industrialontologies.org/ontology/core/Core/> ;
                                                           dcterms:title "Core Ontology of Petroleum Installations (COPI)"@en ,
                                                                         "Ontologia Core para Instalações de Petróleo (COPI)"@pt ;
+                                                          bibo:doi "10.5281/zenodo.23127485" ;
                                                           bibo:status "unstable" ;
                                                           vann:preferredNamespacePrefix "copi" ;
                                                           vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI ;
@@ -188,6 +189,10 @@ dcterms:title rdf:type owl:AnnotationProperty ;
               rdfs:label "title"@en-us ;
               skos:definition "name given to the resource"@en-us ;
               annotation:usageNote "Used for formal title of an artifact (but not individual elements such as classes or properties)." .
+
+
+###  http://purl.org/ontology/bibo/doi
+bibo:doi rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/ontology/bibo/status
