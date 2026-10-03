@@ -26,7 +26,7 @@
     <dcterms:description xml:lang="en">BFO/IOF-Core conformant ontology of equipment classes for petroleum production plants, developed using the five-step RDL enrichment method.</dcterms:description>
     <dcterms:isPartOf rdf:resource="https://inf.ufrgs.br/projetos/OntoKG"/>
     <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-24</dcterms:modified>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-03</dcterms:modified>
     <dcterms:publisher xml:lang="en">Universidade Federal do Rio Grande do Sul (UFRGS)</dcterms:publisher>
     <dcterms:title xml:lang="en">Core Ontology for Petroleum Installations (COPI)</dcterms:title>
     <dcterms:title xml:lang="pt-br">Ontologia Core para Instalações de Petróleo (COPI)</dcterms:title>
@@ -227,8 +227,8 @@
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/VALVE_BODY"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x(ValveBody(x) → ValveComponent(x) ∧ ∃f(ContainmentFunction(f) ∧ bearerOf(x,f)) ∧ ∃y(WorkingComponent(y) ∧ houses(x,y)))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A ValveComponent that bears a ContainmentFunction and that serves as the main fluid and pressure containing component of a valve, housing and supporting the working components.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um ValveComponent que porta uma ContainmentFunction e que serve como o principal componente de contenção de fluido e pressão de uma válvula, alojando e suportando os componentes de trabalho.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A ValveComponent that bears a ContainmentFunction: the shell that retains the pressurised fluid inside a valve and carries its internal parts.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um ValveComponent que porta uma ContainmentFunction: o invólucro que retém o fluido pressurizado dentro de uma válvula e sustenta suas peças internas.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Constructive type - the structural characteristics of being the main pressure-containing housing component are necessary conditions but may not be sufficient under OWA, as various specialized valve body configurations exist that might contain additional components or have hybrid designs that could lead to false positive classifications.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every valve body is a valve component that contains and supports valve working components and bears the function of fluid and pressure containment.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -236,7 +236,7 @@
     <rdfs:label xml:lang="pt-br">corpo de válvula</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n000059"/>
     <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
-    <skos:definition xml:lang="en">A ValveComponent that bears a ContainmentFunction and that serves as the main fluid and pressure containing component of a valve, housing and supporting the working components.</skos:definition>
+    <skos:definition xml:lang="en">A ValveComponent that bears a ContainmentFunction: the shell that retains the pressurised fluid inside a valve and carries its internal parts.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081">
     <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100005916"/>
@@ -369,8 +369,8 @@
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/ANGLE_VALVE"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (AngleValve(x) → (Valve(x) ∧ ∃f(FlowControlFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(AngleValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma válvula angular é uma válvula que tem portas da válvula que não estão alinhadas, mas dispostas em ângulo uma em relação à outra.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">An angle valve is a valve whose inlet and outlet face in different directions, turning the flow as it passes through.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma válvula angular é uma válvula cuja entrada e saída apontam em direções diferentes, desviando o escoamento ao atravessá-la.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Constructive type defined by geometric configuration. Under OWA, sufficient conditions for non-inline port arrangement could lead to false positives where complex multi-port manifolds or specialized valves with angular components get incorrectly classified as standard angle valves.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every angle valve is a valve that has a flow control function and has an angle valve body as a component part.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -379,7 +379,7 @@
     <rdfs:subClassOf rdf:nodeID="n000094"/>
     <rdfs:subClassOf rdf:nodeID="n000095"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <skos:definition xml:lang="en">An angle valve is a valve that has valve ports which are not in-line but arranged at an angle to each other.</skos:definition>
+    <skos:definition xml:lang="en">An angle valve is a valve whose inlet and outlet face in different directions, turning the flow as it passes through.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/BALL_CONTROL_VALVE"/>
@@ -425,8 +425,8 @@
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x(BlockAndBleedValve(x) → Valve(x) ∧ ∃s(SingleSeat(s) ∧ hasComponentPartAtAllTimes(x,s)) ∧ ∃l(BleederLine(l) ∧ hasComponentPartAtAllTimes(x,l)) ∧ ∃v(BleederValve(v) ∧ hasComponentPartAtAllTimes(x,v)))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A block and bleed valve is a valve that has one seat which provides a seal, and a bleeder line and valve that are tapped into the valve bonnet for controlled venting of downstream pressure.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de bloqueio e sangria é uma válvula que possui um assento que fornece vedação, e uma linha de sangria e válvula que são conectadas ao castelo da válvula para ventilação controlada da pressão a jusante.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A block and bleed valve is a valve with a single sealing seat together with a small vent connection and its own valve, through which pressure trapped beyond the seat can be released under control.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de bloqueio e sangria é uma válvula com um único assento de vedação, acompanhada de uma pequena conexão de dreno e sua própria válvula, pela qual a pressão retida além do assento pode ser aliviada de forma controlada.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Constructive types require necessary conditions only due to Open World Assumption. The structural differentia (single seat + bleeder system) could theoretically be present in specialized equipment that should not be classified as a standard block and bleed valve without domain expert validation.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every block and bleed valve is a valve that has component parts: exactly one seat, a bleeder line, and a bleeder valve integrated into the bonnet.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -434,7 +434,7 @@
     <rdfs:label xml:lang="pt-br">válvula de bloqueio e sangria</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n000099"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <skos:definition xml:lang="en">A block and bleed valve is a valve that has one seat which provides a seal, and a bleeder line and valve that are tapped into the valve bonnet for controlled venting of downstream pressure.</skos:definition>
+    <skos:definition xml:lang="en">A block and bleed valve is a valve with a single sealing seat together with a small vent connection and its own valve, through which pressure trapped beyond the seat can be released under control.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000097">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/BLOW_DOWN_VALVE"/>
@@ -455,8 +455,8 @@
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (Blower(x) ↔ (Compressor(x) ∧ ∃f,p,v (CompressionFunction(f) ∧ bearerOf(x,f) ∧ MediumPressureRange(p) ∧ MediumVolumeFlowRange(v) ∧ hasOperatingParameter(x,p) ∧ hasOperatingParameter(x,v))))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A blower is a compressor that compresses and supplies air or gas at medium pressure and medium volume flow.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um soprador é um compressor que comprime e fornece ar ou gás em pressão média e vazão volumétrica média.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A blower is a compressor that raises air or gas above the pressure a fan can deliver while staying well below process-compressor duty, at correspondingly large flows.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um soprador é um compressor que eleva ar ou gás acima da pressão que um ventilador alcança, mantendo-se bem abaixo do serviço de um compressor de processo, com vazões correspondentemente grandes.</iof-av:naturalLanguageDefinition>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every blower is a compressor that has the function of compressing gas and operates at medium pressure and medium volume flow ranges.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">blower</rdfs:label>
@@ -465,7 +465,7 @@
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
     <skos:altLabel xml:lang="en">BLOWER</skos:altLabel>
     <skos:altLabel xml:lang="en">Blower</skos:altLabel>
-    <skos:definition xml:lang="en">A blower is a compressor that compresses and supplies air or gas at medium pressure and medium volume flow.</skos:definition>
+    <skos:definition xml:lang="en">A blower is a compressor that raises air or gas above the pressure a fan can deliver while staying well below process-compressor duty, at correspondingly large flows.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/BUTTERFLY_CONTROL_VALVE"/>
@@ -492,8 +492,8 @@
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (ButterflyValve(x) → (Valve(x) ∧ ∃f(FlowControlFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(ButterflyValveClosureMember(p) ∧ hasComponentPartAtAllTimes(x,p))))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A butterfly valve is a valve that has a disc-type closure member with a shaft parallel to the plane of the disc and an axis of rotation transverse to the flow direction.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma válvula borboleta é uma válvula que possui um membro de fechamento tipo disco com haste paralela ao plano do disco e eixo de rotação transversal à direção do fluxo.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A butterfly valve is a valve closed by a disc that turns on a shaft lying in the plane of the disc, the shaft crossing the bore so the disc swings into and out of the stream.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma válvula borboleta é uma válvula fechada por um disco que gira em um eixo situado no plano do disco; o eixo atravessa a passagem, de modo que o disco entra e sai da corrente.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">This is a constructive classification based on physical mechanism. Under the Open World Assumption, any artifact with a disc-type closure and transverse rotation axis would be forced into the ButterflyValve class, including specialized hybrid equipment or custom manifolds containing butterfly mechanisms that should not be classified as standard butterfly valves for maintenance purposes.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every butterfly valve is a valve that has a flow control function and has a butterfly valve closure member as a component part.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -505,7 +505,7 @@
     <skos:altLabel xml:lang="en">BUTTERFLY VALVE</skos:altLabel>
     <skos:altLabel xml:lang="en">Butterfly Valve</skos:altLabel>
     <skos:altLabel xml:lang="en">Butterfly valve</skos:altLabel>
-    <skos:definition xml:lang="en">A butterfly valve is a valve that has a disc-type closure member with a shaft parallel to the plane of the disc and an axis of rotation transverse to the flow direction.</skos:definition>
+    <skos:definition xml:lang="en">A butterfly valve is a valve closed by a disc that turns on a shaft lying in the plane of the disc, the shaft crossing the bore so the disc swings into and out of the stream.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000101">
     <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100005882"/>
@@ -672,8 +672,8 @@
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (DoubleBlockAndBleedValve(x) → (Valve(x) ∧ ∃p,s,b (PrimarySeat(p) ∧ SecondarySeat(s) ∧ BleedPort(b) ∧ hasComponentPartAtAllTimes(x,p) ∧ hasComponentPartAtAllTimes(x,s) ∧ hasComponentPartAtAllTimes(x,b))))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A double block and bleed valve is a valve that incorporates two seats each providing sealing capability and includes a means of venting the space between the seats.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de bloqueio duplo e sangria é uma válvula que incorpora duas sedes, cada uma proporcionando capacidade de vedação, e inclui um meio de ventilação do espaço entre as sedes.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A double block and bleed valve is a valve with two sealing seats and a connection through which the space between them can be drained or vented.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de bloqueio duplo e sangria é uma válvula com dois assentos de vedação e uma conexão pela qual o espaço entre eles pode ser drenado ou ventilado.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Constructive basis - the structural differentia (dual seats plus bleed port) defines necessary conditions, but under OWA we cannot assert that ANY artifact with these structural components is definitively a double block and bleed valve, as specialized multi-way valves or custom manifolds might contain similar mechanisms without being standard maintenance categories.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every double block and bleed valve is a valve that has a primary seat and has a secondary seat and has a bleed port.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -681,7 +681,7 @@
     <rdfs:label xml:lang="pt-br">válvula de bloqueio duplo e sangria</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n000144"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <skos:definition xml:lang="en">A double block and bleed valve is a valve that incorporates two seats each providing sealing capability and includes a means of venting the space between the seats.</skos:definition>
+    <skos:definition xml:lang="en">A double block and bleed valve is a valve with two sealing seats and a connection through which the space between them can be drained or vented.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000112">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/DOWN_HOLE_SAFETY_VALVE"/>
@@ -939,14 +939,14 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129">
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (LevelIndicator(x) ↔ (Indicator(x) ∧ ∃f (LevelIndicationFunction(f) ∧ hasFunction(x,f))))</iof-av:firstOrderLogicAxiom>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A level indicator is an indicator that measures and locally displays the level of liquid or bulk solid material in a vessel or tank.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um indicador de nível é um indicador que mede e exibe localmente o nível de material líquido ou sólido a granel em um vaso ou tanque.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A level indicator is an indicator that shows, where it is installed, how far a vessel or tank is filled.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um indicador de nível é um indicador que mostra, no ponto onde está instalado, até onde um vaso ou tanque está cheio.</iof-av:naturalLanguageDefinition>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every level indicator is an indicator that has the function to measure and locally indicate level.</iof-av:semiFormalNaturalLanguageAxiom>
     <owl:equivalentClass rdf:nodeID="n000201"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">level indicator</rdfs:label>
     <rdfs:label xml:lang="pt-br">indicador de nível</rdfs:label>
-    <skos:definition xml:lang="en">A level indicator is an indicator that measures and locally displays the level of liquid or bulk solid material in a vessel or tank.</skos:definition>
+    <skos:definition xml:lang="en">A level indicator is an indicator that shows, where it is installed, how far a vessel or tank is filled.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/LEVEL_SIGHT_GLASS"/>
@@ -1299,8 +1299,8 @@
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (SwingCheckValve(x) → (CheckValve(x) ∧ ∃f(BackflowPreventionFunction(f) ∧ hasFunction(x,f)) ∧ ∃p(SwingCheckValveBody(p) ∧ hasComponentPartAtAllTimes(x,p))))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de retenção basculante é uma válvula de retenção que possui um elemento de fechamento consistindo de um disco que gira livremente em um mecanismo de dobradiça e abre automaticamente quando o fluxo é estabelecido e fecha automaticamente quando o fluxo cessa ou se inverte.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A swing check valve is a check valve whose disc hangs from a hinge: forward flow pushes it aside, and when the flow stops or turns back the disc falls onto the seat.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma válvula de retenção basculante é uma válvula de retenção cujo disco pende de uma dobradiça: o escoamento direto o afasta, e quando o escoamento cessa ou se inverte o disco cai sobre a sede.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Using necessary conditions for this constructive type to avoid false positives under OWA. Any artifact with a hinged disc mechanism should not automatically be classified as a swing check valve without domain expert validation, as specialized equipment may contain swing mechanisms but serve different primary functions.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every swing check valve is a check valve that has a backflow prevention function and has a swing check valve body as a component part.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1309,16 +1309,16 @@
     <rdfs:subClassOf rdf:nodeID="n000276"/>
     <rdfs:subClassOf rdf:nodeID="n000277"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
-    <skos:definition xml:lang="en">A swing check valve is a check valve that has a closure member consisting of a disc which swings freely on a hinge mechanism and opens automatically when flow is established and closes automatically when flow ceases or reverses.</skos:definition>
+    <skos:definition xml:lang="en">A swing check valve is a check valve whose disc hangs from a hinge: forward flow pushes it aside, and when the flow stops or turns back the disc falls onto the seat.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000154">
-    <iof-av:naturalLanguageDefinition xml:lang="en">A temperature indicator is an indicator that measures temperature and displays the measured value locally at the instrument location.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um indicador de temperatura é um indicador que mede temperatura e exibe o valor medido localmente na localização do instrumento.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A temperature indicator is an indicator that shows the temperature it senses, read at the instrument itself.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um indicador de temperatura é um indicador que mostra a temperatura que detecta, lida no próprio instrumento.</iof-av:naturalLanguageDefinition>
     <owl:equivalentClass rdf:nodeID="n000278"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">temperature indicator</rdfs:label>
     <rdfs:label xml:lang="pt-br">indicador de temperatura</rdfs:label>
-    <skos:definition xml:lang="en">A temperature indicator is an indicator that measures temperature and displays the measured value locally at the instrument location.</skos:definition>
+    <skos:definition xml:lang="en">A temperature indicator is an indicator that shows the temperature it senses, read at the instrument itself.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155">
     <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100004120"/>
@@ -1341,8 +1341,8 @@
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (Thermowell(x) → Instrument(x) ∧ ∃r,c,f (PressureTightReceptacle(r) ∧ ProcessConnection(c) ∧ TemperatureSensorProtectionFunction(f) ∧ hasComponentPartAtAllTimes(x,r) ∧ hasComponentPartAtAllTimes(x,c) ∧ bearerOf(x,f)))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A thermowell is an instrument that is a pressure-tight receptacle adapted to receive a temperature sensing element, provided with external threads or other means for pressure-tight attachment to a vessel or pipe.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um poço termométrico é um instrumento que é um receptáculo resistente à pressão adaptado para receber um elemento sensor de temperatura, provido com roscas externas ou outros meios para fixação resistente à pressão a um vaso ou tubulação.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A thermowell is an instrument that encloses a temperature sensor in a closed well, so the sensor reads the process fluid without being wetted by it, and that screws or bolts into the wall of a vessel or pipe without breaking its pressure boundary.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um poço termométrico é um instrumento que aloja um sensor de temperatura em um tubo fechado, de modo que o sensor leia o fluido de processo sem ficar em contato com ele, e que se fixa por rosca ou flange à parede de um vaso ou tubulação sem romper sua barreira de pressão.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Thermowell has constructive classification basis. The structural differentia (pressure-tight receptacle with process connection) defines necessary conditions, but making these sufficient under OWA could lead to false classifications of other threaded pressure-tight devices that happen to contain receptacles but are not intended as thermowells.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every thermowell is an instrument that has a pressure-tight receptacle as component part and has a process connection as component part and is designed for temperature sensing elements.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1350,7 +1350,7 @@
     <rdfs:label xml:lang="pt-br">poço termométrico</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n000286"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000091"/>
-    <skos:definition xml:lang="en">A thermowell is an instrument that is a pressure-tight receptacle adapted to receive a temperature sensing element, provided with external threads or other means for pressure-tight attachment to a vessel or pipe.</skos:definition>
+    <skos:definition xml:lang="en">A thermowell is an instrument that encloses a temperature sensor in a closed well, so the sensor reads the process fluid without being wetted by it, and that screws or bolts into the wall of a vessel or pipe without breaking its pressure boundary.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157">
     <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100004123"/>
@@ -1998,15 +1998,15 @@
     <dcterms:source rdf:resource="https://onepetro.org/search-results?page=1&amp;q=anode"/>
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/ANODE"/>
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
-    <iof-av:naturalLanguageDefinition xml:lang="en">An anode is electrical equipment that bears the function of serving as the positive electrode in electrochemical processes, capable of emitting positive charge carriers to and/or receiving negative charge carriers from a medium of lower conductivity.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um ânodo é um equipamento elétrico que possui a função de servir como eletrodo positivo em processos eletroquímicos, capaz de emitir portadores de carga positiva para e/ou receber portadores de carga negativa de um meio de menor condutividade.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">An anode is electrical equipment that acts as the positive electrode of an electrochemical circuit, taking up the current that crosses the surrounding medium.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um ânodo é um equipamento elétrico que atua como eletrodo positivo de um circuito eletroquímico, recebendo a corrente que atravessa o meio ao redor.</iof-av:naturalLanguageDefinition>
     <owl:equivalentClass rdf:nodeID="n000461"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">anode</rdfs:label>
     <rdfs:label xml:lang="pt-br">ânodo</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n000460"/>
     <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
-    <skos:definition xml:lang="en">An anode is electrical equipment that bears the function of serving as the positive electrode in electrochemical processes, capable of emitting positive charge carriers to and/or receiving negative charge carriers from a medium of lower conductivity.</skos:definition>
+    <skos:definition xml:lang="en">An anode is electrical equipment that acts as the positive electrode of an electrochemical circuit, taking up the current that crosses the surrounding medium.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/AXIAL_DISPLACEMENT_TRANSMITTER"/>
@@ -2869,8 +2869,8 @@
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x(Flange(x) → MaterialArtifact(x) ∧ ∃g(ProjectingFlatRimGeometry(g) ∧ hasCharacteristic(x,g)) ∧ ∃f(MechanicalConnectionFunction(f) ∧ hasFunction(x,f)))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A flange is a material artifact characterized by a projecting flat rim, plate, collar, or rib geometry, designed to provide mechanical connection between components.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um flange é um artefato material caracterizado por uma geometria de aro plano projetante, placa, colar ou nervura, projetado para fornecer conexão mecânica entre componentes.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A flange is a material artifact whose working feature is a flat ring standing out from a body, drilled or faced so that two components can be drawn together at it.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um flange é um artefato material cuja característica funcional é um anel plano que se projeta de um corpo, furado ou faceado para que dois componentes sejam unidos nele.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Using necessary conditions because this is a constructive type defined by structural geometry. Under OWA, any artifact with projecting flat rim geometry would be forced into the flange category, which could incorrectly classify specialized equipment or complex assemblies that contain flange-like features but serve different primary functions.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every flange is a material artifact that has a projecting flat rim geometry and has the function of mechanically connecting components.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -2878,7 +2878,7 @@
     <rdfs:label xml:lang="pt-br">flange</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n000675"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000238"/>
-    <skos:definition xml:lang="en">A flange is a material artifact characterized by a projecting flat rim, plate, collar, or rib geometry, designed to provide mechanical connection between components.</skos:definition>
+    <skos:definition xml:lang="en">A flange is a material artifact whose working feature is a flat ring standing out from a body, drilled or faced so that two components can be drawn together at it.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274">
     <dcterms:source rdf:resource="https://gitlab.com/dexpi/Specification/-/blob/master/src/model"/>
@@ -3035,14 +3035,14 @@
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/GAS_DETECTOR"/>
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x(GasDetector(x) ↔ (Detector(x) ∧ ∃f(GasDetectionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(GasDetectingMeasuringElement(p) ∧ hasComponentPartAtAllTimes(x,p))))</iof-av:firstOrderLogicAxiom>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A gas detector is a detector that has the designed function to sense the presence of a specified concentration of a gas.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um detector de gás é um detector que tem a função projetada de detectar a presença de uma concentração especificada de um gás.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A gas detector is a detector designed to signal when a given gas reaches a defined concentration in the surrounding atmosphere.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um detector de gás é um detector projetado para sinalizar quando um gás atinge uma concentração definida na atmosfera ao redor.</iof-av:naturalLanguageDefinition>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every gas detector is a detector that bears a GasDetectionFunction and has a GasDetectingMeasuringElement as component part at all times.</iof-av:semiFormalNaturalLanguageAxiom>
     <owl:equivalentClass rdf:nodeID="n000700"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">gas detector</rdfs:label>
     <rdfs:label xml:lang="pt-br">detector de gás</rdfs:label>
-    <skos:definition xml:lang="en">A gas detector is a detector that has the designed function to sense the presence of a specified concentration of a gas.</skos:definition>
+    <skos:definition xml:lang="en">A gas detector is a detector designed to signal when a given gas reaches a defined concentration in the surrounding atmosphere.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000285">
     <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100005925"/>
@@ -3113,8 +3113,8 @@
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/GEAR_PUMP"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (GearPump(x) → Pump(x) ∧ ∃g,c (GearMechanism(g) ∧ PumpCasing(c) ∧ hasComponentPartAtAllTimes(x,g) ∧ hasComponentPartAtAllTimes(x,c)))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A gear pump is a pump that contains gear teeth within a casing or enclosure to transport liquid at relatively high back pressures through meshing action.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma bomba de engrenagem é uma bomba que contém dentes de engrenagem dentro de um invólucro ou carcaça para transportar líquido em pressões de retorno relativamente altas através de ação de engrenamento.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A gear pump is a pump in which meshing gears carry liquid around the casing wall from suction to discharge, sustaining pressure at the outlet.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma bomba de engrenagem é uma bomba em que engrenagens engrenadas levam o líquido junto à parede da carcaça, da sucção até a descarga, sustentando a pressão na saída.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Using necessary conditions for this constructive type. While the gear mechanism is definitionally necessary for gear pumps, making it sufficient under OWA could lead to false positives - any complex equipment containing gears (like gearboxes with integrated pumps or multi-function units) might be incorrectly classified as standard gear pumps for maintenance purposes.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every gear pump is a pump that has as component part at all times a gear mechanism and a pump casing, and bears a pumping function.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -3123,7 +3123,7 @@
     <rdfs:subClassOf rdf:nodeID="n000716"/>
     <rdfs:subClassOf rdf:nodeID="n000717"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
-    <skos:definition xml:lang="en">A gear pump is a pump that contains gear teeth within a casing or enclosure to transport liquid at relatively high back pressures through meshing action.</skos:definition>
+    <skos:definition xml:lang="en">A gear pump is a pump in which meshing gears carry liquid around the casing wall from suction to discharge, sustaining pressure at the outlet.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000290">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/GEAR_WHEEL"/>
@@ -3188,8 +3188,8 @@
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/HEAT_TRANSFER_PLATE"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x(HeatTransferPlate(x) → MaterialArtifact(x) ∧ ∃f(HeatTransferFunction(f) ∧ bearerOf(x,f)) ∧ ∃p(MediaSeparationProcess(p) ∧ participatesIn(x,p)))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that bears a HeatTransferFunction and that is intended to be used in a non-tubular heat exchanger to segregate two fluid media while facilitating thermal energy transfer between them.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que possui uma HeatTransferFunction e que é destinado a ser usado em um trocador de calor não tubular para segregar dois meios fluidos enquanto facilita a transferência de energia térmica entre eles.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that bears a HeatTransferFunction: a plate that keeps two fluid streams apart in a plate exchanger while conducting heat from one to the other.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que porta uma HeatTransferFunction: uma placa que mantém separadas duas correntes de fluido em um trocador de placas enquanto conduz calor de uma para a outra.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Constructive classification basis requires necessary conditions only. Under OWA, sufficient conditions for 'plate geometry used in non-tubular heat exchangers' could lead to false positives - other components with plate-like surfaces might be incorrectly classified as heat transfer plates without domain expert validation of the structural and application-specific criteria.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every heat transfer plate is a MaterialArtifact that bears a HeatTransferFunction and participates in segregating two fluid media in a non-tubular heat exchanger.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -3197,7 +3197,7 @@
     <rdfs:label xml:lang="pt-br">MaterialArtifact que possui uma HeatTransferFunction e</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n000726"/>
     <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
-    <skos:definition xml:lang="en">A MaterialArtifact that bears a HeatTransferFunction and that is intended to be used in a non-tubular heat exchanger to segregate two fluid media while facilitating thermal energy transfer between them.</skos:definition>
+    <skos:definition xml:lang="en">A MaterialArtifact that bears a HeatTransferFunction: a plate that keeps two fluid streams apart in a plate exchanger while conducting heat from one to the other.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000295">
     <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100005936"/>
@@ -3408,14 +3408,14 @@
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/KNOCK_OUT_DRUM"/>
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x(KnockOutDrum(x) ↔ Drum(x) ∧ ∃f(KnockOutSeparationFunction(f) ∧ bearerOf(x,f)))</iof-av:firstOrderLogicAxiom>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A knock out drum is a drum designed to separate relatively small quantities of liquid from a vapor stream through gravitational and momentum-based phase separation.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um vaso separador de condensado é um tambor projetado para separar quantidades relativamente pequenas de líquido de uma corrente de vapor através de separação de fases gravitacional e baseada em momento.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A knock out drum is a drum that takes the small amount of liquid carried by a vapour stream out of it, by gravity and by the inertia of the droplets.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um vaso separador de condensado é um tambor que retira de uma corrente de vapor a pequena quantidade de líquido que ela carrega, por gravidade e pela inércia das gotículas.</iof-av:naturalLanguageDefinition>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every knock out drum is a drum that bears a knock out separation function, which is realized in processes that separate small quantities of liquid from vapor streams.</iof-av:semiFormalNaturalLanguageAxiom>
     <owl:equivalentClass rdf:nodeID="n000764"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">knock out drum</rdfs:label>
     <rdfs:label xml:lang="pt-br">vaso separador de condensado</rdfs:label>
-    <skos:definition xml:lang="en">A knock out drum is a drum designed to separate relatively small quantities of liquid from a vapor stream through gravitational and momentum-based phase separation.</skos:definition>
+    <skos:definition xml:lang="en">A knock out drum is a drum that takes the small amount of liquid carried by a vapour stream out of it, by gravity and by the inertia of the droplets.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000309">
     <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100005948"/>
@@ -3621,8 +3621,8 @@
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (PipeBend(x) → Pipe(x) ∧ ∃g (CurvedGeometry(g) ∧ hasQuality(x,g)) ∧ ∃r (NonStandardBendRadius(r) ∧ hasQuality(x,r)))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A pipe bend is a pipe that has a curved geometry to change piping direction with a non-standard radius.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma curva de tubo é um tubo que possui geometria curvada para mudar a direção da tubulação com um raio não padrão.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A pipe bend is a pipe curved along its length so that a run changes direction over a radius other than the standard fitting radii.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma curva de tubo é um tubo encurvado ao longo de seu comprimento, de modo que o trecho muda de direção com um raio diferente dos raios padronizados de conexões.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Using necessary conditions for this constructive type. While the curved geometry with non-standard radius is distinctive, making it sufficient under OWA could force classification of complex piping assemblies or custom manifolds containing bent sections into this maintenance category inappropriately.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every pipe bend is a pipe that has curved geometry and has non-standard bend radius.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -3630,7 +3630,7 @@
     <rdfs:label xml:lang="pt-br">curva de tubo</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n000818"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
-    <skos:definition xml:lang="en">A pipe bend is a pipe that has a curved geometry to change piping direction with a non-standard radius.</skos:definition>
+    <skos:definition xml:lang="en">A pipe bend is a pipe curved along its length so that a run changes direction over a radius other than the standard fitting radii.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000323">
     <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100004097"/>
@@ -3654,8 +3654,8 @@
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (PipeReducer(x) → Pipe(x) ∧ ∃i,o (InletEnd(i) ∧ OutletEnd(o) ∧ hasComponentPartAtAllTimes(x,i) ∧ hasComponentPartAtAllTimes(x,o) ∧ DifferentNominalPipeSizes(i,o)))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A pipe reducer is a pipe that has different nominal pipe sizes at its two ends, intended to connect pipes or piping components of different sizes.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um redutor de tubulação é um tubo que possui tamanhos nominais diferentes de tubulação em suas duas extremidades, destinado a conectar tubos ou componentes de tubulação de tamanhos diferentes.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A pipe reducer is a pipe whose two ends differ in nominal size, joining runs or fittings of one size to another.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um redutor é um tubo cujas duas extremidades têm diâmetros nominais diferentes, ligando trechos ou acessórios de um tamanho a outro.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">As a constructive type defined by geometric configuration, sufficient conditions are omitted under the Open World Assumption to prevent false positives. Complex assemblies or custom manifolds containing size transitions should not be automatically classified as standard pipe reducers without explicit assertion.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every pipe reducer is a pipe that has an inlet end and outlet end with different nominal pipe sizes</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -3663,7 +3663,7 @@
     <rdfs:label xml:lang="pt-br">redutor de tubulação</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n000820"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
-    <skos:definition xml:lang="en">A pipe reducer is a pipe that has different nominal pipe sizes at its two ends, intended to connect pipes or piping components of different sizes.</skos:definition>
+    <skos:definition xml:lang="en">A pipe reducer is a pipe whose two ends differ in nominal size, joining runs or fittings of one size to another.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000325">
     <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100004103"/>
@@ -3729,15 +3729,15 @@
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000329">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/PORT"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x(Port(x) ↔ (MaterialArtifact(x) ∧ ∃f(InterfacingFunction(f) ∧ bearerOf(x,f))))</iof-av:firstOrderLogicAxiom>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that bears an InterfacingFunction and that is capable of providing a point of interface for communication with another object.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que possui uma InterfacingFunction e que é capaz de fornecer um ponto de interface para comunicação com outro objeto.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that bears an InterfacingFunction: the place at which one object is reached by another for exchange of material, energy or signal.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que porta uma InterfacingFunction: o lugar em que um objeto é alcançado por outro para troca de material, energia ou sinal.</iof-av:naturalLanguageDefinition>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Port ≡ MaterialArtifact ⊓ ∃bearerOf.InterfacingFunction</iof-av:semiFormalNaturalLanguageAxiom>
     <owl:equivalentClass rdf:nodeID="n000834"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">port</rdfs:label>
     <rdfs:label xml:lang="pt-br">MaterialArtifact que possui uma InterfacingFunction e</rdfs:label>
     <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
-    <skos:definition xml:lang="en">A MaterialArtifact that bears an InterfacingFunction and that is capable of providing a point of interface for communication with another object.</skos:definition>
+    <skos:definition xml:lang="en">A MaterialArtifact that bears an InterfacingFunction: the place at which one object is reached by another for exchange of material, energy or signal.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/POSITION_TRANSMITTER"/>
@@ -3912,8 +3912,8 @@
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (RotaryPump(x) → PositiveDisplacementPump(x) ∧ ∃y (RotaryDisplacementMechanism(y) ∧ hasComponentPartAtAllTimes(x,y)) ∧ ¬∃z (SeparateInletValve(z) ∧ hasComponentPartAtAllTimes(x,z)) ∧ ¬∃w (SeparateOutletValve(w) ∧ hasComponentPartAtAllTimes(x,w)))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A rotary pump is a positive displacement pump that contains a chamber with gears, cams, screws, vanes, plungers or similar elements actuated by relative rotation of the drive shaft or casing, and which has no separate inlet and outlet valves.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma bomba rotativa é uma bomba de deslocamento positivo que contém uma câmara com engrenagens, cames, parafusos, palhetas, êmbolos ou elementos similares acionados pela rotação relativa do eixo de acionamento ou carcaça, e que não possui válvulas separadas de entrada e saída.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A rotary pump is a positive displacement pump in which rotating elements — gears, lobes, screws, vanes and the like — sweep the liquid from suction to discharge, so no inlet or outlet valves are needed.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma bomba rotativa é uma bomba de deslocamento positivo em que elementos giratórios — engrenagens, lóbulos, parafusos, palhetas e afins — varrem o líquido da sucção até a descarga, dispensando válvulas de entrada e saída.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Using necessary conditions for this constructive type. While the rotary mechanism is clearly necessary for rotary pumps, making it sufficient under OWA could lead to false positives where complex equipment containing rotary elements (like gearboxes with pumping side-effects or hybrid machines) might be misclassified as standard rotary pumps. The constructive differentia should be validated by domain experts before upgrading to equivalence.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every rotary pump is a positive displacement pump that has a rotary displacement mechanism as component part and lacks separate inlet and outlet valves.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -3923,7 +3923,7 @@
     <rdfs:subClassOf rdf:nodeID="n000867"/>
     <rdfs:subClassOf rdf:nodeID="n000868"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000331"/>
-    <skos:definition xml:lang="en">A rotary pump is a positive displacement pump that contains a chamber with gears, cams, screws, vanes, plungers or similar elements actuated by relative rotation of the drive shaft or casing, and which has no separate inlet and outlet valves.</skos:definition>
+    <skos:definition xml:lang="en">A rotary pump is a positive displacement pump in which rotating elements — gears, lobes, screws, vanes and the like — sweep the liquid from suction to discharge, so no inlet or outlet valves are needed.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000342">
     <dcterms:source rdf:resource="https://onepetro.org/search-results?page=1&amp;q=rotor"/>
@@ -4092,8 +4092,8 @@
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000353">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/SOLENOID_ACTUATOR"/>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A solenoid actuator is an electric actuator that utilizes a continuous duty linear solenoid to convert electrical energy into mechanical power via a plunger with an axial stroke in either a push or pull action.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um atuador solenoide é um atuador elétrico que utiliza um solenoide linear de serviço contínuo para converter energia elétrica em energia mecânica através de um êmbolo com curso axial em ação de empurrar ou puxar.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A solenoid actuator is an electric actuator in which current through a coil drives a plunger along its axis, pushing or pulling the driven element while the coil stays energised.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um atuador solenoide é um atuador elétrico em que a corrente em uma bobina desloca um êmbolo ao longo de seu eixo, empurrando ou puxando o elemento acionado enquanto a bobina permanece energizada.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Constructive type defined by solenoid mechanism. Under OWA, sufficient conditions would force any device with solenoid and plunger components to be classified as a solenoid actuator, potentially misclassifying complex hybrid devices or specialized equipment containing solenoid components but serving different primary functions.</iof-av:primitiveRationale>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">solenoid actuator</rdfs:label>
@@ -4103,7 +4103,7 @@
     <rdfs:subClassOf rdf:nodeID="n000908"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
-    <skos:definition xml:lang="en">A solenoid actuator is an electric actuator that utilizes a continuous duty linear solenoid to convert electrical energy into mechanical power via a plunger with an axial stroke in either a push or pull action.</skos:definition>
+    <skos:definition xml:lang="en">A solenoid actuator is an electric actuator in which current through a coil drives a plunger along its axis, pushing or pulling the driven element while the coil stays energised.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354">
     <dcterms:source rdf:resource="https://glossary.slb.com/en/terms/s/spacer"/>
@@ -4140,8 +4140,8 @@
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000356">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/SWITCH_CONTACT"/>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A switch contact is an electrical contact that is one of the conductive parts forming a contact assembly.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um contato de chave é um contato elétrico que é uma das partes condutoras que formam um conjunto de contato.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A switch contact is an electrical contact: one of the conducting pieces that meet or part to close or open a circuit.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um contato de chave é um contato elétrico: uma das peças condutoras que se encostam ou se afastam para fechar ou abrir um circuito.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">Constructive type based on structural role as a conductive part. Under OWA, asserting sufficient conditions could incorrectly classify any conductive part of an electrical contact as a switch contact, when there may be other specialized conductive components (bus bars, terminals, etc.) that serve different structural roles.</iof-av:primitiveRationale>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">switch contact</rdfs:label>
@@ -4149,7 +4149,7 @@
     <rdfs:subClassOf rdf:nodeID="n000915"/>
     <rdfs:subClassOf rdf:nodeID="n000916"/>
     <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
-    <skos:definition xml:lang="en">A switch contact is an electrical contact that is one of the conductive parts forming a contact assembly.</skos:definition>
+    <skos:definition xml:lang="en">A switch contact is an electrical contact: one of the conducting pieces that meet or part to close or open a circuit.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000357">
     <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100004117"/>
@@ -4213,14 +4213,14 @@
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/TRANSDUCER"/>
     <dcterms:source rdf:resource="https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa5"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (Transducer(x) ↔ Instrument(x) ∧ ∃f (TransductionFunction(f) ∧ bearerOf(x,f)))</iof-av:firstOrderLogicAxiom>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A transducer is an instrument that bears a TransductionFunction to convert information from one form or magnitude of energy to another form or magnitude.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um transdutor é um instrumento que possui uma FunçãoDeTransdução para converter informação de uma forma ou magnitude de energia para outra forma ou magnitude.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A transducer is an instrument that bears a TransductionFunction: it takes a quantity in one physical form and renders it in another, suitable for measurement or transmission.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um transdutor é um instrumento que porta uma TransductionFunction: toma uma grandeza em uma forma física e a entrega em outra, adequada para medição ou transmissão.</iof-av:naturalLanguageDefinition>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every transducer is an instrument that has the designed function to convert energy or signal forms while preserving information content.</iof-av:semiFormalNaturalLanguageAxiom>
     <owl:equivalentClass rdf:nodeID="n000934"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">transducer</rdfs:label>
     <rdfs:label xml:lang="pt-br">transdutor</rdfs:label>
-    <skos:definition xml:lang="en">A transducer is an instrument that bears a TransductionFunction to convert information from one form or magnitude of energy to another form or magnitude.</skos:definition>
+    <skos:definition xml:lang="en">A transducer is an instrument that bears a TransductionFunction: it takes a quantity in one physical form and renders it in another, suitable for measurement or transmission.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000363">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/TRANSMITTER_HOUSING"/>
@@ -4257,14 +4257,14 @@
     <dcterms:source rdf:resource="https://onepetro.org/search-results?page=1&amp;q=tubing-head"/>
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/TUBING_HEAD"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x(TubingHead(x) ↔ WellheadComponent(x) ∧ ∃f(TubingSupportAndConnectionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p1(TubingBowl(p1) ∧ hasComponentPartAtAllTimes(x,p1)) ∧ ∃p2(ChristmasTreeConnectionInterface(p2) ∧ hasComponentPartAtAllTimes(x,p2)))</iof-av:firstOrderLogicAxiom>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A tubing head is a wellhead component that supports the tubing hanger and provides a connection interface for attaching the Christmas tree to the wellhead assembly.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma cabeça de coluna é um componente de cabeça de poço que suporta o suspensor de coluna e fornece uma interface de conexão para fixar a árvore de natal ao conjunto de cabeça de poço.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A tubing head is a wellhead component that seats the tubing hanger and carries the connection on which the Christmas tree is mounted.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma cabeça de coluna é um componente de cabeça de poço que assenta o suspensor da coluna e provê a conexão sobre a qual a árvore de natal é montada.</iof-av:naturalLanguageDefinition>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every tubing head is a wellhead component that bears a tubing support and connection function, has a tubing bowl as component part, and has a Christmas tree connection interface as component part.</iof-av:semiFormalNaturalLanguageAxiom>
     <owl:equivalentClass rdf:nodeID="n000945"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">tubing head</rdfs:label>
     <rdfs:label xml:lang="pt-br">cabeça de coluna</rdfs:label>
-    <skos:definition xml:lang="en">A tubing head is a wellhead component that supports the tubing hanger and provides a connection interface for attaching the Christmas tree to the wellhead assembly.</skos:definition>
+    <skos:definition xml:lang="en">A tubing head is a wellhead component that seats the tubing hanger and carries the connection on which the Christmas tree is mounted.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366">
     <dcterms:source rdf:resource="https://gitlab.com/dexpi/Specification/-/blob/master/src/model"/>
@@ -4332,8 +4332,8 @@
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/VALVE_CLOSURE_MEMBER"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (ValveClosureMember(x) → MaterialArtifact(x) ∧ ∃v (Valve(v) ∧ isComponentPartOf(x,v)) ∧ ∃p (FlowControlProcess(p) ∧ participatesIn(x,p)) ∧ ∃q (PositionableInFlowStream(q) ∧ hasQuality(x,q)))</iof-av:firstOrderLogicAxiom>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that is a component part of a valve and that is positioned in the flow stream to permit, obstruct, divert or regulate flow through mechanical positioning.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que é uma parte componente de uma válvula e que é posicionado no fluxo para permitir, obstruir, desviar ou regular o fluxo através de posicionamento mecânico.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A MaterialArtifact that is a component part of a valve and sits in the flow path, where its position decides whether fluid passes, is throttled, or is sent to another port.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um MaterialArtifact que é parte componente de uma válvula e ocupa o caminho do escoamento, onde sua posição decide se o fluido passa, é estrangulado ou é enviado a outra via.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">As a constructive type defined by physical configuration and mechanical role, the valve closure member should use necessary conditions. The structural differentia (being positioned in flow stream) is harder to make sufficient under OWA - other components or hybrid devices might satisfy the conditions but not be classified as standard valve closure members.</iof-av:primitiveRationale>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every valve closure member is a material artifact that is a component part of some valve and participates in flow control processes by being positioned within the flow stream.</iof-av:semiFormalNaturalLanguageAxiom>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -4341,7 +4341,7 @@
     <rdfs:label xml:lang="pt-br">membro de fechamento de válvula</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n000964"/>
     <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
-    <skos:definition xml:lang="en">A MaterialArtifact that is a component part of a valve and that is positioned in the flow stream to permit, obstruct, divert or regulate flow through mechanical positioning.</skos:definition>
+    <skos:definition xml:lang="en">A MaterialArtifact that is a component part of a valve and sits in the flow path, where its position decides whether fluid passes, is throttled, or is sent to another port.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000371">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/VALVE_SEAT"/>
@@ -6341,15 +6341,15 @@
     <skos:definition xml:lang="en">A PlannedProcess in which a port establishes and maintains a point of interface that enables communication, connection, or interaction between distinct objects or systems.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000561">
-    <iof-av:naturalLanguageDefinition xml:lang="en">A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in separating relatively small quantities of liquid from a vapour stream held in a drum, so that the liquid is removed and the vapour leaves with reduced liquid content.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma GasDisengagementFunction que é realizada em um KnockOutSeparationProcess e que consiste em separar quantidades relativamente pequenas de líquido de uma corrente de vapor contida em um tambor, de modo que o líquido é removido e o vapor sai com teor de líquido reduzido.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in taking the small amount of liquid carried by a vapour stream out of it, so the vapour leaves with less liquid in it.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma GasDisengagementFunction que é realizada em um KnockOutSeparationProcess e que consiste em retirar de uma corrente de vapor a pequena quantidade de líquido que ela carrega, de modo que o vapor saia com menos líquido.</iof-av:naturalLanguageDefinition>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">knock out separation function</rdfs:label>
     <rdfs:label xml:lang="pt-br">função de separação knock-out</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001471"/>
     <rdfs:subClassOf rdf:nodeID="n001472"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000796"/>
-    <skos:definition xml:lang="en">A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in separating relatively small quantities of liquid from a vapour stream held in a drum, so that the liquid is removed and the vapour leaves with reduced liquid content.</skos:definition>
+    <skos:definition xml:lang="en">A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in taking the small amount of liquid carried by a vapour stream out of it, so the vapour leaves with less liquid in it.</skos:definition>
     <skos:definition xml:lang="en">A separation function borne by petroleum production equipment whose realization constitutes the removal of entrained liquid droplets from a gas stream by gravity or inertial impingement.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000562">
@@ -8063,8 +8063,8 @@
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000725">
     <dcterms:source rdf:resource="https://glossary.slb.com/en/terms/f/filter_medium"/>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A material artifact that is a permeable material used in a filtration device, through which filtrate passes and on which the filter cake is deposited.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que é um material permeável usado em um dispositivo de filtração, através do qual passa o filtrado e sobre o qual se deposita a torta de filtração.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A material artifact whose pores let a fluid through while holding back the particles it carries, which accumulate on its surface.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um artefato material cujos poros deixam passar um fluido e retêm as partículas que ele carrega, as quais se acumulam em sua superfície.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">The medium is a component of the filter, not a filter; the distinction rests on parthood, which is not a sufficient condition.</iof-av:primitiveRationale>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">filter medium</rdfs:label>
@@ -8072,27 +8072,27 @@
     <rdfs:subClassOf rdf:nodeID="n001809"/>
     <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
     <skos:definition xml:lang="en">A material artifact that constitutes the porous material through which a fluid stream passes to remove suspended particulates or liquid droplets in petroleum production equipment.</skos:definition>
-    <skos:definition xml:lang="en">A material artifact that is a permeable material used in a filtration device, through which filtrate passes and on which the filter cake is deposited.</skos:definition>
+    <skos:definition xml:lang="en">A material artifact whose pores let a fluid through while holding back the particles it carries, which accumulate on its surface.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000726">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/FINNED_TUBE"/>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A material artifact that is a tube extended with one or more fins to increase its outer surface area, bearing an extended-surface heat transfer function.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que é um tubo estendido com uma ou mais aletas para aumentar sua área de superfície externa, possuindo uma função de transferência de calor por superfície estendida.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A material artifact that bears an extended-surface heat transfer function: a tube carrying fins that enlarge the area it exposes to the surrounding fluid.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um artefato material que porta uma função de transferência de calor por superfície estendida: um tubo com aletas que ampliam a área exposta ao fluido ao redor.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">The differentia is structural (presence of fins), so under OWA it cannot be a sufficient condition.</iof-av:primitiveRationale>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">finned tube</rdfs:label>
     <rdfs:label xml:lang="pt-br">tubo aletado</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="n001810"/>
     <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/construct/MaterialArtifact"/>
+    <skos:definition xml:lang="en">A material artifact that bears an extended-surface heat transfer function: a tube carrying fins that enlarge the area it exposes to the surrounding fluid.</skos:definition>
     <skos:definition xml:lang="en">A material artifact that constitutes a heat transfer tube with extended surfaces—fins—that increase the external surface area to enhance heat exchange with a gas stream.</skos:definition>
-    <skos:definition xml:lang="en">A material artifact that is a tube extended with one or more fins to increase its outer surface area, bearing an extended-surface heat transfer function.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000727">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/GAS_DETECTING_MEASURING_ELEMENT"/>
     <iof-av:isPrimitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</iof-av:isPrimitive>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A measuring element that bears a gas detection function, used for detecting the presence of a specified concentration of a gas.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um elemento de medição que possui uma função de detecção de gás, usado para detectar a presença de uma concentração especificada de um gás.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A measuring element that bears a gas detection function: it responds when the gas it is meant to watch for reaches the concentration set for it.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um elemento de medição que porta uma função de detecção de gás: responde quando o gás que deve vigiar atinge a concentração definida para ele.</iof-av:naturalLanguageDefinition>
     <iof-av:primitiveRationale xml:lang="en">GasDetectionFunction is already the sufficient condition for the 'gas detector' instrument. A measuring element bears it as a component; parthood is not a sufficient condition.</iof-av:primitiveRationale>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">gas detecting measuring element</rdfs:label>
@@ -8100,7 +8100,7 @@
     <rdfs:subClassOf rdf:nodeID="n001811"/>
     <rdfs:subClassOf rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000573"/>
     <skos:definition xml:lang="en">A material artifact that constitutes a sensing element within petroleum production gas detection equipment that responds to the presence and concentration of a target gas.</skos:definition>
-    <skos:definition xml:lang="en">A measuring element that bears a gas detection function, used for detecting the presence of a specified concentration of a gas.</skos:definition>
+    <skos:definition xml:lang="en">A measuring element that bears a gas detection function: it responds when the gas it is meant to watch for reaches the concentration set for it.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000728">
     <dcterms:source rdf:resource="https://glossary.slb.com/en/terms/m/master_valve"/>
@@ -8321,14 +8321,14 @@
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/CAP"/>
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (Cap(x) ↔ MaterialArtifact(x) ∧ ∃f (ClosureFunction(f) ∧ bearerOf(x,f)))</iof-av:firstOrderLogicAxiom>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A cap is a material artifact that bears a closure function: a hood or covering for the top or end of something.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma tampa e um artefato material que possui uma funcao de fechamento: um capuz ou cobertura para o topo ou extremidade de algo.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A cap is a material artifact that bears a closure function: a piece fitted over an opening or an end to close it off.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Uma tampa é um artefato material que porta uma função de fechamento: uma peça encaixada sobre uma abertura ou extremidade para fechá-la.</iof-av:naturalLanguageDefinition>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every cap is a material artifact that bears a closure function, and conversely.</iof-av:semiFormalNaturalLanguageAxiom>
     <owl:equivalentClass rdf:nodeID="n001828"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">cap</rdfs:label>
     <rdfs:label xml:lang="pt-br">tampa</rdfs:label>
-    <skos:definition xml:lang="en">A cap is a material artifact that bears a closure function: a hood or covering for the top or end of something.</skos:definition>
+    <skos:definition xml:lang="en">A cap is a material artifact that bears a closure function: a piece fitted over an opening or an end to close it off.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000747">
     <iof-av:naturalLanguageDefinition xml:lang="en">A pressurized gas cylinder that supplies the inert carrier gas used as the mobile phase in a gas chromatograph.</iof-av:naturalLanguageDefinition>
@@ -8368,14 +8368,14 @@
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000750">
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/COALESCENT_FILTER"/>
     <iof-av:firstOrderLogicAxiom xml:lang="en">∀x (CoalescentFilter(x) ↔ Filter(x) ∧ ∃f (CoalescingFiltrationFunction(f) ∧ bearerOf(x,f)))</iof-av:firstOrderLogicAxiom>
-    <iof-av:naturalLanguageDefinition xml:lang="en">A coalescent filter (coalescing filter) is a filter designed to remove liquid particles from a gas stream, using a layered coalescing media pack that merges small droplets into larger drops for gravity drainage.</iof-av:naturalLanguageDefinition>
-    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um filtro coalescente e um filtro projetado para remover particulas liquidas de uma corrente de gas, usando um pacote de meio filtrante em camadas que funde pequenas goticulas em gotas maiores para drenagem por gravidade.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="en">A coalescent filter is a filter whose purpose is to take entrained liquid out of a gas, by merging the droplets into drops large enough to drain away.</iof-av:naturalLanguageDefinition>
+    <iof-av:naturalLanguageDefinition xml:lang="pt-br">Um filtro coalescedor é um filtro cuja finalidade é retirar o líquido arrastado por um gás, unindo as gotículas em gotas grandes o bastante para escoarem.</iof-av:naturalLanguageDefinition>
     <iof-av:semiFormalNaturalLanguageAxiom xml:lang="en">Every coalescent filter is a filter that bears a coalescing filtration function, and conversely, every filter that bears a coalescing filtration function is a coalescent filter.</iof-av:semiFormalNaturalLanguageAxiom>
     <owl:equivalentClass rdf:nodeID="n001840"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">coalescent filter</rdfs:label>
     <rdfs:label xml:lang="pt-br">filtro coalescedor</rdfs:label>
-    <skos:definition xml:lang="en">A coalescent filter (coalescing filter) is a filter designed to remove liquid particles from a gas stream, using a layered coalescing media pack that merges small droplets into larger drops for gravity drainage.</skos:definition>
+    <skos:definition xml:lang="en">A coalescent filter is a filter whose purpose is to take entrained liquid out of a gas, by merging the droplets into drops large enough to drain away.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000751">
     <iof-av:naturalLanguageDefinition xml:lang="en">A display component that presents a measured or computed value to a human observer as numerals or characters rather than on an analogue scale.</iof-av:naturalLanguageDefinition>
@@ -18387,11 +18387,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001981">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
-    <rdf:rest rdf:nodeID="n002004"/>
+    <rdf:rest rdf:nodeID="n001987"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001982">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072"/>
-    <rdf:rest rdf:nodeID="n002536"/>
+    <rdf:rest rdf:nodeID="n002533"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n001983">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
@@ -18487,11 +18487,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002006">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
-    <rdf:rest rdf:nodeID="n001966"/>
+    <rdf:rest rdf:nodeID="n001973"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002007">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000073"/>
-    <rdf:rest rdf:nodeID="n002533"/>
+    <rdf:rest rdf:nodeID="n002532"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002008">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074"/>
@@ -18499,7 +18499,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002009">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000074"/>
-    <rdf:rest rdf:nodeID="n002215"/>
+    <rdf:rest rdf:nodeID="n002214"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002010">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
@@ -18511,11 +18511,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002012">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
-    <rdf:rest rdf:nodeID="n002134"/>
+    <rdf:rest rdf:nodeID="n002133"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002013">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000076"/>
-    <rdf:rest rdf:nodeID="n002181"/>
+    <rdf:rest rdf:nodeID="n002180"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002014">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
@@ -18559,15 +18559,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002024">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <rdf:rest rdf:nodeID="n001972"/>
+    <rdf:rest rdf:nodeID="n001974"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002025">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <rdf:rest rdf:nodeID="n001998"/>
+    <rdf:rest rdf:nodeID="n001985"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002026">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000077"/>
-    <rdf:rest rdf:nodeID="n002535"/>
+    <rdf:rest rdf:nodeID="n002534"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002027">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
@@ -18607,15 +18607,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002036">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
-    <rdf:rest rdf:nodeID="n001976"/>
+    <rdf:rest rdf:nodeID="n001966"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002037">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
-    <rdf:rest rdf:nodeID="n001993"/>
+    <rdf:rest rdf:nodeID="n001983"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002038">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000081"/>
-    <rdf:rest rdf:nodeID="n002062"/>
+    <rdf:rest rdf:nodeID="n002067"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002039">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
@@ -18659,11 +18659,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002049">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
-    <rdf:rest rdf:nodeID="n002456"/>
+    <rdf:rest rdf:nodeID="n002458"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002050">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000084"/>
-    <rdf:rest rdf:nodeID="n002063"/>
+    <rdf:rest rdf:nodeID="n002068"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002051">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
@@ -18687,7 +18687,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002056">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000086"/>
-    <rdf:rest rdf:nodeID="n002123"/>
+    <rdf:rest rdf:nodeID="n002122"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002057">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087"/>
@@ -18763,7 +18763,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002075">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000092"/>
-    <rdf:rest rdf:nodeID="n002457"/>
+    <rdf:rest rdf:nodeID="n002460"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002076">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
@@ -18775,11 +18775,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002078">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
-    <rdf:rest rdf:nodeID="n002152"/>
+    <rdf:rest rdf:nodeID="n002151"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002079">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
-    <rdf:rest rdf:nodeID="n002161"/>
+    <rdf:rest rdf:nodeID="n002162"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002080">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000094"/>
@@ -18803,11 +18803,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002085">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
-    <rdf:rest rdf:nodeID="n002154"/>
+    <rdf:rest rdf:nodeID="n002155"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002086">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000095"/>
-    <rdf:rest rdf:nodeID="n002093"/>
+    <rdf:rest rdf:nodeID="n002094"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002087">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000098"/>
@@ -18823,15 +18823,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002090">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
-    <rdf:rest rdf:nodeID="n002076"/>
+    <rdf:rest rdf:nodeID="n002077"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002091">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
-    <rdf:rest rdf:nodeID="n002150"/>
+    <rdf:rest rdf:nodeID="n002152"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002092">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000099"/>
-    <rdf:rest rdf:nodeID="n002162"/>
+    <rdf:rest rdf:nodeID="n002161"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002093">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
@@ -18851,15 +18851,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002097">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
-    <rdf:rest rdf:nodeID="n002083"/>
+    <rdf:rest rdf:nodeID="n002084"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002098">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
-    <rdf:rest rdf:nodeID="n002156"/>
+    <rdf:rest rdf:nodeID="n002154"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002099">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000100"/>
-    <rdf:rest rdf:nodeID="n002166"/>
+    <rdf:rest rdf:nodeID="n002167"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002100">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102"/>
@@ -18883,7 +18883,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002105">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000102"/>
-    <rdf:rest rdf:nodeID="n002502"/>
+    <rdf:rest rdf:nodeID="n002503"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002106">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000103"/>
@@ -18919,11 +18919,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002114">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000107"/>
-    <rdf:rest rdf:nodeID="n002317"/>
+    <rdf:rest rdf:nodeID="n002326"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002115">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000107"/>
-    <rdf:rest rdf:nodeID="n002031"/>
+    <rdf:rest rdf:nodeID="n002028"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002116">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
@@ -18931,15 +18931,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002117">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
-    <rdf:rest rdf:nodeID="n002155"/>
+    <rdf:rest rdf:nodeID="n002156"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002118">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
-    <rdf:rest rdf:nodeID="n002096"/>
+    <rdf:rest rdf:nodeID="n002095"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002119">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
-    <rdf:rest rdf:nodeID="n002167"/>
+    <rdf:rest rdf:nodeID="n002166"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002120">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000108"/>
@@ -18947,7 +18947,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002121">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000112"/>
-    <rdf:rest rdf:nodeID="n002206"/>
+    <rdf:rest rdf:nodeID="n002207"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002122">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
@@ -18975,7 +18975,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002128">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000113"/>
-    <rdf:rest rdf:nodeID="n002051"/>
+    <rdf:rest rdf:nodeID="n002053"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002129">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000114"/>
@@ -18987,11 +18987,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002131">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
-    <rdf:rest rdf:nodeID="n001974"/>
+    <rdf:rest rdf:nodeID="n001976"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002132">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000115"/>
-    <rdf:rest rdf:nodeID="n001995"/>
+    <rdf:rest rdf:nodeID="n002000"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002133">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000116"/>
@@ -19003,7 +19003,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002135">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000117"/>
-    <rdf:rest rdf:nodeID="n002138"/>
+    <rdf:rest rdf:nodeID="n002142"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002136">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
@@ -19051,15 +19051,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002147">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
-    <rdf:rest rdf:nodeID="n002232"/>
+    <rdf:rest rdf:nodeID="n002230"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002148">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
-    <rdf:rest rdf:nodeID="n002271"/>
+    <rdf:rest rdf:nodeID="n002269"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002149">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000118"/>
-    <rdf:rest rdf:nodeID="n002193"/>
+    <rdf:rest rdf:nodeID="n002196"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002150">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000119"/>
@@ -19091,11 +19091,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002157">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
-    <rdf:rest rdf:nodeID="n002084"/>
+    <rdf:rest rdf:nodeID="n002083"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002158">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
-    <rdf:rest rdf:nodeID="n002094"/>
+    <rdf:rest rdf:nodeID="n002096"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002159">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000120"/>
@@ -19103,7 +19103,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002160">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000121"/>
-    <rdf:rest rdf:nodeID="n002060"/>
+    <rdf:rest rdf:nodeID="n002062"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002161">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
@@ -19115,7 +19115,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002163">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
-    <rdf:rest rdf:nodeID="n002077"/>
+    <rdf:rest rdf:nodeID="n002076"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002164">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
@@ -19123,7 +19123,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002165">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000122"/>
-    <rdf:rest rdf:nodeID="n002151"/>
+    <rdf:rest rdf:nodeID="n002150"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002166">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000123"/>
@@ -19151,19 +19151,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002172">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000124"/>
-    <rdf:rest rdf:nodeID="n002343"/>
+    <rdf:rest rdf:nodeID="n002342"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002173">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
-    <rdf:rest rdf:nodeID="n002265"/>
+    <rdf:rest rdf:nodeID="n002258"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002174">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
-    <rdf:rest rdf:nodeID="n002230"/>
+    <rdf:rest rdf:nodeID="n002239"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002175">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000125"/>
-    <rdf:rest rdf:nodeID="n002410"/>
+    <rdf:rest rdf:nodeID="n002413"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002176">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
@@ -19179,7 +19179,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002179">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000127"/>
-    <rdf:rest rdf:nodeID="n002291"/>
+    <rdf:rest rdf:nodeID="n002288"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002180">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
@@ -19191,7 +19191,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002182">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
-    <rdf:rest rdf:nodeID="n002235"/>
+    <rdf:rest rdf:nodeID="n002232"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002183">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000128"/>
@@ -19199,7 +19199,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002184">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
-    <rdf:rest rdf:nodeID="n002198"/>
+    <rdf:rest rdf:nodeID="n002194"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002185">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
@@ -19207,15 +19207,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002186">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000129"/>
-    <rdf:rest rdf:nodeID="n002226"/>
+    <rdf:rest rdf:nodeID="n002225"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002187">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130"/>
-    <rdf:rest rdf:nodeID="n002413"/>
+    <rdf:rest rdf:nodeID="n002410"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002188">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000130"/>
-    <rdf:rest rdf:nodeID="n002228"/>
+    <rdf:rest rdf:nodeID="n002224"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002189">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
@@ -19259,27 +19259,27 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002199">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
-    <rdf:rest rdf:nodeID="n002239"/>
+    <rdf:rest rdf:nodeID="n002238"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002200">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
-    <rdf:rest rdf:nodeID="n002260"/>
+    <rdf:rest rdf:nodeID="n002266"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002201">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000131"/>
-    <rdf:rest rdf:nodeID="n002143"/>
+    <rdf:rest rdf:nodeID="n002137"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002202">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
-    <rdf:rest rdf:nodeID="n002146"/>
+    <rdf:rest rdf:nodeID="n002145"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002203">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
-    <rdf:rest rdf:nodeID="n002266"/>
+    <rdf:rest rdf:nodeID="n002271"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002204">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000132"/>
-    <rdf:rest rdf:nodeID="n002238"/>
+    <rdf:rest rdf:nodeID="n002236"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002205">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000133"/>
@@ -19299,15 +19299,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002209">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
-    <rdf:rest rdf:nodeID="n002018"/>
+    <rdf:rest rdf:nodeID="n002015"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002210">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
-    <rdf:rest rdf:nodeID="n002479"/>
+    <rdf:rest rdf:nodeID="n002476"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002211">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000136"/>
-    <rdf:rest rdf:nodeID="n002027"/>
+    <rdf:rest rdf:nodeID="n002030"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002212">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000137"/>
@@ -19339,7 +19339,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002219">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000140"/>
-    <rdf:rest rdf:nodeID="n002095"/>
+    <rdf:rest rdf:nodeID="n002093"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002220">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
@@ -19351,11 +19351,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002222">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
-    <rdf:rest rdf:nodeID="n002133"/>
+    <rdf:rest rdf:nodeID="n002134"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002223">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000142"/>
-    <rdf:rest rdf:nodeID="n002180"/>
+    <rdf:rest rdf:nodeID="n002181"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002224">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
@@ -19379,7 +19379,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002229">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000143"/>
-    <rdf:rest rdf:nodeID="n002237"/>
+    <rdf:rest rdf:nodeID="n002240"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002230">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
@@ -19431,11 +19431,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002242">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
-    <rdf:rest rdf:nodeID="n002145"/>
+    <rdf:rest rdf:nodeID="n002141"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002243">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
-    <rdf:rest rdf:nodeID="n002259"/>
+    <rdf:rest rdf:nodeID="n002263"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002244">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000144"/>
@@ -19443,7 +19443,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002245">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000145"/>
-    <rdf:rest rdf:nodeID="n002106"/>
+    <rdf:rest rdf:nodeID="n002108"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002246">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000146"/>
@@ -19451,7 +19451,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002247">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000148"/>
-    <rdf:rest rdf:nodeID="n002107"/>
+    <rdf:rest rdf:nodeID="n002106"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002248">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000149"/>
@@ -19459,7 +19459,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002249">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000150"/>
-    <rdf:rest rdf:nodeID="n002207"/>
+    <rdf:rest rdf:nodeID="n002206"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002250">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000151"/>
@@ -19467,19 +19467,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002251">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000151"/>
-    <rdf:rest rdf:nodeID="n002460"/>
+    <rdf:rest rdf:nodeID="n002459"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002252">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
-    <rdf:rest rdf:nodeID="n002072"/>
+    <rdf:rest rdf:nodeID="n002073"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002253">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
-    <rdf:rest rdf:nodeID="n001961"/>
+    <rdf:rest rdf:nodeID="n001977"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002254">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000152"/>
-    <rdf:rest rdf:nodeID="n001989"/>
+    <rdf:rest rdf:nodeID="n001990"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002255">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000153"/>
@@ -19551,19 +19551,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002272">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
-    <rdf:rest rdf:nodeID="n002241"/>
+    <rdf:rest rdf:nodeID="n002233"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002273">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
-    <rdf:rest rdf:nodeID="n002137"/>
+    <rdf:rest rdf:nodeID="n002138"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002274">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000155"/>
-    <rdf:rest rdf:nodeID="n002196"/>
+    <rdf:rest rdf:nodeID="n002190"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002275">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000156"/>
-    <rdf:rest rdf:nodeID="n002288"/>
+    <rdf:rest rdf:nodeID="n002291"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002276">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000157"/>
@@ -19575,43 +19575,43 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002278">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
-    <rdf:rest rdf:nodeID="n002019"/>
+    <rdf:rest rdf:nodeID="n002023"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002279">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
-    <rdf:rest rdf:nodeID="n001973"/>
+    <rdf:rest rdf:nodeID="n001962"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002280">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000158"/>
-    <rdf:rest rdf:nodeID="n001992"/>
+    <rdf:rest rdf:nodeID="n002004"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002281">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
-    <rdf:rest rdf:nodeID="n002231"/>
+    <rdf:rest rdf:nodeID="n002237"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002282">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
-    <rdf:rest rdf:nodeID="n002261"/>
+    <rdf:rest rdf:nodeID="n002267"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002283">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000159"/>
-    <rdf:rest rdf:nodeID="n002140"/>
+    <rdf:rest rdf:nodeID="n002143"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002284">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
-    <rdf:rest rdf:nodeID="n002073"/>
+    <rdf:rest rdf:nodeID="n002064"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002285">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
-    <rdf:rest rdf:nodeID="n001971"/>
+    <rdf:rest rdf:nodeID="n001979"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002286">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
-    <rdf:rest rdf:nodeID="n002002"/>
+    <rdf:rest rdf:nodeID="n001988"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002287">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000206"/>
-    <rdf:rest rdf:nodeID="n002532"/>
+    <rdf:rest rdf:nodeID="n002535"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002288">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000207"/>
@@ -19631,7 +19631,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002292">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000208"/>
-    <rdf:rest rdf:nodeID="n002319"/>
+    <rdf:rest rdf:nodeID="n002323"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002293">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000209"/>
@@ -19639,43 +19639,43 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002294">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000210"/>
-    <rdf:rest rdf:nodeID="n002263"/>
+    <rdf:rest rdf:nodeID="n002264"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002295">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n002240"/>
+    <rdf:rest rdf:nodeID="n002231"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002296">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n002262"/>
+    <rdf:rest rdf:nodeID="n002257"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002297">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n002136"/>
+    <rdf:rest rdf:nodeID="n002140"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002298">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213"/>
-    <rdf:rest rdf:nodeID="n002190"/>
+    <rdf:rest rdf:nodeID="n002192"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002299">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
-    <rdf:rest rdf:nodeID="n002475"/>
+    <rdf:rest rdf:nodeID="n002477"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002300">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
-    <rdf:rest rdf:nodeID="n001962"/>
+    <rdf:rest rdf:nodeID="n001968"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002301">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
-    <rdf:rest rdf:nodeID="n001994"/>
+    <rdf:rest rdf:nodeID="n002001"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002302">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000214"/>
-    <rdf:rest rdf:nodeID="n002067"/>
+    <rdf:rest rdf:nodeID="n002070"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002303">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
-    <rdf:rest rdf:nodeID="n002015"/>
+    <rdf:rest rdf:nodeID="n002021"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002304">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
@@ -19683,23 +19683,23 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002305">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
-    <rdf:rest rdf:nodeID="n002069"/>
+    <rdf:rest rdf:nodeID="n002058"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002306">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000215"/>
-    <rdf:rest rdf:nodeID="n001990"/>
+    <rdf:rest rdf:nodeID="n001997"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002307">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
-    <rdf:rest rdf:nodeID="n002074"/>
+    <rdf:rest rdf:nodeID="n002059"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002308">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
-    <rdf:rest rdf:nodeID="n002044"/>
+    <rdf:rest rdf:nodeID="n002045"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002309">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000216"/>
-    <rdf:rest rdf:nodeID="n001996"/>
+    <rdf:rest rdf:nodeID="n002005"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002310">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217"/>
@@ -19719,11 +19719,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002314">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000217"/>
-    <rdf:rest rdf:nodeID="n002342"/>
+    <rdf:rest rdf:nodeID="n002343"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002315">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000221"/>
-    <rdf:rest rdf:nodeID="n002476"/>
+    <rdf:rest rdf:nodeID="n002478"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002316">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
@@ -19775,7 +19775,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002328">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
-    <rdf:rest rdf:nodeID="n002459"/>
+    <rdf:rest rdf:nodeID="n002457"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002329">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000225"/>
@@ -19787,15 +19787,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002331">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
-    <rdf:rest rdf:nodeID="n002039"/>
+    <rdf:rest rdf:nodeID="n002044"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002332">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
-    <rdf:rest rdf:nodeID="n002071"/>
+    <rdf:rest rdf:nodeID="n002069"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002333">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000228"/>
-    <rdf:rest rdf:nodeID="n001985"/>
+    <rdf:rest rdf:nodeID="n002003"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002334">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000229"/>
@@ -19807,7 +19807,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002336">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
-    <rdf:rest rdf:nodeID="n002268"/>
+    <rdf:rest rdf:nodeID="n002265"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002337">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
@@ -19815,11 +19815,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002338">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
-    <rdf:rest rdf:nodeID="n002142"/>
+    <rdf:rest rdf:nodeID="n002136"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002339">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000233"/>
-    <rdf:rest rdf:nodeID="n002192"/>
+    <rdf:rest rdf:nodeID="n002198"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002340">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000234"/>
@@ -19839,55 +19839,55 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002344">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000235"/>
-    <rdf:rest rdf:nodeID="n002171"/>
+    <rdf:rest rdf:nodeID="n002169"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002345">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000236"/>
-    <rdf:rest rdf:nodeID="n002168"/>
+    <rdf:rest rdf:nodeID="n002171"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002346">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000236"/>
-    <rdf:rest rdf:nodeID="n002311"/>
+    <rdf:rest rdf:nodeID="n002312"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002347">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000238"/>
-    <rdf:rest rdf:nodeID="n002041"/>
+    <rdf:rest rdf:nodeID="n002048"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002348">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000240"/>
-    <rdf:rest rdf:nodeID="n002029"/>
+    <rdf:rest rdf:nodeID="n002032"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002349">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000240"/>
-    <rdf:rest rdf:nodeID="n002321"/>
+    <rdf:rest rdf:nodeID="n002320"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002350">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000241"/>
-    <rdf:rest rdf:nodeID="n002458"/>
+    <rdf:rest rdf:nodeID="n002456"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002351">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000241"/>
-    <rdf:rest rdf:nodeID="n002169"/>
+    <rdf:rest rdf:nodeID="n002170"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002352">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
-    <rdf:rest rdf:nodeID="n002170"/>
+    <rdf:rest rdf:nodeID="n002168"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002353">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
-    <rdf:rest rdf:nodeID="n001978"/>
+    <rdf:rest rdf:nodeID="n001960"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002354">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000243"/>
-    <rdf:rest rdf:nodeID="n001997"/>
+    <rdf:rest rdf:nodeID="n001989"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002355">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000244"/>
-    <rdf:rest rdf:nodeID="n002033"/>
+    <rdf:rest rdf:nodeID="n002034"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002356">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000244"/>
-    <rdf:rest rdf:nodeID="n002324"/>
+    <rdf:rest rdf:nodeID="n002318"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002357">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
@@ -19907,7 +19907,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002361">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000245"/>
-    <rdf:rest rdf:nodeID="n002267"/>
+    <rdf:rest rdf:nodeID="n002261"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002362">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000246"/>
@@ -19919,7 +19919,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002364">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
-    <rdf:rest rdf:nodeID="n002225"/>
+    <rdf:rest rdf:nodeID="n002226"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002365">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000247"/>
@@ -19927,11 +19927,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002366">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000249"/>
-    <rdf:rest rdf:nodeID="n002102"/>
+    <rdf:rest rdf:nodeID="n002103"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002367">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000249"/>
-    <rdf:rest rdf:nodeID="n002428"/>
+    <rdf:rest rdf:nodeID="n002429"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002368">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000250"/>
@@ -19955,11 +19955,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002373">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000255"/>
-    <rdf:rest rdf:nodeID="n002032"/>
+    <rdf:rest rdf:nodeID="n002029"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002374">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000255"/>
-    <rdf:rest rdf:nodeID="n002320"/>
+    <rdf:rest rdf:nodeID="n002325"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002375">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
@@ -19967,19 +19967,19 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002376">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
-    <rdf:rest rdf:nodeID="n002034"/>
+    <rdf:rest rdf:nodeID="n002035"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002377">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000258"/>
-    <rdf:rest rdf:nodeID="n002323"/>
+    <rdf:rest rdf:nodeID="n002317"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002378">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000259"/>
-    <rdf:rest rdf:nodeID="n002101"/>
+    <rdf:rest rdf:nodeID="n002100"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002379">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000259"/>
-    <rdf:rest rdf:nodeID="n002503"/>
+    <rdf:rest rdf:nodeID="n002502"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002380">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000260"/>
@@ -20003,7 +20003,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002385">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000261"/>
-    <rdf:rest rdf:nodeID="n002053"/>
+    <rdf:rest rdf:nodeID="n002052"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002386">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264"/>
@@ -20023,15 +20023,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002390">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000268"/>
-    <rdf:rest rdf:nodeID="n002326"/>
+    <rdf:rest rdf:nodeID="n002327"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002391">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000268"/>
-    <rdf:rest rdf:nodeID="n002440"/>
+    <rdf:rest rdf:nodeID="n002441"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002392">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000269"/>
-    <rdf:rest rdf:nodeID="n002214"/>
+    <rdf:rest rdf:nodeID="n002215"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002393">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000271"/>
@@ -20043,31 +20043,31 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002395">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
-    <rdf:rest rdf:nodeID="n002477"/>
+    <rdf:rest rdf:nodeID="n002475"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002396">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
-    <rdf:rest rdf:nodeID="n002021"/>
+    <rdf:rest rdf:nodeID="n002017"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002397">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000273"/>
-    <rdf:rest rdf:nodeID="n001970"/>
+    <rdf:rest rdf:nodeID="n001965"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002398">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n002042"/>
+    <rdf:rest rdf:nodeID="n002047"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002399">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n002058"/>
+    <rdf:rest rdf:nodeID="n002065"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002400">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n002005"/>
+    <rdf:rest rdf:nodeID="n001995"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002401">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000274"/>
-    <rdf:rest rdf:nodeID="n001967"/>
+    <rdf:rest rdf:nodeID="n001970"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002402">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
@@ -20079,7 +20079,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002404">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
-    <rdf:rest rdf:nodeID="n001983"/>
+    <rdf:rest rdf:nodeID="n001999"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002405">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000275"/>
@@ -20087,11 +20087,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002406">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
-    <rdf:rest rdf:nodeID="n002035"/>
+    <rdf:rest rdf:nodeID="n002033"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002407">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
-    <rdf:rest rdf:nodeID="n002325"/>
+    <rdf:rest rdf:nodeID="n002322"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002408">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000276"/>
@@ -20123,15 +20123,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002415">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
-    <rdf:rest rdf:nodeID="n002233"/>
+    <rdf:rest rdf:nodeID="n002241"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002416">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
-    <rdf:rest rdf:nodeID="n002257"/>
+    <rdf:rest rdf:nodeID="n002260"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002417">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000278"/>
-    <rdf:rest rdf:nodeID="n002191"/>
+    <rdf:rest rdf:nodeID="n002197"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002418">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000279"/>
@@ -20139,7 +20139,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002419">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000281"/>
-    <rdf:rest rdf:nodeID="n002312"/>
+    <rdf:rest rdf:nodeID="n002311"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002420">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000282"/>
@@ -20151,7 +20151,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002422">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000283"/>
-    <rdf:rest rdf:nodeID="n002316"/>
+    <rdf:rest rdf:nodeID="n002319"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002423">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000285"/>
@@ -20163,15 +20163,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002425">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
-    <rdf:rest rdf:nodeID="n002016"/>
+    <rdf:rest rdf:nodeID="n002014"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002426">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
-    <rdf:rest rdf:nodeID="n001977"/>
+    <rdf:rest rdf:nodeID="n001964"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002427">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000287"/>
-    <rdf:rest rdf:nodeID="n001984"/>
+    <rdf:rest rdf:nodeID="n001993"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002428">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000289"/>
@@ -20183,15 +20183,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002430">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000289"/>
-    <rdf:rest rdf:nodeID="n002100"/>
+    <rdf:rest rdf:nodeID="n002101"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002431">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000292"/>
-    <rdf:rest rdf:nodeID="n002327"/>
+    <rdf:rest rdf:nodeID="n002324"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002432">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000292"/>
-    <rdf:rest rdf:nodeID="n002441"/>
+    <rdf:rest rdf:nodeID="n002440"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002433">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000296"/>
@@ -20207,7 +20207,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002436">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000298"/>
-    <rdf:rest rdf:nodeID="n002380"/>
+    <rdf:rest rdf:nodeID="n002381"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002437">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000298"/>
@@ -20215,11 +20215,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002438">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000299"/>
-    <rdf:rest rdf:nodeID="n002127"/>
+    <rdf:rest rdf:nodeID="n002124"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002439">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000300"/>
-    <rdf:rest rdf:nodeID="n002103"/>
+    <rdf:rest rdf:nodeID="n002104"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002440">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
@@ -20235,7 +20235,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002443">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000301"/>
-    <rdf:rest rdf:nodeID="n002318"/>
+    <rdf:rest rdf:nodeID="n002321"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002444">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000303"/>
@@ -20243,15 +20243,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002445">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
-    <rdf:rest rdf:nodeID="n002003"/>
+    <rdf:rest rdf:nodeID="n001984"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002446">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
-    <rdf:rest rdf:nodeID="n001964"/>
+    <rdf:rest rdf:nodeID="n001967"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002447">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308"/>
-    <rdf:rest rdf:nodeID="n002066"/>
+    <rdf:rest rdf:nodeID="n002074"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002448">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000309"/>
@@ -20259,27 +20259,27 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002449">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
-    <rdf:rest rdf:nodeID="n002141"/>
+    <rdf:rest rdf:nodeID="n002144"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002450">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
-    <rdf:rest rdf:nodeID="n002258"/>
+    <rdf:rest rdf:nodeID="n002259"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002451">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000310"/>
-    <rdf:rest rdf:nodeID="n002197"/>
+    <rdf:rest rdf:nodeID="n002191"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002452">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
-    <rdf:rest rdf:nodeID="n001975"/>
+    <rdf:rest rdf:nodeID="n001961"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002453">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
-    <rdf:rest rdf:nodeID="n001988"/>
+    <rdf:rest rdf:nodeID="n001991"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002454">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000313"/>
-    <rdf:rest rdf:nodeID="n002070"/>
+    <rdf:rest rdf:nodeID="n002072"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002455">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
@@ -20307,15 +20307,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002461">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
-    <rdf:rest rdf:nodeID="n002045"/>
+    <rdf:rest rdf:nodeID="n002043"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002462">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
-    <rdf:rest rdf:nodeID="n001965"/>
+    <rdf:rest rdf:nodeID="n001972"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002463">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000314"/>
-    <rdf:rest rdf:nodeID="n001991"/>
+    <rdf:rest rdf:nodeID="n002002"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002464">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000315"/>
@@ -20323,7 +20323,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002465">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000315"/>
-    <rdf:rest rdf:nodeID="n002534"/>
+    <rdf:rest rdf:nodeID="n002536"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002466">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000316"/>
@@ -20331,7 +20331,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002467">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000316"/>
-    <rdf:rest rdf:nodeID="n002014"/>
+    <rdf:rest rdf:nodeID="n002020"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002468">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000318"/>
@@ -20351,11 +20351,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002472">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
-    <rdf:rest rdf:nodeID="n002028"/>
+    <rdf:rest rdf:nodeID="n002027"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002473">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
-    <rdf:rest rdf:nodeID="n002047"/>
+    <rdf:rest rdf:nodeID="n002039"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002474">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000320"/>
@@ -20383,15 +20383,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002480">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
-    <rdf:rest rdf:nodeID="n002020"/>
+    <rdf:rest rdf:nodeID="n002016"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002481">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
-    <rdf:rest rdf:nodeID="n001960"/>
+    <rdf:rest rdf:nodeID="n001971"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002482">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000321"/>
-    <rdf:rest rdf:nodeID="n002001"/>
+    <rdf:rest rdf:nodeID="n001998"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002483">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000323"/>
@@ -20423,11 +20423,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002490">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326"/>
-    <rdf:rest rdf:nodeID="n002043"/>
+    <rdf:rest rdf:nodeID="n002042"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002491">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000326"/>
-    <rdf:rest rdf:nodeID="n002068"/>
+    <rdf:rest rdf:nodeID="n002071"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002492">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
@@ -20439,7 +20439,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002494">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
-    <rdf:rest rdf:nodeID="n002381"/>
+    <rdf:rest rdf:nodeID="n002380"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002495">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000327"/>
@@ -20451,23 +20451,23 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002497">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000328"/>
-    <rdf:rest rdf:nodeID="n002122"/>
+    <rdf:rest rdf:nodeID="n002123"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002498">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n002264"/>
+    <rdf:rest rdf:nodeID="n002262"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002499">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n002236"/>
+    <rdf:rest rdf:nodeID="n002235"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002500">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n002144"/>
+    <rdf:rest rdf:nodeID="n002146"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002501">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000330"/>
-    <rdf:rest rdf:nodeID="n002194"/>
+    <rdf:rest rdf:nodeID="n002193"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002502">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000331"/>
@@ -20479,7 +20479,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002504">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
-    <rdf:rest rdf:nodeID="n002269"/>
+    <rdf:rest rdf:nodeID="n002268"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002505">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000334"/>
@@ -20495,11 +20495,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002508">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337"/>
-    <rdf:rest rdf:nodeID="n002104"/>
+    <rdf:rest rdf:nodeID="n002102"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002509">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000337"/>
-    <rdf:rest rdf:nodeID="n002429"/>
+    <rdf:rest rdf:nodeID="n002428"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002510">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
@@ -20507,7 +20507,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002511">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
-    <rdf:rest rdf:nodeID="n002052"/>
+    <rdf:rest rdf:nodeID="n002055"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002512">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338"/>
@@ -20519,7 +20519,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002514">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
-    <rdf:rest rdf:nodeID="n002108"/>
+    <rdf:rest rdf:nodeID="n002107"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002515">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
@@ -20527,11 +20527,11 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002516">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000343"/>
-    <rdf:rest rdf:nodeID="n002224"/>
+    <rdf:rest rdf:nodeID="n002228"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002517">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000344"/>
-    <rdf:rest rdf:nodeID="n002030"/>
+    <rdf:rest rdf:nodeID="n002031"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002518">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000344"/>
@@ -20539,35 +20539,35 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002519">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
-    <rdf:rest rdf:nodeID="n001999"/>
+    <rdf:rest rdf:nodeID="n001994"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002520">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
-    <rdf:rest rdf:nodeID="n001968"/>
+    <rdf:rest rdf:nodeID="n001975"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002521">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000345"/>
-    <rdf:rest rdf:nodeID="n002059"/>
+    <rdf:rest rdf:nodeID="n002066"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002522">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000347"/>
-    <rdf:rest rdf:nodeID="n002322"/>
+    <rdf:rest rdf:nodeID="n002316"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002523">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n002017"/>
+    <rdf:rest rdf:nodeID="n002019"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002524">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n001979"/>
+    <rdf:rest rdf:nodeID="n001963"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002525">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n001987"/>
+    <rdf:rest rdf:nodeID="n001986"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002526">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000354"/>
-    <rdf:rest rdf:nodeID="n002065"/>
+    <rdf:rest rdf:nodeID="n002060"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002527">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000357"/>
@@ -20575,7 +20575,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002528">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000357"/>
-    <rdf:rest rdf:nodeID="n002124"/>
+    <rdf:rest rdf:nodeID="n002127"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002529">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000361"/>
@@ -20587,7 +20587,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002531">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000364"/>
-    <rdf:rest rdf:nodeID="n002023"/>
+    <rdf:rest rdf:nodeID="n002018"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002532">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
@@ -20611,15 +20611,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002537">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
-    <rdf:rest rdf:nodeID="n001963"/>
+    <rdf:rest rdf:nodeID="n001978"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002538">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000366"/>
-    <rdf:rest rdf:nodeID="n002000"/>
+    <rdf:rest rdf:nodeID="n001996"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002539">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000367"/>
-    <rdf:rest rdf:nodeID="n002478"/>
+    <rdf:rest rdf:nodeID="n002479"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002540">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000367"/>
@@ -20627,7 +20627,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002541">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000368"/>
-    <rdf:rest rdf:nodeID="n002055"/>
+    <rdf:rest rdf:nodeID="n002051"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002542">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000368"/>
@@ -20643,15 +20643,15 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002545">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
-    <rdf:rest rdf:nodeID="n002048"/>
+    <rdf:rest rdf:nodeID="n002041"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002546">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
-    <rdf:rest rdf:nodeID="n002064"/>
+    <rdf:rest rdf:nodeID="n002063"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002547">
     <rdf:first rdf:resource="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000377"/>
-    <rdf:rest rdf:nodeID="n001986"/>
+    <rdf:rest rdf:nodeID="n001992"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="n002548">
     <owl:members rdf:nodeID="n002386"/>
