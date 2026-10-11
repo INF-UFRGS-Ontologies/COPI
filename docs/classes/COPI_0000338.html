@@ -312,7 +312,7 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>A relay is an electrical switching device that bears a signal relay function, realized by passing on information or signals from one circuit to control operations in another circuit.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um relé é um dispositivo de comutação elétrica que possui uma função de relé de sinal, realizada ao transmitir informações ou sinais de um circuito para controlar operações em outro circuito.</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A relay is a material artifact that passes on information or signals from one circuit to control operations in another circuit.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um relé é um artefato material que transmite informações ou sinais de um circuito para controlar operações em outro circuito.</div>
       </div>
 
       <div class="doc-section">
@@ -322,10 +322,9 @@
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
           <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (Relay(x) ↔ MaterialArtifact(x) ∧ ∃f (SignalRelayFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Function axiom: SignalRelayFunction]</span>∀f (SignalRelayFunction(f) → ∀p (realizedIn(f,p) → SignalRelayProcess(p)) ∧ ∃p (SignalRelayProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((Relay(x) ∧ SignalRelayFunction(f) ∧ bearerOf(x,f)) →
-      ∃m (InformationContentEntity(m) ∧ participatesIn(m,f)) ∧
-      ∃e (InformationContentEntity(e) ∧ participatesIn(e,f)) ∧
-      processType(f,ElectricalPowerConversion)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ∀p ((Relay(x) ∧ SignalRelayFunction(f) ∧ bearerOf(x,f) ∧ realizedIn(f,p)) →
+      ∃m (InformationContentEntity(m) ∧ hasInput(p,m)) ∧
+      ∃e (InformationContentEntity(e) ∧ hasOutput(p,e))) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed inputs and outputs of the process p that realises the function (transformation kind: electrical_power_conversion)</span></span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
@@ -354,7 +353,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
+    owl:versionInfo &quot;1.1.0-180-g3e7af31&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -367,7 +366,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-24&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-10-10&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -411,7 +410,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
-        owl:onProperty iof-core:hasSpecifiedOutput ;
+        owl:onProperty iof-core:hasOutput ;
         owl:someValuesFrom :InformationContentEntity
     ] .
 
@@ -430,9 +429,9 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     ] ;
     rdfs:label &quot;relay&quot;@en ;
     rdfs:label &quot;relé&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A relay is an electrical switching device that bears a signal relay function, realized by passing on information or signals from one circuit to control operations in another circuit.&quot;@en ;
-    skos:definition &quot;A relay is an electrical switching device that bears a signal relay function, realized by passing on information or signals from one circuit to control operations in another circuit.&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;Um relé é um dispositivo de comutação elétrica que possui uma função de relé de sinal, realizada ao transmitir informações ou sinais de um circuito para controlar operações em outro circuito.&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A relay is a material artifact that passes on information or signals from one circuit to control operations in another circuit.&quot;@en ;
+    skos:definition &quot;A relay is a material artifact that passes on information or signals from one circuit to control operations in another circuit.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um relé é um artefato material que transmite informações ou sinais de um circuito para controlar operações em outro circuito.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every Relay is an ElectricalSwitchingDevice that bearerOf some SignalRelayFunction&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x(Relay(x) ↔ (ElectricalSwitchingDevice(x) ∧ ∃f(SignalRelayFunction(f) ∧ bearerOf(x,f))))&quot;@en ;
     dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/RELAY&gt; ;
@@ -508,7 +507,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Relays take an electrical control signal as input and produce a switched or modified electrical output, providing isolation and potentially amplification or logic processing between input and output circuits.</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">Transformer</span> <span class="disjoint-pill">Motor</span></div><div class="rationale mt-2">C4: Motor. C?: Transformer [kind_ambiguous]. Relays have incompatible process signatures with transformers (which transform voltage/current levels), motors (which convert electrical to mechanical energy), and generators (which convert mechanical to electrical energy)</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000338</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-24</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000338</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000338</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-10-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-10-10</td></tr></tbody></table></div>
 
     </div>
 

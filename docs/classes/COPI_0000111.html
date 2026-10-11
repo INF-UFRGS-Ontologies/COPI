@@ -347,7 +347,7 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>A double block and bleed valve is a valve that incorporates two seats each providing sealing capability and includes a means of venting the space between the seats.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Uma válvula de bloqueio duplo e sangria é uma válvula que incorpora duas sedes, cada uma proporcionando capacidade de vedação, e inclui um meio de ventilação do espaço entre as sedes.</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A double block and bleed valve is a valve with two sealing seats and a connection through which the space between them can be drained or vented.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Uma válvula de bloqueio duplo e sangria é uma válvula com dois assentos de vedação e uma conexão pela qual o espaço entre eles pode ser drenado ou ventilado.</div>
       </div>
 
       <div class="doc-section">
@@ -358,11 +358,10 @@
           <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (DoubleBlockAndBleedValve(x) → Valve(x) ∧ ∃f (FlowControlFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Function axiom: FlowControlFunction]</span>∀f (FlowControlFunction(f) → ∀p (realizedIn(f,p) → FlowControlProcess(p)) ∧ ∃p (FlowControlProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
 <span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (DoubleBlockAndBleedValve(x) → ∃hasComponentPartAtAllTimes.PrimarySeat ⊓ ∃hasComponentPartAtAllTimes.SecondarySeat ⊓ ∃hasComponentPartAtAllTimes.BleedPort) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
-<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((DoubleBlockAndBleedValve(x) ∧ FlowControlFunction(f) ∧ bearerOf(x,f)) →
-      ∃m (PortionOfFluid(m) ∧ participatesIn(m,f)) ∧
-      ∃e1 (PortionOfFluid(e1) ∧ participatesIn(e1,f)) ∧
-      ∃e2 (PortionOfFluid(e2) ∧ participatesIn(e2,f)) ∧
-      processType(f,FlowIsolation)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ∀p ((DoubleBlockAndBleedValve(x) ∧ FlowControlFunction(f) ∧ bearerOf(x,f) ∧ realizedIn(f,p)) →
+      ∃m (PortionOfFluid(m) ∧ hasInput(p,m)) ∧
+      ∃e1 (PortionOfFluid(e1) ∧ hasOutput(p,e1)) ∧
+      ∃e2 (PortionOfFluid(e2) ∧ hasOutput(p,e2))) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed inputs and outputs of the process p that realises the function (transformation kind: flow_isolation)</span></span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
@@ -391,7 +390,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
+    owl:versionInfo &quot;1.1.0-180-g3e7af31&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -404,7 +403,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-24&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-10-10&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -448,12 +447,12 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
-        owl:onProperty iof-core:hasSpecifiedOutput ;
+        owl:onProperty iof-core:hasOutput ;
         owl:someValuesFrom :PortionOfFluid
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
-        owl:onProperty iof-core:hasSpecifiedOutput ;
+        owl:onProperty iof-core:hasOutput ;
         owl:someValuesFrom :PortionOfFluid
     ] .
 
@@ -467,9 +466,9 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     ] ;
     rdfs:label &quot;double block and bleed valve&quot;@en ;
     rdfs:label &quot;válvula de bloqueio duplo e sangria&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A double block and bleed valve is a valve that incorporates two seats each providing sealing capability and includes a means of venting the space between the seats.&quot;@en ;
-    skos:definition &quot;A double block and bleed valve is a valve that incorporates two seats each providing sealing capability and includes a means of venting the space between the seats.&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;Uma válvula de bloqueio duplo e sangria é uma válvula que incorpora duas sedes, cada uma proporcionando capacidade de vedação, e inclui um meio de ventilação do espaço entre as sedes.&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A double block and bleed valve is a valve with two sealing seats and a connection through which the space between them can be drained or vented.&quot;@en ;
+    skos:definition &quot;A double block and bleed valve is a valve with two sealing seats and a connection through which the space between them can be drained or vented.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma válvula de bloqueio duplo e sangria é uma válvula com dois assentos de vedação e uma conexão pela qual o espaço entre eles pode ser drenado ou ventilado.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every double block and bleed valve is a valve that has a primary seat and has a secondary seat and has a bleed port.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x (DoubleBlockAndBleedValve(x) → (Valve(x) ∧ ∃p,s,b (PrimarySeat(p) ∧ SecondarySeat(s) ∧ BleedPort(b) ∧ hasComponentPartAtAllTimes(x,p) ∧ hasComponentPartAtAllTimes(x,s) ∧ hasComponentPartAtAllTimes(x,b))))&quot;@en ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
@@ -538,7 +537,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">Primary signature is standard valve flow control, but with additional bleed output capability that allows venting or sampling from the space between seats for testing seal integrity.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000111</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000111</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-24</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000111</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000111</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-10-03</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-10-10</td></tr></tbody></table></div>
 
     </div>
 

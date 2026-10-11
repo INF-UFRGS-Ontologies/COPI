@@ -312,21 +312,17 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>An Assembly that bears a PowerTransmissionFunction and that has circumferential teeth for positive mechanical engagement with mating gears or racks to transmit rotational motion and power.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um Assembly que porta uma PowerTransmissionFunction e que possui dentes circunferenciais para engajamento mecânico positivo com engrenagens ou cremalheiras correspondentes para transmitir movimento rotacional e potência.</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A gear wheel is a material artifact that bears a power transmission function by means of teeth that successively engage the teeth of a mating gear or rack.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Uma roda dentada é um artefato material que porta uma função de transmissão de potência por meio de dentes que se engrenam sucessivamente com os dentes de uma roda conjugada ou de uma cremalheira.</div>
       </div>
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Formal Axioms</span><span class="t-pt">Axiomas Formais</span></div>
-        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>GearWheel SubClassOf Assembly and (bearerOf some PowerTransmissionFunction) and (hasComponentPartAtAllTimes some Tooth) and (hasComponentPartAtAllTimes some WheelBody)</div>
+        <div class="axiom-block"><div class="axiom-label"><span class="t-en">Semi-formal (Aristotelian)</span><span class="t-pt">Semi-formal (Aristotélico)</span></div>Every gear wheel is a material artifact that bears a power transmission function.</div>
         <div class="axiom-block">
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
-          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (GearWheel(x) → Gearbox(x) ∧ ∃f (PowerTransmissionFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
+          <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Necessary condition]</span>∀x (GearWheel(x) → MaterialArtifact(x) ∧ ∃f (PowerTransmissionFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Function axiom: PowerTransmissionFunction]</span>∀f (PowerTransmissionFunction(f) → ∀p (realizedIn(f,p) → PowerTransmissionProcess(p)) ∧ ∃p (PowerTransmissionProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (GearWheel(x) → ∃hasComponentPartAtAllTimes.Tooth ⊓ ∃hasComponentPartAtAllTimes.WheelBody) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: ?]</span>∀x (GearWheel(x) → ∃p (?(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
-<span class="fol-line"><span class="fol-label">[Necessary part: ?]</span>∀x (GearWheel(x) → ∃p (?(p) ∧ hasComponentPartAtAllTimes(x,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 4: mereological commitment — every instance must have this part</span></span>
-<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((GearWheel(x) ∧ PowerTransmissionFunction(f) ∧ bearerOf(x,f)) →
-      processType(f,MechanicalPowerTransmission)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+<span class="fol-line"><span class="fol-label">[Structural differentia (necessary only)]</span>∀x (GearWheel(x) → ∃bearerOf.PowerTransmissionFunction) <span style="color:#9ca3af;font-size:.78rem;">— Step 3: structural property — necessary condition, not sufficient (OWA prevents ≡)</span></span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
@@ -355,7 +351,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
+    owl:versionInfo &quot;1.1.0-180-g3e7af31&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -368,7 +364,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-24&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-10-10&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -406,7 +402,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 
 ### Equipment universal: GearWheel
 :GearWheel rdf:type owl:Class ;
-    rdfs:subClassOf :Gearbox ;
+    rdfs:subClassOf iof-core:MaterialArtifact ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
         owl:onProperty iof-core:hasFunction ;  # Object branch (MaterialArtifact/Assembly/Object/FiatObjectPart)
@@ -414,12 +410,12 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     ] ;
     rdfs:label &quot;gear wheel&quot;@en ;
     rdfs:label &quot;roda dentada&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;An Assembly that bears a PowerTransmissionFunction and that has circumferential teeth for positive mechanical engagement with mating gears or racks to transmit rotational motion and power.&quot;@en ;
-    skos:definition &quot;An Assembly that bears a PowerTransmissionFunction and that has circumferential teeth for positive mechanical engagement with mating gears or racks to transmit rotational motion and power.&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;Um Assembly que porta uma PowerTransmissionFunction e que possui dentes circunferenciais para engajamento mecânico positivo com engrenagens ou cremalheiras correspondentes para transmitir movimento rotacional e potência.&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A gear wheel is a material artifact that bears a power transmission function by means of teeth that successively engage the teeth of a mating gear or rack.&quot;@en ;
+    skos:definition &quot;A gear wheel is a material artifact that bears a power transmission function by means of teeth that successively engage the teeth of a mating gear or rack.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma roda dentada é um artefato material que porta uma função de transmissão de potência por meio de dentes que se engrenam sucessivamente com os dentes de uma roda conjugada ou de uma cremalheira.&quot;@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom &quot;Every gear wheel is a material artifact that bears a power transmission function.&quot;@en ;
+    iof-av:firstOrderLogicAxiom &quot;GearWheel(x) → MaterialArtifact(x) ∧ ∃f (PowerTransmissionFunction(f) ∧ bearerOf(x,f))&quot;@en ;
     iof-av:isPrimitive &quot;true&quot;^^xsd:boolean ;
-    iof-av:primitiveRationale &quot;Constructive differentia based on physical structure (toothed geometry). Under OWA, asserting equivalence could force classification of complex hybrid mechanisms or specialized toothed components that should not be categorized as standard gear wheels for maintenance purposes.&quot;@en ;
-    rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty bfo:BFO_0000196 ; owl:someValuesFrom :COPI_0000059 ] ;
     dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/GEAR_WHEEL&gt; .
 </div></div>
       </div>
@@ -444,7 +440,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
         <span class="text-muted" style="font-size:.8rem;"> ⊑ PlannedProcess</span>
       </div>
     </div>
-    <div class="rationale">While the ISO 15926 definition emphasizes motion transmission, gear wheels are fundamentally designed to transmit mechanical power between shafts through toothed engagement. However, this is the generic function shared by all power transmission components - the differentia for gear wheel comes from its specific toothed construction.</div>
+    <div class="rationale">Both the ISO 15926-4 definition (&#x27;to transmit motion&#x27;) and ISO 1122-1 (&#x27;designed to transmit motion to, or receive motion from, another toothed member&#x27;) state the function. PowerTransmissionFunction is already used by shaft, drive shaft, input shaft and output shaft, so it is reused exactly: a function shared by all mechanical power transmitters is the identity-giving function at the family level, and the toothed structure (Step 3-4) is what separates the gear wheel.</div>
   </div>
 </div>
 <div class="step-block step-2">
@@ -453,22 +449,22 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   </div>
   <div class="step-body">
     <div class="mb-2">
-      <span class="decision-value">Gearbox</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
+      <span class="decision-value">MaterialArtifact</span><span class="bfo-badge ms-2">bfo:Object (BFO_0000030)</span>
     </div>
-    <div class="rationale">The source lists &#x27;gearbox&#x27; as an already-enriched class with PowerTransmissionFunction. A gear wheel is a component part of gearboxes and gear systems, but examining the BFO structure more carefully, a single gear wheel is a causally unified artifact (one Object) rather than an aggregate system. The more appropriate genus is actually Assembly - a gear wheel has removable parts (teeth, hub, bore) but forms one causally unified transmission component.</div>
+    <div class="rationale">ISO 15926-4 gives ARTEFACT (iof-core MaterialArtifact) and TRANSMITTER(force); ISO 1122-1 says &#x27;toothed member&#x27;. TRANSMITTER(force) is a functional parent that Step 1 already captures. No enriched class is a more specific genus: the previous genus Gearbox was wrong, because a gearbox is a housing with several gears and shafts, whereas a gear wheel is one toothed member of a gear pair, so it cannot be a subclass of Gearbox.</div>
   </div>
 </div>
 <div class="step-block step-3">
   <div class="step-block-header">
     <span class="step-num">3</span> <span class="t-en">Differentia Specifica</span><span class="t-pt">Diferença Específica</span>
   </div>
-  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃hasComponentPartAtAllTimes.Tooth ⊓ ∃hasComponentPartAtAllTimes.WheelBody</code></div><p style="font-size:.88rem;color:#374151;">Distinguished by having circumferential teeth that engage with mating teeth on another gear or rack to transmit motion through positive mechanical engagement.</p><div class="rationale">The toothed structure is the essential differentia - it enables positive engagement transmission that distinguishes gear wheels from other power transmission components. The teeth and wheel body are the minimal necessary structural elements.</div></div>
+  <div class="step-body"><div class="mb-2"><code style="font-size:.9rem;">∃bearerOf.PowerTransmissionFunction</code></div><p style="font-size:.88rem;color:#374151;">A gear wheel is a material artifact that bears a power transmission function by means of teeth that successively engage the teeth of a mating gear or rack.</p><div class="rationale">The function alone does not separate the gear wheel from shafts, so axiom_mode is necessary and the toothed trait is carried by the Tooth part in Step 4. The quantitative traits that ISO 1122-1 uses to name the members of a pair (the pinion has the smaller number of teeth, the wheel the larger) are subtype-level and are not part of the general class.</div></div>
 </div>
 <div class="step-block step-4">
   <div class="step-block-header">
     <span class="step-num">4</span> <span class="t-en">Necessary Parts</span><span class="t-pt">Partes Necessárias</span>
   </div>
-  <div class="step-body"><table class="parts-table"><thead><tr><th>Part class</th><th>Parent</th><th>Relation</th></tr></thead><tbody><tr><td></td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr><tr><td></td><td>MaterialArtifact</td><td>hasComponentPartAtAllTimes</td></tr></tbody></table><div class="rationale mt-2">A gear wheel necessarily consists of circumferential teeth for engagement and a central body structure, but the Known Component Terms list contains no component terms for this equipment type, so specific part names cannot be provided.</div></div>
+  <div class="step-body"><p class="text-muted fst-italic" style="font-size:.88rem;">No necessary parts recorded.</p><div class="rationale mt-2">Tooth is stated by two sources as part of a gear: ISO 15926-4 GEAR (&#x27;has teeth which are making contact with a mating gear&#x27;) and ISO 1122-1 clause 1.2.1.1 (&#x27;each of those elements of a gear which enter spaces between the corresponding elements of a mating gear&#x27;). It is genus-wide, since a toothed member by definition has teeth. It is added by the Step 2b follow-up write because store_response grounds quotes against the flat source shape only.</div></div>
 </div>
       </div>
 
@@ -478,12 +474,12 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="sig-grid">
     <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Inputs</span><span class="t-pt">Entradas</span></div><div style="font-size:.88rem;"><span class="text-muted">—</span></div></div>
     <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Outputs</span><span class="t-pt">Saídas</span></div><div style="font-size:.88rem;"><span class="text-muted">—</span></div></div>
-    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">mechanical power transmitted through positive toothed engagement, potentially with speed and torque modification based on gear ratio</div></div>
+    <div class="sig-cell"><div class="sig-cell-label"><span class="t-en">Transformation</span><span class="t-pt">Transformação</span></div><div style="font-size:.88rem;">motion and force transmitted from a driving machine element to a driven one through successively engaging teeth, with speed and torque changing according to the ratio of the number of teeth</div></div>
   </div>
-  <div class="rationale mt-2">Gear wheels fundamentally transform mechanical power input to mechanical power output through toothed engagement, which is the canonical mechanical power transmission transformation. The speed/torque modification is a secondary characteristic that depends on the gear ratio.</div>
+  <div class="rationale mt-2">The process transmits motion between solid machine elements; there are no material inputs or outputs of the kind the participant vocabulary admits. The same choice is made for shaft, drive shaft and valve stem.</div>
 </div>
       
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000290</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000290</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-04</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-08</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-24</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000290</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000290</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>necessary</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-05-04</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-10-10</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-5-5</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-10-10</td></tr></tbody></table></div>
 
     </div>
 
@@ -497,12 +493,12 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
           </div>
           <div class="card-body" style="font-family:system-ui,sans-serif;font-size:.85rem;">
             <table class="meta-table">
-              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>Gearbox</strong></td></tr>
-              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">Assembly</span></td></tr>
+              <tr><td><span class="t-en">Genus</span><span class="t-pt">Gênero</span></td><td><strong>MaterialArtifact</strong></td></tr>
+              <tr><td><span class="t-en">Root class</span><span class="t-pt">Classe raiz</span></td><td><span class="bfo-pill">MaterialArtifact</span></td></tr>
               <tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td><span class="mode-pill mode-necessary">necessary</span></td></tr>
               <tr><td><span class="t-en">Function</span><span class="t-pt">Função</span></td><td>PowerTransmissionFunction</td></tr>
               <tr><td><span class="t-en">Process</span><span class="t-pt">Processo</span></td><td>PowerTransmissionProcess</td></tr>
-              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>2</td></tr>
+              <tr><td><span class="t-en">Parts</span><span class="t-pt">Partes</span></td><td>0</td></tr>
             </table>
           </div>
         </div>
@@ -528,10 +524,14 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
 </div>
         
 <div class="doc-section">
-  <div class="doc-section-title"><span class="t-en">Provenance tiers</span><span class="t-pt">Camadas de proveniência</span> </div>
-  <div class="provenance-row"><span class="tier-badge tier-primary">primary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">iso15926</span></div><div class="provenance-quote">A &lt;GEAR WHEEL&gt; is an &lt;ARTEFACT&gt; and a &lt;TRANSMITTER(force)&gt; and that is a toothed wheel usend in conjunction with another, or with a rack, to transmit motion</div>
+  <div class="doc-section-title"><span class="t-en">Provenance tiers</span><span class="t-pt">Camadas de proveniência</span> <span class="coverage-badge coverage-full">secondary: full</span><details class="help-popover"><summary class="help-icon">?</summary><div class="help-content"><span class="t-en">How much independent secondary research backs this term — not how correct it is. "Full" means a non-primary source was quoted directly and covered several distinct aspects of the concept, not just its function. "Partial" means secondary research happened but covered less. "None" means only the primary definition was used. A "full" term can still contain an error, and a "none" term can still be entirely correct — this tracks whether the research step ran, not the result.</span><span class="t-pt">Quanto de pesquisa secundária independente sustenta este termo — não o quão correto ele é. "Full" significa que uma fonte não-primária foi citada literalmente e cobriu vários aspectos distintos do conceito, não apenas sua função. "Partial" significa que houve pesquisa secundária, mas com cobertura menor. "None" significa que só a definição primária foi usada. Um termo "full" ainda pode conter um erro, e um termo "none" ainda pode estar totalmente correto — isso rastreia se a etapa de pesquisa ocorreu, não o resultado.</span></div></details></div>
+  <div class="provenance-row"><span class="tier-badge tier-primary">primary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">iso15926</span><span class="text-muted" style="font-size:.68rem;">[function, structure]</span></div><div class="provenance-quote">A &lt;GEAR WHEEL&gt; is an &lt;ARTEFACT&gt; and a &lt;TRANSMITTER(force)&gt; and that is a toothed wheel usend in conjunction with another, or with a rack, to transmit motion</div><div class="provenance-row"><span class="tier-badge tier-secondary">secondary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">iso15926</span><span class="text-muted" style="font-size:.68rem;">[function, structure]</span></div><div class="provenance-quote">A &lt;GEAR is an &lt;ARTEFACT&gt; and a &lt;WHEEL&gt; and a &lt;TRANSMITTER(force)&gt; that has teeth which are making contact with a mating gear intended to transfer power</div><div class="provenance-row"><span class="tier-badge tier-secondary">secondary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">ISO 1122-1:1998</span><span class="text-muted" style="font-size:.68rem;">[structure, function, mechanism]</span></div><div class="provenance-quote">toothed member designed to transmit motion to, or receive motion from, another toothed member, by means of successively engaging teeth</div><div class="provenance-row"><span class="tier-badge tier-secondary">secondary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">ISO 1122-1:1998</span><span class="text-muted" style="font-size:.68rem;">[structure, mechanism]</span></div><div class="provenance-quote">each of those elements of a gear which enter spaces between the corresponding elements of a mating gear and which, by virtue of their shape, ensure that one gear turns the other</div><div class="provenance-row"><span class="tier-badge tier-secondary">secondary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">ISO 1122-1:1998</span><span class="text-muted" style="font-size:.68rem;">[application, mechanism]</span></div><div class="provenance-quote">mechanism consisting of two gears rotatable around axes relative positions of which are fixed and one gear turns the other by the action of teeth successively in contact</div><div class="provenance-row"><span class="tier-badge tier-secondary">secondary</span><span class="text-muted">standard</span><span class="fst-italic text-muted">verbatim</span><span class="fw-semibold">ISO 1122-1:1998</span><span class="text-muted" style="font-size:.68rem;">[subtype, parameter]</span></div><div class="provenance-quote">that gear of a pair which has the smaller number of teeth</div>
 </div>
         
+<div class="doc-section">
+  <div class="doc-section-title"><span class="t-en">Candidate parts (unconfirmed)</span><span class="t-pt">Partes candidatas (não confirmadas)</span></div>
+  <div class="candidate-part-row"><span class="fw-semibold">Tooth</span></div>
+</div>
       </div>
     </div>
   </div>
