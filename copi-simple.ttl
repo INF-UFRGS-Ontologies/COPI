@@ -16,7 +16,7 @@
 @base <https://www.inf.ufrgs.br/ontologies/copi/copi-simple.ttl> .
 
 <https://www.inf.ufrgs.br/ontologies/copi/copi-simple.ttl> rdf:type owl:Ontology ;
-                                                            owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-10-03/copi-simple.ttl> ;
+                                                            owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-10-11/copi-simple.ttl> ;
                                                             terms:bibliographicCitation "Santos, N.O., Antunes, C., Abel, M., Netto, J. (2026). Axiomatizing Industrial Reference Data: A BFO/IOF-Core Enrichment of ISO 15926-4 Equipment Classes. In: Formal Ontology in Information Systems (FOIS 2026). IOS Press." ;
                                                             terms:contributor "Cauã Antunes" ,
                                                                               "Haroldo Rojas" ,
@@ -41,7 +41,7 @@
                                                             vann:preferredNamespacePrefix "copi" ;
                                                             vann:preferredNamespaceUri "https://www.inf.ufrgs.br/ontologies/copi/"^^xsd:anyURI ;
                                                             owl:priorVersion <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-09-16/copi.owl> ;
-                                                            owl:versionInfo "2026-10-03" ;
+                                                            owl:versionInfo "2026-10-11" ;
                                                             skos:scopeNote "Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia."@pt-br ,
                                                                            "COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos."@pt-br ,
                                                                            "COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification."@en ,
@@ -2048,6 +2048,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000002
 copi:COPI_0000002 rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000056> ;
+                  owl:inverseOf copi:COPI_0000805 ;
                   owl:propertyChainAxiom ( <https://spec.industrialontologies.org/ontology/construct/hasFunction>
                                            <http://purl.obolibrary.org/obo/BFO_0000054>
                                          ) ;
@@ -2065,6 +2066,20 @@ copi:COPI_0000002 rdf:type owl:ObjectProperty ;
                                                        "The sub-property of bfo:participatesIn (BFO_0000056) entailed exclusively by the chain iof-constr:hasFunction ∘ obo:BFO_0000054: a material artifact functionally participates in every process that realizes one of its designed functions."@en ;
                   annotation:semiFormalNaturalLanguageDefinition "x 'functionally participates in' y if and only if there exists a function f such that x 'has function' f and f 'has realization' y"@en ,
                                                                  "x 'participa funcionalmente em' y se e somente se existe uma função f tal que x 'tem função' f e f 'tem realização' y"@pt-br .
+
+
+###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000805
+copi:COPI_0000805 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                  terms:source "ODR-011 §4" ;
+                  rdfs:comment "A inversa de copi:COPI_0000002 (participa funcionalmente em): um processo tem como participante funcional todo artefato material que porta uma função projetada realizada nesse processo."@pt-br ,
+                               "The inverse of copi:COPI_0000002 (functionally participates in): a process has as functional participant every material artifact that bears a designed function realized in that process."@en ;
+                  rdfs:isDefinedBy copi:copi-core ;
+                  rdfs:label "has functional participant"@en ,
+                             "tem participante funcional"@pt-br ;
+                  annotation:isPrimitive "false"^^xsd:boolean ;
+                  annotation:naturalLanguageDefinition "A inversa de 'participa funcionalmente em': um processo p tem participante funcional x se e somente se x participa funcionalmente em p."@pt-br ,
+                                                       "The inverse of 'functionally participates in': a process p has functional participant x if and only if x functionally participates in p."@en .
 
 
 #################################################################
@@ -3454,11 +3469,11 @@ copi:COPI_0000077 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "valve"@en ,
                              "válvula"@pt-br ;
-                  skos:definition "A valve is an assembly that bears a flow control function to permit, obstruct, regulate, or divert fluid streams."@en ;
+                  skos:definition "A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams."@en ;
                   annotation:firstOrderLogicAxiom "∀x(Valve(x) ↔ MaterialArtifact(x) ∧ ∃f(FlowControlFunction(f) ∧ bearerOf(x,f)))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A valve is an assembly that bears a flow control function to permit, obstruct, regulate, or divert fluid streams."@en ,
-                                                       "Uma válvula é um conjunto que possui uma função de controle de fluxo para permitir, obstruir, regular ou desviar correntes de fluido."@pt-br ;
+                  annotation:naturalLanguageDefinition "A valve is a material artifact that bears a flow control function to permit, obstruct, regulate, or divert fluid streams."@en ,
+                                                       "Uma válvula é um artefato material que possui uma função de controle de fluxo para permitir, obstruir, regular ou desviar correntes de fluido."@pt-br ;
                   annotation:primitiveRationale "Might be too restrictive to define as sufficient being a material artifact and having a flow control function."@en ;
                   annotation:semiFormalNaturalLanguageAxiom "Every valve is a material artifact that has the function to control fluid flow by permitting, obstructing, regulating, or diverting fluid streams."@en .
 
@@ -3473,11 +3488,11 @@ copi:COPI_0000078 rdf:type owl:Class ;
                   terms:source <https://standards.iso.org/iso/15926/-4/reference-data-item/VALVE_BODY> ;
                   rdfs:label "corpo de válvula"@pt-br ,
                              "valve body"@en ;
-                  skos:definition "A ValveComponent that bears a ContainmentFunction: the shell that retains the pressurised fluid inside a valve and carries its internal parts."@en ;
+                  skos:definition "A valve body is a material artifact that is the shell retaining the pressurised fluid inside a valve and carrying its internal parts."@en ;
                   annotation:firstOrderLogicAxiom "∀x(ValveBody(x) → ValveComponent(x) ∧ ∃f(ContainmentFunction(f) ∧ bearerOf(x,f)) ∧ ∃y(WorkingComponent(y) ∧ houses(x,y)))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A ValveComponent that bears a ContainmentFunction: the shell that retains the pressurised fluid inside a valve and carries its internal parts."@en ,
-                                                       "Um ValveComponent que porta uma ContainmentFunction: o invólucro que retém o fluido pressurizado dentro de uma válvula e sustenta suas peças internas."@pt-br ;
+                  annotation:naturalLanguageDefinition "A valve body is a material artifact that is the shell retaining the pressurised fluid inside a valve and carrying its internal parts."@en ,
+                                                       "Um corpo de válvula é um artefato material que é o invólucro que retém o fluido pressurizado dentro de uma válvula e sustenta suas peças internas."@pt-br ;
                   annotation:primitiveRationale "Constructive type - the structural characteristics of being the main pressure-containing housing component are necessary conditions but may not be sufficient under OWA, as various specialized valve body configurations exist that might contain additional components or have hybrid designs that could lead to false positive classifications."@en ;
                   annotation:semiFormalNaturalLanguageAxiom "Every valve body is a valve component that contains and supports valve working components and bears the function of fluid and pressure containment."@en .
 
@@ -3597,9 +3612,9 @@ copi:COPI_0000086 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "transformador"@pt-br ,
                              "transformer"@en ;
-                  skos:definition "A transformer is an electrical equipment that transforms electrical power from one circuit to another at the same frequency through electromagnetic induction using windings and a magnetic core."@en ;
-                  annotation:naturalLanguageDefinition "A transformer is an electrical equipment that transforms electrical power from one circuit to another at the same frequency through electromagnetic induction using windings and a magnetic core."@en ,
-                                                       "Um transformador é um equipamento elétrico que transforma energia elétrica de um circuito para outro na mesma frequência através de indução eletromagnética usando enrolamentos e um núcleo magnético."@pt-br .
+                  skos:definition "A transformer is an assembly that transforms electrical power from one circuit to another at the same frequency through electromagnetic induction using windings and a magnetic core."@en ;
+                  annotation:naturalLanguageDefinition "A transformer is an assembly that transforms electrical power from one circuit to another at the same frequency through electromagnetic induction using windings and a magnetic core."@en ,
+                                                       "Um transformador é um conjunto que transforma energia elétrica de um circuito para outro na mesma frequência através de indução eletromagnética usando enrolamentos e um núcleo magnético."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000087
@@ -3622,7 +3637,8 @@ copi:COPI_0000087 rdf:type owl:Class ;
                   skos:definition "A control valve is a valve that modulates flow rate in response to external control signals by means of an actuator-driven closure element."@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A control valve is a valve that modulates flow rate in response to external control signals by means of an actuator-driven closure element."@en ,
-                                                       "Uma válvula de controle é uma válvula que modula a vazão em resposta a sinais de controle externos por meio de um elemento de fechamento acionado por atuador."@pt-br .
+                                                       "Uma válvula de controle é uma válvula que modula a vazão em resposta a sinais de controle externos por meio de um elemento de fechamento acionado por atuador."@pt-br ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every control valve is a valve that bears a process controlled flow function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000089
@@ -4325,7 +4341,19 @@ copi:COPI_0000120 rdf:type owl:Class ;
 copi:COPI_0000121 rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000288
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
                                     owl:someValuesFrom copi:COPI_0000290
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000306
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
+                                    owl:someValuesFrom copi:COPI_0000317
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
@@ -5912,9 +5940,9 @@ copi:COPI_0000212 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "anode"@en ,
                              "ânodo"@pt-br ;
-                  skos:definition "An anode is electrical equipment that acts as the positive electrode of an electrochemical circuit, taking up the current that crosses the surrounding medium."@en ;
-                  annotation:naturalLanguageDefinition "An anode is electrical equipment that acts as the positive electrode of an electrochemical circuit, taking up the current that crosses the surrounding medium."@en ,
-                                                       "Um ânodo é um equipamento elétrico que atua como eletrodo positivo de um circuito eletroquímico, recebendo a corrente que atravessa o meio ao redor."@pt-br .
+                  skos:definition "An anode is an assembly that acts as the positive electrode of an electrochemical circuit, taking up the current that crosses the surrounding medium."@en ;
+                  annotation:naturalLanguageDefinition "An anode is an assembly that acts as the positive electrode of an electrochemical circuit, taking up the current that crosses the surrounding medium."@en ,
+                                                       "Um ânodo é um conjunto que atua como eletrodo positivo de um circuito eletroquímico, recebendo a corrente que atravessa o meio ao redor."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000213
@@ -6157,9 +6185,9 @@ copi:COPI_0000223 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "cathodic protection system"@en ,
                              "sistema de proteção catódica"@pt-br ;
-                  skos:definition "A cathodic protection system is a corrosion protection system that uses electrochemical cathodic protection mechanisms with anodes to prevent corrosion of carbon and low-alloy steel equipment or structures."@en ;
-                  annotation:naturalLanguageDefinition "A cathodic protection system is a corrosion protection system that uses electrochemical cathodic protection mechanisms with anodes to prevent corrosion of carbon and low-alloy steel equipment or structures."@en ,
-                                                       "Um sistema de proteção catódica é um sistema de proteção contra corrosão que usa mecanismos eletroquímicos de proteção catódica com ânodos para prevenir a corrosão de equipamentos ou estruturas de aço carbono e baixa liga."@pt-br .
+                  skos:definition "A cathodic protection system is an engineered system that uses electrochemical cathodic protection mechanisms with anodes to prevent corrosion of carbon and low-alloy steel equipment or structures."@en ;
+                  annotation:naturalLanguageDefinition "A cathodic protection system is an engineered system that uses electrochemical cathodic protection mechanisms with anodes to prevent corrosion of carbon and low-alloy steel equipment or structures."@en ,
+                                                       "Um sistema de proteção catódica é um sistema de engenharia que usa mecanismos eletroquímicos de proteção catódica com ânodos para prevenir a corrosão de equipamentos ou estruturas de aço carbono e baixa liga."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000224
@@ -6289,10 +6317,10 @@ copi:COPI_0000229 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "chromatograph"@en ,
                              "cromatógrafo"@pt-br ;
-                  skos:definition "A chromatograph is a process analyzer that bears a chromatographic analysis function."@en ;
+                  skos:definition "A chromatograph is an instrument that analyses the molecular composition of a process stream by separating its constituents through selective adsorption or partitioning."@en ;
                   annotation:firstOrderLogicAxiom "∀x (Chromatograph(x) ↔ ProcessAnalyzer(x) ∧ ∃f (ChromatographicAnalysisFunction(f) ∧ bearerOf(x,f)))"@en ;
-                  annotation:naturalLanguageDefinition "A chromatograph is a process analyzer that bears a chromatographic analysis function."@en ,
-                                                       "Um cromatógrafo é um analisador de processo que possui uma função de análise cromatográfica."@pt-br ;
+                  annotation:naturalLanguageDefinition "A chromatograph is an instrument that analyses the molecular composition of a process stream by separating its constituents through selective adsorption or partitioning."@en ,
+                                                       "Um cromatógrafo é um instrumento que analisa a composição molecular de uma corrente de processo separando seus constituintes por adsorção ou partição seletiva."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every chromatograph is a process analyzer that has the function of chromatographic analysis."@en .
 
 
@@ -6414,11 +6442,11 @@ copi:COPI_0000236 rdf:type owl:Class ;
                   rdfs:label "cooling tower"@en ,
                              "torre de resfriamento"@pt-br ;
                   skos:altLabel "COOLING TOWER"@en ;
-                  skos:definition "A cooling tower is a heat exchanger that incorporates a tall tower structure through which air circulates by convection to remove heat from process fluids."@en ;
+                  skos:definition "A cooling tower is a cooler that incorporates a tall tower structure through which air circulates by convection to remove heat from process fluids."@en ;
                   annotation:firstOrderLogicAxiom "∀x(CoolingTower(x) ↔ HeatExchanger(x) ∧ ∃t(Tower(t) ∧ hasComponentPartAtAllTimes(x,t)) ∧ ∃p(ConvectiveAirCirculationProcess(p) ∧ participatesIn(x,p)))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A cooling tower is a heat exchanger that incorporates a tall tower structure through which air circulates by convection to remove heat from process fluids."@en ,
-                                                       "Uma torre de resfriamento é um trocador de calor que incorpora uma estrutura de torre alta através da qual o ar circula por convecção para remover calor de fluidos de processo."@pt-br ;
+                  annotation:naturalLanguageDefinition "A cooling tower is a cooler that incorporates a tall tower structure through which air circulates by convection to remove heat from process fluids."@en ,
+                                                       "Uma torre de resfriamento é um resfriador que incorpora uma estrutura de torre alta através da qual o ar circula por convecção para remover calor de fluidos de processo."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every cooling tower is a heat exchanger that has a tower structure as component part at all times and participates in convective air circulation processes."@en .
 
 
@@ -6725,10 +6753,10 @@ copi:COPI_0000252 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "differential pressure switch"@en ,
                              "interruptor de pressão diferencial"@pt-br ;
-                  skos:definition "A differential pressure switch is a pressure switch that bears a differential pressure switching function to switch or provide on/off signals when the measured differential pressure between two inputs reaches a pre-set value."@en ;
+                  skos:definition "A differential pressure switch is an instrument that switches or provides on/off signals when the differential pressure measured between two inputs reaches a pre-set value."@en ;
                   annotation:firstOrderLogicAxiom "∀x(DifferentialPressureSwitch(x) ↔ PressureSwitch(x) ∧ ∃f(DifferentialPressureSwitchingFunction(f) ∧ bearerOf(x,f)))"@en ;
-                  annotation:naturalLanguageDefinition "A differential pressure switch is a pressure switch that bears a differential pressure switching function to switch or provide on/off signals when the measured differential pressure between two inputs reaches a pre-set value."@en ,
-                                                       "Um interruptor de pressão diferencial é um interruptor de pressão que possui uma função de comutação de pressão diferencial para comutar ou fornecer sinais liga/desliga quando a pressão diferencial medida entre duas entradas atinge um valor pré-estabelecido."@pt-br ;
+                  annotation:naturalLanguageDefinition "A differential pressure switch is an instrument that switches or provides on/off signals when the differential pressure measured between two inputs reaches a pre-set value."@en ,
+                                                       "Um interruptor de pressão diferencial é um instrumento que comuta ou fornece sinais liga/desliga quando a pressão diferencial medida entre duas entradas atinge um valor pré-estabelecido."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every differential pressure switch is a pressure switch that has the function to switch based on differential pressure measurements between two pressure inputs."@en .
 
 
@@ -6926,9 +6954,9 @@ copi:COPI_0000263 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "conector elétrico"@pt-br ,
                              "electrical connector"@en ;
-                  skos:definition "An electrical connector is an electrical equipment that bears an electrical connection function and that maintains intimate electrical contact between two or more electrical conductor parts to enable continuous current flow."@en ;
-                  annotation:naturalLanguageDefinition "An electrical connector is an electrical equipment that bears an electrical connection function and that maintains intimate electrical contact between two or more electrical conductor parts to enable continuous current flow."@en ,
-                                                       "Um conector elétrico é um equipamento elétrico que possui uma função de conexão elétrica e que mantém contato elétrico íntimo entre duas ou mais partes de condutor elétrico para permitir fluxo contínuo de corrente."@pt-br .
+                  skos:definition "An electrical connector is a material artifact that maintains intimate electrical contact between two or more electrical conductor parts to enable continuous current flow."@en ;
+                  annotation:naturalLanguageDefinition "An electrical connector is a material artifact that maintains intimate electrical contact between two or more electrical conductor parts to enable continuous current flow."@en ,
+                                                       "Um conector elétrico é um artefato material que mantém contato elétrico íntimo entre duas ou mais partes de condutor elétrico para permitir fluxo contínuo de corrente."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000264
@@ -7069,10 +7097,10 @@ copi:COPI_0000271 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "arrestador de chama"@pt-br ,
                              "flame arrestor"@en ;
-                  skos:definition "A flame arrestor is a safety device that bears a flame arrest function to prevent flames from entering a system through an opening."@en ;
+                  skos:definition "A flame arrestor is a material artifact that prevents flames from entering a system through an opening."@en ;
                   annotation:firstOrderLogicAxiom "∀x(FlameArrestor(x) ↔ SafetyDevice(x) ∧ ∃f(FlameArrestFunction(f) ∧ bearerOf(x,f)))"@en ;
-                  annotation:naturalLanguageDefinition "A flame arrestor is a safety device that bears a flame arrest function to prevent flames from entering a system through an opening."@en ,
-                                                       "Um arrestador de chama é um dispositivo de segurança que possui uma função de arrestar chama para prevenir que chamas entrem em um sistema através de uma abertura."@pt-br ;
+                  annotation:naturalLanguageDefinition "A flame arrestor is a material artifact that prevents flames from entering a system through an opening."@en ,
+                                                       "Um arrestador de chama é um artefato material que impede que chamas entrem em um sistema através de uma abertura."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every flame arrestor is a safety device that has the function of arresting flames and processes gaseous portions while preventing flame propagation."@en .
 
 
@@ -7103,11 +7131,11 @@ copi:COPI_0000273 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "flange"@en ,
                              "flange"@pt-br ;
-                  skos:definition "A flange is a material artifact whose working feature is a flat ring standing out from a body, drilled or faced so that two components can be drawn together at it."@en ;
+                  skos:definition "A flange is a coupling whose working feature is a flat ring standing out from a body, drilled or faced so that two components can be drawn together at it."@en ;
                   annotation:firstOrderLogicAxiom "∀x(Flange(x) → MaterialArtifact(x) ∧ ∃g(ProjectingFlatRimGeometry(g) ∧ hasCharacteristic(x,g)) ∧ ∃f(MechanicalConnectionFunction(f) ∧ hasFunction(x,f)))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A flange is a material artifact whose working feature is a flat ring standing out from a body, drilled or faced so that two components can be drawn together at it."@en ,
-                                                       "Um flange é um artefato material cuja característica funcional é um anel plano que se projeta de um corpo, furado ou faceado para que dois componentes sejam unidos nele."@pt-br ;
+                  annotation:naturalLanguageDefinition "A flange is a coupling whose working feature is a flat ring standing out from a body, drilled or faced so that two components can be drawn together at it."@en ,
+                                                       "Um flange é um acoplamento cuja característica funcional é um anel plano que se projeta de um corpo, furado ou faceado para que dois componentes sejam unidos nele."@pt-br ;
                   annotation:primitiveRationale "Using necessary conditions because this is a constructive type defined by structural geometry. Under OWA, any artifact with projecting flat rim geometry would be forced into the flange category, which could incorrectly classify specialized equipment or complex assemblies that contain flange-like features but serve different primary functions."@en ;
                   annotation:semiFormalNaturalLanguageAxiom "Every flange is a material artifact that has a projecting flat rim geometry and has the function of mechanically connecting components."@en .
 
@@ -7282,9 +7310,9 @@ copi:COPI_0000282 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "fuse"@en ,
                              "fusível"@pt-br ;
-                  skos:definition "A fuse is an electrical equipment that protects circuits by interrupting current flow through the intentional melting of a fusible element when current exceeds specified values for a sufficient duration."@en ;
-                  annotation:naturalLanguageDefinition "A fuse is an electrical equipment that protects circuits by interrupting current flow through the intentional melting of a fusible element when current exceeds specified values for a sufficient duration."@en ,
-                                                       "Um fusível é um equipamento elétrico que protege circuitos interrompendo o fluxo de corrente através do derretimento intencional de um elemento fusível quando a corrente excede valores especificados por uma duração suficiente."@pt-br .
+                  skos:definition "A fuse is an assembly that protects circuits by interrupting current flow through the intentional melting of a fusible element when current exceeds specified values for a sufficient duration."@en ;
+                  annotation:naturalLanguageDefinition "A fuse is an assembly that protects circuits by interrupting current flow through the intentional melting of a fusible element when current exceeds specified values for a sufficient duration."@en ,
+                                                       "Um fusível é um conjunto que protege circuitos interrompendo o fluxo de corrente através do derretimento intencional de um elemento fusível quando a corrente excede valores especificados por uma duração suficiente."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000283
@@ -7427,19 +7455,19 @@ copi:COPI_0000289 rdf:type owl:Class ;
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000290
 copi:COPI_0000290 rdf:type owl:Class ;
-                  rdfs:subClassOf copi:COPI_0000121 ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
-                                    owl:someValuesFrom copi:COPI_0000059
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
+                                    owl:someValuesFrom copi:COPI_0000192
                                   ] ;
                   terms:source <https://standards.iso.org/iso/15926/-4/reference-data-item/GEAR_WHEEL> ;
                   rdfs:label "gear wheel"@en ,
                              "roda dentada"@pt-br ;
-                  skos:definition "An Assembly that bears a PowerTransmissionFunction and that has circumferential teeth for positive mechanical engagement with mating gears or racks to transmit rotational motion and power."@en ;
+                  skos:definition "A gear wheel is a material artifact that bears a power transmission function by means of teeth that successively engage the teeth of a mating gear or rack."@en ;
+                  annotation:firstOrderLogicAxiom "GearWheel(x) → MaterialArtifact(x) ∧ ∃f (PowerTransmissionFunction(f) ∧ bearerOf(x,f))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "An Assembly that bears a PowerTransmissionFunction and that has circumferential teeth for positive mechanical engagement with mating gears or racks to transmit rotational motion and power."@en ,
-                                                       "Um Assembly que porta uma PowerTransmissionFunction e que possui dentes circunferenciais para engajamento mecânico positivo com engrenagens ou cremalheiras correspondentes para transmitir movimento rotacional e potência."@pt-br ;
-                  annotation:primitiveRationale "Constructive differentia based on physical structure (toothed geometry). Under OWA, asserting equivalence could force classification of complex hybrid mechanisms or specialized toothed components that should not be categorized as standard gear wheels for maintenance purposes."@en .
+                  annotation:naturalLanguageDefinition "A gear wheel is a material artifact that bears a power transmission function by means of teeth that successively engage the teeth of a mating gear or rack."@en ,
+                                                       "Uma roda dentada é um artefato material que porta uma função de transmissão de potência por meio de dentes que se engrenam sucessivamente com os dentes de uma roda conjugada ou de uma cremalheira."@pt-br ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every gear wheel is a material artifact that bears a power transmission function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000291
@@ -7768,11 +7796,11 @@ copi:COPI_0000307 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "kettle reboiler"@en ,
                              "refervedor tipo kettle"@pt-br ;
-                  skos:definition "A kettle reboiler is a reboiler that has horizontal orientation and contains a separate vapour space for vapor-liquid disengagement."@en ;
+                  skos:definition "A kettle reboiler is a heat exchanger that reboils a process liquid, has horizontal orientation and contains a separate vapour space for vapor-liquid disengagement."@en ;
                   annotation:firstOrderLogicAxiom "∀x(KettleReboiler(x) → Reboiler(x) ∧ ∃q(HorizontalOrientation(q) ∧ hasQuality(x,q)) ∧ ∃v(SeparateVapourSpace(v) ∧ hasComponentPartAtAllTimes(x,v)))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A kettle reboiler is a reboiler that has horizontal orientation and contains a separate vapour space for vapor-liquid disengagement."@en ,
-                                                       "Um refervedor tipo kettle é um refervedor que possui orientação horizontal e contém um espaço de vapor separado para desengajamento vapor-líquido."@pt-br ;
+                  annotation:naturalLanguageDefinition "A kettle reboiler is a heat exchanger that reboils a process liquid, has horizontal orientation and contains a separate vapour space for vapor-liquid disengagement."@en ,
+                                                       "Um refervedor tipo kettle é um trocador de calor que ferve novamente um líquido de processo, possui orientação horizontal e contém um espaço de vapor separado para desengajamento vapor-líquido."@pt-br ;
                   annotation:primitiveRationale "Constructive type defined by specific physical configuration. Under Open World Assumption, sufficient conditions could incorrectly classify equipment with horizontal orientation and vapor space but fundamentally different purposes (e.g., horizontal separators, flash drums) as kettle reboilers. The structural differentia provides necessary conditions for the kettle reboiler maintenance/procurement category."@en ;
                   annotation:semiFormalNaturalLanguageAxiom "Every kettle reboiler is a reboiler that has horizontal orientation and has a separate vapour space as component part."@en .
 
@@ -8258,12 +8286,12 @@ copi:COPI_0000332 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000199
                                   ] ;
                   terms:source <https://standards.iso.org/iso/15926/-4/reference-data-item/POWER_TRANSFORMER_PRIMARY_WINDING> ;
-                  rdfs:label "enrolamento de transformador"@pt-br ,
+                  rdfs:label "enrolamento primário de transformador de potência"@pt-br ,
                              "power transformer primary winding"@en ;
-                  skos:definition "A TransformerWinding that is part of a power transformer and that serves as the primary winding receiving input electrical power for electromagnetic transformation."@en ;
+                  skos:definition "A power transformer primary winding is a material artifact that is part of a power transformer and serves as its primary winding, receiving input electrical power for electromagnetic transformation."@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A TransformerWinding that is part of a power transformer and that serves as the primary winding receiving input electrical power for electromagnetic transformation."@en ,
-                                                       "Um enrolamento de transformador que é parte de um transformador de potência e que serve como enrolamento primário recebendo energia elétrica de entrada para transformação eletromagnética."@pt-br ;
+                  annotation:naturalLanguageDefinition "A power transformer primary winding is a material artifact that is part of a power transformer and serves as its primary winding, receiving input electrical power for electromagnetic transformation."@en ,
+                                                       "Um enrolamento primário de transformador de potência é um artefato material que é parte de um transformador de potência e serve como seu enrolamento primário, recebendo energia elétrica de entrada para transformação eletromagnética."@pt-br ;
                   annotation:primitiveRationale "Constructive type based on structural position within power transformer. Under OWA, sufficient conditions for primary winding configuration would risk false positives for specialized or hybrid transformer components that contain primary-like windings but should not be classified as standard power transformer primary windings."@en .
 
 
@@ -8280,10 +8308,10 @@ copi:COPI_0000333 rdf:type owl:Class ;
                   terms:source <https://standards.iso.org/iso/15926/-4/reference-data-item/POWER_TRANSFORMER_SECONDARY_WINDING> ;
                   rdfs:label "enrolamento secundário de transformador de potência"@pt-br ,
                              "power transformer secondary winding"@en ;
-                  skos:definition "A FiatObjectPart that is the secondary winding of a power transformer and that bears a SecondaryWindingFunction consisting in delivering transformed electrical power at the output voltage level."@en ;
+                  skos:definition "A power transformer secondary winding is a material artifact that is part of a power transformer and serves as its secondary winding, delivering transformed electrical power at the output voltage level."@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A FiatObjectPart that is the secondary winding of a power transformer and that bears a SecondaryWindingFunction consisting in delivering transformed electrical power at the output voltage level."@en ,
-                                                       "Uma FiatObjectPart que é o enrolamento secundário de um transformador de potência e que possui uma SecondaryWindingFunction consistindo em fornecer energia elétrica transformada no nível de tensão de saída."@pt-br ;
+                  annotation:naturalLanguageDefinition "A power transformer secondary winding is a material artifact that is part of a power transformer and serves as its secondary winding, delivering transformed electrical power at the output voltage level."@en ,
+                                                       "Um enrolamento secundário de transformador de potência é um artefato material que é parte de um transformador de potência e serve como seu enrolamento secundário, fornecendo energia elétrica transformada no nível de tensão de saída."@pt-br ;
                   annotation:primitiveRationale "Constructive classification basis - the physical configuration (being the secondary winding of a power transformer) provides necessary conditions, but sufficient conditions are harder to assert under OWA without risking false positives for specialized or hybrid transformer configurations."@en .
 
 
@@ -8378,10 +8406,10 @@ copi:COPI_0000338 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "relay"@en ,
                              "relé"@pt-br ;
-                  skos:definition "A relay is an electrical switching device that bears a signal relay function, realized by passing on information or signals from one circuit to control operations in another circuit."@en ;
+                  skos:definition "A relay is a material artifact that passes on information or signals from one circuit to control operations in another circuit."@en ;
                   annotation:firstOrderLogicAxiom "∀x(Relay(x) ↔ (ElectricalSwitchingDevice(x) ∧ ∃f(SignalRelayFunction(f) ∧ bearerOf(x,f))))"@en ;
-                  annotation:naturalLanguageDefinition "A relay is an electrical switching device that bears a signal relay function, realized by passing on information or signals from one circuit to control operations in another circuit."@en ,
-                                                       "Um relé é um dispositivo de comutação elétrica que possui uma função de relé de sinal, realizada ao transmitir informações ou sinais de um circuito para controlar operações em outro circuito."@pt-br ;
+                  annotation:naturalLanguageDefinition "A relay is a material artifact that passes on information or signals from one circuit to control operations in another circuit."@en ,
+                                                       "Um relé é um artefato material que transmite informações ou sinais de um circuito para controlar operações em outro circuito."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every Relay is an ElectricalSwitchingDevice that bearerOf some SignalRelayFunction"@en .
 
 
@@ -8584,10 +8612,10 @@ copi:COPI_0000348 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "aríete de corte"@pt-br ,
                              "shear ram"@en ;
-                  skos:definition "A shear ram is a ram that bears a pipe shearing function and has hardened cutting blades designed to cut drillpipe or tubing during blowout prevention operations."@en ;
+                  skos:definition "A shear ram is an assembly that has hardened cutting blades designed to cut drillpipe or tubing during blowout prevention operations."@en ;
                   annotation:firstOrderLogicAxiom "∀x(ShearRam(x) ↔ Ram(x) ∧ ∃f(PipeShearingFunction(f) ∧ bearerOf(x,f)) ∧ ∃b(ShearingBlade(b) ∧ hasComponentPartAtAllTimes(x,b)))"@en ;
-                  annotation:naturalLanguageDefinition "A shear ram is a ram that bears a pipe shearing function and has hardened cutting blades designed to cut drillpipe or tubing during blowout prevention operations."@en ,
-                                                       "Um aríete de corte é um aríete que possui função de corte de tubulação e tem lâminas de corte endurecidas projetadas para cortar a coluna de perfuração ou tubulação durante operações de prevenção de blowout."@pt-br ;
+                  annotation:naturalLanguageDefinition "A shear ram is an assembly that has hardened cutting blades designed to cut drillpipe or tubing during blowout prevention operations."@en ,
+                                                       "Um aríete de corte é um conjunto que possui lâminas de corte endurecidas projetadas para cortar a coluna de perfuração ou tubulação durante operações de prevenção de blowout."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every shear ram is a ram that has the function to shear pipe and has shearing blades as component parts at all times."@en .
 
 
@@ -8741,10 +8769,10 @@ copi:COPI_0000356 rdf:type owl:Class ;
                   terms:source <https://standards.iso.org/iso/15926/-4/reference-data-item/SWITCH_CONTACT> ;
                   rdfs:label "contato de chave"@pt-br ,
                              "switch contact"@en ;
-                  skos:definition "A switch contact is an electrical contact: one of the conducting pieces that meet or part to close or open a circuit."@en ;
+                  skos:definition "A switch contact is a material artifact that is one of the conducting pieces that meet or part to close or open a circuit."@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A switch contact is an electrical contact: one of the conducting pieces that meet or part to close or open a circuit."@en ,
-                                                       "Um contato de chave é um contato elétrico: uma das peças condutoras que se encostam ou se afastam para fechar ou abrir um circuito."@pt-br ;
+                  annotation:naturalLanguageDefinition "A switch contact is a material artifact that is one of the conducting pieces that meet or part to close or open a circuit."@en ,
+                                                       "Um contato de chave é um artefato material que é uma das peças condutoras que se encostam ou se afastam para fechar ou abrir um circuito."@pt-br ;
                   annotation:primitiveRationale "Constructive type based on structural role as a conductive part. Under OWA, asserting sufficient conditions could incorrectly classify any conductive part of an electrical contact as a switch contact, when there may be other specialized conductive components (bus bars, terminals, etc.) that serve different structural roles."@en .
 
 
@@ -8775,9 +8803,9 @@ copi:COPI_0000357 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "quadro de distribuição"@pt-br ,
                              "switchboard"@en ;
-                  skos:definition "A switchboard is electrical equipment that consists of panels accommodating switches, indicators, and control apparatus for connecting, disconnecting, and controlling various circuits of an electrical system."@en ;
-                  annotation:naturalLanguageDefinition "A switchboard is electrical equipment that consists of panels accommodating switches, indicators, and control apparatus for connecting, disconnecting, and controlling various circuits of an electrical system."@en ,
-                                                       "Um quadro de distribuição é um equipamento elétrico que consiste em painéis que acomodam chaves, indicadores e aparatos de controle para conectar, desconectar e controlar vários circuitos de um sistema elétrico."@pt-br .
+                  skos:definition "A switchboard is an assembly of panels accommodating switches, indicators, and control apparatus for connecting, disconnecting, and controlling various circuits of an electrical system."@en ;
+                  annotation:naturalLanguageDefinition "A switchboard is an assembly of panels accommodating switches, indicators, and control apparatus for connecting, disconnecting, and controlling various circuits of an electrical system."@en ,
+                                                       "Um quadro de distribuição é um conjunto de painéis que acomodam chaves, indicadores e aparatos de controle para conectar, desconectar e controlar vários circuitos de um sistema elétrico."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000359
@@ -8787,13 +8815,13 @@ copi:COPI_0000359 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000201
                                   ] ;
                   terms:source <https://standards.iso.org/iso/15926/-4/reference-data-item/THERMOWELL_STEM> ;
-                  rdfs:label "termowell stem"@pt-br ,
+                  rdfs:label "haste de termopoço"@pt-br ,
                              "thermowell stem"@en ;
-                  skos:definition "A thermowell stem is a fiat object part that is part of a thermowell and that has a hollow cylindrical shape positioned to protrude into the process medium, providing protective housing for temperature sensing elements while enabling thermal conduction."@en ;
+                  skos:definition "A thermowell stem is a material artifact that is part of a thermowell, has a hollow cylindrical shape and protrudes into the process medium, housing the temperature sensing element while enabling thermal conduction."@en ;
                   annotation:firstOrderLogicAxiom "∀x(ThermowellStem(x) → FiatObjectPart(x) ∧ ∃y(Thermowell(y) ∧ partOf(x,y)) ∧ ∃q(HollowCylindricalShape(q) ∧ hasQuality(x,q)) ∧ ∃l(ProcessMediumIntrusionZone(l) ∧ hasLocation(x,l)))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A thermowell stem is a fiat object part that is part of a thermowell and that has a hollow cylindrical shape positioned to protrude into the process medium, providing protective housing for temperature sensing elements while enabling thermal conduction."@en ,
-                                                       "Um termowell stem é uma parte de objeto fiducial que é parte de um termowell e que tem uma forma cilíndrica oca posicionada para se projetar no meio do processo, fornecendo habitação protetora para elementos de detecção de temperatura enquanto permite condução térmica."@pt-br ;
+                  annotation:naturalLanguageDefinition "A thermowell stem is a material artifact that is part of a thermowell, has a hollow cylindrical shape and protrudes into the process medium, housing the temperature sensing element while enabling thermal conduction."@en ,
+                                                       "Uma haste de termopoço é um artefato material que é parte de um termopoço, tem forma cilíndrica oca e se projeta no meio do processo, abrigando o elemento de detecção de temperatura enquanto permite condução térmica."@pt-br ;
                   annotation:primitiveRationale "Constructive classification basis. The structural differentia (hollow cylindrical shape, positioning in process medium) is necessary but may not be sufficient under OWA - there could be other specialized parts of thermowells with similar geometry but different specific roles or configurations."@en ;
                   annotation:semiFormalNaturalLanguageAxiom "Every thermowell stem is a fiat object part that is part of some thermowell and has hollow cylindrical shape and is located in process medium intrusion zone."@en .
 
@@ -8805,13 +8833,13 @@ copi:COPI_0000360 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000652
                                   ] ;
                   terms:source <https://standards.iso.org/iso/15926/-4/reference-data-item/THIN_PLATE> ;
-                  rdfs:label "Placa que possui geometria de espessura fina e"@pt-br ,
+                  rdfs:label "placa fina"@pt-br ,
                              "thin plate"@en ;
-                  skos:definition "A Plate that has thin thickness geometry and is manufactured through cold forming processes, typically used for structural support applications requiring reduced weight or specific geometric constraints."@en ;
+                  skos:definition "A thin plate is a material artifact that has thin thickness geometry and is manufactured through cold forming, typically used for structural support requiring reduced weight or specific geometric constraints."@en ;
                   annotation:firstOrderLogicAxiom "∀x(ThinPlate(x) → Plate(x) ∧ ∃q1(ThinThickness(q1) ∧ hasQuality(x,q1)) ∧ ∃q2(ColdFormedManufacturing(q2) ∧ hasQuality(x,q2)))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A Plate that has thin thickness geometry and is manufactured through cold forming processes, typically used for structural support applications requiring reduced weight or specific geometric constraints."@en ,
-                                                       "Uma Placa que possui geometria de espessura fina e é fabricada através de processos de conformação a frio, tipicamente usada para aplicações de suporte estrutural que requerem peso reduzido ou restrições geométricas específicas."@pt-br ;
+                  annotation:naturalLanguageDefinition "A thin plate is a material artifact that has thin thickness geometry and is manufactured through cold forming, typically used for structural support requiring reduced weight or specific geometric constraints."@en ,
+                                                       "Uma placa fina é um artefato material que possui geometria de espessura fina e é fabricada por conformação a frio, tipicamente usada para suporte estrutural que requer peso reduzido ou restrições geométricas específicas."@pt-br ;
                   annotation:primitiveRationale "Constructive type defined by physical geometry (thinness) and manufacturing method (cold forming). Under OWA, sufficient conditions for thin plates are difficult to specify without risking false positives from specialized hybrid structures that contain thin cold-formed elements but should not be classified as standard thin plates."@en ;
                   annotation:semiFormalNaturalLanguageAxiom "ThinPlate ⊑ Plate ⊓ ∃hasQuality.ThinThickness ⊓ ∃hasQuality.ColdFormedManufacturing"@en .
 
@@ -8911,10 +8939,10 @@ copi:COPI_0000365 rdf:type owl:Class ;
                                <https://standards.iso.org/iso/15926/-4/reference-data-item/TUBING_HEAD> ;
                   rdfs:label "cabeça de coluna"@pt-br ,
                              "tubing head"@en ;
-                  skos:definition "A tubing head is a wellhead component that seats the tubing hanger and carries the connection on which the Christmas tree is mounted."@en ;
+                  skos:definition "A tubing head is an assembly that seats the tubing hanger and carries the connection on which the Christmas tree is mounted."@en ;
                   annotation:firstOrderLogicAxiom "∀x(TubingHead(x) ↔ WellheadComponent(x) ∧ ∃f(TubingSupportAndConnectionFunction(f) ∧ bearerOf(x,f)) ∧ ∃p1(TubingBowl(p1) ∧ hasComponentPartAtAllTimes(x,p1)) ∧ ∃p2(ChristmasTreeConnectionInterface(p2) ∧ hasComponentPartAtAllTimes(x,p2)))"@en ;
-                  annotation:naturalLanguageDefinition "A tubing head is a wellhead component that seats the tubing hanger and carries the connection on which the Christmas tree is mounted."@en ,
-                                                       "Uma cabeça de coluna é um componente de cabeça de poço que assenta o suspensor da coluna e provê a conexão sobre a qual a árvore de natal é montada."@pt-br ;
+                  annotation:naturalLanguageDefinition "A tubing head is an assembly that seats the tubing hanger and carries the connection on which the Christmas tree is mounted."@en ,
+                                                       "Uma cabeça de coluna é um conjunto que assenta o suspensor da coluna e provê a conexão sobre a qual a árvore de natal é montada."@pt-br ;
                   annotation:semiFormalNaturalLanguageAxiom "Every tubing head is a wellhead component that bears a tubing support and connection function, has a tubing bowl as component part, and has a Christmas tree connection interface as component part."@en .
 
 
@@ -8978,9 +9006,9 @@ copi:COPI_0000368 rdf:type owl:Class ;
                                <https://www.jip36-cfihos.org/> ;
                   rdfs:label "unidade UPS"@pt-br ,
                              "ups unit"@en ;
-                  skos:definition "A UPS unit is electrical equipment that bears the designed function of maintaining uninterrupted AC electric power supply to protected equipment during power disturbances."@en ;
-                  annotation:naturalLanguageDefinition "A UPS unit is electrical equipment that bears the designed function of maintaining uninterrupted AC electric power supply to protected equipment during power disturbances."@en ,
-                                                       "Uma unidade UPS é um equipamento elétrico que possui a função projetada de manter o fornecimento ininterrupto de energia elétrica AC para equipamentos protegidos durante distúrbios de energia."@pt-br .
+                  skos:definition "A UPS unit is an assembly that maintains uninterrupted AC electric power supply to protected equipment during power disturbances."@en ;
+                  annotation:naturalLanguageDefinition "A UPS unit is an assembly that maintains uninterrupted AC electric power supply to protected equipment during power disturbances."@en ,
+                                                       "Uma unidade UPS é um conjunto que mantém o fornecimento ininterrupto de energia elétrica AC para equipamentos protegidos durante distúrbios de energia."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000369
@@ -9070,11 +9098,11 @@ copi:COPI_0000373 rdf:type owl:Class ;
                   terms:source <https://standards.iso.org/iso/15926/-4/reference-data-item/VESSEL_HEAD> ;
                   rdfs:label "tampo de vaso"@pt-br ,
                              "vessel head"@en ;
-                  skos:definition "A FiatObjectPart that is part of a vessel and that closes a vessel shell by providing an end boundary for containment."@en ;
+                  skos:definition "A vessel head is a material artifact that is part of a vessel and closes the vessel shell by providing an end boundary for containment."@en ;
                   annotation:firstOrderLogicAxiom "∀x(VesselHead(x) → FiatObjectPart(x) ∧ ∃y(Vessel(y) ∧ partOf(x,y)) ∧ ∃r(VesselClosureRole(r) ∧ realizes(x,r)))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A FiatObjectPart that is part of a vessel and that closes a vessel shell by providing an end boundary for containment."@en ,
-                                                       "Uma FiatObjectPart que é parte de um vaso e que fecha o casco do vaso fornecendo uma fronteira terminal para contenção."@pt-br ;
+                  annotation:naturalLanguageDefinition "A vessel head is a material artifact that is part of a vessel and closes the vessel shell by providing an end boundary for containment."@en ,
+                                                       "Um tampo de vaso é um artefato material que é parte de um vaso e fecha o casco do vaso fornecendo uma fronteira terminal para contenção."@pt-br ;
                   annotation:primitiveRationale "Constructive type based on structural configuration. Under OWA, asserting sufficient conditions for vessel head closure would inappropriately classify any part that closes a vessel (including specialized manifolds, complex multi-port heads, or custom closures) as standard vessel heads, potentially creating false positives in maintenance categorization."@en ;
                   annotation:semiFormalNaturalLanguageAxiom "Every vessel head is a fiat object part that is part of some vessel and realizes a vessel closure role."@en .
 
@@ -9087,13 +9115,13 @@ copi:COPI_0000374 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000025
                                   ] ;
                   terms:source <https://standards.iso.org/iso/15926/-4/reference-data-item/VESSEL_SHELL> ;
-                  rdfs:label "parte de objeto por fiat"@pt-br ,
+                  rdfs:label "casco de vaso"@pt-br ,
                              "vessel shell"@en ;
-                  skos:definition "A fiat object part that is the outer pressure-containing structural boundary of a vessel, designed to enclose and isolate internal contents while withstanding internal pressure loads."@en ;
+                  skos:definition "A vessel shell is a material artifact that is the outer pressure-containing structural boundary of a vessel, designed to enclose and isolate internal contents while withstanding internal pressure loads."@en ;
                   annotation:firstOrderLogicAxiom "∀x(VesselShell(x) → FiatObjectPart(x) ∧ ∃y(Vessel(y) ∧ partOf(x,y)) ∧ ∃f(PressureContainmentFunction(f) ∧ bearerOf(x,f)))"@en ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
-                  annotation:naturalLanguageDefinition "A fiat object part that is the outer pressure-containing structural boundary of a vessel, designed to enclose and isolate internal contents while withstanding internal pressure loads."@en ,
-                                                       "Uma parte de objeto por fiat que é o limite estrutural externo de contenção de pressão de um vaso, projetada para encerrar e isolar o conteúdo interno enquanto suporta cargas de pressão interna."@pt-br ;
+                  annotation:naturalLanguageDefinition "A vessel shell is a material artifact that is the outer pressure-containing structural boundary of a vessel, designed to enclose and isolate internal contents while withstanding internal pressure loads."@en ,
+                                                       "Um casco de vaso é um artefato material que é o limite estrutural externo de contenção de pressão de um vaso, projetado para encerrar e isolar o conteúdo interno enquanto suporta cargas de pressão interna."@pt-br ;
                   annotation:primitiveRationale "Constructive type defined by structural configuration as outer pressure-containing part of vessel. Under Open World Assumption, sufficient conditions are difficult to establish - other structural components might also be pressure-containing parts of vessels in specialized designs."@en ;
                   annotation:semiFormalNaturalLanguageAxiom "VesselShell SubClassOf: FiatObjectPart and partOf some Vessel and bearerOf some PressureContainmentFunction"@en .
 
@@ -9163,10 +9191,6 @@ copi:COPI_0000378 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000384
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasComponentPartAtAllTimes> ;
-                                    owl:someValuesFrom copi:COPI_0000421
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasFunction> ;
                                     owl:someValuesFrom copi:COPI_0000698
                                   ] ;
@@ -9175,9 +9199,9 @@ copi:COPI_0000378 rdf:type owl:Class ;
                                <https://standards.iso.org/iso/15926/-4/reference-data-item/WIRELINE> ;
                   rdfs:label "wireline"@en ,
                              "wireline"@pt-br ;
-                  skos:definition "A wireline is an electrical cable that bears a wireline logging function for lowering tools into wellbores and transmitting data about wellbore conditions."@en ;
-                  annotation:naturalLanguageDefinition "A wireline is an electrical cable that bears a wireline logging function for lowering tools into wellbores and transmitting data about wellbore conditions."@en ,
-                                                       "Um wireline é um cabo elétrico que possui uma função de perfilagem wireline para descer ferramentas em poços e transmitir dados sobre as condições do poço."@pt-br .
+                  skos:definition "A wireline is a material artifact that is an electrical cable used for lowering tools into wellbores and transmitting data about wellbore conditions."@en ;
+                  annotation:naturalLanguageDefinition "A wireline is a material artifact that is an electrical cable used for lowering tools into wellbores and transmitting data about wellbore conditions."@en ,
+                                                       "Um wireline é um artefato material que é um cabo elétrico usado para descer ferramentas em poços e transmitir dados sobre as condições do poço."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000381
@@ -9522,11 +9546,11 @@ copi:COPI_0000404 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000042
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000043
                                   ] ;
                   rdfs:label "absorption process"@en ,
@@ -9561,7 +9585,7 @@ copi:COPI_0000406 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "accumulation process"@en ,
@@ -9603,7 +9627,7 @@ copi:COPI_0000408 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000392
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000392
                                   ] ;
                   rdfs:label "actuation process"@en ,
@@ -9638,7 +9662,7 @@ copi:COPI_0000410 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "agitation process"@en ,
@@ -9708,7 +9732,7 @@ copi:COPI_0000415 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "backflow prevention process"@en ,
@@ -9730,7 +9754,7 @@ copi:COPI_0000416 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000045
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "binary flow control process"@en ,
@@ -9765,11 +9789,11 @@ copi:COPI_0000418 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "boiling process"@en ,
@@ -9803,11 +9827,11 @@ copi:COPI_0000420 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000391
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000376
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000399
                                   ] ;
                   rdfs:label "bottom hole drilling process"@en ,
@@ -9815,15 +9839,6 @@ copi:COPI_0000420 rdf:type owl:Class ;
                   skos:definition "A planned process in which subsurface rock at the bottom of a wellbore is cut and disintegrated by a drill bit to advance the drill hole."@en ;
                   annotation:naturalLanguageDefinition "A planned process in which subsurface rock at the bottom of a wellbore is cut and disintegrated by a drill bit to advance the drill hole."@en ,
                                                        "Um processo planejado em que a rocha de subsuperfície no fundo do poço é cortada e desagregada por uma broca para avançar a perfuração."@pt-br .
-
-
-###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000421
-copi:COPI_0000421 rdf:type owl:Class ;
-                  rdfs:label "braided conductor"@en ,
-                             "condutor de trançado"@pt-br ;
-                  skos:definition "A material artifact that constitutes an electrical conductor composed of braided or stranded wires providing flexibility and mechanical strength in petroleum production equipment."@en ;
-                  annotation:naturalLanguageDefinition "A material artifact that constitutes an electrical conductor composed of braided or stranded wires providing flexibility and mechanical strength in petroleum production equipment."@en ,
-                                                       "Um artefato material que é um condutor elétrico formado por fios trançados ou encordoados, que confere flexibilidade e resistência mecânica em equipamentos de produção de petróleo."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000422
@@ -9886,7 +9901,7 @@ copi:COPI_0000426 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000489
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000489
                                   ] ;
                   rdfs:label "cable support process"@en ,
@@ -9951,7 +9966,7 @@ copi:COPI_0000431 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000398
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000051
                                   ] ;
                   rdfs:label "chromatographic analysis process"@en ,
@@ -9970,7 +9985,7 @@ copi:COPI_0000432 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ;
                   rdfs:label "coalescence process"@en ,
@@ -10009,7 +10024,7 @@ copi:COPI_0000434 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000393
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000395
                                   ] ;
                   rdfs:label "combustion process"@en ,
@@ -10027,7 +10042,7 @@ copi:COPI_0000435 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "compression process"@en ,
@@ -10066,11 +10081,11 @@ copi:COPI_0000438 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000397
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000397
                                   ] ;
                   rdfs:label "condensation process"@en ,
@@ -10146,7 +10161,7 @@ copi:COPI_0000443 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "containment process"@en ,
@@ -10198,7 +10213,7 @@ copi:COPI_0000447 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000045
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000045
                                   ] ;
                   rdfs:label "control process"@en ,
@@ -10237,11 +10252,11 @@ copi:COPI_0000449 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "cooling process"@en ,
@@ -10311,11 +10326,11 @@ copi:COPI_0000454 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "deaeration process"@en ,
@@ -10350,11 +10365,11 @@ copi:COPI_0000456 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000391
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000391
                                   ] ;
                   rdfs:label "degassing process"@en ,
@@ -10389,11 +10404,11 @@ copi:COPI_0000458 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000386
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000386
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000387
                                   ] ;
                   rdfs:label "dehumidification process"@en ,
@@ -10428,7 +10443,7 @@ copi:COPI_0000460 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "dehydration process"@en ,
@@ -10463,11 +10478,11 @@ copi:COPI_0000462 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "demisting process"@en ,
@@ -10588,7 +10603,7 @@ copi:COPI_0000470 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000048
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000048
                                   ] ;
                   rdfs:label "differential pressure measurement process"@en ,
@@ -10663,7 +10678,7 @@ copi:COPI_0000475 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ;
                   rdfs:label "distillation process"@en ,
@@ -10707,7 +10722,7 @@ copi:COPI_0000478 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "diverting process"@en ,
@@ -10755,11 +10770,11 @@ copi:COPI_0000482 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000483
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000391
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000483
                                   ] ;
                   rdfs:label "drilling fluid conduction process"@en ,
@@ -10800,7 +10815,7 @@ copi:COPI_0000484 rdf:type owl:Class ;
 copi:COPI_0000485 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000005 ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "drying process"@en ,
@@ -10958,7 +10973,7 @@ copi:COPI_0000497 rdf:type owl:Class ;
 copi:COPI_0000498 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000007 ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000400
                                   ] ;
                   rdfs:label "electrochemical oxidation process"@en ,
@@ -10976,7 +10991,7 @@ copi:COPI_0000499 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "emergency shut down process"@en ,
@@ -11019,15 +11034,15 @@ copi:COPI_0000501 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000342
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000101
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000342
                                   ] ;
                   rdfs:label "enclosure process"@en ,
@@ -11062,7 +11077,7 @@ copi:COPI_0000503 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "energy diffusion process"@en ,
@@ -11096,7 +11111,7 @@ copi:COPI_0000505 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "energy extraction process"@en ,
@@ -11131,7 +11146,7 @@ copi:COPI_0000507 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "energy transfer process"@en ,
@@ -11175,15 +11190,15 @@ copi:COPI_0000510 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000400
                                   ] ;
                   rdfs:label "filtration process"@en ,
@@ -11245,7 +11260,7 @@ copi:COPI_0000514 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "flame arrest process"@en ,
@@ -11310,11 +11325,11 @@ copi:COPI_0000518 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "flash vaporization process"@en ,
@@ -11341,7 +11356,7 @@ copi:COPI_0000520 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "flow control process"@en ,
@@ -11358,7 +11373,7 @@ copi:COPI_0000521 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ;
                   rdfs:label "flow indication process"@en ,
@@ -11375,11 +11390,11 @@ copi:COPI_0000522 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000049
                                   ] ;
                   rdfs:label "flow measurement process"@en ,
@@ -11416,7 +11431,7 @@ copi:COPI_0000524 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "flow modification process"@en ,
@@ -11434,7 +11449,7 @@ copi:COPI_0000525 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "flow restriction process"@en ,
@@ -11514,7 +11529,7 @@ copi:COPI_0000530 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "fluid conduction process"@en ,
@@ -11550,7 +11565,7 @@ copi:COPI_0000532 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "fluid direction process"@en ,
@@ -11585,7 +11600,7 @@ copi:COPI_0000534 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "fluid distribution process"@en ,
@@ -11609,7 +11624,10 @@ copi:COPI_0000536 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000329 ;
                   rdfs:label "fluid port"@en ,
                              "porta de fluido"@pt-br ;
-                  skos:definition "A material artifact that constitutes a port or connection point through which fluid enters or exits a component of petroleum production equipment."@en .
+                  skos:definition "A material artifact that constitutes a port or connection point through which fluid enters or exits a component of petroleum production equipment."@en ,
+                                  "An opening in the boundary of an equipment item or component through which fluid enters or leaves it."@en ;
+                  annotation:naturalLanguageDefinition "An opening in the boundary of an equipment item or component through which fluid enters or leaves it."@en ,
+                                                       "Uma abertura no contorno de um equipamento ou componente pela qual o fluido entra ou sai dele."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000537
@@ -11637,7 +11655,7 @@ copi:COPI_0000538 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000389
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000389
                                   ] ;
                   rdfs:label "fluid transport process"@en ,
@@ -11725,7 +11743,7 @@ copi:COPI_0000544 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000051
                                   ] ;
                   rdfs:label "gas detection process"@en ,
@@ -11743,7 +11761,7 @@ copi:COPI_0000545 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "gas movement process"@en ,
@@ -11789,7 +11807,7 @@ copi:COPI_0000548 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "heating process"@en ,
@@ -11806,7 +11824,7 @@ copi:COPI_0000549 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ;
                   rdfs:label "humidity measurement process"@en ,
@@ -11842,7 +11860,7 @@ copi:COPI_0000551 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000392
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000392
                                   ] ;
                   rdfs:label "hydraulic pumping process"@en ,
@@ -11855,7 +11873,7 @@ copi:COPI_0000551 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000552
 copi:COPI_0000552 rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ;
                   rdfs:label "indication process"@en ,
@@ -11885,7 +11903,7 @@ copi:COPI_0000554 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000555
 copi:COPI_0000555 rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ;
                   rdfs:label "information display process"@en ,
@@ -11920,7 +11938,7 @@ copi:COPI_0000557 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ;
                   rdfs:label "injection process"@en ,
@@ -12001,7 +12019,7 @@ copi:COPI_0000563 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000050
                                   ] ;
                   rdfs:label "level detection process"@en ,
@@ -12022,7 +12040,7 @@ copi:COPI_0000564 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ;
                   rdfs:label "level indication process"@en ,
@@ -12099,7 +12117,7 @@ copi:COPI_0000570 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ;
                   rdfs:label "material processing process"@en ,
@@ -12124,7 +12142,8 @@ copi:COPI_0000573 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that bears a property measurement function, used for the measurement of a property and defined independently from the measuring instrument that handles that measurement result."@en ,
                                                        "Um artefato material que possui uma função de medição de propriedade, usado para a medição de uma propriedade e definido independentemente do instrumento de medição que trata esse resultado."@pt-br ;
-                  annotation:primitiveRationale "Same-genus same-function (CLAUDE.md): the element's identity-giving function is the sensing captured by InstrumentationFunction, which its genus Instrument already bears, so equivalence would collapse the two. What distinguishes the element is stated by ISO 15926 relationally — it is \"defined independently from a MEASURING INSTRUMENT that is handling that measurement result\" — and a relational condition is not sufficient under OWA."@en .
+                  annotation:primitiveRationale "Same-genus same-function (CLAUDE.md): the element's identity-giving function is the sensing captured by InstrumentationFunction, which its genus Instrument already bears, so equivalence would collapse the two. What distinguishes the element is stated by ISO 15926 relationally — it is \"defined independently from a MEASURING INSTRUMENT that is handling that measurement result\" — and a relational condition is not sufficient under OWA."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every measuring element is an instrument that bears a property measurement function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000574
@@ -12159,11 +12178,11 @@ copi:COPI_0000575 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000393
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000392
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000394
                                   ] ;
                   rdfs:label "mechanical energy generation process"@en ,
@@ -12198,7 +12217,7 @@ copi:COPI_0000579 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "mixing process"@en ,
@@ -12267,7 +12286,7 @@ copi:COPI_0000585 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "multi service transmission process"@en ,
@@ -12301,7 +12320,7 @@ copi:COPI_0000587 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "noise silencing process"@en ,
@@ -12331,7 +12350,7 @@ copi:COPI_0000588 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000589
 copi:COPI_0000589 rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ;
                   rdfs:label "phase sequence measurement process"@en ,
@@ -12369,11 +12388,11 @@ copi:COPI_0000591 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000598
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000598
                                   ] ;
                   rdfs:label "pig launching and receiving process"@en ,
@@ -12411,11 +12430,11 @@ copi:COPI_0000593 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000598
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000598
                                   ] ;
                   rdfs:label "pig launching process"@en ,
@@ -12449,11 +12468,11 @@ copi:COPI_0000595 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000598
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000598
                                   ] ;
                   rdfs:label "pig receiving process"@en ,
@@ -12488,7 +12507,7 @@ copi:COPI_0000597 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000321
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000321
                                   ] ;
                   rdfs:label "pipe shearing process"@en ,
@@ -12515,7 +12534,7 @@ copi:COPI_0000599 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "pneumatic energy conversion process"@en ,
@@ -12599,7 +12618,7 @@ copi:COPI_0000605 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "pressure containment process"@en ,
@@ -12633,7 +12652,7 @@ copi:COPI_0000607 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000048
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000048
                                   ] ;
                   rdfs:label "pressure indicating and transmission process"@en ,
@@ -12650,7 +12669,7 @@ copi:COPI_0000608 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000048
                                   ] ;
                   rdfs:label "pressure measurement process"@en ,
@@ -12668,7 +12687,7 @@ copi:COPI_0000609 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "pressure reduction process"@en ,
@@ -12686,7 +12705,7 @@ copi:COPI_0000610 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "pressure relief process"@en ,
@@ -12758,11 +12777,11 @@ copi:COPI_0000616 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ;
                   rdfs:label "processo de bombeamento"@pt-br ,
@@ -12789,7 +12808,7 @@ copi:COPI_0000618 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "processo de despressurização rápida"@pt-br ,
@@ -12825,7 +12844,7 @@ copi:COPI_0000620 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000393
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000395
                                   ] ;
                   rdfs:label "processo de aquecimento reativo"@pt-br ,
@@ -12864,15 +12883,15 @@ copi:COPI_0000622 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000397
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000397
                                   ] ;
                   rdfs:label "processo de refervimento"@pt-br ,
@@ -12938,7 +12957,7 @@ copi:COPI_0000627 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000628
 copi:COPI_0000628 rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000400
                                   ] ;
                   rdfs:label "processo de raspagem"@pt-br ,
@@ -12980,7 +12999,7 @@ copi:COPI_0000631 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "processo de vedação"@pt-br ,
@@ -13034,19 +13053,19 @@ copi:COPI_0000635 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ;
                   rdfs:label "processo de separação"@pt-br ,
@@ -13152,7 +13171,7 @@ copi:COPI_0000643 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ;
                   rdfs:label "processo de armazenamento de sólidos a granel"@pt-br ,
@@ -13187,7 +13206,7 @@ copi:COPI_0000645 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ;
                   rdfs:label "processo de armazenamento e distribuição de sólidos"@pt-br ,
@@ -13257,7 +13276,7 @@ copi:COPI_0000651 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "processo de armazenamento"@pt-br ,
@@ -13304,16 +13323,18 @@ copi:COPI_0000654 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000480
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000376
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000399
                                   ] ;
                   rdfs:label "processo de acesso subsuperficial"@pt-br ,
                              "subsurface access process"@en ;
-                  skos:definition "A planned process in which access to subsurface formations is established and maintained through a wellbore to enable exploration, production, or injection activities."@en .
+                  skos:definition "A planned process in which access to subsurface formations is established and maintained through a wellbore to enable exploration, production, or injection activities."@en ;
+                  annotation:naturalLanguageDefinition "A planned process in which access to subsurface formations is established and maintained through a wellbore to enable exploration, production, or injection activities."@en ,
+                                                       "Um processo planejado em que o acesso a formações de subsuperfície é estabelecido e mantido por meio de um poço, para permitir atividades de exploração, produção ou injeção."@pt-br .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000655
@@ -13350,7 +13371,7 @@ copi:COPI_0000657 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "processo de segurança subsuperficial"@pt-br ,
@@ -13394,7 +13415,7 @@ copi:COPI_0000660 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000385
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000385
                                   ] ;
                   rdfs:label "processo de suporte"@pt-br ,
@@ -13411,11 +13432,11 @@ copi:COPI_0000662 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000047
                                   ] ;
                   rdfs:label "processo de indicação de temperatura"@pt-br ,
@@ -13442,7 +13463,7 @@ copi:COPI_0000663 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000666
 copi:COPI_0000666 rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000047
                                   ] ;
                   rdfs:label "processo de sensoriamento de temperatura"@pt-br ,
@@ -13459,7 +13480,7 @@ copi:COPI_0000667 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000076
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000076
                                   ] ;
                   rdfs:label "processo de proteção de sensor de temperatura"@pt-br ,
@@ -13517,11 +13538,11 @@ copi:COPI_0000670 rdf:type owl:Class ;
 copi:COPI_0000671 rdf:type owl:Class ;
                   rdfs:subClassOf copi:COPI_0000635 ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000387
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000388
                                   ] ;
                   rdfs:label "processo de separação trifásica"@pt-br ,
@@ -13591,11 +13612,11 @@ copi:COPI_0000676 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000364
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000228
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000674
                                   ] ;
                   rdfs:label "processo de suporte e conexão de coluna de produção"@pt-br ,
@@ -13629,7 +13650,7 @@ copi:COPI_0000678 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000674
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000674
                                   ] ;
                   rdfs:label "processo de suporte de coluna de produção"@pt-br ,
@@ -13676,7 +13697,7 @@ copi:COPI_0000681 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000393
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000394
                                   ] ;
                   rdfs:label "processo de geração de energia por turbomáquina"@pt-br ,
@@ -13759,7 +13780,7 @@ copi:COPI_0000687 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ;
                   rdfs:label "processo de inspeção visual"@pt-br ,
@@ -13798,11 +13819,11 @@ copi:COPI_0000689 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000396
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ;
                   rdfs:label "processo de combustão de resíduos"@pt-br ,
@@ -13820,7 +13841,7 @@ copi:COPI_0000690 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000396
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000395
                                   ] ;
                   rdfs:label "processo de queima de gás residual"@pt-br ,
@@ -13863,7 +13884,7 @@ copi:COPI_0000692 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "processo de descarte de gás residual"@pt-br ,
@@ -13898,7 +13919,7 @@ copi:COPI_0000694 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ;
                   rdfs:label "processo de controle de fluido de poço"@pt-br ,
@@ -13933,7 +13954,7 @@ copi:COPI_0000696 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ;
                   rdfs:label "processo de controle de superfície do poço"@pt-br ,
@@ -13995,7 +14016,7 @@ copi:COPI_0000701 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "processo de vedação por superfície"@pt-br ,
@@ -14030,7 +14051,7 @@ copi:COPI_0000703 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000397
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000397
                                   ] ;
                   rdfs:label "extended surface heat transfer process"@en ,
@@ -14065,7 +14086,7 @@ copi:COPI_0000705 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ;
                   rdfs:label "flowline isolation process"@en ,
@@ -14095,7 +14116,7 @@ copi:COPI_0000706 rdf:type owl:Class ;
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000707
 copi:COPI_0000707 rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ;
                   rdfs:label "instrument mounting process"@en ,
@@ -14130,7 +14151,7 @@ copi:COPI_0000709 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "multipath fluid conveyance process"@en ,
@@ -14165,7 +14186,7 @@ copi:COPI_0000711 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000390
                                   ] ;
                   rdfs:label "primary well isolation process"@en ,
@@ -14231,7 +14252,7 @@ copi:COPI_0000715 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "processo de deslocamento alternativo"@pt-br ,
@@ -14265,7 +14286,7 @@ copi:COPI_0000717 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000040
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000399
                                   ] ;
                   rdfs:label "processo de corte de rocha"@pt-br ,
@@ -14343,7 +14364,8 @@ copi:COPI_0000722 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that is an enclosed space within a larger artifact, bearing a containment function."@en ,
                                                        "Um artefato material que é um espaço fechado dentro de um artefato maior, possuindo uma função de contenção."@pt-br ;
-                  annotation:primitiveRationale "ContainmentFunction is shared with every containing artifact in COPI, so it cannot be sufficient. Interiority is a relational condition, not a sufficient one."@en .
+                  annotation:primitiveRationale "ContainmentFunction is shared with every containing artifact in COPI, so it cannot be sufficient. Interiority is a relational condition, not a sufficient one."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every chamber is a material artifact that bears a containment function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000723
@@ -14360,7 +14382,8 @@ copi:COPI_0000723 rdf:type owl:Class ;
                   skos:definition "A material artifact that bears a rock cutting function, used to crush or cut formation rock in order to create a borehole."@en ,
                                   "A material artifact that constitutes the rotating cutting tool at the bottom of a drill string that fragments rock to advance the wellbore."@en ;
                   annotation:naturalLanguageDefinition "A material artifact that bears a rock cutting function, used to crush or cut formation rock in order to create a borehole."@en ,
-                                                       "Um artefato material que possui uma função de corte de rocha, usado para triturar ou cortar rocha da formação a fim de criar um poço."@pt-br .
+                                                       "Um artefato material que possui uma função de corte de rocha, usado para triturar ou cortar rocha da formação a fim de criar um poço."@pt-br ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every drill bit is a material artifact that bears a rock cutting function, and conversely every material artifact that bears a rock cutting function is a drill bit."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000724
@@ -14380,7 +14403,8 @@ copi:COPI_0000724 rdf:type owl:Class ;
                   skos:definition "A material artifact that bears an electrical switching function, turning electrical current on and/or off."@en ,
                                   "A material artifact that constitutes a device that opens or closes an electrical circuit in response to a manual or automatic input in petroleum production equipment."@en ;
                   annotation:naturalLanguageDefinition "A material artifact that bears an electrical switching function, turning electrical current on and/or off."@en ,
-                                                       "Um artefato material que possui uma função de chaveamento elétrico, ligando e/ou desligando a corrente elétrica."@pt-br .
+                                                       "Um artefato material que possui uma função de chaveamento elétrico, ligando e/ou desligando a corrente elétrica."@pt-br ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every electrical switch is a material artifact that bears an electrical switching function, and conversely every material artifact that bears an electrical switching function is an electrical switch."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000725
@@ -14398,7 +14422,8 @@ copi:COPI_0000725 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact whose pores let a fluid through while holding back the particles it carries, which accumulate on its surface."@en ,
                                                        "Um artefato material cujos poros deixam passar um fluido e retêm as partículas que ele carrega, as quais se acumulam em sua superfície."@pt-br ;
-                  annotation:primitiveRationale "The medium is a component of the filter, not a filter; the distinction rests on parthood, which is not a sufficient condition."@en .
+                  annotation:primitiveRationale "The medium is a component of the filter, not a filter; the distinction rests on parthood, which is not a sufficient condition."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every filter medium is a material artifact that bears a selective permeability function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000726
@@ -14416,7 +14441,8 @@ copi:COPI_0000726 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that bears an extended-surface heat transfer function: a tube carrying fins that enlarge the area it exposes to the surrounding fluid."@en ,
                                                        "Um artefato material que porta uma função de transferência de calor por superfície estendida: um tubo com aletas que ampliam a área exposta ao fluido ao redor."@pt-br ;
-                  annotation:primitiveRationale "The differentia is structural (presence of fins), so under OWA it cannot be a sufficient condition."@en .
+                  annotation:primitiveRationale "The differentia is structural (presence of fins), so under OWA it cannot be a sufficient condition."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every finned tube is a material artifact that bears an extended surface heat transfer function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000727
@@ -14434,7 +14460,8 @@ copi:COPI_0000727 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A measuring element that bears a gas detection function: it responds when the gas it is meant to watch for reaches the concentration set for it."@en ,
                                                        "Um elemento de medição que porta uma função de detecção de gás: responde quando o gás que deve vigiar atinge a concentração definida para ele."@pt-br ;
-                  annotation:primitiveRationale "GasDetectionFunction is already the sufficient condition for the 'gas detector' instrument. A measuring element bears it as a component; parthood is not a sufficient condition."@en .
+                  annotation:primitiveRationale "GasDetectionFunction is already the sufficient condition for the 'gas detector' instrument. A measuring element bears it as a component; parthood is not a sufficient condition."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every gas detecting measuring element is a measuring element that bears a gas detection function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000728
@@ -14453,7 +14480,8 @@ copi:COPI_0000728 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A valve that bears a primary well isolation function and is a component of a christmas tree, controlling all flow from the wellbore."@en ,
                                                        "Uma válvula que possui uma função de isolamento primário do poço e é um componente de uma árvore de natal, controlando todo o fluxo do poço."@pt-br ;
-                  annotation:primitiveRationale "The definition is partly positional ('on the christmas tree', 'main shut-in valve on the well'); under OWA a positional differentia cannot be sufficient."@en .
+                  annotation:primitiveRationale "The definition is partly positional ('on the christmas tree', 'main shut-in valve on the well'); under OWA a positional differentia cannot be sufficient."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every master valve is a valve that bears a primary well isolation function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000729
@@ -14471,7 +14499,8 @@ copi:COPI_0000729 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that is a structure on which groups of instrument hardware are mounted and which houses the operator-process interface."@en ,
                                                        "Um artefato material que é uma estrutura sobre a qual grupos de instrumentos são montados e que abriga a interface operador-processo."@pt-br ;
-                  annotation:primitiveRationale "The ISA definition is structure-led and enumerative (sections, cubicles, consoles, desks); no sufficient condition follows from it."@en .
+                  annotation:primitiveRationale "The ISA definition is structure-led and enumerative (sections, cubicles, consoles, desks); no sufficient condition follows from it."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every panel is a material artifact that bears an instrument mounting function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000730
@@ -14489,7 +14518,8 @@ copi:COPI_0000730 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact, normally cylindrical and provided with a closed end, that reciprocates within a hollow outer cylinder to change its internal volume in order to discharge pressurized liquid or gas."@en ,
                                                        "Um artefato material, normalmente cilíndrico e provido de uma extremidade fechada, que se move alternadamente dentro de um cilindro externo oco para alterar seu volume interno a fim de descarregar líquido ou gás pressurizado."@pt-br ;
-                  annotation:primitiveRationale "Shape constraints in the source definition are constructive; under OWA they cannot be sufficient conditions."@en .
+                  annotation:primitiveRationale "Shape constraints in the source definition are constructive; under OWA they cannot be sufficient conditions."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every piston is a material artifact that bears a reciprocating displacement function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000731
@@ -14510,7 +14540,8 @@ copi:COPI_0000731 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that is a winding on the stator of a machine, bearing an electromagnetic field generation function."@en ,
                                                        "Um artefato material que é um enrolamento no estator de uma máquina, possuindo uma função de geração de campo eletromagnético."@pt-br ;
-                  annotation:primitiveRationale "Differentia is positional (on the stator, not the rotor); positional conditions are not sufficient under OWA."@en .
+                  annotation:primitiveRationale "Differentia is positional (on the stator, not the rotor); positional conditions are not sufficient under OWA."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every stator winding is a material artifact that bears an electromagnetic field generation function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000732
@@ -14532,7 +14563,8 @@ copi:COPI_0000732 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "An assembly of several tubes assembled together, bearing a multipath fluid conveyance function that allows multiple flow paths from a single source."@en ,
                                                        "Uma montagem de vários tubos reunidos, possuindo uma função de condução de fluido em múltiplos caminhos que permite vários percursos de fluxo a partir de uma única fonte."@pt-br ;
-                  annotation:primitiveRationale "The differentia is the structural fact of several tubes assembled together; not sufficient under OWA."@en .
+                  annotation:primitiveRationale "The differentia is the structural fact of several tubes assembled together; not sufficient under OWA."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every tube bundle is an assembly that bears a multipath fluid conveyance function and has tube as component part at all times."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000733
@@ -14549,7 +14581,8 @@ copi:COPI_0000733 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A material artifact that is the section of a tubing head which accommodates the tubing hanger, where it sets and seals."@en ,
                                                        "Um artefato material que é a seção de uma cabeça de produção que acomoda o suspensor da coluna, onde este assenta e veda."@pt-br ;
-                  annotation:primitiveRationale "Definition locates it within the wellhead rather than characterising it independently; parthood is not a sufficient condition."@en .
+                  annotation:primitiveRationale "Definition locates it within the wellhead rather than characterising it independently; parthood is not a sufficient condition."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every tubing bowl is a material artifact that bears a tubing hanger seating function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000734
@@ -14568,7 +14601,8 @@ copi:COPI_0000734 rdf:type owl:Class ;
                   annotation:isPrimitive "true"^^xsd:boolean ;
                   annotation:naturalLanguageDefinition "A valve that bears a flowline isolation function and is a component of a christmas tree, located on the flow line downstream of the master valve."@en ,
                                                        "Uma válvula que possui uma função de isolamento de linha de fluxo e é um componente de uma árvore de natal, localizada na linha de fluxo a jusante da válvula mestra."@pt-br ;
-                  annotation:primitiveRationale "Definition is positional relative to the master valve and the flow line; not a sufficient condition under OWA."@en .
+                  annotation:primitiveRationale "Definition is positional relative to the master valve and the flow line; not a sufficient condition under OWA."@en ;
+                  annotation:semiFormalNaturalLanguageAxiom "Every wing valve is a valve that bears a flowline isolation function."@en .
 
 
 ###  https://www.inf.ufrgs.br/ontologies/copi/COPI_0000735
@@ -14830,7 +14864,7 @@ copi:COPI_0000755 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "gravity collection process"@en ,
@@ -14864,7 +14898,7 @@ copi:COPI_0000759 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000046
                                   ] ;
                   rdfs:label "moisture measurement process"@en ,
@@ -15071,7 +15105,7 @@ copi:COPI_0000772 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "processo de conexão rápida"@pt-br ,
@@ -15124,7 +15158,7 @@ copi:COPI_0000775 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "processo de atuação rápida"@pt-br ,
@@ -15177,7 +15211,7 @@ copi:COPI_0000778 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000037
                                   ] ;
                   rdfs:label "processo de coleta de amostra"@pt-br ,
@@ -15266,7 +15300,7 @@ copi:COPI_0000784 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ;
                   rdfs:label "processo de transferência por sifão"@pt-br ,
@@ -15490,11 +15524,11 @@ copi:COPI_0000797 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000044
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "gas disengagement process"@en ,
@@ -15540,7 +15574,7 @@ copi:COPI_0000800 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000387
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000387
                                   ] ;
                   rdfs:label "processo de resfriamento de amostra"@pt-br ,
@@ -15576,11 +15610,11 @@ copi:COPI_0000802 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000038
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "coalescing filtration process"@en ,
@@ -15616,7 +15650,7 @@ copi:COPI_0000804 rdf:type owl:Class ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasSpecifiedOutput> ;
+                                    owl:onProperty <https://spec.industrialontologies.org/ontology/construct/hasOutput> ;
                                     owl:someValuesFrom copi:COPI_0000039
                                   ] ;
                   rdfs:label "gas sample collection process"@en ,
