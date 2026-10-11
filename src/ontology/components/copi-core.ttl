@@ -30,6 +30,21 @@ copi:COPI_0000002 a owl:ObjectProperty ;
     iof-av:semiFormalNaturalLanguageDefinition "x 'functionally participates in' y if and only if there exists a function f such that x 'has function' f and f 'has realization' y"@en,
         "x 'participa funcionalmente em' y se e somente se existe uma função f tal que x 'tem função' f e f 'tem realização' y"@pt-br .
 
+copi:COPI_0000805 a owl:ObjectProperty ;
+    rdfs:label "has functional participant"@en,
+        "tem participante funcional"@pt-br ;
+    rdfs:domain obo:BFO_0000015 ;
+    rdfs:range iof-constr:MaterialArtifact ;
+    dcterms:source "ODR-011 §4" ;
+    rdfs:comment "The inverse of copi:COPI_0000002 (functionally participates in): a process has as functional participant every material artifact that bears a designed function realized in that process."@en,
+        "A inversa de copi:COPI_0000002 (participa funcionalmente em): um processo tem como participante funcional todo artefato material que porta uma função projetada realizada nesse processo."@pt-br ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subPropertyOf obo:BFO_0000057 ;
+    owl:inverseOf copi:COPI_0000002 ;
+    iof-av:isPrimitive false ;
+    iof-av:naturalLanguageDefinition "The inverse of 'functionally participates in': a process p has functional participant x if and only if x functionally participates in p."@en,
+        "A inversa de 'participa funcionalmente em': um processo p tem participante funcional x se e somente se x participa funcionalmente em p."@pt-br .
+
 copi:COPI_0000011 a owl:Class ;
     rdfs:label "liquid pressure increase"@en,
         "aumento de pressão de líquido"@pt-br ;

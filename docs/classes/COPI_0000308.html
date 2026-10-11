@@ -387,7 +387,7 @@
 
       <div class="doc-section">
         <div class="doc-section-title"><span class="t-en">Natural Language Definition</span><span class="t-pt">Definição em Linguagem Natural</span></div>
-        <div class="nl-def"><div class="lang-tag">EN</div>A knock out drum is a drum designed to separate relatively small quantities of liquid from a vapor stream through gravitational and momentum-based phase separation.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um vaso separador de condensado é um tambor projetado para separar quantidades relativamente pequenas de líquido de uma corrente de vapor através de separação de fases gravitacional e baseada em momento.</div>
+        <div class="nl-def"><div class="lang-tag">EN</div>A knock out drum is a drum that takes the small amount of liquid carried by a vapour stream out of it, by gravity and by the inertia of the droplets.</div><div class="nl-def" style="border-color:#059669;"><div class="lang-tag">PT-BR</div>Um vaso separador de condensado é um tambor que retira de uma corrente de vapor a pequena quantidade de líquido que ela carrega, por gravidade e pela inércia das gotículas.</div>
       </div>
 
       <div class="doc-section">
@@ -397,11 +397,10 @@
           <div class="axiom-label"><span class="t-en">First-Order Logic Theory</span><span class="t-pt">Teoria em Lógica de Primeira Ordem</span></div>
           <div style="background:#f8f9fa;border-radius:6px;padding:.9rem 1rem;"><span class="fol-line"><span class="fol-label">[Definition]</span>∀x (KnockOutDrum(x) ↔ Drum(x) ∧ ∃f (KnockOutSeparationFunction(f) ∧ bearerOf(x,f))) <span style="color:#9ca3af;font-size:.78rem;">— Steps 1–3: genus + identity-giving function</span></span>
 <span class="fol-line"><span class="fol-label">[Function axiom: KnockOutSeparationFunction]</span>∀f (KnockOutSeparationFunction(f) → ∀p (realizedIn(f,p) → KnockOutSeparationProcess(p)) ∧ ∃p (KnockOutSeparationProcess(p) ∧ realizedIn(f,p))) <span style="color:#9ca3af;font-size:.78rem;">— Step 1: ∀ preserves type-type identity; ∃ rules out vacuous functions never realised</span></span>
-<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ((KnockOutDrum(x) ∧ KnockOutSeparationFunction(f) ∧ bearerOf(x,f)) →
-      ∃m (PortionOfGas(m) ∧ participatesIn(m,f)) ∧
-      ∃e1 (PortionOfGas(e1) ∧ participatesIn(e1,f)) ∧
-      ∃e2 (PortionOfLiquid(e2) ∧ participatesIn(e2,f)) ∧
-      processType(f,PhaseSeparation)) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed participants in the realising process</span></span>
+<span class="fol-line"><span class="fol-label">[Process participation signature]</span>∀x ∀f ∀p ((KnockOutDrum(x) ∧ KnockOutSeparationFunction(f) ∧ bearerOf(x,f) ∧ realizedIn(f,p)) →
+      ∃m (PortionOfGas(m) ∧ hasInput(p,m)) ∧
+      ∃e1 (PortionOfGas(e1) ∧ hasOutput(p,e1)) ∧
+      ∃e2 (PortionOfLiquid(e2) ∧ hasOutput(p,e2))) <span style="color:#9ca3af;font-size:.78rem;">— Step 5: typed inputs and outputs of the process p that realises the function (transformation kind: phase_separation)</span></span>
 </div>
         </div>
         <div class="axiom-block" style="padding:0;"><div class="axiom-label" style="padding:.6rem 1rem 0;">OWL 2 / Turtle</div><div class="owl-block">@prefix copi:    &lt;https://www.inf.ufrgs.br/ontologies/copi/&gt; .
@@ -430,7 +429,7 @@
     skos:scopeNote &quot;Artefatos materiais (bfo:material_entity) que (i) fazem parte de uma planta de produção de petróleo, e (ii) possuem ao menos uma função cuja realização envolve o transporte (p. ex. produção e injeção), processamento (separação e outros processos), controle, monitoramento, medição, contenção ou escoamento de material ou energia.&quot;@pt-br ;
     skos:scopeNote &quot;COPI provides high-level equipment categories defined by function to demonstrate the defined-class mechanism. Equipment subtypes are annotated with references to CFIHOS and PCA RDL terms. COPI is not a reference data library; organizations should use CFIHOS, PCA RDL, or ISO 14224 for comprehensive equipment classification.&quot;@en ;
     skos:scopeNote &quot;COPI fornece categorias de alto nível de equipamentos definidas por função para demonstrar o mecanismo de classe definida. Os subtipos de equipamentos são anotados com referências aos termos do CFIHOS e do PCA RDL. COPI não é uma biblioteca de dados de referência; organizações devem utilizar o CFIHOS, o PCA RDL ou a ISO 14224 para classificação abrangente de equipamentos.&quot;@pt-br ;
-    owl:versionInfo &quot;1.1.0-172-gaf3f8d0&quot; ;
+    owl:versionInfo &quot;1.1.0-180-g3e7af31&quot; ;
     owl:imports &lt;https://spec.industrialontologies.org/ontology/core/Core/&gt; ;
     owl:imports &lt;http://purl.obolibrary.org/obo/bfo/2020/bfo.owl&gt; ;
     dcterms:creator &quot;Nicolau Oyhenard dos Santos&quot;@en ;
@@ -443,7 +442,7 @@
     dcterms:publisher &quot;Universidade Federal do Rio Grande do Sul (UFRGS)&quot;@en ;
     dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
     dcterms:created &quot;2026-04-08&quot;^^xsd:date ;
-    dcterms:modified &quot;2026-09-24&quot;^^xsd:date ;
+    dcterms:modified &quot;2026-10-10&quot;^^xsd:date ;
     apv:GlobalMinLanguageCoverage &quot;en pt-br&quot; ;
     apv:ClassURIFormationRule &quot;https://www[.]inf[.]ufrgs[.]br/ontologies/copi/(COPI_[0-9]{7}|[A-Z][A-Za-z0-9]*)&quot; ;
     apv:ClassMinAnnotationCoverage &quot;rdfs:label https://spec.industrialontologies.org/ontology/annotation/naturalLanguageDefinition&quot; .
@@ -466,9 +465,9 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     ] ;
     rdfs:label &quot;knock out separation function&quot;@en ;
     rdfs:label &quot;função de separação knock-out&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in separating relatively small quantities of liquid from a vapour stream held in a drum, so that the liquid is removed and the vapour leaves with reduced liquid content.&quot;@en ;
-    skos:definition &quot;A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in separating relatively small quantities of liquid from a vapour stream held in a drum, so that the liquid is removed and the vapour leaves with reduced liquid content.&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;Uma GasDisengagementFunction que é realizada em um KnockOutSeparationProcess e que consiste em separar quantidades relativamente pequenas de líquido de uma corrente de vapor contida em um tambor, de modo que o líquido é removido e o vapor sai com teor de líquido reduzido.&quot;@pt-br .
+    iof-av:naturalLanguageDefinition &quot;A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in taking the small amount of liquid carried by a vapour stream out of it, so the vapour leaves with less liquid in it.&quot;@en ;
+    skos:definition &quot;A GasDisengagementFunction that is realized in a KnockOutSeparationProcess and that consists in taking the small amount of liquid carried by a vapour stream out of it, so the vapour leaves with less liquid in it.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Uma GasDisengagementFunction que é realizada em um KnockOutSeparationProcess e que consiste em retirar de uma corrente de vapor a pequena quantidade de líquido que ela carrega, de modo que o vapor saia com menos líquido.&quot;@pt-br .
 
 :GasDisengagementFunction rdf:type owl:Class ;
     rdfs:label &quot;função de liberação de gás&quot;@pt-br ;
@@ -499,12 +498,12 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
-        owl:onProperty iof-core:hasSpecifiedOutput ;
+        owl:onProperty iof-core:hasOutput ;
         owl:someValuesFrom :PortionOfGas
     ] ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
-        owl:onProperty iof-core:hasSpecifiedOutput ;
+        owl:onProperty iof-core:hasOutput ;
         owl:someValuesFrom :PortionOfLiquid
     ] .
 
@@ -523,9 +522,9 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
     ] ;
     rdfs:label &quot;knock out drum&quot;@en ;
     rdfs:label &quot;vaso separador de condensado&quot;@pt-br ;
-    iof-av:naturalLanguageDefinition &quot;A knock out drum is a drum designed to separate relatively small quantities of liquid from a vapor stream through gravitational and momentum-based phase separation.&quot;@en ;
-    skos:definition &quot;A knock out drum is a drum designed to separate relatively small quantities of liquid from a vapor stream through gravitational and momentum-based phase separation.&quot;@en ;
-    iof-av:naturalLanguageDefinition &quot;Um vaso separador de condensado é um tambor projetado para separar quantidades relativamente pequenas de líquido de uma corrente de vapor através de separação de fases gravitacional e baseada em momento.&quot;@pt-br ;
+    iof-av:naturalLanguageDefinition &quot;A knock out drum is a drum that takes the small amount of liquid carried by a vapour stream out of it, by gravity and by the inertia of the droplets.&quot;@en ;
+    skos:definition &quot;A knock out drum is a drum that takes the small amount of liquid carried by a vapour stream out of it, by gravity and by the inertia of the droplets.&quot;@en ;
+    iof-av:naturalLanguageDefinition &quot;Um vaso separador de condensado é um tambor que retira de uma corrente de vapor a pequena quantidade de líquido que ela carrega, por gravidade e pela inércia das gotículas.&quot;@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom &quot;Every knock out drum is a drum that bears a knock out separation function, which is realized in processes that separate small quantities of liquid from vapor streams.&quot;@en ;
     iof-av:firstOrderLogicAxiom &quot;∀x(KnockOutDrum(x) ↔ Drum(x) ∧ ∃f(KnockOutSeparationFunction(f) ∧ bearerOf(x,f)))&quot;@en ;
     dcterms:source &lt;https://standards.iso.org/iso/15926/-4/reference-data-item/KNOCK_OUT_DRUM&gt; ;
@@ -605,7 +604,7 @@ iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty ;
   <div class="rationale mt-2">The signature reflects the core function: one vapor input stream is transformed into two output streams - a cleaned vapor stream and the knocked-out liquid portion.</div>
 </div>
       <div class="doc-section"><div class="doc-section-title"><span class="t-en">Disjoint With</span><span class="t-pt">Disjunto com</span></div><div><span class="disjoint-pill">Compressor</span> <span class="disjoint-pill">Pump</span> <span class="disjoint-pill">HeatExchanger</span></div><div class="rationale mt-2">C4: Compressor, Pump, HeatExchanger. Process signature incompatibility: compressors add mechanical energy to fluids, pumps move liquids with pressure increase, heat exchangers transfer thermal energy between streams, while knock out drums perform passive phase separation</div></div>
-      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000308</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-09-15</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-09-24</td></tr></tbody></table></div>
+      <div class="doc-section"><div class="doc-section-title"><span class="t-en">Metadata</span><span class="t-pt">Metadados</span></div><table class="meta-table"><tbody><tr><td><span class="t-en">COPI ID</span><span class="t-pt">COPI ID</span></td><td>COPI_0000308</td></tr><tr><td><span class="t-en">IRI</span><span class="t-pt">IRI</span></td><td>https://www.inf.ufrgs.br/ontologies/copi/COPI_0000308</td></tr><tr><td><span class="t-en">Status</span><span class="t-pt">Status</span></td><td>exported</td></tr><tr><td><span class="t-en">Axiom mode</span><span class="t-pt">Modo</span></td><td>equivalent</td></tr><tr><td><span class="t-en">Created</span><span class="t-pt">Criado</span></td><td>2026-04-16</td></tr><tr><td><span class="t-en">Updated</span><span class="t-pt">Atualizado</span></td><td>2026-10-03</td></tr><tr><td><span class="t-en">LLM model</span><span class="t-pt">Modelo LLM</span></td><td>claude-sonnet-4-20250514</td></tr><tr><td><span class="t-en">Version</span><span class="t-pt">Versão</span></td><td>2026-10-10</td></tr></tbody></table></div>
 
     </div>
 
