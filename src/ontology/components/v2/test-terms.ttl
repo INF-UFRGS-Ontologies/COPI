@@ -1,0 +1,76 @@
+@prefix copi: <https://www.inf.ufrgs.br/ontologies/copi/> .
+@prefix t: <https://www.inf.ufrgs.br/ontologies/copi/test/> .
+@prefix iof-constr: <https://spec.industrialontologies.org/ontology/construct/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# ids from copi-core-v2 (see ids.txt): Conversion 1017, Channelling 1013, Branching 1012, Signalling 1019
+# Separating 1020, Transferring 1024, Sensing 1034, hasInflow 1004, hasOutflow 1005, MaterialFlow 1001,
+# EnergyFlow 1002, SignalFlow 1003, EnergyDecrease 1049, EnergyIncrease 1050, EnergyTransformation 1052,
+# MechanicalEnergy 1041, HydraulicEnergy 1042, ThermalEnergy 1044, MeasurementContent 1054,
+# FluidMachineFunction 1057, HeatTransferFunction 1058, MechanicalSeparationFunction 1060
+
+t:PumpingFunction a owl:Class ; rdfs:label "pumping function" ;
+  rdfs:subClassOf copi:COPI_0001054 ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom [ owl:intersectionOf ( obo:BFO_0000015
+        [ a owl:Restriction ; owl:onProperty copi:COPI_0001004 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001001 [ a owl:Restriction ; owl:onProperty obo:BFO_0000057 ; owl:someValuesFrom copi:COPI_0000038 ] ) ] ]
+        [ a owl:Restriction ; owl:onProperty copi:COPI_0001004 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001002 [ a owl:Restriction ; owl:onProperty obo:BFO_0000117 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001009 [ a owl:Restriction ; owl:onProperty obo:RO_0019002 ; owl:someValuesFrom copi:COPI_0001042 ] ) ] ] ) ] ]
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000117 ; owl:someValuesFrom copi:COPI_0001049 ]
+        [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001001 copi:COPI_0001002
+            [ a owl:Restriction ; owl:onProperty obo:BFO_0000057 ; owl:someValuesFrom copi:COPI_0000038 ]
+            [ a owl:Restriction ; owl:onProperty obo:BFO_0000117 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001010 [ a owl:Restriction ; owl:onProperty obo:RO_0019001 ; owl:someValuesFrom copi:COPI_0001043 ] ) ] ] ) ] ] ) ] ] .
+
+t:CompressingFunction a owl:Class ; rdfs:label "compressing function" ;
+  rdfs:subClassOf copi:COPI_0001054 ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom [ owl:intersectionOf ( obo:BFO_0000015
+        [ a owl:Restriction ; owl:onProperty copi:COPI_0001004 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001001 [ a owl:Restriction ; owl:onProperty obo:BFO_0000057 ; owl:someValuesFrom copi:COPI_0000039 ] ) ] ]
+        [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001001 copi:COPI_0001002 [ a owl:Restriction ; owl:onProperty obo:BFO_0000057 ; owl:someValuesFrom copi:COPI_0000039 ] ) ] ] ) ] ] .
+
+t:Pump a owl:Class ; rdfs:label "pump" ; rdfs:subClassOf iof-constr:MaterialArtifact ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom t:PumpingFunction ] .
+t:Compressor a owl:Class ; rdfs:label "compressor" ; rdfs:subClassOf iof-constr:MaterialArtifact ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom t:CompressingFunction ] .
+[] a owl:AllDisjointClasses ; owl:members ( t:Pump t:Compressor ) .   # partition under the fluid-machine genus
+
+# reboiler: Conversion (phase change) + Branching (separation) on the same artifact — must be consistent
+t:ReboilingFunction a owl:Class ; rdfs:subClassOf copi:COPI_0001059 .        # phase change function
+t:ReboilerSeparatingFunction a owl:Class ; rdfs:subClassOf copi:COPI_0001057 . # mechanical separation function
+t:Reboiler a owl:Class ; rdfs:label "reboiler" ; rdfs:subClassOf iof-constr:MaterialArtifact ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom t:ReboilingFunction ] ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom t:ReboilerSeparatingFunction ] .
+t:reboiler1 a t:Reboiler .
+
+# heat exchanger: two thermal transfers, no transformation
+t:HeatExchanger a owl:Class ; rdfs:subClassOf iof-constr:MaterialArtifact ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0001055 ] .
+
+# transmitter: sensing function with measurement content on pressure (short form)
+t:PressureSensingFunction a owl:Class ; rdfs:subClassOf copi:COPI_0001035 ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001003
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000059 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001051 [ a owl:Restriction ; owl:onProperty iof-constr:isAbout ; owl:someValuesFrom copi:COPI_0000053 ] ) ] ] ) ] ] ] .
+t:PressureTransmitter a owl:Class ; rdfs:label "pressure transmitter" ; rdfs:subClassOf iof-constr:MaterialArtifact ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom t:PressureSensingFunction ] .
+# expected: t:PressureTransmitter ⊑ copi:COPI_0000024 (measurement instrument) ⊑ copi:COPI_0000091 (instrument)
+
+# controller: processing function → instrument, not measurement instrument
+t:Controller a owl:Class ; rdfs:subClassOf iof-constr:MaterialArtifact ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0001037 ] .   # processing function
+
+# trace-heated line: channelling with liquid primary and thermal secondary; must not be disjoint from piping nor exchanger
+t:TraceHeatedLineFunction a owl:Class ; rdfs:subClassOf copi:COPI_0001025 ,   # transferring
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom [ owl:intersectionOf ( obo:BFO_0000015
+        [ a owl:Restriction ; owl:onProperty copi:COPI_0001004 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001001 copi:COPI_0001002 ) ] ]
+        [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001001 copi:COPI_0001002 ) ] ] ) ] ] .
+t:TraceHeatedLine a owl:Class ; rdfs:subClassOf iof-constr:MaterialArtifact ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom t:TraceHeatedLineFunction ] .
+t:line1 a t:TraceHeatedLine , t:HeatExchanger .   # allowed to coexist
+
+# a pump instance realizing its function through a concrete process with flows (checks the chain)
+t:pump1 a t:Pump ; obo:BFO_0000196 t:pf1 .
+t:pf1 a t:PumpingFunction ; obo:BFO_0000054 t:proc1 .
+t:proc1 a obo:BFO_0000015 ; copi:COPI_0001004 t:inflow1 ; copi:COPI_0001005 t:outflow1 .
+t:inflow1 a copi:COPI_0001001 ; obo:BFO_0000057 t:liquidA .
+t:outflow1 a copi:COPI_0001001 , copi:COPI_0001002 ; obo:BFO_0000057 t:liquidB .
+t:liquidA a copi:COPI_0000038 . t:liquidB a copi:COPI_0000038 .
+# expected: proc1 hasInflowParticipant liquidA ; proc1 hasOutflowParticipant liquidB (via chains)

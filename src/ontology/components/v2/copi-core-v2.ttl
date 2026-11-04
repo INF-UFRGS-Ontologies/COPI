@@ -1,0 +1,1033 @@
+@prefix copi: <https://www.inf.ufrgs.br/ontologies/copi/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iof-av: <https://spec.industrialontologies.org/ontology/annotation/> .
+@prefix iof-constr: <https://spec.industrialontologies.org/ontology/construct/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix ro: <http://purl.obolibrary.org/obo/> .
+@prefix meno: <https://raw.githubusercontent.com/stap-m/midlevel-energy-ontology/main/ontology/src/midlevel-energy.owl/> .
+@prefix fb: <https://www.inf.ufrgs.br/ontologies/copi/fb/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+copi:copi-core a owl:Ontology ;
+    rdfs:label "COPI core (v2) — functions of the Functional Basis, three flows, identity and scope"@en ;
+    dcterms:source "Spec copi-core v2 (rev. 2026-11-03c); ODR-024 (flow and function root), ODR-025 (identity and disjointness), ODR-026 (equipment × system)" ;
+    rdfs:comment "Replaces the unit-operation anchoring of the FOMI 2026 paper (ODR-009/011/012) by function classes whose genus is a Functional Basis verb applied to a flow. No COPI process class carries identity; flows are occurrents; energy is a quality of its bearer; signal content is concretized by a signal flow or by a quality of its bearer."@en ;
+    owl:versionInfo "2.0.0-draft-2026-11-03" .
+
+copi:COPI_0000002 a owl:ObjectProperty ;
+    rdfs:label "functionally participates in"@en , "participa funcionalmente em"@pt-br ;
+    rdfs:domain iof-constr:MaterialArtifact ;
+    rdfs:range obo:BFO_0000015 ;
+    dcterms:source "ODR-011 §4" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subPropertyOf obo:BFO_0000056 ;
+    owl:propertyChainAxiom ( iof-constr:hasFunction obo:BFO_0000054 ) ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000805 a owl:ObjectProperty ;
+    rdfs:label "has functional participant"@en , "tem participante funcional"@pt-br ;
+    rdfs:domain obo:BFO_0000015 ;
+    rdfs:range iof-constr:MaterialArtifact ;
+    dcterms:source "ODR-011 §4" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subPropertyOf obo:BFO_0000057 ;
+    owl:inverseOf copi:COPI_0000002 ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0001004 a owl:ObjectProperty ;
+    rdfs:label "has inflow"@en , "tem fluxo de entrada"@pt-br ;
+    rdfs:subPropertyOf obo:BFO_0000117 ;
+    rdfs:domain obo:BFO_0000015 ;
+    rdfs:range copi:COPI_0001000 ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    iof-av:naturalLanguageDefinition "flow, occurrent part of the process that realizes a function, that crosses an interface of the bearer inwards"@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001005 a owl:ObjectProperty ;
+    rdfs:label "has outflow"@en , "tem fluxo de saída"@pt-br ;
+    rdfs:subPropertyOf obo:BFO_0000117 ;
+    rdfs:domain obo:BFO_0000015 ;
+    rdfs:range copi:COPI_0001000 ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    iof-av:naturalLanguageDefinition "flow, occurrent part of the process that realizes a function, that crosses an interface of the bearer outwards"@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001006 a owl:ObjectProperty ;
+    rdfs:label "has inflow participant"@en , "tem participante de fluxo de entrada"@pt-br ;
+    owl:propertyChainAxiom ( copi:COPI_0001004 obo:BFO_0000057 ) ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    skos:relatedMatch iof-constr:hasInput ;
+    iof-av:explanatoryNote "Chain copi:COPI_0001004 ∘ has participant. Declared as a COPI property because the chain into iof-constr:hasInput is not regular in OWL 2 DL given iof-constr:hasInput ⊑ has participant (IOF Core 202603); for the same reason this property is NOT declared a sub-property of has participant (that would close the cycle hasParticipant ≺ this ≺ hasParticipant, as HermiT reports). The export materializes iof-constr:hasInput and has participant from this property by SPARQL CONSTRUCT."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0001007 a owl:ObjectProperty ;
+    rdfs:label "has outflow participant"@en , "tem participante de fluxo de saída"@pt-br ;
+    owl:propertyChainAxiom ( copi:COPI_0001005 obo:BFO_0000057 ) ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    skos:relatedMatch iof-constr:hasOutput ;
+    iof-av:explanatoryNote "Chain copi:COPI_0001005 ∘ has participant. Declared as a COPI property because the chain into iof-constr:hasOutput is not regular in OWL 2 DL given iof-constr:hasOutput ⊑ has participant (IOF Core 202603); for the same reason this property is NOT declared a sub-property of has participant (that would close the cycle hasParticipant ≺ this ≺ hasParticipant, as HermiT reports). The export materializes iof-constr:hasOutput and has participant from this property by SPARQL CONSTRUCT."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0001000 a owl:Class ;
+    rdfs:label "flow"@en , "fluxo"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000057 ; owl:someValuesFrom obo:BFO_0000040 ] ;
+    iof-av:naturalLanguageDefinition "process in which some material entity crosses one interface of an artifact or engineered system, carrying with it some material, energy or information content"@en ;
+    iof-av:explanatoryNote "One flow per interface crossing. What happens inside the artifact (transformation, mixing, separation) is not a flow but another occurrent part of the process that realizes the function. The same flow may be an outflow of one artifact's process and an inflow of the next one's: it is the crossing of the interface they share. The Functional Basis leaves open whether a flow is the operand or its change over time; COPI takes the occurrent reading for the reasons recorded in ODR-024."@en ;
+    iof-av:adaptedFrom "Functional Basis: operation on flows of material, energy and signal (Stone & Wood 2000; Hirtz et al. 2002); formalization in Borgo, Carrara, Garbacz & Vermaas (2011)" ;
+    skos:closeMatch fb:Flow ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001001 a owl:Class ;
+    rdfs:label "material flow"@en , "fluxo de material"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001000 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000057 ; owl:someValuesFrom [ owl:unionOf ( copi:COPI_0000037 copi:COPI_0000040 obo:BFO_0000030 ) ] ] ;
+    iof-av:naturalLanguageDefinition "flow whose participant is a portion of fluid, a portion of solid or an object: the material itself is what crosses the interface"@en ;
+    iof-av:explanatoryNote "A process stream (OntoCAPE Stream, ISO 15926 Stream, CFIHOS) is a material flow in steady state at a given interface."@en ;
+    skos:closeMatch iof-constr:MaterialLocationChangeProcess ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001002 a owl:Class ;
+    rdfs:label "energy flow"@en , "fluxo de energia"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001000 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000117 ; owl:someValuesFrom copi:COPI_0001009 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000117 ; owl:someValuesFrom copi:COPI_0001010 ] ;
+    iof-av:naturalLanguageDefinition "flow that is an energy transfer across the interface: a decrease of some energy quality in the bearer on one side causally related to an increase of an energy quality of the same kind in the bearer on the other side"@en ;
+    iof-av:explanatoryNote "Energy transformation (different kinds, same bearer) is not a flow; see energy transformation. No participant restriction 'bearer of some energy' is stated because every material entity satisfies it; what distinguishes an energy flow is its decrease/increase parts."@en ;
+    iof-av:adaptedFrom "MENO (Stappel & Neuhaus, FOIS 2024): energy transfer" ;
+    skos:closeMatch meno:MENO_01002 ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001003 a owl:Class ;
+    rdfs:label "signal flow"@en , "fluxo de sinal"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001000 ;
+    rdfs:subClassOf [ owl:unionOf ( [ a owl:Restriction ; owl:onProperty obo:BFO_0000059 ; owl:someValuesFrom iof-constr:InformationContentEntity ] [ a owl:Restriction ; owl:onProperty obo:BFO_0000057 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001011 [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom [ a owl:Restriction ; owl:onProperty obo:BFO_0000059 ; owl:someValuesFrom iof-constr:InformationContentEntity ] ] ) ] ] ) ] ;
+    iof-av:naturalLanguageDefinition "flow that concretizes an information content entity, directly (BFO 2020 admits a process as concretizer) or through a quality of its signal bearer, and transmits it between artifacts"@en ;
+    iof-av:explanatoryNote "The short form (the flow concretizes the content) answers whether a signal exists; the long form (a quality of the bearer concretizes it) answers through which bearer it passed."@en ;
+    iof-av:adaptedFrom "IAO/CCO: content concretized in a bearer; BFO 2020 concretizes (BFO_0000059)" ;
+    iof-av:isPrimitive true .
+
+# flows are not disjoint: a pressurized liquid stream is a material flow and an energy flow (carrier flow, Nagel et al. 2007)
+
+copi:COPI_0001012 a owl:Class ;
+    rdfs:label "flow-operating function"@en , "função sobre fluxo"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:DesignedFunction ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom [ owl:intersectionOf ( obo:BFO_0000015 [ owl:unionOf ( [ a owl:Restriction ; owl:onProperty copi:COPI_0001004 ; owl:someValuesFrom copi:COPI_0001000 ] [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom copi:COPI_0001000 ] ) ] ) ] ] ;
+    iof-av:naturalLanguageDefinition "designed function of an artifact or engineered system that consists in performing an operation on a flow of material, energy or signal that crosses the bearer's boundary"@en ;
+    iof-av:semiFormalNaturalLanguageDefinition "every instance of 'flow-operating function' is an instance of 'designed function' that is 'realized in' only processes that have as occurrent part some 'flow' crossing the bearer's boundary inwards or outwards"@en ;
+    iof-av:explanatoryNote "The Functional Basis (Hirtz et al. 2002) does not name this root: it judges a function term 'based on whether or not it describes an operation that a product or device carries out on a flow', and calls the eight primaries 'function classes'. iof:DesignedFunction is wider (it covers intended functions that operate on no flow, e.g. the identifying function of a tag plate); this class is where the Functional Basis assumption lives. The lineage is Pahl & Beitz's generally valid functions."@en ;
+    iof-av:adaptedFrom "Hirtz, Stone, McAdams, Szykman & Wood (2002), Research in Engineering Design 13(2); Stone & Wood (2000), J. Mech. Des. 122(4); Borgo, Carrara, Garbacz & Vermaas (2011), JCISE 11(3)" ;
+    skos:closeMatch fb:Function ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001013 a owl:Class ;
+    rdfs:label "branching function"@en , "função de ramificação"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001012 ;
+    iof-av:naturalLanguageDefinition "function to cause a flow to no longer be joined or mixed, or to be distributed"@en ;
+    iof-av:explanatoryNote "Primary class 'Branch' of the Functional Basis. Disjoint from the other seven primaries; its secondaries are aspects, not alternatives, and are not declared disjoint."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, class 'Branch'" ;
+    skos:closeMatch fb:Branch ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001014 a owl:Class ;
+    rdfs:label "channelling function"@en , "função de canalização"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001012 ;
+    iof-av:naturalLanguageDefinition "function to cause a flow to move from one location to another"@en ;
+    iof-av:explanatoryNote "Primary class 'Channel' of the Functional Basis. Disjoint from the other seven primaries; its secondaries are aspects, not alternatives, and are not declared disjoint."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, class 'Channel'" ;
+    skos:closeMatch fb:Channel ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001015 a owl:Class ;
+    rdfs:label "connecting function"@en , "função de conexão"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001012 ;
+    iof-av:naturalLanguageDefinition "function to bring two or more flows together"@en ;
+    iof-av:explanatoryNote "Primary class 'Connect' of the Functional Basis. Disjoint from the other seven primaries; its secondaries are aspects, not alternatives, and are not declared disjoint."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, class 'Connect'" ;
+    skos:closeMatch fb:Connect ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001016 a owl:Class ;
+    rdfs:label "magnitude control function"@en , "função de controle de magnitude"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001012 ;
+    iof-av:naturalLanguageDefinition "function to alter or govern the size or amplitude of a flow"@en ;
+    iof-av:explanatoryNote "Primary class 'Control magnitude' of the Functional Basis. Disjoint from the other seven primaries; its secondaries are aspects, not alternatives, and are not declared disjoint."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, class 'Control magnitude'" ;
+    skos:closeMatch fb:Controlmagnitude ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001017 a owl:Class ;
+    rdfs:label "conversion function"@en , "função de conversão"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001012 ;
+    iof-av:naturalLanguageDefinition "function to change a flow from one form to another"@en ;
+    iof-av:explanatoryNote "Primary class 'Convert' of the Functional Basis. Disjoint from the other seven primaries; its secondaries are aspects, not alternatives, and are not declared disjoint."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, class 'Convert'" ;
+    skos:closeMatch fb:Convert ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001018 a owl:Class ;
+    rdfs:label "provision function"@en , "função de provisão"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001012 ;
+    iof-av:naturalLanguageDefinition "function to accumulate or provide a flow"@en ;
+    iof-av:explanatoryNote "Primary class 'Provision' of the Functional Basis. Disjoint from the other seven primaries; its secondaries are aspects, not alternatives, and are not declared disjoint."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, class 'Provision'" ;
+    skos:closeMatch fb:Provision ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001019 a owl:Class ;
+    rdfs:label "signalling function"@en , "função de sinalização"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001012 ;
+    iof-av:naturalLanguageDefinition "function to provide information on a flow: to sense, indicate or process a signal"@en ;
+    iof-av:explanatoryNote "Primary class 'Signal' of the Functional Basis. Disjoint from the other seven primaries; its secondaries are aspects, not alternatives, and are not declared disjoint."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, class 'Signal'" ;
+    skos:closeMatch fb:Signal ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001020 a owl:Class ;
+    rdfs:label "support function"@en , "função de suporte"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001012 ;
+    iof-av:naturalLanguageDefinition "function to firmly fix a flow (an object) into a defined location, or secure or position it"@en ;
+    iof-av:explanatoryNote "Primary class 'Support' of the Functional Basis. Disjoint from the other seven primaries; its secondaries are aspects, not alternatives, and are not declared disjoint."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, class 'Support'" ;
+    skos:closeMatch fb:Support ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001021 a owl:Class ;
+    rdfs:label "separating function"@en , "função de separação"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001013 ;
+    iof-av:naturalLanguageDefinition "function to isolate a flow into distinct components; tertiary: divide, extract, remove"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Separate' under 'Branch'" ;
+    skos:closeMatch fb:Separate ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001022 a owl:Class ;
+    rdfs:label "distributing function"@en , "função de distribuição"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001013 ;
+    iof-av:naturalLanguageDefinition "function to cause a flow to break up and spread over an area"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Distribute' under 'Branch'" ;
+    skos:closeMatch fb:Distribute ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001023 a owl:Class ;
+    rdfs:label "importing function"@en , "função de importação"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001014 ;
+    iof-av:naturalLanguageDefinition "function to bring a flow in from outside the system boundary"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Import' under 'Channel'" ;
+    skos:closeMatch fb:Import ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001024 a owl:Class ;
+    rdfs:label "exporting function"@en , "função de exportação"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001014 ;
+    iof-av:naturalLanguageDefinition "function to send a flow out across the system boundary"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Export' under 'Channel'" ;
+    skos:closeMatch fb:Export ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001025 a owl:Class ;
+    rdfs:label "transferring function"@en , "função de transferência"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001014 ;
+    iof-av:naturalLanguageDefinition "function to shift or convey a flow from one place to another; tertiary: transport, transmit"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Transfer' under 'Channel'" ;
+    skos:closeMatch fb:Transfer ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001026 a owl:Class ;
+    rdfs:label "guiding function"@en , "função de guia"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001014 ;
+    iof-av:naturalLanguageDefinition "function to direct the course of a flow along a specific path; tertiary: translate, rotate, allow degree of freedom"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Guide' under 'Channel'" ;
+    skos:closeMatch fb:Guide ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001027 a owl:Class ;
+    rdfs:label "coupling function"@en , "função de acoplamento"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001015 ;
+    iof-av:naturalLanguageDefinition "function to join or bring together flows; tertiary: join, link"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Couple' under 'Connect'" ;
+    skos:closeMatch fb:Couple ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001028 a owl:Class ;
+    rdfs:label "mixing function"@en , "função de mistura"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001015 ;
+    iof-av:naturalLanguageDefinition "function to combine two flows into a single, uniform homogeneous mass"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Mix' under 'Connect'" ;
+    skos:closeMatch fb:Mix ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001029 a owl:Class ;
+    rdfs:label "actuating function"@en , "função de atuação"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001016 ;
+    iof-av:naturalLanguageDefinition "function to commence the flow of energy, signal or material in response to an imported control signal"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Actuate' under 'Control magnitude'" ;
+    skos:closeMatch fb:Actuate ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001030 a owl:Class ;
+    rdfs:label "regulating function"@en , "função de regulação"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001016 ;
+    iof-av:naturalLanguageDefinition "function to adjust a flow in response to a control signal; tertiary: increase, decrease"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Regulate' under 'Control magnitude'" ;
+    skos:closeMatch fb:Regulate ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001031 a owl:Class ;
+    rdfs:label "changing function"@en , "função de mudança"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001016 ;
+    iof-av:naturalLanguageDefinition "function to adjust a flow in a predetermined and fixed manner; tertiary: increment, decrement, shape, condition"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Change' under 'Control magnitude'" ;
+    skos:closeMatch fb:Change ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001032 a owl:Class ;
+    rdfs:label "stopping function"@en , "função de interrupção"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001016 ;
+    iof-av:naturalLanguageDefinition "function to cease, or prevent, the transfer of a flow; tertiary: prevent, inhibit"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Stop' under 'Control magnitude'" ;
+    skos:closeMatch fb:Stop ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001033 a owl:Class ;
+    rdfs:label "storing function"@en , "função de armazenamento"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001018 ;
+    iof-av:naturalLanguageDefinition "function to accumulate a flow; tertiary: contain, collect"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Store' under 'Provision'" ;
+    skos:closeMatch fb:Store ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001034 a owl:Class ;
+    rdfs:label "supplying function"@en , "função de suprimento"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001018 ;
+    iof-av:naturalLanguageDefinition "function to provide a flow from storage"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Supply' under 'Provision'" ;
+    skos:closeMatch fb:Supply ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001035 a owl:Class ;
+    rdfs:label "sensing function"@en , "função de sensoriamento"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001019 ;
+    iof-av:naturalLanguageDefinition "function to perceive, or become aware of, a flow; tertiary: detect, measure"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Sense' under 'Signal'" ;
+    skos:closeMatch fb:Sense ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001036 a owl:Class ;
+    rdfs:label "indicating function"@en , "função de indicação"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001019 ;
+    iof-av:naturalLanguageDefinition "function to make something known to the user about a flow; tertiary: track, display"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Indicate' under 'Signal'" ;
+    skos:closeMatch fb:Indicate ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001037 a owl:Class ;
+    rdfs:label "processing function"@en , "função de processamento de sinal"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001019 ;
+    iof-av:naturalLanguageDefinition "function to submit a signal to a particular treatment or method having a set number of operations or steps"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Process' under 'Signal'" ;
+    skos:closeMatch fb:Process ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001038 a owl:Class ;
+    rdfs:label "stabilizing function"@en , "função de estabilização"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001020 ;
+    iof-av:naturalLanguageDefinition "function to prevent an object from changing course or location"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Stabilize' under 'Support'" ;
+    skos:closeMatch fb:Stabilize ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001039 a owl:Class ;
+    rdfs:label "securing function"@en , "função de fixação"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001020 ;
+    iof-av:naturalLanguageDefinition "function to firmly fix an object to a location"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Secure' under 'Support'" ;
+    skos:closeMatch fb:Secure ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001040 a owl:Class ;
+    rdfs:label "positioning function"@en , "função de posicionamento"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001020 ;
+    iof-av:naturalLanguageDefinition "function to place an object into a specific location or orientation"@en ;
+    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, secondary 'Position' under 'Support'" ;
+    skos:closeMatch fb:Position ;
+    iof-av:isPrimitive true .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( copi:COPI_0001013 copi:COPI_0001014 copi:COPI_0001015 copi:COPI_0001016 copi:COPI_0001017 copi:COPI_0001018 copi:COPI_0001019 copi:COPI_0001020 ) .
+
+copi:COPI_0001017 rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000117 ; owl:someValuesFrom copi:COPI_0001041 ] ) ] ] .
+
+copi:COPI_0001008 a owl:Class ;
+    rdfs:label "energy"@en , "energia"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000019 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000197 ; owl:someValuesFrom obo:BFO_0000040 ] ;
+    iof-av:naturalLanguageDefinition "quality of a material entity whose magnitude can decrease in its bearer as a causally related quality of the same kind increases in another bearer (transfer), or as a quality of a different kind increases in the same bearer (transformation)"@en ;
+    iof-av:explanatoryNote "As a specifically dependent continuant, an energy quality never migrates between bearers; 'transfer' is the pair decrease-here/increase-there (MENO). Kinds follow the Functional Basis flow taxonomy used in the COPI coverage; MENO is aligned, not imported (its IRIs are raw GitHub URLs, it imports BFO 2.0, and it lacks mechanical, hydraulic and pneumatic energy)."@en ;
+    iof-av:adaptedFrom "MENO (Stappel & Neuhaus, FOIS 2024): energy ⊑ bfo:quality, quality of some material entity; OEO (Stappel et al., JOWO 2022)" ;
+    skos:closeMatch meno:MENO_01001 ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001042 a owl:Class ;
+    rdfs:label "mechanical energy"@en , "energia mecânica"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001008 ;
+    iof-av:naturalLanguageDefinition "mechanical energy as a kind of energy quality of its bearer, in the sense of the Functional Basis flow taxonomy"@en ;
+    iof-av:explanatoryNote "kinetic plus potential energy of a body or shaft; broader than MENO kinetic energy"@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Table 3 (energy flows)" ;
+    skos:relatedMatch meno:MENO_01007 ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001043 a owl:Class ;
+    rdfs:label "hydraulic energy"@en , "energia hidráulica"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001008 ;
+    iof-av:naturalLanguageDefinition "hydraulic energy as a kind of energy quality of its bearer, in the sense of the Functional Basis flow taxonomy"@en ;
+    iof-av:explanatoryNote "Functional Basis carrier-based kind: pressure-volume energy of a liquid; an engineering distinction by bearer, not a physical kind. No MENO counterpart."@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Table 3 (energy flows)" ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001044 a owl:Class ;
+    rdfs:label "pneumatic energy"@en , "energia pneumática"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001008 ;
+    iof-av:naturalLanguageDefinition "pneumatic energy as a kind of energy quality of its bearer, in the sense of the Functional Basis flow taxonomy"@en ;
+    iof-av:explanatoryNote "as hydraulic energy, for a gas"@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Table 3 (energy flows)" ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001045 a owl:Class ;
+    rdfs:label "thermal energy"@en , "energia térmica"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001008 ;
+    iof-av:naturalLanguageDefinition "thermal energy as a kind of energy quality of its bearer, in the sense of the Functional Basis flow taxonomy"@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Table 3 (energy flows)" ;
+    skos:closeMatch meno:MENO_01011 ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001046 a owl:Class ;
+    rdfs:label "electrical energy"@en , "energia elétrica"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001008 ;
+    iof-av:naturalLanguageDefinition "electrical energy as a kind of energy quality of its bearer, in the sense of the Functional Basis flow taxonomy"@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Table 3 (energy flows)" ;
+    skos:closeMatch meno:MENO_01006 ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001047 a owl:Class ;
+    rdfs:label "chemical energy"@en , "energia química"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001008 ;
+    iof-av:naturalLanguageDefinition "chemical energy as a kind of energy quality of its bearer, in the sense of the Functional Basis flow taxonomy"@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Table 3 (energy flows)" ;
+    skos:closeMatch meno:MENO_01005 ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001048 a owl:Class ;
+    rdfs:label "electromagnetic energy"@en , "energia eletromagnética"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001008 ;
+    iof-av:naturalLanguageDefinition "electromagnetic energy as a kind of energy quality of its bearer, in the sense of the Functional Basis flow taxonomy"@en ;
+    iof-av:explanatoryNote "radiative energy in MENO"@en ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Table 3 (energy flows)" ;
+    skos:relatedMatch meno:MENO_01009 ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001009 a owl:Class ;
+    rdfs:label "energy decrease"@en , "decréscimo de energia"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty ro:RO_0019002 ; owl:someValuesFrom copi:COPI_0001008 ] ;
+    iof-av:naturalLanguageDefinition "process that negatively regulates an energy quality of its bearer"@en ;
+    iof-av:adaptedFrom "MENO: energy decrease (quality decrease)" ;
+    skos:closeMatch meno:MENO_01013 ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001010 a owl:Class ;
+    rdfs:label "energy increase"@en , "acréscimo de energia"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty ro:RO_0019001 ; owl:someValuesFrom copi:COPI_0001008 ] ;
+    iof-av:naturalLanguageDefinition "process that positively regulates an energy quality of its bearer"@en ;
+    iof-av:adaptedFrom "MENO: energy increase (quality increase)" ;
+    skos:closeMatch meno:MENO_01014 ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001041 a owl:Class ;
+    rdfs:label "transformation"@en , "transformação"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    iof-av:naturalLanguageDefinition "process, occurrent part of the realization of a conversion function, in which the form of the operand changes inside the artifact: the kind of energy borne, the phase, or the chemical composition"@en ;
+    iof-av:explanatoryNote "Does not cross an interface; therefore not a flow. It is the formal mark of ConversionFunction, which is otherwise indistinguishable from channelling/transferring."@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001049 a owl:Class ;
+    rdfs:label "energy transformation"@en , "transformação de energia"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001041 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000117 ; owl:someValuesFrom copi:COPI_0001009 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000117 ; owl:someValuesFrom copi:COPI_0001010 ] ;
+    iof-av:naturalLanguageDefinition "transformation in which an energy quality of one kind decreases and, causally related, an energy quality of a different kind increases in the same bearer"@en ;
+    iof-av:adaptedFrom "MENO: energy transformation" ;
+    skos:closeMatch meno:MENO_01003 ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001050 a owl:Class ;
+    rdfs:label "material transformation"@en , "transformação de material"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001041 ;
+    iof-av:naturalLanguageDefinition "transformation in which the phase or the chemical composition of the material operand changes inside the artifact"@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001011 a owl:Class ;
+    rdfs:label "signal bearer"@en , "portador de sinal"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000040 ;
+    iof-av:naturalLanguageDefinition "material entity (a current loop, a cable, a pneumatic line, a network segment) some quality of which, or some signal flow through which, concretizes an information content entity transmitted between artifacts"@en ;
+    iof-av:explanatoryNote "IOF Core 202603 has no information-bearer class; this is COPI's. The bearer answers 'through which cable'; the content answers 'about what'."@en ;
+    iof-av:adaptedFrom "IAO material information bearer; CCO information bearing entity" ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001051 a owl:Class ;
+    rdfs:label "measurement content"@en , "conteúdo de medição"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:DescriptiveInformationContentEntity ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom obo:BFO_0000019 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty iof-constr:hasValueExpressionAtAllTimes ; owl:someValuesFrom iof-constr:MeasuredValueExpression ] ;
+    iof-av:naturalLanguageDefinition "descriptive information content entity, produced by continuous sensing, that describes a quality of the observed entity and has a measured value expression"@en ;
+    iof-av:explanatoryNote "Sibling, not equivalent, of iof:MeasurementInformationContentEntity: the IOF class requires being the output of some (planned) MeasurementProcess, which continuous sensing is not. Same describes / value-expression pattern."@en ;
+    skos:closeMatch iof-constr:MeasurementInformationContentEntity ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001052 a owl:Class ;
+    rdfs:label "control content"@en , "conteúdo de controle"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:DirectiveInformationContentEntity ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty iof-constr:prescribes ; owl:someValuesFrom obo:BFO_0000019 ] ;
+    iof-av:naturalLanguageDefinition "directive information content entity that prescribes a quality of the actuated artifact (a valve opening, a pump speed)"@en ;
+    iof-av:explanatoryNote "Interlock and trip contents are control contents."@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001053 a owl:Class ;
+    rdfs:label "status content"@en , "conteúdo de estado"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:DescriptiveInformationContentEntity ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty iof-constr:describes ; owl:someValuesFrom obo:BFO_0000019 ] ;
+    iof-av:naturalLanguageDefinition "descriptive information content entity whose content is discrete: that a quality has crossed a limit (high level, flame detected) or the condition of an artifact (pump running)"@en ;
+    iof-av:explanatoryNote "Alarms are status contents with reference to a limit. Switches and detectors produce status content."@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001054 a owl:Class ;
+    rdfs:label "fluid machine function"@en , "função de máquina de fluxo"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001017 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001001 copi:COPI_0001002 ) ] ] ) ] ] ;
+    iof-av:naturalLanguageDefinition "conversion function realized in a process with an inflow of mechanical energy, an internal energy transformation, and an outflow that is both a material flow and an energy flow of hydraulic or pneumatic energy (a carrier flow)"@en ;
+    iof-av:explanatoryNote "Genus-level function of COPI: the parent of the term functions (e.g. pumping function) of one artifact genus. Refines a Functional Basis class; not itself in the Functional Basis."@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001055 a owl:Class ;
+    rdfs:label "heat transfer function"@en , "função de transferência de calor"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001025 ;
+    iof-av:naturalLanguageDefinition "transferring function realized in a process with two material inflows and two material outflows, one pair carrying a thermal energy decrease and the other a thermal energy increase, and no transformation"@en ;
+    iof-av:explanatoryNote "Genus-level function of COPI: the parent of the term functions (e.g. pumping function) of one artifact genus. Refines a Functional Basis class; not itself in the Functional Basis."@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001056 a owl:Class ;
+    rdfs:label "mass transfer function"@en , "função de transferência de massa"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001021 ;
+    iof-av:naturalLanguageDefinition "separating function that isolates a component of a fluid mixture by transferring it to another phase (extract)"@en ;
+    iof-av:explanatoryNote "Genus-level function of COPI: the parent of the term functions (e.g. pumping function) of one artifact genus. Refines a Functional Basis class; not itself in the Functional Basis."@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001057 a owl:Class ;
+    rdfs:label "mechanical separation function"@en , "função de separação mecânica"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001021 ;
+    iof-av:naturalLanguageDefinition "separating function that isolates phases or particles of a mixture by mechanical means"@en ;
+    iof-av:explanatoryNote "Genus-level function of COPI: the parent of the term functions (e.g. pumping function) of one artifact genus. Refines a Functional Basis class; not itself in the Functional Basis."@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001058 a owl:Class ;
+    rdfs:label "chemical reaction function"@en , "função de reação química"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001017 ;
+    iof-av:naturalLanguageDefinition "conversion function whose internal transformation changes the chemical composition of the material operand"@en ;
+    iof-av:explanatoryNote "Genus-level function of COPI: the parent of the term functions (e.g. pumping function) of one artifact genus. Refines a Functional Basis class; not itself in the Functional Basis."@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0001059 a owl:Class ;
+    rdfs:label "phase change function"@en , "função de mudança de fase"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0001017 ;
+    iof-av:naturalLanguageDefinition "conversion function whose internal transformation changes the phase of the material operand"@en ;
+    iof-av:explanatoryNote "Genus-level function of COPI: the parent of the term functions (e.g. pumping function) of one artifact genus. Refines a Functional Basis class; not itself in the Functional Basis."@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0000025 rdfs:subClassOf copi:COPI_0001033 .    # containment function ⊑ storing (contain)
+copi:COPI_0000026 rdfs:subClassOf copi:COPI_0001030 .    # flow control function ⊑ regulating
+copi:COPI_0000028 rdfs:subClassOf copi:COPI_0001036 .  # indication function ⊑ indicating
+copi:COPI_0000029 rdfs:subClassOf copi:COPI_0001035 .          # instrumentation function ⊑ sensing (ODR-023, reading A; its allValuesFrom MeasurementProcess is removed in copi-vocab)
+# copi:COPI_0000030 (signal transmission function) stays under instrumentation/sensing function in copi-vocab: a transmitter senses and emits; re-parenting it under transferring (Channel) would cross two disjoint primaries (HermiT, 3/11)
+copi:COPI_0000032 rdfs:subClassOf copi:COPI_0001030 .      # safety relief function ⊑ regulating (decrease)
+
+copi:COPI_0000016 a owl:Class ;
+    rdfs:label "momentum-transfer device"@en , "dispositivo de transferência de quantidade de movimento"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0001054 ] ) ] ;
+    iof-av:naturalLanguageDefinition "material artifact that bears a momentum transfer function"@en ;
+    iof-av:explanatoryNote "Pumps, compressors, fans, turbines: the fluid-machine genus. Defined class: redefinition of the FOMI 2026 category over its genus-level function instead of its operation; keeps its IRI. Partitions (AllDisjointClasses) among its species are declared where the qualifier is exclusive (e.g. pump × compressor)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000017 a owl:Class ;
+    rdfs:label "heat-transfer device"@en , "dispositivo de transferência de calor"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0001055 ] ) ] ;
+    iof-av:naturalLanguageDefinition "material artifact that bears a heat transfer function"@en ;
+    iof-av:explanatoryNote " Defined class: redefinition of the FOMI 2026 category over its genus-level function instead of its operation; keeps its IRI. Partitions (AllDisjointClasses) among its species are declared where the qualifier is exclusive (e.g. pump × compressor)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000018 a owl:Class ;
+    rdfs:label "mass-transfer device"@en , "dispositivo de transferência de massa"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0001056 ] ) ] ;
+    iof-av:naturalLanguageDefinition "material artifact that bears a mass transfer function"@en ;
+    iof-av:explanatoryNote " Defined class: redefinition of the FOMI 2026 category over its genus-level function instead of its operation; keeps its IRI. Partitions (AllDisjointClasses) among its species are declared where the qualifier is exclusive (e.g. pump × compressor)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000019 a owl:Class ;
+    rdfs:label "mechanical-separation device"@en , "dispositivo de separação mecânica"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0001057 ] ) ] ;
+    iof-av:naturalLanguageDefinition "material artifact that bears a mechanical separation function"@en ;
+    iof-av:explanatoryNote " Defined class: redefinition of the FOMI 2026 category over its genus-level function instead of its operation; keeps its IRI. Partitions (AllDisjointClasses) among its species are declared where the qualifier is exclusive (e.g. pump × compressor)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000020 a owl:Class ;
+    rdfs:label "chemical reactor"@en , "reator químico"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0001058 ] ) ] ;
+    iof-av:naturalLanguageDefinition "material artifact that bears a chemical reactor function"@en ;
+    iof-av:explanatoryNote " Defined class: redefinition of the FOMI 2026 category over its genus-level function instead of its operation; keeps its IRI. Partitions (AllDisjointClasses) among its species are declared where the qualifier is exclusive (e.g. pump × compressor)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000021 a owl:Class ;
+    rdfs:label "phase-change device"@en , "dispositivo de mudança de fase"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0001059 ] ) ] ;
+    iof-av:naturalLanguageDefinition "material artifact that bears a phase change function"@en ;
+    iof-av:explanatoryNote " Defined class: redefinition of the FOMI 2026 category over its genus-level function instead of its operation; keeps its IRI. Partitions (AllDisjointClasses) among its species are declared where the qualifier is exclusive (e.g. pump × compressor)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000022 a owl:Class ;
+    rdfs:label "containment device"@en , "dispositivo de contenção"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0000025 ] ) ] ;
+    iof-av:naturalLanguageDefinition "material artifact that bears a containment function"@en ;
+    iof-av:explanatoryNote " Defined class: redefinition of the FOMI 2026 category over its genus-level function instead of its operation; keeps its IRI. Partitions (AllDisjointClasses) among its species are declared where the qualifier is exclusive (e.g. pump × compressor)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000023 a owl:Class ;
+    rdfs:label "flow-control device"@en , "dispositivo de controle de fluxo"@pt-br ;
+    dcterms:source "ODR-025" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0000026 ] ) ] ;
+    iof-av:naturalLanguageDefinition "material artifact that bears a flow control function"@en ;
+    iof-av:explanatoryNote " Defined class: redefinition of the FOMI 2026 category over its genus-level function instead of its operation; keeps its IRI. Partitions (AllDisjointClasses) among its species are declared where the qualifier is exclusive (e.g. pump × compressor)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000091 a owl:Class ;
+    rdfs:label "instrument"@en , "instrumento"@pt-br ;
+    dcterms:source "ODR-023 (reading A)" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf iof-constr:MaterialArtifact ;
+    owl:equivalentClass [ owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0001019 ] ) ] ;
+    iof-av:naturalLanguageDefinition "material artifact that bears a signalling function: sensing, indicating or processing a signal"@en ;
+    iof-av:explanatoryNote "ISA 5.1: instruments include primary elements, indicators, controllers, final control elements and switches. Measurement instruments are the sensing subset."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000024 a owl:Class ;
+    rdfs:label "measurement instrument"@en , "instrumento de medição"@pt-br ;
+    dcterms:source "ODR-023 (reading A)" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000091 ;
+    owl:equivalentClass [ owl:intersectionOf ( iof-constr:MaterialArtifact [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001035 [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001003 [ a owl:Restriction ; owl:onProperty obo:BFO_0000059 ; owl:someValuesFrom copi:COPI_0001051 ] ) ] ] ] ) ] ] ) ] ;
+    iof-av:naturalLanguageDefinition "instrument that bears a sensing function realized in a process whose outflow is a signal flow concretizing measurement content"@en ;
+    iof-av:explanatoryNote "MeasurementInstrument ⊑ Instrument is now inferred in the direction ISA 5.1 and ISO 15926 read it. Its realization is a bfo:Process, not iof:MeasurementProcess (planned): continuous sensing is not a planned measurement."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000003 a owl:Class ;
+    rdfs:label "momentum transfer"@en , "transferência de quantidade de movimento"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001054 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes a momentum transfer function"@en ;
+    iof-av:explanatoryNote "Defined class over the genus-level function. Carries no identity (ODR-011 superseded); copi:Operation ⊑ PlannedProcess (COPI_0000001) is removed; planned-ness is orthogonal (ODR-009)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000004 a owl:Class ;
+    rdfs:label "heat transfer"@en , "transferência de calor"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001055 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes a heat transfer function"@en ;
+    iof-av:explanatoryNote "Defined class over the genus-level function. Carries no identity (ODR-011 superseded); copi:Operation ⊑ PlannedProcess (COPI_0000001) is removed; planned-ness is orthogonal (ODR-009)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000005 a owl:Class ;
+    rdfs:label "mass transfer"@en , "transferência de massa"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001056 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes a mass transfer function"@en ;
+    iof-av:explanatoryNote "Defined class over the genus-level function. Carries no identity (ODR-011 superseded); copi:Operation ⊑ PlannedProcess (COPI_0000001) is removed; planned-ness is orthogonal (ODR-009)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000006 a owl:Class ;
+    rdfs:label "mechanical separation"@en , "separação mecânica"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001057 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes a mechanical separation function"@en ;
+    iof-av:explanatoryNote "Defined class over the genus-level function. Carries no identity (ODR-011 superseded); copi:Operation ⊑ PlannedProcess (COPI_0000001) is removed; planned-ness is orthogonal (ODR-009)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000007 a owl:Class ;
+    rdfs:label "chemical reaction"@en , "reação química"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001058 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes a chemical reaction function"@en ;
+    iof-av:explanatoryNote "Defined class over the genus-level function. Carries no identity (ODR-011 superseded); copi:Operation ⊑ PlannedProcess (COPI_0000001) is removed; planned-ness is orthogonal (ODR-009)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000008 a owl:Class ;
+    rdfs:label "phase change"@en , "mudança de fase"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001059 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes a phase change function"@en ;
+    iof-av:explanatoryNote "Defined class over the genus-level function. Carries no identity (ODR-011 superseded); copi:Operation ⊑ PlannedProcess (COPI_0000001) is removed; planned-ness is orthogonal (ODR-009)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000009 a owl:Class ;
+    rdfs:label "material containment"@en , "contenção de material"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0000025 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes a material containment function"@en ;
+    iof-av:explanatoryNote "Defined class over the genus-level function. Carries no identity (ODR-011 superseded); copi:Operation ⊑ PlannedProcess (COPI_0000001) is removed; planned-ness is orthogonal (ODR-009)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000010 a owl:Class ;
+    rdfs:label "flow control"@en , "controle de fluxo"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0000026 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes a flow control function"@en ;
+    iof-av:explanatoryNote "Defined class over the genus-level function. Carries no identity (ODR-011 superseded); copi:Operation ⊑ PlannedProcess (COPI_0000001) is removed; planned-ness is orthogonal (ODR-009)."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0001060 a owl:Class ;
+    rdfs:label "branching operation"@en , "operação de ramificação"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001013 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes some copi:COPI_0001013 (branching function)"@en ;
+    iof-av:explanatoryNote "Defined class by primary verb, for the core CQs (CQ24) and the MENO pattern."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0001061 a owl:Class ;
+    rdfs:label "channelling operation"@en , "operação de canalização"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001014 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes some copi:COPI_0001014 (channelling function)"@en ;
+    iof-av:explanatoryNote "Defined class by primary verb, for the core CQs (CQ24) and the MENO pattern."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0001062 a owl:Class ;
+    rdfs:label "connecting operation"@en , "operação de conexão"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001015 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes some copi:COPI_0001015 (connecting function)"@en ;
+    iof-av:explanatoryNote "Defined class by primary verb, for the core CQs (CQ24) and the MENO pattern."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0001063 a owl:Class ;
+    rdfs:label "magnitude control operation"@en , "operação de controle de magnitude"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001016 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes some copi:COPI_0001016 (magnitude control function)"@en ;
+    iof-av:explanatoryNote "Defined class by primary verb, for the core CQs (CQ24) and the MENO pattern."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0001064 a owl:Class ;
+    rdfs:label "conversion operation"@en , "operação de conversão"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001017 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes some copi:COPI_0001017 (conversion function)"@en ;
+    iof-av:explanatoryNote "Defined class by primary verb, for the core CQs (CQ24) and the MENO pattern."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0001065 a owl:Class ;
+    rdfs:label "provision operation"@en , "operação de provisão"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001018 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes some copi:COPI_0001018 (provision function)"@en ;
+    iof-av:explanatoryNote "Defined class by primary verb, for the core CQs (CQ24) and the MENO pattern."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0001066 a owl:Class ;
+    rdfs:label "signalling operation"@en , "operação de sinalização"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001019 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes some copi:COPI_0001019 (signalling function)"@en ;
+    iof-av:explanatoryNote "Defined class by primary verb, for the core CQs (CQ24) and the MENO pattern."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0001067 a owl:Class ;
+    rdfs:label "support operation"@en , "operação de suporte"@pt-br ;
+    dcterms:source "ODR-024" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    owl:equivalentClass [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty obo:BFO_0000055 ; owl:someValuesFrom copi:COPI_0001020 ] ) ] ;
+    iof-av:naturalLanguageDefinition "process that realizes some copi:COPI_0001020 (support function)"@en ;
+    iof-av:explanatoryNote "Defined class by primary verb, for the core CQs (CQ24) and the MENO pattern."@en ;
+    iof-av:isPrimitive false .
+
+copi:COPI_0000011 a owl:Class ;
+    rdfs:label "liquid pressure increase"@en , "aumento de pressão de líquido"@pt-br ;
+    dcterms:source "ODR-011 (leaf kept)" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000003 ;
+    iof-av:naturalLanguageDefinition "liquid pressure increase: operation leaf kept from v1; its equivalence to 'process that realizes some <term function>' is emitted by the export"@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0000012 a owl:Class ;
+    rdfs:label "gas pressure increase"@en , "aumento de pressão de gás"@pt-br ;
+    dcterms:source "ODR-011 (leaf kept)" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000003 ;
+    iof-av:naturalLanguageDefinition "gas pressure increase: operation leaf kept from v1; its equivalence to 'process that realizes some <term function>' is emitted by the export"@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0000013 a owl:Class ;
+    rdfs:label "gas absorption"@en , "absorção de gás"@pt-br ;
+    dcterms:source "ODR-011 (leaf kept)" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000005 ;
+    iof-av:naturalLanguageDefinition "gas absorption: operation leaf kept from v1; its equivalence to 'process that realizes some <term function>' is emitted by the export"@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0000014 a owl:Class ;
+    rdfs:label "vaporization"@en , "vaporização"@pt-br ;
+    dcterms:source "ODR-011 (leaf kept)" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000008 ;
+    iof-av:naturalLanguageDefinition "vaporization: operation leaf kept from v1; its equivalence to 'process that realizes some <term function>' is emitted by the export"@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0000089 a owl:Class ;
+    rdfs:label "heat exchange"@en , "troca térmica"@pt-br ;
+    dcterms:source "ODR-011 (leaf kept)" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf copi:COPI_0000004 ;
+    iof-av:naturalLanguageDefinition "heat exchange: operation leaf kept from v1; its equivalence to 'process that realizes some <term function>' is emitted by the export"@en ;
+    iof-av:isPrimitive true .
+
+copi:COPI_0000011 owl:disjointWith copi:COPI_0000012 .   # liquid × gas pressure increase: exclusive qualifier
+
+copi:COPI_0000015 a owl:Class ;
+    rdfs:label "loss of containment"@en , "perda de contenção"@pt-br ;
+    dcterms:source "ODR-009 §3" ;
+    rdfs:isDefinedBy copi:copi-core ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    iof-av:naturalLanguageDefinition "process in which contained material leaves its containment device other than through an outflow of its storing function"@en ;
+    iof-av:isPrimitive true .
+
+fb:scheme a skos:ConceptScheme ; rdfs:label "Functional Basis terms (Hirtz et al. 2002)"@en .
+fb:Divide a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Divide"@en ; skos:broader fb:Separate .
+fb:Extract a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Extract"@en ; skos:broader fb:Separate .
+fb:Remove a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Remove"@en ; skos:broader fb:Separate .
+fb:Transport a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Transport"@en ; skos:broader fb:Transfer .
+fb:Transmit a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Transmit"@en ; skos:broader fb:Transfer .
+fb:Translate a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Translate"@en ; skos:broader fb:Guide .
+fb:Rotate a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Rotate"@en ; skos:broader fb:Guide .
+fb:AllowDOF a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "AllowDOF"@en ; skos:broader fb:Guide .
+fb:Join a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Join"@en ; skos:broader fb:Couple .
+fb:Link a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Link"@en ; skos:broader fb:Couple .
+fb:Increase a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Increase"@en ; skos:broader fb:Regulate .
+fb:Decrease a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Decrease"@en ; skos:broader fb:Regulate .
+fb:Increment a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Increment"@en ; skos:broader fb:Change .
+fb:Decrement a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Decrement"@en ; skos:broader fb:Change .
+fb:Shape a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Shape"@en ; skos:broader fb:Change .
+fb:Condition a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Condition"@en ; skos:broader fb:Change .
+fb:Prevent a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Prevent"@en ; skos:broader fb:Stop .
+fb:Inhibit a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Inhibit"@en ; skos:broader fb:Stop .
+fb:Contain a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Contain"@en ; skos:broader fb:Store .
+fb:Collect a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Collect"@en ; skos:broader fb:Store .
+fb:Detect a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Detect"@en ; skos:broader fb:Sense .
+fb:Measure a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Measure"@en ; skos:broader fb:Sense .
+fb:Track a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Track"@en ; skos:broader fb:Indicate .
+fb:Display a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "Display"@en ; skos:broader fb:Indicate .
+
+copi:COPI_0001068 a owl:AnnotationProperty ; rdfs:label "signature"@en ; iof-av:naturalLanguageDefinition "JSON signature of a term function: verb, secondary, tertiary, inflows, outflows, primary flow, interface"@en ; dcterms:source "ODR-025" .
+copi:COPI_0001069 a owl:AnnotationProperty ; rdfs:label "primary function"@en ; iof-av:naturalLanguageDefinition "IRI of the function that gives the artifact its box (curation convention; design context)"@en ; dcterms:source "ODR-025" .
+copi:COPI_0001070 a owl:AnnotationProperty ; rdfs:label "identity function"@en ; iof-av:naturalLanguageDefinition "IRI of the term function whose signature individuates the artifact type"@en ; dcterms:source "ODR-025" .
+copi:COPI_0001071 a owl:AnnotationProperty ; rdfs:label "constructive type"@en ; iof-av:naturalLanguageDefinition "constructive differentia of the term (gate, ball, shell-and-tube), kept as annotation, never as functional subclass"@en ; dcterms:source "ODR-025" .
+
