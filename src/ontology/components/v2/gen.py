@@ -275,6 +275,7 @@ for key,en,pt,parent,nld,extra_supers in genus_fns:
 # re-parenting of existing vocab functions (asserted here; copi-vocab keeps their declarations)
 w(f"{CONTAINMENT_FN} rdfs:subClassOf {ids['StoringFunction']} .    # containment function ⊑ storing (contain)")
 w(f"{FLOWCTRL_FN} rdfs:subClassOf {ids['MagnitudeControlFunction']} .    # flow control function ⊑ magnitude control: it covers regulating (control valves) AND stopping (block valves); the secondary is the term's (2026-11-04)")
+w(f"copi:COPI_0000027 rdfs:subClassOf {ids['RegulatingFunction']} .    # process-controlled flow function (control valves) ⊑ regulating: the vocab function is protected in the export, so its secondary is asserted here (2026-11-04)")
 w(f"{INDICATION_FN} rdfs:subClassOf {ids['IndicatingFunction']} .  # indication function ⊑ indicating")
 w(f"{INSTR_FN} rdfs:subClassOf {ids['SensingFunction']} .          # instrumentation function ⊑ sensing (ODR-023, reading A; its allValuesFrom MeasurementProcess is removed in copi-vocab)")
 w(f"# {SIGTX_FN} (signal transmission function) stays under instrumentation/sensing function in copi-vocab: a transmitter senses and emits; re-parenting it under transferring (Channel) would cross two disjoint primaries (HermiT, 3/11)")
