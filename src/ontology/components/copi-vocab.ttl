@@ -128,35 +128,33 @@ copi:COPI_0000027 a owl:Class ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 copi:COPI_0000028 a owl:Class ;
-    rdfs:subClassOf iof-constr:DesignedFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom iof-constr:MeasurementProcess ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  iof-constr:MeasurementProcess ] ;
+    rdfs:subClassOf iof-constr:DesignedFunction ;
+    dcterms:source "ODR-025 §5 (copi-core v2): parent is copi:COPI_0001036 (indicating function), asserted in copi-core v2; the some/only restrictions on iof-constr:MeasurementProcess were removed (indication is not a planned measurement)." ;
     rdfs:label "indication function"@en , "função de indicação"@pt-br ;
     iof-av:isPrimitive "true"^^xsd:boolean ;
     iof-av:naturalLanguageDefinition "An identity-giving designed function realized in a Measurement process; the function of converting a physical quantity into a locally readable display at the point of measurement."@en ,
         "Uma função projetada identitária realizada em um processo de Medição; a função de converter uma grandeza física em uma exibição lida localmente no ponto de medição."@pt-br ;
     rdfs:comment "An identity-giving designed function realized in a Measurement process; the function of converting a physical quantity into a locally readable display at the point of measurement."@en ,
                  "Uma função projetada identitária realizada em um processo de Medição; a função de converter uma grandeza física em uma exibição lida localmente no ponto de medição."@pt-br ;
-    iof-av:firstOrderLogicAxiom "IndicationFunction(f) → DesignedFunction(f) ∧ ∃p(MeasurementProcess(p) ∧ realizedIn(f,p)) ∧ ∀p(realizedIn(f,p) → MeasurementProcess(p))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if f is an 'indication function' then f is a 'designed function' that is 'realized in' at least one 'measurement process' and is 'realized in' only 'measurement process' processes"@en ,
-        "se f é uma 'função de indicação' então f é uma 'função projetada' que é 'realizada em' ao menos um 'processo de medição' e é 'realizada em' apenas processos de 'medição'"@pt-br ;
+    iof-av:firstOrderLogicAxiom "IndicationFunction(f) → IndicatingFunction(f)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is an 'indication function' then f is an 'indicating function' (Signal / Indicate of the Functional Basis)"@en ,
+        "se f é uma 'função de indicação' então f é uma 'função de indicação' no sentido da Functional Basis (Signal / Indicate)"@pt-br ;
     iof-av:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 copi:COPI_0000029 a owl:Class ;
-    rdfs:subClassOf iof-constr:DesignedFunction ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom iof-constr:MeasurementProcess ] ,
-        [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  iof-constr:MeasurementProcess ] ;
+    rdfs:subClassOf iof-constr:DesignedFunction ;
+    dcterms:source "ODR-025 §5 (copi-core v2): parent is copi:COPI_0001035 (sensing function), asserted in copi-core v2; the former some/only restrictions on iof-constr:MeasurementProcess were removed because continuous sensing is not a planned measurement and they inverted Instrument ⊑ MeasurementInstrument (ODR-023)." ;
     rdfs:label "instrumentation function"@en , "função de instrumentação"@pt-br ;
     iof-av:isPrimitive "true"^^xsd:boolean ;
     iof-av:naturalLanguageDefinition "An identity-giving designed function realized in a sensing or measurement process; the function of detecting and converting a physical quantity into a usable signal or reading."@en ,
         "Uma função projetada identitária realizada em um processo de sensoreamento ou medição; a função de detectar e converter uma grandeza física em um sinal ou leitura utilizável."@pt-br ;
     rdfs:comment "An identity-giving designed function realized in a sensing or measurement process; the function of detecting and converting a physical quantity into a usable signal or reading."@en ,
                  "Uma função projetada identitária realizada em um processo de sensoreamento ou medição; a função de detectar e converter uma grandeza física em um sinal ou leitura utilizável."@pt-br ;
-    iof-av:firstOrderLogicAxiom "InstrumentationFunction(f) → DesignedFunction(f) ∧ ∃p(MeasurementProcess(p) ∧ realizedIn(f,p)) ∧ ∀p(realizedIn(f,p) → MeasurementProcess(p))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if f is an 'instrumentation function' then f is a 'designed function' that is 'realized in' at least one 'measurement process' and is 'realized in' only 'measurement process' processes"@en ,
-        "se f é uma 'função de instrumentação' então f é uma 'função projetada' que é 'realizada em' ao menos um 'processo de medição' e é 'realizada em' apenas processos de 'medição'"@pt-br ;
-    iof-av:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en ;
+    iof-av:firstOrderLogicAxiom "InstrumentationFunction(f) → SensingFunction(f)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is an 'instrumentation function' then f is a 'sensing function' (Signal / Sense of the Functional Basis), realized in a process whose outflow is a signal flow"@en ,
+        "se f é uma 'função de instrumentação' então f é uma 'função de sensoriamento' (Signal / Sense da Functional Basis), realizada em um processo cujo fluxo de saída é um fluxo de sinal"@pt-br ;
+    iof-av:primitiveRationale "The signal-flow outflow is stated on the term functions (copi-core v2 §2.3), not here."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 copi:COPI_0000030 a owl:Class ;
@@ -243,31 +241,33 @@ copi:COPI_0000034 a owl:Class ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 copi:COPI_0000035 a owl:Class ;
-    rdfs:subClassOf iof-constr:MeasurementProcess ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    dcterms:source "ODR-024 (copi-core v2): genus changed from iof-constr:MeasurementProcess (planned) to bfo:Process; continuous sensing/transmission is not a planned measurement." ;
     rdfs:label "signal transmission process"@en , "processo de transmissão de sinal"@pt-br ;
     iof-av:isPrimitive "true"^^xsd:boolean ;
-    iof-av:naturalLanguageDefinition "A MeasurementProcess (hence planned) in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system."@en ,
-        "Um MeasurementProcess (portanto planejado) no qual uma grandeza física sensoreada é convertida em um sinal padronizado e transmitida a um display remoto, registrador ou sistema de controle."@pt-br ;
-    rdfs:comment "A MeasurementProcess in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system."@en ,
-                 "Um MeasurementProcess no qual uma grandeza física sensoreada é convertida em um sinal padronizado e transmitida a um display remoto, registrador ou sistema de controle."@pt-br ;
-    iof-av:firstOrderLogicAxiom "SignalTransmissionProcess(x) → MeasurementProcess(x)" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'signal transmission process' then x is a 'measurement process'"@en ,
-        "se x é um 'processo de transmissão de sinal' então x é um 'processo de medição'"@pt-br ;
-    iof-av:primitiveRationale "The remote-transmission differentia is expressed informally in the NLD; OWL carries only the genus (MeasurementProcess)."@en ;
+    iof-av:naturalLanguageDefinition "A process in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system."@en ,
+        "Um processo no qual uma grandeza física sensoreada é convertida em um sinal padronizado e transmitida a um display remoto, registrador ou sistema de controle."@pt-br ;
+    rdfs:comment "A process in which a sensed physical quantity is converted into a standardized signal and transmitted to a remote display, recorder, or control system."@en ,
+                 "Um processo no qual uma grandeza física sensoreada é convertida em um sinal padronizado e transmitida a um display remoto, registrador ou sistema de controle."@pt-br ;
+    iof-av:firstOrderLogicAxiom "SignalTransmissionProcess(x) → Process(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'signal transmission process' then x is a 'process'"@en ,
+        "se x é um 'processo de transmissão de sinal' então x é um 'processo'"@pt-br ;
+    iof-av:primitiveRationale "The remote-transmission differentia is expressed informally in the NLD; OWL carries only the genus (bfo:Process)."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 copi:COPI_0000036 a owl:Class ;
-    rdfs:subClassOf iof-constr:MeasurementProcess ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    dcterms:source "ODR-024 (copi-core v2): genus changed from iof-constr:MeasurementProcess (planned) to bfo:Process; continuous sensing/transmission is not a planned measurement." ;
     rdfs:label "pressure measurement and transmission process"@en , "processo de medição e transmissão de pressão"@pt-br ;
     iof-av:isPrimitive "true"^^xsd:boolean ;
-    iof-av:naturalLanguageDefinition "A MeasurementProcess (hence planned) in which differential or gauge pressure is sensed, converted to a proportional standardized signal, and transmitted to a remote reading or control device."@en ,
-        "Um MeasurementProcess (portanto planejado) no qual a pressão diferencial ou manométrica é sensoreada, convertida em um sinal padronizado proporcional e transmitida a um dispositivo de leitura ou controle remoto."@pt-br ;
-    rdfs:comment "A MeasurementProcess in which differential or gauge pressure is sensed, converted to a proportional standardized signal, and transmitted to a remote reading or control device."@en ,
-                 "Um MeasurementProcess no qual a pressão diferencial ou manométrica é sensoreada, convertida em um sinal padronizado proporcional e transmitida a um dispositivo de leitura ou controle remoto."@pt-br ;
-    iof-av:firstOrderLogicAxiom "PressureMeasurementAndTransmissionProcess(x) → MeasurementProcess(x)" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'pressure measurement and transmission process' then x is a 'measurement process'"@en ,
-        "se x é um 'processo de medição e transmissão de pressão' então x é um 'processo de medição'"@pt-br ;
-    iof-av:primitiveRationale "The pressure-specificity and remote-transmission differentia are expressed informally in the NLD; OWL carries only the genus (MeasurementProcess). The compound name (P07 per OOPS!) reflects a genuine integrated process in industrial instrumentation: sensing and transmission are inseparable in a pressure transmitter."@en ;
+    iof-av:naturalLanguageDefinition "A process in which differential or gauge pressure is sensed, converted to a proportional standardized signal, and transmitted to a remote reading or control device."@en ,
+        "Um processo no qual a pressão diferencial ou manométrica é sensoreada, convertida em um sinal padronizado proporcional e transmitida a um dispositivo de leitura ou controle remoto."@pt-br ;
+    rdfs:comment "A process in which differential or gauge pressure is sensed, converted to a proportional standardized signal, and transmitted to a remote reading or control device."@en ,
+                 "Um processo no qual a pressão diferencial ou manométrica é sensoreada, convertida em um sinal padronizado proporcional e transmitida a um dispositivo de leitura ou controle remoto."@pt-br ;
+    iof-av:firstOrderLogicAxiom "PressureMeasurementAndTransmissionProcess(x) → Process(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'pressure measurement and transmission process' then x is a 'process'"@en ,
+        "se x é um 'processo de medição e transmissão de pressão' então x é um 'processo'"@pt-br ;
+    iof-av:primitiveRationale "The pressure-specificity and remote-transmission differentia are expressed informally in the NLD; OWL carries only the genus (bfo:Process). The compound name (P07 per OOPS!) reflects a genuine integrated process in industrial instrumentation: sensing and transmission are inseparable in a pressure transmitter."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 
