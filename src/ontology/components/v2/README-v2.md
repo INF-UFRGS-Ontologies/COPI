@@ -4,23 +4,29 @@ Arquivos nesta pasta (`src/ontology/components/v2/`), gerados a partir da spec "
 
 | Arquivo | O que é |
 |---|---|
-| `copi-core-v2.ttl` | a ontologia core v2: 88 classes, 6 propriedades de objeto, 4 de anotação; ids COPI_0001000–0001071 (faixa nova, `copi-idranges` range 1) |
-| `gen.py` | gerador do TTL (fonte de verdade para regenerar; `python3 -I gen.py > copi-core-v2.ttl 2> ids.txt`) |
+| `copi-core-v2.ttl` | a ontologia core v2: 88 classes, 6 propriedades de objeto, 4 de anotação; ids COPI_0001000–0001071 (faixa nova, `copi-idranges` range 1). Anotada no padrão do `copi-core.ttl` congelado (ver abaixo) |
+| `gen.py` | gerador do TTL (fonte de verdade para regenerar; `python3 -I gen.py > copi-core-v2.ttl 2> ids.txt`; falha com `MISSING ANNOTATIONS` se alguma entidade ficar sem campo) |
+| `ann_refs.py`, `ann_functions.py`, `ann_flows.py`, `ann_ops.py` | tabelas de anotação consumidas por `gen.py`: referências bibliográficas; funções (raiz, 8 primárias, 20 secundárias, 6 gêneros); fluxos, propriedades, energia, sinal; dispositivos, instrumentos, operações, folhas, propriedades de anotação e cabeçalho |
 | `ids.txt` | mapa nome → id gerado |
 | `test-terms.ttl` | termos de teste (bomba, compressor, reboiler, trocador, transmissor de pressão, controlador, linha traceada) e uma instância de bomba com fluxos, para o reasoner |
-| `check.py` | as 18 verificações sobre `reasoned-test.owl` |
+| `check.py` | as 20 verificações: 19 inferências sobre `reasoned-test.owl` + o padrão de anotação sobre `copi-core-v2.ttl` |
 
 ## Como foi verificado
 
 ROBOT 1.9.8 + HermiT, no container, sobre `copi-core-v2.ttl` + `copi-vocab.ttl` (sem o `owl:imports`) + mirror `iof-core.owl` 202603 (sem imports) + `bfo-2020.ttl` + `ro-extracted.owl` do MENO:
 
 ```
-robot merge -i copi-core-v2.ttl -i vocab-noimp.ttl -i iof-noimp.owl -i bfo-2020.ttl -i ro-extracted.owl -o merged.owl
+grep -v owl:imports copi-core-v2.ttl > core-noimp.ttl        # o cabeçalho importa BFO 2020 e IOF Core; offline, use as cópias locais
+robot merge -i core-noimp.ttl -i vocab-noimp.ttl -i iof-noimp.owl -i bfo-2020.ttl -i ro-extracted.owl -o merged.owl
 robot reason -i merged.owl --reasoner HermiT --axiom-generators "SubClass" -o reasoned.owl          # passo 0+1
 robot merge -i merged.owl -i test-terms.ttl -o merged-test.owl
 robot reason -i merged-test.owl --reasoner HermiT --axiom-generators "SubClass ClassAssertion PropertyAssertion" -o reasoned-test.owl
-python3 -I check.py                                                                                   # 18/18
+python3 -I check.py                                                                                   # 20/20
 ```
+
+## Padrão de anotação (2026-11-04)
+
+Igual ao do `copi-core.ttl` congelado, verificado pelo `check.py` em todas as 98 entidades (classes, propriedades de objeto, propriedades de anotação): `rdfs:label`, `iof-av:naturalLanguageDefinition` e `rdfs:comment`, `iof-av:semiFormalNaturalLanguageAxiom`/`Definition`, `skos:example` (três equipamentos da cobertura), `iof-av:explanatoryNote` — todos em en e pt-br; `iof-av:firstOrderLogicAxiom`/`Definition`; `iof-av:isPrimitive` com `primitiveRationale` bilíngue nas primitivas; `iof-av:adaptedFrom`; `dcterms:source` com o ODR e a referência completa (Hirtz et al. 2002 com tabela/apêndice, Stone & Wood 2000, Borgo et al. 2011, Vermaas 2007, MENO, OEO, IOF Core 202603, BFO 2020, RO, ISA 5.1, ISO 14224, McCabe-Smith-Harriott, Mizoguchi-Kitamura-Borgo 2016); `rdfs:isDefinedBy`. Cabeçalho com `versionIRI`, títulos, `comment` e `usageNote` bilíngues, criadores, licença, `maturity`, fontes. O esquema SKOS `fb:` traz os 8 + 20 + 24 termos com `prefLabel` en/pt-br e a definição de Hirtz nos primários e secundários.
 
 Resultado: hierarquia de propriedades regular; nenhuma classe insatisfazível; 18/18 inferências esperadas (`MeasurementInstrument ⊑ Instrument`; transmissor ⊑ instrumento de medição; controlador ⊑ instrumento e não ⊑ instrumento de medição; bomba/compressor ⊑ momentum-transfer device; reboiler em dois gêneros sem inconsistência; linha traceada coexistindo com trocador; cadeias `hasInflowParticipant`/`hasOutflowParticipant` disparando na instância; `proc1` classificado como momentum transfer e conversion operation).
 

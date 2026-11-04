@@ -1,6 +1,10 @@
 # Generates copi-core-v2.ttl from the spec "Spec copi-core v2" (rev. 2026-11-03c).
 # Run: python3 -I gen.py > copi-core-v2.ttl
-import textwrap
+import textwrap, sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # -I drops the script dir; the ann_* tables live beside gen.py
+import ann_ops  # registers all annotations in ann_functions.ANN
+from ann_functions import ANN
+from ann_ops import HEADER
 
 OUT = []
 def w(s=""): OUT.append(s)
@@ -42,22 +46,49 @@ def nid(key):
 
 def esc(s): return s.replace('\\','\\\\').replace('"','\\"')
 
+MISSING = []   # (key, field) pairs with no annotation — check.py fails on any
+
+def annotate(key, en, nld=None, sfd=None, note=None, adapted=None, primitive=True, source="ODR-024", is_class=True):
+    """Emit the bilingual annotation block for `key` from ANN (plus the English fields passed in)."""
+    a = ANN.get(key, {})
+    nld_en = nld or a.get("nld_en"); nld_pt = a.get("nld_pt")
+    sfd_en = sfd or a.get("sfd_en"); sfd_pt = a.get("sfd_pt")
+    note_en = a.get("note_en") or note; note_pt = a.get("note_pt")
+    sfd_prop = "iof-av:semiFormalNaturalLanguageDefinition" if not primitive else "iof-av:semiFormalNaturalLanguageAxiom"
+    def lit(prop, val, lang):
+        if val: w(f'    {prop} "{esc(val)}"@{lang} ;')
+        else: MISSING.append((key, prop + "@" + lang))
+    lit("iof-av:naturalLanguageDefinition", nld_en, "en"); lit("iof-av:naturalLanguageDefinition", nld_pt, "pt-br")
+    if nld_en: lit("rdfs:comment", nld_en, "en")
+    if nld_pt: lit("rdfs:comment", nld_pt, "pt-br")
+    lit(sfd_prop, sfd_en, "en"); lit(sfd_prop, sfd_pt, "pt-br")
+    if a.get("fol"): w(f'    iof-av:{"firstOrderLogicDefinition" if not primitive else "firstOrderLogicAxiom"} "{esc(a["fol"])}"@en ;')
+    else: MISSING.append((key, "fol"))
+    lit("skos:example", a.get("ex_en"), "en"); lit("skos:example", a.get("ex_pt"), "pt-br")
+    lit("iof-av:explanatoryNote", note_en, "en"); lit("iof-av:explanatoryNote", note_pt, "pt-br")
+    if is_class:
+        w(f"    iof-av:isPrimitive {'true' if primitive else 'false'} ;")
+        if primitive:
+            lit("iof-av:primitiveRationale", a.get("rat_en"), "en"); lit("iof-av:primitiveRationale", a.get("rat_pt"), "pt-br")
+    ad = adapted or a.get("adapted")
+    if ad: w(f'    iof-av:adaptedFrom "{esc(ad)}" ;')
+    srcs = list(a.get("sources") or [])
+    if source and not any(x.startswith(source) for x in srcs): srcs.insert(0, source)
+    if not srcs: MISSING.append((key, "dcterms:source"))
+    for sr in srcs: w(f'    dcterms:source "{esc(sr)}" ;')
+    w(f"    rdfs:isDefinedBy copi:copi-core ;")
+
 def cls(key, en, pt, supers=(), equiv=None, nld=None, sfd=None, note=None, adapted=None, primitive=True, source="ODR-024", close=None, related=None, extra=()):
     iri = ids.get(key) or nid(key)
     w(f"{iri} a owl:Class ;")
     w(f'    rdfs:label "{esc(en)}"@en , "{esc(pt)}"@pt-br ;')
-    w(f'    dcterms:source "{source}" ;')
-    w(f"    rdfs:isDefinedBy copi:copi-core ;")
     for s in supers: w(f"    rdfs:subClassOf {s} ;")
     if equiv: w(f"    owl:equivalentClass {equiv} ;")
-    if nld: w(f'    iof-av:naturalLanguageDefinition "{esc(nld)}"@en ;')
-    if sfd: w(f'    iof-av:semiFormalNaturalLanguageDefinition "{esc(sfd)}"@en ;')
-    if note: w(f'    iof-av:explanatoryNote "{esc(note)}"@en ;')
-    if adapted: w(f'    iof-av:adaptedFrom "{esc(adapted)}" ;')
     if close: w(f"    skos:closeMatch {close} ;")
     if related: w(f"    skos:relatedMatch {related} ;")
     for e in extra: w(f"    {e} ;")
-    w(f"    iof-av:isPrimitive {'true' if primitive else 'false'} .")
+    annotate(key, en, nld=nld, sfd=sfd, note=note, adapted=adapted, primitive=primitive, source=source)
+    OUT[-1] = OUT[-1].rstrip(" ;") + " ."
     w()
     return iri
 
@@ -68,32 +99,57 @@ SOME="someValuesFrom"; ONLY="allValuesFrom"
 
 # ---------------------------------------------------------------- header
 w(PREFIXES)
-w("""copi:copi-core a owl:Ontology ;
-    rdfs:label "COPI core (v2) — functions of the Functional Basis, three flows, identity and scope"@en ;
-    dcterms:source "Spec copi-core v2 (rev. 2026-11-03c); ODR-024 (flow and function root), ODR-025 (identity and disjointness), ODR-026 (equipment × system)" ;
-    rdfs:comment "Replaces the unit-operation anchoring of the FOMI 2026 paper (ODR-009/011/012) by function classes whose genus is a Functional Basis verb applied to a flow. No COPI process class carries identity; flows are occurrents; energy is a quality of its bearer; signal content is concretized by a signal flow or by a quality of its bearer."@en ;
-    owl:versionInfo "2.0.0-draft-2026-11-03" .
+w(f"""copi:copi-core a owl:Ontology ;
+    owl:versionIRI <https://www.inf.ufrgs.br/ontologies/copi/releases/2026-11-04/copi-core> ;
+    owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo.owl> , <https://spec.industrialontologies.org/ontology/core/Core/> ;
+    rdfs:label "COPI core (v2)"@en , "COPI núcleo (v2)"@pt-br ;
+    dcterms:title "{esc(HEADER['title_en'])}"@en , "{esc(HEADER['title_pt'])}"@pt-br ;
+    rdfs:comment "{esc(HEADER['comment_en'])}"@en , "{esc(HEADER['comment_pt'])}"@pt-br ;
+    iof-av:usageNote "{esc(HEADER['usage_en'])}"@en , "{esc(HEADER['usage_pt'])}"@pt-br ;
+    iof-av:maturity <https://spec.industrialontologies.org/ontology/individual/Provisional> ;
+    dcterms:creator "Nicolau Oyhenard dos Santos" , "Mara Abel" ;
+    dcterms:publisher "Institute of Informatics, Federal University of Rio Grande do Sul (UFRGS)"@en , "Instituto de Informática, Universidade Federal do Rio Grande do Sul (UFRGS)"@pt-br ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (c) 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Released under CC BY 4.0." ;
+    dcterms:created "2026-11-03"^^xsd:date ;
+    dcterms:modified "2026-11-04"^^xsd:date ;
+    rdfs:seeAlso <https://www.inf.ufrgs.br/ontologies/copi> , <https://github.com/INF-UFRGS-Ontologies/COPI> ;
+    owl:versionInfo "{esc(HEADER['versionInfo'])}" ;
 """)
+for sr in HEADER["sources"]: w(f'    dcterms:source "{esc(sr)}" ;')
+OUT[-1] = OUT[-1].rstrip(" ;") + " .\n"
 
-# ---------------------------------------------------------------- object properties kept from v1 (copied verbatim semantics)
+# ---------------------------------------------------------------- object properties kept from v1 (annotations copied from copi-core.ttl v1, ODR-011 §4)
 w("""copi:COPI_0000002 a owl:ObjectProperty ;
     rdfs:label "functionally participates in"@en , "participa funcionalmente em"@pt-br ;
     rdfs:domain iof-constr:MaterialArtifact ;
     rdfs:range obo:BFO_0000015 ;
-    dcterms:source "ODR-011 §4" ;
-    rdfs:isDefinedBy copi:copi-core ;
     rdfs:subPropertyOf obo:BFO_0000056 ;
     owl:propertyChainAxiom ( iof-constr:hasFunction obo:BFO_0000054 ) ;
+    iof-av:naturalLanguageDefinition "The sub-property of bfo:participatesIn (BFO_0000056) entailed exclusively by the chain iof-constr:hasFunction ∘ obo:BFO_0000054: a material artifact functionally participates in every process that realizes one of its designed functions."@en , "A sub-propriedade de bfo:participatesIn (BFO_0000056) entailada exclusivamente pela cadeia iof-constr:hasFunction ∘ obo:BFO_0000054: um artefato material participa funcionalmente em todo processo que realiza uma de suas funções projetadas."@pt-br ;
+    rdfs:comment "The sub-property of bfo:participatesIn (BFO_0000056) entailed exclusively by the chain iof-constr:hasFunction ∘ obo:BFO_0000054: a material artifact functionally participates in every process that realizes one of its designed functions."@en , "A sub-propriedade de bfo:participatesIn (BFO_0000056) entailada exclusivamente pela cadeia iof-constr:hasFunction ∘ obo:BFO_0000054: um artefato material participa funcionalmente em todo processo que realiza uma de suas funções projetadas."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "x 'functionally participates in' y if and only if there exists a function f such that x 'has function' f and f 'has realization' y"@en , "x 'participa funcionalmente em' y se e somente se existe uma função f tal que x 'tem função' f e f 'tem realização' y"@pt-br ;
+    iof-av:firstOrderLogicDefinition "∀x∀y (functionallyParticipatesIn(x,y) ↔ ∃f(hasFunction(x,f) ∧ hasRealization(f,y)))"@en ;
+    skos:example "A pump functionally participates in the pumping process that realizes its pumping function; the downstream pipe does not, although the same liquid flows through it."@en , "Uma bomba participa funcionalmente no processo de bombeamento que realiza sua função de bombeamento; o tubo a jusante não, embora o mesmo líquido escoe por ele."@pt-br ;
+    iof-av:explanatoryNote "Distinguishes function-mediated from general participation: obo:BFO_0000056 (participates in) holds whenever a continuant takes part in any process for any reason; this property is entailed only via the chain hasFunction ∘ has realization. In v2 the flows of the realizing process are its occurrent parts; the artifact's participation in them is derived, not asserted."@en , "Distingue a participação mediada por função da participação geral: obo:BFO_0000056 (participa em) vale sempre que um continuante toma parte em algum processo por qualquer razão; esta propriedade é entailada apenas pela cadeia tem função ∘ tem realização. No v2 os fluxos do processo realizador são suas partes ocorrentes; a participação do artefato neles é derivada, não assertada."@pt-br ;
+    dcterms:source "ODR-011 §4" ;
+    rdfs:isDefinedBy copi:copi-core ;
     iof-av:isPrimitive false .
 
 copi:COPI_0000805 a owl:ObjectProperty ;
     rdfs:label "has functional participant"@en , "tem participante funcional"@pt-br ;
     rdfs:domain obo:BFO_0000015 ;
     rdfs:range iof-constr:MaterialArtifact ;
-    dcterms:source "ODR-011 §4" ;
-    rdfs:isDefinedBy copi:copi-core ;
     rdfs:subPropertyOf obo:BFO_0000057 ;
     owl:inverseOf copi:COPI_0000002 ;
+    iof-av:naturalLanguageDefinition "The inverse of 'functionally participates in': a process p has functional participant x if and only if x functionally participates in p."@en , "A inversa de 'participa funcionalmente em': um processo p tem participante funcional x se e somente se x participa funcionalmente em p."@pt-br ;
+    rdfs:comment "The inverse of copi:COPI_0000002 (functionally participates in): a process has as functional participant every material artifact that bears a designed function realized in that process."@en , "A inversa de copi:COPI_0000002 (participa funcionalmente em): um processo tem como participante funcional todo artefato material que porta uma função projetada realizada nesse processo."@pt-br ;
+    iof-av:semiFormalNaturalLanguageDefinition "p 'has functional participant' x if and only if x 'functionally participates in' p"@en , "p 'tem participante funcional' x se e somente se x 'participa funcionalmente em' p"@pt-br ;
+    iof-av:firstOrderLogicDefinition "∀p∀x (hasFunctionalParticipant(p,x) ↔ functionallyParticipatesIn(x,p))"@en ;
+    skos:example "The pumping process has as functional participant the pump, not the liquid (which is an inflow participant)."@en , "O processo de bombeamento tem como participante funcional a bomba, não o líquido (que é participante de fluxo de entrada)."@pt-br ;
+    iof-av:explanatoryNote "Inverse kept for query convenience (CQ24–26 ask from the process side). Sub-property of has participant (BFO_0000057)."@en , "Inversa mantida por conveniência de consulta (as CQ24–26 perguntam do lado do processo). Subpropriedade de tem participante (BFO_0000057)."@pt-br ;
+    dcterms:source "ODR-011 §4" ;
+    rdfs:isDefinedBy copi:copi-core ;
     iof-av:isPrimitive false .
 """)
 
@@ -103,31 +159,25 @@ HAS_INFLOW=nid("hasInflow"); HAS_OUTFLOW=nid("hasOutflow"); HAS_INP=nid("hasInfl
 ENERGY=nid("Energy"); EDEC=nid("EnergyDecrease"); EINC=nid("EnergyIncrease")
 SBEARER=nid("SignalBearer")
 
-for p,en,pt,note in [
-  (HAS_INFLOW,"has inflow","tem fluxo de entrada","flow, occurrent part of the process that realizes a function, that crosses an interface of the bearer inwards"),
-  (HAS_OUTFLOW,"has outflow","tem fluxo de saída","flow, occurrent part of the process that realizes a function, that crosses an interface of the bearer outwards")]:
+for key,p,en,pt,note in [
+  ("hasInflow",HAS_INFLOW,"has inflow","tem fluxo de entrada","flow, occurrent part of the process that realizes a function, that crosses an interface of the bearer inwards"),
+  ("hasOutflow",HAS_OUTFLOW,"has outflow","tem fluxo de saída","flow, occurrent part of the process that realizes a function, that crosses an interface of the bearer outwards")]:
     w(f"""{p} a owl:ObjectProperty ;
     rdfs:label "{en}"@en , "{pt}"@pt-br ;
     rdfs:subPropertyOf {HAS_PART_OCC} ;
     rdfs:domain {PROCESS} ;
-    rdfs:range {FLOW} ;
-    dcterms:source "ODR-024" ;
-    rdfs:isDefinedBy copi:copi-core ;
-    iof-av:naturalLanguageDefinition "{note}"@en ;
-    iof-av:isPrimitive true .
-""")
-for p,chain,en,pt,rel in [
-  (HAS_INP,HAS_INFLOW,"has inflow participant","tem participante de fluxo de entrada","iof-constr:hasInput"),
-  (HAS_OUTP,HAS_OUTFLOW,"has outflow participant","tem participante de fluxo de saída","iof-constr:hasOutput")]:
+    rdfs:range {FLOW} ;""")
+    annotate(key, en, nld=note, is_class=False)
+    w("    iof-av:isPrimitive true .\n")
+for key,p,chain,en,pt,rel in [
+  ("hasInflowParticipant",HAS_INP,HAS_INFLOW,"has inflow participant","tem participante de fluxo de entrada","iof-constr:hasInput"),
+  ("hasOutflowParticipant",HAS_OUTP,HAS_OUTFLOW,"has outflow participant","tem participante de fluxo de saída","iof-constr:hasOutput")]:
     w(f"""{p} a owl:ObjectProperty ;
     rdfs:label "{en}"@en , "{pt}"@pt-br ;
     owl:propertyChainAxiom ( {chain} {HAS_PARTICIPANT} ) ;
-    dcterms:source "ODR-024" ;
-    rdfs:isDefinedBy copi:copi-core ;
-    skos:relatedMatch {rel} ;
-    iof-av:explanatoryNote "Chain {chain} ∘ has participant. Declared as a COPI property because the chain into {rel} is not regular in OWL 2 DL given {rel} ⊑ has participant (IOF Core 202603); for the same reason this property is NOT declared a sub-property of has participant (that would close the cycle hasParticipant ≺ this ≺ hasParticipant, as HermiT reports). The export materializes {rel} and has participant from this property by SPARQL CONSTRUCT."@en ;
-    iof-av:isPrimitive false .
-""")
+    skos:relatedMatch {rel} ;""")
+    annotate(key, en, note=f"Chain {chain} ∘ has participant. Declared as a COPI property because the chain into {rel} is not regular in OWL 2 DL given {rel} ⊑ has participant (IOF Core 202603); for the same reason this property is NOT declared a sub-property of has participant (that would close the cycle hasParticipant ≺ this ≺ hasParticipant, as HermiT reports). The export materializes {rel} and has participant from this property by SPARQL CONSTRUCT.", primitive=False, is_class=False)
+    w("    iof-av:isPrimitive false .\n")
 
 cls("Flow","flow","fluxo", supers=[PROCESS, restr(HAS_PARTICIPANT,SOME,MATENT)],
     nld="process in which some material entity crosses one interface of an artifact or engineered system, carrying with it some material, energy or information content",
@@ -341,11 +391,29 @@ ids["copi:COPI_0000015"]="copi:COPI_0000015"
 cls("copi:COPI_0000015","loss of containment","perda de contenção", supers=[PROCESS], nld="process in which contained material leaves its containment device other than through an outflow of its storing function", source="ODR-009 §3")
 
 # ---------------------------------------------------------------- SKOS scheme for tertiaries
-w("""fb:scheme a skos:ConceptScheme ; rdfs:label "Functional Basis terms (Hirtz et al. 2002)"@en .""")
+w("""fb:scheme a skos:ConceptScheme ;
+    rdfs:label "Functional Basis function terms (Hirtz et al. 2002, Table 5)"@en , "Termos de função da Functional Basis (Hirtz et al. 2002, Tabela 5)"@pt-br ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 and Appendix B" ;
+    skos:note "The eight primary and twenty secondary terms are mirrored by the function classes of this ontology (skos:closeMatch); the tertiary terms are kept here only, as concepts, because they refine a secondary without changing the operation on the flow."@en , "Os oito termos primários e os vinte secundários são espelhados pelas classes de função desta ontologia (skos:closeMatch); os termos terciários ficam só aqui, como conceitos, porque refinam um secundário sem mudar a operação sobre o fluxo."@pt-br .
+fb:Function a skos:Concept ; skos:inScheme fb:scheme ; skos:topConceptOf fb:scheme ; skos:prefLabel "Function"@en , "Função"@pt-br .
+fb:Flow a skos:Concept ; skos:inScheme fb:scheme ; skos:topConceptOf fb:scheme ; skos:prefLabel "Flow"@en , "Fluxo"@pt-br ; skos:definition "material, energy or signal on which a function operates (Hirtz et al. 2002, Table 3)"@en .
+""")
+_FBPT = {"Branch":"Ramificar","Channel":"Canalizar","Connect":"Conectar","Controlmagnitude":"Controlar magnitude","Convert":"Converter","Provision":"Prover","Signal":"Sinalizar","Support":"Suportar",
+ "Separate":"Separar","Distribute":"Distribuir","Import":"Importar","Export":"Exportar","Transfer":"Transferir","Guide":"Guiar","Couple":"Acoplar","Mix":"Misturar","Actuate":"Atuar","Regulate":"Regular","Change":"Mudar","Stop":"Interromper","Store":"Armazenar","Supply":"Suprir","Sense":"Sentir","Indicate":"Indicar","Process":"Processar","Stabilize":"Estabilizar","Secure":"Fixar","Position":"Posicionar",
+ "Divide":"Dividir","Extract":"Extrair","Remove":"Remover","Transport":"Transportar","Transmit":"Transmitir","Translate":"Transladar","Rotate":"Rotacionar","AllowDOF":"Permitir grau de liberdade","Join":"Unir","Link":"Ligar","Increase":"Aumentar","Decrease":"Diminuir","Increment":"Incrementar","Decrement":"Decrementar","Shape":"Dar forma","Condition":"Condicionar","Prevent":"Impedir","Inhibit":"Inibir","Contain":"Conter","Collect":"Coletar","Detect":"Detectar","Measure":"Medir","Track":"Rastrear","Display":"Exibir"}
+_FBSEC = {"Branch":["Separate","Distribute"],"Channel":["Import","Export","Transfer","Guide"],"Connect":["Couple","Mix"],"Controlmagnitude":["Actuate","Regulate","Change","Stop"],"Convert":[],"Provision":["Store","Supply"],"Signal":["Sense","Indicate","Process"],"Support":["Stabilize","Secure","Position"]}
+_FBDEF = {x[3].replace(' ',''): x[4] for x in prim_defs}
+_FBDEF.update({v[2]: v[3] for v in sec_nld.values()})
+for prim,secs in _FBSEC.items():
+    lbl = "Control magnitude" if prim=="Controlmagnitude" else prim
+    w(f'fb:{prim} a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Function ; skos:prefLabel "{lbl}"@en , "{_FBPT[prim]}"@pt-br ; skos:definition "{esc(_FBDEF.get(prim,""))}"@en ; skos:note "primary (class)"@en .')
+    for sec in secs:
+        w(f'fb:{sec} a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:{prim} ; skos:prefLabel "{sec}"@en , "{_FBPT[sec]}"@pt-br ; skos:definition "{esc(_FBDEF.get(sec,""))}"@en ; skos:note "secondary (basic)"@en .')
 terts = {"Separate":["Divide","Extract","Remove"],"Transfer":["Transport","Transmit"],"Guide":["Translate","Rotate","AllowDOF"],"Couple":["Join","Link"],"Regulate":["Increase","Decrease"],"Change":["Increment","Decrement","Shape","Condition"],"Stop":["Prevent","Inhibit"],"Store":["Contain","Collect"],"Sense":["Detect","Measure"],"Indicate":["Track","Display"]}
 for sec,ts in terts.items():
     for t in ts:
-        w(f'fb:{t} a skos:Concept ; skos:inScheme fb:scheme ; skos:prefLabel "{t}"@en ; skos:broader fb:{sec} .')
+        lbl = "Allow degree of freedom" if t=="AllowDOF" else t
+        w(f'fb:{t} a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:{sec} ; skos:prefLabel "{lbl}"@en , "{_FBPT[t]}"@pt-br ; skos:note "tertiary (flow-restricted)"@en .')
 w()
 
 # ---------------------------------------------------------------- annotation properties used by the export
@@ -353,9 +421,18 @@ for key,en,nld in [("signature","signature","JSON signature of a term function: 
                    ("primaryFunction","primary function","IRI of the function that gives the artifact its box (curation convention; design context)"),
                    ("identityFunction","identity function","IRI of the term function whose signature individuates the artifact type"),
                    ("constructiveType","constructive type","constructive differentia of the term (gate, ball, shell-and-tube), kept as annotation, never as functional subclass")]:
-    w(f'{nid(key)} a owl:AnnotationProperty ; rdfs:label "{en}"@en ; iof-av:naturalLanguageDefinition "{nld}"@en ; dcterms:source "ODR-025" .')
+    w(f'{nid(key)} a owl:AnnotationProperty ;')
+    w(f'    rdfs:label "{en}"@en , "{esc(ANN[key]["label_pt"])}"@pt-br ;')
+    a = ANN[key]
+    for prop,val,lang in [("iof-av:naturalLanguageDefinition",nld,"en"),("iof-av:naturalLanguageDefinition",a["nld_pt"],"pt-br"),("skos:example",a["ex_en"],"en"),("skos:example",a["ex_pt"],"pt-br"),("iof-av:explanatoryNote",a["note_en"],"en"),("iof-av:explanatoryNote",a["note_pt"],"pt-br")]:
+        w(f'    {prop} "{esc(val)}"@{lang} ;')
+    if a.get("adapted"): w(f'    iof-av:adaptedFrom "{esc(a["adapted"])}" ;')
+    for sr in ["ODR-025"] + a["sources"]: w(f'    dcterms:source "{esc(sr)}" ;')
+    w("    rdfs:isDefinedBy copi:copi-core .")
 w()
 
 print("\n".join(OUT))
 import sys
+if MISSING:
+    sys.stderr.write("MISSING ANNOTATIONS (%d): %s\n" % (len(MISSING), "; ".join(f"{k}:{f}" for k,f in MISSING)))
 sys.stderr.write("ids: " + ", ".join(f"{k}={v}" for k,v in ids.items() if k not in v) + "\n")
