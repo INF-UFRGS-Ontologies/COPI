@@ -643,6 +643,7 @@ copi:COPI_0001055 a owl:Class ;
     dcterms:source "ODR-025" ;
     rdfs:isDefinedBy copi:copi-core ;
     rdfs:subClassOf copi:COPI_0001025 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom [ owl:intersectionOf ( obo:BFO_0000015 [ a owl:Restriction ; owl:onProperty copi:COPI_0001004 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001001 copi:COPI_0001002 [ a owl:Restriction ; owl:onProperty obo:BFO_0000117 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001009 [ a owl:Restriction ; owl:onProperty ro:RO_0019002 ; owl:someValuesFrom copi:COPI_0001045 ] ) ] ] ) ] ] [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001001 copi:COPI_0001002 [ a owl:Restriction ; owl:onProperty obo:BFO_0000117 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001010 [ a owl:Restriction ; owl:onProperty ro:RO_0019001 ; owl:someValuesFrom copi:COPI_0001045 ] ) ] ] ) ] ] ) ] ] ;
     iof-av:naturalLanguageDefinition "transferring function realized in a process with two material inflows and two material outflows, one pair carrying a thermal energy decrease and the other a thermal energy increase, and no transformation"@en ;
     iof-av:explanatoryNote "Genus-level function of COPI: the parent of the term functions (e.g. pumping function) of one artifact genus. Refines a Functional Basis class; not itself in the Functional Basis."@en ;
     iof-av:isPrimitive true .

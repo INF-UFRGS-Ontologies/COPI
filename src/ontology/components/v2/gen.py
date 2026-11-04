@@ -253,7 +253,12 @@ genus_fns = [
   "conversion function realized in a process with an inflow of mechanical energy, an internal energy transformation, and an outflow that is both a material flow and an energy flow of hydraulic or pneumatic energy (a carrier flow)",
   [restr(REALIZED_IN,ONLY, inter(PROCESS, restr(HAS_OUTFLOW,SOME,inter(MFLOW,EFLOW))))]),
  ("HeatTransferFunction","heat transfer function","função de transferência de calor","Transferring",
-  "transferring function realized in a process with two material inflows and two material outflows, one pair carrying a thermal energy decrease and the other a thermal energy increase, and no transformation", []),
+  "transferring function realized in a process with two material inflows and two material outflows, one pair carrying a thermal energy decrease and the other a thermal energy increase, and no transformation",
+  # spec §2.2 exchanger template; this genus is the function of every heat exchanger type (the enriched
+  # HeatTransferFunction COPI_0000068 is merged into it, 2026-11-04: constructive types keep the genus function)
+  [restr(REALIZED_IN,ONLY, inter(PROCESS,
+      restr(HAS_INFLOW,SOME, inter(MFLOW,EFLOW, restr(HAS_PART_OCC,SOME, inter(EDEC, restr(NEG_REG,SOME,ids["ThermalEnergy"]))))),
+      restr(HAS_OUTFLOW,SOME, inter(MFLOW,EFLOW, restr(HAS_PART_OCC,SOME, inter(EINC, restr(POS_REG,SOME,ids["ThermalEnergy"])))))))]),
  ("MassTransferFunction","mass transfer function","função de transferência de massa","Separating",
   "separating function that isolates a component of a fluid mixture by transferring it to another phase (extract)", []),
  ("MechanicalSeparationFunction","mechanical separation function","função de separação mecânica","Separating",
