@@ -689,6 +689,8 @@ copi:COPI_0000028 rdfs:subClassOf copi:COPI_0001036 .  # indication function ⊑
 copi:COPI_0000029 rdfs:subClassOf copi:COPI_0001035 .          # instrumentation function ⊑ sensing (ODR-023, reading A; its allValuesFrom MeasurementProcess is removed in copi-vocab)
 # copi:COPI_0000030 (signal transmission function) stays under instrumentation/sensing function in copi-vocab: a transmitter senses and emits; re-parenting it under transferring (Channel) would cross two disjoint primaries (HermiT, 3/11)
 copi:COPI_0000032 rdfs:subClassOf copi:COPI_0001030 .      # safety relief function ⊑ regulating (decrease)
+copi:COPI_0000035 rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom copi:COPI_0001003 ] .   # signal transmission process: emits a signal flow
+copi:COPI_0000036 rdfs:subClassOf copi:COPI_0000035 , [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001003 [ a owl:Restriction ; owl:onProperty obo:BFO_0000059 ; owl:someValuesFrom copi:COPI_0001051 ] ) ] ] .   # pressure measurement and transmission process: the signal carries measurement content
 
 copi:COPI_0000016 a owl:Class ;
     rdfs:label "momentum-transfer device"@en , "dispositivo de transferência de quantidade de movimento"@pt-br ;

@@ -274,6 +274,12 @@ w(f"{INDICATION_FN} rdfs:subClassOf {ids['IndicatingFunction']} .  # indication 
 w(f"{INSTR_FN} rdfs:subClassOf {ids['SensingFunction']} .          # instrumentation function ⊑ sensing (ODR-023, reading A; its allValuesFrom MeasurementProcess is removed in copi-vocab)")
 w(f"# {SIGTX_FN} (signal transmission function) stays under instrumentation/sensing function in copi-vocab: a transmitter senses and emits; re-parenting it under transferring (Channel) would cross two disjoint primaries (HermiT, 3/11)")
 w(f"{RELIEF_FN} rdfs:subClassOf {ids['RegulatingFunction']} .      # safety relief function ⊑ regulating (decrease)")
+# the vocab realization processes of the transmitter functions (COPI_0000035/36, now ⊑ bfo:Process) get their
+# signal outflow here, so that 'pressure transmission function' (COPI_0000031) reaches MeasurementInstrument
+# through the vocab IRIs the iri-map aliases the enriched terms to (finding of 4/11: the export's own process
+# with the signal flow got a fresh IRI nobody references)
+w(f"copi:COPI_0000035 rdfs:subClassOf {restr(HAS_OUTFLOW,SOME,SFLOW)} .   # signal transmission process: emits a signal flow")
+w(f"copi:COPI_0000036 rdfs:subClassOf copi:COPI_0000035 , {restr(HAS_OUTFLOW,SOME, inter(SFLOW, restr(CONCRETIZES,SOME,ids['MeasurementContent'])))} .   # pressure measurement and transmission process: the signal carries measurement content")
 w()
 
 devices = [
