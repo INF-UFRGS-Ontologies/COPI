@@ -82,3 +82,9 @@ t:BinaryFlowControlFunction a owl:Class ; rdfs:label "binary flow control functi
 t:ModulatingFlowControlFunction a owl:Class ; rdfs:label "modulating flow control function (test)" ;
   rdfs:subClassOf copi:COPI_0000027 , copi:COPI_0001030 .                          # modulating: regulates
 # expected: Binary... is satisfiable and NOT ⊑ regulating function; Modulating... ⊑ regulating function
+
+# tertiaries as classes (review of 2026-11-17): a term function asserted at the tertiary inherits the secondary and the primary.
+# ids: Removing 1075 (⊑ Separating 1021 ⊑ Branching 1013)
+t:DehydrationFunction a owl:Class ; rdfs:label "dehydration function (test)" ;
+  rdfs:subClassOf copi:COPI_0001075 .      # "it removes water ... from a process stream": the definition states the tertiary
+# expected: DehydrationFunction ⊑ separating function, ⊑ branching function

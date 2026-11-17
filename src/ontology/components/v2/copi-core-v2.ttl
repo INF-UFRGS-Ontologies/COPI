@@ -5,7 +5,6 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix ro: <http://purl.obolibrary.org/obo/> .
 @prefix meno: <https://raw.githubusercontent.com/stap-m/midlevel-energy-ontology/main/ontology/src/midlevel-energy.owl/> .
-@prefix fb: <https://www.inf.ufrgs.br/ontologies/copi/fb/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -25,7 +24,7 @@ copi:copi-core a owl:Ontology ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (c) 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Released under CC BY 4.0." ;
     dcterms:created "2026-11-03"^^xsd:date ;
-    dcterms:modified "2026-11-04"^^xsd:date ;
+    dcterms:modified "2026-11-17"^^xsd:date ;
     rdfs:seeAlso <https://www.inf.ufrgs.br/ontologies/copi> , <https://github.com/INF-UFRGS-Ontologies/COPI> ;
     owl:versionInfo "2.0.0-draft (copi-core v2; ODR-024/025/026; Functional Basis anchoring, flows as occurrents, identity by signature; 2026-11-04)" ;
 
@@ -173,7 +172,7 @@ copi:COPI_0001000 a owl:Class ;
     rdfs:label "flow"@en , "fluxo"@pt-br ;
     rdfs:subClassOf obo:BFO_0000015 ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000057 ; owl:someValuesFrom obo:BFO_0000040 ] ;
-    skos:closeMatch fb:Flow ;
+    copi:COPI_0001072 "Flow" ;
     iof-av:naturalLanguageDefinition "process in which some material entity crosses one interface of an artifact or engineered system, carrying with it some material, energy or information content"@en ;
     iof-av:naturalLanguageDefinition "processo em que alguma entidade material atravessa uma interface de um artefato ou sistema de engenharia, carregando consigo algum material, energia ou conteúdo de informação"@pt-br ;
     rdfs:comment "process in which some material entity crosses one interface of an artifact or engineered system, carrying with it some material, energy or information content"@en ;
@@ -284,7 +283,7 @@ copi:COPI_0001012 a owl:Class ;
     rdfs:label "flow-operating function"@en , "função sobre fluxo"@pt-br ;
     rdfs:subClassOf iof-constr:DesignedFunction ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom [ owl:intersectionOf ( obo:BFO_0000015 [ owl:unionOf ( [ a owl:Restriction ; owl:onProperty copi:COPI_0001004 ; owl:someValuesFrom copi:COPI_0001000 ] [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom copi:COPI_0001000 ] ) ] ) ] ] ;
-    skos:closeMatch fb:Function ;
+    copi:COPI_0001072 "Function" ;
     iof-av:naturalLanguageDefinition "designed function of an artifact or engineered system that consists in performing an operation on a flow of material, energy or signal that crosses the bearer's boundary"@en ;
     iof-av:naturalLanguageDefinition "função projetada de um artefato ou sistema de engenharia que consiste em realizar uma operação sobre um fluxo de material, energia ou sinal que atravessa a fronteira do portador"@pt-br ;
     rdfs:comment "designed function of an artifact or engineered system that consists in performing an operation on a flow of material, energy or signal that crosses the bearer's boundary"@en ;
@@ -310,7 +309,7 @@ copi:COPI_0001012 a owl:Class ;
 copi:COPI_0001013 a owl:Class ;
     rdfs:label "branching function"@en , "função de ramificação"@pt-br ;
     rdfs:subClassOf copi:COPI_0001012 ;
-    skos:closeMatch fb:Branch ;
+    copi:COPI_0001072 "Function/Branch" ;
     iof-av:naturalLanguageDefinition "function to cause a flow to no longer be joined or mixed, or to be distributed"@en ;
     iof-av:naturalLanguageDefinition "função de fazer com que um fluxo deixe de estar unido ou misturado, ou de distribuí-lo"@pt-br ;
     rdfs:comment "function to cause a flow to no longer be joined or mixed, or to be distributed"@en ;
@@ -334,7 +333,7 @@ copi:COPI_0001013 a owl:Class ;
 copi:COPI_0001014 a owl:Class ;
     rdfs:label "channelling function"@en , "função de canalização"@pt-br ;
     rdfs:subClassOf copi:COPI_0001012 ;
-    skos:closeMatch fb:Channel ;
+    copi:COPI_0001072 "Function/Channel" ;
     iof-av:naturalLanguageDefinition "function to cause a flow to move from one location to another"@en ;
     iof-av:naturalLanguageDefinition "função de fazer um fluxo mover-se de um lugar a outro"@pt-br ;
     rdfs:comment "function to cause a flow to move from one location to another"@en ;
@@ -358,7 +357,7 @@ copi:COPI_0001014 a owl:Class ;
 copi:COPI_0001015 a owl:Class ;
     rdfs:label "connecting function"@en , "função de conexão"@pt-br ;
     rdfs:subClassOf copi:COPI_0001012 ;
-    skos:closeMatch fb:Connect ;
+    copi:COPI_0001072 "Function/Connect" ;
     iof-av:naturalLanguageDefinition "function to bring two or more flows together"@en ;
     iof-av:naturalLanguageDefinition "função de reunir dois ou mais fluxos"@pt-br ;
     rdfs:comment "function to bring two or more flows together"@en ;
@@ -382,7 +381,7 @@ copi:COPI_0001015 a owl:Class ;
 copi:COPI_0001016 a owl:Class ;
     rdfs:label "magnitude control function"@en , "função de controle de magnitude"@pt-br ;
     rdfs:subClassOf copi:COPI_0001012 ;
-    skos:closeMatch fb:Controlmagnitude ;
+    copi:COPI_0001072 "Function/Control magnitude" ;
     iof-av:naturalLanguageDefinition "function to alter or govern the size or amplitude of a flow"@en ;
     iof-av:naturalLanguageDefinition "função de alterar ou governar o tamanho ou a amplitude de um fluxo"@pt-br ;
     rdfs:comment "function to alter or govern the size or amplitude of a flow"@en ;
@@ -406,7 +405,7 @@ copi:COPI_0001016 a owl:Class ;
 copi:COPI_0001017 a owl:Class ;
     rdfs:label "conversion function"@en , "função de conversão"@pt-br ;
     rdfs:subClassOf copi:COPI_0001012 ;
-    skos:closeMatch fb:Convert ;
+    copi:COPI_0001072 "Function/Convert" ;
     iof-av:naturalLanguageDefinition "function to change a flow from one form to another"@en ;
     iof-av:naturalLanguageDefinition "função de mudar um fluxo de uma forma para outra"@pt-br ;
     rdfs:comment "function to change a flow from one form to another"@en ;
@@ -430,7 +429,7 @@ copi:COPI_0001017 a owl:Class ;
 copi:COPI_0001018 a owl:Class ;
     rdfs:label "provision function"@en , "função de provisão"@pt-br ;
     rdfs:subClassOf copi:COPI_0001012 ;
-    skos:closeMatch fb:Provision ;
+    copi:COPI_0001072 "Function/Provision" ;
     iof-av:naturalLanguageDefinition "function to accumulate or provide a flow"@en ;
     iof-av:naturalLanguageDefinition "função de acumular ou fornecer um fluxo"@pt-br ;
     rdfs:comment "function to accumulate or provide a flow"@en ;
@@ -454,7 +453,7 @@ copi:COPI_0001018 a owl:Class ;
 copi:COPI_0001019 a owl:Class ;
     rdfs:label "signalling function"@en , "função de sinalização"@pt-br ;
     rdfs:subClassOf copi:COPI_0001012 ;
-    skos:closeMatch fb:Signal ;
+    copi:COPI_0001072 "Function/Signal" ;
     iof-av:naturalLanguageDefinition "function to provide information on a flow: to sense, indicate or process a signal"@en ;
     iof-av:naturalLanguageDefinition "função de fornecer informação sobre um fluxo: sentir, indicar ou processar um sinal"@pt-br ;
     rdfs:comment "function to provide information on a flow: to sense, indicate or process a signal"@en ;
@@ -478,7 +477,7 @@ copi:COPI_0001019 a owl:Class ;
 copi:COPI_0001020 a owl:Class ;
     rdfs:label "support function"@en , "função de suporte"@pt-br ;
     rdfs:subClassOf copi:COPI_0001012 ;
-    skos:closeMatch fb:Support ;
+    copi:COPI_0001072 "Function/Support" ;
     iof-av:naturalLanguageDefinition "function to firmly fix a flow (an object) into a defined location, or secure or position it"@en ;
     iof-av:naturalLanguageDefinition "função de fixar firmemente um fluxo (um objeto) numa posição definida, ou de prendê-lo ou posicioná-lo"@pt-br ;
     rdfs:comment "function to firmly fix a flow (an object) into a defined location, or secure or position it"@en ;
@@ -502,7 +501,7 @@ copi:COPI_0001020 a owl:Class ;
 copi:COPI_0001021 a owl:Class ;
     rdfs:label "separating function"@en , "função de separação"@pt-br ;
     rdfs:subClassOf copi:COPI_0001013 ;
-    skos:closeMatch fb:Separate ;
+    copi:COPI_0001072 "Function/Branch/Separate" ;
     iof-av:naturalLanguageDefinition "function to isolate a flow into distinct components; tertiary: divide, extract, remove"@en ;
     iof-av:naturalLanguageDefinition "função de isolar um fluxo em componentes distintos; terciários: dividir, extrair, remover"@pt-br ;
     rdfs:comment "function to isolate a flow into distinct components; tertiary: divide, extract, remove"@en ;
@@ -510,10 +509,10 @@ copi:COPI_0001021 a owl:Class ;
     iof-av:semiFormalNaturalLanguageAxiom "if f is a 'separating function' then f is a 'branching function' whose operation on the flow is the secondary term 'Separate' of the Functional Basis"@en ;
     iof-av:semiFormalNaturalLanguageAxiom "se f é uma função desta classe então f é uma função primária 'Branching' cuja operação sobre o fluxo é o termo secundário 'Separate' da Functional Basis"@pt-br ;
     iof-av:firstOrderLogicAxiom "∀f (SeparatingFunction(f) → BranchingFunction(f))"@en ;
-    skos:example "A three-phase separator (divide); an absorber (extract); a strainer or a filter (remove)."@en ;
-    skos:example "Um separador trifásico (dividir); um absorvedor (extrair); um filtro-cesto ou um filtro (remover)."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Separate' da Functional Basis sob 'Branching'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    skos:example "A three-phase separator (divide); an absorber, a strainer or a filter (extract); a drill bit or a scraper (remove)."@en ;
+    skos:example "Um separador trifásico (dividir); um absorvedor, um filtro-cesto ou um filtro (extrair); uma broca ou um raspador (remover)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Separate' da Functional Basis sob 'Branching'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -526,7 +525,7 @@ copi:COPI_0001021 a owl:Class ;
 copi:COPI_0001022 a owl:Class ;
     rdfs:label "distributing function"@en , "função de distribuição"@pt-br ;
     rdfs:subClassOf copi:COPI_0001013 ;
-    skos:closeMatch fb:Distribute ;
+    copi:COPI_0001072 "Function/Branch/Distribute" ;
     iof-av:naturalLanguageDefinition "function to cause a flow to break up and spread over an area"@en ;
     iof-av:naturalLanguageDefinition "função de fazer um fluxo se repartir e espalhar por uma área"@pt-br ;
     rdfs:comment "function to cause a flow to break up and spread over an area"@en ;
@@ -536,8 +535,8 @@ copi:COPI_0001022 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (DistributingFunction(f) → BranchingFunction(f))"@en ;
     skos:example "A distribution manifold; a pipe tee; a spray nozzle."@en ;
     skos:example "Um manifold de distribuição; um tê de tubulação; um bico aspersor."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Distribute' da Functional Basis sob 'Branching'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Distribute' da Functional Basis sob 'Branching'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -550,7 +549,7 @@ copi:COPI_0001022 a owl:Class ;
 copi:COPI_0001023 a owl:Class ;
     rdfs:label "importing function"@en , "função de importação"@pt-br ;
     rdfs:subClassOf copi:COPI_0001014 ;
-    skos:closeMatch fb:Import ;
+    copi:COPI_0001072 "Function/Channel/Import" ;
     iof-av:naturalLanguageDefinition "function to bring a flow in from outside the system boundary"@en ;
     iof-av:naturalLanguageDefinition "função de trazer um fluxo de fora da fronteira do sistema"@pt-br ;
     rdfs:comment "function to bring a flow in from outside the system boundary"@en ;
@@ -560,8 +559,8 @@ copi:COPI_0001023 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (ImportingFunction(f) → ChannellingFunction(f))"@en ;
     skos:example "An inlet nozzle; a suction strainer at a tank inlet; an air intake."@en ;
     skos:example "Um bocal de entrada; um filtro de sucção na entrada de um tanque; uma tomada de ar."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Import' da Functional Basis sob 'Channelling'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Import' da Functional Basis sob 'Channelling'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -574,7 +573,7 @@ copi:COPI_0001023 a owl:Class ;
 copi:COPI_0001024 a owl:Class ;
     rdfs:label "exporting function"@en , "função de exportação"@pt-br ;
     rdfs:subClassOf copi:COPI_0001014 ;
-    skos:closeMatch fb:Export ;
+    copi:COPI_0001072 "Function/Channel/Export" ;
     iof-av:naturalLanguageDefinition "function to send a flow out across the system boundary"@en ;
     iof-av:naturalLanguageDefinition "função de enviar um fluxo para fora da fronteira do sistema"@pt-br ;
     rdfs:comment "function to send a flow out across the system boundary"@en ;
@@ -584,8 +583,8 @@ copi:COPI_0001024 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (ExportingFunction(f) → ChannellingFunction(f))"@en ;
     skos:example "An outlet nozzle; a vent; a discharge header."@en ;
     skos:example "Um bocal de saída; um respiro; um coletor de descarga."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Export' da Functional Basis sob 'Channelling'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Export' da Functional Basis sob 'Channelling'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -598,7 +597,7 @@ copi:COPI_0001024 a owl:Class ;
 copi:COPI_0001025 a owl:Class ;
     rdfs:label "transferring function"@en , "função de transferência"@pt-br ;
     rdfs:subClassOf copi:COPI_0001014 ;
-    skos:closeMatch fb:Transfer ;
+    copi:COPI_0001072 "Function/Channel/Transfer" ;
     iof-av:naturalLanguageDefinition "function to shift or convey a flow from one place to another; tertiary: transport, transmit"@en ;
     iof-av:naturalLanguageDefinition "função de deslocar ou conduzir um fluxo de um lugar a outro; terciários: transportar, transmitir"@pt-br ;
     rdfs:comment "function to shift or convey a flow from one place to another; tertiary: transport, transmit"@en ;
@@ -608,8 +607,8 @@ copi:COPI_0001025 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (TransferringFunction(f) → ChannellingFunction(f))"@en ;
     skos:example "A pipe or a hose (transport a fluid); a drive shaft (transmit mechanical energy); an electrical cable (transmit electrical energy)."@en ;
     skos:example "Um tubo ou um mangote (transportar um fluido); um eixo de acionamento (transmitir energia mecânica); um cabo elétrico (transmitir energia elétrica)."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Transfer' da Functional Basis sob 'Channelling'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). Transferir energia térmica entre dois fluidos sem transformação é a função de gênero dos trocadores de calor (COPI_0001055)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Transfer' da Functional Basis sob 'Channelling'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). Transferir energia térmica entre dois fluidos sem transformação é a função de gênero dos trocadores de calor (COPI_0001055)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -622,7 +621,7 @@ copi:COPI_0001025 a owl:Class ;
 copi:COPI_0001026 a owl:Class ;
     rdfs:label "guiding function"@en , "função de guia"@pt-br ;
     rdfs:subClassOf copi:COPI_0001014 ;
-    skos:closeMatch fb:Guide ;
+    copi:COPI_0001072 "Function/Channel/Guide" ;
     iof-av:naturalLanguageDefinition "function to direct the course of a flow along a specific path; tertiary: translate, rotate, allow degree of freedom"@en ;
     iof-av:naturalLanguageDefinition "função de dirigir o curso de um fluxo ao longo de um caminho específico; terciários: transladar, rotacionar, permitir grau de liberdade"@pt-br ;
     rdfs:comment "function to direct the course of a flow along a specific path; tertiary: translate, rotate, allow degree of freedom"@en ;
@@ -632,8 +631,8 @@ copi:COPI_0001026 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (GuidingFunction(f) → ChannellingFunction(f))"@en ;
     skos:example "A pipe elbow or bend; a guide vane; a bearing's guiding of a rotating shaft (allow degree of freedom)."@en ;
     skos:example "Uma curva ou cotovelo de tubulação; uma palheta guia; a guia de um eixo girante por um mancal (permitir grau de liberdade)."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Guide' da Functional Basis sob 'Channelling'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Guide' da Functional Basis sob 'Channelling'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -646,7 +645,7 @@ copi:COPI_0001026 a owl:Class ;
 copi:COPI_0001027 a owl:Class ;
     rdfs:label "coupling function"@en , "função de acoplamento"@pt-br ;
     rdfs:subClassOf copi:COPI_0001015 ;
-    skos:closeMatch fb:Couple ;
+    copi:COPI_0001072 "Function/Connect/Couple" ;
     iof-av:naturalLanguageDefinition "function to join or bring together flows; tertiary: join, link"@en ;
     iof-av:naturalLanguageDefinition "função de unir ou juntar fluxos; terciários: unir, ligar"@pt-br ;
     rdfs:comment "function to join or bring together flows; tertiary: join, link"@en ;
@@ -656,8 +655,8 @@ copi:COPI_0001027 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (CouplingFunction(f) → ConnectingFunction(f))"@en ;
     skos:example "A flange pair or a fitting (join); a shaft coupling (link); a tubing hanger coupling a string to a head."@en ;
     skos:example "Um par de flanges ou uma conexão (unir); um acoplamento de eixo (ligar); um suspensor de coluna acoplando a coluna à cabeça."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Couple' da Functional Basis sob 'Connecting'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Couple' da Functional Basis sob 'Connecting'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -670,7 +669,7 @@ copi:COPI_0001027 a owl:Class ;
 copi:COPI_0001028 a owl:Class ;
     rdfs:label "mixing function"@en , "função de mistura"@pt-br ;
     rdfs:subClassOf copi:COPI_0001015 ;
-    skos:closeMatch fb:Mix ;
+    copi:COPI_0001072 "Function/Connect/Mix" ;
     iof-av:naturalLanguageDefinition "function to combine two flows into a single, uniform homogeneous mass"@en ;
     iof-av:naturalLanguageDefinition "função de combinar dois fluxos numa única massa uniforme e homogênea"@pt-br ;
     rdfs:comment "function to combine two flows into a single, uniform homogeneous mass"@en ;
@@ -680,8 +679,8 @@ copi:COPI_0001028 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (MixingFunction(f) → ConnectingFunction(f))"@en ;
     skos:example "A static mixer; an agitator; an aerator."@en ;
     skos:example "Um misturador estático; um agitador; um aerador."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Mix' da Functional Basis sob 'Connecting'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de mistura enriquecida do misturador (COPI_0000578) foi fundida nesta classe em 2026-11-04."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Mix' da Functional Basis sob 'Connecting'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de mistura enriquecida do misturador (COPI_0000578) foi fundida nesta classe em 2026-11-04."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -694,7 +693,7 @@ copi:COPI_0001028 a owl:Class ;
 copi:COPI_0001029 a owl:Class ;
     rdfs:label "actuating function"@en , "função de atuação"@pt-br ;
     rdfs:subClassOf copi:COPI_0001016 ;
-    skos:closeMatch fb:Actuate ;
+    copi:COPI_0001072 "Function/Control magnitude/Actuate" ;
     iof-av:naturalLanguageDefinition "function to commence the flow of energy, signal or material in response to an imported control signal"@en ;
     iof-av:naturalLanguageDefinition "função de iniciar o fluxo de energia, sinal ou material em resposta a um sinal de controle importado"@pt-br ;
     rdfs:comment "function to commence the flow of energy, signal or material in response to an imported control signal"@en ;
@@ -704,8 +703,8 @@ copi:COPI_0001029 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (ActuatingFunction(f) → MagnitudeControlFunction(f))"@en ;
     skos:example "A solenoid valve; an on-off control valve; a motor starter."@en ;
     skos:example "Uma válvula solenoide; uma válvula de controle liga-desliga; um contator de partida de motor."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Actuate' da Functional Basis sob 'MagnitudeControl'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Actuate' da Functional Basis sob 'MagnitudeControl'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -718,7 +717,7 @@ copi:COPI_0001029 a owl:Class ;
 copi:COPI_0001030 a owl:Class ;
     rdfs:label "regulating function"@en , "função de regulação"@pt-br ;
     rdfs:subClassOf copi:COPI_0001016 ;
-    skos:closeMatch fb:Regulate ;
+    copi:COPI_0001072 "Function/Control magnitude/Regulate" ;
     iof-av:naturalLanguageDefinition "function to adjust a flow in response to a control signal; tertiary: increase, decrease"@en ;
     iof-av:naturalLanguageDefinition "função de ajustar um fluxo em resposta a um sinal de controle; terciários: aumentar, diminuir"@pt-br ;
     rdfs:comment "function to adjust a flow in response to a control signal; tertiary: increase, decrease"@en ;
@@ -728,8 +727,8 @@ copi:COPI_0001030 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (RegulatingFunction(f) → MagnitudeControlFunction(f))"@en ;
     skos:example "A control valve; a choke valve; a pressure relief valve (decrease); a variable-speed drive (increase/decrease)."@en ;
     skos:example "Uma válvula de controle; uma válvula choke; uma válvula de alívio de pressão (diminuir); um inversor de frequência (aumentar/diminuir)."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Regulate' da Functional Basis sob 'MagnitudeControl'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de fluxo controlado por processo do copi-vocab (COPI_0000027) e a função de alívio de segurança (COPI_0000032) são reparentadas aqui."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Regulate' da Functional Basis sob 'MagnitudeControl'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de fluxo controlado por processo do copi-vocab (COPI_0000027) e a função de alívio de segurança (COPI_0000032) são reparentadas aqui."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -742,7 +741,7 @@ copi:COPI_0001030 a owl:Class ;
 copi:COPI_0001031 a owl:Class ;
     rdfs:label "changing function"@en , "função de mudança"@pt-br ;
     rdfs:subClassOf copi:COPI_0001016 ;
-    skos:closeMatch fb:Change ;
+    copi:COPI_0001072 "Function/Control magnitude/Change" ;
     iof-av:naturalLanguageDefinition "function to adjust a flow in a predetermined and fixed manner; tertiary: increment, decrement, shape, condition"@en ;
     iof-av:naturalLanguageDefinition "função de ajustar um fluxo de maneira predeterminada e fixa; terciários: incrementar, decrementar, dar forma, condicionar"@pt-br ;
     rdfs:comment "function to adjust a flow in a predetermined and fixed manner; tertiary: increment, decrement, shape, condition"@en ;
@@ -752,8 +751,8 @@ copi:COPI_0001031 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (ChangingFunction(f) → MagnitudeControlFunction(f))"@en ;
     skos:example "A restriction orifice (decrement); a gearbox (change speed and torque); a power transformer (change voltage); a filter conditioning a fluid."@en ;
     skos:example "Uma placa de orifício de restrição (decrementar); uma caixa de engrenagens (mudar rotação e torque); um transformador de potência (mudar tensão); um filtro condicionando um fluido."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Change' da Functional Basis sob 'MagnitudeControl'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Change' da Functional Basis sob 'MagnitudeControl'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -766,7 +765,7 @@ copi:COPI_0001031 a owl:Class ;
 copi:COPI_0001032 a owl:Class ;
     rdfs:label "stopping function"@en , "função de interrupção"@pt-br ;
     rdfs:subClassOf copi:COPI_0001016 ;
-    skos:closeMatch fb:Stop ;
+    copi:COPI_0001072 "Function/Control magnitude/Stop" ;
     iof-av:naturalLanguageDefinition "function to cease, or prevent, the transfer of a flow; tertiary: prevent, inhibit"@en ;
     iof-av:naturalLanguageDefinition "função de cessar, ou impedir, a transferência de um fluxo; terciários: impedir, inibir"@pt-br ;
     rdfs:comment "function to cease, or prevent, the transfer of a flow; tertiary: prevent, inhibit"@en ;
@@ -776,8 +775,8 @@ copi:COPI_0001032 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (StoppingFunction(f) → MagnitudeControlFunction(f))"@en ;
     skos:example "A gate valve or a ball valve in isolation service; a check valve (prevent backflow); a gasket (prevent leakage)."@en ;
     skos:example "Uma válvula gaveta ou esfera em serviço de bloqueio; uma válvula de retenção (impedir refluxo); uma junta (impedir vazamento)."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Stop' da Functional Basis sob 'MagnitudeControl'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Stop' da Functional Basis sob 'MagnitudeControl'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -790,7 +789,7 @@ copi:COPI_0001032 a owl:Class ;
 copi:COPI_0001033 a owl:Class ;
     rdfs:label "storing function"@en , "função de armazenamento"@pt-br ;
     rdfs:subClassOf copi:COPI_0001018 ;
-    skos:closeMatch fb:Store ;
+    copi:COPI_0001072 "Function/Provision/Store" ;
     iof-av:naturalLanguageDefinition "function to accumulate a flow; tertiary: contain, collect"@en ;
     iof-av:naturalLanguageDefinition "função de acumular um fluxo; terciários: conter, coletar"@pt-br ;
     rdfs:comment "function to accumulate a flow; tertiary: contain, collect"@en ;
@@ -800,8 +799,8 @@ copi:COPI_0001033 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (StoringFunction(f) → ProvisionFunction(f))"@en ;
     skos:example "A storage tank (contain); a pressure vessel (contain); a drain sump (collect)."@en ;
     skos:example "Um tanque de armazenamento (conter); um vaso de pressão (conter); um sumidouro de drenagem (coletar)."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Store' da Functional Basis sob 'Provision'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de contenção do copi-vocab (COPI_0000025) é reparentada aqui (conter)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Store' da Functional Basis sob 'Provision'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de contenção do copi-vocab (COPI_0000025) é reparentada aqui (conter)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -814,7 +813,7 @@ copi:COPI_0001033 a owl:Class ;
 copi:COPI_0001034 a owl:Class ;
     rdfs:label "supplying function"@en , "função de suprimento"@pt-br ;
     rdfs:subClassOf copi:COPI_0001018 ;
-    skos:closeMatch fb:Supply ;
+    copi:COPI_0001072 "Function/Provision/Supply" ;
     iof-av:naturalLanguageDefinition "function to provide a flow from storage"@en ;
     iof-av:naturalLanguageDefinition "função de fornecer um fluxo a partir de armazenamento"@pt-br ;
     rdfs:comment "function to provide a flow from storage"@en ;
@@ -824,8 +823,8 @@ copi:COPI_0001034 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (SupplyingFunction(f) → ProvisionFunction(f))"@en ;
     skos:example "A hydraulic accumulator supplying pressure; a battery or a UPS supplying electrical energy; a chemical injection tank."@en ;
     skos:example "Um acumulador hidráulico fornecendo pressão; uma bateria ou um no-break fornecendo energia elétrica; um tanque de injeção de produto químico."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Supply' da Functional Basis sob 'Provision'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Supply' da Functional Basis sob 'Provision'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -838,7 +837,7 @@ copi:COPI_0001034 a owl:Class ;
 copi:COPI_0001035 a owl:Class ;
     rdfs:label "sensing function"@en , "função de sensoriamento"@pt-br ;
     rdfs:subClassOf copi:COPI_0001019 ;
-    skos:closeMatch fb:Sense ;
+    copi:COPI_0001072 "Function/Signal/Sense" ;
     iof-av:naturalLanguageDefinition "function to perceive, or become aware of, a flow; tertiary: detect, measure"@en ;
     iof-av:naturalLanguageDefinition "função de perceber, ou tomar conhecimento de, um fluxo; terciários: detectar, medir"@pt-br ;
     rdfs:comment "function to perceive, or become aware of, a flow; tertiary: detect, measure"@en ;
@@ -848,8 +847,8 @@ copi:COPI_0001035 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (SensingFunction(f) → SignallingFunction(f))"@en ;
     skos:example "A pressure transmitter or a temperature element (measure); a flame detector or a level switch (detect)."@en ;
     skos:example "Um transmissor de pressão ou um elemento de temperatura (medir); um detector de chama ou uma chave de nível (detectar)."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Sense' da Functional Basis sob 'Signalling'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de instrumentação do copi-vocab (COPI_0000029) é reparentada aqui (ODR-023, leitura A); 'instrumento de medição' (COPI_0000024) é definido sobre ela com um fluxo de sinal que concretiza conteúdo de medição."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Sense' da Functional Basis sob 'Signalling'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de instrumentação do copi-vocab (COPI_0000029) é reparentada aqui (ODR-023, leitura A); 'instrumento de medição' (COPI_0000024) é definido sobre ela com um fluxo de sinal que concretiza conteúdo de medição."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -862,7 +861,7 @@ copi:COPI_0001035 a owl:Class ;
 copi:COPI_0001036 a owl:Class ;
     rdfs:label "indicating function"@en , "função de indicação"@pt-br ;
     rdfs:subClassOf copi:COPI_0001019 ;
-    skos:closeMatch fb:Indicate ;
+    copi:COPI_0001072 "Function/Signal/Indicate" ;
     iof-av:naturalLanguageDefinition "function to make something known to the user about a flow; tertiary: track, display"@en ;
     iof-av:naturalLanguageDefinition "função de tornar algo conhecido ao usuário sobre um fluxo; terciários: rastrear, exibir"@pt-br ;
     rdfs:comment "function to make something known to the user about a flow; tertiary: track, display"@en ;
@@ -872,8 +871,8 @@ copi:COPI_0001036 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (IndicatingFunction(f) → SignallingFunction(f))"@en ;
     skos:example "A pressure gauge; a level sight glass; a local indicator or a display (display); a totalizer (track)."@en ;
     skos:example "Um manômetro; um visor de nível; um indicador local ou um mostrador (exibir); um totalizador (rastrear)."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Indicate' da Functional Basis sob 'Signalling'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de indicação do copi-vocab (COPI_0000028) é reparentada aqui."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Indicate' da Functional Basis sob 'Signalling'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de indicação do copi-vocab (COPI_0000028) é reparentada aqui."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -886,7 +885,7 @@ copi:COPI_0001036 a owl:Class ;
 copi:COPI_0001037 a owl:Class ;
     rdfs:label "processing function"@en , "função de processamento de sinal"@pt-br ;
     rdfs:subClassOf copi:COPI_0001019 ;
-    skos:closeMatch fb:Process ;
+    copi:COPI_0001072 "Function/Signal/Process" ;
     iof-av:naturalLanguageDefinition "function to submit a signal to a particular treatment or method having a set number of operations or steps"@en ;
     iof-av:naturalLanguageDefinition "função de submeter um sinal a um tratamento ou método particular com um número definido de operações ou passos"@pt-br ;
     rdfs:comment "function to submit a signal to a particular treatment or method having a set number of operations or steps"@en ;
@@ -896,8 +895,8 @@ copi:COPI_0001037 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (ProcessingFunction(f) → SignallingFunction(f))"@en ;
     skos:example "A controller; a transducer converting a sensor signal to a standard output; a relay or a logic solver."@en ;
     skos:example "Um controlador; um transdutor convertendo o sinal do sensor numa saída padrão; um relé ou um solucionador lógico."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Process' da Functional Basis sob 'Signalling'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). Controladores e transdutores são instrumentos sem ser instrumentos de medição (ODR-025 §5)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Process' da Functional Basis sob 'Signalling'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). Controladores e transdutores são instrumentos sem ser instrumentos de medição (ODR-025 §5)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -910,7 +909,7 @@ copi:COPI_0001037 a owl:Class ;
 copi:COPI_0001038 a owl:Class ;
     rdfs:label "stabilizing function"@en , "função de estabilização"@pt-br ;
     rdfs:subClassOf copi:COPI_0001020 ;
-    skos:closeMatch fb:Stabilize ;
+    copi:COPI_0001072 "Function/Support/Stabilize" ;
     iof-av:naturalLanguageDefinition "function to prevent an object from changing course or location"@en ;
     iof-av:naturalLanguageDefinition "função de impedir que um objeto mude de curso ou de posição"@pt-br ;
     rdfs:comment "function to prevent an object from changing course or location"@en ;
@@ -920,8 +919,8 @@ copi:COPI_0001038 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (StabilizingFunction(f) → SupportFunction(f))"@en ;
     skos:example "A stiffener; a vibration damper; a guy wire or a brace."@en ;
     skos:example "Um reforçador; um amortecedor de vibração; um estai ou uma escora."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Stabilize' da Functional Basis sob 'Support'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Stabilize' da Functional Basis sob 'Support'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -934,7 +933,7 @@ copi:COPI_0001038 a owl:Class ;
 copi:COPI_0001039 a owl:Class ;
     rdfs:label "securing function"@en , "função de fixação"@pt-br ;
     rdfs:subClassOf copi:COPI_0001020 ;
-    skos:closeMatch fb:Secure ;
+    copi:COPI_0001072 "Function/Support/Secure" ;
     iof-av:naturalLanguageDefinition "function to firmly fix an object to a location"@en ;
     iof-av:naturalLanguageDefinition "função de fixar firmemente um objeto a uma posição"@pt-br ;
     rdfs:comment "function to firmly fix an object to a location"@en ;
@@ -944,8 +943,8 @@ copi:COPI_0001039 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (SecuringFunction(f) → SupportFunction(f))"@en ;
     skos:example "A pipe support or a clamp; an anchor bolt; a transmitter housing securing the electronics."@en ;
     skos:example "Um suporte de tubulação ou uma braçadeira; um chumbador; a caixa de um transmissor fixando a eletrônica."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Secure' da Functional Basis sob 'Support'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Secure' da Functional Basis sob 'Support'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23)."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -958,7 +957,7 @@ copi:COPI_0001039 a owl:Class ;
 copi:COPI_0001040 a owl:Class ;
     rdfs:label "positioning function"@en , "função de posicionamento"@pt-br ;
     rdfs:subClassOf copi:COPI_0001020 ;
-    skos:closeMatch fb:Position ;
+    copi:COPI_0001072 "Function/Support/Position" ;
     iof-av:naturalLanguageDefinition "function to place an object into a specific location or orientation"@en ;
     iof-av:naturalLanguageDefinition "função de colocar um objeto numa posição ou orientação específica"@pt-br ;
     rdfs:comment "function to place an object into a specific location or orientation"@en ;
@@ -968,8 +967,8 @@ copi:COPI_0001040 a owl:Class ;
     iof-av:firstOrderLogicAxiom "∀f (PositioningFunction(f) → SupportFunction(f))"@en ;
     skos:example "A bearing positioning a rotating shaft; a spacer; an alignment pin."@en ;
     skos:example "Um mancal posicionando um eixo girante; um espaçador; um pino de alinhamento."@pt-br ;
-    iof-av:explanatoryNote "Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes."@en ;
-    iof-av:explanatoryNote "Termo secundário 'Position' da Functional Basis sob 'Support'. Os termos terciários ficam no esquema SKOS fb: (skos:narrower), não como classes. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de suporte enriquecida do mancal (COPI_0000659) foi fundida nesta classe em 2026-11-04; o segundo verbo do mancal (guiar/rotacionar) é assertado no artefato."@pt-br ;
+    iof-av:explanatoryNote "Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term."@en ;
+    iof-av:explanatoryNote "Termo secundário 'Position' da Functional Basis sob 'Support'. Os termos terciários, onde a Functional Basis os tem, são subclasses desta classe; uma função de termo só é afirmada no terciário quando a sua definição traz esse termo. Secundárias irmãs não são disjuntas: um mesmo artefato pode portar duas (Vermaas 2007; cobertura COPI 2026-10-23). A função de suporte enriquecida do mancal (COPI_0000659) foi fundida nesta classe em 2026-11-04; o segundo verbo do mancal (guiar/rotacionar) é assertado no artefato."@pt-br ;
     iof-av:isPrimitive true ;
     iof-av:primitiveRationale "Primitive, like its primary: the secondary term names a kind of operation on the flow that is distinguished in natural language only. Secondaries of one primary are not declared disjoint because the coverage data show them co-occurring on one artifact (separate + distribute; sense + indicate)."@en ;
     iof-av:primitiveRationale "Primitiva, como sua primária: o termo secundário nomeia um tipo de operação sobre o fluxo distinguido só em linguagem natural. Secundárias de uma mesma primária não são declaradas disjuntas porque os dados da cobertura as mostram coocorrendo num mesmo artefato (separar + distribuir; sentir + indicar)."@pt-br ;
@@ -1541,7 +1540,7 @@ copi:COPI_0001059 a owl:Class ;
     dcterms:source "McCabe, W.L., Smith, J.C. & Harriott, P. (2005). Unit Operations of Chemical Engineering, 7th ed. McGraw-Hill" ;
     rdfs:isDefinedBy copi:copi-core .
 
-copi:COPI_0000025 rdfs:subClassOf copi:COPI_0001033 .    # containment function ⊑ storing (contain)
+copi:COPI_0000025 rdfs:subClassOf copi:COPI_0001033 .    # containment function ⊑ storing, not ⊑ containing: in copi-vocab it gathers storing, containing and collecting of material
 copi:COPI_0000026 rdfs:subClassOf copi:COPI_0001016 .    # flow control function ⊑ magnitude control: it covers regulating (control valves) AND stopping (block valves); the secondary is the term's (2026-11-04)
 # copi:COPI_0000027 (process-controlled flow function) is no longer asserted under regulating (2026-11-17): every control valve bears it, and the on-off control valve actuates and stops but does not regulate (Hirtz: Regulate adjusts a flow in response to a control signal). It keeps magnitude control through flow control function. What control valves share is the control signal, asserted on the realization process:
 copi:COPI_0000033 rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copi:COPI_0001004 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001003 [ a owl:Restriction ; owl:onProperty obo:BFO_0000059 ; owl:someValuesFrom copi:COPI_0001052 ] ) ] ] .   # process-controlled flow process: receives a signal flow that carries control content
@@ -2274,66 +2273,6 @@ copi:COPI_0000015 a owl:Class ;
     dcterms:source "ISO 14224:2016 Petroleum, petrochemical and natural gas industries — Collection and exchange of reliability and maintenance data for equipment (taxonomy levels) (failure modes: external leakage)" ;
     rdfs:isDefinedBy copi:copi-core .
 
-fb:scheme a skos:ConceptScheme ;
-    rdfs:label "Functional Basis function terms (Hirtz et al. 2002, Table 5)"@en , "Termos de função da Functional Basis (Hirtz et al. 2002, Tabela 5)"@pt-br ;
-    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 and Appendix B" ;
-    skos:note "The eight primary and twenty secondary terms are mirrored by the function classes of this ontology (skos:closeMatch); the tertiary terms are kept here only, as concepts, because they refine a secondary without changing the operation on the flow."@en , "Os oito termos primários e os vinte secundários são espelhados pelas classes de função desta ontologia (skos:closeMatch); os termos terciários ficam só aqui, como conceitos, porque refinam um secundário sem mudar a operação sobre o fluxo."@pt-br .
-fb:Function a skos:Concept ; skos:inScheme fb:scheme ; skos:topConceptOf fb:scheme ; skos:prefLabel "Function"@en , "Função"@pt-br .
-fb:Flow a skos:Concept ; skos:inScheme fb:scheme ; skos:topConceptOf fb:scheme ; skos:prefLabel "Flow"@en , "Fluxo"@pt-br ; skos:definition "material, energy or signal on which a function operates (Hirtz et al. 2002, Table 3)"@en .
-
-fb:Branch a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Function ; skos:prefLabel "Branch"@en , "Ramificar"@pt-br ; skos:definition "function to cause a flow to no longer be joined or mixed, or to be distributed"@en ; skos:note "primary (class)"@en .
-fb:Separate a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Branch ; skos:prefLabel "Separate"@en , "Separar"@pt-br ; skos:definition "function to isolate a flow into distinct components; tertiary: divide, extract, remove"@en ; skos:note "secondary (basic)"@en .
-fb:Distribute a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Branch ; skos:prefLabel "Distribute"@en , "Distribuir"@pt-br ; skos:definition "function to cause a flow to break up and spread over an area"@en ; skos:note "secondary (basic)"@en .
-fb:Channel a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Function ; skos:prefLabel "Channel"@en , "Canalizar"@pt-br ; skos:definition "function to cause a flow to move from one location to another"@en ; skos:note "primary (class)"@en .
-fb:Import a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Channel ; skos:prefLabel "Import"@en , "Importar"@pt-br ; skos:definition "function to bring a flow in from outside the system boundary"@en ; skos:note "secondary (basic)"@en .
-fb:Export a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Channel ; skos:prefLabel "Export"@en , "Exportar"@pt-br ; skos:definition "function to send a flow out across the system boundary"@en ; skos:note "secondary (basic)"@en .
-fb:Transfer a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Channel ; skos:prefLabel "Transfer"@en , "Transferir"@pt-br ; skos:definition "function to shift or convey a flow from one place to another; tertiary: transport, transmit"@en ; skos:note "secondary (basic)"@en .
-fb:Guide a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Channel ; skos:prefLabel "Guide"@en , "Guiar"@pt-br ; skos:definition "function to direct the course of a flow along a specific path; tertiary: translate, rotate, allow degree of freedom"@en ; skos:note "secondary (basic)"@en .
-fb:Connect a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Function ; skos:prefLabel "Connect"@en , "Conectar"@pt-br ; skos:definition "function to bring two or more flows together"@en ; skos:note "primary (class)"@en .
-fb:Couple a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Connect ; skos:prefLabel "Couple"@en , "Acoplar"@pt-br ; skos:definition "function to join or bring together flows; tertiary: join, link"@en ; skos:note "secondary (basic)"@en .
-fb:Mix a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Connect ; skos:prefLabel "Mix"@en , "Misturar"@pt-br ; skos:definition "function to combine two flows into a single, uniform homogeneous mass"@en ; skos:note "secondary (basic)"@en .
-fb:Controlmagnitude a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Function ; skos:prefLabel "Control magnitude"@en , "Controlar magnitude"@pt-br ; skos:definition "function to alter or govern the size or amplitude of a flow"@en ; skos:note "primary (class)"@en .
-fb:Actuate a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Controlmagnitude ; skos:prefLabel "Actuate"@en , "Atuar"@pt-br ; skos:definition "function to commence the flow of energy, signal or material in response to an imported control signal"@en ; skos:note "secondary (basic)"@en .
-fb:Regulate a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Controlmagnitude ; skos:prefLabel "Regulate"@en , "Regular"@pt-br ; skos:definition "function to adjust a flow in response to a control signal; tertiary: increase, decrease"@en ; skos:note "secondary (basic)"@en .
-fb:Change a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Controlmagnitude ; skos:prefLabel "Change"@en , "Mudar"@pt-br ; skos:definition "function to adjust a flow in a predetermined and fixed manner; tertiary: increment, decrement, shape, condition"@en ; skos:note "secondary (basic)"@en .
-fb:Stop a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Controlmagnitude ; skos:prefLabel "Stop"@en , "Interromper"@pt-br ; skos:definition "function to cease, or prevent, the transfer of a flow; tertiary: prevent, inhibit"@en ; skos:note "secondary (basic)"@en .
-fb:Convert a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Function ; skos:prefLabel "Convert"@en , "Converter"@pt-br ; skos:definition "function to change a flow from one form to another"@en ; skos:note "primary (class)"@en .
-fb:Provision a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Function ; skos:prefLabel "Provision"@en , "Prover"@pt-br ; skos:definition "function to accumulate or provide a flow"@en ; skos:note "primary (class)"@en .
-fb:Store a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Provision ; skos:prefLabel "Store"@en , "Armazenar"@pt-br ; skos:definition "function to accumulate a flow; tertiary: contain, collect"@en ; skos:note "secondary (basic)"@en .
-fb:Supply a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Provision ; skos:prefLabel "Supply"@en , "Suprir"@pt-br ; skos:definition "function to provide a flow from storage"@en ; skos:note "secondary (basic)"@en .
-fb:Signal a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Function ; skos:prefLabel "Signal"@en , "Sinalizar"@pt-br ; skos:definition "function to provide information on a flow: to sense, indicate or process a signal"@en ; skos:note "primary (class)"@en .
-fb:Sense a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Signal ; skos:prefLabel "Sense"@en , "Sentir"@pt-br ; skos:definition "function to perceive, or become aware of, a flow; tertiary: detect, measure"@en ; skos:note "secondary (basic)"@en .
-fb:Indicate a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Signal ; skos:prefLabel "Indicate"@en , "Indicar"@pt-br ; skos:definition "function to make something known to the user about a flow; tertiary: track, display"@en ; skos:note "secondary (basic)"@en .
-fb:Process a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Signal ; skos:prefLabel "Process"@en , "Processar"@pt-br ; skos:definition "function to submit a signal to a particular treatment or method having a set number of operations or steps"@en ; skos:note "secondary (basic)"@en .
-fb:Support a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Function ; skos:prefLabel "Support"@en , "Suportar"@pt-br ; skos:definition "function to firmly fix a flow (an object) into a defined location, or secure or position it"@en ; skos:note "primary (class)"@en .
-fb:Stabilize a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Support ; skos:prefLabel "Stabilize"@en , "Estabilizar"@pt-br ; skos:definition "function to prevent an object from changing course or location"@en ; skos:note "secondary (basic)"@en .
-fb:Secure a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Support ; skos:prefLabel "Secure"@en , "Fixar"@pt-br ; skos:definition "function to firmly fix an object to a location"@en ; skos:note "secondary (basic)"@en .
-fb:Position a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Support ; skos:prefLabel "Position"@en , "Posicionar"@pt-br ; skos:definition "function to place an object into a specific location or orientation"@en ; skos:note "secondary (basic)"@en .
-fb:Divide a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Separate ; skos:prefLabel "Divide"@en , "Dividir"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Extract a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Separate ; skos:prefLabel "Extract"@en , "Extrair"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Remove a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Separate ; skos:prefLabel "Remove"@en , "Remover"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Transport a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Transfer ; skos:prefLabel "Transport"@en , "Transportar"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Transmit a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Transfer ; skos:prefLabel "Transmit"@en , "Transmitir"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Translate a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Guide ; skos:prefLabel "Translate"@en , "Transladar"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Rotate a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Guide ; skos:prefLabel "Rotate"@en , "Rotacionar"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:AllowDOF a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Guide ; skos:prefLabel "Allow degree of freedom"@en , "Permitir grau de liberdade"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Join a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Couple ; skos:prefLabel "Join"@en , "Unir"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Link a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Couple ; skos:prefLabel "Link"@en , "Ligar"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Increase a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Regulate ; skos:prefLabel "Increase"@en , "Aumentar"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Decrease a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Regulate ; skos:prefLabel "Decrease"@en , "Diminuir"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Increment a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Change ; skos:prefLabel "Increment"@en , "Incrementar"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Decrement a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Change ; skos:prefLabel "Decrement"@en , "Decrementar"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Shape a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Change ; skos:prefLabel "Shape"@en , "Dar forma"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Condition a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Change ; skos:prefLabel "Condition"@en , "Condicionar"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Prevent a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Stop ; skos:prefLabel "Prevent"@en , "Impedir"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Inhibit a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Stop ; skos:prefLabel "Inhibit"@en , "Inibir"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Contain a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Store ; skos:prefLabel "Contain"@en , "Conter"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Collect a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Store ; skos:prefLabel "Collect"@en , "Coletar"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Detect a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Sense ; skos:prefLabel "Detect"@en , "Detectar"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Measure a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Sense ; skos:prefLabel "Measure"@en , "Medir"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Track a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Indicate ; skos:prefLabel "Track"@en , "Rastrear"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-fb:Display a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Indicate ; skos:prefLabel "Display"@en , "Exibir"@pt-br ; skos:note "tertiary (flow-restricted)"@en .
-
 copi:COPI_0001068 a owl:AnnotationProperty ;
     rdfs:label "signature"@en , "assinatura"@pt-br ;
     iof-av:naturalLanguageDefinition "JSON signature of a term function: verb, secondary, tertiary, inflows, outflows, primary flow, interface"@en ;
@@ -2383,4 +2322,593 @@ copi:COPI_0001071 a owl:AnnotationProperty ;
     dcterms:source "ODR-025 §1–2" ;
     dcterms:source "Mizoguchi, R., Kitamura, Y. & Borgo, S. (2016). A unifying definition for artifact and biological functions. Applied Ontology 11(2), 129–154" ;
     rdfs:isDefinedBy copi:copi-core .
+copi:COPI_0001072 a owl:AnnotationProperty ;
+    rdfs:label "Functional Basis term"@en , "termo da Functional Basis"@pt-br ;
+    iof-av:naturalLanguageDefinition "path, from the root of its table, of the term of the Functional Basis (Hirtz et al. 2002) that the class renders: 'Function/…' for the function terms of Table 5, 'Flow/…' for the flow terms of Table 3"@en ;
+    iof-av:naturalLanguageDefinition "caminho, a partir da raiz da sua tabela, do termo da Functional Basis (Hirtz et al. 2002) que a classe representa: 'Function/…' para os termos de função da Tabela 5, 'Flow/…' para os termos de fluxo da Tabela 3"@pt-br ;
+    skos:example "On the removing function: 'Function/Branch/Separate/Remove'. On the separating function: 'Function/Branch/Separate'."@en ;
+    skos:example "Na função de remoção: 'Function/Branch/Separate/Remove'. Na função de separação: 'Function/Branch/Separate'."@pt-br ;
+    iof-av:explanatoryNote "Replaces the parallel SKOS scheme fb:, removed on 2026-11-17: the ontology is OWL only and the origin in Hirtz sits on each class. A class without this annotation is not a term of the Functional Basis; the extensions of COPI to the Functional Basis are declared in the coverage table (hirtz-coverage.csv)."@en ;
+    iof-av:explanatoryNote "Substitui o esquema SKOS fb: paralelo, removido em 2026-11-17: a ontologia fica só em OWL e a origem no Hirtz fica em cada classe. Uma classe sem esta anotação não é um termo da Functional Basis; as extensões da COPI à Functional Basis são declaradas na tabela de cobertura (hirtz-coverage.csv)."@pt-br ;
+    dcterms:source "Review of 2026-11-17: OWL only (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 3 (flow classes and terms)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001073 a owl:Class ;
+    rdfs:label "dividing function"@en , "função de divisão"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001021 ;
+    copi:COPI_0001072 "Function/Branch/Separate/Divide" ;
+    iof-av:naturalLanguageDefinition "function to separate a flow"@en ;
+    iof-av:naturalLanguageDefinition "função de separar um fluxo"@pt-br ;
+    rdfs:comment "function to separate a flow"@en ;
+    rdfs:comment "função de separar um fluxo"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'dividing function' then f is a 'separating function' whose operation on the flow is the tertiary term 'Divide' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de divisão' então f é uma 'função de separação' cuja operação sobre o fluxo é o termo terciário 'Divide' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (DividingFunction(f) → SeparatingFunction(f))"@en ;
+    skos:example "A three-phase separator dividing a well stream into gas, oil and water; a flash drum."@en ;
+    skos:example "Um separador trifásico dividindo a corrente do poço em gás, óleo e água; um vaso de flash."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Divide' of the Functional Basis under 'Separate'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Divide' da Functional Basis sob 'Separate'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Divide' under 'Separate'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001074 a owl:Class ;
+    rdfs:label "extracting function"@en , "função de extração"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001021 ;
+    copi:COPI_0001072 "Function/Branch/Separate/Extract" ;
+    iof-av:naturalLanguageDefinition "function to draw, or forcibly pull out, a flow"@en ;
+    iof-av:naturalLanguageDefinition "função de retirar, ou arrancar à força, um fluxo"@pt-br ;
+    rdfs:comment "function to draw, or forcibly pull out, a flow"@en ;
+    rdfs:comment "função de retirar, ou arrancar à força, um fluxo"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'extracting function' then f is a 'separating function' whose operation on the flow is the tertiary term 'Extract' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de extração' então f é uma 'função de separação' cuja operação sobre o fluxo é o termo terciário 'Extract' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (ExtractingFunction(f) → SeparatingFunction(f))"@en ;
+    skos:example "A filter or a strainer drawing solids out of a fluid; an absorber drawing a component out of a gas."@en ;
+    skos:example "Um filtro ou um filtro-cesto retirando sólidos de um fluido; um absorvedor retirando um componente de um gás."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Extract' of the Functional Basis under 'Separate'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Extract' da Functional Basis sob 'Separate'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Extract' under 'Separate'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001075 a owl:Class ;
+    rdfs:label "removing function"@en , "função de remoção"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001021 ;
+    copi:COPI_0001072 "Function/Branch/Separate/Remove" ;
+    iof-av:naturalLanguageDefinition "function to take away a part of a flow from its prefixed place"@en ;
+    iof-av:naturalLanguageDefinition "função de tirar uma parte de um fluxo do seu lugar prefixado"@pt-br ;
+    rdfs:comment "function to take away a part of a flow from its prefixed place"@en ;
+    rdfs:comment "função de tirar uma parte de um fluxo do seu lugar prefixado"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'removing function' then f is a 'separating function' whose operation on the flow is the tertiary term 'Remove' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de remoção' então f é uma 'função de separação' cuja operação sobre o fluxo é o termo terciário 'Remove' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (RemovingFunction(f) → SeparatingFunction(f))"@en ;
+    skos:example "A drill bit cutting rock from the formation; a scraper taking deposits off a pipe wall."@en ;
+    skos:example "Uma broca cortando rocha da formação; um raspador tirando depósitos da parede de um tubo."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Remove' of the Functional Basis under 'Separate'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Remove' da Functional Basis sob 'Separate'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Remove' under 'Separate'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001076 a owl:Class ;
+    rdfs:label "transporting function"@en , "função de transporte"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001025 ;
+    copi:COPI_0001072 "Function/Channel/Transfer/Transport" ;
+    iof-av:naturalLanguageDefinition "function to move a material from one place to another"@en ;
+    iof-av:naturalLanguageDefinition "função de mover um material de um lugar a outro"@pt-br ;
+    rdfs:comment "function to move a material from one place to another"@en ;
+    rdfs:comment "função de mover um material de um lugar a outro"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'transporting function' then f is a 'transferring function' whose operation on the flow is the tertiary term 'Transport' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de transporte' então f é uma 'função de transferência' cuja operação sobre o fluxo é o termo terciário 'Transport' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (TransportingFunction(f) → TransferringFunction(f))"@en ;
+    skos:example "A pipe, a hose or a flowline moving a fluid."@en ;
+    skos:example "Um tubo, um mangote ou uma linha de fluxo movendo um fluido."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Transport' of the Functional Basis under 'Transfer'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint. The Functional Basis restricts this term to material flows; the restriction is stated in the definition and is not axiomatized."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Transport' da Functional Basis sob 'Transfer'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas. A Functional Basis restringe este termo a fluxos de material; a restrição está na definição e não é axiomatizada."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Transport' under 'Transfer'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001077 a owl:Class ;
+    rdfs:label "transmitting function"@en , "função de transmissão"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001025 ;
+    copi:COPI_0001072 "Function/Channel/Transfer/Transmit" ;
+    iof-av:naturalLanguageDefinition "function to move an energy from one place to another"@en ;
+    iof-av:naturalLanguageDefinition "função de mover uma energia de um lugar a outro"@pt-br ;
+    rdfs:comment "function to move an energy from one place to another"@en ;
+    rdfs:comment "função de mover uma energia de um lugar a outro"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'transmitting function' then f is a 'transferring function' whose operation on the flow is the tertiary term 'Transmit' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de transmissão' então f é uma 'função de transferência' cuja operação sobre o fluxo é o termo terciário 'Transmit' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (TransmittingFunction(f) → TransferringFunction(f))"@en ;
+    skos:example "A drive shaft moving mechanical energy; an electrical cable moving electrical energy."@en ;
+    skos:example "Um eixo de acionamento movendo energia mecânica; um cabo elétrico movendo energia elétrica."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Transmit' of the Functional Basis under 'Transfer'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint. The Functional Basis restricts this term to energy flows; the restriction is stated in the definition and is not axiomatized. Not to be confused with the signal transmission function of copi-vocab (COPI_0000030)."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Transmit' da Functional Basis sob 'Transfer'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas. A Functional Basis restringe este termo a fluxos de energia; a restrição está na definição e não é axiomatizada. Não confundir com a função de transmissão de sinal do copi-vocab (COPI_0000030)."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Transmit' under 'Transfer'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001078 a owl:Class ;
+    rdfs:label "translating function"@en , "função de translação"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001026 ;
+    copi:COPI_0001072 "Function/Channel/Guide/Translate" ;
+    iof-av:naturalLanguageDefinition "function to fix the movement of a flow by a device into one linear direction"@en ;
+    iof-av:naturalLanguageDefinition "função de fixar, por meio de um dispositivo, o movimento de um fluxo numa direção linear"@pt-br ;
+    rdfs:comment "function to fix the movement of a flow by a device into one linear direction"@en ;
+    rdfs:comment "função de fixar, por meio de um dispositivo, o movimento de um fluxo numa direção linear"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'translating function' then f is a 'guiding function' whose operation on the flow is the tertiary term 'Translate' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de translação' então f é uma 'função de guia' cuja operação sobre o fluxo é o termo terciário 'Translate' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (TranslatingFunction(f) → GuidingFunction(f))"@en ;
+    skos:example "A crosshead guide keeping a piston rod on a straight line; a guide rail."@en ;
+    skos:example "Uma guia de cruzeta mantendo a haste do pistão em linha reta; um trilho-guia."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Translate' of the Functional Basis under 'Guide'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Translate' da Functional Basis sob 'Guide'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Translate' under 'Guide'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001079 a owl:Class ;
+    rdfs:label "rotating function"@en , "função de rotação"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001026 ;
+    copi:COPI_0001072 "Function/Channel/Guide/Rotate" ;
+    iof-av:naturalLanguageDefinition "function to fix the movement of a flow by a device around one axis"@en ;
+    iof-av:naturalLanguageDefinition "função de fixar, por meio de um dispositivo, o movimento de um fluxo em torno de um eixo"@pt-br ;
+    rdfs:comment "function to fix the movement of a flow by a device around one axis"@en ;
+    rdfs:comment "função de fixar, por meio de um dispositivo, o movimento de um fluxo em torno de um eixo"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'rotating function' then f is a 'guiding function' whose operation on the flow is the tertiary term 'Rotate' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de rotação' então f é uma 'função de guia' cuja operação sobre o fluxo é o termo terciário 'Rotate' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (RotatingFunction(f) → GuidingFunction(f))"@en ;
+    skos:example "A hinge or a pivot pin fixing a part to turn about one axis; a swivel joint."@en ;
+    skos:example "Uma dobradiça ou um pino de articulação fixando uma peça para girar em torno de um eixo; uma junta giratória."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Rotate' of the Functional Basis under 'Guide'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Rotate' da Functional Basis sob 'Guide'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Rotate' under 'Guide'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001080 a owl:Class ;
+    rdfs:label "allowing degree of freedom function"@en , "função de permissão de grau de liberdade"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001026 ;
+    copi:COPI_0001072 "Function/Channel/Guide/Allow DOF" ;
+    iof-av:naturalLanguageDefinition "function to control the movement of a flow by a force external to the device into one or more directions"@en ;
+    iof-av:naturalLanguageDefinition "função de controlar o movimento de um fluxo, por uma força externa ao dispositivo, em uma ou mais direções"@pt-br ;
+    rdfs:comment "function to control the movement of a flow by a force external to the device into one or more directions"@en ;
+    rdfs:comment "função de controlar o movimento de um fluxo, por uma força externa ao dispositivo, em uma ou mais direções"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'allowing degree of freedom function' then f is a 'guiding function' whose operation on the flow is the tertiary term 'Allow DOF' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de permissão de grau de liberdade' então f é uma 'função de guia' cuja operação sobre o fluxo é o termo terciário 'Allow DOF' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (AllowingDegreeOfFreedomFunction(f) → GuidingFunction(f))"@en ;
+    skos:example "An expansion joint or a compensator letting the parts it connects move; a bearing guiding a rotating shaft."@en ;
+    skos:example "Uma junta de expansão ou um compensador deixando as partes que conecta se moverem; um mancal guiando um eixo girante."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Allow DOF' of the Functional Basis under 'Guide'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Allow DOF' da Functional Basis sob 'Guide'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Allow DOF' under 'Guide'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001081 a owl:Class ;
+    rdfs:label "joining function"@en , "função de união"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001027 ;
+    copi:COPI_0001072 "Function/Connect/Couple/Join" ;
+    iof-av:naturalLanguageDefinition "function to couple flows together in a predetermined manner"@en ;
+    iof-av:naturalLanguageDefinition "função de acoplar fluxos de maneira predeterminada"@pt-br ;
+    rdfs:comment "function to couple flows together in a predetermined manner"@en ;
+    rdfs:comment "função de acoplar fluxos de maneira predeterminada"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'joining function' then f is a 'coupling function' whose operation on the flow is the tertiary term 'Join' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de união' então f é uma 'função de acoplamento' cuja operação sobre o fluxo é o termo terciário 'Join' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (JoiningFunction(f) → CouplingFunction(f))"@en ;
+    skos:example "A flange pair; a threaded fitting."@en ;
+    skos:example "Um par de flanges; uma conexão roscada."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Join' of the Functional Basis under 'Couple'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Join' da Functional Basis sob 'Couple'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Join' under 'Couple'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001082 a owl:Class ;
+    rdfs:label "linking function"@en , "função de ligação"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001027 ;
+    copi:COPI_0001072 "Function/Connect/Couple/Link" ;
+    iof-av:naturalLanguageDefinition "function to couple flows together by means of an intermediary flow"@en ;
+    iof-av:naturalLanguageDefinition "função de acoplar fluxos por meio de um fluxo intermediário"@pt-br ;
+    rdfs:comment "function to couple flows together by means of an intermediary flow"@en ;
+    rdfs:comment "função de acoplar fluxos por meio de um fluxo intermediário"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'linking function' then f is a 'coupling function' whose operation on the flow is the tertiary term 'Link' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de ligação' então f é uma 'função de acoplamento' cuja operação sobre o fluxo é o termo terciário 'Link' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (LinkingFunction(f) → CouplingFunction(f))"@en ;
+    skos:example "A shaft coupling linking two shafts through an intermediate element."@en ;
+    skos:example "Um acoplamento de eixo ligando dois eixos por um elemento intermediário."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Link' of the Functional Basis under 'Couple'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Link' da Functional Basis sob 'Couple'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Link' under 'Couple'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001083 a owl:Class ;
+    rdfs:label "increasing function"@en , "função de aumento"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001030 ;
+    copi:COPI_0001072 "Function/Control magnitude/Regulate/Increase" ;
+    iof-av:naturalLanguageDefinition "function to enlarge a flow in response to a control signal"@en ;
+    iof-av:naturalLanguageDefinition "função de ampliar um fluxo em resposta a um sinal de controle"@pt-br ;
+    rdfs:comment "function to enlarge a flow in response to a control signal"@en ;
+    rdfs:comment "função de ampliar um fluxo em resposta a um sinal de controle"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'increasing function' then f is a 'regulating function' whose operation on the flow is the tertiary term 'Increase' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de aumento' então f é uma 'função de regulação' cuja operação sobre o fluxo é o termo terciário 'Increase' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (IncreasingFunction(f) → RegulatingFunction(f))"@en ;
+    skos:example "A variable-speed drive raising the speed of a motor on a controller's signal."@en ;
+    skos:example "Um inversor de frequência elevando a rotação de um motor ao sinal de um controlador."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Increase' of the Functional Basis under 'Regulate'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Increase' da Functional Basis sob 'Regulate'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Increase' under 'Regulate'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001084 a owl:Class ;
+    rdfs:label "decreasing function"@en , "função de diminuição"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001030 ;
+    copi:COPI_0001072 "Function/Control magnitude/Regulate/Decrease" ;
+    iof-av:naturalLanguageDefinition "function to reduce a flow in response to a control signal"@en ;
+    iof-av:naturalLanguageDefinition "função de reduzir um fluxo em resposta a um sinal de controle"@pt-br ;
+    rdfs:comment "function to reduce a flow in response to a control signal"@en ;
+    rdfs:comment "função de reduzir um fluxo em resposta a um sinal de controle"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'decreasing function' then f is a 'regulating function' whose operation on the flow is the tertiary term 'Decrease' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de diminuição' então f é uma 'função de regulação' cuja operação sobre o fluxo é o termo terciário 'Decrease' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (DecreasingFunction(f) → RegulatingFunction(f))"@en ;
+    skos:example "A choke control valve reducing pressure on a control signal; a pressure relief valve, where the signal is the fluid's own pressure reaching the set value."@en ;
+    skos:example "Uma válvula choke de controle reduzindo a pressão a um sinal de controle; uma válvula de alívio de pressão, em que o sinal é a própria pressão do fluido ao atingir o valor de ajuste."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Decrease' of the Functional Basis under 'Regulate'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Decrease' da Functional Basis sob 'Regulate'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Decrease' under 'Regulate'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001085 a owl:Class ;
+    rdfs:label "incrementing function"@en , "função de incremento"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001031 ;
+    copi:COPI_0001072 "Function/Control magnitude/Change/Increment" ;
+    iof-av:naturalLanguageDefinition "function to enlarge a flow in a predetermined and fixed manner"@en ;
+    iof-av:naturalLanguageDefinition "função de ampliar um fluxo de maneira predeterminada e fixa"@pt-br ;
+    rdfs:comment "function to enlarge a flow in a predetermined and fixed manner"@en ;
+    rdfs:comment "função de ampliar um fluxo de maneira predeterminada e fixa"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'incrementing function' then f is a 'changing function' whose operation on the flow is the tertiary term 'Increment' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de incremento' então f é uma 'função de mudança' cuja operação sobre o fluxo é o termo terciário 'Increment' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (IncrementingFunction(f) → ChangingFunction(f))"@en ;
+    skos:example "A step-up power transformer raising voltage by a fixed ratio; a speed-increasing gearbox."@en ;
+    skos:example "Um transformador elevador aumentando a tensão numa razão fixa; uma caixa multiplicadora de rotação."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Increment' of the Functional Basis under 'Change'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Increment' da Functional Basis sob 'Change'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Increment' under 'Change'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001086 a owl:Class ;
+    rdfs:label "decrementing function"@en , "função de decremento"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001031 ;
+    copi:COPI_0001072 "Function/Control magnitude/Change/Decrement" ;
+    iof-av:naturalLanguageDefinition "function to reduce a flow in a predetermined and fixed manner"@en ;
+    iof-av:naturalLanguageDefinition "função de reduzir um fluxo de maneira predeterminada e fixa"@pt-br ;
+    rdfs:comment "function to reduce a flow in a predetermined and fixed manner"@en ;
+    rdfs:comment "função de reduzir um fluxo de maneira predeterminada e fixa"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'decrementing function' then f is a 'changing function' whose operation on the flow is the tertiary term 'Decrement' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de decremento' então f é uma 'função de mudança' cuja operação sobre o fluxo é o termo terciário 'Decrement' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (DecrementingFunction(f) → ChangingFunction(f))"@en ;
+    skos:example "A restriction orifice; a silencer attenuating acoustic energy."@en ;
+    skos:example "Uma placa de orifício de restrição; um silenciador atenuando energia acústica."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Decrement' of the Functional Basis under 'Change'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Decrement' da Functional Basis sob 'Change'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Decrement' under 'Change'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001087 a owl:Class ;
+    rdfs:label "shaping function"@en , "função de conformação"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001031 ;
+    copi:COPI_0001072 "Function/Control magnitude/Change/Shape" ;
+    iof-av:naturalLanguageDefinition "function to mold or form a flow"@en ;
+    iof-av:naturalLanguageDefinition "função de moldar ou dar forma a um fluxo"@pt-br ;
+    rdfs:comment "function to mold or form a flow"@en ;
+    rdfs:comment "função de moldar ou dar forma a um fluxo"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'shaping function' then f is a 'changing function' whose operation on the flow is the tertiary term 'Shape' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de conformação' então f é uma 'função de mudança' cuja operação sobre o fluxo é o termo terciário 'Shape' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (ShapingFunction(f) → ChangingFunction(f))"@en ;
+    skos:example "A nozzle forming a jet; a crusher compacting or crushing a solid."@en ;
+    skos:example "Um bocal formando um jato; um britador compactando ou triturando um sólido."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Shape' of the Functional Basis under 'Change'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Shape' da Functional Basis sob 'Change'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Shape' under 'Change'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001088 a owl:Class ;
+    rdfs:label "conditioning function"@en , "função de condicionamento"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001031 ;
+    copi:COPI_0001072 "Function/Control magnitude/Change/Condition" ;
+    iof-av:naturalLanguageDefinition "function to render a flow appropriate for the desired use"@en ;
+    iof-av:naturalLanguageDefinition "função de tornar um fluxo apropriado ao uso desejado"@pt-br ;
+    rdfs:comment "function to render a flow appropriate for the desired use"@en ;
+    rdfs:comment "função de tornar um fluxo apropriado ao uso desejado"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'conditioning function' then f is a 'changing function' whose operation on the flow is the tertiary term 'Condition' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de condicionamento' então f é uma 'função de mudança' cuja operação sobre o fluxo é o termo terciário 'Condition' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (ConditioningFunction(f) → ChangingFunction(f))"@en ;
+    skos:example "A flow conditioner straightening a velocity profile ahead of a meter; a UPS conditioning electrical energy."@en ;
+    skos:example "Um condicionador de fluxo retificando o perfil de velocidade antes de um medidor; um no-break condicionando energia elétrica."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Condition' of the Functional Basis under 'Change'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Condition' da Functional Basis sob 'Change'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Condition' under 'Change'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001089 a owl:Class ;
+    rdfs:label "preventing function"@en , "função de impedimento"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001032 ;
+    copi:COPI_0001072 "Function/Control magnitude/Stop/Prevent" ;
+    iof-av:naturalLanguageDefinition "function to keep a flow from happening"@en ;
+    iof-av:naturalLanguageDefinition "função de impedir que um fluxo aconteça"@pt-br ;
+    rdfs:comment "function to keep a flow from happening"@en ;
+    rdfs:comment "função de impedir que um fluxo aconteça"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'preventing function' then f is a 'stopping function' whose operation on the flow is the tertiary term 'Prevent' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de impedimento' então f é uma 'função de interrupção' cuja operação sobre o fluxo é o termo terciário 'Prevent' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (PreventingFunction(f) → StoppingFunction(f))"@en ;
+    skos:example "A blind flange closing a pipe end; a check valve keeping backflow from happening."@en ;
+    skos:example "Um flange cego fechando a extremidade de um tubo; uma válvula de retenção impedindo o refluxo."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Prevent' of the Functional Basis under 'Stop'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Prevent' da Functional Basis sob 'Stop'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Prevent' under 'Stop'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001090 a owl:Class ;
+    rdfs:label "inhibiting function"@en , "função de inibição"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001032 ;
+    copi:COPI_0001072 "Function/Control magnitude/Stop/Inhibit" ;
+    iof-av:naturalLanguageDefinition "function to restrain a flow significantly while a portion of it continues to be transferred"@en ;
+    iof-av:naturalLanguageDefinition "função de restringir significativamente um fluxo enquanto uma parte dele continua a ser transferida"@pt-br ;
+    rdfs:comment "function to restrain a flow significantly while a portion of it continues to be transferred"@en ;
+    rdfs:comment "função de restringir significativamente um fluxo enquanto uma parte dele continua a ser transferida"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'inhibiting function' then f is a 'stopping function' whose operation on the flow is the tertiary term 'Inhibit' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de inibição' então f é uma 'função de interrupção' cuja operação sobre o fluxo é o termo terciário 'Inhibit' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (InhibitingFunction(f) → StoppingFunction(f))"@en ;
+    skos:example "The thermal insulation of a pipe; a radiation shield."@en ;
+    skos:example "O isolamento térmico de um tubo; uma blindagem contra radiação."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Inhibit' of the Functional Basis under 'Stop'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Inhibit' da Functional Basis sob 'Stop'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Inhibit' under 'Stop'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001091 a owl:Class ;
+    rdfs:label "containing function"@en , "função de confinamento"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001033 ;
+    copi:COPI_0001072 "Function/Provision/Store/Contain" ;
+    iof-av:naturalLanguageDefinition "function to keep a flow within limits"@en ;
+    iof-av:naturalLanguageDefinition "função de manter um fluxo dentro de limites"@pt-br ;
+    rdfs:comment "function to keep a flow within limits"@en ;
+    rdfs:comment "função de manter um fluxo dentro de limites"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'containing function' then f is a 'storing function' whose operation on the flow is the tertiary term 'Contain' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de confinamento' então f é uma 'função de armazenamento' cuja operação sobre o fluxo é o termo terciário 'Contain' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (ContainingFunction(f) → StoringFunction(f))"@en ;
+    skos:example "A storage tank; a pressure vessel."@en ;
+    skos:example "Um tanque de armazenamento; um vaso de pressão."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Contain' of the Functional Basis under 'Store'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint. The containment function of copi-vocab (COPI_0000025) is not this term, despite its name: its subclasses cover storing, containing and collecting of material, so it stays under the storing function. Of those subclasses, the pressure containment function is the one that belongs here."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Contain' da Functional Basis sob 'Store'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas. A função de contenção do copi-vocab (COPI_0000025) não é este termo, apesar do nome: as suas subclasses cobrem armazenar, conter e coletar material, então ela fica sob a função de armazenamento. Dessas subclasses, a função de contenção de pressão é a que pertence aqui."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Contain' under 'Store'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001092 a owl:Class ;
+    rdfs:label "collecting function"@en , "função de coleta"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001033 ;
+    copi:COPI_0001072 "Function/Provision/Store/Collect" ;
+    iof-av:naturalLanguageDefinition "function to bring a flow together into one place"@en ;
+    iof-av:naturalLanguageDefinition "função de reunir um fluxo num só lugar"@pt-br ;
+    rdfs:comment "function to bring a flow together into one place"@en ;
+    rdfs:comment "função de reunir um fluxo num só lugar"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'collecting function' then f is a 'storing function' whose operation on the flow is the tertiary term 'Collect' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de coleta' então f é uma 'função de armazenamento' cuja operação sobre o fluxo é o termo terciário 'Collect' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (CollectingFunction(f) → StoringFunction(f))"@en ;
+    skos:example "A drain sump; a drip tray."@en ;
+    skos:example "Um sumidouro de drenagem; uma bandeja coletora."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Collect' of the Functional Basis under 'Store'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Collect' da Functional Basis sob 'Store'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Collect' under 'Store'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001093 a owl:Class ;
+    rdfs:label "detecting function"@en , "função de detecção (Functional Basis)"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001035 ;
+    copi:COPI_0001072 "Function/Signal/Sense/Detect" ;
+    iof-av:naturalLanguageDefinition "function to discover information about a flow"@en ;
+    iof-av:naturalLanguageDefinition "função de descobrir informação sobre um fluxo"@pt-br ;
+    rdfs:comment "function to discover information about a flow"@en ;
+    rdfs:comment "função de descobrir informação sobre um fluxo"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'detecting function' then f is a 'sensing function' whose operation on the flow is the tertiary term 'Detect' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de detecção (Functional Basis)' então f é uma 'função de sensoriamento' cuja operação sobre o fluxo é o termo terciário 'Detect' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (DetectingFunction(f) → SensingFunction(f))"@en ;
+    skos:example "A flame detector; a gas detector; a level switch."@en ;
+    skos:example "Um detector de chama; um detector de gás; uma chave de nível."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Detect' of the Functional Basis under 'Sense'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Detect' da Functional Basis sob 'Sense'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Detect' under 'Sense'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001094 a owl:Class ;
+    rdfs:label "measuring function"@en , "função de medição"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001035 ;
+    copi:COPI_0001072 "Function/Signal/Sense/Measure" ;
+    iof-av:naturalLanguageDefinition "function to determine the magnitude of a flow"@en ;
+    iof-av:naturalLanguageDefinition "função de determinar a magnitude de um fluxo"@pt-br ;
+    rdfs:comment "function to determine the magnitude of a flow"@en ;
+    rdfs:comment "função de determinar a magnitude de um fluxo"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'measuring function' then f is a 'sensing function' whose operation on the flow is the tertiary term 'Measure' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de medição' então f é uma 'função de sensoriamento' cuja operação sobre o fluxo é o termo terciário 'Measure' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (MeasuringFunction(f) → SensingFunction(f))"@en ;
+    skos:example "A pressure transmitter; a temperature element; a flow meter."@en ;
+    skos:example "Um transmissor de pressão; um elemento de temperatura; um medidor de vazão."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Measure' of the Functional Basis under 'Sense'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Measure' da Functional Basis sob 'Sense'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Measure' under 'Sense'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001095 a owl:Class ;
+    rdfs:label "tracking function"@en , "função de rastreamento"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001036 ;
+    copi:COPI_0001072 "Function/Signal/Indicate/Track" ;
+    iof-av:naturalLanguageDefinition "function to observe and record data from a flow"@en ;
+    iof-av:naturalLanguageDefinition "função de observar e registrar dados de um fluxo"@pt-br ;
+    rdfs:comment "function to observe and record data from a flow"@en ;
+    rdfs:comment "função de observar e registrar dados de um fluxo"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'tracking function' then f is a 'indicating function' whose operation on the flow is the tertiary term 'Track' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de rastreamento' então f é uma 'função de indicação' cuja operação sobre o fluxo é o termo terciário 'Track' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (TrackingFunction(f) → IndicatingFunction(f))"@en ;
+    skos:example "A totalizer; a chart recorder."@en ;
+    skos:example "Um totalizador; um registrador gráfico."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Track' of the Functional Basis under 'Indicate'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Track' da Functional Basis sob 'Indicate'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Track' under 'Indicate'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
+copi:COPI_0001096 a owl:Class ;
+    rdfs:label "displaying function"@en , "função de exibição"@pt-br ;
+    rdfs:subClassOf copi:COPI_0001036 ;
+    copi:COPI_0001072 "Function/Signal/Indicate/Display" ;
+    iof-av:naturalLanguageDefinition "function to reveal something about a flow to the mind or eye"@en ;
+    iof-av:naturalLanguageDefinition "função de revelar algo sobre um fluxo à mente ou ao olho"@pt-br ;
+    rdfs:comment "function to reveal something about a flow to the mind or eye"@en ;
+    rdfs:comment "função de revelar algo sobre um fluxo à mente ou ao olho"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'displaying function' then f is a 'indicating function' whose operation on the flow is the tertiary term 'Display' of the Functional Basis"@en ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de exibição' então f é uma 'função de indicação' cuja operação sobre o fluxo é o termo terciário 'Display' da Functional Basis"@pt-br ;
+    iof-av:firstOrderLogicAxiom "∀f (DisplayingFunction(f) → IndicatingFunction(f))"@en ;
+    skos:example "The dial of a pressure gauge; a level sight glass; a local display."@en ;
+    skos:example "O mostrador de um manômetro; um visor de nível; um mostrador local."@pt-br ;
+    iof-av:explanatoryNote "Tertiary term 'Display' of the Functional Basis under 'Indicate'. A term function is asserted here only when its definition states the term; otherwise it stays at the secondary. Sibling tertiaries are not declared disjoint."@en ;
+    iof-av:explanatoryNote "Termo terciário 'Display' da Functional Basis sob 'Indicate'. Uma função de termo só é afirmada aqui quando a sua definição traz o termo; caso contrário fica na secundária. Terciárias irmãs não são declaradas disjuntas."@pt-br ;
+    iof-av:isPrimitive true ;
+    iof-av:primitiveRationale "Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation."@en ;
+    iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
+    iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Display' under 'Indicate'" ;
+    dcterms:source "ODR-024 §1" ;
+    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
+    rdfs:isDefinedBy copi:copi-core .
+
 

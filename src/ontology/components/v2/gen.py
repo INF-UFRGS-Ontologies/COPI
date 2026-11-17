@@ -16,7 +16,6 @@ PREFIXES = """@prefix copi: <https://www.inf.ufrgs.br/ontologies/copi/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix ro: <http://purl.obolibrary.org/obo/> .
 @prefix meno: <https://raw.githubusercontent.com/stap-m/midlevel-energy-ontology/main/ontology/src/midlevel-energy.owl/> .
-@prefix fb: <https://www.inf.ufrgs.br/ontologies/copi/fb/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -43,6 +42,11 @@ ids = {}
 _next = [1000]
 def nid(key):
     ids[key] = f"copi:COPI_{_next[0]:07d}"; _next[0]+=1; return ids[key]
+
+# The annotation property that records which term of the Functional Basis a class renders is used from the first
+# class on, but it was added on 2026-11-17: its IRI is fixed here and checked when it is allocated at the end, so
+# that no earlier IRI moves.
+FBTERM = "copi:COPI_0001072"
 
 def esc(s): return s.replace('\\','\\\\').replace('"','\\"')
 
@@ -78,13 +82,14 @@ def annotate(key, en, nld=None, sfd=None, note=None, adapted=None, primitive=Tru
     for sr in srcs: w(f'    dcterms:source "{esc(sr)}" ;')
     w(f"    rdfs:isDefinedBy copi:copi-core ;")
 
-def cls(key, en, pt, supers=(), equiv=None, nld=None, sfd=None, note=None, adapted=None, primitive=True, source="ODR-024", close=None, related=None, extra=()):
+def cls(key, en, pt, supers=(), equiv=None, nld=None, sfd=None, note=None, adapted=None, primitive=True, source="ODR-024", close=None, related=None, extra=(), fb=None):
     iri = ids.get(key) or nid(key)
     w(f"{iri} a owl:Class ;")
     w(f'    rdfs:label "{esc(en)}"@en , "{esc(pt)}"@pt-br ;')
     for s in supers: w(f"    rdfs:subClassOf {s} ;")
     if equiv: w(f"    owl:equivalentClass {equiv} ;")
     if close: w(f"    skos:closeMatch {close} ;")
+    if fb: w(f'    {FBTERM} "{fb}" ;')
     if related: w(f"    skos:relatedMatch {related} ;")
     for e in extra: w(f"    {e} ;")
     annotate(key, en, nld=nld, sfd=sfd, note=note, adapted=adapted, primitive=primitive, source=source)
@@ -112,7 +117,7 @@ w(f"""copi:copi-core a owl:Ontology ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (c) 2026 Universidade Federal do Rio Grande do Sul (UFRGS). Released under CC BY 4.0." ;
     dcterms:created "2026-11-03"^^xsd:date ;
-    dcterms:modified "2026-11-04"^^xsd:date ;
+    dcterms:modified "2026-11-17"^^xsd:date ;
     rdfs:seeAlso <https://www.inf.ufrgs.br/ontologies/copi> , <https://github.com/INF-UFRGS-Ontologies/COPI> ;
     owl:versionInfo "{esc(HEADER['versionInfo'])}" ;
 """)
@@ -182,7 +187,7 @@ for key,p,chain,en,pt,rel in [
 cls("Flow","flow","fluxo", supers=[PROCESS, restr(HAS_PARTICIPANT,SOME,MATENT)],
     nld="process in which some material entity crosses one interface of an artifact or engineered system, carrying with it some material, energy or information content",
     note="One flow per interface crossing. What happens inside the artifact (transformation, mixing, separation) is not a flow but another occurrent part of the process that realizes the function. The same flow may be an outflow of one artifact's process and an inflow of the next one's: it is the crossing of the interface they share. The Functional Basis leaves open whether a flow is the operand or its change over time; COPI takes the occurrent reading for the reasons recorded in ODR-024.",
-    adapted="Functional Basis: operation on flows of material, energy and signal (Stone & Wood 2000; Hirtz et al. 2002); formalization in Borgo, Carrara, Garbacz & Vermaas (2011)", close="fb:Flow")
+    adapted="Functional Basis: operation on flows of material, energy and signal (Stone & Wood 2000; Hirtz et al. 2002); formalization in Borgo, Carrara, Garbacz & Vermaas (2011)", fb="Flow")
 cls("MaterialFlow","material flow","fluxo de material", supers=[FLOW, restr(HAS_PARTICIPANT,SOME,union(PORTION_FLUID,PORTION_SOLID,OBJECT))],
     nld="flow whose participant is a portion of fluid, a portion of solid or an object: the material itself is what crosses the interface",
     note="A process stream (OntoCAPE Stream, ISO 15926 Stream, CFIHOS) is a material flow in steady state at a given interface.",
@@ -203,7 +208,7 @@ ROOT = cls("FlowOperatingFunction","flow-operating function","função sobre flu
     nld="designed function of an artifact or engineered system that consists in performing an operation on a flow of material, energy or signal that crosses the bearer's boundary",
     sfd="every instance of 'flow-operating function' is an instance of 'designed function' that is 'realized in' only processes that have as occurrent part some 'flow' crossing the bearer's boundary inwards or outwards",
     note="The Functional Basis (Hirtz et al. 2002) does not name this root: it judges a function term 'based on whether or not it describes an operation that a product or device carries out on a flow', and calls the eight primaries 'function classes'. iof:DesignedFunction is wider (it covers intended functions that operate on no flow, e.g. the identifying function of a tag plate); this class is where the Functional Basis assumption lives. The lineage is Pahl & Beitz's generally valid functions.",
-    adapted="Hirtz, Stone, McAdams, Szykman & Wood (2002), Research in Engineering Design 13(2); Stone & Wood (2000), J. Mech. Des. 122(4); Borgo, Carrara, Garbacz & Vermaas (2011), JCISE 11(3)", close="fb:Function")
+    adapted="Hirtz, Stone, McAdams, Szykman & Wood (2002), Research in Engineering Design 13(2); Stone & Wood (2000), J. Mech. Des. 122(4); Borgo, Carrara, Garbacz & Vermaas (2011), JCISE 11(3)", fb="Function")
 
 PRIM = {}
 prim_defs = [
@@ -241,12 +246,12 @@ sec_nld = {
 for key,en,pt,fb,nld,secs in prim_defs:
     PRIM[key] = cls(key+"Function", en, pt, supers=[ROOT], nld=nld,
         note=f"Primary class '{fb}' of the Functional Basis. Disjoint from the other seven primaries; its secondaries are aspects, not alternatives, and are not declared disjoint.",
-        adapted=f"Hirtz et al. (2002), Appendix B, class '{fb}'", close=f"fb:{fb.replace(' ','')}")
+        adapted=f"Hirtz et al. (2002), Appendix B, class '{fb}'", fb=f"Function/{fb}")
 for key,en,pt,fb,nld,secs in prim_defs:
     for sk in secs:
         sen,spt,sfb,snld = sec_nld[sk]
-        cls(sk+"Function", sen, spt, supers=[PRIM[key]], nld=snld, adapted=f"Hirtz et al. (2002), Appendix B, secondary '{sfb}' under '{fb}'", close=f"fb:{sfb.replace(' ','')}",
-            note="Tertiary terms of the Functional Basis are kept in the SKOS scheme fb: (skos:narrower), not as classes.")
+        cls(sk+"Function", sen, spt, supers=[PRIM[key]], nld=snld, adapted=f"Hirtz et al. (2002), Appendix B, secondary '{sfb}' under '{fb}'", fb=f"Function/{fb}/{sfb}",
+            note="Its tertiary terms, where the Functional Basis has them, are subclasses of this class. A term function is asserted at the tertiary only when its definition states that term.")
 w("[] a owl:AllDisjointClasses ;\n    owl:members ( " + " ".join(PRIM[k] for k,*_ in prim_defs) + " ) .\n")
 
 # ConversionFunction: internal transformation
@@ -323,7 +328,7 @@ for key,en,pt,parent,nld,extra_supers in genus_fns:
     GEN[key]=cls(key,en,pt,supers=[p]+extra_supers, nld=nld, note="Genus-level function of COPI: the parent of the term functions (e.g. pumping function) of one artifact genus. Refines a Functional Basis class; not itself in the Functional Basis.", source="ODR-025")
 
 # re-parenting of existing vocab functions (asserted here; copi-vocab keeps their declarations)
-w(f"{CONTAINMENT_FN} rdfs:subClassOf {ids['StoringFunction']} .    # containment function ⊑ storing (contain)")
+w(f"{CONTAINMENT_FN} rdfs:subClassOf {ids['StoringFunction']} .    # containment function ⊑ storing, not ⊑ containing: in copi-vocab it gathers storing, containing and collecting of material")
 w(f"{FLOWCTRL_FN} rdfs:subClassOf {ids['MagnitudeControlFunction']} .    # flow control function ⊑ magnitude control: it covers regulating (control valves) AND stopping (block valves); the secondary is the term's (2026-11-04)")
 w("# copi:COPI_0000027 (process-controlled flow function) is no longer asserted under regulating (2026-11-17): every control valve bears it, and the on-off control valve actuates and stops but does not regulate (Hirtz: Regulate adjusts a flow in response to a control signal). It keeps magnitude control through flow control function. What control valves share is the control signal, asserted on the realization process:")
 w(f"copi:COPI_0000033 rdfs:subClassOf {restr(HAS_INFLOW,SOME, inter(SFLOW, restr(CONCRETIZES,SOME,ids['ControlContent'])))} .   # process-controlled flow process: receives a signal flow that carries control content")
@@ -391,45 +396,32 @@ w("copi:COPI_0000011 owl:disjointWith copi:COPI_0000012 .   # liquid × gas pres
 ids["copi:COPI_0000015"]="copi:COPI_0000015"
 cls("copi:COPI_0000015","loss of containment","perda de contenção", supers=[PROCESS], nld="process in which contained material leaves its containment device other than through an outflow of its storing function", source="ODR-009 §3")
 
-# ---------------------------------------------------------------- SKOS scheme for tertiaries
-w("""fb:scheme a skos:ConceptScheme ;
-    rdfs:label "Functional Basis function terms (Hirtz et al. 2002, Table 5)"@en , "Termos de função da Functional Basis (Hirtz et al. 2002, Tabela 5)"@pt-br ;
-    dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 and Appendix B" ;
-    skos:note "The eight primary and twenty secondary terms are mirrored by the function classes of this ontology (skos:closeMatch); the tertiary terms are kept here only, as concepts, because they refine a secondary without changing the operation on the flow."@en , "Os oito termos primários e os vinte secundários são espelhados pelas classes de função desta ontologia (skos:closeMatch); os termos terciários ficam só aqui, como conceitos, porque refinam um secundário sem mudar a operação sobre o fluxo."@pt-br .
-fb:Function a skos:Concept ; skos:inScheme fb:scheme ; skos:topConceptOf fb:scheme ; skos:prefLabel "Function"@en , "Função"@pt-br .
-fb:Flow a skos:Concept ; skos:inScheme fb:scheme ; skos:topConceptOf fb:scheme ; skos:prefLabel "Flow"@en , "Fluxo"@pt-br ; skos:definition "material, energy or signal on which a function operates (Hirtz et al. 2002, Table 3)"@en .
-""")
-_FBPT = {"Branch":"Ramificar","Channel":"Canalizar","Connect":"Conectar","Controlmagnitude":"Controlar magnitude","Convert":"Converter","Provision":"Prover","Signal":"Sinalizar","Support":"Suportar",
- "Separate":"Separar","Distribute":"Distribuir","Import":"Importar","Export":"Exportar","Transfer":"Transferir","Guide":"Guiar","Couple":"Acoplar","Mix":"Misturar","Actuate":"Atuar","Regulate":"Regular","Change":"Mudar","Stop":"Interromper","Store":"Armazenar","Supply":"Suprir","Sense":"Sentir","Indicate":"Indicar","Process":"Processar","Stabilize":"Estabilizar","Secure":"Fixar","Position":"Posicionar",
- "Divide":"Dividir","Extract":"Extrair","Remove":"Remover","Transport":"Transportar","Transmit":"Transmitir","Translate":"Transladar","Rotate":"Rotacionar","AllowDOF":"Permitir grau de liberdade","Join":"Unir","Link":"Ligar","Increase":"Aumentar","Decrease":"Diminuir","Increment":"Incrementar","Decrement":"Decrementar","Shape":"Dar forma","Condition":"Condicionar","Prevent":"Impedir","Inhibit":"Inibir","Contain":"Conter","Collect":"Coletar","Detect":"Detectar","Measure":"Medir","Track":"Rastrear","Display":"Exibir"}
-_FBSEC = {"Branch":["Separate","Distribute"],"Channel":["Import","Export","Transfer","Guide"],"Connect":["Couple","Mix"],"Controlmagnitude":["Actuate","Regulate","Change","Stop"],"Convert":[],"Provision":["Store","Supply"],"Signal":["Sense","Indicate","Process"],"Support":["Stabilize","Secure","Position"]}
-_FBDEF = {x[3].replace(' ',''): x[4] for x in prim_defs}
-_FBDEF.update({v[2]: v[3] for v in sec_nld.values()})
-for prim,secs in _FBSEC.items():
-    lbl = "Control magnitude" if prim=="Controlmagnitude" else prim
-    w(f'fb:{prim} a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:Function ; skos:prefLabel "{lbl}"@en , "{_FBPT[prim]}"@pt-br ; skos:definition "{esc(_FBDEF.get(prim,""))}"@en ; skos:note "primary (class)"@en .')
-    for sec in secs:
-        w(f'fb:{sec} a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:{prim} ; skos:prefLabel "{sec}"@en , "{_FBPT[sec]}"@pt-br ; skos:definition "{esc(_FBDEF.get(sec,""))}"@en ; skos:note "secondary (basic)"@en .')
-terts = {"Separate":["Divide","Extract","Remove"],"Transfer":["Transport","Transmit"],"Guide":["Translate","Rotate","AllowDOF"],"Couple":["Join","Link"],"Regulate":["Increase","Decrease"],"Change":["Increment","Decrement","Shape","Condition"],"Stop":["Prevent","Inhibit"],"Store":["Contain","Collect"],"Sense":["Detect","Measure"],"Indicate":["Track","Display"]}
-for sec,ts in terts.items():
-    for t in ts:
-        lbl = "Allow degree of freedom" if t=="AllowDOF" else t
-        w(f'fb:{t} a skos:Concept ; skos:inScheme fb:scheme ; skos:broader fb:{sec} ; skos:prefLabel "{lbl}"@en , "{_FBPT[t]}"@pt-br ; skos:note "tertiary (flow-restricted)"@en .')
-w()
-
 # ---------------------------------------------------------------- annotation properties used by the export
 for key,en,nld in [("signature","signature","JSON signature of a term function: verb, secondary, tertiary, inflows, outflows, primary flow, interface"),
                    ("primaryFunction","primary function","IRI of the function that gives the artifact its box (curation convention; design context)"),
                    ("identityFunction","identity function","IRI of the term function whose signature individuates the artifact type, alone or together with a declared differentia outside the signature"),
-                   ("constructiveType","constructive type","constructive differentia of the term (gate, ball, shell-and-tube), kept as annotation, never as functional subclass")]:
+                   ("constructiveType","constructive type","constructive differentia of the term (gate, ball, shell-and-tube), kept as annotation, never as functional subclass"),
+                   ("fbTerm","Functional Basis term","path, from the root of its table, of the term of the Functional Basis (Hirtz et al. 2002) that the class renders: 'Function/…' for the function terms of Table 5, 'Flow/…' for the flow terms of Table 3")]:
     w(f'{nid(key)} a owl:AnnotationProperty ;')
     w(f'    rdfs:label "{en}"@en , "{esc(ANN[key]["label_pt"])}"@pt-br ;')
     a = ANN[key]
     for prop,val,lang in [("iof-av:naturalLanguageDefinition",nld,"en"),("iof-av:naturalLanguageDefinition",a["nld_pt"],"pt-br"),("skos:example",a["ex_en"],"en"),("skos:example",a["ex_pt"],"pt-br"),("iof-av:explanatoryNote",a["note_en"],"en"),("iof-av:explanatoryNote",a["note_pt"],"pt-br")]:
         w(f'    {prop} "{esc(val)}"@{lang} ;')
     if a.get("adapted"): w(f'    iof-av:adaptedFrom "{esc(a["adapted"])}" ;')
-    for sr in ["ODR-025"] + a["sources"]: w(f'    dcterms:source "{esc(sr)}" ;')
+    for sr in ([] if key=="fbTerm" else ["ODR-025"]) + a["sources"]: w(f'    dcterms:source "{esc(sr)}" ;')
     w("    rdfs:isDefinedBy copi:copi-core .")
+w()
+assert ids["fbTerm"] == FBTERM, ids["fbTerm"]
+
+# ---------------------------------------------------------------- tertiary terms of the Functional Basis (2026-11-17)
+# OWL only: the 24 tertiaries are subclasses of their secondaries; the parallel SKOS scheme fb: is gone. They are
+# allocated here, after every earlier entity, so that no existing IRI moves.
+from ann_functions import TERTIARIES
+_PRIM_OF = {sk: fb for key,en,pt,fb,nld,secs in prim_defs for sk in secs}
+for sk, tk, ten, tpt, tfb, tnld in TERTIARIES:
+    sen, spt, sfb, snld = sec_nld[sk]
+    cls(tk+"Function", ten, tpt, supers=[ids[sk+"Function"]], nld=tnld,
+        adapted=f"Hirtz et al. (2002), Appendix B, tertiary '{tfb}' under '{sfb}'", fb=f"Function/{_PRIM_OF[sk]}/{sfb}/{tfb}")
 w()
 
 print("\n".join(OUT))

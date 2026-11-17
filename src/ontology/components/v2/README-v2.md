@@ -59,3 +59,16 @@ Duas mudanças saídas da revisão da assinatura do passo 5 (`COPIeditor/eval/fb
 Verificação: mesma receita acima, com ROBOT 1.9.8 + HermiT. O commit anterior deu 20/20 e este dá 25/25; as cinco verificações novas do `check.py` cobrem a função das control valves (não ⊑ regulating, ⊑ magnitude control, função on-off satisfazível e fora de regulating, função moduladora sob regulating). Os guards 02 e 06 não são afetados, porque leem `control valve ⊑ valve` e `COPI_0000027 ⊑ flow control function`, que não mudaram.
 
 Fica de fora, por depender de verificação ainda aberta: o novo rótulo da função (candidato: "final control function", termo da ISO 15926-4), o transmissor sob *Processing*, os campos novos da anotação `signature` e a tabela de fluxos do Hirtz.
+
+## Revisão de 2026-11-17 — Functional Basis só em OWL
+
+Decisão: a ontologia fica num formalismo só. O esquema SKOS `fb:` paralelo saiu.
+
+- **Origem no Hirtz em cada classe.** A anotação nova `Functional Basis term` (COPI_0001072) guarda o caminho do termo na sua tabela: `Function/Branch/Separate/Remove`, `Flow`. Ela substitui o `skos:closeMatch` para os conceitos `fb:`. As 53 classes de função e a classe `flow` a carregam.
+- **Os 24 terciários viraram classes**, subclasses das suas secundárias (COPI_0001073 a COPI_0001096). Foram alocados depois de todas as entidades anteriores, então nenhum IRI existente mudou (`ids.txt`). As definições adaptam o Apêndice B do Hirtz à forma "function to …" das secundárias.
+- **Regra de asserção.** Uma função de termo é afirmada no terciário só quando a sua definição traz o termo; caso contrário fica na secundária. A `containment function` do copi-vocab (COPI_0000025) **não** desce para `containing function`, apesar do nome: as subclasses dela no `copi-enriched` cobrem Store (storage function), Contain (pressure containment function) e Collect (gravity collection function, sample collection function). Ela fica sob `storing function`, como já estava. Reparentar as quatro subclasses nos terciários e renomear a 0025 ficam para o lado do editor.
+- **Tabela de cobertura.** `hirtz-coverage.csv` tem uma linha por termo do Hirtz com status `adotada`, `adaptada`, `não adotada` ou `extensão`. O `check.py` confere a tabela contra a ontologia, e `hirtz_coverage.resolve()` devolve o IRI de um termo adotado e levanta `NotAdopted` nos outros casos. O export deve usá-lo para nunca aproximar um termo não adotado.
+
+Um exemplo foi corrigido para acompanhar os correspondentes do próprio Hirtz: filtro e filtro-cesto passam de *remove* para *extract* ("filter, strain" estão sob Extract; "cut, drill" sob Remove). Vale conferir se essa leitura é a desejada.
+
+Verificação: ROBOT 1.9.8 + HermiT, 36/36 no `check.py` (nenhuma classe insatisfazível; 123 entidades no padrão de anotação). O `check.py` agora precisa de `hirtz_coverage.py` e `hirtz-coverage.csv` ao lado.

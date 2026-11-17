@@ -162,15 +162,20 @@ _AP = {
    "On the gate valve: 'gate'; on the shell-and-tube heat exchanger: 'shell and tube'.",
    "Na válvula gaveta: 'gaveta'; no trocador casco-e-tubo: 'casco e tubo'.",
    "Separa o aspecto construtivo do funcional (ODR-026 §5): tipos construtivos portam a função do gênero e são primitivos."),
+ "fbTerm": ("Functional Basis term","termo da Functional Basis","caminho, a partir da raiz da sua tabela, do termo da Functional Basis (Hirtz et al. 2002) que a classe representa: 'Function/…' para os termos de função da Tabela 5, 'Flow/…' para os termos de fluxo da Tabela 3",
+   "On the removing function: 'Function/Branch/Separate/Remove'. On the separating function: 'Function/Branch/Separate'.",
+   "Na função de remoção: 'Function/Branch/Separate/Remove'. Na função de separação: 'Function/Branch/Separate'.",
+   "Substitui o esquema SKOS fb: paralelo, removido em 2026-11-17: a ontologia fica só em OWL e a origem no Hirtz fica em cada classe. Uma classe sem esta anotação não é um termo da Functional Basis; as extensões da COPI à Functional Basis são declaradas na tabela de cobertura (hirtz-coverage.csv)."),
 }
 _AP_NOTE_EN = {
  "signature": "Mirrors the process_signature of enrichment.db; it is what the compatibility rule of ODR-025 §3 reads.",
  "primaryFunction": "The transformative cell; if none, the one the standard's definition names first. A curation convention, not an ontological commitment: a design context in the sense of Mizoguchi, Kitamura & Borgo (2016).",
  "identityFunction": "OWL does not express 'exactly one identity-giving function' without reification; the annotation records the choice (ODR-025 §1). Sibling types may share a signature when what separates them is constructive, positional or parametric; the differentia is then declared outside the signature (review of 2026-11-17; amendment of ODR-025 §1 pending).",
  "constructiveType": "Separates the constructive aspect from the functional one (ODR-026 §5): constructive types bear the genus function and are primitive.",
+ "fbTerm": "Replaces the parallel SKOS scheme fb:, removed on 2026-11-17: the ontology is OWL only and the origin in Hirtz sits on each class. A class without this annotation is not a term of the Functional Basis; the extensions of COPI to the Functional Basis are declared in the coverage table (hirtz-coverage.csv).",
 }
 for k,(en,pt,nld_pt,ex_en,ex_pt,note_pt) in _AP.items():
-    A(k, label_pt=pt, nld_pt=nld_pt, ex_en=ex_en, ex_pt=ex_pt, note_en=_AP_NOTE_EN[k], note_pt=note_pt, sources=["ODR-025 §1–2", KITAMURA], adapted=KITAMURA if k=="primaryFunction" else None)
+    A(k, label_pt=pt, nld_pt=nld_pt, ex_en=ex_en, ex_pt=ex_pt, note_en=_AP_NOTE_EN[k], note_pt=note_pt, sources=(["Review of 2026-11-17: OWL only (ODR pending)", HIRTZ_T5, HIRTZ_T3] if k=="fbTerm" else ["ODR-025 §1–2", KITAMURA]), adapted=KITAMURA if k=="primaryFunction" else None)
 
 HEADER = {
  "title_en": "COPI Core (v2): a process-industry core layer in BFO — functions of the Functional Basis, three flows, identity and scope",
