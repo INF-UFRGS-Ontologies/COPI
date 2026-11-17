@@ -58,36 +58,39 @@ for s in _subj:
             if prim is None: _gaps.append(f"{s.rsplit('/',1)[-1]} isPrimitive")
             elif bool(prim) and not (_has(s,_AV.primitiveRationale,"en") and _has(s,_AV.primitiveRationale,"pt-br")): _gaps.append(f"{s.rsplit('/',1)[-1]} primitiveRationale")
     if (s,_DC.source,None) not in _core: _gaps.append(f"{s.rsplit('/',1)[-1]} dcterms:source")
-# ---- Functional Basis in OWL only (review of 2026-11-17): no SKOS scheme; every term of the coverage table that is
-# adopted has exactly one class carrying its path; the path hierarchy is the class hierarchy
+# ---- Functional Basis in OWL only (review of 2026-11-17): no SKOS scheme; hirtz-coverage.csv lists every term of
+# Hirtz with its status and is checked against the ontology; the path hierarchy is the class hierarchy
 import os as _os
 sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))   # -I drops the script dir; hirtz_coverage.py lives beside check.py
 import hirtz_coverage as _hc
-_FB=C.COPI_0001072
 _cov=_hc.load()
-_curie=lambda u: "copi:"+str(u).rsplit("/",1)[-1]
-_by_path={}
-for _s,_o in _core.subject_objects(_FB): _by_path.setdefault(str(_o),[]).append(_s)
-checks.append(("no SKOS concept scheme in copi-core-v2", not any(True for _ in _core.subjects(RDF.type,_SK.Concept)) and not any(True for _ in _core.subjects(RDF.type,_SK.ConceptScheme))))
-_bad=[r["caminho"] for r in _cov if r["status"] not in _hc.STATUSES]
-checks.append((f"coverage table: every row has a status" + (f" — {_bad[:5]}" if _bad else ""), not _bad))
-_dup=[p for p,v in _by_path.items() if len(v)>1]
-checks.append((f"one class per Functional Basis path" + (f" — {_dup[:5]}" if _dup else ""), not _dup))
-_miss=[r["caminho"] for r in _cov if r["status"] in ("adotada","adaptada") and [_curie(x) for x in _by_path.get(r["caminho"],[])]!=[r["iri"]]]
-checks.append((f"coverage table: adopted rows match the class carrying the path ({sum(r['status'] in ('adotada','adaptada') for r in _cov)} rows)" + (f" — {_miss[:5]}" if _miss else ""), not _miss))
-_ghost=[r["caminho"] for r in _cov if r["status"] in ("não adotada","extensão") and r["caminho"] in _by_path]
-checks.append((f"coverage table: unadopted rows and extensions carry no path" + (f" — {_ghost[:5]}" if _ghost else ""), not _ghost))
-_orph=[p for p in _by_path if p not in {r["caminho"] for r in _cov}]
-checks.append((f"every class with a Functional Basis path is in the coverage table" + (f" — {_orph[:5]}" if _orph else ""), not _orph))
-_hier=[p for p,v in _by_path.items() if p.startswith("Function/") and p.rsplit("/",1)[0] in _by_path and _by_path[p.rsplit("/",1)[0]][0] not in supers(v[0])]
+_res,_by_path=_hc.verify(_core,_cov)
+checks.extend(_res)
+_U=lambda c: URIRef(str(C)+c.split(":",1)[1])
+_hier=[p for p,v in _by_path.items() if p.startswith("Function/") and p.rsplit("/",1)[0] in _by_path and _U(_by_path[p.rsplit("/",1)[0]][0]) not in supers(_U(v[0]))]
 checks.append((f"function path hierarchy = class hierarchy ({sum(p.startswith('Function') for p in _by_path)} function classes)" + (f" — {_hier[:5]}" if _hier else ""), not _hier))
-checks.append(("24 tertiary function classes", sum(p.startswith("Function/") and p.count("/")==3 for p in _by_path)==24))
 checks.append(("containment function ⊑ storing, not ⊑ containing", C.COPI_0001033 in supers(C.COPI_0000025) and C.COPI_0001091 not in supers(C.COPI_0000025)))
 checks.append(("term function at a tertiary ⊑ its secondary and primary", C.COPI_0001021 in supers(T.DehydrationFunction) and C.COPI_0001013 in supers(T.DehydrationFunction)))
-try:
-    _hc.resolve("Function/NoSuchTerm", _cov); _ok=False
-except _hc.NotAdopted: _ok=True
-checks.append(("resolve() refuses a term that is not adopted", _ok))
+def _refused(path):
+    try: _hc.resolve(path,_cov); return False
+    except _hc.NotAdopted: return True
+checks.append(("resolve() refuses an unadopted flow and an unknown term", _refused("Flow/Energy/Acoustic") and _refused("Function/NoSuchTerm")))
+checks.append(("resolve() returns the class of an adopted flow", _hc.resolve("Flow/Material/Liquid",_cov)=="copi:COPI_0000038"))
+# every controlled value of the signature names a class that exists (in copi-core-v2, copi-vocab or BFO)
+_known={str(s) for s in g.subjects(RDF.type,OWL.Class)}
+_exp=lambda c: str(C)+c.split(":",1)[1] if c.startswith("copi:") else "http://purl.obolibrary.org/obo/"+c.split(":",1)[1]
+_gone=[p for p,i in {**_hc.flow_values(_cov),**_hc.measured_quantities(_cov)}.items() if _exp(i) not in _known]
+checks.append((f"controlled values of the signature name existing classes ({len(_hc.flow_values(_cov))} flows, {len(_hc.measured_quantities(_cov))} measured quantities)" + (f" — {_gone[:5]}" if _gone else ""), not _gone))
+
+# ---- sensors (review of 2026-11-17): the measured quantity is the quality that the measurement content describes
+_sens=[("level element measures level", T.MeasuresLevel in supers(T.LevelSensingFunction)),
+ ("level switch signals level status, does not measure it", T.SignalsLevelStatus in supers(T.LevelSwitchingFunction) and T.MeasuresLevel not in supers(T.LevelSwitchingFunction)),
+ ("differential pressure element measures differential pressure, not level or pressure", T.MeasuresDifferentialPressure in supers(T.DifferentialPressureSensingFunction) and T.MeasuresLevel not in supers(T.DifferentialPressureSensingFunction) and T.MeasuresPressure not in supers(T.DifferentialPressureSensingFunction)),
+ ("moisture element measures moisture, not level", T.MeasuresMoisture in supers(T.MoistureSensingFunction) and T.MeasuresLevel not in supers(T.MoistureSensingFunction)),
+ ("the four sensor functions are satisfiable", all(OWL.Nothing not in supers(x) for x in (T.LevelSensingFunction,T.LevelSwitchingFunction,T.DifferentialPressureSensingFunction,T.MoistureSensingFunction))),
+ ("LevelElement ⊑ measurement instrument", C.COPI_0000024 in supers(T.LevelElement)),
+ ("LevelSwitch ⊑ instrument, not ⊑ measurement instrument", C.COPI_0000091 in supers(T.LevelSwitch) and C.COPI_0000024 not in supers(T.LevelSwitch))]
+checks.extend(_sens)
 
 checks.append((f"annotation standard on {len(_subj)} entities" + (f" — gaps: {_gaps[:8]}" if _gaps else ""), not _gaps))
 

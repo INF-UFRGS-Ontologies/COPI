@@ -72,3 +72,39 @@ Decisão: a ontologia fica num formalismo só. O esquema SKOS `fb:` paralelo sai
 Um exemplo foi corrigido para acompanhar os correspondentes do próprio Hirtz: filtro e filtro-cesto passam de *remove* para *extract* ("filter, strain" estão sob Extract; "cut, drill" sob Remove). Vale conferir se essa leitura é a desejada.
 
 Verificação: ROBOT 1.9.8 + HermiT, 36/36 no `check.py` (nenhuma classe insatisfazível; 123 entidades no padrão de anotação). O `check.py` agora precisa de `hirtz_coverage.py` e `hirtz-coverage.csv` ao lado.
+
+## Revisão de 2026-11-17 — fluxos, sensores e extensões à Functional Basis
+
+**Fluxos de material: reaproveita o copi-vocab.** Gás, líquido, sólido e mistura do Hirtz são as porções de matéria do copi-vocab, participantes do `material flow`, e não subclasses de fluxo. O caminho do Hirtz é assertado aqui sobre COPI_0000038, 0039, 0040 e 0808. A única classe nova é `portion of mixture` (COPI_0000808, no copi-vocab): o Mixture do Hirtz inclui misturas com sólido (dryer e filter press na amostra) e a COPI_0000044 só cobria mistura fluida. A 0044 passa a ser subclasse das duas, `portion of fluid` e `portion of mixture`, e o `material flow` aceita a classe nova como participante. Convenção de nome para o que é incontável: "portion of X" (Arp, Smith & Spear). Dois rótulos mudaram no copi-vocab, com o antigo guardado em `iof-av:synonym`:
+
+| IRI | Antes | Agora |
+|---|---|---|
+| COPI_0000044 | fluid mixture | portion of fluid mixture |
+| COPI_0000393 | fuel portion | portion of fuel |
+
+**Resto da tabela de fluxos: sob demanda.** `hirtz-coverage.csv` lista as 3 classes de fluxo e os 42 termos do Hirtz: 4 adotados, 14 adaptados (tipos de energia como qualidade do portador, conteúdos de sinal como conteúdo de informação, materiais como participantes) e 28 não adotados. Classe nova só quando um termo precisar. `hirtz_coverage.resolve()` levanta `NotAdopted` para um fluxo não adotado: o export deve alertar, nunca aproximar para o valor mais próximo. `python3 -I hirtz_coverage.py` confere a tabela contra o TTL sem reasoner e sai com status 1 em caso de falha, pronto para entrar no CI.
+
+**Sensores: a grandeza medida é uma qualidade.** Ela não é fluxo de entrada. É o alvo do `describes` do `measurement content` (COPI_0001051):
+
+```
+função do sensor ⊑ sensing function ⊓ ∃realizedIn.∃hasOutflow.(
+    signal flow ⊓ ∃concretizes.(measurement content ⊓ ∃describes.(
+        <qualidade X> ⊓ ∃inheresIn.portion of fluid)))
+```
+
+A anotação `signature` ganhou o campo `measured quantity`, preenchido só quando a saída é sinal de medição. Valores controlados: temperature, pressure, flow rate e level do copi-vocab (COPI_0000052–55), mais duas classes novas pedidas pela amostra, `differential pressure` (COPI_0000806) e `moisture` (COPI_0000807). As duas ficam no copi-vocab, ao lado das outras qualidades, como pede a regra de hospedagem do ODR-022 §10.3. A identidade do portador pelo lugar (o fluido "no ponto do PT-101") não entra no passo 5: fica para o módulo de functional locations.
+
+**Extensões da COPI à Functional Basis, num lugar só.** São as linhas `extensão` de `hirtz-coverage.csv`: `portion of fluid` (o Hirtz só tem Gas e Liquid) com a sua subclasse `portion of fluid mixture`, `measurement content` (no Hirtz a medida cai em Status) e a grandeza medida. Sem elas, level element e level switch, e os elementos de pressão diferencial, nível e umidade, ficam com a mesma assinatura. As classes de extensão não carregam caminho da Functional Basis.
+
+**Números do copi-vocab.** As três classes novas do vocab (806 a 808) seguem o registro do COPIeditor, `enrichment/ontologies/copi-context/copi-iri-map.tsv`, cujo maior número era 805. O editor não aloca números para o vocab: a linha no mapa é posta à mão, e o `PROTECTED_EXTRA` de `scripts/regen_enriched_owl.py` precisa incluir 806 a 808 e o bloco da core v2 até 1096. O alocador do editor (maior número do mapa mais um) não enxerga o bloco 1000 em diante e o alcançaria depois de 191 alocações.
+
+Pontos abertos, registrados na tabela e não decididos aqui:
+
+- `differential pressure` como qualidade de uma porção de fluido ou como qualidade relacional (BFO_0000145).
+- A definição de `level` no copi-vocab põe o portador no vaso; o padrão do sensor o põe numa porção de fluido.
+- Renomear a `containment function` (COPI_0000025), que fica ao lado de `containing function`, e reparentar as quatro subclasses dela nos terciários (lado do editor).
+- Fundir a `detection function` (COPI_0000465, copi-enriched) na `detecting function`: é o mesmo termo, e é a causa do rótulo "função de detecção (Functional Basis)".
+- Outras classes de material do copi-vocab fora da convenção "portion of X": absorbent phase, rich absorbent, hydraulic fluid, exhaust gas, depleted fluid, hydrocarbon fluid, formation fluid, drilling fluid, combustion product, heat transfer medium, carrier fluid, rock cuttings.
+- O `copi-enriched.owl` ainda cita os rótulos antigos em 9 definições e 3 axiomas em FOL; muda no próximo export.
+
+Verificação: ROBOT 1.9.8 + HermiT, 48/48 no `check.py`. Os testes novos mostram que as funções de level element, level switch, elemento de pressão diferencial e elemento de umidade caem cada uma na sua classe-sonda e em nenhuma outra, que o level element é inferido como measurement instrument e que o level switch é instrument mas não measurement instrument. O `copi-core.ttl` congelado não foi tocado.

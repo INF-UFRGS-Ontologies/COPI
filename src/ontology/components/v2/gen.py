@@ -33,7 +33,7 @@ DESC_ICE="iof-constr:DescriptiveInformationContentEntity"; DIR_ICE="iof-constr:D
 DESCRIBES="iof-constr:describes"; PRESCRIBES="iof-constr:prescribes"; ISABOUT="iof-constr:isAbout"
 HASVALEXP="iof-constr:hasValueExpressionAtAllTimes"; MVE="iof-constr:MeasuredValueExpression"
 # existing COPI
-PORTION_FLUID="copi:COPI_0000037"; PORTION_LIQ="copi:COPI_0000038"; PORTION_GAS="copi:COPI_0000039"; PORTION_SOLID="copi:COPI_0000040"
+PORTION_FLUID="copi:COPI_0000037"; PORTION_LIQ="copi:COPI_0000038"; PORTION_GAS="copi:COPI_0000039"; PORTION_SOLID="copi:COPI_0000040"; PORTION_MIXTURE="copi:COPI_0000808"
 CONTAINMENT_FN="copi:COPI_0000025"; FLOWCTRL_FN="copi:COPI_0000026"; INDICATION_FN="copi:COPI_0000028"; INSTR_FN="copi:COPI_0000029"
 SIGTX_FN="copi:COPI_0000030"; RELIEF_FN="copi:COPI_0000032"; INSTRUMENT="copi:COPI_0000091"; MEAS_INSTR="copi:COPI_0000024"
 PRESSURE_Q="copi:COPI_0000053"
@@ -188,18 +188,18 @@ cls("Flow","flow","fluxo", supers=[PROCESS, restr(HAS_PARTICIPANT,SOME,MATENT)],
     nld="process in which some material entity crosses one interface of an artifact or engineered system, carrying with it some material, energy or information content",
     note="One flow per interface crossing. What happens inside the artifact (transformation, mixing, separation) is not a flow but another occurrent part of the process that realizes the function. The same flow may be an outflow of one artifact's process and an inflow of the next one's: it is the crossing of the interface they share. The Functional Basis leaves open whether a flow is the operand or its change over time; COPI takes the occurrent reading for the reasons recorded in ODR-024.",
     adapted="Functional Basis: operation on flows of material, energy and signal (Stone & Wood 2000; Hirtz et al. 2002); formalization in Borgo, Carrara, Garbacz & Vermaas (2011)", fb="Flow")
-cls("MaterialFlow","material flow","fluxo de material", supers=[FLOW, restr(HAS_PARTICIPANT,SOME,union(PORTION_FLUID,PORTION_SOLID,OBJECT))],
-    nld="flow whose participant is a portion of fluid, a portion of solid or an object: the material itself is what crosses the interface",
+cls("MaterialFlow","material flow","fluxo de material", supers=[FLOW, restr(HAS_PARTICIPANT,SOME,union(PORTION_FLUID,PORTION_SOLID,PORTION_MIXTURE,OBJECT))],
+    nld="flow whose participant is a portion of fluid, a portion of solid, a portion of mixture or an object: the material itself is what crosses the interface",
     note="A process stream (OntoCAPE Stream, ISO 15926 Stream, CFIHOS) is a material flow in steady state at a given interface.",
-    close="iof-constr:MaterialLocationChangeProcess")
+    close="iof-constr:MaterialLocationChangeProcess", fb="Flow/Material")
 cls("EnergyFlow","energy flow","fluxo de energia", supers=[FLOW, restr(HAS_PART_OCC,SOME,EDEC), restr(HAS_PART_OCC,SOME,EINC)],
     nld="flow that is an energy transfer across the interface: a decrease of some energy quality in the bearer on one side causally related to an increase of an energy quality of the same kind in the bearer on the other side",
     note="Energy transformation (different kinds, same bearer) is not a flow; see energy transformation. No participant restriction 'bearer of some energy' is stated because every material entity satisfies it; what distinguishes an energy flow is its decrease/increase parts.",
-    adapted="MENO (Stappel & Neuhaus, FOIS 2024): energy transfer", close="meno:MENO_01002")
+    adapted="MENO (Stappel & Neuhaus, FOIS 2024): energy transfer", close="meno:MENO_01002", fb="Flow/Energy")
 cls("SignalFlow","signal flow","fluxo de sinal", supers=[FLOW, union(restr(CONCRETIZES,SOME,ICE), restr(HAS_PARTICIPANT,SOME,inter(SBEARER, restr(BEARER_OF,SOME,restr(CONCRETIZES,SOME,ICE)))))],
     nld="flow that concretizes an information content entity, directly (BFO 2020 admits a process as concretizer) or through a quality of its signal bearer, and transmits it between artifacts",
     note="The short form (the flow concretizes the content) answers whether a signal exists; the long form (a quality of the bearer concretizes it) answers through which bearer it passed.",
-    adapted="IAO/CCO: content concretized in a bearer; BFO 2020 concretizes (BFO_0000059)")
+    adapted="IAO/CCO: content concretized in a bearer; BFO 2020 concretizes (BFO_0000059)", fb="Flow/Signal")
 w("# flows are not disjoint: a pressurized liquid stream is a material flow and an energy flow (carrier flow, Nagel et al. 2007)\n")
 
 # ---------------------------------------------------------------- function root and the eight primaries
@@ -271,7 +271,7 @@ for key,en,pt,note,close,related in [
  ("ElectricalEnergy","electrical energy","energia elétrica",None,"meno:MENO_01006",None),
  ("ChemicalEnergy","chemical energy","energia química",None,"meno:MENO_01005",None),
  ("ElectromagneticEnergy","electromagnetic energy","energia eletromagnética","radiative energy in MENO",None,"meno:MENO_01009")]:
-    cls(key,en,pt,supers=[ENERGY], nld=f"{en} as a kind of energy quality of its bearer, in the sense of the Functional Basis flow taxonomy", note=note, close=close, related=related, adapted="Hirtz et al. (2002), Table 3 (energy flows)")
+    cls(key,en,pt,supers=[ENERGY], nld=f"{en} as a kind of energy quality of its bearer, in the sense of the Functional Basis flow taxonomy", note=note, close=close, related=related, adapted="Hirtz et al. (2002), Table 3 (energy flows)", fb="Flow/Energy/"+key[:-len("Energy")])
 cls("EnergyDecrease","energy decrease","decréscimo de energia", supers=[PROCESS, restr(NEG_REG,SOME,ENERGY)],
     nld="process that negatively regulates an energy quality of its bearer", adapted="MENO: energy decrease (quality decrease)", close="meno:MENO_01013")
 cls("EnergyIncrease","energy increase","acréscimo de energia", supers=[PROCESS, restr(POS_REG,SOME,ENERGY)],
@@ -296,10 +296,10 @@ cls("MeasurementContent","measurement content","conteúdo de medição", supers=
     close="iof-constr:MeasurementInformationContentEntity")
 cls("ControlContent","control content","conteúdo de controle", supers=[DIR_ICE, restr(PRESCRIBES,SOME,QUALITY)],
     nld="directive information content entity that prescribes a quality of the actuated artifact (a valve opening, a pump speed)",
-    note="Interlock and trip contents are control contents.")
+    note="Interlock and trip contents are control contents.", fb="Flow/Signal/Control")
 cls("StatusContent","status content","conteúdo de estado", supers=[DESC_ICE, restr(DESCRIBES,SOME,QUALITY)],
     nld="descriptive information content entity whose content is discrete: that a quality has crossed a limit (high level, flame detected) or the condition of an artifact (pump running)",
-    note="Alarms are status contents with reference to a limit. Switches and detectors produce status content.")
+    note="Alarms are status contents with reference to a limit. Switches and detectors produce status content.", fb="Flow/Signal/Status")
 
 # ---------------------------------------------------------------- genus-level functions (COPI refinements of FB classes) and the nine device genera
 GEN = {}
@@ -397,7 +397,7 @@ ids["copi:COPI_0000015"]="copi:COPI_0000015"
 cls("copi:COPI_0000015","loss of containment","perda de contenção", supers=[PROCESS], nld="process in which contained material leaves its containment device other than through an outflow of its storing function", source="ODR-009 §3")
 
 # ---------------------------------------------------------------- annotation properties used by the export
-for key,en,nld in [("signature","signature","JSON signature of a term function: verb, secondary, tertiary, inflows, outflows, primary flow, interface"),
+for key,en,nld in [("signature","signature","JSON signature of a term function: verb, secondary, tertiary, inflows, outflows, primary flow, interface, measured quantity. A flow takes as value a class that carries a Functional Basis flow path or a declared COPI extension; the measured quantity is the quality class that the measurement content describes, and is filled only when an outflow is a measurement signal"),
                    ("primaryFunction","primary function","IRI of the function that gives the artifact its box (curation convention; design context)"),
                    ("identityFunction","identity function","IRI of the term function whose signature individuates the artifact type, alone or together with a declared differentia outside the signature"),
                    ("constructiveType","constructive type","constructive differentia of the term (gate, ball, shell-and-tube), kept as annotation, never as functional subclass"),
@@ -422,6 +422,14 @@ for sk, tk, ten, tpt, tfb, tnld in TERTIARIES:
     sen, spt, sfb, snld = sec_nld[sk]
     cls(tk+"Function", ten, tpt, supers=[ids[sk+"Function"]], nld=tnld,
         adapted=f"Hirtz et al. (2002), Appendix B, tertiary '{tfb}' under '{sfb}'", fb=f"Function/{_PRIM_OF[sk]}/{sfb}/{tfb}")
+# ---------------------------------------------------------------- material flows (2026-11-17)
+# Material: no class is declared here. The Functional Basis material terms are rendered by the portions of matter of
+# copi-vocab, which are participants of a material flow, not subclasses of flow. The path is asserted here; copi-vocab
+# keeps the declarations. portion of fluid (COPI_0000037) and portion of fluid mixture (COPI_0000044) carry no path:
+# they are declared COPI extensions. The measured quantities of sensors are qualities of copi-vocab too
+# (COPI_0000052–55, 806, 807); they are listed in hirtz-coverage.csv, not here.
+for iri,path in [(PORTION_GAS,"Flow/Material/Gas"),(PORTION_LIQ,"Flow/Material/Liquid"),(PORTION_SOLID,"Flow/Material/Solid"),(PORTION_MIXTURE,"Flow/Material/Mixture")]:
+    w(f'{iri} {FBTERM} "{path}" .')
 w()
 
 print("\n".join(OUT))

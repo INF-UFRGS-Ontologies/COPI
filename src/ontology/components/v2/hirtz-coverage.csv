@@ -52,4 +52,59 @@ Tabela 5 (funções),Function/Support,primária,adotada,copi:COPI_0001020,suppor
 Tabela 5 (funções),Function/Support/Stabilize,secundária,adotada,copi:COPI_0001038,stabilizing function,
 Tabela 5 (funções),Function/Support/Secure,secundária,adotada,copi:COPI_0001039,securing function,
 Tabela 5 (funções),Function/Support/Position,secundária,adotada,copi:COPI_0001040,positioning function,
-Tabela 3 (fluxos),Flow,raiz,adotada,copi:COPI_0001000,flow,
+Tabela 3 (fluxos),Flow,raiz,adotada,copi:COPI_0001000,flow,o fluxo é um processo: a travessia de uma interface
+Tabela 3 (fluxos),Flow/Material,primária,adotada,copi:COPI_0001001,material flow,
+Tabela 3 (fluxos),Flow/Material/Human,secundária,não adotada,,,
+Tabela 3 (fluxos),Flow/Material/Gas,secundária,adaptada,copi:COPI_0000039,portion of gas,"participante do fluxo de material (porção de matéria), não subclasse de fluxo"
+Tabela 3 (fluxos),Flow/Material/Liquid,secundária,adaptada,copi:COPI_0000038,portion of liquid,"participante do fluxo de material (porção de matéria), não subclasse de fluxo"
+Tabela 3 (fluxos),Flow/Material/Solid,secundária,adaptada,copi:COPI_0000040,portion of solid,"participante do fluxo de material (porção de matéria), não subclasse de fluxo"
+Tabela 3 (fluxos),Flow/Material/Solid/Object,terciária,adaptada,obo:BFO_0000030,object,"classe da BFO, aceita como participante do fluxo de material; não carrega o caminho"
+Tabela 3 (fluxos),Flow/Material/Solid/Particulate,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Material/Solid/Composite,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Material/Plasma,secundária,não adotada,,,
+Tabela 3 (fluxos),Flow/Material/Mixture,secundária,adaptada,copi:COPI_0000808,portion of mixture,"participante do fluxo de material (porção de matéria), não subclasse de fluxo. Cobre misturas com sólido (dryer e filter press na amostra); a mistura só de fluidos é a subclasse COPI_0000044"
+Tabela 3 (fluxos),Flow/Material/Mixture/Gas-gas,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Material/Mixture/Liquid-liquid,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Material/Mixture/Solid-solid,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Material/Mixture/Solid-Liquid,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Material/Mixture/Liquid-Gas,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Material/Mixture/Solid-Gas,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Material/Mixture/Solid-Liquid-Gas,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Material/Mixture/Colloidal,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Signal,primária,adotada,copi:COPI_0001003,signal flow,
+Tabela 3 (fluxos),Flow/Signal/Status,secundária,adaptada,copi:COPI_0001053,status content,"conteúdo de informação concretizado pelo fluxo de sinal, não subclasse de fluxo"
+Tabela 3 (fluxos),Flow/Signal/Status/Auditory,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Signal/Status/Olfactory,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Signal/Status/Tactile,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Signal/Status/Taste,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Signal/Status/Visual,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Signal/Control,secundária,adaptada,copi:COPI_0001052,control content,"conteúdo de informação concretizado pelo fluxo de sinal, não subclasse de fluxo"
+Tabela 3 (fluxos),Flow/Signal/Control/Analog,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Signal/Control/Discrete,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Energy,primária,adotada,copi:COPI_0001002,energy flow,"os tipos de energia do Hirtz são qualidades do portador (energy, copi:COPI_0001008)"
+Tabela 3 (fluxos),Flow/Energy/Human,secundária,não adotada,,,
+Tabela 3 (fluxos),Flow/Energy/Acoustic,secundária,não adotada,,,
+Tabela 3 (fluxos),Flow/Energy/Biological,secundária,não adotada,,,
+Tabela 3 (fluxos),Flow/Energy/Chemical,secundária,adaptada,copi:COPI_0001047,chemical energy,"qualidade do portador (padrão MENO), não subclasse de fluxo"
+Tabela 3 (fluxos),Flow/Energy/Electrical,secundária,adaptada,copi:COPI_0001046,electrical energy,"qualidade do portador (padrão MENO), não subclasse de fluxo"
+Tabela 3 (fluxos),Flow/Energy/Electromagnetic,secundária,adaptada,copi:COPI_0001048,electromagnetic energy,"qualidade do portador (padrão MENO), não subclasse de fluxo"
+Tabela 3 (fluxos),Flow/Energy/Electromagnetic/Optical,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Energy/Electromagnetic/Solar,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Energy/Hydraulic,secundária,adaptada,copi:COPI_0001043,hydraulic energy,"qualidade do portador (padrão MENO), não subclasse de fluxo"
+Tabela 3 (fluxos),Flow/Energy/Magnetic,secundária,não adotada,,,
+Tabela 3 (fluxos),Flow/Energy/Mechanical,secundária,adaptada,copi:COPI_0001042,mechanical energy,"qualidade do portador (padrão MENO), não subclasse de fluxo"
+Tabela 3 (fluxos),Flow/Energy/Mechanical/Rotational,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Energy/Mechanical/Translational,terciária,não adotada,,,
+Tabela 3 (fluxos),Flow/Energy/Pneumatic,secundária,adaptada,copi:COPI_0001044,pneumatic energy,"qualidade do portador (padrão MENO), não subclasse de fluxo"
+Tabela 3 (fluxos),Flow/Energy/Radioactive-Nuclear,secundária,não adotada,,,
+Tabela 3 (fluxos),Flow/Energy/Thermal,secundária,adaptada,copi:COPI_0001045,thermal energy,"qualidade do portador (padrão MENO), não subclasse de fluxo"
+Extensão COPI,COPI/Flow/Material/Fluid,—,extensão,copi:COPI_0000037,portion of fluid,O Hirtz só tem Gas e Liquid. 15 dos 40 termos da amostra de 2026-11-11 usam Fluid porque a definição não diz a fase
+Extensão COPI,COPI/Flow/Material/FluidMixture,—,extensão,copi:COPI_0000044,portion of fluid mixture,Decorre da extensão Fluid: mistura sem sólido cujas fases a definição não detalha. É subclasse de portion of fluid e de portion of mixture
+Extensão COPI,COPI/Flow/Signal/Measurement,—,extensão,copi:COPI_0001051,measurement content,"No Hirtz a informação de medida cai em Status. Sem ela, level element e level switch ficam com a mesma assinatura"
+Extensão COPI,COPI/Signature/MeasuredQuantity,—,extensão,,grandeza medida (campo da assinatura),"O Hirtz não tem campo para isso. Valor: a classe de qualidade descrita pelo conteúdo de medição, só quando a saída é sinal de medição. Sem ela, os elementos de pressão diferencial, nível e umidade ficam com a mesma assinatura"
+Extensão COPI,COPI/MeasuredQuantity/Temperature,—,extensão,copi:COPI_0000052,temperature,valor do campo grandeza medida
+Extensão COPI,COPI/MeasuredQuantity/Pressure,—,extensão,copi:COPI_0000053,pressure,valor do campo grandeza medida
+Extensão COPI,COPI/MeasuredQuantity/FlowRate,—,extensão,copi:COPI_0000054,flow rate,valor do campo grandeza medida
+Extensão COPI,COPI/MeasuredQuantity/Level,—,extensão,copi:COPI_0000055,level,valor do campo grandeza medida. A definição do copi-vocab põe o portador no vaso; a decisão de 2026-11-17 o põe numa porção de fluido: alinhar
+Extensão COPI,COPI/MeasuredQuantity/DifferentialPressure,—,extensão,copi:COPI_0000806,differential pressure,"valor do campo grandeza medida; classe nova no copi-vocab, pedida pela amostra"
+Extensão COPI,COPI/MeasuredQuantity/Moisture,—,extensão,copi:COPI_0000807,moisture,"valor do campo grandeza medida; classe nova no copi-vocab, pedida pela amostra"

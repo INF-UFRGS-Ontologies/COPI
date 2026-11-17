@@ -370,16 +370,17 @@ copi:COPI_0000043 a owl:Class ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 copi:COPI_0000044 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000037 ;
-    rdfs:label "fluid mixture"@en , "mistura fluida"@pt-br ;
+    rdfs:subClassOf copi:COPI_0000037 , copi:COPI_0000808 ;
+    rdfs:label "portion of fluid mixture"@en , "porção de mistura fluida"@pt-br ;
+    iof-av:synonym "fluid mixture"@en , "mistura fluida"@pt-br ;
     iof-av:isPrimitive "true"^^xsd:boolean ;
-    iof-av:naturalLanguageDefinition "A fluid portion consisting of two or more components or phases that have not yet been fully separated."@en ,
-        "Uma porção fluida composta por dois ou mais componentes ou fases que ainda não foram completamente separados."@pt-br ;
-    rdfs:comment "A fluid portion consisting of two or more components or phases that have not yet been fully separated."@en ,
-                 "Uma porção fluida composta por dois ou mais componentes ou fases que ainda não foram completamente separados."@pt-br ;
-    iof-av:firstOrderLogicAxiom "FluidMixture(x) → PortionOfFluid(x)" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'fluid mixture' then x is a 'portion of fluid'"@en ,
-        "se x é uma 'mistura fluida' então x é uma 'porção de fluido'"@pt-br ;
+    iof-av:naturalLanguageDefinition "A portion of fluid consisting of two or more components or phases that have not yet been fully separated."@en ,
+        "Uma porção de fluido composta por dois ou mais componentes ou fases que ainda não foram completamente separados."@pt-br ;
+    rdfs:comment "A portion of fluid consisting of two or more components or phases that have not yet been fully separated."@en ,
+                 "Uma porção de fluido composta por dois ou mais componentes ou fases que ainda não foram completamente separados."@pt-br ;
+    iof-av:firstOrderLogicAxiom "PortionOfFluidMixture(x) → PortionOfFluid(x) ∧ PortionOfMixture(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'portion of fluid mixture' then x is a 'portion of fluid' and a 'portion of mixture'"@en ,
+        "se x é uma 'porção de mistura fluida' então x é uma 'porção de fluido' e uma 'porção de mistura'"@pt-br ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 ### 3.2 — InformationContentEntity hierarchy (ODR-010 §3)
@@ -734,14 +735,15 @@ copi:COPI_0000392 a owl:Class ;
 
 copi:COPI_0000393 a owl:Class ;
     rdfs:subClassOf copi:COPI_0000037 ;
-    rdfs:label "fuel portion"@en , "porção de combustível"@pt-br ;
+    rdfs:label "portion of fuel"@en , "porção de combustível"@pt-br ;
+    iof-av:synonym "fuel portion"@en ;
     iof-av:isPrimitive "true"^^xsd:boolean ;
     iof-av:naturalLanguageDefinition "A portion of fluid supplied to a combustion process as the source of chemical energy, in gaseous or liquid form."@en ,
         "Uma porção de fluido fornecida a um processo de combustão como fonte de energia química, em forma gasosa ou líquida."@pt-br ;
     rdfs:comment "A portion of fluid supplied to a combustion process as the source of chemical energy, in gaseous or liquid form."@en ,
                  "Uma porção de fluido fornecida a um processo de combustão como fonte de energia química, em forma gasosa ou líquida."@pt-br ;
-    iof-av:firstOrderLogicAxiom "FuelPortion(x) → PortionOfFluid(x)" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'fuel portion' then x is a portion of matter"@en ;
+    iof-av:firstOrderLogicAxiom "PortionOfFuel(x) → PortionOfFluid(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'portion of fuel' then x is a portion of matter"@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 copi:COPI_0000394 a owl:Class ;
@@ -867,4 +869,45 @@ copi:COPI_0000403 a owl:Class ;
                  "Uma qualidade inerente a uma entidade material que representa sua localização espacial ou deslocamento em relação a uma referência."@pt-br ;
     iof-av:firstOrderLogicAxiom "Position(q) → Quality(q)" ;
     iof-av:semiFormalNaturalLanguageAxiom "if q is a 'position' then q is a 'quality'"@en ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+# ---- Review of 2026-11-17 (Functional Basis flows and measured quantities of sensors; see components/v2/README-v2.md)
+
+copi:COPI_0000806 a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000019 ;
+    rdfs:label "differential pressure"@en , "pressão diferencial"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A quality inhering in a portion of fluid that represents the difference between the pressures it exerts at two points."@en ,
+        "Uma qualidade inerente a uma porção de fluido que representa a diferença entre as pressões que ela exerce em dois pontos."@pt-br ;
+    rdfs:comment "A quality inhering in a portion of fluid that represents the difference between the pressures it exerts at two points."@en ,
+                 "Uma qualidade inerente a uma porção de fluido que representa a diferença entre as pressões que ela exerce em dois pontos."@pt-br ;
+    iof-av:firstOrderLogicAxiom "DifferentialPressure(q) → Quality(q)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if q is a 'differential pressure' then q is a 'quality'"@en ,
+        "se q é uma 'pressão diferencial' então q é uma 'qualidade'"@pt-br ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000807 a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000019 ;
+    rdfs:label "moisture"@en , "umidade"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A quality inhering in a portion of fluid or of solid that represents the amount of water it holds."@en ,
+        "Uma qualidade inerente a uma porção de fluido ou de sólido que representa a quantidade de água que ela contém."@pt-br ;
+    rdfs:comment "A quality inhering in a portion of fluid or of solid that represents the amount of water it holds."@en ,
+                 "Uma qualidade inerente a uma porção de fluido ou de sólido que representa a quantidade de água que ela contém."@pt-br ;
+    iof-av:firstOrderLogicAxiom "Moisture(q) → Quality(q)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if q is a 'moisture' then q is a 'quality'"@en ,
+        "se q é uma 'umidade' então q é uma 'qualidade'"@pt-br ;
+    rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
+
+copi:COPI_0000808 a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000040 ;
+    rdfs:label "portion of mixture"@en , "porção de mistura"@pt-br ;
+    iof-av:isPrimitive "true"^^xsd:boolean ;
+    iof-av:naturalLanguageDefinition "A bounded portion of matter consisting of two or more components or phases that have not been fully separated, whatever their state (a slurry, a filter cake, a wet solid, a particle-laden gas)."@en ,
+        "Uma porção delimitada de matéria composta por dois ou mais componentes ou fases que não foram completamente separados, qualquer que seja o seu estado (uma lama, uma torta de filtro, um sólido úmido, um gás com particulado)."@pt-br ;
+    rdfs:comment "A bounded portion of matter consisting of two or more components or phases that have not been fully separated, whatever their state (a slurry, a filter cake, a wet solid, a particle-laden gas)."@en ,
+                 "Uma porção delimitada de matéria composta por dois ou mais componentes ou fases que não foram completamente separados, qualquer que seja o seu estado (uma lama, uma torta de filtro, um sólido úmido, um gás com particulado)."@pt-br ;
+    iof-av:firstOrderLogicAxiom "PortionOfMixture(x) → MaterialEntity(x)" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if x is a 'portion of mixture' then x is a 'material entity'"@en ,
+        "se x é uma 'porção de mistura' então x é uma 'entidade material'"@pt-br ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
