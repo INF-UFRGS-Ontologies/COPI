@@ -28,6 +28,12 @@ checks=[
  ("proc1 momentum transfer", (T.proc1,RDF.type,C.COPI_0000003) in g),
  ("pump1 momentum-transfer device (closure)", C.COPI_0000016 in closure(T.pump1)),
  ("no unsatisfiable classes", not any(True for _ in g.subjects(RDFS.subClassOf,OWL.Nothing))),
+ # review of 2026-11-17: control valves share the control signal, not the verb
+ ("process-controlled flow function ⊑ magnitude control", C.COPI_0001016 in supers(C.COPI_0000027)),
+ ("process-controlled flow function not ⊑ regulating", C.COPI_0001030 not in supers(C.COPI_0000027)),
+ ("on-off (binary) function not ⊑ regulating", C.COPI_0001030 not in supers(T.BinaryFlowControlFunction)),
+ ("on-off (binary) function satisfiable", OWL.Nothing not in supers(T.BinaryFlowControlFunction)),
+ ("modulating function ⊑ regulating", C.COPI_0001030 in supers(T.ModulatingFlowControlFunction)),
 ]
 # ---- annotation standard of copi-core-v2.ttl (same as the frozen v1: bilingual definition, comment, semiformal,
 # example, explanatory note; FOL; isPrimitive with bilingual rationale when primitive; adaptedFrom or source)

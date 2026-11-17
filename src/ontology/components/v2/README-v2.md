@@ -48,3 +48,14 @@ Resultado: hierarquia de propriedades regular; nenhuma classe insatisfazível; 1
 - `copi-enriched.owl`: export v2 (funções de termo sob as funções de gênero; `realizedIn only` com fluxos; partições; sem os 16 axiomas par a par).
 - Guard novo: `signal transmission function` sob Sensing (já é); nenhuma função de termo sem gênero primário.
 - ODR-024/025/026 (em `COPIeditor/docs/ontology-decisions/`).
+
+## Revisão de 2026-11-17 (baixo risco)
+
+Duas mudanças saídas da revisão da assinatura do passo 5 (`COPIeditor/eval/fb-signature-*`):
+
+1. **Identidade.** O cabeçalho e a anotação `identity function` passam a admitir uma diferença declarada fora da assinatura (construtiva, posicional ou paramétrica) quando tipos irmãos têm a mesma assinatura. Só anotação. A emenda do ODR-025 §1 está pendente.
+2. **Control valves.** `process-controlled flow function` (COPI_0000027) deixa de ser assertada sob *Regulating*: toda control valve a porta, e a on-off control valve aciona e bloqueia mas não regula. Ela continua sob *Magnitude control* via `flow control function`. O que as control valves têm em comum é o sinal de controle, agora assertado no processo de realização: `process-controlled flow process` (COPI_0000033) ⊑ ∃hasInflow.(SignalFlow ⊓ ∃concretizes.ControlContent).
+
+Verificação: mesma receita acima, com ROBOT 1.9.8 + HermiT. O commit anterior deu 20/20 e este dá 25/25; as cinco verificações novas do `check.py` cobrem a função das control valves (não ⊑ regulating, ⊑ magnitude control, função on-off satisfazível e fora de regulating, função moduladora sob regulating). Os guards 02 e 06 não são afetados, porque leem `control valve ⊑ valve` e `COPI_0000027 ⊑ flow control function`, que não mudaram.
+
+Fica de fora, por depender de verificação ainda aberta: o novo rótulo da função (candidato: "final control function", termo da ISO 15926-4), o transmissor sob *Processing*, os campos novos da anotação `signature` e a tabela de fluxos do Hirtz.

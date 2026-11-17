@@ -74,3 +74,11 @@ t:inflow1 a copi:COPI_0001001 ; obo:BFO_0000057 t:liquidA .
 t:outflow1 a copi:COPI_0001001 , copi:COPI_0001002 ; obo:BFO_0000057 t:liquidB .
 t:liquidA a copi:COPI_0000038 . t:liquidB a copi:COPI_0000038 .
 # expected: proc1 hasInflowParticipant liquidA ; proc1 hasOutflowParticipant liquidB (via chains)
+
+# control valves (review of 2026-11-17): the process-controlled flow function no longer implies regulating.
+# ids: process-controlled flow function COPI_0000027, Actuating 1029, Regulating 1030, Stopping 1032
+t:BinaryFlowControlFunction a owl:Class ; rdfs:label "binary flow control function (test)" ;
+  rdfs:subClassOf copi:COPI_0000027 , copi:COPI_0001029 , copi:COPI_0001032 .      # on-off: actuates and stops
+t:ModulatingFlowControlFunction a owl:Class ; rdfs:label "modulating flow control function (test)" ;
+  rdfs:subClassOf copi:COPI_0000027 , copi:COPI_0001030 .                          # modulating: regulates
+# expected: Binary... is satisfiable and NOT ⊑ regulating function; Modulating... ⊑ regulating function
