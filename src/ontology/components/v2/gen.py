@@ -419,7 +419,7 @@ w()
 # ---------------------------------------------------------------- annotation properties used by the export
 for key,en,nld in [("signature","signature","JSON signature of a term function: verb, secondary, tertiary, inflows, outflows, primary flow, interface"),
                    ("primaryFunction","primary function","IRI of the function that gives the artifact its box (curation convention; design context)"),
-                   ("identityFunction","identity function","IRI of the term function whose signature individuates the artifact type"),
+                   ("identityFunction","identity function","IRI of the term function whose signature individuates the artifact type, alone or together with a declared differentia outside the signature"),
                    ("constructiveType","constructive type","constructive differentia of the term (gate, ball, shell-and-tube), kept as annotation, never as functional subclass")]:
     w(f'{nid(key)} a owl:AnnotationProperty ;')
     w(f'    rdfs:label "{en}"@en , "{esc(ANN[key]["label_pt"])}"@pt-br ;')
