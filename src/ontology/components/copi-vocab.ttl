@@ -83,15 +83,16 @@ copi:COPI_0000025 a owl:Class ;
     rdfs:subClassOf iof-constr:DesignedFunction ,
         [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000009 ] ,
         [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000009 ] ;
-    rdfs:label "containment function"@en , "função de contenção"@pt-br ;
+    rdfs:label "material storing function"@en , "função de armazenamento de material"@pt-br ;
+    iof-av:synonym "containment function"@en , "função de contenção"@pt-br ;
     iof-av:isPrimitive "true"^^xsd:boolean ;
     iof-av:naturalLanguageDefinition "An identity-giving designed function realized in a MaterialContainment process; the function of holding a fluid or solid material within a bounded volume."@en ,
         "Uma função projetada identitária realizada em um processo de MaterialContainment; a função de manter um material fluido ou sólido dentro de um volume delimitado."@pt-br ;
     rdfs:comment "An identity-giving designed function realized in a MaterialContainment process; the function of holding a fluid or solid material within a bounded volume."@en ,
                  "Uma função projetada identitária realizada em um processo de MaterialContainment; a função de manter um material fluido ou sólido dentro de um volume delimitado."@pt-br ;
-    iof-av:firstOrderLogicAxiom "ContainmentFunction(f) → DesignedFunction(f) ∧ ∃p(MaterialContainment(p) ∧ realizedIn(f,p)) ∧ ∀p(realizedIn(f,p) → MaterialContainment(p))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'containment function' then f is a 'designed function' that is 'realized in' at least one 'material containment' and is 'realized in' only 'material containment' processes"@en ,
-        "se f é uma 'função de contenção' então f é uma 'função projetada' que é 'realizada em' ao menos uma 'contenção de material' e é 'realizada em' apenas processos de 'contenção de material'"@pt-br ;
+    iof-av:firstOrderLogicAxiom "MaterialStoringFunction(f) → DesignedFunction(f) ∧ ∃p(MaterialContainment(p) ∧ realizedIn(f,p)) ∧ ∀p(realizedIn(f,p) → MaterialContainment(p))" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'material storing function' then f is a 'designed function' that is 'realized in' at least one 'material containment' and is 'realized in' only 'material containment' processes"@en ,
+        "se f é uma 'função de armazenamento de material' então f é uma 'função projetada' que é 'realizada em' ao menos uma 'contenção de material' e é 'realizada em' apenas processos de 'contenção de material'"@pt-br ;
     iof-av:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 

@@ -69,7 +69,7 @@ checks.extend(_res)
 _U=lambda c: URIRef(str(C)+c.split(":",1)[1])
 _hier=[p for p,v in _by_path.items() if p.startswith("Function/") and p.rsplit("/",1)[0] in _by_path and _U(_by_path[p.rsplit("/",1)[0]][0]) not in supers(_U(v[0]))]
 checks.append((f"function path hierarchy = class hierarchy ({sum(p.startswith('Function') for p in _by_path)} function classes)" + (f" — {_hier[:5]}" if _hier else ""), not _hier))
-checks.append(("containment function ⊑ storing, not ⊑ containing", C.COPI_0001033 in supers(C.COPI_0000025) and C.COPI_0001091 not in supers(C.COPI_0000025)))
+checks.append(("material storing function (COPI_0000025) ⊑ storing, not ⊑ containing", C.COPI_0001033 in supers(C.COPI_0000025) and C.COPI_0001091 not in supers(C.COPI_0000025)))
 checks.append(("term function at a tertiary ⊑ its secondary and primary", C.COPI_0001021 in supers(T.DehydrationFunction) and C.COPI_0001013 in supers(T.DehydrationFunction)))
 def _refused(path):
     try: _hc.resolve(path,_cov); return False

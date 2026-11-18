@@ -328,7 +328,7 @@ for key,en,pt,parent,nld,extra_supers in genus_fns:
     GEN[key]=cls(key,en,pt,supers=[p]+extra_supers, nld=nld, note="Genus-level function of COPI: the parent of the term functions (e.g. pumping function) of one artifact genus. Refines a Functional Basis class; not itself in the Functional Basis.", source="ODR-025")
 
 # re-parenting of existing vocab functions (asserted here; copi-vocab keeps their declarations)
-w(f"{CONTAINMENT_FN} rdfs:subClassOf {ids['StoringFunction']} .    # containment function ⊑ storing, not ⊑ containing: in copi-vocab it gathers storing, containing and collecting of material")
+w(f"{CONTAINMENT_FN} rdfs:subClassOf {ids['StoringFunction']} .    # material storing function (formerly 'containment function') ⊑ storing, not ⊑ containing: in copi-vocab it gathers storing, containing and collecting of material")
 w(f"{FLOWCTRL_FN} rdfs:subClassOf {ids['MagnitudeControlFunction']} .    # flow control function ⊑ magnitude control: it covers regulating (control valves) AND stopping (block valves); the secondary is the term's (2026-11-04)")
 w("# copi:COPI_0000027 (process-controlled flow function) is no longer asserted under regulating (2026-11-17): every control valve bears it, and the on-off control valve actuates and stops but does not regulate (Hirtz: Regulate adjusts a flow in response to a control signal). It keeps magnitude control through flow control function. What control valves share is the control signal, asserted on the realization process:")
 w(f"copi:COPI_0000033 rdfs:subClassOf {restr(HAS_INFLOW,SOME, inter(SFLOW, restr(CONCRETIZES,SOME,ids['ControlContent'])))} .   # process-controlled flow process: receives a signal flow that carries control content")

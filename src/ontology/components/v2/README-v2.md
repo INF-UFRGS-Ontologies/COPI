@@ -103,7 +103,7 @@ Pontos abertos, registrados na tabela e não decididos aqui:
 
 - `differential pressure` como qualidade de uma porção de fluido ou como qualidade relacional (BFO_0000145).
 - A definição de `level` no copi-vocab põe o portador no vaso; o padrão do sensor o põe numa porção de fluido.
-- Renomear a `containment function` (COPI_0000025), que fica ao lado de `containing function`, e reparentar as quatro subclasses dela nos terciários (lado do editor).
+- ~~Renomear a `containment function` (COPI_0000025)~~ (2026-11-18): agora `material storing function`. Reparentar as quatro subclasses dela nos terciários continua pendente, do lado do editor.
 - ~~Fundir a `detection function` (COPI_0000465, copi-enriched) na `detecting function`~~ (2026-11-18): o export v2 do editor a funde pelo `MERGED_INTO_CORE` (a 465 fica como stub depreciado ⊑ COPI_0001093) e o rótulo PT da 1093 volta a "função de detecção". Com HermiT, detector, flame detector e gas detector continuam instrument; o detector genérico deixa de ser measurement instrument, e o `detection process` (COPI_0000466) fica sem função que se realize nele.
 - Outras classes de material do copi-vocab fora da convenção "portion of X": absorbent phase, rich absorbent, hydraulic fluid, exhaust gas, depleted fluid, hydrocarbon fluid, formation fluid, drilling fluid, combustion product, heat transfer medium, carrier fluid, rock cuttings.
 - O `copi-enriched.owl` ainda cita os rótulos antigos em 9 definições e 3 axiomas em FOL; muda no próximo export.
@@ -122,3 +122,9 @@ Decisão 3 do documento de revisão, opção B.
 Do lado do editor, o processo do transmissor não volta a ser `MeasurementProcess`. O gate de ancoragem e a verificação do ODR-009 do `verify_owl.sh`, que hoje falham por isso, precisam ser portados para a v2 em vez de corrigidos no baseline.
 
 Verificação: ROBOT 1.9.8 + HermiT, nenhuma classe insatisfazível, 53/53 no `check.py`.
+
+## Revisão de 2026-11-18 — renome da COPI_0000025
+
+`containment function` passa a `material storing function` ("função de armazenamento de material"), com o rótulo antigo em `iof-av:synonym`. Motivo: ela ficava ao lado de `containing function` com um nome quase idêntico sem ser o terciário Contain. O IRI não muda, e o nome legível `ContainmentFunction` do editor também não. Com isso, `containing function` recebe em português o rótulo "função de contenção" no lugar de "função de confinamento".
+
+Não mudam: `containment device` (COPI_0000022), `material containment` (COPI_0000009) e `loss of containment` (COPI_0000015). O `copi-enriched.owl` e o banco do editor ainda citam o rótulo antigo em prosa; mudam no próximo export e no reenriquecimento.
