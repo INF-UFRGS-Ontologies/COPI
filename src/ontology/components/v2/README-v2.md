@@ -135,7 +135,7 @@ Decisão 4 do documento de revisão. A anotação `signature` ganha três campos
 
 | Campo | Valores | Regra |
 |---|---|---|
-| `force` | `functional`, `constructive`, `mixed` | Onde está a diferença do termo em relação ao gênero |
+| `force` | `functional`, `constructive`, `mixed` | Onde está a diferença do termo em relação ao gênero. Derivada do passo 3 do método, não preenchida à parte |
 | `actuation` | um fluxo controlado de `hirtz-coverage.csv`, ou `none` | Só quando o verbo primário é Control magnitude; `not applicable` nos demais |
 | `protection` | `yes`, `not declared` | `yes` só quando a definição afirma o propósito de proteção |
 
@@ -148,6 +148,16 @@ Regras que acompanham os campos, das nove questões do confronto às cegas:
 - "Sem valor" na secundária significa a função afirmada na primária; no terciário, na secundária.
 - Defeito de definição vale quando a definição não dá diferença nenhuma em relação ao gênero.
 - A origem do sinal processado é `not applicable` fora de Signal/Process.
+
+Correspondência com o passo 3 do método (differentia), que é a única fonte; a força e o tipo da diferença fora da assinatura são calculados a partir dele, e o passo 3 admite mais de um desfecho por termo:
+
+| Desfecho do passo 3 | `force` | Diferença fora da assinatura |
+|---|---|---|
+| funcional | `functional` | nenhuma |
+| estrutural | `constructive` | construtiva |
+| funcional e estrutural | `mixed` | construtiva |
+| de uso | a do gênero | posicional ou paramétrica |
+| nenhuma | a do gênero | defeito de definição |
 
 O terciário continua no JSON como o enriquecimento o gravou, mas a identidade lê a classe sob a qual a função de termo é afirmada. Os três campos novos estão nas linhas `extensão` de `hirtz-coverage.csv`.
 
