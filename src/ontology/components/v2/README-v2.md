@@ -128,3 +128,29 @@ Verificação: ROBOT 1.9.8 + HermiT, nenhuma classe insatisfazível, 53/53 no `c
 `containment function` passa a `material storing function` ("função de armazenamento de material"), com o rótulo antigo em `iof-av:synonym`. Motivo: ela ficava ao lado de `containing function` com um nome quase idêntico sem ser o terciário Contain. O IRI não muda, e o nome legível `ContainmentFunction` do editor também não. Com isso, `containing function` recebe em português o rótulo "função de contenção" no lugar de "função de confinamento".
 
 Não mudam: `containment device` (COPI_0000022), `material containment` (COPI_0000009) e `loss of containment` (COPI_0000015). O `copi-enriched.owl` e o banco do editor ainda citam o rótulo antigo em prosa; mudam no próximo export e no reenriquecimento.
+
+## Revisão de 2026-11-18 — campos da anotação `signature`
+
+Decisão 4 do documento de revisão. A anotação `signature` ganha três campos, e o `process_signature` do `enrichment.db` precisa espelhá-los.
+
+| Campo | Valores | Regra |
+|---|---|---|
+| `force` | `functional`, `constructive`, `mixed` | Onde está a diferença do termo em relação ao gênero |
+| `actuation` | um fluxo controlado de `hirtz-coverage.csv`, ou `none` | Só quando o verbo primário é Control magnitude; `not applicable` nos demais |
+| `protection` | `yes`, `not declared` | `yes` só quando a definição afirma o propósito de proteção |
+
+Regras que acompanham os campos, das nove questões do confronto às cegas:
+
+- Regulate e Actuate exigem acionamento diferente de `none`; Change exige `none`. O sinal pode ser uma característica do próprio fluxo, e por isso a relief valve é Regulate.
+- O propósito de proteção não vira verbo quando é a única evidência. Quando a definição descreve a operação sobre o fluxo (o thermowell como barreira ao fluido), o verbo fica.
+- O verbo é "da espécie" quando o texto da espécie o afirma, e "herdado" só quando vem do gênero.
+- "Sem valor" na secundária significa a função afirmada na primária; no terciário, na secundária.
+- Defeito de definição vale quando a definição não dá diferença nenhuma em relação ao gênero.
+- A origem do sinal processado é `not applicable` fora de Signal/Process.
+
+O terciário continua no JSON como o enriquecimento o gravou, mas a identidade lê a classe sob a qual a função de termo é afirmada. Os três campos novos estão nas linhas `extensão` de `hirtz-coverage.csv`.
+
+Pendências que esta decisão cria:
+
+- Acionamento manual pede `Flow/Energy/Human`, que o Hirtz tem e a core não adotou. Pela regra de fluxos sob demanda, a classe entra quando o primeiro termo com acionamento manual for enriquecido.
+- Questão 7 (gênero sem linha de enriquecimento) segue aberta.
