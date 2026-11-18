@@ -28,7 +28,7 @@ _DEV = {
  "copi:COPI_0000022": ("containment device","ContainmentFunction","containment function","função de contenção",
    "A storage tank; a pressure vessel; a drain sump.",
    "Um tanque de armazenamento; um vaso de pressão; um sumidouro de drenagem.",
-   "A função de contenção (copi-vocab COPI_0000025) é reparentada sob armazenar/conter (Provision)."),
+   "A função de contenção (copi-vocab COPI_0000025) fica sob armazenar (Provision) e não é o terciário conter: as subclasses dela cobrem armazenar, conter e coletar."),
  "copi:COPI_0000023": ("flow-control device","FlowControlFunction","flow control function","função de controle de fluxo",
    "A control valve (regulate); a gate valve in isolation service (stop); a relief valve.",
    "Uma válvula de controle (regular); uma válvula gaveta em serviço de bloqueio (interromper); uma válvula de alívio.",

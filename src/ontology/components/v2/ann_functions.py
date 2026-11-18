@@ -140,7 +140,7 @@ _SEC = {
  "Storing": ("função de acumular um fluxo; terciários: conter, coletar",
    "A storage tank (contain); a pressure vessel (contain); a drain sump (collect).",
    "Um tanque de armazenamento (conter); um vaso de pressão (conter); um sumidouro de drenagem (coletar).",
-   " A função de contenção do copi-vocab (COPI_0000025) é reparentada aqui (conter)."),
+   " A função de contenção do copi-vocab (COPI_0000025) fica aqui, sob armazenar, e não é o terciário conter: as subclasses dela cobrem armazenar, conter e coletar."),
  "Supplying": ("função de fornecer um fluxo a partir de armazenamento",
    "A hydraulic accumulator supplying pressure; a battery or a UPS supplying electrical energy; a chemical injection tank.",
    "Um acumulador hidráulico fornecendo pressão; uma bateria ou um no-break fornecendo energia elétrica; um tanque de injeção de produto químico.", ""),
