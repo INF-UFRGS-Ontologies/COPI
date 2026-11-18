@@ -149,15 +149,17 @@ Regras que acompanham os campos, das nove questões do confronto às cegas:
 - Defeito de definição vale quando a definição não dá diferença nenhuma em relação ao gênero.
 - A origem do sinal processado é `not applicable` fora de Signal/Process.
 
-Correspondência com o passo 3 do método (differentia), que é a única fonte; a força e o tipo da diferença fora da assinatura são calculados a partir dele, e o passo 3 admite mais de um desfecho por termo:
+Correspondência com o passo 3 do método, que é a única fonte. O passo 3 lê da definição a *differentia* da espécie em relação ao gênero e classifica o seu tipo; um termo pode ter mais de um. A força é calculada a partir daí. São os mesmos três tipos de diferença declarada fora da assinatura (construtiva, posicional, paramétrica), mais a funcional, que fica dentro dela.
 
-| Desfecho do passo 3 | `force` | Diferença fora da assinatura |
-|---|---|---|
-| funcional | `functional` | nenhuma |
-| estrutural | `constructive` | construtiva |
-| funcional e estrutural | `mixed` | construtiva |
-| de uso | a do gênero | posicional ou paramétrica |
-| nenhuma | a do gênero | defeito de definição |
+| Tipo de differentia | O que a definição dá | `force` | Assinatura |
+|---|---|---|---|
+| funcional | outro verbo, outro tipo de fluxo ou outro qualificador | `functional` | própria |
+| construtiva | uma parte, um mecanismo, um corpo ou uma configuração | `constructive` | a do gênero |
+| funcional e construtiva | as duas coisas | `mixed` | própria |
+| posicional | onde o artefato é usado | a do gênero | a do gênero |
+| paramétrica | sob que parâmetro ou serviço é usado | a do gênero | a do gênero |
+
+Uma definição que não dá differentia nenhuma não é um sexto tipo: gera um alerta de defeito de definição na linha.
 
 O terciário continua no JSON como o enriquecimento o gravou, mas a identidade lê a classe sob a qual a função de termo é afirmada. Os três campos novos estão nas linhas `extensão` de `hirtz-coverage.csv`.
 
