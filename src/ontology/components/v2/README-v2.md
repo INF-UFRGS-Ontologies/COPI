@@ -154,3 +154,7 @@ O terciário continua no JSON como o enriquecimento o gravou, mas a identidade l
 Pendências que esta decisão cria:
 
 - Acionamento manual pede `Flow/Energy/Human`, que o Hirtz tem e a core não adotou. Pela regra de fluxos sob demanda, a classe entra quando o primeiro termo com acionamento manual for enriquecido.
+
+## ODR-027
+
+As decisões das revisões de 2026-11-17 e 2026-11-18 estão registradas no ODR-027 (`COPIeditor/docs/ontology-decisions/`), que emenda o ODR-024 §1, o ODR-025 §1 e §5 e o ODR-023. As anotações que citavam "ODR pending" passaram a citá-lo.

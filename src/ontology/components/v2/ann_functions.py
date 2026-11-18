@@ -366,5 +366,5 @@ for sk,tk,ten,tpt,tfb,tnld,nld_pt,ex_en,ex_pt,xen,xpt in _TER:
       fol=f"∀f ({tk}Function(f) → {sk}Function(f))",
       rat_en="Primitive, like its secondary: the Functional Basis gives the tertiary by a natural-language definition that narrows the operation of the secondary, and OWL cannot state that narrowing as a sufficient condition without reifying the operation.",
       rat_pt="Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação.",
-      sources=["ODR-024 §1", "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)", HIRTZ_T5],
+      sources=["ODR-024 §1", "ODR-027 §1–2", HIRTZ_T5],
       adapted=HIRTZ + ", Appendix B, tertiary '" + tfb + "' under '" + _SEC_FB[sk] + "'")

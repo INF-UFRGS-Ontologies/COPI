@@ -1789,6 +1789,7 @@ copi:COPI_0000024 a owl:Class ;
     iof-av:adaptedFrom "ANSI/ISA-5.1-2009 Instrumentation Symbols and Identification: measuring instrument; ISO 15926-4 reference data (RDL): stream and equipment classes" ;
     dcterms:source "ODR-023 (reading A)" ;
     dcterms:source "ODR-025 §5" ;
+    dcterms:source "ODR-027 §9" ;
     dcterms:source "ODR-009 §4 (superseded)" ;
     dcterms:source "ANSI/ISA-5.1-2009 Instrumentation Symbols and Identification" ;
     dcterms:source "Industrial Ontologies Foundry, IOF Core 202603 (spec.industrialontologies.org/ontology/core/Core/): MeasurementProcess (planned)" ;
@@ -2295,6 +2296,7 @@ copi:COPI_0001068 a owl:AnnotationProperty ;
     iof-av:explanatoryNote "Espelha o process_signature do enrichment.db; é o que a regra de compatibilidade do ODR-025 §3 lê. Desde 2026-11-17 os fluxos são valores controlados (hirtz-coverage.csv) e o sensor ganha a grandeza medida: sinal de saída com conteúdo de medição que descreve uma qualidade portada por alguma porção de fluido. A identidade do portador pelo lugar (o fluido 'no ponto do PT-101') não entra na assinatura; fica para o módulo de functional locations. Desde 2026-11-18 guarda também força, acionamento e proteção (Decisão 4 da revisão). A força é o único dos três em que dois avaliadores às cegas concordaram em todos os casos (11 de 11). O acionamento separou as válvulas da amostra e foi ruído fora de Control magnitude, daí a restrição; a ligação é do próprio Hirtz: Regulate e Actuate respondem a um sinal de controle, que pode ser uma característica do próprio fluxo (uma válvula de alívio), e Change é um ajuste fixo. A proteção não tem valor 'não' porque uma definição que cala sobre o propósito não o nega; o propósito de proteção sozinho não vira verbo. O termo terciário fica no JSON como o enriquecimento o gravou, mas a identidade lê a classe sob a qual a função de termo é afirmada."@pt-br ;
     dcterms:source "ODR-025" ;
     dcterms:source "ODR-025 §1–2" ;
+    dcterms:source "ODR-027 §6, §10" ;
     dcterms:source "Mizoguchi, R., Kitamura, Y. & Borgo, S. (2016). A unifying definition for artifact and biological functions. Applied Ontology 11(2), 129–154" ;
     rdfs:isDefinedBy copi:copi-core .
 copi:COPI_0001069 a owl:AnnotationProperty ;
@@ -2320,6 +2322,7 @@ copi:COPI_0001070 a owl:AnnotationProperty ;
     iof-av:explanatoryNote "OWL não expressa 'exatamente uma função identitária' sem reificar; a anotação registra a escolha (ODR-025 §1). Tipos irmãos podem ter a mesma assinatura quando o que os separa é construtivo, posicional ou paramétrico; a diferença é então declarada fora da assinatura (revisão de 2026-11-17; emenda do ODR-025 §1 pendente)."@pt-br ;
     dcterms:source "ODR-025" ;
     dcterms:source "ODR-025 §1–2" ;
+    dcterms:source "ODR-027 §7" ;
     dcterms:source "Mizoguchi, R., Kitamura, Y. & Borgo, S. (2016). A unifying definition for artifact and biological functions. Applied Ontology 11(2), 129–154" ;
     rdfs:isDefinedBy copi:copi-core .
 copi:COPI_0001071 a owl:AnnotationProperty ;
@@ -2342,7 +2345,7 @@ copi:COPI_0001072 a owl:AnnotationProperty ;
     skos:example "Na função de remoção: 'Function/Branch/Separate/Remove'. Na função de separação: 'Function/Branch/Separate'."@pt-br ;
     iof-av:explanatoryNote "Replaces the parallel SKOS scheme fb:, removed on 2026-11-17: the ontology is OWL only and the origin in Hirtz sits on each class. A class without this annotation is not a term of the Functional Basis; the extensions of COPI to the Functional Basis are declared in the coverage table (hirtz-coverage.csv)."@en ;
     iof-av:explanatoryNote "Substitui o esquema SKOS fb: paralelo, removido em 2026-11-17: a ontologia fica só em OWL e a origem no Hirtz fica em cada classe. Uma classe sem esta anotação não é um termo da Functional Basis; as extensões da COPI à Functional Basis são declaradas na tabela de cobertura (hirtz-coverage.csv)."@pt-br ;
-    dcterms:source "Review of 2026-11-17: OWL only (ODR pending)" ;
+    dcterms:source "ODR-027 §1" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 3 (flow classes and terms)" ;
     rdfs:isDefinedBy copi:copi-core .
@@ -2367,7 +2370,7 @@ copi:COPI_0001073 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Divide' under 'Separate'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2391,7 +2394,7 @@ copi:COPI_0001074 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Extract' under 'Separate'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2415,7 +2418,7 @@ copi:COPI_0001075 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Remove' under 'Separate'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2439,7 +2442,7 @@ copi:COPI_0001076 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Transport' under 'Transfer'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2463,7 +2466,7 @@ copi:COPI_0001077 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Transmit' under 'Transfer'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2487,7 +2490,7 @@ copi:COPI_0001078 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Translate' under 'Guide'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2511,7 +2514,7 @@ copi:COPI_0001079 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Rotate' under 'Guide'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2535,7 +2538,7 @@ copi:COPI_0001080 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Allow DOF' under 'Guide'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2559,7 +2562,7 @@ copi:COPI_0001081 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Join' under 'Couple'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2583,7 +2586,7 @@ copi:COPI_0001082 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Link' under 'Couple'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2607,7 +2610,7 @@ copi:COPI_0001083 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Increase' under 'Regulate'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2631,7 +2634,7 @@ copi:COPI_0001084 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Decrease' under 'Regulate'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2655,7 +2658,7 @@ copi:COPI_0001085 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Increment' under 'Change'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2679,7 +2682,7 @@ copi:COPI_0001086 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Decrement' under 'Change'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2703,7 +2706,7 @@ copi:COPI_0001087 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Shape' under 'Change'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2727,7 +2730,7 @@ copi:COPI_0001088 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Condition' under 'Change'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2751,7 +2754,7 @@ copi:COPI_0001089 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Prevent' under 'Stop'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2775,7 +2778,7 @@ copi:COPI_0001090 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Inhibit' under 'Stop'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2799,7 +2802,7 @@ copi:COPI_0001091 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Contain' under 'Store'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2823,7 +2826,7 @@ copi:COPI_0001092 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Collect' under 'Store'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2847,7 +2850,7 @@ copi:COPI_0001093 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Detect' under 'Sense'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2871,7 +2874,7 @@ copi:COPI_0001094 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Measure' under 'Sense'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2895,7 +2898,7 @@ copi:COPI_0001095 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Track' under 'Indicate'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 
@@ -2919,7 +2922,7 @@ copi:COPI_0001096 a owl:Class ;
     iof-av:primitiveRationale "Primitiva, como a sua secundária: a Functional Basis dá o terciário por uma definição em linguagem natural que estreita a operação da secundária, e OWL não enuncia esse estreitamento como condição suficiente sem reificar a operação."@pt-br ;
     iof-av:adaptedFrom "Hirtz et al. (2002), Appendix B, tertiary 'Display' under 'Indicate'" ;
     dcterms:source "ODR-024 §1" ;
-    dcterms:source "Review of 2026-11-17: OWL only, tertiaries as subclasses of the secondaries (ODR pending)" ;
+    dcterms:source "ODR-027 §1–2" ;
     dcterms:source "Hirtz, J., Stone, R.B., McAdams, D.A., Szykman, S. & Wood, K.L. (2002). A functional basis for engineering design: reconciling and evolving previous efforts. Research in Engineering Design 13(2), 65–82 — Table 5 (function classes and terms) and Appendix B (definitions)" ;
     rdfs:isDefinedBy copi:copi-core .
 

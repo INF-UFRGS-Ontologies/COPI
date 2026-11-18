@@ -60,7 +60,7 @@ A("copi:COPI_0000024",
   ex_en="A pressure transmitter; a temperature element with its transmitter; a Coriolis flow meter.",
   ex_pt="Um transmissor de pressão; um elemento de temperatura com seu transmissor; um medidor de vazão Coriolis.",
   note_pt="'Instrumento de medição ⊑ instrumento' passa a ser inferido no sentido em que a ISA 5.1 e a ISO 15926 leem. Sua realização é um bfo:Process, não iof:MeasurementProcess (planejado): sensoriamento contínuo não é medição planejada (ODR-009 §4 superseded). Um controlador (processar), uma chave (sentir com conteúdo de estado) e um elemento final (regular com entrada de controle) são instrumentos sem ser de medição. Desde 2026-11-18 a função é qualquer função de sinalização, não só de sensoriamento: um transmissor processa o sinal de um elemento sensor que pode estar fora dele, e é instrumento de medição pelo conteúdo do sinal que emite. Um indicador cujo processo emite conteúdo de medição também é. O guard check_tsensor_subclass_mesinstr.sparql continua válido.",
-  sources=["ODR-023 (reading A)", "ODR-025 §5", "ODR-009 §4 (superseded)", ISA51, IOF + ": MeasurementProcess (planned)"], adapted=ISA51 + ": measuring instrument; " + ISO15926)
+  sources=["ODR-023 (reading A)", "ODR-025 §5", "ODR-027 §9", "ODR-009 §4 (superseded)", ISA51, IOF + ": MeasurementProcess (planned)"], adapted=ISA51 + ": measuring instrument; " + ISO15926)
 
 # ---------------------------------------------------------------- operations (defined classes over functions)
 _OPS = {
@@ -175,7 +175,7 @@ _AP_NOTE_EN = {
  "fbTerm": "Replaces the parallel SKOS scheme fb:, removed on 2026-11-17: the ontology is OWL only and the origin in Hirtz sits on each class. A class without this annotation is not a term of the Functional Basis; the extensions of COPI to the Functional Basis are declared in the coverage table (hirtz-coverage.csv).",
 }
 for k,(en,pt,nld_pt,ex_en,ex_pt,note_pt) in _AP.items():
-    A(k, label_pt=pt, nld_pt=nld_pt, ex_en=ex_en, ex_pt=ex_pt, note_en=_AP_NOTE_EN[k], note_pt=note_pt, sources=(["Review of 2026-11-17: OWL only (ODR pending)", HIRTZ_T5, HIRTZ_T3] if k=="fbTerm" else ["ODR-025 §1–2", KITAMURA]), adapted=KITAMURA if k=="primaryFunction" else None)
+    A(k, label_pt=pt, nld_pt=nld_pt, ex_en=ex_en, ex_pt=ex_pt, note_en=_AP_NOTE_EN[k], note_pt=note_pt, sources=(["ODR-027 §1", HIRTZ_T5, HIRTZ_T3] if k=="fbTerm" else ["ODR-025 §1–2", "ODR-027 §6, §10", KITAMURA] if k=="signature" else ["ODR-025 §1–2", "ODR-027 §7", KITAMURA] if k=="identityFunction" else ["ODR-025 §1–2", KITAMURA]), adapted=KITAMURA if k=="primaryFunction" else None)
 
 HEADER = {
  "title_en": "COPI Core (v2): a process-industry core layer in BFO — functions of the Functional Basis, three flows, identity and scope",
