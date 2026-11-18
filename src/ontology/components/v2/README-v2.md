@@ -144,6 +144,7 @@ Regras que acompanham os campos, das nove questões do confronto às cegas:
 - Regulate e Actuate exigem acionamento diferente de `none`; Change exige `none`. O sinal pode ser uma característica do próprio fluxo, e por isso a relief valve é Regulate.
 - O propósito de proteção não vira verbo quando é a única evidência. Quando a definição descreve a operação sobre o fluxo (o thermowell como barreira ao fluido), o verbo fica.
 - O verbo é "da espécie" quando o texto da espécie o afirma, e "herdado" só quando vem do gênero.
+- Herança pela cadeia de gêneros (Questão 7): se a espécie cala, o verbo vem do primeiro gênero da cadeia cuja linha enriquecida o afirma com fonte. O nome do termo ou do gênero nunca autoriza um valor. Se nenhum gênero da cadeia tem linha, o campo fica sem valor e o gênero entra na fila de enriquecimento. Caso que fixou a regra: wafer check valve body herda Provision de valve body, que a ISO 15926-4 define como "CONTAINER that is the main fluid or pressure containing component of a valve", passando por check valve body.
 - "Sem valor" na secundária significa a função afirmada na primária; no terciário, na secundária.
 - Defeito de definição vale quando a definição não dá diferença nenhuma em relação ao gênero.
 - A origem do sinal processado é `not applicable` fora de Signal/Process.
@@ -153,4 +154,3 @@ O terciário continua no JSON como o enriquecimento o gravou, mas a identidade l
 Pendências que esta decisão cria:
 
 - Acionamento manual pede `Flow/Energy/Human`, que o Hirtz tem e a core não adotou. Pela regra de fluxos sob demanda, a classe entra quando o primeiro termo com acionamento manual for enriquecido.
-- Questão 7 (gênero sem linha de enriquecimento) segue aberta.
