@@ -334,7 +334,7 @@ w("# copi:COPI_0000027 (process-controlled flow function) is no longer asserted 
 w(f"copi:COPI_0000033 rdfs:subClassOf {restr(HAS_INFLOW,SOME, inter(SFLOW, restr(CONCRETIZES,SOME,ids['ControlContent'])))} .   # process-controlled flow process: receives a signal flow that carries control content")
 w(f"{INDICATION_FN} rdfs:subClassOf {ids['IndicatingFunction']} .  # indication function ⊑ indicating")
 w(f"{INSTR_FN} rdfs:subClassOf {ids['SensingFunction']} .          # instrumentation function ⊑ sensing (ODR-023, reading A; its allValuesFrom MeasurementProcess is removed in copi-vocab)")
-w(f"# {SIGTX_FN} (signal transmission function) stays under instrumentation/sensing function in copi-vocab: a transmitter senses and emits; re-parenting it under transferring (Channel) would cross two disjoint primaries (HermiT, 3/11)")
+w(f"{SIGTX_FN} rdfs:subClassOf {ids['ProcessingFunction']} .   # signal transmission function ⊑ processing (2026-11-18): a transmitter converts the signal of a sensing element, internal or external; sensing holds only when the element is internal. Both are under Signal, so no primary is crossed. In copi-vocab it no longer sits under instrumentation function")
 w(f"{RELIEF_FN} rdfs:subClassOf {ids['RegulatingFunction']} .      # safety relief function ⊑ regulating (decrease)")
 # the vocab realization processes of the transmitter functions (COPI_0000035/36, now ⊑ bfo:Process) get their
 # signal outflow here, so that 'pressure transmission function' (COPI_0000031) reaches MeasurementInstrument
@@ -362,13 +362,13 @@ for iri,en,pt,fn,note in devices:
 ids[INSTRUMENT]=INSTRUMENT
 cls(INSTRUMENT,"instrument","instrumento", supers=[MA], equiv=inter(MA, restr(BEARER_OF,SOME,PRIM["Signalling"])), primitive=False, source="ODR-023 (reading A)",
     nld="material artifact that bears a signalling function: sensing, indicating or processing a signal",
-    note="ISA 5.1: instruments include primary elements, indicators, controllers, final control elements and switches. Measurement instruments are the sensing subset.")
+    note="ISA 5.1: instruments include primary elements, indicators, controllers, final control elements and switches. Measurement instruments are those whose signal outflow carries measurement content.")
 ids[MEAS_INSTR]=MEAS_INSTR
 cls(MEAS_INSTR,"measurement instrument","instrumento de medição", supers=[INSTRUMENT],
-    equiv=inter(MA, restr(BEARER_OF,SOME, inter(ids['SensingFunction'], restr(REALIZED_IN,SOME, restr(HAS_OUTFLOW,SOME, inter(SFLOW, restr(CONCRETIZES,SOME,ids['MeasurementContent']))))))),
+    equiv=inter(MA, restr(BEARER_OF,SOME, inter(PRIM['Signalling'], restr(REALIZED_IN,SOME, restr(HAS_OUTFLOW,SOME, inter(SFLOW, restr(CONCRETIZES,SOME,ids['MeasurementContent']))))))),
     primitive=False, source="ODR-023 (reading A)",
-    nld="instrument that bears a sensing function realized in a process whose outflow is a signal flow concretizing measurement content",
-    note="MeasurementInstrument ⊑ Instrument is now inferred in the direction ISA 5.1 and ISO 15926 read it. Its realization is a bfo:Process, not iof:MeasurementProcess (planned): continuous sensing is not a planned measurement.")
+    nld="instrument that bears a signalling function realized in a process whose outflow is a signal flow concretizing measurement content",
+    note="MeasurementInstrument ⊑ Instrument is now inferred in the direction ISA 5.1 and ISO 15926 read it. Its realization is a bfo:Process, not iof:MeasurementProcess (planned): continuous sensing is not a planned measurement. Since 2026-11-18 the function is any signalling function, not only a sensing one: a transmitter processes the signal of a sensing element that may be outside it, and is a measurement instrument by the content of the signal it emits. An indicator whose process emits measurement content is one too; a controller (control content) and a switch (status content) are not.")
 
 # ---------------------------------------------------------------- operations as defined classes (keep FOMI IRIs; drop Operation 0000001)
 ops = [

@@ -92,6 +92,16 @@ _sens=[("level element measures level", T.MeasuresLevel in supers(T.LevelSensing
  ("LevelSwitch ⊑ instrument, not ⊑ measurement instrument", C.COPI_0000091 in supers(T.LevelSwitch) and C.COPI_0000024 not in supers(T.LevelSwitch))]
 checks.extend(_sens)
 
+# ---- transmitter under Processing (review of 2026-11-18)
+_MI=C.COPI_0000024; _IN=C.COPI_0000091
+checks.extend([
+ ("signal transmission function ⊑ processing, not ⊑ sensing", C.COPI_0001037 in supers(C.COPI_0000030) and C.COPI_0001035 not in supers(C.COPI_0000030)),
+ ("transmitter by the vocab function ⊑ measurement instrument", _MI in supers(T.VocabPressureTransmitter)),
+ ("transmitter with no declared signal content ⊑ instrument, not ⊑ measurement instrument", _IN in supers(T.GenericTransmitter) and _MI not in supers(T.GenericTransmitter)),
+ ("indicator with no signal outflow ⊑ instrument, not ⊑ measurement instrument", _IN in supers(T.PlainIndicator) and _MI not in supers(T.PlainIndicator)),
+ ("indicator emitting measurement content ⊑ measurement instrument", _MI in supers(T.MeasurementIndicator)),
+])
+
 checks.append((f"annotation standard on {len(_subj)} entities" + (f" — gaps: {_gaps[:8]}" if _gaps else ""), not _gaps))
 
 bad=0

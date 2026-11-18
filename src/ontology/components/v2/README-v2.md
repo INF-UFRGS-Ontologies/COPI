@@ -33,7 +33,7 @@ Resultado: hierarquia de propriedades regular; nenhuma classe insatisfazível; 1
 ## Dois achados do reasoner que mudaram a spec
 
 1. **Regularidade.** `hasInflowParticipant ⊑ has participant` + cadeia `hasInflow ∘ has participant ⊑ hasInflowParticipant` é cíclico (HermiT: "not regular"). As duas propriedades de cadeia ficam **sem** `subPropertyOf`; `has participant` e `iof:hasInput/hasOutput` são materializados delas no export por CONSTRUCT.
-2. **`signal transmission function` (COPI_0000030)** não pode ser reparentada sob *Transferring* (Channel): no vocab ela é filha de *instrumentation function*, que no v2 vira *Sensing* (Signal), e as primárias são disjuntas. Fica sob Sensing (o transmissor sente e emite).
+2. **`signal transmission function` (COPI_0000030)** não pode ser reparentada sob *Transferring* (Channel): no vocab ela é filha de *instrumentation function*, que no v2 vira *Sensing* (Signal), e as primárias são disjuntas. Ficou sob Sensing até 2026-11-18, quando passou para *Processing*, que também está sob Signal (ver a revisão dessa data).
 
 ## O que o v2 faz com o que já existe (mesmos IRIs)
 
@@ -46,7 +46,7 @@ Resultado: hierarquia de propriedades regular; nenhuma classe insatisfazível; 1
 
 - Ajuste do `copi-vocab.ttl` acima.
 - `copi-enriched.owl`: export v2 (funções de termo sob as funções de gênero; `realizedIn only` com fluxos; partições; sem os 16 axiomas par a par).
-- Guard novo: `signal transmission function` sob Sensing (já é); nenhuma função de termo sem gênero primário.
+- Guard novo: `signal transmission function` sob Processing (desde 2026-11-18); nenhuma função de termo sem gênero primário.
 - ODR-024/025/026 (em `COPIeditor/docs/ontology-decisions/`).
 - Subclasses da `containment function` nos terciários: storage function (COPI_0000197) fica sob a 0025; pressure containment function (COPI_0000381) vai para `containing function` (COPI_0001091); gravity collection function (COPI_0000754) e sample collection function (COPI_0000777) vão para `collecting function` (COPI_0001092). A migração do banco do editor está commitada (`COPIeditor/migration/odr024_fb_tertiary_parents.py`) e **só é aplicada quando o export v2 virar o padrão** do `regen_enriched_owl.py` e do `verify_owl.sh`: no caminho v1 o alocador cunharia números novos, duplicatas da 1091 e da 1092.
 
@@ -109,3 +109,16 @@ Pontos abertos, registrados na tabela e não decididos aqui:
 - O `copi-enriched.owl` ainda cita os rótulos antigos em 9 definições e 3 axiomas em FOL; muda no próximo export.
 
 Verificação: ROBOT 1.9.8 + HermiT, 48/48 no `check.py`. Os testes novos mostram que as funções de level element, level switch, elemento de pressão diferencial e elemento de umidade caem cada uma na sua classe-sonda e em nenhuma outra, que o level element é inferido como measurement instrument e que o level switch é instrument mas não measurement instrument. O `copi-core.ttl` congelado não foi tocado.
+
+## Revisão de 2026-11-18 — transmissor sob Processing
+
+Decisão 3 do documento de revisão, opção B.
+
+- **`signal transmission function` (COPI_0000030) ⊑ `processing function`.** As definições do gênero transmitter falam em receber o sinal dos sensores e convertê-lo num sinal padronizado, e seis das sete espécies dizem "through an internal or external measuring element". Sentir só vale quando o elemento é interno; processar vale nos dois casos. No copi-vocab a 0030 deixa de ser subclasse de `instrumentation function`. Sensing e Processing estão as duas sob Signal, então nenhuma primária é cruzada.
+- **`measurement instrument` (COPI_0000024) redefinido.** Passa a ser o artefato que porta uma função *Signalling* (antes: *Sensing*) realizada num processo cujo fluxo de sinal de saída concretiza conteúdo de medição. O transmissor com elemento externo continua instrumento de medição, pelo conteúdo do sinal que emite.
+- **Inferência nova, esperada.** Um indicador cujo processo emite conteúdo de medição passa a ser instrumento de medição. Um indicador sem fluxo de sinal declarado, um controller (conteúdo de controle) e uma chave (conteúdo de status) continuam só instrumento.
+- **Transmissor sem conteúdo declarado.** Uma função sob a 0030 só leva a `measurement instrument` quando o processo dela declara o conteúdo de medição. Hoje só o de pressão (COPI_0000036) declara; os de vazão, condutividade e posição dependem do export.
+
+Do lado do editor, o processo do transmissor não volta a ser `MeasurementProcess`. O gate de ancoragem e a verificação do ODR-009 do `verify_owl.sh`, que hoje falham por isso, precisam ser portados para a v2 em vez de corrigidos no baseline.
+
+Verificação: ROBOT 1.9.8 + HermiT, nenhuma classe insatisfazível, 53/53 no `check.py`.

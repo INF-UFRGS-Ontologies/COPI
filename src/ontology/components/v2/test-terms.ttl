@@ -113,3 +113,19 @@ t:LevelSwitch a owl:Class ; rdfs:label "level switch (test)" ; rdfs:subClassOf i
     [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom t:LevelSwitchingFunction ] .
 # expected: each sensing function falls under its own probe and under no other; LevelElement ⊑ measurement instrument;
 # LevelSwitch ⊑ instrument but not ⊑ measurement instrument (its signal carries status content)
+
+# transmitter under Processing (review of 2026-11-18): measurement instrument is the bearer of a signalling function whose
+# realization emits a signal with measurement content, whatever the secondary
+# ids: signal transmission function 0000030, pressure transmission function 0000031, indication function 0000028
+t:VocabPressureTransmitter a owl:Class ; rdfs:label "pressure transmitter by the vocab function (test)" ; rdfs:subClassOf iof-constr:MaterialArtifact ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0000031 ] .
+t:GenericTransmitter a owl:Class ; rdfs:label "transmitter with no declared signal content (test)" ; rdfs:subClassOf iof-constr:MaterialArtifact ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0000030 ] .
+t:PlainIndicator a owl:Class ; rdfs:label "indicator with no signal outflow (test)" ; rdfs:subClassOf iof-constr:MaterialArtifact ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom copi:COPI_0000028 ] .
+t:MeasurementIndicationFunction a owl:Class ; rdfs:label "measurement indication function (test)" ; rdfs:subClassOf copi:COPI_0000028 ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom [ a owl:Restriction ; owl:onProperty copi:COPI_0001005 ; owl:someValuesFrom [ owl:intersectionOf ( copi:COPI_0001003
+        [ a owl:Restriction ; owl:onProperty obo:BFO_0000059 ; owl:someValuesFrom copi:COPI_0001051 ] ) ] ] ] .
+t:MeasurementIndicator a owl:Class ; rdfs:label "indicator emitting measurement content (test)" ; rdfs:subClassOf iof-constr:MaterialArtifact ,
+    [ a owl:Restriction ; owl:onProperty obo:BFO_0000196 ; owl:someValuesFrom t:MeasurementIndicationFunction ] .
+# expected: VocabPressureTransmitter and MeasurementIndicator ⊑ measurement instrument; GenericTransmitter and PlainIndicator ⊑ instrument only

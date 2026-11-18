@@ -158,7 +158,7 @@ copi:COPI_0000029 a owl:Class ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
 copi:COPI_0000030 a owl:Class ;
-    rdfs:subClassOf copi:COPI_0000029 ,
+    rdfs:subClassOf iof-constr:DesignedFunction ,
         [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:someValuesFrom copi:COPI_0000035 ] ,
         [ a owl:Restriction ; owl:onProperty obo:BFO_0000054 ; owl:allValuesFrom  copi:COPI_0000035 ] ;
     rdfs:label "signal transmission function"@en , "função de transmissão de sinal"@pt-br ;
@@ -167,9 +167,9 @@ copi:COPI_0000030 a owl:Class ;
         "Uma função projetada identitária realizada em um SignalTransmissionProcess; a função de converter uma grandeza física sensoreada em um sinal elétrico ou pneumático padronizado para leitura remota, registro ou controle."@pt-br ;
     rdfs:comment "An identity-giving designed function realized in a SignalTransmissionProcess; the function of converting a sensed physical quantity into a standardized signal for remote reading, recording, or control."@en ,
                  "Uma função projetada identitária realizada em um SignalTransmissionProcess; a função de converter uma grandeza física sensoreada em um sinal padronizado para leitura remota, registro ou controle."@pt-br ;
-    iof-av:firstOrderLogicAxiom "SignalTransmissionFunction(f) → InstrumentationFunction(f) ∧ ∃p(SignalTransmissionProcess(p) ∧ realizedIn(f,p)) ∧ ∀p(realizedIn(f,p) → SignalTransmissionProcess(p))" ;
-    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'signal transmission function' then f is an 'instrumentation function' that is 'realized in' at least one 'signal transmission process' and only in such processes"@en ,
-        "se f é uma 'função de transmissão de sinal' então f é uma 'função de instrumentação' que é 'realizada em' ao menos um 'processo de transmissão de sinal' e apenas em tais processos"@pt-br ;
+    iof-av:firstOrderLogicAxiom "SignalTransmissionFunction(f) → DesignedFunction(f) ∧ ∃p(SignalTransmissionProcess(p) ∧ realizedIn(f,p)) ∧ ∀p(realizedIn(f,p) → SignalTransmissionProcess(p))" ;
+    iof-av:semiFormalNaturalLanguageAxiom "if f is a 'signal transmission function' then f is a 'designed function' that is 'realized in' at least one 'signal transmission process' and only in such processes"@en ,
+        "se f é uma 'função de transmissão de sinal' então f é uma 'função projetada' que é 'realizada em' ao menos um 'processo de transmissão de sinal' e apenas em tais processos"@pt-br ;
     iof-av:primitiveRationale "OWL gives only necessary conditions; the some+only pair characterises the function for inference."@en ;
     rdfs:isDefinedBy <https://www.inf.ufrgs.br/ontologies/copi/copi-vocab> .
 
