@@ -336,7 +336,7 @@ _TER = [
  ("Storing","Collecting","collecting function","função de coleta","Collect","function to bring a flow together into one place",
    "função de reunir um fluxo num só lugar",
    "A drain sump; a drip tray.", "Um sumidouro de drenagem; uma bandeja coletora.", "", ""),
- ("Sensing","Detecting","detecting function","função de detecção (Functional Basis)","Detect","function to discover information about a flow",
+ ("Sensing","Detecting","detecting function","função de detecção","Detect","function to discover information about a flow",
    "função de descobrir informação sobre um fluxo",
    "A flame detector; a gas detector; a level switch.",
    "Um detector de chama; um detector de gás; uma chave de nível.", "", ""),

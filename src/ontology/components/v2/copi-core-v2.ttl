@@ -2828,7 +2828,7 @@ copi:COPI_0001092 a owl:Class ;
     rdfs:isDefinedBy copi:copi-core .
 
 copi:COPI_0001093 a owl:Class ;
-    rdfs:label "detecting function"@en , "função de detecção (Functional Basis)"@pt-br ;
+    rdfs:label "detecting function"@en , "função de detecção"@pt-br ;
     rdfs:subClassOf copi:COPI_0001035 ;
     copi:COPI_0001072 "Function/Signal/Sense/Detect" ;
     iof-av:naturalLanguageDefinition "function to discover information about a flow"@en ;
@@ -2836,7 +2836,7 @@ copi:COPI_0001093 a owl:Class ;
     rdfs:comment "function to discover information about a flow"@en ;
     rdfs:comment "função de descobrir informação sobre um fluxo"@pt-br ;
     iof-av:semiFormalNaturalLanguageAxiom "if f is a 'detecting function' then f is a 'sensing function' whose operation on the flow is the tertiary term 'Detect' of the Functional Basis"@en ;
-    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de detecção (Functional Basis)' então f é uma 'função de sensoriamento' cuja operação sobre o fluxo é o termo terciário 'Detect' da Functional Basis"@pt-br ;
+    iof-av:semiFormalNaturalLanguageAxiom "se f é uma 'função de detecção' então f é uma 'função de sensoriamento' cuja operação sobre o fluxo é o termo terciário 'Detect' da Functional Basis"@pt-br ;
     iof-av:firstOrderLogicAxiom "∀f (DetectingFunction(f) → SensingFunction(f))"@en ;
     skos:example "A flame detector; a gas detector; a level switch."@en ;
     skos:example "Um detector de chama; um detector de gás; uma chave de nível."@pt-br ;

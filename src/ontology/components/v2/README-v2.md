@@ -104,7 +104,7 @@ Pontos abertos, registrados na tabela e não decididos aqui:
 - `differential pressure` como qualidade de uma porção de fluido ou como qualidade relacional (BFO_0000145).
 - A definição de `level` no copi-vocab põe o portador no vaso; o padrão do sensor o põe numa porção de fluido.
 - Renomear a `containment function` (COPI_0000025), que fica ao lado de `containing function`, e reparentar as quatro subclasses dela nos terciários (lado do editor).
-- Fundir a `detection function` (COPI_0000465, copi-enriched) na `detecting function`: é o mesmo termo, e é a causa do rótulo "função de detecção (Functional Basis)".
+- ~~Fundir a `detection function` (COPI_0000465, copi-enriched) na `detecting function`~~ (2026-11-18): o export v2 do editor a funde pelo `MERGED_INTO_CORE` (a 465 fica como stub depreciado ⊑ COPI_0001093) e o rótulo PT da 1093 volta a "função de detecção". Com HermiT, detector, flame detector e gas detector continuam instrument; o detector genérico deixa de ser measurement instrument, e o `detection process` (COPI_0000466) fica sem função que se realize nele.
 - Outras classes de material do copi-vocab fora da convenção "portion of X": absorbent phase, rich absorbent, hydraulic fluid, exhaust gas, depleted fluid, hydrocarbon fluid, formation fluid, drilling fluid, combustion product, heat transfer medium, carrier fluid, rock cuttings.
 - O `copi-enriched.owl` ainda cita os rótulos antigos em 9 definições e 3 axiomas em FOL; muda no próximo export.
 
