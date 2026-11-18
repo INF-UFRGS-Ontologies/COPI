@@ -48,6 +48,7 @@ Resultado: hierarquia de propriedades regular; nenhuma classe insatisfazível; 1
 - `copi-enriched.owl`: export v2 (funções de termo sob as funções de gênero; `realizedIn only` com fluxos; partições; sem os 16 axiomas par a par).
 - Guard novo: `signal transmission function` sob Sensing (já é); nenhuma função de termo sem gênero primário.
 - ODR-024/025/026 (em `COPIeditor/docs/ontology-decisions/`).
+- Subclasses da `containment function` nos terciários: storage function (COPI_0000197) fica sob a 0025; pressure containment function (COPI_0000381) vai para `containing function` (COPI_0001091); gravity collection function (COPI_0000754) e sample collection function (COPI_0000777) vão para `collecting function` (COPI_0001092). A migração do banco do editor está commitada (`COPIeditor/migration/odr024_fb_tertiary_parents.py`) e **só é aplicada quando o export v2 virar o padrão** do `regen_enriched_owl.py` e do `verify_owl.sh`: no caminho v1 o alocador cunharia números novos, duplicatas da 1091 e da 1092.
 
 ## Revisão de 2026-11-17 (baixo risco)
 
