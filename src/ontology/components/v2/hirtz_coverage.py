@@ -75,7 +75,7 @@ def verify(core, rows=None):
     add("coverage table: unadopted rows name no class", [r["caminho"] for r in rows if r["status"] == "não adotada" and r["iri"]])
     add("every class with a Functional Basis path is in the coverage table", [p for p in by_path if p not in paths])
     n = lambda prefix, depth: sum(1 for r in rows if r["caminho"].startswith(prefix) and r["caminho"].count("/") == depth)
-    add("coverage table: 8 + 20 + 24 function terms", [] if (n("Function/", 1), n("Function/", 2), n("Function/", 3)) == (8, 20, 24) else ["count"])
+    add("coverage table: 8 + 20 + 24 function classes (Hirtz: 8 + 21 + 24 terms; Convert is primary and secondary)", [] if (n("Function/", 1), n("Function/", 2), n("Function/", 3)) == (8, 20, 24) else ["count"])
     add("coverage table: 3 flow classes and 42 flow terms", [] if (n("Flow/", 1), n("Flow/", 2) + n("Flow/", 3)) == (3, 42) else ["count"])
     return out, by_path
 

@@ -34,7 +34,7 @@ Tabela 5 (funções),Function/Control magnitude/Change/Condition,terciária,adot
 Tabela 5 (funções),Function/Control magnitude/Stop,secundária,adotada,copi:COPI_0001032,stopping function,
 Tabela 5 (funções),Function/Control magnitude/Stop/Prevent,terciária,adotada,copi:COPI_0001089,preventing function,
 Tabela 5 (funções),Function/Control magnitude/Stop/Inhibit,terciária,adotada,copi:COPI_0001090,inhibiting function,
-Tabela 5 (funções),Function/Convert,primária,adotada,copi:COPI_0001017,conversion function,
+Tabela 5 (funções),Function/Convert,primária,adotada,copi:COPI_0001017,conversion function,"No Hirtz, Convert é classe primária e também o seu único termo secundário (8 + 21 + 24 = 53 termos). Aqui é uma classe só, por isso a tabela tem 20 secundárias."
 Tabela 5 (funções),Function/Provision,primária,adotada,copi:COPI_0001018,provision function,
 Tabela 5 (funções),Function/Provision/Store,secundária,adotada,copi:COPI_0001033,storing function,
 Tabela 5 (funções),Function/Provision/Store/Contain,terciária,adotada,copi:COPI_0001091,containing function,

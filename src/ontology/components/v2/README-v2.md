@@ -6,7 +6,7 @@ Arquivos nesta pasta (`src/ontology/components/v2/`), gerados a partir da spec "
 |---|---|
 | `copi-core-v2.ttl` | a ontologia core v2: 88 classes, 6 propriedades de objeto, 4 de anotação; ids COPI_0001000–0001071 (faixa nova, `copi-idranges` range 1). Anotada no padrão do `copi-core.ttl` congelado (ver abaixo) |
 | `gen.py` | gerador do TTL (fonte de verdade para regenerar; `python3 -I gen.py > copi-core-v2.ttl 2> ids.txt`; falha com `MISSING ANNOTATIONS` se alguma entidade ficar sem campo) |
-| `ann_refs.py`, `ann_functions.py`, `ann_flows.py`, `ann_ops.py` | tabelas de anotação consumidas por `gen.py`: referências bibliográficas; funções (raiz, 8 primárias, 20 secundárias, 6 gêneros); fluxos, propriedades, energia, sinal; dispositivos, instrumentos, operações, folhas, propriedades de anotação e cabeçalho |
+| `ann_refs.py`, `ann_functions.py`, `ann_flows.py`, `ann_ops.py` | tabelas de anotação consumidas por `gen.py`: referências bibliográficas; funções (raiz, 8 primárias, 20 secundárias (52 classes para os 53 termos do Hirtz, que conta Convert duas vezes), 6 gêneros); fluxos, propriedades, energia, sinal; dispositivos, instrumentos, operações, folhas, propriedades de anotação e cabeçalho |
 | `ids.txt` | mapa nome → id gerado |
 | `test-terms.ttl` | termos de teste (bomba, compressor, reboiler, trocador, transmissor de pressão, controlador, linha traceada) e uma instância de bomba com fluxos, para o reasoner |
 | `check.py` | as 20 verificações: 19 inferências sobre `reasoned-test.owl` + o padrão de anotação sobre `copi-core-v2.ttl` |
