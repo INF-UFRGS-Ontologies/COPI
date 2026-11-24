@@ -127,7 +127,6 @@
     <skos:definition xml:lang="en">A designed function that is realized in a temperature measurement process.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000072">
-    <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100006873"/>
     <dcterms:source rdf:resource="https://gitlab.com/dexpi/Specification/-/blob/master/src/model"/>
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/PUMP"/>
     <dcterms:source rdf:resource="https://www.jip36-cfihos.org/"/>
@@ -3446,7 +3445,6 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://www.inf.ufrgs.br/ontologies/copi/COPI_0000311">
     <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100005953"/>
-    <dcterms:source rdf:resource="http://rds.posccaesar.org/ontology/plm/rdl/PCA_100006863"/>
     <dcterms:source rdf:resource="https://glossary.slb.com/en/terms/m/manifold"/>
     <dcterms:source rdf:resource="https://onepetro.org/search-results?page=1&amp;q=manifold"/>
     <dcterms:source rdf:resource="https://standards.iso.org/iso/15926/-4/reference-data-item/MANIFOLD"/>
